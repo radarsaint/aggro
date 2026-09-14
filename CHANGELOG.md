@@ -13,10 +13,6 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ### Changed
 
-- **Discover chrome** — HOW / `/how` help chip removed from Discover header (help stays on You → How AGGRO works / `/how` only). Card systems pill **Item picks at fight** cut. Encounter pills softened: **Solo date** / **They brought friends**. Empty-state **Reshuffle Floor** demoted to outline + confirm (never twin-pink with Call it a night).
-- **RestBeat** — **Call it a night** demoted (ghost, below Grab a drink) + confirm (“Fresh slate tomorrow — the floor refreshes too”) so long-rest deck reshuffle is not a silent wipe. Body teaching wallpaper killed (“One drink a night…”, “prep between nights anytime”); first-win dating lock copy kept. Caps stay in titles/tooltips.
-- **TODO (later)** — Bury or default Discover Stack/Grid peer toggles (leave one layout).
-
 - **Grab-a-drink gate (Gate 1)** — Drink is earned, not free: unlocks only after you **win your first fight of the night** (`drinkUnlockedTonight`). If the first fight is a **loss**, the drink stays locked for the rest of the night (`firstFightResolvedTonight`). Still once per night; still no-op at full slate / after used. Long rest resets unlock + used + matches. RestBeat lock copy: “Win your first date tonight — then grab a drink” / “First date went sideways — drink’s off the table tonight”.
 - **Dating prefs cleanup** — Reshuffle stays as the only top utility. **How AGGRO works** moves to a quiet help link on the **You** tab footer (beside Dating prefs). **Reset Local Save** lives in a collapsed **Danger** disclosure at the bottom of Dating prefs (after Standards/filters), muted styling + confirm dialog.
 

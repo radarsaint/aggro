@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, type PanInfo } from 'framer-motion';
 import { Heart, LayoutGrid, Layers, X } from 'lucide-react';
 import { getCreature } from '../data/creatures';
@@ -81,7 +81,14 @@ export function Discover() {
           </div>
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          {/* Stack/Grid peer toggles: leave for now; bury/default later — see CHANGELOG Unreleased */}
+          <Link
+            to="/how"
+            className="chip"
+            style={{ textDecoration: 'none', fontSize: '0.65rem', letterSpacing: '0.04em', fontWeight: 700 }}
+            title="How AGGRO Works"
+          >
+            HOW
+          </Link>
           <button type="button" className={`chip ${mode === 'stack' ? 'on' : ''}`} onClick={() => setMode('stack')} aria-label="Stack">
             <Layers size={14} />
           </button>
@@ -112,14 +119,7 @@ export function Discover() {
               clearance rack. Baatorasaka Dating Ops can restock. Reshuffle and pretend HR
               didn't notice.
             </p>
-            <button
-              type="button"
-              className="btn btn-outline"
-              style={{ marginTop: 16 }}
-              onClick={() => {
-                if (confirm('Reshuffle the floor? Passed cards come back.')) reshuffleDeck();
-              }}
-            >
+            <button type="button" className="btn btn-pink" style={{ marginTop: 16 }} onClick={reshuffleDeck}>
               Reshuffle Floor
             </button>
           </div>
@@ -144,8 +144,9 @@ export function Discover() {
                     </div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 6 }}>
                       <span className="pill">{c.threat}</span>
-                      <span className="pill">{c.encounter === 'One' ? 'Solo date' : 'They brought friends'}</span>
+                      <span className="pill">{c.encounter === 'One' ? 'One Enemy' : 'Multiple'}</span>
                       <span className="pill">{c.type}</span>
+                      <span className="pill">Item picks at fight</span>
                     </div>
                   </div>
                 </button>
@@ -199,9 +200,14 @@ export function Discover() {
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
                         <span className="pill">{c.threat} threat</span>
-                        <span className="pill">{c.encounter === 'One' ? 'Solo date' : 'They brought friends'}</span>
+                        <span className="pill">{c.encounter === 'One' ? 'One enemy' : 'Multiple'}</span>
                         <span className="pill">{c.type}</span>
                         <span className="pill">{c.floor}</span>
+                      </div>
+                      <div style={{ marginTop: 6 }}>
+                        <span className="pill" style={{ borderColor: 'var(--pink)', color: 'var(--pink)' }}>
+                          Item picks at fight
+                        </span>
                       </div>
                     </div>
                   </motion.div>
