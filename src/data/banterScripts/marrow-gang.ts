@@ -197,7 +197,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Hard hit, then early end. Precise. Formation broken.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: [
-    'Marrow Gang: You bagged us and finished it. Muster terminated early.',
+    'Marrow Gang: Muster terminated early. Eyes forward anyway.',
     'Marrow Gang: You bagged drill, then finished it. Count filed. Barracks quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 

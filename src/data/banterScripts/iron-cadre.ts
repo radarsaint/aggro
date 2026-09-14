@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Found the soft count and finished. No line left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: [
-    'Iron Cadre: You netted the Cadre and finished the drill. Quiet shame. Eyes forward.',
-    'Iron Cadre: Net, then win. You caught the Cadre. Discipline files that as rude.',
+    'Iron Cadre: Cadre caught. Drill ends quiet. Eyes forward.',
+    'Iron Cadre: Cadre in silk. Discipline files that as rude.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'iron-cadre_def_42', beat: 'defeat', lines: [

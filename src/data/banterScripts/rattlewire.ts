@@ -197,7 +197,7 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Hard hit, then early end. Precise. Declined forever. Click.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'rattlewire_vic_net_41', beat: 'victory', lines: [
-    'Rattlewire: You bagged me and finished it. Appointment terminated early.',
+    'Rattlewire: Appointment terminated early. Click. Forever late.',
     'Rattlewire: You bagged me, then finished on the second. Click. Filed.',
   ], requireFlags: ["netted"], weight: 3 },
 

@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patchwire_kit_net_19', beat: 'kit', lines: [
     'Patchwire: Mesh on parliament. Commitment issues with holes.',
-    'Patchwire: You bagged us. Flail is the minutes. Quorum still bites through.',
+    'Patchwire: Mesh on parliament. Panic goes in the minutes. Quorum still bites through.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patchwire_kit_healing-potion_20', beat: 'kit', lines: [
     'Patchwire: You healed mid-vote. Motion to eat: passed.',
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patchwire_vic_net_41', beat: 'victory', lines: [
     'Patchwire: You netted parliament and adjourned us. Motion carries. Teeth first.',
-    'Patchwire: Net, then win. Quorum adjourned — permanently.',
+    'Patchwire: Quorum adjourned — permanently. Teeth first, minutes never.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'patchwire_def_42', beat: 'defeat', lines: [

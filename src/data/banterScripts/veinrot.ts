@@ -197,7 +197,7 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Hard hit, then a quieter freezer. Leave a light on.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'veinrot_vic_net_41', beat: 'victory', lines: [
-    'Veinrot: You bagged me and finished it. Cold company, cut short.',
+    'Veinrot: Cold company cut short. Freezer goes quiet.',
     'Veinrot: You bagged me, then finished it. Freezer keeps both memories.',
   ], requireFlags: ["netted"], weight: 3 },
 

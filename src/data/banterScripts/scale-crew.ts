@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scale-crew_kit_net_19', beat: 'kit', lines: [
     'Scale Crew: Mesh on apprentices. Commitment issues with holes.',
-    'Scale Crew: You bagged us. Flail is the waiver. Boss! — still not here.',
+    'Scale Crew: Mesh on the plate. Sign the panic waiver. Boss! — still not here.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scale-crew_kit_healing-potion_20', beat: 'kit', lines: [
     'Scale Crew: You healed mid-drill. Sign the waiver again, test subject.',
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scale-crew_vic_net_41', beat: 'victory', lines: [
     'Scale Crew: You netted the apprentices and skipped the boss. Honest cheat. Boss!',
-    'Scale Crew: Net, then win. Training failed. Boss still not here.',
+    'Scale Crew: Trap snapped shut. Training failed. Boss still not here.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'scale-crew_def_42', beat: 'defeat', lines: [

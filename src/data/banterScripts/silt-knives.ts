@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Found the soft silt and finished. No name left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [
-    'Silt Knives: You netted Blackwater and finished it. Guest list goes blank.',
-    'Silt Knives: Net, then win. You caught Blackwater. Upstream litter wins ugly.',
+    'Silt Knives: Blackwater caught. Guest list goes blank.',
+    'Silt Knives: Blackwater down. Upstream litter wins ugly.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'silt-knives_def_42', beat: 'defeat', lines: [

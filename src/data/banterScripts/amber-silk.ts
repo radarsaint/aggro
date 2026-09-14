@@ -189,8 +189,8 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Hard hit, then the finish. Headset went quiet. That is the win.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'amber-silk_vic_net_41', beat: 'victory', lines: [
-    'Amber Silk: You netted the wrapper and finished it. Headset already filed you.',
-    'Amber Silk: Net, then win. Channel three signing off. Guest closed.',
+    'Amber Silk: Wrap caught. Headset already filed you.',
+    'Amber Silk: Channel three signing off. Guest closed.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

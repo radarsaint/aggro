@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'crow-ledger_kit_net_19', beat: 'kit', lines: [
     'Crow Ledger: Mesh on auditors. Commitment issues with holes. Late fee applies.',
-    'Crow Ledger: You bagged us. Flail is the receipt. Gossip trail lengthened.',
+    'Crow Ledger: Mesh on the flock. Panic lengthens the gossip trail.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'crow-ledger_kit_healing-potion_20', beat: 'kit', lines: [
     'Crow Ledger: Flask mid-audit. Soft delinquent. Interest still due.',
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'crow-ledger_vic_net_41', beat: 'victory', lines: [
     'Crow Ledger: You netted the flock and closed the books. Balance settled mean.',
-    'Crow Ledger: Net, then win. Books closed. Net-30 forgiven — bitterly.',
+    'Crow Ledger: Books closed. Net-30 forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'crow-ledger_def_42', beat: 'defeat', lines: [

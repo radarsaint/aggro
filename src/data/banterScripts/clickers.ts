@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'clickers_vic_net_41', beat: 'victory', lines: [
     'Clickers: You netted night shift and closed the table. Tip: none. *click*',
-    'Clickers: Net, then win. Service closed. Tip: still theoretical.',
+    'Clickers: Service closed. Tip: still theoretical. *click*',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'clickers_def_42', beat: 'defeat', lines: [

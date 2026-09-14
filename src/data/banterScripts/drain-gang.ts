@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drain-gang_kit_net_19', beat: 'kit', lines: [
     'Drain Gang: Mesh on franchisees. Commitment issues with holes. Royalty compounds.',
-    'Drain Gang: You bagged us. Flail is the receipt. Territory still ours.',
+    'Drain Gang: Mesh on the franchise. Your panic is the receipt. Territory still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drain-gang_vic_net_41', beat: 'victory', lines: [
     'Drain Gang: You netted the franchise and stole the territory. Fee collected anyway.',
-    'Drain Gang: Net, then win. Franchise closed. Royalty forgiven — bitterly.',
+    'Drain Gang: Franchise closed. Royalty forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'drain-gang_def_42', beat: 'defeat', lines: [

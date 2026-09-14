@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Iron jaws for Mirror Arcade prey. That is adorable. Still visible.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'glasswing_kit_net_19', beat: 'kit', lines: [
-    'Glasswing: You put a net on the auditor. Visibility: forced. Flail is the receipt.',
+    'Glasswing: Mesh on the auditor. Visibility forced. Panic gets scored.',
     'Glasswing: Bagged. Commitment issues with holes. Score: messy.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'glasswing_kit_healing-potion_20', beat: 'kit', lines: [
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'glasswing_vic_net_41', beat: 'victory', lines: [
     'Glasswing: You netted the auditor and forced visibility. Survey fails you anyway.',
-    'Glasswing: Net, then win. Visibility: absolute. Score: final.',
+    'Glasswing: Auditor grounded. Visibility absolute. Score final.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'glasswing_def_42', beat: 'defeat', lines: [

@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'dumpster-king_kit_net_19', beat: 'kit', lines: [
     'Dumpster King: Mesh on majesty. A peasant\'s petition with holes.',
-    'Dumpster King: You bagged the King. Flail is your petition. Denied.',
+    'Dumpster King: Mesh on the crown. Panic is your petition. Denied.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'dumpster-king_kit_healing-potion_20', beat: 'kit', lines: [
     'Dumpster King: You drank courage from a bottle. Subjects who plan to live amuse Us.',
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: You found the weak place under the crown and finished it. A peasant ending for a king day.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'dumpster-king_vic_net_41', beat: 'victory', lines: [
-    'Dumpster King: You netted the King and finished the coup. Throne remembers.',
-    'Dumpster King: Net, then win. You bagged a sovereign. We are a little mad.',
+    'Dumpster King: Crown caught. Coup complete. Throne remembers.',
+    'Dumpster King: Sovereign down. We are a little mad. Tribute still due.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'dumpster-king_def_42', beat: 'defeat', lines: [

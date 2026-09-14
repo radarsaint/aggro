@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Patches: You set jaws on office prey. Breakroom had worse furniture.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patches_kit_net_19', beat: 'kit', lines: [
-    'Patches: You bagged the temp like a return. Flail is the receipt.',
+    'Patches: Mesh on the temp like a return. Panic gets itemized.',
     'Patches: Mesh on shoulders — commitment issues with holes. Still billing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patches_kit_healing-potion_20', beat: 'kit', lines: [
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patches_vic_net_41', beat: 'victory', lines: [
     'Patches: You netted the temp and closed the claim. Sticky win. Filed.',
-    'Patches: Net, then win. Filing you under forever anyway.',
+    'Patches: Sticky win in silk. Filing you under forever anyway.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

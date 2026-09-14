@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: [
     'Proxy Bit: You netted the courier and voided the route. Receipt stamped forever.',
-    'Proxy Bit: Net, then win. Return to sender: denied.',
+    'Proxy Bit: Route ends in silk. Return to sender: denied.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'proxy-bit_def_42', beat: 'defeat', lines: [

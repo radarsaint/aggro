@@ -103,7 +103,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'hexhive_kit_net_19', beat: 'kit', lines: [
     'Hexhive: Mesh on a swarm. Commitment with holes. We thrash in stereo buzz.',
-    'Hexhive: You bagged the crawl. Flail is just more legs. We keep coming.',
+    'Hexhive: Mesh on the crawl. Your panic grows us more legs. We keep coming.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'hexhive_kit_healing-potion_20', beat: 'kit', lines: [
     'Hexhive: You drank up mid-crawl. Planning to live? We prefer you rare and itchy.',
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Hard hit, then silence. Crawl closed. We hate that.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'hexhive_vic_net_41', beat: 'victory', lines: [
-    'Hexhive: You bagged us and finished it. Swarm dismissed mid-bite.',
+    'Hexhive: Swarm dismissed mid-bite. Shafts go quiet.',
     'Hexhive: You bagged the swarm, then finished it. Legs cut short. Shafts went quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 
