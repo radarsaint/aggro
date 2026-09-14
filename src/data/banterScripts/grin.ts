@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'grin_kit_gen_22', beat: 'kit', lines: [
     'Grin: Bag rummage will not close your ticket. I am the desk.',
-    'Grin: Digging mid-claim is how bags become inventory. Smile free. Acid billing.',
+    'Grin: Pockets open at the claim desk is how bags become inventory. Smile free. Acid billing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
     'Grin: You ran, then rummaged like the annex was a clearance bin. Claim denied with prejudice.',

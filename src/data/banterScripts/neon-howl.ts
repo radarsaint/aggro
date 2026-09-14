@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You greased the mile. Pack still braids. Feet still find you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'neon-howl_kit_gen_22', beat: 'kit', lines: [
-    'Neon Howl: Digging mid-chase? Pack wants feet, not props. Keep running or bite.',
+    'Neon Howl: Props during a chase? Pack wants feet, not toys. Keep running or bite.',
     'Neon Howl: Bottle mid-chase? Save the counter-howl. We answer with teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'neon-howl_kit_ran_23', beat: 'kit', lines: [

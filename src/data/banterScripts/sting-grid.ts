@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sting-grid_kit_gen_22', beat: 'kit', lines: [
     'Sting Grid: Bag rummage will not clear your permit. We are here.',
-    'Sting Grid: Digging mid-air is how necks earn welts. Duck or get filed.',
+    'Sting Grid: Toys at altitude is how necks earn welts. Duck or get filed.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sting-grid_kit_ran_23', beat: 'kit', lines: [
     'Sting Grid: You fled our airspace, then rummaged. Unauthorized and messy.',

@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
     'Silt Knives: Bag rummage will not scrub your name. We are here.',
-    'Silt Knives: Digging mid-swim is how names get finished early. Murk is listening.',
+    'Silt Knives: Hands in the bag while you swim is how names get finished early. Murk is listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
     'Silt Knives: You fled the blackwater, then rummaged. Litterbugs with bags — classic.',

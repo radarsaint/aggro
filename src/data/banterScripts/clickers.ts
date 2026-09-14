@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Grease on the roost. Service continues overhead.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'clickers_kit_gen_22', beat: 'kit', lines: [
-    'Clickers: Rummaging mid-service will not hush the clicks. We are right here.',
+    'Clickers: Foraging at the table will not hush the clicks. We are right here. *click*',
     'Clickers: Unauthorized table tools. We are answering in needles.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'clickers_kit_ran_23', beat: 'kit', lines: [

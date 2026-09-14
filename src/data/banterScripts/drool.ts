@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Drool: Cute does not slip — contracts do. On you. Initial the puddle.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'drool_kit_gen_22', beat: 'kit', lines: [
-    'Drool: Digging mid-booth? Sales demo energy. Initial the hustle or lose the chips.',
+    'Drool: Pocketing snacks in my booth? Sales demo energy. Initial the hustle or lose the chips.',
     'Drool: Bottle mid-pact? Cute. I answer in bruises and crisps either way.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drool_kit_ran_23', beat: 'kit', lines: [
