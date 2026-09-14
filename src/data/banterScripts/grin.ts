@@ -9,15 +9,15 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'grin_open_x_0', beat: 'open', lines: [
-    'Grin: Hi. Lost & Found. Claim within twenty-four hours or become inventory. Smile\'s free. Acid isn\'t. You\'re already reaching for the tag.',
-    'Grin: Before we start — I\'m not a puddle. I\'m the claim desk. People drop bags, say "be right back," and never come back. I have been waiting. Tonight somebody gets filed.',
+    'Grin: Hi. Lost & Found. Claim within twenty-four hours or become inventory. Smile is free. Acid is not. You are already reaching for the tag.',
+    'Grin: Before we start — I am not a puddle. I am the claim desk. People drop bags, say "be right back," and never come back. I have been waiting. Tonight somebody gets filed.',
   ], weight: 2 },
   { id: 'grin_open_x_1', beat: 'open', lines: [
-    'Grin: Lost & Found keeps stubs, not speeches. Smile\'s free. Acid files what you leave behind. Tag yourself.',
+    'Grin: Lost & Found keeps stubs, not speeches. Smile is free. Acid files what you leave behind. Tag yourself.',
     'Grin: Careful owners get their bags back. Grabby ones get puddled. You look grabby. Change my mind.',
   ], weight: 2 },
   { id: 'grin_open_0', beat: 'open', lines: [
-    'Grin: Claim desk stays open until I puddle. Sticky hands think the smile is free. It isn\'t. The smile is the trap, and you already leaned in.',
+    'Grin: Claim desk stays open until I puddle. Sticky hands think the smile is free. It is not. The smile is the trap, and you already leaned in.',
     'Grin: I inventory hunters the way other people inventory lost umbrellas. You look misfiled. Smile for the annex — or become the puddle under it.',
   ], weight: 2 },
   { id: 'grin_open_1', beat: 'open', lines: [
@@ -29,7 +29,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Skip the \'is this yours\' bit. Either claim clean or dissolve loud.',
   ], weight: 1 },
   { id: 'grin_open_3', beat: 'open', lines: [
-    'Grin: I keep what falls because nobody else files it. You\'re a stub until you\'re a story.',
+    'Grin: I keep what falls because nobody else files it. You are a stub until you are a story.',
     'Grin: Careful claimants leave with bags. Careless ones leave as residue. Pick a lane.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
@@ -40,11 +40,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'grin_hhit_5', beat: 'hunter_hit', lines: [
     'Grin: Okay. That landed. Rude for a claimant.',
-    'Grin: You hit the claim desk. Forms just got personal. Smile stays free — acid doesn\'t.',
+    'Grin: You hit the claim desk. Forms just got personal. Smile stays free — acid does not.',
   ] },
   { id: 'grin_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Grin: You wrinkled a claim form mid-fight. Alphabetizing is ruined. Friendship optional.',
-    'Grin: I\'m dripping and I\'m still smiling. Sticky hands did this. The stub will remember.',
+    'Grin: I am dripping and I am still smiling. Sticky hands did this. The stub will remember.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -89,8 +89,8 @@ export const nodes: ScriptNode[] = [
     'Grin: You threw chemistry at chemistry. Personal and redundant.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'grin_kit_holy-water_16', beat: 'kit', lines: [
-    'Grin: Holy water. Cute. I\'m inventory, not undead.',
-    'Grin: Blessings don\'t close a claim. They wet the desk.',
+    'Grin: Holy water. Cute. I am inventory, not undead.',
+    'Grin: Blessings do not close a claim. They wet the desk.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'grin_kit_smokestick_17', beat: 'kit', lines: [
     'Grin: Smoke. I smell soap through haze.',
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Jaws for something that seeps. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'grin_kit_net_19', beat: 'kit', lines: [
-    'Grin: Net on a puddle. That\'s not a claim. Rude.',
+    'Grin: Net on a puddle. That is not a claim. Rude.',
     'Grin: Bagged. I seep through holes for a living.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'grin_kit_healing-potion_20', beat: 'kit', lines: [
@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Greased the hallway. I still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'grin_kit_gen_22', beat: 'kit', lines: [
-    'Grin: Bag rummage won\'t close your ticket. I\'m the desk.',
+    'Grin: Bag rummage will not close your ticket. I am the desk.',
     'Grin: Digging mid-claim? The smile is still free. The acid is billing you.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
@@ -123,16 +123,16 @@ export const nodes: ScriptNode[] = [
 
   // ── MONSTER ──
   { id: 'grin_mhit_24', beat: 'monster_hit', lines: [
-    'Grin: That\'s for the unread claim tickets.',
+    'Grin: That is for the unread claim tickets.',
     'Grin: Dissolve sample. You matched first.',
   ] },
   { id: 'grin_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Grin: I\'m leaking. You\'re bleeding. Friendlier desk wins.',
+    'Grin: I am leaking. You are bleeding. Friendlier desk wins.',
     'Grin: Scraped raw. Still the stickiest thing in this hallway.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'grin_mmiss_26', beat: 'monster_miss', lines: [
     'Grin: Missed. Enjoy the stub while it lasts.',
-    'Grin: Close call. Don\'t build a brand on it.',
+    'Grin: Close call. Do not build a brand on it.',
   ] },
 
   // ── WOUNDS ──
@@ -145,7 +145,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Still here. Still smiling. Tag stays.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'grin_w_bld_29', beat: 'wound', lines: [
-    'Grin: Okay. Desk is a mess. Smile\'s free. Acid still works.',
+    'Grin: Okay. Desk is a mess. Smile is free. Acid still works.',
     'Grin: Thought the claim lights made me untouchable. You touched. Hate that.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'grin_w_heart_30', beat: 'wound', lines: [
@@ -168,7 +168,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'grin_chase2_34', beat: 'chase', lines: [
     'Grin: Second chase. Hallway\'s mine.',
-    'Grin: Run again and I\'ll think you like the smile. Don\'t.',
+    'Grin: Run again and I will think you like the smile. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'grin_close_35', beat: 'close', lines: [
     'Grin: Back. Miss the complimentary smile?',
@@ -193,7 +193,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Jogging as strategy. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'grin_vic_crit_40', beat: 'victory', lines: [
-    'Grin: You cut through the smile. Fight\'s over. I\'ll give you that.',
+    'Grin: You cut through the smile. Fight\'s over. I will give you that.',
     'Grin: Found the soft sticker and finished. No smile left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'grin_vic_net_41', beat: 'victory', lines: [
@@ -204,7 +204,7 @@ export const nodes: ScriptNode[] = [
   // ── DEFEAT ──
   { id: 'grin_def_42', beat: 'defeat', lines: [
     'Grin: Claim closed. You lose. I stay sticky.',
-    'Grin: Down. Lost & Found wins. Don\'t bleed on inventory.',
+    'Grin: Down. Lost & Found wins. Do not bleed on inventory.',
   ] },
   { id: 'grin_def_crit_43', beat: 'defeat', lines: [
     'Grin: Hit hard. Still lost. Talent without follow-through.',

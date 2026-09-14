@@ -13,11 +13,11 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Hey. Yeah, we talk. Rattlewire went freelance. We kept the count. Attention.',
   ], weight: 2 },
   { id: 'marrow-gang_open_x_1', beat: 'open', lines: [
-    'Marrow Gang: Formation unbroken. Your stance isn\'t. Lateness is a write-up. Dying early is worse. Count with us.',
+    'Marrow Gang: Formation unbroken. Your stance is not. Lateness is a write-up. Dying early is worse. Count with us.',
     'Marrow Gang: Loading Crypt Drill Team. Barracks. Roll call. Volley fire. Perfect posture. Zero flesh drama. Drill on the second.',
   ], weight: 2 },
   { id: 'marrow-gang_open_0', beat: 'open', lines: [
-    'Marrow Gang: Targets in a line. Officers who don\'t flinch. Musters on the second. Hearts that bleed on the beat.',
+    'Marrow Gang: Targets in a line. Officers who do not flinch. Musters on the second. Hearts that bleed on the beat.',
     'Marrow Gang: Formation is the only soft skill left. Eyes. Forward. Bleed. On. The. Beat.',
   ], weight: 2 },
   { id: 'marrow-gang_open_1', beat: 'open', lines: [
@@ -26,11 +26,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'marrow-gang_open_2', beat: 'open', lines: [
     'Marrow Gang: Came to browse? Leave. Came to fight? Stop standing crooked. Fall in.',
-    'Marrow Gang: We\'ve heard every lone-recruit speech. Say something new or fall in.',
+    'Marrow Gang: We have heard every lone-recruit speech. Say something new or fall in.',
   ], weight: 1 },
   { id: 'marrow-gang_open_3', beat: 'open', lines: [
-    'Marrow Gang: Rattlewire left. Someone had to keep the count. That\'s us. You\'re in formation until you aren\'t.',
-    'Marrow Gang: Maybe you\'ll hold the line. Probably not. Bleed on the beat when you lose either way.',
+    'Marrow Gang: Rattlewire left. Someone had to keep the count. That is us. You are in formation until you aren\'t.',
+    'Marrow Gang: Maybe you will hold the line. Probably not. Bleed on the beat when you lose either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -43,8 +43,8 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Count continues.',
   ] },
   { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Marrow Gang: We\'re leaking. You\'re still soft. Fix one. Or bleed on the beat.',
-    'Marrow Gang: Beat up and still drilling. That\'s the count talking.',
+    'Marrow Gang: We are leaking. You are still soft. Fix one. Or bleed on the beat.',
+    'Marrow Gang: Beat up and still drilling. That is the count talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_10', beat: 'hunter_crit', lines: [
     'Marrow Gang: Okay. Soft under the count. Rude. Drill continues without your permission.',
-    'Marrow Gang: That almost felt like a recruit who meant it. Don\'t talk. Swing or fall in.',
+    'Marrow Gang: That almost felt like a recruit who meant it. Do not talk. Swing or fall in.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Marrow Gang: You ran, then hit us that hard? Deserter with a finishing move.',
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Church juice. Wet is a write-up. Prayer is worse.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'marrow-gang_kit_smokestick_17', beat: 'kit', lines: [
-    'Marrow Gang: Smoke won\'t hide a pulse on the beat. We hear you.',
+    'Marrow Gang: Smoke will not hide a pulse on the beat. We hear you.',
     'Marrow Gang: Hide mid-drill? Barracks seeking finds deserters.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'marrow-gang_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -124,14 +124,14 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'marrow-gang_mhit_24', beat: 'monster_hit', lines: [
     'Marrow Gang: Matched. On the beat. Formation lands.',
-    'Marrow Gang: That\'s for standing crooked at muster.',
+    'Marrow Gang: That is for standing crooked at muster.',
   ] },
   { id: 'marrow-gang_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Marrow Gang: We\'re leaking. You\'re worse. Drill calls that even.',
+    'Marrow Gang: We are leaking. You are worse. Drill calls that even.',
     'Marrow Gang: Beat up and still volleying. Count talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'marrow-gang_mmiss_26', beat: 'monster_miss', lines: [
-    'Marrow Gang: Missed. Enjoy it. We\'re still drilling.',
+    'Marrow Gang: Missed. Enjoy it. We are still drilling.',
     'Marrow Gang: Close one. Patience expires when Drill Team gets bored of polite posture.',
   ] },
 
@@ -145,30 +145,30 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Deep scratch. Persistent — like a hold that never ends.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'marrow-gang_w_bld_29', beat: 'wound', lines: [
-    'Marrow Gang: Okay. We\'re leaking. You\'re still soft. Finish it or bleed on the beat.',
+    'Marrow Gang: Okay. We are leaking. You are still soft. Finish it or bleed on the beat.',
     'Marrow Gang: Beat up and standing. Formation holds. Still drilling.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'marrow-gang_w_heart_30', beat: 'wound', lines: [
     'Marrow Gang: That landed on something soft we weren\'t advertising at muster.',
-    'Marrow Gang: Don\'t look at us like that while you\'re winning. It\'s rude. Off-cadence.',
+    'Marrow Gang: Do not look at us like that while you are winning. It is rude. Off-cadence.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'marrow-gang_run_31', beat: 'run', lines: [
     'Marrow Gang: You ran from Drill Team? Desertion. Chase clause activates.',
-    'Marrow Gang: Leaving mid-muster? Drills don\'t pause.',
+    'Marrow Gang: Leaving mid-muster? Drills do not pause.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'marrow-gang_run2_32', beat: 'run', lines: [
     'Marrow Gang: Twice. You ran twice. Deserter with legs.',
     'Marrow Gang: Second escape. We noticed. Eyes. Forward. Louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'marrow-gang_chase_33', beat: 'chase', lines: [
-    'Marrow Gang: Running from Drill Team is a write-up you\'ll bleed for.',
+    'Marrow Gang: Running from Drill Team is a write-up you will bleed for.',
     'Marrow Gang: You wanted distance. We wanted the beat. Guess who still arrives.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'marrow-gang_chase2_34', beat: 'chase', lines: [
-    'Marrow Gang: Second chase. You don\'t get the barracks. We do.',
-    'Marrow Gang: Run again and we\'ll think you like the count. Don\'t. Eyes forward.',
+    'Marrow Gang: Second chase. You do not get the barracks. We do.',
+    'Marrow Gang: Run again and we will think you like the count. Do not. Eyes forward.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'marrow-gang_close_35', beat: 'close', lines: [
     'Marrow Gang: Back. Miss the beat?',

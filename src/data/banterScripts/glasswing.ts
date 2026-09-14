@@ -10,7 +10,7 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   { id: 'glasswing_open_x_0', beat: 'open', lines: [
     'Glasswing: Chin up. I can see the lie you told yourself to swipe right. It scored a two. Heart sight says messy. Honesty optional. Thrashing mandatory.',
-    'Glasswing: Every reflection here is taking notes for someone who never clocks out. Complex review: you\'re almost redeemable. Scratch helps.',
+    'Glasswing: Every reflection here is taking notes for someone who never clocks out. Complex review: you are almost redeemable. Scratch helps.',
   ], weight: 2 },
   { id: 'glasswing_open_x_1', beat: 'open', lines: [
     'Glasswing: I read the want behind your eyes. It blushed. Then it lied. Then I scored it. Fight me anyway — honesty looks better with a scratch.',
@@ -30,7 +30,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'glasswing_open_3', beat: 'open', lines: [
     'Glasswing: Quiet confession from the annex: I score because the mirrors keep asking. Then I collect because someone has to.',
-    'Glasswing: Soft voice. Hard score. Be clearer when you lose — or pass for once. Spoiler: you won\'t.',
+    'Glasswing: Soft voice. Hard score. Be clearer when you lose — or pass for once. Spoiler: you will not.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'glasswing_hhit_4', beat: 'hunter_hit', lines: [
@@ -42,12 +42,12 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Ow. The glass remembers. So do I.',
   ] },
   { id: 'glasswing_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Glasswing: Cracked. You\'re still opaque. I\'m still scoring.',
-    'Glasswing: Hurt and still auditing. That\'s culture.',
+    'Glasswing: Cracked. You are still opaque. I am still scoring.',
+    'Glasswing: Hurt and still auditing. That is culture.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'glasswing_hmiss_7', beat: 'hunter_miss', lines: [
-    'Glasswing: Missed. The air didn\'t deserve that score.',
+    'Glasswing: Missed. The air did not deserve that score.',
     'Glasswing: You talk honesty better than you live it.',
   ] },
   { id: 'glasswing_hmiss_8', beat: 'hunter_miss', lines: [
@@ -61,7 +61,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'glasswing_hcrit_10', beat: 'hunter_crit', lines: [
     'Glasswing: You found the soft place under the survey. Congrats, liar.',
-    'Glasswing: That almost passed the survey. Almost. Don\'t talk. Swing again.',
+    'Glasswing: That almost passed the survey. Almost. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'glasswing_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Glasswing: You fled feedback, then hit me that hard? Commit to one score.',
@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You threw a vial in Culture. Sticky. Personal. Still scored.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'glasswing_kit_holy-water_16', beat: 'kit', lines: [
-    'Glasswing: Holy water. Cute. Faith doesn\'t pass the values survey.',
+    'Glasswing: Holy water. Cute. Faith does not pass the values survey.',
     'Glasswing: Church water on glass. I just hate the wet. Score unchanged.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'glasswing_kit_smokestick_17', beat: 'kit', lines: [
@@ -94,7 +94,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'glasswing_kit_hunting-trap_18', beat: 'kit', lines: [
     'Glasswing: A bear trap. For a flyer. Irony is a score of one.',
-    'Glasswing: Iron jaws for Mirror Arcade prey. That\'s adorable. Still visible.',
+    'Glasswing: Iron jaws for Mirror Arcade prey. That is adorable. Still visible.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'glasswing_kit_net_19', beat: 'kit', lines: [
     'Glasswing: You put a net on the auditor. Visibility: forced. Flail is the receipt.',
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Grease mid-audit. Career move for a liar.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'glasswing_kit_gen_22', beat: 'kit', lines: [
-    'Glasswing: Rummaging won\'t pass the survey. I\'m right here.',
+    'Glasswing: Rummaging will not pass the survey. I am right here.',
     'Glasswing: Unauthorized workplace tools. Soft voice. Hard answer.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'glasswing_kit_ran_23', beat: 'kit', lines: [
@@ -118,20 +118,20 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'glasswing_mhit_24', beat: 'monster_hit', lines: [
-    'Glasswing: That\'s for the unread feedback and the lie you told the mirror.',
+    'Glasswing: That is for the unread feedback and the lie you told the mirror.',
     'Glasswing: Score landed. You asked for it.',
   ] },
   { id: 'glasswing_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Glasswing: I\'m hurt. You\'re hurt more. Fair score. Mirrors noted both.',
+    'Glasswing: I am hurt. You are hurt more. Fair score. Mirrors noted both.',
     'Glasswing: Glass cracked. I am still scoring you, and I am still mad about the lie.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'glasswing_mmiss_26', beat: 'monster_miss', lines: [
     'Glasswing: Missed. Enjoy it. The glass is still circling.',
-    'Glasswing: Close one. Don\'t write a personality around a near-miss.',
+    'Glasswing: Close one. Do not write a personality around a near-miss.',
   ] },
 
   { id: 'glasswing_w_wind_27', beat: 'wound', lines: [
-    'Glasswing: Tiny nick on the score. Don\'t get attached.',
+    'Glasswing: Tiny nick on the score. Do not get attached.',
     'Glasswing: Barely a scratch. Upgrade your intent or hold the pose.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'glasswing_w_bru_28', beat: 'wound', lines: [
@@ -139,12 +139,12 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Mid-survey damage. Persistent — like a lie that failed the values survey.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'glasswing_w_bld_29', beat: 'wound', lines: [
-    'Glasswing: Okay. I\'m cracked. You\'re still opaque. Score continues.',
+    'Glasswing: Okay. I am cracked. You are still opaque. Score continues.',
     'Glasswing: Hurt bad and upright. Finish the review or leave the mirrors alone.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'glasswing_w_heart_30', beat: 'wound', lines: [
-    'Glasswing: That one scored a soft place I keep off the survey. Don\'t ask.',
-    'Glasswing: Don\'t look at me like that while you\'re winning. Mirrors hate pity scores.',
+    'Glasswing: That one scored a soft place I keep off the survey. Do not ask.',
+    'Glasswing: Do not look at me like that while you are winning. Mirrors hate pity scores.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   { id: 'glasswing_run_31', beat: 'run', lines: [
@@ -161,14 +161,14 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'glasswing_chase2_34', beat: 'chase', lines: [
     'Glasswing: Second chase. Score: coward. Visibility: forced.',
-    'Glasswing: Bolt again and I\'ll bill you for liking the mirror.',
+    'Glasswing: Bolt again and I will bill you for liking the mirror.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'glasswing_close_35', beat: 'close', lines: [
     'Glasswing: Back. Miss the mirror?',
     'Glasswing: Range ends. Soft voice resumes. Chin up.',
   ] },
   { id: 'glasswing_close_smoke_36', beat: 'close', lines: [
-    'Glasswing: Smoke won\'t hide a want. Heart sight still works.',
+    'Glasswing: Smoke will not hide a want. Heart sight still works.',
     'Glasswing: Haze lifts. Mirrors find soft prey anyway. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You made me jog. Values survey: fail. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'glasswing_vic_crit_40', beat: 'victory', lines: [
-    'Glasswing: You cut through the mirror. Fight\'s over. I\'ll give you that.',
+    'Glasswing: You cut through the mirror. Fight\'s over. I will give you that.',
     'Glasswing: You found the soft glass and finished it. Final score: you. Chin down.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'glasswing_vic_net_41', beat: 'victory', lines: [

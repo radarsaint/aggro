@@ -8,15 +8,15 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'sting-grid_open_x_0', beat: 'open', lines: [
-    'Sting Grid: This altitude has our name on the deed. Your neck is trespassing. They stuck us on the wires and told drones not to climb. Everybody climbs. Every single one. You\'re already waving. We can tell.',
-    'Sting Grid: Before we start — we\'re not a swarm. We\'re Airspace Enforcement. People walk by, look up, say "just passing through," and leave. We have been filing a long time. Tonight somebody gets denied permanently.',
+    'Sting Grid: This altitude has our name on the deed. Your neck is trespassing. They stuck us on the wires and told drones not to climb. Everybody climbs. Every single one. You are already waving. We can tell.',
+    'Sting Grid: Before we start — we\'re not a swarm. We are Airspace Enforcement. People walk by, look up, say "just passing through," and leave. We have been filing a long time. Tonight somebody gets denied permanently.',
   ], weight: 2 },
   { id: 'sting-grid_open_x_1', beat: 'open', lines: [
     'Sting Grid: This altitude has our name on the deed. Necks that wander get filed in welts.',
     'Sting Grid: Soft targets. Open sky. Unauthorized climbs. Duck is still free.',
   ], weight: 2 },
   { id: 'sting-grid_open_0', beat: 'open', lines: [
-    'Sting Grid: This altitude hums our name. Your neck climbed without asking. Duck once for manners. Duck twice because the buzz doesn\'t file warnings forever.',
+    'Sting Grid: This altitude hums our name. Your neck climbed without asking. Duck once for manners. Duck twice because the buzz does not file warnings forever.',
     'Sting Grid: We sting the way a deed enforces itself — loud, in triplicate, and aimed at whatever waved first. Look up. Then apologize to the wires.',
   ], weight: 2 },
   { id: 'sting-grid_open_1', beat: 'open', lines: [
@@ -25,11 +25,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'sting-grid_open_2', beat: 'open', lines: [
     'Sting Grid: Look up if you came to gawk. If you came to climb, the ground is still hiring.',
-    'Sting Grid: Wasp jokes don\'t clear airspace. Wave once, then duck.',
+    'Sting Grid: Wasp jokes do not clear airspace. Wave once, then duck.',
   ], weight: 1 },
   { id: 'sting-grid_open_3', beat: 'open', lines: [
-    'Sting Grid: Quiet truth: we love the hum of wires more than the sting. You\'re on the deed until you aren\'t.',
-    'Sting Grid: If you\'re careful with altitude, prove it. If not — at least trespass interesting.',
+    'Sting Grid: Quiet truth: we love the hum of wires more than the sting. You are on the deed until you aren\'t.',
+    'Sting Grid: If you are careful with altitude, prove it. If not — at least trespass interesting.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'sting-grid_hhit_4', beat: 'hunter_hit', lines: [
@@ -84,8 +84,8 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Chemistry at altitude. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'sting-grid_kit_holy-water_16', beat: 'kit', lines: [
-    'Sting Grid: Holy water. Cute. We\'re permits, not undead.',
-    'Sting Grid: Blessings don\'t void a deed. Just wet the buzz.',
+    'Sting Grid: Holy water. Cute. We are permits, not undead.',
+    'Sting Grid: Blessings do not void a deed. Just wet the buzz.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'sting-grid_kit_smokestick_17', beat: 'kit', lines: [
     'Sting Grid: Smoke. We hear necks through haze.',
@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Greased the altitude. We still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sting-grid_kit_gen_22', beat: 'kit', lines: [
-    'Sting Grid: Bag rummage won\'t clear your permit. We\'re here.',
+    'Sting Grid: Bag rummage will not clear your permit. We are here.',
     'Sting Grid: Digging mid-air? Duck. Welts do not wait for props.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sting-grid_kit_ran_23', beat: 'kit', lines: [
@@ -117,16 +117,16 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'sting-grid_mhit_24', beat: 'monster_hit', lines: [
-    'Sting Grid: That\'s for the unread deed.',
+    'Sting Grid: That is for the unread deed.',
     'Sting Grid: Permit denied. You asked.',
   ] },
   { id: 'sting-grid_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Sting Grid: We\'re leaking. You\'re bleeding. Buzz wins.',
+    'Sting Grid: We are leaking. You are bleeding. Buzz wins.',
     'Sting Grid: Scraped. Sharpest filing in the air is still ours.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'sting-grid_mmiss_26', beat: 'monster_miss', lines: [
     'Sting Grid: Missed. Enjoy the clearance while it lasts.',
-    'Sting Grid: Close call. Don\'t brand yourself on it.',
+    'Sting Grid: Close call. Do not brand yourself on it.',
   ] },
 
   { id: 'sting-grid_w_wind_27', beat: 'wound', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sting-grid_chase2_34', beat: 'chase', lines: [
     'Sting Grid: Second chase. Airspace\'s ours.',
-    'Sting Grid: Run again and we\'ll think you like the permit. Don\'t.',
+    'Sting Grid: Run again and we will think you like the permit. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'sting-grid_close_35', beat: 'close', lines: [
     'Sting Grid: Back. Miss the buzz?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Jogging as strategy. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sting-grid_vic_crit_40', beat: 'victory', lines: [
-    'Sting Grid: You cut through the hum. Fight\'s over. We\'ll give you that.',
+    'Sting Grid: You cut through the hum. Fight\'s over. We will give you that.',
     'Sting Grid: Found the soft permit and finished. No deed left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sting-grid_vic_net_41', beat: 'victory', lines: [
@@ -194,7 +194,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'sting-grid_def_42', beat: 'defeat', lines: [
     'Sting Grid: Filing closed. You lose. Deed stays.',
-    'Sting Grid: Down. Grid wins. Don\'t bleed on the altitude.',
+    'Sting Grid: Down. Grid wins. Do not bleed on the altitude.',
   ] },
   { id: 'sting-grid_def_crit_43', beat: 'defeat', lines: [
     'Sting Grid: Hit hard. Still lost. Talent without follow-through.',

@@ -8,15 +8,15 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'scale-crew_open_x_0', beat: 'open', lines: [
-    'Scale Crew: Kneepads suggested! Boss! BOSS— oh wait that\'s the plate. Hi. Tall enough to trigger things for us? Sign the waiver.',
+    'Scale Crew: Kneepads suggested! Boss! BOSS— oh wait that is the plate. Hi. Tall enough to trigger things for us? Sign the waiver.',
     'Scale Crew: Sweet of you to watch your step. Watching is the romance. Stepping is the lesson. Small bodies. Big springs.',
   ], weight: 2 },
   { id: 'scale-crew_open_x_1', beat: 'open', lines: [
-    'Scale Crew: We are small. The springs are not. We yell for the boss like a joke until the plate clicks and it isn\'t. Congrats — you\'re the test subject.',
-    'Scale Crew: Pack tactics. Slings. Unhealthy dragon fandom. Safety waivers. Boss! …still not here. Okay we\'ve got this. Probably.',
+    'Scale Crew: We are small. The springs are not. We yell for the boss like a joke until the plate clicks and it is not. Congrats — you are the test subject.',
+    'Scale Crew: Pack tactics. Slings. Unhealthy dragon fandom. Safety waivers. Boss! …still not here. Okay we have got this. Probably.',
   ], weight: 2 },
   { id: 'scale-crew_open_0', beat: 'open', lines: [
-    'Scale Crew: Trap Apprentices. Trap Wing. Watch your step — that\'s the whole romance. Sign the waiver with a smile; we yell for the boss either way.',
+    'Scale Crew: Trap Apprentices. Trap Wing. Watch your step — that is the whole romance. Sign the waiver with a smile; we yell for the boss either way.',
     'Scale Crew: Training hours. Smile for the spring. We practice on you. Kneepads still suggested.',
   ], weight: 2 },
   { id: 'scale-crew_open_1', beat: 'open', lines: [
@@ -24,16 +24,16 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Nervous bravado online. Punchline = the trap. Laugh later. Boss!',
   ], weight: 1 },
   { id: 'scale-crew_open_2', beat: 'open', lines: [
-    'Scale Crew: Don\'t flinch first. Flinches set off plates. Watch the plate.',
+    'Scale Crew: Do not flinch first. Flinches set off plates. Watch the plate.',
     'Scale Crew: Came to kick traps first? Leave. Came to fight? Watch the plate. Kneepads suggested.',
   ], weight: 1 },
   { id: 'scale-crew_open_3', beat: 'open', lines: [
     'Scale Crew: Quiet part: we yell Boss until our throats hurt. Then we fight anyway. Maybe he shows.',
-    'Scale Crew: Survive the click or don\'t. Boss! — we practice either way.',
+    'Scale Crew: Survive the click or do not. Boss! — we practice either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'scale-crew_hhit_4', beat: 'hunter_hit', lines: [
-    'Scale Crew: Ow. Kneepads didn\'t help. Boss! — still not here.',
+    'Scale Crew: Ow. Kneepads did not help. Boss! — still not here.',
     'Scale Crew: Noted in the drill log. Next sling comes uglier. Boss!',
   ] },
   { id: 'scale-crew_hhit_5', beat: 'hunter_hit', lines: [
@@ -41,8 +41,8 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: That cut stays. Apprenticeship archives cuts. Kneepads optional forever.',
   ] },
   { id: 'scale-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Scale Crew: We\'re dripping under the plate. You\'re still tall. Fix the tall one!',
-    'Scale Crew: Hurt and still drilling. That\'s apprenticeship. Boss!',
+    'Scale Crew: We are dripping under the plate. You are still tall. Fix the tall one!',
+    'Scale Crew: Hurt and still drilling. That is apprenticeship. Boss!',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'scale-crew_hmiss_7', beat: 'hunter_miss', lines: [
@@ -51,7 +51,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'scale-crew_hmiss_8', beat: 'hunter_miss', lines: [
     'Scale Crew: Missed. Being small is the whole punchline. Plate click!',
-    'Scale Crew: Swing like Trap Wing owes you a spring — it doesn\'t. Boss!',
+    'Scale Crew: Swing like Trap Wing owes you a spring — it does not. Boss!',
   ] },
 
   { id: 'scale-crew_hcrit_9', beat: 'hunter_crit', lines: [
@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'scale-crew_kit_caltrops_14', beat: 'kit', lines: [
     'Scale Crew: You seeded caltrops in a trap wing. Irony: noted. Kneepads: suggested.',
-    'Scale Crew: Iron teeth. We invented floor spite. You\'re late to the joke. Boss!',
+    'Scale Crew: Iron teeth. We invented floor spite. You are late to the joke. Boss!',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'scale-crew_kit_acid-vial_15', beat: 'kit', lines: [
     'Scale Crew: Acid mid-drill. Your face is the spill. Still unpaid.',
@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Grease on the springs. Still spring. Boss!',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scale-crew_kit_gen_22', beat: 'kit', lines: [
-    'Scale Crew: Rummaging won\'t pause the plate. We\'re right here.',
-    'Scale Crew: Unauthorized training tools. We\'re answering in bruises. Boss!',
+    'Scale Crew: Rummaging will not pause the plate. We are right here.',
+    'Scale Crew: Unauthorized training tools. We are answering in bruises. Boss!',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scale-crew_kit_ran_23', beat: 'kit', lines: [
     'Scale Crew: You ran, then rummaged. Tall cowardice with training toys.',
@@ -117,33 +117,33 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'scale-crew_mhit_24', beat: 'monster_hit', lines: [
-    'Scale Crew: That\'s for the unread waivers and the plate you ignored.',
+    'Scale Crew: That is for the unread waivers and the plate you ignored.',
     'Scale Crew: Sling landed. You asked for it. Boss!',
   ] },
   { id: 'scale-crew_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Scale Crew: We\'re hurt. You\'re hurt more. Fair trade for unpaid apprentices.',
+    'Scale Crew: We are hurt. You are hurt more. Fair trade for unpaid apprentices.',
     'Scale Crew: Dripping and still landing. Apprenticeship talks. Boss!',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'scale-crew_mmiss_26', beat: 'monster_miss', lines: [
     'Scale Crew: Missed. Enjoy the gap. Plate\'s still listening.',
-    'Scale Crew: Close call. Don\'t build nervous bravado on it. Boss!',
+    'Scale Crew: Close call. Do not build nervous bravado on it. Boss!',
   ] },
 
   { id: 'scale-crew_w_wind_27', beat: 'wound', lines: [
-    'Scale Crew: Nicked the kneepad. Don\'t frame it.',
+    'Scale Crew: Nicked the kneepad. Do not frame it.',
     'Scale Crew: Barely a click. Upgrade the intent — or the sling.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'scale-crew_w_bru_28', beat: 'wound', lines: [
     'Scale Crew: Bruise under the pad. Keep painting.',
-    'Scale Crew: Mid-drill damage. Persistent — like a plate that won\'t quit clicking.',
+    'Scale Crew: Mid-drill damage. Persistent — like a plate that will not quit clicking.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'scale-crew_w_bld_29', beat: 'wound', lines: [
-    'Scale Crew: Okay. We\'re dripping. Kneepads still suggested.',
+    'Scale Crew: Okay. We are dripping. Kneepads still suggested.',
     'Scale Crew: Hurt bad and standing. Finish it or become a training dummy on Trap Wing. Boss!',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'scale-crew_w_heart_30', beat: 'wound', lines: [
     'Scale Crew: That one hit the soft fear under the bravado. Boss would hate this.',
-    'Scale Crew: Don\'t look at us like that while you\'re winning. Pity voids the waiver.',
+    'Scale Crew: Do not look at us like that while you are winning. Pity voids the waiver.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   { id: 'scale-crew_run_31', beat: 'run', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'scale-crew_chase2_34', beat: 'chase', lines: [
     'Scale Crew: Second chase. Boss! — chase protocol still unpaid.',
-    'Scale Crew: Sprint again and we\'ll assume you\'re volunteering for the next spring. Boss!',
+    'Scale Crew: Sprint again and we will assume you are volunteering for the next spring. Boss!',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'scale-crew_close_35', beat: 'close', lines: [
     'Scale Crew: Back in range. Miss the click?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: You made unpaid apprentices chase you. Springs hate cardio. Boss! — still not here.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'scale-crew_vic_crit_40', beat: 'victory', lines: [
-    'Scale Crew: You cut through the plate. Fight\'s over. We\'ll give you that.',
+    'Scale Crew: You cut through the plate. Fight\'s over. We will give you that.',
     'Scale Crew: You found the soft padding and finished the drill. Training failed. Boss still not here.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scale-crew_vic_net_41', beat: 'victory', lines: [

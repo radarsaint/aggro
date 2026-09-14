@@ -8,8 +8,8 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'cinder-crew_open_x_0', beat: 'open', lines: [
-    'Cinder Crew: Seen. Ignited. We are a group chat that lights up on read. They stuck us in the boiler and told people not to breathe near us. Everybody breathes. Every single one. You\'re already typing. We can tell.',
-    'Cinder Crew: Before we start — we\'re not a campfire. We\'re Facilities Fire. People walk by, mute the thread, say "just looking," and leave. We have been unread a long time. Tonight somebody RSVPs oxygen.',
+    'Cinder Crew: Seen. Ignited. We are a group chat that lights up on read. They stuck us in the boiler and told people not to breathe near us. Everybody breathes. Every single one. You are already typing. We can tell.',
+    'Cinder Crew: Before we start — we\'re not a campfire. We are Facilities Fire. People walk by, mute the thread, say "just looking," and leave. We have been unread a long time. Tonight somebody RSVPs oxygen.',
   ], weight: 2 },
   { id: 'cinder-crew_open_x_1', beat: 'open', lines: [
     'Cinder Crew: Seen, then ignited. Foam is Facilities gossip. Breathe for us.',
@@ -28,8 +28,8 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Just-a-spark jokes belong in training. We ignite on read.',
   ], weight: 1 },
   { id: 'cinder-crew_open_3', beat: 'open', lines: [
-    'Cinder Crew: Quiet truth: oxygen is our love language. You\'re in the thread until you mute forever.',
-    'Cinder Crew: If you\'re careful with air, prove it. If not — at least burn interesting.',
+    'Cinder Crew: Quiet truth: oxygen is our love language. You are in the thread until you mute forever.',
+    'Cinder Crew: If you are careful with air, prove it. If not — at least burn interesting.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'cinder-crew_hhit_4', beat: 'hunter_hit', lines: [
@@ -42,7 +42,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Cinder Crew: Spark took a nick. Thread still glows. Mute did nothing.',
-    'Cinder Crew: We\'re leaking and the read receipt is still on. Mute made it worse.',
+    'Cinder Crew: We are leaking and the read receipt is still on. Mute made it worse.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'cinder-crew_hmiss_7', beat: 'hunter_miss', lines: [
@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'cinder-crew_kit_holy-water_16', beat: 'kit', lines: [
     'Cinder Crew: Holy water. Cute. Foam is still a rumor.',
-    'Cinder Crew: Blessings don\'t mute us. Just wet the spark.',
+    'Cinder Crew: Blessings do not mute us. Just wet the spark.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'cinder-crew_kit_smokestick_17', beat: 'kit', lines: [
     'Cinder Crew: Smoke. We are the haze.',
@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Greased Facilities. We still ignite clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: [
-    'Cinder Crew: Bag rummage won\'t kill the thread. We\'re Seen.',
+    'Cinder Crew: Bag rummage will not kill the thread. We are Seen.',
     'Cinder Crew: Props mid-thread? Ignite anyway. Foam is still a rumor.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
@@ -117,16 +117,16 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'cinder-crew_mhit_24', beat: 'monster_hit', lines: [
-    'Cinder Crew: That\'s for the unread receipts.',
+    'Cinder Crew: That is for the unread receipts.',
     'Cinder Crew: Seen. Ignited. You asked.',
   ] },
   { id: 'cinder-crew_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Cinder Crew: We\'re leaking. You\'re bleeding. Heat wins.',
+    'Cinder Crew: We are leaking. You are bleeding. Heat wins.',
     'Cinder Crew: Scraped. Hottest ping in the chat is still us.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'cinder-crew_mmiss_26', beat: 'monster_miss', lines: [
     'Cinder Crew: Missed. Enjoy the mute while it lasts.',
-    'Cinder Crew: Close call. Don\'t brand yourself on it.',
+    'Cinder Crew: Close call. Do not brand yourself on it.',
   ] },
 
   { id: 'cinder-crew_w_wind_27', beat: 'wound', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'cinder-crew_chase2_34', beat: 'chase', lines: [
     'Cinder Crew: Second chase. Thread\'s ours.',
-    'Cinder Crew: Run again and we\'ll think you like the spark. Don\'t.',
+    'Cinder Crew: Run again and we will think you like the spark. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'cinder-crew_close_35', beat: 'close', lines: [
     'Cinder Crew: Back. Miss the heat?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Jogging as strategy. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'cinder-crew_vic_crit_40', beat: 'victory', lines: [
-    'Cinder Crew: You cut through the spark. Fight\'s over. We\'ll give you that.',
+    'Cinder Crew: You cut through the spark. Fight\'s over. We will give you that.',
     'Cinder Crew: Found the soft ping and finished. No thread left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [
@@ -194,7 +194,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'cinder-crew_def_42', beat: 'defeat', lines: [
     'Cinder Crew: Thread closed. You lose. We stay hot.',
-    'Cinder Crew: Down. Crew wins. Don\'t bleed on Facilities.',
+    'Cinder Crew: Down. Crew wins. Do not bleed on Facilities.',
   ] },
   { id: 'cinder-crew_def_crit_43', beat: 'defeat', lines: [
     'Cinder Crew: Hit hard. Still lost. Talent without follow-through.',

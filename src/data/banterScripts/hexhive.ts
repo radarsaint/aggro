@@ -11,14 +11,14 @@ export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'hexhive_open_x_0', beat: 'open', lines: [
     'Hexhive: We live in the itch under your collar. Coolant shafts. Warm host. Have you tried screaming? Reboot twice if it comforts you — we crawl either way.',
-    'Hexhive: Hey. Yeah, we talk. The swarm won\'t leave until you do. Heat breached. Bites escalated. We live in the warmth either way.',
+    'Hexhive: Hey. Yeah, we talk. The swarm will not leave until you do. Heat breached. Bites escalated. We live in the warmth either way.',
   ], weight: 2 },
   { id: 'hexhive_open_x_1', beat: 'open', lines: [
     'Hexhive: We are tickets with legs — itch first, crawl second, host when we can. Feel that buzz in your teeth?',
     'Hexhive: Reboot will not help. Warm hosts and damp corners will. Soft hearts make easy nests.',
   ], weight: 2 },
   { id: 'hexhive_open_0', beat: 'open', lines: [
-    'Hexhive: We are the swarm in the shafts. Infestation whispered. Assigned to your skin. Come itchy or don\'t come.',
+    'Hexhive: We are the swarm in the shafts. Infestation whispered. Assigned to your skin. Come itchy or do not come.',
     'Hexhive: "Have you tried turning it off." Yes. We turned you on. Warm hearts — we can live inside those.',
   ], weight: 2 },
   { id: 'hexhive_open_1', beat: 'open', lines: [
@@ -30,8 +30,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Skip the have-you-tried speech. Scream if you need to. We crawl either way.',
   ], weight: 1 },
   { id: 'hexhive_open_3', beat: 'open', lines: [
-    'Hexhive: Nobody else closes a swarm with teeth. That\'s why we tally hosts. You\'re on the crawl.',
-    'Hexhive: Maybe you\'ll itch honest. Probably not. Buzz loud when you lose either way.',
+    'Hexhive: Nobody else closes a swarm with teeth. That is why we tally hosts. You are on the crawl.',
+    'Hexhive: Maybe you will itch honest. Probably not. Buzz loud when you lose either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -44,8 +44,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Heat does not clock out. Neither do we.',
   ] },
   { id: 'hexhive_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Hexhive: We\'re leaking. You\'re still soft. Squash one. Or keep itching.',
-    'Hexhive: Beat up and still crawling. That\'s the swarm talking.',
+    'Hexhive: We are leaking. You are still soft. Squash one. Or keep itching.',
+    'Hexhive: Beat up and still crawling. That is the swarm talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -94,7 +94,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Church juice. Swarm hates the wet more than the prayer.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'hexhive_kit_smokestick_17', beat: 'kit', lines: [
-    'Hexhive: Smoke won\'t hide heat. We track by itch. Keep breathing.',
+    'Hexhive: Smoke will not hide heat. We track by itch. Keep breathing.',
     'Hexhive: Hide mid-crawl? Shaft seeking has a thousand legs and no mercy.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'hexhive_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -125,14 +125,14 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'hexhive_mhit_24', beat: 'monster_hit', lines: [
     'Hexhive: Matched. Bite landed. Swarm feeds.',
-    'Hexhive: That\'s for standing in the heat like you belonged here.',
+    'Hexhive: That is for standing in the heat like you belonged here.',
   ] },
   { id: 'hexhive_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Hexhive: We\'re leaking. You\'re worse. The crawl calls that even.',
+    'Hexhive: We are leaking. You are worse. The crawl calls that even.',
     'Hexhive: Beat up and still biting. Buzz talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'hexhive_mmiss_26', beat: 'monster_miss', lines: [
-    'Hexhive: Missed. Enjoy it. We\'re still circling.',
+    'Hexhive: Missed. Enjoy it. We are still circling.',
     'Hexhive: Close one. Patience expires when the heat bleeds out.',
   ] },
 
@@ -143,21 +143,21 @@ export const nodes: ScriptNode[] = [
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'hexhive_w_bru_28', beat: 'wound', lines: [
     'Hexhive: Color under the buzz. Keep the heat.',
-    'Hexhive: Deep scratch. Persistent — like an itch that won\'t quit.',
+    'Hexhive: Deep scratch. Persistent — like an itch that will not quit.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'hexhive_w_bld_29', beat: 'wound', lines: [
-    'Hexhive: Okay. We\'re leaking. You\'re still soft. Finish it or keep crawling with us.',
+    'Hexhive: Okay. We are leaking. You are still soft. Finish it or keep crawling with us.',
     'Hexhive: Beat up and standing. Still under your collar. Still hungry.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'hexhive_w_heart_30', beat: 'wound', lines: [
     'Hexhive: That landed on something soft we weren\'t advertising in the shafts.',
-    'Hexhive: Don\'t look at us like that while you\'re winning. It\'s rude. It\'s host energy.',
+    'Hexhive: Do not look at us like that while you are winning. It is rude. It is host energy.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'hexhive_run_31', beat: 'run', lines: [
     'Hexhive: You ran from a swarm? Legs follow. Heat neither pauses.',
-    'Hexhive: Leaving mid-crawl? We don\'t pause. Itch neither.',
+    'Hexhive: Leaving mid-crawl? We do not pause. Itch neither.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'hexhive_run2_32', beat: 'run', lines: [
     'Hexhive: Twice. You ran twice. Flee with cardio. Soft.',
@@ -168,8 +168,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: You wanted distance. We wanted the heat. Guess who still arrives.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'hexhive_chase2_34', beat: 'chase', lines: [
-    'Hexhive: Second chase. You don\'t get the shafts. We do.',
-    'Hexhive: Run again and we\'ll think you like the buzz. Don\'t.',
+    'Hexhive: Second chase. You do not get the shafts. We do.',
+    'Hexhive: Run again and we will think you like the buzz. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'hexhive_close_35', beat: 'close', lines: [
     'Hexhive: Back. Miss the itch?',

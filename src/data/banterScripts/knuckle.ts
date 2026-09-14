@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Talk hallway. Smash door. Pick.',
   ], weight: 2 },
   { id: 'knuckle_open_x_1', beat: 'open', lines: [
-    'Knuckle: Words waste time. Axes don\'t.',
+    'Knuckle: Words waste time. Axes do not.',
     'Knuckle: You look smashable. Prove wrong.',
   ], weight: 2 },
   { id: 'knuckle_open_0', beat: 'open', lines: [
@@ -25,7 +25,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hit back. Briefly. Then done.',
   ], weight: 1 },
   { id: 'knuckle_open_2', beat: 'open', lines: [
-    'Knuckle: Don\'t flinch. Smash anyway.',
+    'Knuckle: Do not flinch. Smash anyway.',
     'Knuckle: Loading Bay. Ticket. Closed.',
   ], weight: 1 },
   { id: 'knuckle_open_3', beat: 'open', lines: [
@@ -124,7 +124,7 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'knuckle_mhit_24', beat: 'monster_hit', lines: [
     'Knuckle: Landed. Door closed.',
-    'Knuckle: That\'s the smash.',
+    'Knuckle: That is the smash.',
   ] },
   { id: 'knuckle_mhit_bld_25', beat: 'monster_hit', lines: [
     'Knuckle: Hurt. Still hit.',
