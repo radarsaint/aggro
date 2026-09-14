@@ -154,12 +154,12 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: ${name}. Hit your number or become the echo under the underpass.`,
     ],
     hexhive: [
-      `${creature.name}: Priority P1 under your skin. Patch notes arrive as bites. Have you tried screaming?`,
-      `${creature.name}: Ticket won't close until you do. SLA breached. Reboot twice if it comforts you — we live in the heat either way.`,
-      `${creature.name}: Warm hosts, damp corners, firewalls that apologize, tickets that never close. Come itchy.`,
-      `${creature.name}: Feel that buzz in your teeth? We move at crawl speed, and the infestation ticket just got assigned to you.`,
-      `${creature.name}: "Have you tried turning it off." Yes. We turned you on. Priority P1.`,
-      `${creature.name}: ${name} — reopen, escalate, thrash. SLA already missed. We're the heat.`,
+      `${creature.name}: Something itchy is nesting under your skin. Our bites arrive like bad news. Have you tried screaming?`,
+      `${creature.name}: This infestation will not close until you do. Heat breached. Reboot twice if it comforts you — we live in the shafts either way.`,
+      `${creature.name}: Warm hosts, damp corners, walls that apologize, infestations that never close. Come itchy.`,
+      `${creature.name}: Feel that buzz in your teeth? We move at crawl speed, and the infestation just got your name.`,
+      `${creature.name}: "Have you tried turning it off." Yes. We turned you on. Soft hearts welcome us.`,
+      `${creature.name}: ${name} — reopen, escalate, thrash. The heat already missed its patience. We're what's left.`,
     ],
     'scrap-mob': [
       `${creature.name}: Patches kept a ledger. We keep a picket. Cross the line. Learn collective. Knives included.`,
