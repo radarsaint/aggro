@@ -482,6 +482,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
         reward: { ...reward, claimed: false },
       };
       // Gate 2 teeth: reweight Discover mid-run so climb heats up after each win
+      // Gate 1 drink: unlock only on first fight win of the night
+      const firstFight = !(s.firstFightResolvedTonight ?? false);
       return {
         ...upsertMatch(s, updated),
         hunter: {
@@ -490,10 +492,21 @@ export function GameProvider({ children }: { children: ReactNode }) {
           verified,
         },
         deckOrder: shuffleDeckByProgress(fightsCompleted),
+        ...(firstFight
+          ? { drinkUnlockedTonight: true, firstFightResolvedTonight: true }
+          : {}),
       };
     }
+    // Loss: mark first fight resolved so later wins cannot unlock the drink
+    const firstFight = !(s.firstFightResolvedTonight ?? false);
     const updated: Match = { ...match, status: 'lost' };
-    return upsertMatch(s, updated);
+    const base = upsertMatch(s, updated);
+    if (!firstFight) return base;
+    return {
+      ...base,
+      drinkUnlockedTonight: false,
+      firstFightResolvedTonight: true,
+    };
   }, []);
 
   const doHunterAttack = useCallback(
@@ -667,6 +680,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
       ...s,
       matchesTonight: MATCHES_PER_NIGHT,
       shortRestsUsedTonight: 0,
+      drinkUnlockedTonight: false,
+      firstFightResolvedTonight: false,
       // Gate 2 teeth: progress-weighted reshuffle on new night
       deckOrder: shuffleDeckByProgress(s.hunter.fightsCompleted ?? 0),
     }));
@@ -674,6 +689,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const shortRest = useCallback(() => {
     setState((s) => {
+      // Gate 1: drink only after first-fight win unlock + once/night + not at full slate
+      if (!(s.drinkUnlockedTonight ?? false)) return s;
       const used = s.shortRestsUsedTonight ?? 0;
       if (used >= SHORT_RESTS_PER_NIGHT) return s;
       const matches = s.matchesTonight ?? 0;
@@ -695,6 +712,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
       activeThemeId: DEFAULT_THEME_ID,
       matchesTonight: MATCHES_PER_NIGHT,
       shortRestsUsedTonight: 0,
+      drinkUnlockedTonight: false,
+      firstFightResolvedTonight: false,
     };
     setState(fresh);
   }, []);
