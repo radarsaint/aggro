@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Iron jaws for lounge prey. I invent commitment with a latch.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'bleed-static_kit_net_19', beat: 'kit', lines: [
-    'Bleed Static: You put a net on a sipper. That is not romance. That is rude.',
+    'Bleed Static: Sip interrupted. Romance this is not.',
     'Bleed Static: Latch jammed shut. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'bleed-static_kit_healing-potion_20', beat: 'kit', lines: [
@@ -173,19 +173,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'bleed-static_vic_37', beat: 'victory', lines: [
-    'Bleed Static: You won. Keep the pulse. Leave the swatter. I still know the skip. Forever starts quiet.',
+    'Bleed Static: Latch opens for you. Leave the swatter. I still know the skip.',
     'Bleed Static: Fine. Take it. Latch ruined. Hum still on. Worst date of your life.',
   ], weight: 1 },
   { id: 'bleed-static_vic_heal_38', beat: 'victory', lines: [
-    'Bleed Static: You drank a potion and still beat me. Soft vintage. Almost respectable.',
+    'Bleed Static: Flask mid-sip, then you detached. Soft vintage. Almost respectable.',
     'Bleed Static: Flask, then you detached like an adult. I already tasted the receipt.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'bleed-static_vic_kite_39', beat: 'victory', lines: [
-    'Bleed Static: You made me chase you mid-sip, then finished it. That is not a win. That is rude.',
+    'Bleed Static: You made me chase you mid-sip, then finished it. Vintage files that under betrayal.',
     'Bleed Static: You made intimacy jog. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'bleed-static_vic_crit_40', beat: 'victory', lines: [
-    'Bleed Static: You cut through the latch. Fight\'s over. I will give you that.',
+    'Bleed Static: Latch splits. Vintage ends. I will give you that.',
     'Bleed Static: You found the soft place and finished it. The latch remembers. Forever starts quiet.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'bleed-static_vic_net_41', beat: 'victory', lines: [

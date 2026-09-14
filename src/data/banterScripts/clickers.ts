@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Iron jaws for Roof Vents prey. Adorable. Wrong altitude.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'clickers_kit_net_19', beat: 'kit', lines: [
-    'Clickers: You put a net on hospitality. Commitment issues with holes.',
+    'Clickers: Night shift trapped between tables. Tip: still theoretical. *click*',
     'Clickers: Service pauses ugly. *click* Tip still theoretical.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'clickers_kit_healing-potion_20', beat: 'kit', lines: [
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'clickers_vic_37', beat: 'victory', lines: [
-    'Clickers: You won. Keep the tip. Leave the scream. The roost remembers non-tippers. *click*',
+    'Clickers: Table closed. Leave the scream. Roost remembers non-tippers. *click*',
     'Clickers: Fine. Take it. Service closed. Tip: forever zero. Worst table of your life.',
   ], weight: 1 },
   { id: 'clickers_vic_heal_38', beat: 'victory', lines: [

@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Jaws for something that waits underwater. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'silt-knives_kit_net_19', beat: 'kit', lines: [
-    'Silt Knives: Net in blackwater. Guest list ruined. Rude.',
+    'Silt Knives: Blackwater ruined by a toy. Guest list gets mean.',
     'Silt Knives: Knives still warm under the trap.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'silt-knives_kit_healing-potion_20', beat: 'kit', lines: [
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'silt-knives_vic_37', beat: 'victory', lines: [
-    'Silt Knives: You won. Mark us damaged. Tell them Blackwater fought.',
+    'Silt Knives: Guest list closed. Tell them Blackwater fought.',
     'Silt Knives: Fine. Take it. Murk ruined. Worst swim of your life.',
   ], weight: 1 },
   { id: 'silt-knives_vic_heal_38', beat: 'victory', lines: [
-    'Silt Knives: Potioned up and still beat the silt. Ugly win. Almost respect.',
+    'Silt Knives: Topped off, then cleared blackwater. Ugly win. List notes it.',
     'Silt Knives: Topped off, then finished the list. Preferred guest energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'silt-knives_vic_kite_39', beat: 'victory', lines: [
     'Silt Knives: Made us chase our own water, then finished. Rude win.',
-    'Silt Knives: Jogging as strategy. Hate that it worked.',
+    'Silt Knives: You turned blackwater into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'silt-knives_vic_crit_40', beat: 'victory', lines: [
-    'Silt Knives: You cut through the murk. Fight\'s over. We will give you that.',
+    'Silt Knives: Murk splits. List ends. We will give you that.',
     'Silt Knives: Found the soft silt and finished. No name left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [

@@ -102,8 +102,8 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Jaws for a broadcast ghost. Adorable. Still live.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sister-static_kit_net_19', beat: 'kit', lines: [
-    'Sister Static: Net on the DJ. Call-ins love a trapped host.',
-    'Sister Static: Bagged and still live. Stop the bit.',
+    'Sister Static: Host trapped live. Call-ins are losing their minds.',
+    'Sister Static: Snagged and still live. Stop the bit.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sister-static_kit_healing-potion_20', beat: 'kit', lines: [
     'Sister Static: Mid-broadcast sip. Planning to stay tuned?',
@@ -182,19 +182,19 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'sister-static_vic_37', beat: 'victory', lines: [
-    'Sister Static: You won. Mark me off-air. Tell them Channel 7 fought.',
+    'Sister Static: Segment dead. Tell them Channel 7 fought.',
     'Sister Static: Fine. Take it. Gloss ruined. Signal still humming.',
   ], weight: 1 },
   { id: 'sister-static_vic_heal_38', beat: 'victory', lines: [
-    'Sister Static: Potioned up and still beat the host. Ugly win. Almost respect.',
+    'Sister Static: Topped off, then killed the segment. Ugly win. Ratings confused.',
     'Sister Static: Topped off, then signed me off. Preferred listener energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'sister-static_vic_kite_39', beat: 'victory', lines: [
     'Sister Static: Made me chase my own booth, then finished. Rude win.',
-    'Sister Static: Jogging as strategy. Hate that it worked.',
+    'Sister Static: You turned a segment into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sister-static_vic_crit_40', beat: 'victory', lines: [
-    'Sister Static: You cut through the gloss. Segment\'s over. I will give you that.',
+    'Sister Static: Gloss splits. Segment over. I will give you that.',
     'Sister Static: Found the weak meter under broadcast and finished. Signal dead. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sister-static_vic_net_41', beat: 'victory', lines: [

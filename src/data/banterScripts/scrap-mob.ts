@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: You caught one sibling. Line still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scrap-mob_kit_net_19', beat: 'kit', lines: [
-    'Scrap Mob: Local 666 in the net. Commitment with holes. We thrash in unison.',
-    'Scrap Mob: Strike line in the net. Panic joins the chant. Knives keep time.',
+    'Scrap Mob: Local 666 paused for your junk. Knives still find the gaps.',
+    'Scrap Mob: Strike line waits on junk. Chant gets louder, not softer.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
@@ -181,11 +181,11 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'scrap-mob_vic_37', beat: 'victory', lines: [
-    'Scrap Mob: You won. Take it. Leave the shinies. Leave the smug.',
+    'Scrap Mob: Picket breaks. Leave the shinies. Leave the smug.',
     'Scrap Mob: Fine. Local keeps a chant with your name scratched out.',
   ], weight: 1 },
   { id: 'scrap-mob_vic_heal_38', beat: 'victory', lines: [
-    'Scrap Mob: You drank a potion and still beat us. Almost preferred scab energy.',
+    'Scrap Mob: Flask mid-picket, then you broke the line. Almost preferred scab energy.',
     'Scrap Mob: Flask, then you broke the picket. Loud win. Quiet dump.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'scrap-mob_vic_kite_39', beat: 'victory', lines: [

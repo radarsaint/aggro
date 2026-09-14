@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Jaws for an invite that never left. Romance cancelled. The hold remains.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'rattlewire_kit_net_19', beat: 'kit', lines: [
-    'Rattlewire: Mesh like a soft hold with holes. Commitment: filed.',
+    'Rattlewire: Mesh like a soft hold. Commitment: filed. Click.',
     'Rattlewire: Appointment held. Panic noted. Declined forever. Click.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: [
@@ -181,7 +181,7 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'rattlewire_vic_37', beat: 'victory', lines: [
-    'Rattlewire: You won. Take it. Leave the posture standing.',
+    'Rattlewire: Appointment ends. Leave the posture standing. Click.',
     'Rattlewire: Fine. Calendar holds your name under Declined Forever. Click.',
   ], weight: 1 },
   { id: 'rattlewire_vic_heal_38', beat: 'victory', lines: [

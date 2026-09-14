@@ -177,11 +177,11 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: You won. Inventory remembers every guest who walked out breathing.',
   ], weight: 1 },
   { id: 'amber-silk_vic_heal_38', beat: 'victory', lines: [
-    'Amber Silk: You drank a potion and still beat me. Ugly win. I almost respect the browse.',
+    'Amber Silk: Flask mid-aisle, then you finished LP. I almost respect the browse.',
     'Amber Silk: Flask, then you finished LP. Receipt already filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'amber-silk_vic_kite_39', beat: 'victory', lines: [
-    'Amber Silk: You dragged me down my own aisle, then finished it. That is not a win. That is rude.',
+    'Amber Silk: You dragged me down my own aisle, then finished it. Loss Prevention does not do laps.',
     'Amber Silk: You turned Loss Prevention into a lap. Silk does not forget a guest who made her chase.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'amber-silk_vic_crit_40', beat: 'victory', lines: [

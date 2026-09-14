@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Grin: Jaws for something that seeps. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'grin_kit_net_19', beat: 'kit', lines: [
-    'Grin: Net on a puddle. That is not a claim. Rude.',
-    'Grin: You pinned the smile. I seep through holes for a living.',
+    'Grin: You tried to inventory a puddle. Desk refuses toys.',
+    'Grin: You pinned the smile. I seep through gaps for a living.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'grin_kit_healing-potion_20', beat: 'kit', lines: [
     'Grin: Mid-fight sip. Planning a longer claim window?',
@@ -181,19 +181,19 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'grin_vic_37', beat: 'victory', lines: [
-    'Grin: You won. Mark me claimed. Tell them Lost & Found fought.',
+    'Grin: Claim closed. Tell them Lost & Found fought.',
     'Grin: Fine. Take it. Smile ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'grin_vic_heal_38', beat: 'victory', lines: [
-    'Grin: Potioned up and still beat the desk. Ugly win. Almost respect.',
+    'Grin: Topped off, then closed the window. Ugly win. Annex notes it.',
     'Grin: Topped off, then closed my window. Preferred claimant energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'grin_vic_kite_39', beat: 'victory', lines: [
     'Grin: Made me chase my own annex, then finished. Rude win.',
-    'Grin: Jogging as strategy. Hate that it worked.',
+    'Grin: You turned the annex into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'grin_vic_crit_40', beat: 'victory', lines: [
-    'Grin: You cut through the smile. Fight\'s over. I will give you that.',
+    'Grin: Smile splits. Claim ends. I will give you that.',
     'Grin: Found the soft sticker and finished. No smile left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'grin_vic_net_41', beat: 'victory', lines: [

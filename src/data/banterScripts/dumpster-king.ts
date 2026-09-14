@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Bear-trap for royal prey. We step over it. Then We bite.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'dumpster-king_kit_net_19', beat: 'kit', lines: [
-    'Dumpster King: Net on majesty. A peasant petition full of holes.',
-    'Dumpster King: Crown in the net. Panic is your petition. Denied.',
+    'Dumpster King: Majesty does not accept toys. We are unamused.',
+    'Dumpster King: Crown stalled in peasant junk. Panic denied. Tribute still due.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'dumpster-king_kit_healing-potion_20', beat: 'kit', lines: [
     'Dumpster King: You drank courage from a bottle. Subjects who plan to live amuse Us.',
@@ -176,7 +176,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Fine. Take it. The crown remembers. The smell still rules.',
   ], weight: 1 },
   { id: 'dumpster-king_vic_heal_38', beat: 'victory', lines: [
-    'Dumpster King: You drank a potion and still toppled a throne. Soft usurper. Almost respectable.',
+    'Dumpster King: Flask first, crown second. Soft usurper. Almost respectable.',
     'Dumpster King: Bottle first, crown second. Tribute of cowardice accepted.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'dumpster-king_vic_kite_39', beat: 'victory', lines: [

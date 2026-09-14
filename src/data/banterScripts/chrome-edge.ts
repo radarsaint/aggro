@@ -105,7 +105,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You set jaws for something that does not touch the ground. That is adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'chrome-edge_kit_net_19', beat: 'kit', lines: [
-    'Chrome Edge: You put a net on a sword. That is not a sheath. That is rude.',
+    'Chrome Edge: Flying sword grounded by a toy. Sheaths are quieter.',
     'Chrome Edge: Hover dies ugly. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'chrome-edge_kit_healing-potion_20', beat: 'kit', lines: [
@@ -185,19 +185,19 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY (monologue-capable) ──
   { id: 'chrome-edge_vic_37', beat: 'victory', lines: [
-    'Chrome Edge: You won. Mark me damaged. Walk out. Tell them the floor model put up a fight.',
+    'Chrome Edge: Demo over. Walk out. Tell them the floor model put up a fight.',
     'Chrome Edge: Fine. Take it. Polish ruined. Lights still on. Worst browse of your life.',
   ], weight: 1 },
   { id: 'chrome-edge_vic_heal_38', beat: 'victory', lines: [
-    'Chrome Edge: You drank a potion and still beat me. Soft move. Ugly win. I almost respect it.',
+    'Chrome Edge: Flask mid-demo, then you finished me. Soft move. I almost respect it.',
     'Chrome Edge: Flask, then you finished the demo. Preferred customer. Voided warranty. Both fit you.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'chrome-edge_vic_kite_39', beat: 'victory', lines: [
-    'Chrome Edge: You made me chase you around my own aisle, then finished it. That is not a win. That is rude.',
+    'Chrome Edge: You made me chase you around my own aisle, then finished it. Floor models do not jog.',
     'Chrome Edge: You made me chase you, then won. Jogging as a plan. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'chrome-edge_vic_crit_40', beat: 'victory', lines: [
-    'Chrome Edge: You cut through the chrome. Fight\'s over. I will give you that.',
+    'Chrome Edge: Chrome splits. Demo ends. I will give you that.',
     'Chrome Edge: You found the weak steel and finished it. No polish left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'chrome-edge_vic_net_41', beat: 'victory', lines: [

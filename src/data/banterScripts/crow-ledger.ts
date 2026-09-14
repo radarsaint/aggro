@@ -97,8 +97,8 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: Iron jaws for Parking Spire prey. Adorable. Wrong altitude.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'crow-ledger_kit_net_19', beat: 'kit', lines: [
-    'Crow Ledger: Net on auditors. Ledger promise full of holes. Late fee applies.',
-    'Crow Ledger: Flock in the net. Panic lengthens the gossip trail.',
+    'Crow Ledger: Audit interrupted. Late fee still compounds.',
+    'Crow Ledger: Flock interrupted. Gossip trail just got longer.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'crow-ledger_kit_healing-potion_20', beat: 'kit', lines: [
     'Crow Ledger: Flask mid-audit. Soft delinquent. Interest still due.',
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'crow-ledger_vic_37', beat: 'victory', lines: [
-    'Crow Ledger: You won. Keep the books. Leave the gossip. The gossip trail outlives us. Net-30 closed.',
+    'Crow Ledger: Audit closed. Leave the gossip. Trail outlives us. Net-30 settled.',
     'Crow Ledger: Fine. Take it. Books closed. Gossip trail forever. Worst audit of your life.',
   ], weight: 1 },
   { id: 'crow-ledger_vic_heal_38', beat: 'victory', lines: [
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You made auditors chase you down the spire. Interest spiked. We still lost.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'crow-ledger_vic_crit_40', beat: 'victory', lines: [
-    'Crow Ledger: You cut through the railing. Fight\'s over. We will give you that.',
+    'Crow Ledger: Railing splits. Books close. We will give you that.',
     'Crow Ledger: You found the write-off and finished the audit. Books closed. Gossip trail forever.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'crow-ledger_vic_net_41', beat: 'victory', lines: [

@@ -94,7 +94,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patches_kit_net_19', beat: 'kit', lines: [
     'Patches: Temp returned sticky. Panic gets itemized.',
-    'Patches: Net on shoulders — sticky promise full of holes. Still billing.',
+    'Patches: Temp returned sticky and trapped. Still billing the panic.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patches_kit_healing-potion_20', beat: 'kit', lines: [
     'Patches: Mid-fight flask. Prey juicing the ledger like overtime — sticky and loud.',
@@ -177,11 +177,11 @@ export const nodes: ScriptNode[] = [
     'Patches: Fine. Temp status: over. Leave my ghost alone.',
   ], weight: 1 },
   { id: 'patches_vic_heal_38', beat: 'victory', lines: [
-    'Patches: You drank a potion and still beat me. Effective cowardice. I almost respect the receipt.',
+    'Patches: Flask mid-scavenge, then you billed me out. I almost respect the receipt.',
     'Patches: Potion win. Prey with a flask. Receipt filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'patches_vic_kite_39', beat: 'victory', lines: [
-    'Patches: You made me chase you around my own alcove, then finished it. That is not a win. That is rude.',
+    'Patches: You made me chase you around my own alcove, then finished it. Three centuries of dignity: voided.',
     'Patches: You made a scavenger jog. Three centuries of dumpster wisdom, undone by cardio. Resent forever.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'patches_vic_crit_40', beat: 'victory', lines: [

@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: You caught one bone. Formation still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'marrow-gang_kit_net_19', beat: 'kit', lines: [
-    'Marrow Gang: Net on formation. Drill promise full of holes. We thrash on the beat.',
-    'Marrow Gang: Drill Team in the net. Panic noted. Count continues.',
+    'Marrow Gang: Formation broken by a toy. Cadence keeps the beat anyway.',
+    'Marrow Gang: Drill Team paused ugly. Panic noted. Count continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
@@ -181,11 +181,11 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'marrow-gang_vic_37', beat: 'victory', lines: [
-    'Marrow Gang: You won. Take it. Leave the posture standing.',
+    'Marrow Gang: Muster ends. Leave the posture standing.',
     'Marrow Gang: Fine. Count holds your name under Deserter Forever.',
   ], weight: 1 },
   { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: [
-    'Marrow Gang: You drank a potion and still beat us. Almost punctual. Almost.',
+    'Marrow Gang: Flask mid-drill, then you broke muster. Almost punctual. Almost.',
     'Marrow Gang: Flask, then you ended muster. Late fee waived. Hold lost.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [

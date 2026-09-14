@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Jaws for something that ignites on read. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'cinder-crew_kit_net_19', beat: 'kit', lines: [
-    'Cinder Crew: Net on the crew. Thread ruined. Rude.',
-    'Cinder Crew: Bagged and still sparking through the mesh.',
+    'Cinder Crew: Chat muted mid-spark. Thread hates toys.',
+    'Cinder Crew: Trapped and still sparking. Mute did nothing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'cinder-crew_kit_healing-potion_20', beat: 'kit', lines: [
     'Cinder Crew: Mid-fight sip. Planning a longer thread?',
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'cinder-crew_vic_37', beat: 'victory', lines: [
-    'Cinder Crew: You won. Mark us damaged. Tell them the crew fought.',
+    'Cinder Crew: Thread dead. Tell them the crew fought.',
     'Cinder Crew: Fine. Take it. Spark ruined. Worst thread of your life.',
   ], weight: 1 },
   { id: 'cinder-crew_vic_heal_38', beat: 'victory', lines: [
-    'Cinder Crew: Potioned up and still beat the chat. Ugly win. Almost respect.',
+    'Cinder Crew: Topped off, then muted the thread. Ugly win. Chat notes it.',
     'Cinder Crew: Topped off, then finished the thread. Preferred lurker energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'cinder-crew_vic_kite_39', beat: 'victory', lines: [
     'Cinder Crew: Made us chase our own Facilities, then finished. Rude win.',
-    'Cinder Crew: Jogging as strategy. Hate that it worked.',
+    'Cinder Crew: You turned Facilities into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'cinder-crew_vic_crit_40', beat: 'victory', lines: [
-    'Cinder Crew: You cut through the spark. Fight\'s over. We will give you that.',
+    'Cinder Crew: Spark splits. Thread ends. We will give you that.',
     'Cinder Crew: Found the soft ping and finished. No thread left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [

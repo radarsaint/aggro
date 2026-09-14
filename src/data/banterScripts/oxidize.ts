@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Jaws for something that eats jaws. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'oxidize_kit_net_19', beat: 'kit', lines: [
-    'Oxidize: Net on dinner. That is not a plate. Rude.',
-    'Oxidize: Feelers thrash the netting. Metal still calls.',
+    'Oxidize: Dinner paused for a toy. Feelers call that rude.',
+    'Oxidize: Feelers tear at the netting. Metal still calls.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'oxidize_kit_healing-potion_20', beat: 'kit', lines: [
     'Oxidize: Mid-fight sip. Planning to keep your sword?',
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'oxidize_vic_37', beat: 'victory', lines: [
-    'Oxidize: You won. Mark me damaged. Tell them Clearance fought.',
+    'Oxidize: Dinner over. Tell them Clearance fought.',
     'Oxidize: Fine. Take it. Oxide ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'oxidize_vic_heal_38', beat: 'victory', lines: [
-    'Oxidize: Potioned up and still beat dinner. Ugly win. Almost respect.',
+    'Oxidize: Topped off, then finished dinner. Ugly win. Oxide notes it.',
     'Oxidize: Topped off, then finished the meal. Preferred customer energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'oxidize_vic_kite_39', beat: 'victory', lines: [
     'Oxidize: Made me chase my own aisle, then finished. Rude win.',
-    'Oxidize: Jogging as strategy. Hate that it worked.',
+    'Oxidize: You turned Clearance into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'oxidize_vic_crit_40', beat: 'victory', lines: [
-    'Oxidize: You cut through the flake. Fight\'s over. I will give you that.',
+    'Oxidize: Flake splits. Dinner ends. I will give you that.',
     'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [

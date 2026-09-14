@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Drool: You caught the dealmaker. Pact still open. Romance optional. Crisps mandatory.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drool_kit_net_19', beat: 'kit', lines: [
-    'Drool: Netted the cute. Commitment with holes — that is literally the fine print!',
+    'Drool: Netted the cute. Fine print already predicted this. Initial it!',
     'Drool: Bag me, flail, initial the flail. Win-win for someone.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drool_kit_healing-potion_20', beat: 'kit', lines: [
@@ -181,11 +181,11 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'drool_vic_37', beat: 'victory', lines: [
-    'Drool: You won. Take it. Leave the crisps. Leave the smug.',
+    'Drool: Pact closes. Leave the crisps. Leave the smug.',
     'Drool: Fine. The pact remembers — even when the cute forgets how.',
   ], weight: 1 },
   { id: 'drool_vic_heal_38', beat: 'victory', lines: [
-    'Drool: You drank a potion and still beat me. Soft client path. Snack debt unpaid.',
+    'Drool: Flask mid-pact, then you closed cute. Soft client path. Snack debt unpaid.',
     'Drool: Flask, then you closed me. Almost preferred-customer energy.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'drool_vic_kite_39', beat: 'victory', lines: [

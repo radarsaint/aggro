@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: Bear-trap: Quorum walks around it. Then bites.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patchwire_kit_net_19', beat: 'kit', lines: [
-    'Patchwire: Net on parliament. Motion full of holes.',
+    'Patchwire: Quorum trapped mid-vote. Motion tabled under Protest.',
     'Patchwire: Parliament netted. Panic goes in the minutes. Quorum still bites through.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patchwire_kit_healing-potion_20', beat: 'kit', lines: [
@@ -172,7 +172,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'patchwire_vic_37', beat: 'victory', lines: [
-    'Patchwire: You won. Keep the crumbs. Leave the leftovers. Parliament remembers what you owed.',
+    'Patchwire: Quorum dissolved. Leave the leftovers. Parliament remembers what you owed.',
     'Patchwire: Fine. Take it. Quorum dissolved. Whip count: zero. Worst lunch of your life.',
   ], weight: 1 },
   { id: 'patchwire_vic_heal_38', beat: 'victory', lines: [

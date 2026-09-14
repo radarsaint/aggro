@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Jaws for something that freezes you first. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'pose-soft_kit_net_19', beat: 'kit', lines: [
-    'Pose Soft: Net on the pose. Silhouette ruined. Rude.',
+    'Pose Soft: Forever ruined. Floorset is weeping.',
     'Pose Soft: Chin line ruined. Floorset notes weeping.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'pose-soft_kit_healing-potion_20', beat: 'kit', lines: [
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'pose-soft_vic_37', beat: 'victory', lines: [
-    'Pose Soft: You won. Mark me damaged. Tell them the mannequin fought.',
+    'Pose Soft: Floorset over. Tell them the mannequin fought.',
     'Pose Soft: Fine. Take it. Gloss ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'pose-soft_vic_heal_38', beat: 'victory', lines: [
-    'Pose Soft: Potioned up and still beat the look. Ugly win. Almost respect.',
+    'Pose Soft: Topped off, then dropped the chin. Ugly win. Gallery notes it.',
     'Pose Soft: Topped off, then finished the fitting. Preferred model energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'pose-soft_vic_kite_39', beat: 'victory', lines: [
     'Pose Soft: Made me chase my atelier, then finished. Rude win.',
-    'Pose Soft: Jogging as strategy. Hate that it worked.',
+    'Pose Soft: You turned the atelier into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'pose-soft_vic_crit_40', beat: 'victory', lines: [
-    'Pose Soft: You cut through the gloss. Fight\'s over. I will give you that.',
+    'Pose Soft: Gloss splits. Forever ends. I will give you that.',
     'Pose Soft: Found the soft pose and finished. No forever left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'pose-soft_vic_net_41', beat: 'victory', lines: [

@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Bear-trap for Trap Wing prey. Click. Adorable. We aren\'t. Boss!',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scale-crew_kit_net_19', beat: 'kit', lines: [
-    'Scale Crew: Net on apprentices. Training promise full of holes. Boss!',
+    'Scale Crew: Trap snapped on unpaid labor. Waiver voids itself. Boss!',
     'Scale Crew: Trap snapped on the apprentices. Sign the panic waiver. Boss! — still not here.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scale-crew_kit_healing-potion_20', beat: 'kit', lines: [
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: You made unpaid apprentices chase you. Springs hate cardio. Boss! — still not here.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'scale-crew_vic_crit_40', beat: 'victory', lines: [
-    'Scale Crew: You cut through the plate. Fight\'s over. We will give you that.',
+    'Scale Crew: Plate splits. Training fails. We will give you that.',
     'Scale Crew: You found the soft padding and finished the drill. Training failed. Boss still not here.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scale-crew_vic_net_41', beat: 'victory', lines: [

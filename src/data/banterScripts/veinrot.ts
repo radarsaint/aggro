@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Jaws for freezer prey. Cute idea. I thawed out of cute years ago.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'veinrot_kit_net_19', beat: 'kit', lines: [
-    'Veinrot: Net on cold shoulders. Lonely understands holes in a promise.',
-    'Veinrot: Held. If this is staying, say so. If not, thrash quieter.',
+    'Veinrot: You pinned the lonely one. Freezer notes the panic.',
+    'Veinrot: Held. If this is staying, say so. If not, panic quieter.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'veinrot_kit_healing-potion_20', beat: 'kit', lines: [
     'Veinrot: You drank up mid-fight. Planning to live? I prefer you rare and near.',
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Fine. The freezer will miss the company more than the fight.',
   ], weight: 1 },
   { id: 'veinrot_vic_heal_38', beat: 'victory', lines: [
-    'Veinrot: You drank a potion and still beat me. Soft path. Almost felt like staying.',
+    'Veinrot: Flask first, then you ended the quiet. Soft path. Almost felt like staying.',
     'Veinrot: You healed, then ended me. Optimistic heartbeat. Freezer notes both.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'veinrot_vic_kite_39', beat: 'victory', lines: [
@@ -193,7 +193,7 @@ export const nodes: ScriptNode[] = [
     'Veinrot: You turned the slow one into a lap. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'veinrot_vic_crit_40', beat: 'victory', lines: [
-    'Veinrot: You cut through the frost. Soft under the name tag. Fight\'s over.',
+    'Veinrot: Frost splits. Soft under the name tag. Fight is over.',
     'Veinrot: Hard hit, then a quieter freezer. Leave a light on.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'veinrot_vic_net_41', beat: 'victory', lines: [

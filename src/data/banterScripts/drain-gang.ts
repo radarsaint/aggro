@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Bear-trap for Overflow Grate prey. Romance is dead. We aren\'t.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drain-gang_kit_net_19', beat: 'kit', lines: [
-    'Drain Gang: Net on franchisees. Fee promise full of holes. Royalty compounds.',
-    'Drain Gang: Franchise in the net. Your panic is the receipt. Territory still ours.',
+    'Drain Gang: Franchise interrupted. Royalty still compounds.',
+    'Drain Gang: Territory interrupted. Your panic is the receipt. Still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',
@@ -172,7 +172,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'drain-gang_vic_37', beat: 'victory', lines: [
-    'Drain Gang: You won. Keep the map. Leave the ankles. The map still has our name. Royalty forgiven — bitterly.',
+    'Drain Gang: Territory lost. Leave the ankles. Map still has our name. Royalty forgiven — bitterly.',
     'Drain Gang: Fine. Take it. Territory lost. Royalty forgiven — bitterly. Worst franchise visit of your life.',
   ], weight: 1 },
   { id: 'drain-gang_vic_heal_38', beat: 'victory', lines: [
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: You made landlords chase you around the overflow. We bill for jogging. Still lost.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'drain-gang_vic_crit_40', beat: 'victory', lines: [
-    'Drain Gang: You cut through the grate. Fight\'s over. We will give you that.',
+    'Drain Gang: Grate splits. Fee ends. We will give you that.',
     'Drain Gang: You found the soft ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drain-gang_vic_net_41', beat: 'victory', lines: [

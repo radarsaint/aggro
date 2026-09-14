@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Jaws for jaws. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'laugh-track_kit_net_19', beat: 'kit', lines: [
-    'Laugh Track: Net on the track. Cue ruined. Rude.',
-    'Laugh Track: Bagged and laughing through the mesh anyway.',
+    'Laugh Track: Cue never lands because of your toy. Studio hates dead air.',
+    'Laugh Track: Trapped and still laughing. Audience is confused.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'laugh-track_kit_healing-potion_20', beat: 'kit', lines: [
     'Laugh Track: Mid-fight sip. Planning a longer episode?',
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'laugh-track_vic_37', beat: 'victory', lines: [
-    'Laugh Track: You won. Mark us damaged. Tell them the track fought.',
+    'Laugh Track: Track dead. Tell them the howl fought.',
     'Laugh Track: Fine. Take it. Howl ruined. Worst episode of your life.',
   ], weight: 1 },
   { id: 'laugh-track_vic_heal_38', beat: 'victory', lines: [
-    'Laugh Track: Potioned up and still beat the howl. Ugly win. Almost respect.',
+    'Laugh Track: Topped off, then killed the cue. Ugly win. Studio notes respect.',
     'Laugh Track: Topped off, then finished the bit. Preferred guest energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'laugh-track_vic_kite_39', beat: 'victory', lines: [
     'Laugh Track: Made us chase our own set, then finished. Rude win.',
-    'Laugh Track: Jogging as strategy. Hate that it worked.',
+    'Laugh Track: You turned a cue into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'laugh-track_vic_crit_40', beat: 'victory', lines: [
-    'Laugh Track: You cut through the howl. Fight\'s over. We will give you that.',
+    'Laugh Track: Howl splits. Cue dead. We will give you that.',
     'Laugh Track: Found the soft laugh and finished. No cue left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'laugh-track_vic_net_41', beat: 'victory', lines: [

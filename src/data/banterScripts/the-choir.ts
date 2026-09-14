@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'The Choir: Jaws for hymnal prey. Romance cancelled. The chorus remains.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'the-choir_kit_net_19', beat: 'kit', lines: [
-    'The Choir: Mesh like a broken chord. Commitment with holes. We sing through it.',
-    'The Choir: Ensemble in the net. Panic keeps the beat. Blend continues.',
+    'The Choir: Mesh like a broken chord. We keep the hymn anyway.',
+    'The Choir: Ensemble stalled mid-verse. Panic keeps time. Blend continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
@@ -181,11 +181,11 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'the-choir_vic_37', beat: 'victory', lines: [
-    'The Choir: You won. Take it. Leave the silence — we hate it.',
+    'The Choir: Hymn ends. Leave the silence — we hate it.',
     'The Choir: Fine. The hymnal keeps a verse with your name scratched out.',
   ], weight: 1 },
   { id: 'the-choir_vic_heal_38', beat: 'victory', lines: [
-    'The Choir: You drank a potion and still beat us. Almost a preferred soloist.',
+    'The Choir: Flask mid-hymn, then you cut us. Almost a preferred soloist.',
     'The Choir: Flask, then you cut the harmony. Missed entrance. Louder win.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'the-choir_vic_kite_39', beat: 'victory', lines: [

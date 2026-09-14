@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Iron jaws for Cubicle 4B prey. That is adorable. Please initial.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'proxy-bit_kit_net_19', beat: 'kit', lines: [
-    'Proxy Bit: You put a net on a sealed courier. Holes in the chain of custody. Legal liked that.',
+    'Proxy Bit: Unauthorized restraint on a sealed courier. Legal screamed.',
     'Proxy Bit: Route dies in the trap. Return to sender: pending.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'proxy-bit_kit_healing-potion_20', beat: 'kit', lines: [
@@ -177,7 +177,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Fine. Take it. Seal ruined. Please initial the ending.',
   ], weight: 1 },
   { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: [
-    'Proxy Bit: You drank a potion and still beat me. Almost cleared. Almost.',
+    'Proxy Bit: Flask mid-route, then you voided me. Almost cleared. Almost.',
     'Proxy Bit: You juiced up, then voided the route. Receipt stamped forever anyway.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'proxy-bit_vic_kite_39', beat: 'victory', lines: [
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: You made me jog. That voids the delivery. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'proxy-bit_vic_crit_40', beat: 'victory', lines: [
-    'Proxy Bit: You cut through the seal. Fight\'s over. I will give you that.',
+    'Proxy Bit: Seal splits. Route void. I will give you that.',
     'Proxy Bit: You found the soft seal and finished it. Stamp: final. Please initial.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: [

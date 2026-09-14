@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: You caught one leg. A thousand more still open. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'hexhive_kit_net_19', beat: 'kit', lines: [
-    'Hexhive: Net on a swarm. Holes in the promise. We thrash in stereo buzz.',
+    'Hexhive: You wrapped the crawl. Legs invent exits. Buzz invents volume.',
     'Hexhive: Your net just made more legs. We keep coming.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'hexhive_kit_healing-potion_20', beat: 'kit', lines: [
@@ -182,7 +182,7 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'hexhive_vic_37', beat: 'victory', lines: [
-    'Hexhive: You won. Take it. Leave the heat. Leave the smug.',
+    'Hexhive: Crawl closes. Leave the heat. Leave the smug.',
     'Hexhive: Fine. Shafts keep a buzz with your name scratched out.',
   ], weight: 1 },
   { id: 'hexhive_vic_heal_38', beat: 'victory', lines: [

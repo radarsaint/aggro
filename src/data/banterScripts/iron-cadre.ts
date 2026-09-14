@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Jaws for a shield wall. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'iron-cadre_kit_net_19', beat: 'kit', lines: [
-    'Iron Cadre: Net on the Cadre. Formation ruined. Rude.',
+    'Iron Cadre: Count broken by a toy. Formation hates that.',
     'Iron Cadre: Shields snagged. We advance anyway.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'iron-cadre_kit_healing-potion_20', beat: 'kit', lines: [
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'iron-cadre_vic_37', beat: 'victory', lines: [
-    'Iron Cadre: You won. Mark us damaged. Tell them the Cadre fought.',
+    'Iron Cadre: Line broken. Tell them the Cadre fought.',
     'Iron Cadre: Fine. Take it. Quiet ruined. Worst drill of your life.',
   ], weight: 1 },
   { id: 'iron-cadre_vic_heal_38', beat: 'victory', lines: [
-    'Iron Cadre: Potioned up and still beat the line. Ugly win. Almost respect.',
+    'Iron Cadre: Topped off, then broke the line. Ugly win. Cadre notes it.',
     'Iron Cadre: Topped off, then finished drill. Preferred recruit energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'iron-cadre_vic_kite_39', beat: 'victory', lines: [
     'Iron Cadre: Made us chase our own yard, then finished. Rude win.',
-    'Iron Cadre: Jogging as strategy. Hate that it worked.',
+    'Iron Cadre: You turned drill into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'iron-cadre_vic_crit_40', beat: 'victory', lines: [
-    'Iron Cadre: You cut through the quiet. Fight\'s over. We will give you that.',
+    'Iron Cadre: Quiet splits. Drill ends. We will give you that.',
     'Iron Cadre: Found the soft count and finished. No line left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: [

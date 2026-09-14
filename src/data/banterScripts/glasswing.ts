@@ -97,8 +97,8 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Iron jaws for Mirror Arcade prey. That is adorable. Still visible.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'glasswing_kit_net_19', beat: 'kit', lines: [
-    'Glasswing: Auditor stuck visible. Panic gets scored. Survey still rude.',
-    'Glasswing: Auditor grounded messy. Commitment with holes. Score: messy.',
+    'Glasswing: Auditor forced visible. Panic gets scored. Survey still mean.',
+    'Glasswing: Auditor grounded messy. Score: still messy.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'glasswing_kit_healing-potion_20', beat: 'kit', lines: [
     'Glasswing: Flask mid-survey. Still scored a two. Mirror judged you soft.',
@@ -173,11 +173,11 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'glasswing_vic_37', beat: 'victory', lines: [
-    'Glasswing: You won. Keep the score. Leave the lie. The mirrors remember. Chin down.',
+    'Glasswing: Survey closed. Leave the lie. Mirrors remember. Chin down.',
     'Glasswing: Fine. Take it. Glass cracked. Survey closed. Worst browse of your life.',
   ], weight: 1 },
   { id: 'glasswing_vic_heal_38', beat: 'victory', lines: [
-    'Glasswing: You drank a potion and still beat me. Soft survey. Almost redeemable.',
+    'Glasswing: Flask mid-survey, then you closed me. Soft score. Almost redeemable.',
     'Glasswing: You drank, then closed the review. Score: coward with a flask.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'glasswing_vic_kite_39', beat: 'victory', lines: [
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You made me jog. Values survey: fail. I hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'glasswing_vic_crit_40', beat: 'victory', lines: [
-    'Glasswing: You cut through the mirror. Fight\'s over. I will give you that.',
+    'Glasswing: Mirror splits. Score final. I will give you that.',
     'Glasswing: You found the soft glass and finished it. Final score: you. Chin down.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'glasswing_vic_net_41', beat: 'victory', lines: [

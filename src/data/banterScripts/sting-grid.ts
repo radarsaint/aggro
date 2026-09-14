@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Jaws for something that never lands. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sting-grid_kit_net_19', beat: 'kit', lines: [
-    'Sting Grid: Net on the grid. Permit ruined. Rude.',
-    'Sting Grid: Bagged and still buzzing through the mesh.',
+    'Sting Grid: You dropped the grid out of the air. Permit just got personal.',
+    'Sting Grid: Trapped and still buzzing. Deed office hates this.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sting-grid_kit_healing-potion_20', beat: 'kit', lines: [
     'Sting Grid: Mid-fight sip. Planning a longer trespass?',
@@ -172,19 +172,19 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'sting-grid_vic_37', beat: 'victory', lines: [
-    'Sting Grid: You won. Mark us damaged. Tell them the grid fought.',
+    'Sting Grid: Deed denied. Tell them the grid fought.',
     'Sting Grid: Fine. Take it. Buzz ruined. Worst climb of your life.',
   ], weight: 1 },
   { id: 'sting-grid_vic_heal_38', beat: 'victory', lines: [
-    'Sting Grid: Potioned up and still beat the deed. Ugly win. Almost respect.',
+    'Sting Grid: Topped off, then shredded the deed. Ugly win. Office notes it.',
     'Sting Grid: Topped off, then finished the filing. Preferred trespass energy. Gross.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'sting-grid_vic_kite_39', beat: 'victory', lines: [
     'Sting Grid: Made us chase our own altitude, then finished. Rude win.',
-    'Sting Grid: Jogging as strategy. Hate that it worked.',
+    'Sting Grid: You turned altitude into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sting-grid_vic_crit_40', beat: 'victory', lines: [
-    'Sting Grid: You cut through the hum. Fight\'s over. We will give you that.',
+    'Sting Grid: Hum splits. Deed ends. We will give you that.',
     'Sting Grid: Found the soft permit and finished. No deed left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sting-grid_vic_net_41', beat: 'victory', lines: [
