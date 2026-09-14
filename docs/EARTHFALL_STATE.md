@@ -45,6 +45,7 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 - Art / tools = sell scrap (unless mapped as equip).
 - **Climb loot:** threat-weighted pools — equip ≈ Low 18% / Mod 40% / High 60%. Hot clearance +10 equip weight (cap 70%). Framing under LootCard: stamp cold / R.O.D. hot.
 - **High-only named:** PIP Machete, Badge Harness, Exit-Only Lid. **Cubicle Hook** from Moderate up.
+- **Character home IA:** Profile sticky tabs — You / On you / Locker / Kiosk / Prefs (Prefs last). Bottom nav label **You** (`/profile` route unchanged).
 
 ### Gates 1–4
 
@@ -68,9 +69,8 @@ Do **not** treat this list as a roadmap. Especially: **side bets are not upcomin
 - Side bets / Gate 5 — **deferred indefinitely** (locked: do not propose)
 - Extra R.O.D. loot-box theater beyond shipped hot framing
 - Loss-with-teeth beyond current paid-extra-on-PIP
-- Profile / character-home IA redesign (You / On you / Locker / Kiosk)
 - Skullport (or any Floor 2) content design
-- Number-field / Profile dump polish
+- Number-field polish on hunter sheet
 - Formal playtest verify pass
 
 ---
@@ -78,7 +78,6 @@ Do **not** treat this list as a roadmap. Especially: **side bets are not upcomin
 ## Known tensions (honest)
 
 - Typed body AC/HP vs equip bonuses (combat uses **effective** stats).
-- Profile is a dump (prefs above locker).
 - Infinite gold still possible; sinks = gold-on-date + kiosk + night scarcity.
 - Handoff archives on box (if present): `/workspace/aggro-code.zip`, `/workspace/aggro-handoff.tar.gz` — not part of the git product surface.
 

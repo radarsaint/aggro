@@ -46,7 +46,7 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 
 | Surface | Behavior |
 |---------|----------|
-| Onboarding / Profile | Hunter sheet (HP, AC, attack die/stat, DEX/init), prefs, locker |
+| Onboarding / Profile (You) | Hunter sheet (HP, AC, attack die/stat, DEX/init); sticky home tabs: You / On you / Locker / Kiosk / Prefs |
 | Discover | Swipe left pass / right match; soft heat reorders deck; Standards filter |
 | Match / Chat | Roast banter; kit draft via reply **1 / 2 / 3** |
 | Combat | **Attack**, **Item** (spent kits), **Run**; **Use** locker potion/bandage |
@@ -100,7 +100,6 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 | Full second floor content | Out until greenlit (stub `comingSoon` is not a license to invent) |
 | R.O.D. voice polish / loot-box theater beyond shipped hot framing | Parked |
 | Loss-with-teeth systems beyond current stake-on-PIP | Parked |
-| Character-home IA redesign (You / On you / Locker / Kiosk IA pass) | Parked — Profile dump is a known tension, not a committed redesign |
 
 ---
 

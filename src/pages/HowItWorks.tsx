@@ -6,7 +6,7 @@ import { useGame } from '../utils/GameContext';
 
 const LOOP = [
   { label: 'Profile', hint: 'Build your sheet' },
-  { label: 'Prefs', hint: 'Threat, standards, size, type' },
+  { label: 'Dating prefs', hint: 'Utilities · buried filters' },
   { label: 'Swipe', hint: 'Pass left · match right' },
   { label: 'Match / banter', hint: 'Roast, bargain, accept' },
   { label: 'Arm', hint: 'Pick one item for the fight' },
@@ -124,7 +124,7 @@ export function HowItWorks() {
             ))}
           </div>
           <p style={{ marginTop: 12, fontSize: '0.78rem', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.4 }}>
-            Profile → Prefs → Swipe → Match/banter → Arm → Fight → Reward or PIP.
+            You → On you / Locker → Swipe → Match/banter → Arm → Fight → Reward or PIP.
           </p>
         </div>
 
@@ -277,24 +277,24 @@ export function HowItWorks() {
           hell — not permanent.
         </p>
         <div className="chip-row" style={{ marginBottom: 8, justifyContent: 'center' }}>
-          {THEME_LIST.map((t) => {
+          {THEME_LIST.filter((t) => t.meta.selectable !== false).map((t) => {
             const on = state.activeThemeId === t.meta.id;
-            const disabled = t.meta.selectable === false;
             return (
               <button
                 key={t.meta.id}
                 type="button"
                 className={`chip ${on ? 'on' : ''}`}
-                disabled={disabled}
                 title={t.meta.blurb}
-                onClick={() => !disabled && setActiveThemeId(t.meta.id)}
-                style={disabled ? { opacity: 0.4, cursor: 'not-allowed' } : undefined}
+                onClick={() => setActiveThemeId(t.meta.id)}
               >
                 {t.meta.displayName}
               </button>
             );
           })}
         </div>
+        <p style={{ color: 'var(--muted)', fontSize: '0.7rem', marginTop: -2, marginBottom: 8, textAlign: 'center' }}>
+          Next floor is aware only — not open yet.
+        </p>
 
         <SectionTitle>9 · VERIFIED</SectionTitle>
         <div className="card" style={{ padding: 14 }}>

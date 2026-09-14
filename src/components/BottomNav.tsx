@@ -33,9 +33,9 @@ const TABS: Tab[] = [
   },
   {
     to: '/profile',
-    label: 'Profile',
+    label: 'You',
     Icon: User,
-    aria: 'Profile — hunter dossier & kit',
+    aria: 'You — character home, on you, locker',
   },
 ];
 

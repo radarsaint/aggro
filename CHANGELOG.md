@@ -11,6 +11,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Added
+
+- **Character home IA** — Profile sticky tabs: **You** / **On you** / **Locker** / **Kiosk**. Prefs demoted to a **Dating prefs** footer link on You (utilities first; Discover filters + Standards collapsed; stub/comingSoon floor theme picker removed). Default land always **You** (cold open = face). You hero is dating-thin (face, name, bio, Verified + one line, Gold quiet); combat sheet collapsed under **Your numbers**; Flavor before numbers. On you copy dating-ish (**On you tonight** / empty jokes); fight-item arming is one chat line. Bottom nav **You** (route `/profile` unchanged). Locker still Sell / Equip; heals Use mid-fight.
+
 ### Docs
 
 - Thorough README handoff (goals, scope in/out, dual-mode rests, how to run, repo map).
