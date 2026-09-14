@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Before we start — we\'re not a swarm. We\'re Airspace Enforcement. People walk by, look up, say "just passing through," and leave. We have been filing a long time. Tonight somebody gets denied permanently.',
   ], weight: 2 },
   { id: 'sting-grid_open_x_1', beat: 'open', lines: [
-    'Sting Grid: The grid doesn\'t do brave. We do permits. Buzz is free. Altitude isn\'t. Look up. Then duck.',
-    'Sting Grid: Waited for careful climbers. Then came the necks. You look unauthorized. Show us different — or get filed.',
+    'Sting Grid: This altitude has our name on the deed. Necks that wander get filed in welts.',
+    'Sting Grid: Soft targets. Open sky. Unauthorized climbs. Duck is still free.',
   ], weight: 2 },
   { id: 'sting-grid_open_0', beat: 'open', lines: [
-    'Sting Grid: Permits are theater. First climb gets a warning. Second climb\'s on you. Mostly kidding. Duck.',
-    'Sting Grid: Listen. We buzz. We sting. We file. You brought a bag. Let\'s see who\'s off-altitude.',
+    'Sting Grid: This altitude hums our name. Your neck climbed without asking. Duck once for manners. Duck twice because the buzz doesn\'t file warnings forever.',
+    'Sting Grid: We sting the way a deed enforces itself — loud, in triplicate, and aimed at whatever waved first. Look up. Then apologize to the wires.',
   ], weight: 2 },
   { id: 'sting-grid_open_1', beat: 'open', lines: [
-    'Sting Grid: We look quiet on the wires. Then we leave the wires. Spoiler for wavers: permit denied — in triplicate buzz.',
-    'Sting Grid: Silence freaks us out. Low ground freaks us out. You? You just annoy us. Annoyance we can file.',
+    'Sting Grid: Wires look empty until the buzz finds a trespasser. Then triplicate starts meaning welts.',
+    'Sting Grid: Wavers teach us early. Steady necks still get stung. Airspace is the lesson.',
   ], weight: 1 },
   { id: 'sting-grid_open_2', beat: 'open', lines: [
-    'Sting Grid: Came to trespass altitude? Wave. Came to fight? Neck\'s already filed.',
-    'Sting Grid: We\'ve heard every wasp joke. Say something new or wave.',
+    'Sting Grid: Look up if you came to gawk. If you came to climb, the ground is still hiring.',
+    'Sting Grid: Wasp jokes don\'t clear airspace. Wave once, then duck.',
   ], weight: 1 },
   { id: 'sting-grid_open_3', beat: 'open', lines: [
     'Sting Grid: Quiet truth: we love the hum of wires more than the sting. You\'re on the deed until you aren\'t.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Hit the grid. Bold. Dumb. Noted.',
   ] },
   { id: 'sting-grid_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Sting Grid: Dinged. Still the loudest permit in the air.',
+    'Sting Grid: You clipped a wing. Altitude still hums our deed louder than you.',
     'Sting Grid: Leaking. Still buzzing. Still mad about the neck.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'sting-grid_hcrit_9', beat: 'hunter_crit', lines: [
-    'Sting Grid: Okay — that got under the hum. Felt it.',
+    'Sting Grid: That hit rattled the wires. Deed office just flinched.',
     'Sting Grid: Hard hit on the grid. Deed office flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sting-grid_hcrit_10', beat: 'hunter_crit', lines: [
     'Sting Grid: Soft spot under the permit. Congrats.',
-    'Sting Grid: Almost meant it. Don\'t chat. Swing.',
+    'Sting Grid: Almost a real filing. Climb quieter. Sting harder.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sting-grid_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Sting Grid: Fled, then hit that hard? Pick a clearance.',

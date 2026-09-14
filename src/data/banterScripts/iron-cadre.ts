@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Before we start — we are not a mob. We are Line Officers. People walk by, break formation, say "just looking," and leave. We have been correcting rumors for a long time. Tonight somebody learns the count.',
   ], weight: 2 },
   { id: 'iron-cadre_open_x_1', beat: 'open', lines: [
-    'Iron Cadre: The Cadre doesn\'t do brave. We do quiet. Drill is free. Blood is on you. Eyes forward.',
-    'Iron Cadre: Waited for clean ranks. Then came the soft ones. You look soft. Show us different — or fall in.',
+    'Iron Cadre: Soft voices. Hard shields. We correct rumors about discipline with the edge, not volume.',
+    'Iron Cadre: Freelancers chatter. Cadre advances. Hold the count or get folded into the notes.',
   ], weight: 2 },
   { id: 'iron-cadre_open_0', beat: 'open', lines: [
-    'Iron Cadre: Discipline is a rumor we correct. First flinch gets kindness. Second gets the shield-edge. Mostly kidding. Eyes forward.',
-    'Iron Cadre: Listen. We speak soft. We shield. We advance. You brought a bag. Let\'s see who\'s still on count.',
+    'Iron Cadre: We count before we strike. One shield. Two. Three. You are not on the count yet. Eyes forward — kindness arrives as formation.',
+    'Iron Cadre: Soft voices. Hard edges. We advance the way a rumor gets corrected: quiet, inevitable, and already standing where you meant to plant your feet.',
   ], weight: 2 },
   { id: 'iron-cadre_open_1', beat: 'open', lines: [
-    'Iron Cadre: We look quiet on the yard. Then we leave the yard. Spoiler for freelancers: shield-edge kindness.',
-    'Iron Cadre: Chaos freaks us out. Loud cheers freak us out. You? You just annoy us. Annoyance we can correct.',
+    'Iron Cadre: The yard looks polite until the shields lock. After that kindness has a rim.',
+    'Iron Cadre: Soft officers still bleed on the beat. Keep formation. Eyes forward.',
   ], weight: 1 },
   { id: 'iron-cadre_open_2', beat: 'open', lines: [
-    'Iron Cadre: Came to watch drills? Leave. Came to fight? Eyes forward. Fall in.',
-    'Iron Cadre: We\'ve heard every "soft officers" joke. Say something new or hold.',
+    'Iron Cadre: Tourists leave the yard. Recruits fall in. Pick one before we pick for you.',
+    'Iron Cadre: Soft-officer jokes end when the count starts. Hold or get corrected.',
   ], weight: 1 },
   { id: 'iron-cadre_open_3', beat: 'open', lines: [
     'Iron Cadre: Quiet truth: we love a clean count more than a loud cheer. You\'re on the schedule until you\'re corrected.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Hit the Cadre. Bold. Dumb. Noted.',
   ] },
   { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Iron Cadre: Dinged. Still the quietest thing advancing.',
+    'Iron Cadre: You marked a shield. We are still the quietest thing on this floor.',
     'Iron Cadre: Leaking. Still soft-spoken. Still coming.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'iron-cadre_hcrit_9', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Okay — that got under the quiet. Felt it.',
+    'Iron Cadre: That one found a gap in the count. Noted. Eyes forward.',
     'Iron Cadre: Hard hit on the Cadre. Drill yard noticed.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Soft spot under the count. Congrats.',
-    'Iron Cadre: Almost meant it. Don\'t chat. Swing.',
+    'Iron Cadre: You found a soft spot in formation. Congratulations. Advance continues.',
+    'Iron Cadre: Almost meant it. Eyes forward. Correct us properly.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Iron Cadre: Fled, then hit that hard? Pick a formation.',

@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
-    'The Choir: Healing mid-verse. Soft. Optimistic. Makes the harmony hungrier.',
+    'The Choir: Healing mid-verse. Harmony just got hungrier for soft throats.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'the-choir_kit_oil-flask_21', beat: 'kit', lines: [
     'The Choir: Oil like optional attendance on the suite floor.',
@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'the-choir_vic_heal_38', beat: 'victory', lines: [
     'The Choir: You drank a potion and still beat us. Soft. Almost a preferred soloist.',
-    'The Choir: You topped off, then cut the harmony. Missed entrance. Louder win.',
+    'The Choir: Flask, then you cut the harmony. Missed entrance. Louder win.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'the-choir_vic_kite_39', beat: 'victory', lines: [
     'The Choir: You dragged us around our own suite, then finished it. Jogging is a crime against harmony.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'the-choir_def_heal_45', beat: 'defeat', lines: [
     'The Choir: You healed and still went down. Optimistic soloist. Wrong.',
-    'The Choir: You topped off, then blended into quiet.',
+    'The Choir: You drank, then blended into quiet. Verse closed on you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

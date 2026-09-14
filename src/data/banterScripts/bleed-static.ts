@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Bagged. Latch interrupted. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'bleed-static_kit_healing-potion_20', beat: 'kit', lines: [
-    'Bleed Static: You topped off the vintage I was drinking. Rude. Delicious.',
+    'Bleed Static: You juiced the vintage I was drinking. Rude. Delicious.',
     'Bleed Static: Healing. Soft. I prefer you rare and unpaid.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'bleed-static_kit_oil-flask_21', beat: 'kit', lines: [
@@ -178,7 +178,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'bleed-static_vic_heal_38', beat: 'victory', lines: [
     'Bleed Static: You drank a potion and still beat me. Soft vintage. Almost respectable.',
-    'Bleed Static: You topped off, then detached like an adult. I already tasted the receipt.',
+    'Bleed Static: Flask, then you detached like an adult. I already tasted the receipt.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'bleed-static_vic_kite_39', beat: 'victory', lines: [
     'Bleed Static: You made me chase you mid-sip, then finished it. That\'s not a win. That\'s rude.',
@@ -206,7 +206,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: You fled into a sip. The lounge expected that.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'bleed-static_def_heal_45', beat: 'defeat', lines: [
-    'Bleed Static: You topped off and still went down. Soft vintage. Wrong call.',
+    'Bleed Static: You drank and still went down. Soft vintage. Wrong call.',
     'Bleed Static: Topped off, then donated anyway. Sip complete. Stay still next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

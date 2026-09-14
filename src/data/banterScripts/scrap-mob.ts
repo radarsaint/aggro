@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
-    'Scrap Mob: Healing mid-picket. Soft. Optimistic. Makes the dues hungrier.',
+    'Scrap Mob: Healing mid-picket. Dues just got hungrier for soft blood.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'scrap-mob_kit_oil-flask_21', beat: 'kit', lines: [
     'Scrap Mob: Oil on the dump. Slippery scab. Still dinner.',
@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'scrap-mob_vic_heal_38', beat: 'victory', lines: [
     'Scrap Mob: You drank a potion and still beat us. Soft. Almost preferred scab.',
-    'Scrap Mob: You topped off, then broke the picket. Loud win. Quiet dump.',
+    'Scrap Mob: Flask, then you broke the picket. Loud win. Quiet dump.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'scrap-mob_vic_kite_39', beat: 'victory', lines: [
     'Scrap Mob: You dragged us around our own dump, then finished it. Cardio as a plan. Rude.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'scrap-mob_def_heal_45', beat: 'defeat', lines: [
     'Scrap Mob: You healed and still went down. Optimistic scab. Wrong.',
-    'Scrap Mob: You topped off, then wore the knives. Quiet. Ours.',
+    'Scrap Mob: You drank, then wore the knives. Quiet. Ours.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

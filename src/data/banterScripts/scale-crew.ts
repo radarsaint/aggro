@@ -100,7 +100,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: You bagged us. Flail is the waiver. Boss! — still not here.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scale-crew_kit_healing-potion_20', beat: 'kit', lines: [
-    'Scale Crew: You topped off mid-drill. Soft test subject. Sign the waiver again.',
+    'Scale Crew: You healed mid-drill. Sign the waiver again, test subject.',
     'Scale Crew: Healing. We prefer you rare. Kneepads still suggested. Boss!',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'scale-crew_kit_oil-flask_21', beat: 'kit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'scale-crew_def_heal_45', beat: 'defeat', lines: [
     'Scale Crew: You healed and still went down. Flask optimism failed the drill.',
-    'Scale Crew: You topped off, then hit the plate. Soft test subject. Waiver filed. Boss!',
+    'Scale Crew: You healed, then hit the plate. Waiver filed. Boss!',
   ], requireFlags: ["healed"], weight: 3 },
 ];

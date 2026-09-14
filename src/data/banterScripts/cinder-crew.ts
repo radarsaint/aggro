@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Before we start — we\'re not a campfire. We\'re Facilities Fire. People walk by, mute the thread, say "just looking," and leave. We have been unread a long time. Tonight somebody RSVPs oxygen.',
   ], weight: 2 },
   { id: 'cinder-crew_open_x_1', beat: 'open', lines: [
-    'Cinder Crew: Group chat doesn\'t do brave. We do Seen. Ignited. Spark\'s free. Foam is a rumor. Breathe for us.',
-    'Cinder Crew: Waited for careful mutes. Then came the lurkers. You look muted. Show us different — or RSVP oxygen.',
+    'Cinder Crew: Seen, then ignited. Foam is Facilities gossip. Breathe for us.',
+    'Cinder Crew: Muters still RSVP with lungs. Hot takes with fuel welcome. Dry jokes less so.',
   ], weight: 2 },
   { id: 'cinder-crew_open_0', beat: 'open', lines: [
-    'Cinder Crew: Read receipts are theater. First breath sparks. Second breath\'s on you. Mostly kidding. Breathe for us.',
-    'Cinder Crew: Listen. We spark. We ping. We ignite on read. You brought a bag. Let\'s see who\'s archived.',
+    'Cinder Crew: Seen. Sparks. Your breath just read-receipted the boiler. Foam is a rumor Facilities tells soft people. Breathe again and we ignite for real.',
+    'Cinder Crew: We are heat with a group chat. Mute us and the thread still glows. Oxygen is the RSVP — you already typed yes with your lungs.',
   ], weight: 2 },
   { id: 'cinder-crew_open_1', beat: 'open', lines: [
-    'Cinder Crew: We look quiet in the boiler. Then we leave the boiler. Spoiler for muters: death burst is our exit interview.',
-    'Cinder Crew: Foam freaks us out. Silence freaks us out. You? You just annoy us. Annoyance we can ignite.',
+    'Cinder Crew: Boiler room looks calm until the read receipt lands. Then oxygen becomes the topic.',
+    'Cinder Crew: Spark is free. Archive is warm. You already opened the thread.',
   ], weight: 1 },
   { id: 'cinder-crew_open_2', beat: 'open', lines: [
-    'Cinder Crew: Came to mute? Leave. Came to fight? Stop sweating on the thread. Seen.',
-    'Cinder Crew: We\'ve heard every "just a spark" joke. Say something new or burn.',
+    'Cinder Crew: Tourists mute. Fuel stays. Pick your poison and inhale carefully.',
+    'Cinder Crew: Just-a-spark jokes belong in training. We ignite on read.',
   ], weight: 1 },
   { id: 'cinder-crew_open_3', beat: 'open', lines: [
     'Cinder Crew: Quiet truth: oxygen is our love language. You\'re in the thread until you mute forever.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Hit the crew. Bold. Dumb. Noted.',
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Cinder Crew: Dinged. Still the hottest read in Facilities.',
+    'Cinder Crew: You dinged the spark. Thread still glows hotter than your mute.',
     'Cinder Crew: Leaking. Still Seen. Still mad about the mute.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'cinder-crew_hcrit_9', beat: 'hunter_crit', lines: [
-    'Cinder Crew: Okay — that got under the spark. Felt it.',
+    'Cinder Crew: That one landed under the ping. Facilities just stood up.',
     'Cinder Crew: Hard hit on the crew. Facilities gasped.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'cinder-crew_hcrit_10', beat: 'hunter_crit', lines: [
     'Cinder Crew: Soft spot under the thread. Congrats.',
-    'Cinder Crew: Almost meant it. Don\'t chat. Swing.',
+    'Cinder Crew: Almost a real read. Unmute your swing and mean it.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'cinder-crew_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Cinder Crew: Fled, then hit that hard? Pick a mute status.',

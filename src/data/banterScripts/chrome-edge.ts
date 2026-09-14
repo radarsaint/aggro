@@ -21,8 +21,8 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: I used to wait for someone careful. Someone who\'d draw me like they meant it. Then I met a hundred sticky hands. You look like sticky hands. Prove me wrong. Or don\'t. Either way I fly.',
   ], weight: 2 },
   { id: 'chrome-edge_open_0', beat: 'open', lines: [
-    'Chrome Edge: Warranty\'s a joke. First swing voids it. Second swing voids you. I\'m kidding. Mostly. Draw.',
-    'Chrome Edge: Listen. I polish myself. I hover. I end arguments. You brought a bag and a face. Let\'s see which one of us is merchandise when this is over.',
+    'Chrome Edge: I used to wait for careful hands. Then I met a hundred sticky ones. You look familiar. Draw and surprise me.',
+    'Chrome Edge: I polish myself under these lights until shoppers forget I\'m sharp. Touch the chrome and find out which of us walks out tagged as merchandise.',
   ], weight: 2 },
   { id: 'chrome-edge_open_1', beat: 'open', lines: [
     'Chrome Edge: I look quiet on the rack. Then I leave the rack. Spoiler for the sticky hands: I swing myself.',
@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'chrome-edge_hcrit_9', beat: 'hunter_crit', lines: [
-    'Chrome Edge: Okay — that got under the polish. I felt that.',
+    'Chrome Edge: Ow. You scuffed the demo unit. Price tag still on — temper optional.',
     'Chrome Edge: Hard hit on a floor model. Someone in Merch just stood up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'chrome-edge_hcrit_10', beat: 'hunter_crit', lines: [
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'chrome-edge_vic_heal_38', beat: 'victory', lines: [
     'Chrome Edge: You drank a potion and still beat me. Soft move. Ugly win. I almost respect it.',
-    'Chrome Edge: You topped off, then finished the demo. Preferred customer with a voided warranty. Both fit you.',
+    'Chrome Edge: Flask, then you finished the demo. Preferred customer. Voided warranty. Both fit you.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'chrome-edge_vic_kite_39', beat: 'victory', lines: [
     'Chrome Edge: You made me chase you around my own aisle, then finished it. That\'s not a win. That\'s rude.',
@@ -212,7 +212,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'chrome-edge_def_crit_43', beat: 'defeat', lines: [
     'Chrome Edge: You hit hard and still died. Talent. No follow-through.',
-    'Chrome Edge: Big hit. Bad ending. I\'m still under the lights.',
+    'Chrome Edge: Hard swing. Floor models are supposed to stay pretty under the lights. I\'m annoyed.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'chrome-edge_def_ran_44', beat: 'defeat', lines: [
     'Chrome Edge: You ran and still died. Fast feet. Same result.',

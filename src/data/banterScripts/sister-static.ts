@@ -65,7 +65,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sister-static_hcrit_10', beat: 'hunter_crit', lines: [
     'Sister Static: You hit under the gloss. Congrats, caller.',
-    'Sister Static: That almost sounded sincere. Don\'t chat. Swing.',
+    'Sister Static: That almost sounded sincere. Mean the next spike.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sister-static_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Sister Static: Fled the booth, then hit that hard? Pick a segment.',

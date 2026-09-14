@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Before we start — we\'re not a pack. We\'re the studio audience. People walk by, trip, say "just looking," and leave. We have been laughing a long time. Tonight somebody leaves bitten.',
   ], weight: 2 },
   { id: 'laugh-track_open_x_1', beat: 'open', lines: [
-    'Laugh Track: The track doesn\'t do brave. We do fall, howl, bite. Cue howl. Bite on three.',
-    'Laugh Track: Waited for a cold open. Then came the stiffs. You look stiff. Show us funny — or bleed funny.',
+    'Laugh Track: The booth runs on falls. Howl first. Bite second. Tape never stops.',
+    'Laugh Track: Mute buttons fail here. You already gave us a cold open. Earn a better bit.',
   ], weight: 2 },
   { id: 'laugh-track_open_0', beat: 'open', lines: [
-    'Laugh Track: The track is the joke. First fall cues it. Second fall\'s on you. Mostly kidding. Cue howl.',
-    'Laugh Track: Listen. We laugh. We bite. We laugh again. You brought a bag. Let\'s see who\'s the punchline.',
+    'Laugh Track: *booth howl* The laugh lands before the punchline. You tripped the cue just by standing there. Cute. Now bleed funny.',
+    'Laugh Track: We are the audience that eats. Fall once and we howl. Fall twice and we bite. The track doesn\'t wait for your setup.',
   ], weight: 2 },
   { id: 'laugh-track_open_1', beat: 'open', lines: [
-    'Laugh Track: We look quiet on the set. Then we leave the set. Spoiler for mute buttons: we laugh when you fall. Then we bite.',
-    'Laugh Track: Silence freaks us out. Safe words freak us out. You? You just annoy us. Annoyance we can howl at.',
+    'Laugh Track: Set looks dead until the howl rolls. Then everybody remembers why the seats face you.',
+    'Laugh Track: Weak entrances get eaten. Strong ones get bitten anyway. That\'s the format.',
   ], weight: 1 },
   { id: 'laugh-track_open_2', beat: 'open', lines: [
-    'Laugh Track: Came for the laugh track? Stay seated. Came to fight? Cue the howl.',
-    'Laugh Track: We\'ve heard every hyena joke. Say something new or scream.',
+    'Laugh Track: Tourists clap. Prey screams. The audience already picked a side.',
+    'Laugh Track: Hyena jokes are leftover craft services. Bleed for the bit or leave the booth.',
   ], weight: 1 },
   { id: 'laugh-track_open_3', beat: 'open', lines: [
     'Laugh Track: Quiet truth: we need the laugh more than the meat. You\'re on the track until the credits.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Hit the track. Bold. Dumb. Noted.',
   ] },
   { id: 'laugh-track_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Laugh Track: Dinged. Still the loudest thing in the booth.',
+    'Laugh Track: You scuffed the howl. Booth still laughs louder than your bit.',
     'Laugh Track: Leaking. Still laughing. Still mad about the stiff bit.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'laugh-track_hcrit_9', beat: 'hunter_crit', lines: [
-    'Laugh Track: Okay — that got under the howl. Felt it.',
+    'Laugh Track: That one punched the laugh track. Audience gasped on cue.',
     'Laugh Track: Hard hit on the track. Audience gasped. Cute.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'laugh-track_hcrit_10', beat: 'hunter_crit', lines: [
     'Laugh Track: Soft spot under the laugh. Congrats.',
-    'Laugh Track: Almost meant it. Don\'t chat. Swing.',
+    'Laugh Track: Almost a punchline. Skip the setup. Bite the bit.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'laugh-track_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Laugh Track: Fled, then hit that hard? Pick a bit.',

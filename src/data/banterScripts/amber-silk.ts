@@ -178,7 +178,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'amber-silk_vic_heal_38', beat: 'victory', lines: [
     'Amber Silk: You drank a potion and still beat me. Ugly win. I almost respect the browse.',
-    'Amber Silk: You topped off, then finished LP. Receipt already filed under forever.',
+    'Amber Silk: Flask, then you finished LP. Receipt already filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'amber-silk_vic_kite_39', beat: 'victory', lines: [
     'Amber Silk: You dragged me down my own aisle, then finished it. That\'s not a win. That\'s rude.',
@@ -208,6 +208,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'amber-silk_def_heal_45', beat: 'defeat', lines: [
     'Amber Silk: You healed and still went down. Browse extended. Wrap completed.',
-    'Amber Silk: You topped off, then wore the silk anyway. Guest error. Filed.',
+    'Amber Silk: You drank, then wore the silk anyway. Guest error. Filed.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

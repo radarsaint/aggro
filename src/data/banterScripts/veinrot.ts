@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'veinrot_vic_heal_38', beat: 'victory', lines: [
     'Veinrot: You drank a potion and still beat me. Soft path. Almost felt like staying.',
-    'Veinrot: You topped off, then ended me. That optimistic little heartbeat of yours — freezer notes both.',
+    'Veinrot: You healed, then ended me. Optimistic heartbeat. Freezer notes both.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'veinrot_vic_kite_39', beat: 'victory', lines: [
     'Veinrot: You dragged me around my own freezer, then finished it. Speed is cruel to the sincere.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'veinrot_def_heal_45', beat: 'defeat', lines: [
     'Veinrot: You healed and still went down. Optimistic company. Wrong.',
-    'Veinrot: You topped off, then wore the frost. Quiet. Mine.',
+    'Veinrot: You healed, then wore the frost. Quiet. Mine.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

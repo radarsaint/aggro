@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You bagged us. Flail is the receipt. Gossip trail lengthened.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'crow-ledger_kit_healing-potion_20', beat: 'kit', lines: [
-    'Crow Ledger: You topped off mid-audit. Soft delinquent. Interest still due.',
+    'Crow Ledger: Flask mid-audit. Soft delinquent. Interest still due.',
     'Crow Ledger: Healing. We prefer you rare. Receipt required. Net-30.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'crow-ledger_kit_oil-flask_21', beat: 'kit', lines: [
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'crow-ledger_def_heal_45', beat: 'defeat', lines: [
     'Crow Ledger: You healed and still went down. Flask optimism failed the audit.',
-    'Crow Ledger: You topped off, then hit concrete. Soft delinquent. Balance settled.',
+    'Crow Ledger: You drank, then hit concrete. Soft delinquent. Balance settled.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

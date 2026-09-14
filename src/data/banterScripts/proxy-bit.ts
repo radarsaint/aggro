@@ -5,7 +5,7 @@ import type { ScriptNode } from './types';
  *
  * Obsession: do not reply-all, chain of custody, sealed lips, Legal.
  * Rhythm: stamped, legal, panicked politeness. Incomplete sentences like redactions.
- * Poke: construct — poison redundant; flyer — caltrops ground-level; "leaking" = seal/ink. No SLA. No smell. Soft seal not steel.
+ * Poke: construct — poison redundant; flyer — caltrops ground-level; "leaking" = seal/ink. No ops jargon. No smell. Soft seal not steel.
  */
 export const nodes: ScriptNode[] = [
   { id: 'proxy-bit_open_x_0', beat: 'open', lines: [
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Bagged. Route interrupted. Return to sender: pending.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'proxy-bit_kit_healing-potion_20', beat: 'kit', lines: [
-    'Proxy Bit: You topped off mid-route. Soft. Unsigned.',
+    'Proxy Bit: Flask mid-route? Unsigned ink. Stamp still waits.',
     'Proxy Bit: Healing. I prefer you rare. Please initial the juice.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'proxy-bit_kit_oil-flask_21', beat: 'kit', lines: [
@@ -178,7 +178,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: [
     'Proxy Bit: You drank a potion and still beat me. Soft clearance. Almost cleared.',
-    'Proxy Bit: You topped off, then voided the route. Optimistic prey. Receipt stamped forever.',
+    'Proxy Bit: You juiced up, then voided the route. Receipt stamped forever anyway.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'proxy-bit_vic_kite_39', beat: 'victory', lines: [
     'Proxy Bit: You made a courier chase you around Cubicle 4B, then finished it. Rude. Effective.',
@@ -206,7 +206,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: You fled into a stamp. Cubicle 4B expected that.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'proxy-bit_def_heal_45', beat: 'defeat', lines: [
-    'Proxy Bit: You topped off and still went down. Soft clearance. Wrong call.',
+    'Proxy Bit: Flask and dirt. Clearance stamped wrong. Seal laughs.',
     'Proxy Bit: Topped off, then claimed anyway. Filed. Sign next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

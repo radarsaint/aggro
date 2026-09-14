@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: [
     'Rattlewire: You drank up mid-slot. Planning to live? I prefer you rare and on the second.',
-    'Rattlewire: Healing reschedules nothing. Soft. Optimistic. Still late.',
+    'Rattlewire: A bandage will not move the appointment. You are still late. Click.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'rattlewire_kit_oil-flask_21', beat: 'kit', lines: [
     'Rattlewire: Oil like a no-show excuse on bone.',
@@ -185,8 +185,8 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Fine. Calendar holds your name under Declined Forever. Click.',
   ], weight: 1 },
   { id: 'rattlewire_vic_heal_38', beat: 'victory', lines: [
-    'Rattlewire: You drank a potion and still beat me. Soft. Almost punctual.',
-    'Rattlewire: You topped off, then ended the appointment. Late fee waived. Hold lost. Click.',
+    'Rattlewire: You drank and still beat me. Almost punctual. Almost.',
+    'Rattlewire: You healed, then cancelled me. Late fee waived. Hold lost. Click.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'rattlewire_vic_kite_39', beat: 'victory', lines: [
     'Rattlewire: You dragged me around my own annex, then finished it. Jogging is a hate crime against posture.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'rattlewire_def_heal_45', beat: 'defeat', lines: [
     'Rattlewire: You healed and still went down. Optimistic invitee. Wrong.',
-    'Rattlewire: You topped off, then became décor. Filed. Click.',
+    'Rattlewire: You healed, then became furniture. Filed. Click.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

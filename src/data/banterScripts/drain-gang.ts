@@ -100,7 +100,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: You bagged us. Flail is the receipt. Territory still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
-    'Drain Gang: You topped off mid-fee. Soft freeloader. Fee still applies.',
+    'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',
     'Drain Gang: Healing. We prefer you rare. Ankle tax continues.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'drain-gang_kit_oil-flask_21', beat: 'kit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'drain-gang_def_heal_45', beat: 'defeat', lines: [
     'Drain Gang: You healed and still went down. Flask optimism failed the franchise.',
-    'Drain Gang: You topped off, then hit the grate. Soft freeloader. Fee collected anyway.',
+    'Drain Gang: You drank, then hit the grate. Soft freeloader. Fee collected anyway.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

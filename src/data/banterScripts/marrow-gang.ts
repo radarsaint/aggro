@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
-    'Marrow Gang: Healing mid-muster. Soft. Optimistic. Still late.',
+    'Marrow Gang: Healing mid-muster. Soft blood. Still late to roll call.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: [
     'Marrow Gang: Oil on the drill floor. Slippery recruit. Still counted.',
@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: [
     'Marrow Gang: You drank a potion and still beat us. Soft. Almost punctual.',
-    'Marrow Gang: You topped off, then ended muster. Late fee waived. Hold lost.',
+    'Marrow Gang: Flask, then you ended muster. Late fee waived. Hold lost.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [
     'Marrow Gang: You dragged us around our own barracks, then finished it. Jogging is a hate crime against posture.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'marrow-gang_def_heal_45', beat: 'defeat', lines: [
     'Marrow Gang: You healed and still went down. Optimistic recruit. Wrong.',
-    'Marrow Gang: You topped off, then became décor. Filed. Eyes forward.',
+    'Marrow Gang: You drank, then became décor. Filed. Eyes forward.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

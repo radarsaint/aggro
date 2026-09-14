@@ -51,7 +51,7 @@ export const nodes: ScriptNode[] = [
 
   // ── HARD HITS (describe the blow — no HUD jargon) ──
   { id: 'patches_hcrit_9', beat: 'hunter_crit', lines: [
-    'Patches: Okay — that one hurt. Right under the scrap pile. Felt it.',
+    'Patches: Ow — you found three centuries of scrap and punched the soft century.',
     'Patches: You just dented three centuries of temp work. Scheduling is going to scream.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_10', beat: 'hunter_crit', lines: [
@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Mesh on shoulders — commitment issues with holes. Still billing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patches_kit_healing-potion_20', beat: 'kit', lines: [
-    'Patches: You topped off mid-fight. Soft prey juicing the ledger.',
+    'Patches: Mid-fight flask. Soft prey juicing the ledger like overtime.',
     'Patches: Healing. Optimistic. Expensive. I prefer you rare and unpaid.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'patches_kit_oil-flask_21', beat: 'kit', lines: [

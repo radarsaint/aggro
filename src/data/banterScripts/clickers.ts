@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Bagged. Service interrupted. *click* Tip still theoretical.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'clickers_kit_healing-potion_20', beat: 'kit', lines: [
-    'Clickers: You topped off mid-service. Soft guest. Tip: upgrade.',
+    'Clickers: Flask mid-service. Soft guest. Tip: upgrade or tip harder.',
     'Clickers: Healing. We prefer you rare. Soundtrack approves. *click*',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'clickers_kit_oil-flask_21', beat: 'kit', lines: [
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'clickers_def_heal_45', beat: 'defeat', lines: [
     'Clickers: You healed and still went down. Flask optimism failed.',
-    'Clickers: You topped off, then hit the floor. Soft guest. *click* Closed.',
+    'Clickers: You drank, then hit the floor. Soft guest. *click* Closed.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

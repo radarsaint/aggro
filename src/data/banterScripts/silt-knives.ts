@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Before we start — we are not Facilities. We are the guest list. People walk by, kick the murk, say "just looking," and leave. We have been waiting in blackwater a long time. Tonight somebody gets written in.',
   ], weight: 2 },
   { id: 'silt-knives_open_x_1', beat: 'open', lines: [
-    'Silt Knives: Blackwater doesn\'t do brave. We do names in silt. Murk\'s free. Knives aren\'t. Hold still.',
-    'Silt Knives: Waited for careful upstream. Then came the litter. You look like litter. Show us different — or sink.',
+    'Silt Knives: Blackwater keeps names. Ripple once and we start spelling. Hold still.',
+    'Silt Knives: Upstream litter arrives loud. Downstream knives arrive quiet. You smell like the first.',
   ], weight: 2 },
   { id: 'silt-knives_open_0', beat: 'open', lines: [
-    'Silt Knives: The guest list is patient. First ripple gets noted. Second ripple\'s on you. Mostly kidding. Hold still.',
-    'Silt Knives: Listen. We wait. We cut. We file names in silt. You brought a bag. Let\'s see who\'s downstream.',
+    'Silt Knives: Downstream already wrote your name in silt. Upstream litter always arrives loud. Hold still — cold water keeps better records than you do.',
+    'Silt Knives: We wait under the wet-floor sign until the guest list fills. Your ripple just checked in. Knives warm for the ones who splash.',
   ], weight: 2 },
   { id: 'silt-knives_open_1', beat: 'open', lines: [
-    'Silt Knives: We look quiet under the wet floor sign. Then we leave the murk. Spoiler for loud ones: knives warm first.',
-    'Silt Knives: Dry air freaks us out. Empty guest lists freak us out. You? You just annoy us. Annoyance we can silt.',
+    'Silt Knives: Wet floor signs lie. Under them the guest list is already wet with your name.',
+    'Silt Knives: Loud boots teach us early. Soft steps still get cut. The murk is fair that way.',
   ], weight: 1 },
   { id: 'silt-knives_open_2', beat: 'open', lines: [
-    'Silt Knives: Came upstream to litter? Leave. Came to fight? Your name\'s already in the silt.',
-    'Silt Knives: We\'ve heard every lizard joke. Say something new or drown quiet.',
+    'Silt Knives: Kick the silt and we RSVP you. Swim clean or drown quiet — those are the options.',
+    'Silt Knives: Lizard jokes die upstream. Down here we file with knives.',
   ], weight: 1 },
   { id: 'silt-knives_open_3', beat: 'open', lines: [
     'Silt Knives: Quiet truth: we count scales after because silence feels like love. You\'re on the list until the water forgets.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Hit Blackwater. Bold. Dumb. Noted.',
   ] },
   { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Silt Knives: Dinged. Still the coldest thing in the silt.',
+    'Silt Knives: You warmed a knife. Bad manners. Silt still owns the guest list.',
     'Silt Knives: Leaking. Still waiting. Still mad about the litter.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'silt-knives_hcrit_9', beat: 'hunter_crit', lines: [
-    'Silt Knives: Okay — that got under the silt. Felt it.',
+    'Silt Knives: That cut found cold blood. Downstream just took notes.',
     'Silt Knives: Hard hit on Blackwater. Something downstream flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_10', beat: 'hunter_crit', lines: [
     'Silt Knives: Soft spot under the guest list. Congrats.',
-    'Silt Knives: Almost meant it. Don\'t chat. Swing.',
+    'Silt Knives: Almost a real cut. Stop narrating. Aim for the murk.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Silt Knives: Fled, then hit that hard? Pick a current.',

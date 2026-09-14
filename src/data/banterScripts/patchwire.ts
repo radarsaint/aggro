@@ -100,7 +100,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: You bagged us. Flail is the minutes. Quorum still bites through.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patchwire_kit_healing-potion_20', beat: 'kit', lines: [
-    'Patchwire: You topped off mid-vote. Soft. Motion to eat: passed.',
+    'Patchwire: You healed mid-vote. Motion to eat: passed.',
     'Patchwire: Healing flask. We prefer you rare. Whip count: delicious.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'patchwire_kit_oil-flask_21', beat: 'kit', lines: [

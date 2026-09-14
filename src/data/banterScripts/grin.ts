@@ -13,24 +13,24 @@ export const nodes: ScriptNode[] = [
     'Grin: Before we start — I\'m not a puddle. I\'m the claim desk. People drop bags, say "be right back," and never come back. I have been waiting. Tonight somebody gets filed.',
   ], weight: 2 },
   { id: 'grin_open_x_1', beat: 'open', lines: [
-    'Grin: Lost & Found doesn\'t do brave. We do claim stubs and acid. Smile\'s free. Dissolving isn\'t. Tag yourself.',
-    'Grin: I used to hold bags for careful owners. Then came the grabby ones. You look grabby. Show me different — or become inventory.',
+    'Grin: Lost & Found keeps stubs, not speeches. Smile\'s free. Acid files what you leave behind. Tag yourself.',
+    'Grin: Careful owners get their bags back. Grabby ones get puddled. You look grabby. Change my mind.',
   ], weight: 2 },
   { id: 'grin_open_0', beat: 'open', lines: [
-    'Grin: Claim window closes when I say. First sticky hand gets a smile. Second gets the puddle. Mostly kidding. Smile.',
-    'Grin: Listen. I smile. I puddle. I file. You brought a bag — cute. Let\'s see who\'s still claimable when this ends.',
+    'Grin: Claim desk stays open until I puddle. Sticky hands think the smile is free. It isn\'t. The smile is the trap, and you already leaned in.',
+    'Grin: I inventory hunters the way other people inventory lost umbrellas. You look misfiled. Smile for the annex — or become the puddle under it.',
   ], weight: 2 },
   { id: 'grin_open_1', beat: 'open', lines: [
-    'Grin: I look quiet on the floor. Then I leave the floor. Spoiler for sticky hands: I inventory hunters.',
-    'Grin: Forms freak me out. Empty shelves freak me out. You? You just annoy me. Annoyance I can file.',
+    'Grin: The annex looks empty until the smile opens. Then the floor gets interesting and sticky.',
+    'Grin: Empty shelves make me twitch. Wrong tags make me twitch. You make me reach for the stamp.',
   ], weight: 1 },
   { id: 'grin_open_2', beat: 'open', lines: [
-    'Grin: Came to browse? Claim window closes in twenty-four. Came to fight? Stop kicking the puddle.',
-    'Grin: I\'ve heard every "is this yours?" joke. Say something new or dissolve.',
+    'Grin: Claim window runs twenty-four hours. After that you are inventory, smile or no smile.',
+    'Grin: Skip the \'is this yours\' bit. Either claim clean or dissolve loud.',
   ], weight: 1 },
   { id: 'grin_open_3', beat: 'open', lines: [
-    'Grin: Off the stamp pad: I keep what falls because nobody else files it. You\'re a ticket until you\'re a story.',
-    'Grin: If you\'re careful, prove it. If you\'re not, at least dissolve interesting.',
+    'Grin: I keep what falls because nobody else files it. You\'re a stub until you\'re a story.',
+    'Grin: Careful claimants leave with bags. Careless ones leave as residue. Pick a lane.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'grin_hcrit_9', beat: 'hunter_crit', lines: [
-    'Grin: Okay — that got under the smile. Felt it.',
+    'Grin: That one cracked the complimentary smile. Claim desk still open.',
     'Grin: Hard hit on the claim desk. Annex just flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'grin_hcrit_10', beat: 'hunter_crit', lines: [
     'Grin: You found the Do Not Claim sticker. Congrats, grabber.',
-    'Grin: That almost counted as a successful claim. Don\'t chat. Swing.',
+    'Grin: That almost counted as a successful claim. Stop smiling back. File the next hit.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'grin_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Grin: You fled, then hit that hard? Pick a filing status.',

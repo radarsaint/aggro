@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Bagged. Commitment issues with holes. Score: messy.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'glasswing_kit_healing-potion_20', beat: 'kit', lines: [
-    'Glasswing: You topped off mid-survey. Soft. Still scored a two.',
+    'Glasswing: Flask mid-survey. Still scored a two. Mirror judged you soft.',
     'Glasswing: Healing. I prefer you rare and honest.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'glasswing_kit_oil-flask_21', beat: 'kit', lines: [
@@ -178,7 +178,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'glasswing_vic_heal_38', beat: 'victory', lines: [
     'Glasswing: You drank a potion and still beat me. Soft survey. Almost redeemable.',
-    'Glasswing: You topped off, then closed the review. Optimistic prey. Score: coward with a flask.',
+    'Glasswing: You drank, then closed the review. Score: coward with a flask.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'glasswing_vic_kite_39', beat: 'victory', lines: [
     'Glasswing: You made Culture chase you around Mirror Arcade, then finished it. Values survey: fail.',
@@ -206,7 +206,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You fled into a zero. Mirror Arcade expected that.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'glasswing_def_heal_45', beat: 'defeat', lines: [
-    'Glasswing: You topped off and still went down. Soft survey. Wrong call.',
+    'Glasswing: Flask and floor. Soft survey. Wrong call on your pulse.',
     'Glasswing: Topped off, then failed anyway. Score closed. Stay for the mirror next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

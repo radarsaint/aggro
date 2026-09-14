@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drool_kit_healing-potion_20', beat: 'kit', lines: [
     'Drool: You drank up mid-fight. Planning to live? I prefer you rare, signed, and snack-adjacent.',
-    'Drool: Healing mid-pact. Soft. Optimistic. You still owe me crisps.',
+    'Drool: Healing mid-pact. Soft move. You still owe me crisps.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'drool_kit_oil-flask_21', beat: 'kit', lines: [
     'Drool: Oil mid-deal. Slippery like my terms. Fine print still sticks. Literally.',
@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'drool_vic_heal_38', beat: 'victory', lines: [
     'Drool: You drank a potion and still beat me. Soft client path. Snack debt unpaid.',
-    'Drool: You topped off, then closed me. Almost preferred-customer energy.',
+    'Drool: Flask, then you closed me. Almost preferred-customer energy.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'drool_vic_kite_39', beat: 'victory', lines: [
     'Drool: You dragged me around my own booth, then finished it. Jogging voids the cute warranty.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'drool_def_heal_45', beat: 'defeat', lines: [
     'Drool: You healed and still went down. Optimistic client. Wrong.',
-    'Drool: You topped off, then signed in regret. Initialed!',
+    'Drool: You drank, then signed in regret. Initialed!',
   ], requireFlags: ["healed"], weight: 3 },
 ];

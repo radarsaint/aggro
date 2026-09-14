@@ -12,20 +12,20 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Before we start — I\'m not décor. I\'m hunger with antennae. People walk by, wipe their swords on me, say "just looking," and leave. I have been hungry a long time. Tonight somebody\'s leaving rusted.',
   ], weight: 2 },
   { id: 'oxidize_open_x_1', beat: 'open', lines: [
-    'Oxidize: Clearance doesn\'t do brave. We do dinner. Demo\'s free. Oxide is forever. Come closer. Don\'t.',
-    'Oxidize: Waited for careful steel. Then came the loud armors. You smell loud. Show me different — or rust.',
+    'Oxidize: Clearance sells dinner. Demo\'s free. Oxide is forever. Come closer. Don\'t.',
+    'Oxidize: Careful steel gets a sniff. Loud armor gets seasoned. You smell loud already.',
   ], weight: 2 },
   { id: 'oxidize_open_0', beat: 'open', lines: [
-    'Oxidize: Returns are a myth. First touch seasons it. Second touch\'s on you. Mostly kidding. Smell that?',
-    'Oxidize: Listen. I hunger. I flake. I end attachments. You brought a sword. Let\'s see who\'s scrap.',
+    'Oxidize: Clearance smells like dinner before you even draw. That steel on your hip? It already introduced itself. I\'m just the hunger answering.',
+    'Oxidize: Returns died in this pit years ago. Touch me and your blade leaves as flake. Smell that? That\'s attachment ending mid-sentence.',
   ], weight: 2 },
   { id: 'oxidize_open_1', beat: 'open', lines: [
-    'Oxidize: I look quiet in the pit. Then I leave the pit. Spoiler for ferrous hearts: your sword smells like dinner.',
-    'Oxidize: Wood freaks me out. Empty hands freak me out. You? You just annoy me. Annoyance I can season.',
+    'Oxidize: The pit looks still until the feelers find iron. Then flakes start telling the truth.',
+    'Oxidize: Wood bores me. Empty hands bore me. Your ringing armor is the only interesting thing here.',
   ], weight: 1 },
   { id: 'oxidize_open_2', beat: 'open', lines: [
-    'Oxidize: Came to browse clearance? Fine. Came to fight? Stop waving dinner at me.',
-    'Oxidize: I\'ve heard every rust joke. Say something new or swing.',
+    'Oxidize: Window shoppers can leave. Fighters should stop waving dinner under my nose.',
+    'Oxidize: Rust jokes are stale stock. Swing or get seasoned — Clearance is not a comedy aisle.',
   ], weight: 1 },
   { id: 'oxidize_open_3', beat: 'open', lines: [
     'Oxidize: Quiet truth: I love metal more than people. People flake. Steel sings. You\'re on the menu.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Hit Clearance. Bold. Dumb. Noted.',
   ] },
   { id: 'oxidize_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Oxidize: Dinged. Still hungrier than you.',
+    'Oxidize: You chipped Clearance stock. I am still hungrier than you.',
     'Oxidize: Leaking oxide. Still smelling your steel.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'oxidize_hcrit_9', beat: 'hunter_crit', lines: [
-    'Oxidize: Okay — that got under the flake. Felt it.',
+    'Oxidize: That bite got under the oxide. Fine. Dinner got interesting.',
     'Oxidize: Hard hit on Clearance. Something in the pile flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_10', beat: 'hunter_crit', lines: [
-    'Oxidize: Soft spot under the oxide. Congrats.',
-    'Oxidize: Almost meant it. Don\'t chat. Swing.',
+    'Oxidize: Soft spot in the rust. Congrats. I still smell your steel.',
+    'Oxidize: Almost meant it. Quiet. Feed me the next swing.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Oxidize: Fled, then hit that hard? Pick a course.',

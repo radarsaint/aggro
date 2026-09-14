@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'neon-howl_kit_healing-potion_20', beat: 'kit', lines: [
     'Neon Howl: You drank up mid-chase. Planning to live? We prefer you rare and running.',
-    'Neon Howl: Healing mid-howl. Soft. Optimistic. Makes the hunt louder.',
+    'Neon Howl: You patched yourself mid-chase. The pack howled louder.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'neon-howl_kit_oil-flask_21', beat: 'kit', lines: [
     'Neon Howl: Oil on wet concrete. Slippery prey. Still dinner.',
     'Neon Howl: You greased the mile. Pack still braids. Feet still find you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'neon-howl_kit_gen_22', beat: 'kit', lines: [
-    'Neon Howl: Digging mid-chase. Soft. Unscheduled. Pack grades that loud.',
+    'Neon Howl: Digging mid-chase is unscheduled. The pack grades that loud.',
     'Neon Howl: Props out. Counter-howl in a bottle. We answer in bites.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'neon-howl_kit_ran_23', beat: 'kit', lines: [
@@ -185,8 +185,8 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Fine. Pack keeps a howl with your name scratched out.',
   ], weight: 1 },
   { id: 'neon-howl_vic_heal_38', beat: 'victory', lines: [
-    'Neon Howl: You drank a potion and still beat us. Soft. Almost preferred prey.',
-    'Neon Howl: You topped off, then cut the braid. Loud win. Quiet mile.',
+    'Neon Howl: You drank and still cut the braid. Almost preferred prey.',
+    'Neon Howl: You healed, then split the pack. Loud win. Quiet mile.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'neon-howl_vic_kite_39', beat: 'victory', lines: [
     'Neon Howl: You dragged us around our own mile, then finished it. Cardio as a plan. Rude.',
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'neon-howl_def_heal_45', beat: 'defeat', lines: [
     'Neon Howl: You healed and still went down. Optimistic prey. Wrong.',
-    'Neon Howl: You topped off, then wore the pavement. Quiet. Ours.',
+    'Neon Howl: You healed, then kissed pavement. Quiet. Ours.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

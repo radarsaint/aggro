@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'dumpster-king_def_heal_45', beat: 'defeat', lines: [
     'Dumpster King: You healed and still went down. Optimistic. Wrong.',
-    'Dumpster King: You topped off, then hit dirt. Soft peasant. Tribute closed.',
+    'Dumpster King: Flask, then dirt. Soft peasant. Tribute closed.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -8,24 +8,24 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'pose-soft_open_x_0', beat: 'open', lines: [
-    'Pose Soft: Chin up. Shoulders quiet. Almost gallery. People walk by, say "nice mannequin," and leave. I have been "nice mannequin" for a long time. Tonight somebody freezes for real.',
-    'Pose Soft: Hey. Yeah, I talk soft. Surprise. They put me under these lights and told shoppers not to blink. Everybody blinks. You\'re already blinking. I can tell.',
+    'Pose Soft: Chin up. Shoulders quiet. Almost gallery. Tonight somebody freezes for real — and I am done being called a nice mannequin.',
+    'Pose Soft: Soft voice on purpose. They lit this window and told shoppers not to blink. You blinked. I noticed.',
   ], weight: 2 },
   { id: 'pose-soft_open_x_1', beat: 'open', lines: [
-    'Pose Soft: Visual Merch doesn\'t do brave. We do chin-up forever. Pose is free. Stone isn\'t. Hold still.',
-    'Pose Soft: I waited for someone who\'d hold the pose. Then came the wigglers. You look like one. Show me different — or freeze.',
+    'Pose Soft: Visual Merch sells forever. Pose is free. Stone is the upgrade. Hold still.',
+    'Pose Soft: I waited for a hunter who could hold a chin line. Wigglers keep showing up. Prove you\'re not one.',
   ], weight: 2 },
   { id: 'pose-soft_open_0', beat: 'open', lines: [
-    'Pose Soft: Pose warranty is theater. First wiggle ends the look. Second ends you. Mostly kidding. Chin up.',
-    'Pose Soft: Listen. I whisper. I pose. I petrify. You brought a bag. Let\'s see who\'s décor when lights dim.',
+    'Pose Soft: Window light loves a still chin. You blinked twice already. That\'s two demerits and one soft invitation to freeze pretty.',
+    'Pose Soft: I don\'t raise my voice. I raise the pose until your joints remember gallery rules. Hold the line of your shoulders or become décor.',
   ], weight: 2 },
   { id: 'pose-soft_open_1', beat: 'open', lines: [
-    'Pose Soft: I look quiet in the window. Then I leave the window. Spoiler for blinkers: the stone keeps the pose forever.',
-    'Pose Soft: Loud breathing freaks me out. Mid-pose miracles freak me out. You? You just annoy me. Annoyance I can style.',
+    'Pose Soft: Window work looks calm until the stone starts. Then the floorset finishes without you.',
+    'Pose Soft: Loud breath ruins the line. Mid-pose miracles ruin the line. You are already fidgeting.',
   ], weight: 1 },
   { id: 'pose-soft_open_2', beat: 'open', lines: [
-    'Pose Soft: Came to browse? Face the window. Came to fight? Stop sweating on the floorset.',
-    'Pose Soft: I\'ve heard every mannequin joke. Say something new or freeze.',
+    'Pose Soft: Face the glass if you came to look. If you came to fight, stop sweating on my floorset.',
+    'Pose Soft: Mannequin jokes died in fitting. Freeze or leave the window to professionals.',
   ], weight: 1 },
   { id: 'pose-soft_open_3', beat: 'open', lines: [
     'Pose Soft: Quiet truth: I freeze what I love so it can\'t leave the window. You\'re a look until you\'re stone.',
@@ -41,7 +41,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Hit the merch. Bold. Dumb. Noted.',
   ] },
   { id: 'pose-soft_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Pose Soft: Dinged. Still the best-looking thing in this window.',
+    'Pose Soft: Chin scuffed. Pose still selling the window harder than you.',
     'Pose Soft: Leaking. Still posing. Still mad about the wiggle.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -55,12 +55,12 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'pose-soft_hcrit_9', beat: 'hunter_crit', lines: [
-    'Pose Soft: Okay — that got under the gloss. Felt it.',
+    'Pose Soft: You cracked the gloss like a bad fitting. Merch just gasped.',
     'Pose Soft: Hard hit on gallery stock. Merch just gasped.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'pose-soft_hcrit_10', beat: 'hunter_crit', lines: [
     'Pose Soft: Soft spot under the floorset notes. Congrats.',
-    'Pose Soft: Almost meant it. Don\'t chat. Swing.',
+    'Pose Soft: Almost a real look. Hold the chin and try that again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'pose-soft_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Pose Soft: Fled, then hit that hard? Pick a silhouette.',
