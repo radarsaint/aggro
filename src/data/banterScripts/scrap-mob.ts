@@ -39,7 +39,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Ow. Picket staggered. Next knife comes uglier — volume stays theology.',
   ] },
   { id: 'scrap-mob_hhit_5', beat: 'hunter_hit', lines: [
-    'Scrap Mob: You hit Local 666. Hurt logged in four. One chant. Volume does.',
+    'Scrap Mob: You hit Local 666. Four knives felt it. One chant. Volume still theology.',
     'Scrap Mob: Keep crossing — we dare you.',
   ] },
   { id: 'scrap-mob_hhit_bld_6', beat: 'hunter_hit', lines: [

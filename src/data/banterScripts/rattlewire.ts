@@ -39,7 +39,7 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Ow. Posture slipped. Next slot arrives uglier and on the second. Click.',
   ] },
   { id: 'rattlewire_hhit_5', beat: 'hunter_hit', lines: [
-    'Rattlewire: You hit Scheduling Skeleton. Hurt logged. Posture unbroken.',
+    'Rattlewire: You hit Scheduling Skeleton. The calendar still stands straight. Click.',
     'Rattlewire: Appointment continues. Click.',
   ] },
   { id: 'rattlewire_hhit_bld_6', beat: 'hunter_hit', lines: [

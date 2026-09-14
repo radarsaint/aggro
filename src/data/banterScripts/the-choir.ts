@@ -39,7 +39,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Ow. Harmony cracked. Next verse comes uglier — still sweet enough to eat you.',
   ] },
   { id: 'the-choir_hhit_5', beat: 'hunter_hit', lines: [
-    'The Choir: You hit the Morale Ensemble. Hurt logged in harmony. Three voices. One bruise.',
+    'The Choir: You hit the Morale Ensemble. Harmony took the bruise. Three voices. Still sweet.',
     'The Choir: Still singing.',
   ] },
   { id: 'the-choir_hhit_bld_6', beat: 'hunter_hit', lines: [

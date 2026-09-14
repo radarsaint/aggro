@@ -39,7 +39,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Ow. Braid hiccuped. Next bite comes uglier — pack still fast.',
   ] },
   { id: 'neon-howl_hhit_5', beat: 'hunter_hit', lines: [
-    'Neon Howl: You hit the pack. Hurt logged in three. One howl. Neon does not fade.',
+    'Neon Howl: You hit the pack. Three bodies felt it. One howl. Neon does not fade.',
     'Neon Howl: Keep running.',
   ] },
   { id: 'neon-howl_hhit_bld_6', beat: 'hunter_hit', lines: [

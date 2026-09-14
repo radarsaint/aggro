@@ -39,7 +39,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Ow. Formation blinked. Next volley comes uglier. Eyes forward.',
   ] },
   { id: 'marrow-gang_hhit_5', beat: 'hunter_hit', lines: [
-    'Marrow Gang: You hit Drill Team. Hurt logged. Formation holds. Posture unbroken.',
+    'Marrow Gang: You hit Drill Team. Formation holds. Posture unbroken. Eyes forward.',
     'Marrow Gang: Count continues.',
   ] },
   { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
