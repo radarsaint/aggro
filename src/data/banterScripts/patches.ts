@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Patches: You found the soft scrap and finished it. Ugly invoice. Clean ledger.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patches_vic_net_41', beat: 'victory', lines: [
-    'Patches: You bagged the temp and closed the claim. Ugly. Honest.',
+    'Patches: You netted the temp and closed the claim. Sticky win. Filed.',
     'Patches: Net, then win. Filing you under forever anyway.',
   ], requireFlags: ["netted"], weight: 3 },
 

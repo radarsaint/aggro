@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Greased Facilities. We still ignite clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: [
-    'Cinder Crew: Foraging will not kill the thread. Read receipt still on.',
+    'Cinder Crew: You brought a tote to a boiler fight. Thread stays Seen.',
     'Cinder Crew: Props mid-thread? Ignite anyway. Foam is still a rumor.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Found the soft ping and finished. No thread left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [
-    'Cinder Crew: Bagged us and finished. Ugly. Honest.',
-    'Cinder Crew: Net, then win. You bagged the crew. Mildly mad.',
+    'Cinder Crew: You netted the crew and killed the thread. Honest spark-out.',
+    'Cinder Crew: Net, then win. You caught the crew. Mute did not save you.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'cinder-crew_def_42', beat: 'defeat', lines: [

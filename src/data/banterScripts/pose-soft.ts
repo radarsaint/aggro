@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Greased the atelier. I still pose clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'pose-soft_kit_gen_22', beat: 'kit', lines: [
-    'Pose Soft: Foraging will not save the look. I am the floorset.',
-    'Pose Soft: Extra gear mid-pose? Chin stays up. The window does not wait.',
+    'Pose Soft: Floorset first. Chin stays up. Window does not wait on your tote.',
+    'Pose Soft: Tools mid-pose? Chin stays up. The window does not wait.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'pose-soft_kit_ran_23', beat: 'kit', lines: [
     'Pose Soft: You fled the floorset, then dug for toys. Décor never runs. Noted as coward.',
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Found the soft pose and finished. No forever left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'pose-soft_vic_net_41', beat: 'victory', lines: [
-    'Pose Soft: Bagged me and finished. Ugly. Honest.',
-    'Pose Soft: Net, then win. You bagged a mannequin. Mildly mad.',
+    'Pose Soft: You netted Visual Merch and finished it. Window goes empty.',
+    'Pose Soft: Net, then win. You caught a mannequin. Gallery is embarrassed.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'pose-soft_def_42', beat: 'defeat', lines: [

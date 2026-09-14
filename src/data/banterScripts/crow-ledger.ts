@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You found the write-off and finished the audit. Books closed. Gossip trail forever.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'crow-ledger_vic_net_41', beat: 'victory', lines: [
-    'Crow Ledger: You bagged the flock and closed the books. Ugly. Honest.',
+    'Crow Ledger: You netted the flock and closed the books. Balance settled mean.',
     'Crow Ledger: Net, then win. Books closed. Net-30 forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 

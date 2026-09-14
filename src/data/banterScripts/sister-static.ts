@@ -198,8 +198,8 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Found the weak meter under broadcast and finished. Signal dead. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sister-static_vic_net_41', beat: 'victory', lines: [
-    'Sister Static: Bagged me and finished the segment. Ugly. Honest.',
-    'Sister Static: Net, then win. You bagged a DJ. Mildly mad.',
+    'Sister Static: You netted me and killed the segment. Honest violence. Snow goes quiet.',
+    'Sister Static: Net, then win. You caught a DJ. Ratings still confused.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

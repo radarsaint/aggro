@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: You found the soft ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drain-gang_vic_net_41', beat: 'victory', lines: [
-    'Drain Gang: You bagged the franchise and stole the territory. Ugly. Honest.',
+    'Drain Gang: You netted the franchise and stole the territory. Fee collected anyway.',
     'Drain Gang: Net, then win. Franchise closed. Royalty forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 

@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: You found the weak place under the crown and finished it. A peasant ending for a king day.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'dumpster-king_vic_net_41', beat: 'victory', lines: [
-    'Dumpster King: You bagged the King and finished the coup. Ugly. Honest.',
+    'Dumpster King: You netted the King and finished the coup. Throne remembers.',
     'Dumpster King: Net, then win. You bagged a sovereign. We are a little mad.',
   ], requireFlags: ["netted"], weight: 3 },
 

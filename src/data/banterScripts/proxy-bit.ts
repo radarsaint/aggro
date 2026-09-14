@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: You found the soft seal and finished it. Stamp: final. Please initial.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: [
-    'Proxy Bit: You bagged the courier and voided the route. Ugly. Honest.',
+    'Proxy Bit: You netted the courier and voided the route. Receipt stamped forever.',
     'Proxy Bit: Net, then win. Return to sender: denied.',
   ], requireFlags: ["netted"], weight: 3 },
 

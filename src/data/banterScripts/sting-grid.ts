@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Greased the altitude. We still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sting-grid_kit_gen_22', beat: 'kit', lines: [
-    'Sting Grid: Foraging will not clear your permit. Buzz is here.',
-    'Sting Grid: Extra gear at altitude is how necks earn welts. Duck or get filed.',
+    'Sting Grid: Filing continues while you dig. Permit still denied.',
+    'Sting Grid: Tools at altitude earn necks a welt. Duck or get filed.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sting-grid_kit_ran_23', beat: 'kit', lines: [
     'Sting Grid: You left our air to forage. Unauthorized and messy.',
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Found the soft permit and finished. No deed left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sting-grid_vic_net_41', beat: 'victory', lines: [
-    'Sting Grid: Bagged us and finished. Ugly. Honest.',
-    'Sting Grid: Net, then win. You bagged the grid. Mildly mad.',
+    'Sting Grid: You netted the grid and finished it. Deed office goes quiet.',
+    'Sting Grid: Net, then win. You caught the grid. Altitude denied forever.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'sting-grid_def_42', beat: 'defeat', lines: [

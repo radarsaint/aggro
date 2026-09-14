@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: You found the soft padding and finished the drill. Training failed. Boss still not here.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scale-crew_vic_net_41', beat: 'victory', lines: [
-    'Scale Crew: You bagged the apprentices and skipped the boss. Ugly. Honest.',
+    'Scale Crew: You netted the apprentices and skipped the boss. Honest cheat. Boss!',
     'Scale Crew: Net, then win. Training failed. Boss still not here.',
   ], requireFlags: ["netted"], weight: 3 },
 

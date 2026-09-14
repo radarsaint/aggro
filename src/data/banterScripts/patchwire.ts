@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: You found the recess crumb and finished the vote. Quorum dissolved. Whip count: zero.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patchwire_vic_net_41', beat: 'victory', lines: [
-    'Patchwire: You bagged parliament and adjourned us. Ugly. Honest.',
+    'Patchwire: You netted parliament and adjourned us. Motion carries. Teeth first.',
     'Patchwire: Net, then win. Quorum adjourned — permanently.',
   ], requireFlags: ["netted"], weight: 3 },
 

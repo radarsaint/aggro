@@ -113,8 +113,8 @@ export const nodes: ScriptNode[] = [
     'Grin: Greased the hallway. I still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'grin_kit_gen_22', beat: 'kit', lines: [
-    'Grin: Foraging will not close your ticket. I am the desk.',
-    'Grin: Foraging at Lost & Found is how bags become inventory. Smile free. Acid billing.',
+    'Grin: Claim desk first. Ticket still open. Acid still billing the tote.',
+    'Grin: Shopping Lost & Found turns bags into inventory. Smile free. Acid billing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
     'Grin: You left the annex to forage like it was a clearance bin. Claim denied with prejudice.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Grin: Found the soft sticker and finished. No smile left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'grin_vic_net_41', beat: 'victory', lines: [
-    'Grin: Bagged me and finished. Ugly. Honest.',
-    'Grin: Net, then win. You bagged a puddle. Mildly mad.',
+    'Grin: You netted Lost & Found and finished it. Stub stamped closed.',
+    'Grin: Net, then win. You caught a puddle. Claim window laughs once.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

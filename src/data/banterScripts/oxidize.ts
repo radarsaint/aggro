@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Greased Clearance. I still flake clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
-    'Oxidize: Foraging will not save your steel. I am hungry.',
+    'Oxidize: Antennae hate distraction. Your steel still smells like dinner.',
     'Oxidize: You foraged in Clearance like dinner could wait. Antennae disagree. Steel still singing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [
-    'Oxidize: Bagged me and finished. Ugly. Honest.',
-    'Oxidize: Net, then win. You bagged Clearance. Mildly mad.',
+    'Oxidize: You netted Clearance hunger and finished it. Oxide still smells you.',
+    'Oxidize: Net, then win. You caught Clearance. Dinner notes the insult.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'oxidize_def_42', beat: 'defeat', lines: [

@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: You found the soft place and finished it. The latch remembers. Forever starts quiet.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'bleed-static_vic_net_41', beat: 'victory', lines: [
-    'Bleed Static: You bagged the sipper and detached like an adult. Ugly. Honest.',
+    'Bleed Static: You netted the sipper and detached like an adult. Vintage already tasted you.',
     'Bleed Static: Net, then win. You bagged a Benefits Vampire. I am not even mad. Okay, I am a little mad.',
   ], requireFlags: ["netted"], weight: 3 },
 

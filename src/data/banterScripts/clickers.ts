@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Grease on the roost. Service continues overhead.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'clickers_kit_gen_22', beat: 'kit', lines: [
-    'Clickers: Foraging at the table will not hush the clicks. We are right here. *click*',
+    'Clickers: Hands under the table. Clicks get louder. Tip anyway. *click*',
     'Clickers: Unauthorized table tools. We are answering in needles.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'clickers_kit_ran_23', beat: 'kit', lines: [
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: You found the hush-tip and finished service. Closed. Tip: forever zero.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'clickers_vic_net_41', beat: 'victory', lines: [
-    'Clickers: You bagged night shift and closed the table. Ugly. Honest.',
+    'Clickers: You netted night shift and closed the table. Tip: none. *click*',
     'Clickers: Net, then win. Service closed. Tip: still theoretical.',
   ], requireFlags: ["netted"], weight: 3 },
 

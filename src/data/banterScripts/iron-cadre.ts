@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Greased the drill. We still advance clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'iron-cadre_kit_gen_22', beat: 'kit', lines: [
-    'Iron Cadre: Foraging will not save the count. Shields are already here.',
+    'Iron Cadre: Pockets mid-drill. Cadre does not pause the count for souvenirs.',
     'Iron Cadre: Tools mid-drill. Eyes forward. Cadre does not pause for accessories.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Found the soft count and finished. No line left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: [
-    'Iron Cadre: Bagged us and finished. Ugly. Honest.',
-    'Iron Cadre: Net, then win. You bagged the Cadre. Mildly mad.',
+    'Iron Cadre: You netted the Cadre and finished the drill. Quiet shame. Eyes forward.',
+    'Iron Cadre: Net, then win. You caught the Cadre. Discipline files that as rude.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'iron-cadre_def_42', beat: 'defeat', lines: [

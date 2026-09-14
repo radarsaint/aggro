@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Greased the studio. We still bite clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'laugh-track_kit_gen_22', beat: 'kit', lines: [
-    'Laugh Track: Foraging will not kill the howl. Booth is still live.',
+    'Laugh Track: Cue howl does not pause for a tote. Booth stays live.',
     'Laugh Track: Props mid-take? Cue bite anyway. The audience paid for teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'laugh-track_kit_ran_23', beat: 'kit', lines: [
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Found the soft laugh and finished. No cue left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'laugh-track_vic_net_41', beat: 'victory', lines: [
-    'Laugh Track: Bagged us and finished. Ugly. Honest.',
-    'Laugh Track: Net, then win. You bagged the track. Mildly mad.',
+    'Laugh Track: You netted the track and finished it. Howl cuts mid-cue.',
+    'Laugh Track: Net, then win. You caught the track. Audience boos the winner.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'laugh-track_def_42', beat: 'defeat', lines: [

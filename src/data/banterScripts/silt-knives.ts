@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Greased the water. We still cut clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
-    'Silt Knives: Foraging will not scrub your name. Knives are here.',
-    'Silt Knives: Souvenir hunt in blackwater. That is how names get finished early. Murk is listening.',
+    'Silt Knives: Guest list does not take intermissions. Your name is already wet.',
+    'Silt Knives: Souvenir hunt in blackwater finishes names early. Murk is listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
     'Silt Knives: You left the murk to forage. Upstream litter energy — classic.',
@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Found the soft silt and finished. No name left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [
-    'Silt Knives: Bagged us and finished. Ugly. Honest.',
-    'Silt Knives: Net, then win. You bagged Blackwater. Mildly mad.',
+    'Silt Knives: You netted Blackwater and finished it. Guest list goes blank.',
+    'Silt Knives: Net, then win. You caught Blackwater. Upstream litter wins ugly.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'silt-knives_def_42', beat: 'defeat', lines: [

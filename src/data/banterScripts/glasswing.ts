@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You found the soft glass and finished it. Final score: you. Chin down.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'glasswing_vic_net_41', beat: 'victory', lines: [
-    'Glasswing: You bagged the auditor and forced visibility. Ugly. Honest.',
+    'Glasswing: You netted the auditor and forced visibility. Survey fails you anyway.',
     'Glasswing: Net, then win. Visibility: absolute. Score: final.',
   ], requireFlags: ["netted"], weight: 3 },
 

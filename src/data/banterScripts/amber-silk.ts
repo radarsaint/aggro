@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
     'Amber Silk: Aisle foraging before the silk even sticks. Write-up already drafting itself.',
-    'Amber Silk: Extra gear while the wrap is live. Loss Prevention already has a clip. Smile for the headset.',
+    'Amber Silk: You pulled tools during a live wrap. Loss Prevention already has a clip. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
     'Amber Silk: You left the sale to forage. Guest without a receipt. Wrap still coming.',
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Hard hit, then the finish. Headset went quiet. That is the win.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'amber-silk_vic_net_41', beat: 'victory', lines: [
-    'Amber Silk: You bagged the wrapper and finished it. Ugly. Honest.',
+    'Amber Silk: You netted the wrapper and finished it. Headset already filed you.',
     'Amber Silk: Net, then win. Channel three signing off. Guest closed.',
   ], requireFlags: ["netted"], weight: 3 },
 
