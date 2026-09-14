@@ -17,7 +17,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Sub-Basement Morale Ensemble. We sing the verses you never brought to all-hands. Volume isn\'t optional.',
   ], weight: 2 },
   { id: 'the-choir_open_0', beat: 'open', lines: [
-    'The Choir: Guilty hearts. Dim corners. Voices that join before they understand the verse. Bring a pulse — or become a note.',
+    'The Choir: Guilty hearts in dim corners, voices that join before they understand the verse. Bring a heartbeat — or become a note in the hymn.',
     'The Choir: Team-building you can\'t skip. Bright light is rude. Extinguish or blend.',
   ], weight: 2 },
   { id: 'the-choir_open_1', beat: 'open', lines: [

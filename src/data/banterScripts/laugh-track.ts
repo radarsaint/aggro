@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'laugh-track_hhit_5', beat: 'hunter_hit', lines: [
     'Laugh Track: That counted. Bad timing for a joke.',
-    'Laugh Track: Hit the track. Bold. Dumb. Noted.',
+    'Laugh Track: You hit the track. Bold bit. Dumb bit. Noted either way.',
   ] },
   { id: 'laugh-track_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Laugh Track: Dinged. Still the loudest thing in the booth.',
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'laugh-track_kit_healing-potion_20', beat: 'kit', lines: [
     'Laugh Track: Mid-fight sip. Planning a longer episode?',
-    'Laugh Track: Healing. Optimistic. We prefer guests nervous.',
+    'Laugh Track: Healing on air? Optimistic. We prefer guests nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'laugh-track_kit_oil-flask_21', beat: 'kit', lines: [
     'Laugh Track: Oil. Slippery set. Worse plan.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'laugh-track_w_wind_27', beat: 'wound', lines: [
     'Laugh Track: First scratch. Used to believe in careful guests.',
-    'Laugh Track: Scratched. Annoyed. Still on air.',
+    'Laugh Track: You scratched the bit. We're annoyed. Still on air.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'laugh-track_w_bru_28', beat: 'wound', lines: [
     'Laugh Track: Deeper scratch. Want a story? Keep falling.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Walk out mid-bit? The track still cues the howl.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'laugh-track_run2_32', beat: 'run', lines: [
-    'Laugh Track: Twice. Personal. Pathetic bit.',
+    'Laugh Track: Twice is personal. Pathetic bit.',
     'Laugh Track: Second escape. Not mad. Louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'laugh-track_chase_33', beat: 'chase', lines: [

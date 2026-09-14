@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'sting-grid_hhit_5', beat: 'hunter_hit', lines: [
     'Sting Grid: That counted. Unauthorized contact.',
-    'Sting Grid: Hit the grid. Bold. Dumb. Noted.',
+    'Sting Grid: You hit the grid. Bold climb. Dumb climb. Noted either way.',
   ] },
   { id: 'sting-grid_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Sting Grid: Dinged. Still the loudest permit in the air.',

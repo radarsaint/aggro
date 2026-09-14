@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'grin_kit_healing-potion_20', beat: 'kit', lines: [
     'Grin: Mid-fight sip. Planning a longer claim window?',
-    'Grin: Healing. Optimistic. I like claimants nervous.',
+    'Grin: Healing at the claim desk? Optimistic. I like claimants nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'grin_kit_oil-flask_21', beat: 'kit', lines: [
     'Grin: Oil. Slippery annex. Worse plan.',
@@ -138,7 +138,7 @@ export const nodes: ScriptNode[] = [
   // ── WOUNDS ──
   { id: 'grin_w_wind_27', beat: 'wound', lines: [
     'Grin: First scratch. I used to believe in careful owners.',
-    'Grin: Scratched. Annoyed. Desk still open.',
+    'Grin: You scratched the smile. I'm annoyed. Desk still open.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'grin_w_bru_28', beat: 'wound', lines: [
     'Grin: Deeper scratch. Want a story? Keep filing.',

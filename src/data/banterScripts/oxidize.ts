@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'oxidize_hhit_5', beat: 'hunter_hit', lines: [
     'Oxidize: That counted. Seasoning early.',
-    'Oxidize: Hit Clearance. Bold. Dumb. Noted.',
+    'Oxidize: You hit Clearance. Bold move. Dumb move. Noted either way.',
   ] },
   { id: 'oxidize_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Oxidize: Dinged. Still hungrier than you.',
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'oxidize_kit_healing-potion_20', beat: 'kit', lines: [
     'Oxidize: Mid-fight sip. Planning to keep your sword?',
-    'Oxidize: Healing. Optimistic. I prefer armor nervous.',
+    'Oxidize: Healing mid-sale? Optimistic. I prefer the armor nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'oxidize_kit_oil-flask_21', beat: 'kit', lines: [
     'Oxidize: Oil. Slippery aisle. Worse plan.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'oxidize_w_wind_27', beat: 'wound', lines: [
     'Oxidize: First scratch. Used to believe in careful steel.',
-    'Oxidize: Scratched. Annoyed. Still on sale.',
+    'Oxidize: You scratched me. I'm annoyed. Still on sale.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'oxidize_w_bru_28', beat: 'wound', lines: [
     'Oxidize: Deeper scratch. Want a story? Keep seasoning.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Walk off mid-sale? Oxide doesn\'t take returns. Dinner waits.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'oxidize_run2_32', beat: 'run', lines: [
-    'Oxidize: Twice. Personal. Pathetic appetite.',
+    'Oxidize: Twice is personal. Pathetic appetite.',
     'Oxidize: Second escape. Not mad. Faster flake.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'oxidize_chase_33', beat: 'chase', lines: [

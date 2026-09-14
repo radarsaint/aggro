@@ -14,7 +14,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'clickers_open_x_1', beat: 'open', lines: [
     'Clickers: We click before we drink. Soundtrack is not theoretical. Neither are the needles. After-hours service. Guests who forget to tip — we remember.',
-    'Clickers: Volume. Horrible harmony. Graveyard-shift charm overhead. Click for service. Tip in blood if you\'re classy.',
+    'Clickers: We bring volume and horrible harmony, with graveyard-shift charm overhead. Click for service. Tip in blood if you\'re classy.',
   ], weight: 2 },
   { id: 'clickers_open_0', beat: 'open', lines: [
     'Clickers: Night Shift Hospitality. Roof Vents. We click before we drink. After-hours service with needles. Soundtrack already started.',

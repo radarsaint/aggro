@@ -148,7 +148,7 @@ export const CREATURES: Creature[] = [
     distance: '11 minutes away',
     tags: ['COURIER', 'SPY', 'EXPIRED CLEARANCE'],
     jobTitle: 'Interoffice Courier (Clearance: Expired)',
-    bio: 'Sealed envelope. Nervous system. Do not reply-all. Do not pet. Legal already liked this sentence and forwarded it somewhere you\'ll never clear.',
+    bio: 'You are a sealed envelope with a nervous system. Do not reply-all. Do not pet. Legal already liked this sentence and forwarded it somewhere you\'ll never clear.',
     lookingFor: 'A MASTER TO DISAPPOINT. A HUNTER TO SAMPLE. CC ME ON BOTH. SECRETS SMALL ENOUGH TO FIT ON A WINDOWSILL.',
     iBring: 'TELEPATHY. A BITE THE SIZE OF A PERIOD. LOYALTY STILL ON THE PAYROLL.',
     turnOffs: 'ANTIMAGIC. "CUTE TOY." READ RECEIPTS. THE PHRASE "CIRCLE BACK."',

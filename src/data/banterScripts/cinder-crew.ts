@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'cinder-crew_hhit_5', beat: 'hunter_hit', lines: [
     'Cinder Crew: That counted. Bad ping.',
-    'Cinder Crew: Hit the crew. Bold. Dumb. Noted.',
+    'Cinder Crew: You hit the crew. Bold read. Dumb read. Noted either way.',
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Cinder Crew: Dinged. Still the hottest read in Facilities.',

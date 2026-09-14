@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'silt-knives_hhit_5', beat: 'hunter_hit', lines: [
     'Silt Knives: That counted. Rude to the guest list.',
-    'Silt Knives: Hit Blackwater. Bold. Dumb. Noted.',
+    'Silt Knives: You hit Blackwater. Bold swim. Dumb swim. Noted either way.',
   ] },
   { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Silt Knives: Dinged. Still the coldest thing in the silt.',
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'silt-knives_kit_healing-potion_20', beat: 'kit', lines: [
     'Silt Knives: Mid-fight sip. Planning to stay on the list?',
-    'Silt Knives: Healing. Optimistic. We prefer guests nervous.',
+    'Silt Knives: Healing in the murk? Optimistic. We prefer guests nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'silt-knives_kit_oil-flask_21', beat: 'kit', lines: [
     'Silt Knives: Oil. Slick murk. Worse plan.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'silt-knives_w_wind_27', beat: 'wound', lines: [
     'Silt Knives: First scratch. Used to believe in careful upstream.',
-    'Silt Knives: Scratched. Annoyed. Still waiting.',
+    'Silt Knives: You scratched us. We're annoyed. Still waiting in the silt.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'silt-knives_w_bru_28', beat: 'wound', lines: [
     'Silt Knives: Deeper scratch. Want a story? Keep littering.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Flee upstream? Your name\'s already in the silt. We follow.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'silt-knives_run2_32', beat: 'run', lines: [
-    'Silt Knives: Twice. Personal. Pathetic swim.',
+    'Silt Knives: Twice is personal. Pathetic swim.',
     'Silt Knives: Second escape. Not mad. Faster current.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'silt-knives_chase_33', beat: 'chase', lines: [

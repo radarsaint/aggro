@@ -10,7 +10,7 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   { id: 'proxy-bit_open_x_0', beat: 'open', lines: [
     'Proxy Bit: Delivery for… you. Contents: teeth. Do not fold. Do not pet. Sign with blood if ink is dry. Legal already liked this sentence.',
-    'Proxy Bit: Sealed envelope. Nervous system. Petting voids the chain of custody. Somewhere upstairs, someone is smiling about us.',
+    'Proxy Bit: You are a sealed envelope with a nervous system. Petting voids the chain of custody. Somewhere upstairs, someone is smiling about us.',
   ], weight: 2 },
   { id: 'proxy-bit_open_x_1', beat: 'open', lines: [
     'Proxy Bit: Handshake optional. I bite cute. Sign before you flinch. Clearance: expired. Bite still on payroll.',

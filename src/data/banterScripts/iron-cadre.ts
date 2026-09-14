@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [
     'Iron Cadre: That counted. Rude to the line.',
-    'Iron Cadre: Hit the Cadre. Bold. Dumb. Noted.',
+    'Iron Cadre: You hit the Cadre — bold, dumb, and now corrected.',
   ] },
   { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Iron Cadre: Dinged. Still the quietest thing advancing.',

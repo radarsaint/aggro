@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'pose-soft_hhit_5', beat: 'hunter_hit', lines: [
     'Pose Soft: That counted. Rude fitting.',
-    'Pose Soft: Hit the merch. Bold. Dumb. Noted.',
+    'Pose Soft: You hit the merch. Bold wiggle. Dumb wiggle. Noted.',
   ] },
   { id: 'pose-soft_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Pose Soft: Dinged. Still the best-looking thing in this window.',

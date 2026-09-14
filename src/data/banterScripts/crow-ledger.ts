@@ -14,7 +14,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'crow-ledger_open_x_1', beat: 'open', lines: [
     'Crow Ledger: We counted your sins. They didn\'t balance. Pecking starts early. Keys hitting concrete — our favorite quarterly review.',
-    'Crow Ledger: Numbers. Beaks. A ledger you can\'t audit back. Gossip trail included. Interest is personal.',
+    'Crow Ledger: We keep numbers and beaks — a ledger you cannot audit back. Gossip trail included. Interest is personal.',
   ], weight: 2 },
   { id: 'crow-ledger_open_0', beat: 'open', lines: [
     'Crow Ledger: Compliance Flock. Parking Spire. Your citation is already counted. Auditor chorus online. Balance due. Net-30. Paid in pecks.',
