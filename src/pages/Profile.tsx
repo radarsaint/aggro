@@ -90,7 +90,8 @@ export function Profile() {
   const weapon = findEquippedItem(h, 'weapon');
   const armor = findEquippedItem(h, 'armor');
   const shield = findEquippedItem(h, 'shield');
-  const [tab, setTab] = useState<HomeTab>('you');
+  const hasWorn = Boolean(weapon || armor || shield);
+  const [tab, setTab] = useState<HomeTab>(hasWorn ? 'onYou' : 'locker');
   const [sheetOpen, setSheetOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [standardsOpen, setStandardsOpen] = useState(false);
