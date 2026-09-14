@@ -118,8 +118,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Digging for a bottle mid-swarm? We answer in bites, not counter-patches.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'hexhive_kit_ran_23', beat: 'kit', lines: [
-    'Hexhive: You ran, then rummaged. Flee with accessories. Soft host.',
-    'Hexhive: Sprint, then dig. Shafts bill that soft. Bite louder.',
+    'Hexhive: You bolted the shafts with a souvenir hunt. Host still itchy. Swarm still here.',
+    'Hexhive: Fast feet, busy fingers. Shafts do not tip for that. Bites get louder.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

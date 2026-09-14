@@ -117,8 +117,8 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Props like a late invite. I answer in bruises. On time.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'rattlewire_kit_ran_23', beat: 'kit', lines: [
-    'Rattlewire: You ran, then rummaged. Late cowardice with props.',
-    'Rattlewire: Sprint, then dig. Ossuary declines that soft. Click.',
+    'Rattlewire: You skipped the slot, then shopped your pockets. Late. Declined. Click.',
+    'Rattlewire: Dash and forage. Ossuary declines. On the second. Click.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

@@ -108,11 +108,11 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Greased the studio. We still bite clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'laugh-track_kit_gen_22', beat: 'kit', lines: [
-    'Laugh Track: Bag rummage will not kill the howl. We are here.',
+    'Laugh Track: Foraging will not kill the howl. Booth is still live.',
     'Laugh Track: Props mid-take? Cue bite anyway. The audience paid for teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'laugh-track_kit_ran_23', beat: 'kit', lines: [
-    'Laugh Track: You ran from the booth, then rummaged. Cold open, colder exit.',
+    'Laugh Track: You left the booth to forage. Cold open. Colder exit.',
     'Laugh Track: Ran, then dug for props mid-take. Weak bit. Still biting.',
   ], requireFlags: ["ran"], weight: 2 },
 

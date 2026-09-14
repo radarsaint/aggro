@@ -118,8 +118,8 @@ export const nodes: ScriptNode[] = [
     'Sister Static: You went for accessories on air. Snow stays live. No commercial for cowards.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
-    'Sister Static: You fled Channel 7, then rummaged. Bad reception and worse spine.',
-    'Sister Static: Ran with a bag of toys. Channel 7 keeps coming anyway.',
+    'Sister Static: You left Channel 7 for a pocket raid. Bad reception. Worse spine.',
+    'Sister Static: You brought accessories to a live signal. Snow keeps coming anyway.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

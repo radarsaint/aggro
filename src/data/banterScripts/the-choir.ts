@@ -117,8 +117,8 @@ export const nodes: ScriptNode[] = [
     'The Choir: Props like a counter-verse. We answer in bruises and blend.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'the-choir_kit_ran_23', beat: 'kit', lines: [
-    'The Choir: You ran, then rummaged. Bad attendance with props.',
-    'The Choir: Sprint, then dig. Hymnal basement grades soft — and loud.',
+    'The Choir: You skipped verse to raid pockets. Bad attendance. Hymn still hungry.',
+    'The Choir: Fast feet, busy fingers. Hymnal basement grades that rude — and loud.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

@@ -106,11 +106,11 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
     'Amber Silk: Aisle foraging before the silk even sticks. Write-up already drafting itself.',
-    'Amber Silk: Accessories mid-silk. Loss Prevention already has a clip. Smile for the headset.',
+    'Amber Silk: Extra gear while the wrap is live. Loss Prevention already has a clip. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
-    'Amber Silk: You ran, then rummaged. Guest with accessories and no receipt.',
-    'Amber Silk: Sprint, then dig. Clearance grades sticky. Wrap\'s still coming.',
+    'Amber Silk: You left the sale to forage. Guest without a receipt. Wrap still coming.',
+    'Amber Silk: Fast exit, sticky fingers. Clearance grades sticky. Wrap still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER HITS / MISSES ──

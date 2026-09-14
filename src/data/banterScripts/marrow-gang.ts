@@ -117,8 +117,8 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Bottle mid-muster? There is no counter-order. Volley answers.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [
-    'Marrow Gang: You ran, then rummaged. Deserter with accessories.',
-    'Marrow Gang: Sprint, then dig. Barracks bill that soft. Count louder.',
+    'Marrow Gang: You left muster to forage. Deserter energy. Count continues.',
+    'Marrow Gang: Fast feet, busy fingers. Barracks bill that. Count louder.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

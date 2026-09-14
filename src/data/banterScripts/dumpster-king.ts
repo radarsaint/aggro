@@ -112,7 +112,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Peasants and their toys. We answer in bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'dumpster-king_kit_ran_23', beat: 'kit', lines: [
-    'Dumpster King: You fled, then rummaged. Cowardice with toys.',
+    'Dumpster King: You left the throne to forage. Cowardice. Tribute still due.',
     'Dumpster King: Run, dig, pray. Maztek Rear still smells you.',
   ], requireFlags: ["ran"], weight: 2 },
 

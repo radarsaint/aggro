@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Greased Clearance. I still flake clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
-    'Oxidize: Bag rummage will not save the steel. I am hungry.',
-    'Oxidize: You opened the bag in Clearance like dinner could wait. Antennae disagree. Steel still singing.',
+    'Oxidize: Foraging will not save your steel. I am hungry.',
+    'Oxidize: You foraged in Clearance like dinner could wait. Antennae disagree. Steel still singing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
-    'Oxidize: You ran from Clearance, then rummaged. Hunger does not respect accessories.',
-    'Oxidize: Ran, then rummaged mid-hunger. Clearance does not pause for bags. Dinner still coming.',
+    'Oxidize: You left Clearance for a pocket raid. Hunger does not respect souvenirs.',
+    'Oxidize: Broke the meal to forage. Clearance does not pause. Dinner still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'oxidize_mhit_24', beat: 'monster_hit', lines: [

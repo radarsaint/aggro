@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: Unauthorized audit tools. We are answering in late fees.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'crow-ledger_kit_ran_23', beat: 'kit', lines: [
-    'Crow Ledger: You ran, then rummaged. Delinquent with audit toys.',
+    'Crow Ledger: You left the rail to forage. Delinquent. Interest still climbing.',
     'Crow Ledger: Bolt then forage. Parking Spire adds interest for the rummage.',
   ], requireFlags: ["ran"], weight: 2 },
 

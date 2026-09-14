@@ -113,12 +113,12 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: You greased the line. Local still surrounds. Volume still finds you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scrap-mob_kit_gen_22', beat: 'kit', lines: [
-    'Scrap Mob: Pockets open on the line. Local 666 keeps chanting. Knives do not wait for inventory.',
+    'Scrap Mob: Inventory mid-strike. Chant keeps going. Knives do not wait for your pockets.',
     'Scrap Mob: Bottle out mid-picket? Cute counter-offer. We still answer in knives.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scrap-mob_kit_ran_23', beat: 'kit', lines: [
-    'Scrap Mob: You ran, then rummaged. Scab with accessories.',
-    'Scrap Mob: Sprint, then dig. Dump bills that soft. Yell louder.',
+    'Scrap Mob: You crossed out, then foraged. Scab energy. Volume answers.',
+    'Scrap Mob: Fast exit, busy hands. Dump does not discount that. Yell louder.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

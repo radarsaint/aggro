@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Unauthorized workplace tools. Soft voice. Hard answer.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'glasswing_kit_ran_23', beat: 'kit', lines: [
-    'Glasswing: You fled feedback, then opened the bag. Score: soft.',
+    'Glasswing: You fled feedback to raid pockets. Survey scores that as coward.',
     'Glasswing: Sprint, then rummage. Survey fails you for the props too.',
   ], requireFlags: ["ran"], weight: 2 },
 

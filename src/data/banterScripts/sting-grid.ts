@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Greased the altitude. We still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sting-grid_kit_gen_22', beat: 'kit', lines: [
-    'Sting Grid: Bag rummage will not clear your permit. We are here.',
-    'Sting Grid: Toys at altitude is how necks earn welts. Duck or get filed.',
+    'Sting Grid: Foraging will not clear your permit. Buzz is here.',
+    'Sting Grid: Extra gear at altitude is how necks earn welts. Duck or get filed.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sting-grid_kit_ran_23', beat: 'kit', lines: [
-    'Sting Grid: You fled our airspace, then rummaged. Unauthorized and messy.',
-    'Sting Grid: Ran, then dug for toys mid-air. Bad clearance. Still filing welts.',
+    'Sting Grid: You left our air to forage. Unauthorized and messy.',
+    'Sting Grid: Broke altitude to forage. Bad clearance. Still filing welts.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'sting-grid_mhit_24', beat: 'monster_hit', lines: [

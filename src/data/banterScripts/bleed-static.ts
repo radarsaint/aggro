@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Props are not consent. Swing or donate.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'bleed-static_kit_ran_23', beat: 'kit', lines: [
-    'Bleed Static: You bolted, then opened the bag mid-sip. Personal. Vintage noticed.',
+    'Bleed Static: You bolted mid-sip to raid pockets. Personal. Vintage noticed.',
     'Bleed Static: Sprint, then prop. IV Lounge prefers you still for the sip.',
   ], requireFlags: ["ran"], weight: 2 },
 

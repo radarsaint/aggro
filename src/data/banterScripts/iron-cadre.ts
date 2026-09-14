@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Greased the drill. We still advance clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'iron-cadre_kit_gen_22', beat: 'kit', lines: [
-    'Iron Cadre: Bag rummage will not save the count. We are here.',
+    'Iron Cadre: Foraging will not save the count. Shields are already here.',
     'Iron Cadre: Tools mid-drill. Eyes forward. Cadre does not pause for accessories.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
     'Iron Cadre: You broke formation, then dug for toys. Freelancer energy. We hate that.',
-    'Iron Cadre: Ran, then dug for toys mid-drill. Freelancer energy. We still advance.',
+    'Iron Cadre: Broke drill to forage. Freelancer energy. We still advance.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'iron-cadre_mhit_24', beat: 'monster_hit', lines: [

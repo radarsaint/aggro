@@ -117,8 +117,8 @@ export const nodes: ScriptNode[] = [
     'Drool: Bottle mid-pact? Cute. I answer in bruises and crisps either way.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drool_kit_ran_23', beat: 'kit', lines: [
-    'Drool: You ran, then rummaged. Cowardice with props. Still cute of you.',
-    'Drool: Sprint, then dig. Back booth bills that soft. Addendum: more biting.',
+    'Drool: You bolted the booth to raid snacks. Cowardice. Still cute of you.',
+    'Drool: Dash and forage. Back booth bills extra. Addendum: more biting.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

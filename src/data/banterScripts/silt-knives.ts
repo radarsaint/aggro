@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Greased the water. We still cut clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
-    'Silt Knives: Bag rummage will not scrub your name. We are here.',
-    'Silt Knives: You reached for toys in blackwater. That is how names get finished early. Murk is listening.',
+    'Silt Knives: Foraging will not scrub your name. Knives are here.',
+    'Silt Knives: Souvenir hunt in blackwater. That is how names get finished early. Murk is listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
-    'Silt Knives: You fled the blackwater, then rummaged. Litterbugs with bags — classic.',
-    'Silt Knives: Ran, then rummaged in the murk. Litterbug energy. Still coming upstream.',
+    'Silt Knives: You left the murk to forage. Upstream litter energy — classic.',
+    'Silt Knives: Broke the swim to forage. Litterbug energy. Still coming upstream.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'silt-knives_mhit_24', beat: 'monster_hit', lines: [

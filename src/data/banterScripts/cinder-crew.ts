@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Greased Facilities. We still ignite clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: [
-    'Cinder Crew: Bag rummage will not kill the thread. We are Seen.',
+    'Cinder Crew: Foraging will not kill the thread. Read receipt still on.',
     'Cinder Crew: Props mid-thread? Ignite anyway. Foam is still a rumor.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
-    'Cinder Crew: You fled the boiler, then rummaged. Cowards still RSVP with lungs.',
-    'Cinder Crew: Ran, then dug for toys mid-spark. Mute exit. Still coming on read.',
+    'Cinder Crew: You left the boiler for a pocket raid. Cowards still RSVP with lungs.',
+    'Cinder Crew: Broke spark to forage. Mute exit. Still coming on read.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'cinder-crew_mhit_24', beat: 'monster_hit', lines: [

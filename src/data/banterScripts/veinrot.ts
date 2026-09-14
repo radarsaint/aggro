@@ -117,8 +117,8 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Props like a care package. I answer in bruises and quiet.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'veinrot_kit_ran_23', beat: 'kit', lines: [
-    'Veinrot: You ran, then rummaged. Lonely cowardice with props.',
-    'Veinrot: Sprint, then dig. Cold Storage keeps that grade forever.',
+    'Veinrot: You left the freezer, then came back with loot in both hands. Lonely. Still cold.',
+    'Veinrot: Cardio first, pockets second. Cold Storage files that forever.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

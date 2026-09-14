@@ -113,12 +113,12 @@ export const nodes: ScriptNode[] = [
     'Grin: Greased the hallway. I still file clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'grin_kit_gen_22', beat: 'kit', lines: [
-    'Grin: Bag rummage will not close your ticket. I am the desk.',
-    'Grin: Pockets open at the claim desk is how bags become inventory. Smile free. Acid billing.',
+    'Grin: Foraging will not close your ticket. I am the desk.',
+    'Grin: Foraging at Lost & Found is how bags become inventory. Smile free. Acid billing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
-    'Grin: You ran, then rummaged like the annex was a clearance bin. Claim denied with prejudice.',
-    'Grin: Ran, then rummaged like Lost & Found was a yard sale. Still unclaimed. Still coming.',
+    'Grin: You left the annex to forage like it was a clearance bin. Claim denied with prejudice.',
+    'Grin: Broke the claim window to forage like a yard sale. Still unclaimed. Still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

@@ -113,12 +113,12 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You greased the mile. Pack still braids. Feet still find you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'neon-howl_kit_gen_22', beat: 'kit', lines: [
-    'Neon Howl: Toys on the underpass. Pack wants the sound of feet. Keep running or bite.',
+    'Neon Howl: Extra gear on the underpass. Pack wants the sound of feet. Keep running or bite.',
     'Neon Howl: Bottle mid-chase? Save the counter-howl. We answer with teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'neon-howl_kit_ran_23', beat: 'kit', lines: [
-    'Neon Howl: You ran, then rummaged. Prey with accessories. Flirting.',
-    'Neon Howl: Sprint, then dig. Underpass bills that soft. Howl louder.',
+    'Neon Howl: You left the chase to forage. Prey with souvenirs. Flirting.',
+    'Neon Howl: Fast feet, busy fingers. Underpass bills that. Howl louder.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──

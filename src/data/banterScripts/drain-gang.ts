@@ -112,7 +112,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Unauthorized franchise tools. We are answering in fees.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drain-gang_kit_ran_23', beat: 'kit', lines: [
-    'Drain Gang: You ran, then rummaged. Freeloader with franchise toys.',
+    'Drain Gang: You left the grate to forage. Freeloader energy. Fee doubles.',
     'Drain Gang: Bolt then forage. Overflow Grate doubles the fee for the rummage.',
   ], requireFlags: ["ran"], weight: 2 },
 

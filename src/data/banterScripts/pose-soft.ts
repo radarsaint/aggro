@@ -108,12 +108,12 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Greased the atelier. I still pose clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'pose-soft_kit_gen_22', beat: 'kit', lines: [
-    'Pose Soft: Bag rummage will not save the look. I am the floorset.',
-    'Pose Soft: Accessories mid-pose? Chin stays up. The window does not wait for props.',
+    'Pose Soft: Foraging will not save the look. I am the floorset.',
+    'Pose Soft: Extra gear mid-pose? Chin stays up. The window does not wait.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'pose-soft_kit_ran_23', beat: 'kit', lines: [
     'Pose Soft: You fled the floorset, then dug for toys. Décor never runs. Noted as coward.',
-    'Pose Soft: Ran, then rummaged mid-pose. Bad floorset. Still coming for the chin.',
+    'Pose Soft: Broke the pose to forage. Bad floorset. Still coming for the chin.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'pose-soft_mhit_24', beat: 'monster_hit', lines: [
