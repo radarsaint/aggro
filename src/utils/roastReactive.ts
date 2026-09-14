@@ -10,7 +10,7 @@ function voiceKit(creature: Creature, jab: string): string {
   const n = creature.name;
   const id = creature.id;
   const short: Record<string, (j: string) => string> = {
-    knuckle: (j) => `${n}: ${j} Cute try. Still smash.`,
+    knuckle: (j) => `${n}: ${j} Nice try. Still smash.`,
     'sister-static': (j) => `${n}: …station break… ${j} …back to the snow…`,
     'dumpster-king': (j) => `${n}: ${j} Tribute noted. Kneel anyway.`,
     patchwire: (j) => `${n}: We smelled ${j.toLowerCase()} Quorum disagrees. Teeth win.`,
@@ -29,7 +29,7 @@ function voiceKit(creature: Creature, jab: string): string {
     'chrome-edge': (j) => `${n}: ${j} Warranty still void. Demo lethal.`,
     'the-choir': (j) => `${n}: ${j} Join the chorus. Attendance taken.`,
     'neon-howl': (j) => `${n}: ${j} We braid through it. Howl finds you.`,
-    hexhive: (j) => `${n}: ${j} Ticket stays open. Bites continue.`,
+    hexhive: (j) => `${n}: ${j} The heat stays open. Bites continue.`,
     'scrap-mob': (j) => `${n}: ${j} Local 666. Surround first.`,
     'marrow-gang': (j) => `${n}: ${j} Formation. Bleed on the beat.`,
     grin: (j) => `${n}: ${j} Smile's free. Acid isn't.`,
@@ -88,7 +88,7 @@ export function kitReactiveOpeners(creature: Creature, kitId: KitId): string[] {
         `${n}: Fire to a boiler sacristy. Group chat is screaming on read. Oxygen says yes.`,
       ],
       smokestick: [
-        `${n}: Smoke cover in a fire nest is a cute exit. Foam is still a rumor. We smell the flee.`,
+        `${n}: Smoke cover in a fire nest will not save you. Foam is still a rumor. We smell you fleeing.`,
       ],
     },
     rattlewire: {
@@ -113,7 +113,7 @@ export function kitReactiveOpeners(creature: Creature, kitId: KitId): string[] {
     },
     knuckle: {
       caltrops: [
-        `${n}: Caltrops. Cute try. Smash anyway.`,
+        `${n}: Caltrops. Nice try. Smash anyway.`,
       ],
     },
     'neon-howl': {
@@ -234,7 +234,7 @@ export function hunterChoiceOpeners(creature: Creature, hunter: Hunter): string[
       medic: `${n}: Medical day job. Patch yourself after.`,
       legal: `${n}: Legal on the profile. Nest provides the injury.`,
       artist: `${n}: Creative. Soft hands. Hard nest.`,
-      other: `${n}: "${otherJob}" — cute résumé. Nest doesn't do careers.`,
+      other: `${n}: "${otherJob}" — fancy title. This nest does not do careers.`,
     };
     return fallback[kind];
   };
