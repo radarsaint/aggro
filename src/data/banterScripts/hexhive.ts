@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Leaving mid-crawl? We do not pause. Itch neither.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'hexhive_run2_32', beat: 'run', lines: [
-    'Hexhive: Twice. You ran twice. Flee with cardio. Soft.',
+    'Hexhive: Twice. You ran twice. Flee with cardio. Swarm still followed.',
     'Hexhive: Second escape. We noticed. We. Buzz. Louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'hexhive_chase_33', beat: 'chase', lines: [
@@ -199,7 +199,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'hexhive_vic_net_41', beat: 'victory', lines: [
     'Hexhive: You bagged us and finished it. Swarm dismissed mid-bite.',
-    'Hexhive: Net, then win. Soft guest. Hard ending. Legs cut short.',
+    'Hexhive: You bagged the swarm, then finished it. Legs cut short. Shafts went quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

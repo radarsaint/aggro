@@ -43,7 +43,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Count continues.',
   ] },
   { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Marrow Gang: We are leaking and still on the beat. Soft heroes bleed on our count.',
+    'Marrow Gang: We are leaking and still on the beat. Lone heroes bleed on our count.',
     'Marrow Gang: Beat up and still drilling. That is the count talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
-    'Marrow Gang: Healing mid-muster. Soft blood. Still late to roll call.',
+    'Marrow Gang: Healing mid-muster. Still late to roll call. Count noticed.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: [
     'Marrow Gang: Oil on the drill floor. Slippery recruit. Still counted.',
     'Marrow Gang: You greased the barracks. Formation still arrives. Eyes forward.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: [
-    'Marrow Gang: Improvisation mid-drill. Soft. Unscheduled. Write-up.',
+    'Marrow Gang: Improvisation mid-drill is unscheduled. Write-up incoming.',
     'Marrow Gang: Bottle mid-muster? There is no counter-order. Volley answers.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [
@@ -146,7 +146,7 @@ export const nodes: ScriptNode[] = [
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'marrow-gang_w_bld_29', beat: 'wound', lines: [
     'Marrow Gang: Okay. We are leaking. You are still soft. Finish it or bleed on the beat.',
-    'Marrow Gang: Beat up and standing. Still drilling on the second. Soft heroes spoil muster.',
+    'Marrow Gang: Beat up and standing. Still drilling on the second. Lone heroes spoil muster.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'marrow-gang_w_heart_30', beat: 'wound', lines: [
     'Marrow Gang: That landed on something soft we weren\'t advertising at muster.',
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Fine. Count holds your name under Deserter Forever.',
   ], weight: 1 },
   { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: [
-    'Marrow Gang: You drank a potion and still beat us. Soft. Almost punctual.',
+    'Marrow Gang: You drank a potion and still beat us. Almost punctual. Almost.',
     'Marrow Gang: Flask, then you ended muster. Late fee waived. Hold lost.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: [
     'Marrow Gang: You bagged us and finished it. Muster terminated early.',
-    'Marrow Gang: Net, then win. Soft guest. Hard ending. Count filed.',
+    'Marrow Gang: You bagged drill, then finished it. Count filed. Barracks quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

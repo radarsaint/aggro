@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'veinrot_kit_healing-potion_20', beat: 'kit', lines: [
     'Veinrot: You drank up mid-fight. Planning to live? I prefer you rare and near.',
-    'Veinrot: Healing makes the loneliness louder. Soft. Still company.',
+    'Veinrot: Healing makes the loneliness louder. You are still company — colder for it.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'veinrot_kit_oil-flask_21', beat: 'kit', lines: [
     'Veinrot: Oil on ice. Slippery forever — my specialty.',
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'veinrot_vic_net_41', beat: 'victory', lines: [
     'Veinrot: You bagged me and finished it. Cold company, cut short.',
-    'Veinrot: Net, then win. Soft guest. Hard ending. Freezer keeps both memories.',
+    'Veinrot: You bagged me, then finished it. Freezer keeps both memories.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

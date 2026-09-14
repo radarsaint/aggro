@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Mesh on shoulders — commitment issues with holes. Still billing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patches_kit_healing-potion_20', beat: 'kit', lines: [
-    'Patches: Mid-fight flask. Soft prey juicing the ledger like overtime.',
+    'Patches: Mid-fight flask. Prey juicing the ledger like overtime — sticky and loud.',
     'Patches: Healing. Optimistic. Expensive. I prefer you rare and unpaid.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'patches_kit_oil-flask_21', beat: 'kit', lines: [
@@ -177,8 +177,8 @@ export const nodes: ScriptNode[] = [
     'Patches: Fine. Temp status: over. Leave my ghost alone.',
   ], weight: 1 },
   { id: 'patches_vic_heal_38', beat: 'victory', lines: [
-    'Patches: You drank a potion and still beat me. Soft. Effective. I almost respect the cowardice.',
-    'Patches: Potion win. Soft prey with a flask. Receipt filed under forever.',
+    'Patches: You drank a potion and still beat me. Effective cowardice. I almost respect the receipt.',
+    'Patches: Potion win. Prey with a flask. Receipt filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'patches_vic_kite_39', beat: 'victory', lines: [
     'Patches: You made me chase you around my own alcove, then finished it. That is not a win. That is rude.',
@@ -208,6 +208,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'patches_def_heal_45', beat: 'defeat', lines: [
     'Patches: You healed and still went down. Hope in a bottle. Wrong bottle.',
-    'Patches: You drank, then hit the floor. Soft prey. Ledger filed it messy.',
+    'Patches: You drank, then hit the floor. Ledger filed the mess under forever.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

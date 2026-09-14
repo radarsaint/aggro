@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Unauthorized attachments. Please initial the bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'proxy-bit_kit_ran_23', beat: 'kit', lines: [
-    'Proxy Bit: You absconded, then opened unauthorized attachments. Soft.',
+    'Proxy Bit: You absconded, then opened unauthorized attachments. Unsigned and rude.',
     'Proxy Bit: Sprint, then rummage. Cubicle 4B grades that soft.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -177,7 +177,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Fine. Take it. Seal ruined. Please initial the ending.',
   ], weight: 1 },
   { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: [
-    'Proxy Bit: You drank a potion and still beat me. Soft clearance. Almost cleared.',
+    'Proxy Bit: You drank a potion and still beat me. Almost cleared. Almost.',
     'Proxy Bit: You juiced up, then voided the route. Receipt stamped forever anyway.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'proxy-bit_vic_kite_39', beat: 'victory', lines: [

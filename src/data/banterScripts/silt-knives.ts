@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
     'Silt Knives: You fled the blackwater, then rummaged. Litterbugs with bags — classic.',
-    'Silt Knives: Ran, then rummaged in the murk. Soft litterbug. Still coming upstream.',
+    'Silt Knives: Ran, then rummaged in the murk. Litterbug energy. Still coming upstream.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'silt-knives_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'silt-knives_def_heal_45', beat: 'defeat', lines: [
     'Silt Knives: Healed and still went down. Optimistic. Wrong current.',
-    'Silt Knives: You drank, then went down in the murk. Soft litter. Guest list closes.',
+    'Silt Knives: You drank, then went down in the murk. Guest list closes on litter.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

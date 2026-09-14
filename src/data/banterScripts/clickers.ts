@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Bagged. Service interrupted. *click* Tip still theoretical.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'clickers_kit_healing-potion_20', beat: 'kit', lines: [
-    'Clickers: Flask mid-service. Soft guest. Tip: upgrade or tip harder.',
+    'Clickers: Flask mid-service. Tip: upgrade or tip harder. *click*',
     'Clickers: Healing. We prefer you rare. Soundtrack approves. *click*',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'clickers_kit_oil-flask_21', beat: 'kit', lines: [
@@ -177,7 +177,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Fine. Take it. Service closed. Tip: forever zero. Worst table of your life.',
   ], weight: 1 },
   { id: 'clickers_vic_heal_38', beat: 'victory', lines: [
-    'Clickers: Flask mid-shift and you still closed the table. Soft guest. Almost tipped.',
+    'Clickers: Flask mid-shift and you still closed the table. Almost tipped.',
     'Clickers: Potion win. Optimistic guest. Receipt unread in the dark. *click*',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'clickers_vic_kite_39', beat: 'victory', lines: [
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'clickers_def_heal_45', beat: 'defeat', lines: [
     'Clickers: You healed and still went down. Flask optimism failed.',
-    'Clickers: You drank, then hit the floor. Soft guest. *click* Closed.',
+    'Clickers: You drank, then hit the floor. *click* Closed.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

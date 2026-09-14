@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drool_vic_net_41', beat: 'victory', lines: [
     'Drool: You bagged me and finished it. Commitment issues? Resolved with teeth.',
-    'Drool: Net, then win. Soft guest. Hard ending. Initial your victory lap.',
+    'Drool: You bagged me, then finished it. Initial your victory lap.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

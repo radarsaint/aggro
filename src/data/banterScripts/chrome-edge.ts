@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'chrome-edge_kit_ran_23', beat: 'kit', lines: [
     'Chrome Edge: You fled the carousel, then dug for props. Brave shopping. Bad fighting.',
-    'Chrome Edge: You ran, then dug in the bag. Soft. I am still coming.',
+    'Chrome Edge: You ran, then dug in the bag. Floor models still come for fingerprints.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER HITS / MISSES ──
@@ -220,6 +220,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: [
     'Chrome Edge: You healed and still went down. Optimistic. Wrong.',
-    'Chrome Edge: You drank, then dropped under the lights. Soft shopper. Bad look on you.',
+    'Chrome Edge: You drank, then dropped under the lights. Bad look on a sticky-handed shopper.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

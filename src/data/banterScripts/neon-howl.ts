@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'neon-howl_vic_net_41', beat: 'victory', lines: [
     'Neon Howl: You bagged us and finished it. Pack dismissed mid-howl.',
-    'Neon Howl: Net, then win. Soft guest. Hard ending. Braid cut.',
+    'Neon Howl: You bagged the pack, then finished it. Braid cut. Mile went quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

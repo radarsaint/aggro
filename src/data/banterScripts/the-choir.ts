@@ -43,7 +43,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Still singing.',
   ] },
   { id: 'the-choir_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'The Choir: We are leaking and still on hymn. Soft attendance joins the bleed.',
+    'The Choir: We are leaking and still on hymn. Late attendance joins the bleed.',
     'The Choir: Beat up and still on hymn. That is attendance talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
-    'The Choir: Healing mid-verse. Soft throats just made the hymn greedier.',
+    'The Choir: Healing mid-verse. Fresh throats just made the hymn greedier.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'the-choir_kit_oil-flask_21', beat: 'kit', lines: [
     'The Choir: Oil like optional attendance on the suite floor.',
     'The Choir: Slippery. Downbeat holds. We still arrive. We. Sing.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'the-choir_kit_gen_22', beat: 'kit', lines: [
-    'The Choir: Unscheduled props. Solo energy. Soft.',
+    'The Choir: Unscheduled props mid-verse. Solo energy. Harmony grades that rude.',
     'The Choir: Props like a counter-verse. We answer in bruises and blend.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'the-choir_kit_ran_23', beat: 'kit', lines: [
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Fine. The hymnal keeps a verse with your name scratched out.',
   ], weight: 1 },
   { id: 'the-choir_vic_heal_38', beat: 'victory', lines: [
-    'The Choir: You drank a potion and still beat us. Soft. Almost a preferred soloist.',
+    'The Choir: You drank a potion and still beat us. Almost a preferred soloist.',
     'The Choir: Flask, then you cut the harmony. Missed entrance. Louder win.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'the-choir_vic_kite_39', beat: 'victory', lines: [
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'the-choir_vic_net_41', beat: 'victory', lines: [
     'The Choir: You bagged us and finished it. Chorus dismissed mid-verse.',
-    'The Choir: Net, then win. Soft guest. Hard ending. Harmony cut.',
+    'The Choir: You bagged the hymn, then finished it. Harmony cut. Dark got quieter.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

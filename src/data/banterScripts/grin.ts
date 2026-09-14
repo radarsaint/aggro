@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'grin_def_heal_45', beat: 'defeat', lines: [
     'Grin: Healed and still went down. Optimistic. Wrong desk.',
-    'Grin: You drank, then became inventory early. Soft claim. Stub already stamped.',
+    'Grin: You drank, then became inventory early. Stub already stamped.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

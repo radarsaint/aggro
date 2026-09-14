@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'bleed-static_kit_healing-potion_20', beat: 'kit', lines: [
     'Bleed Static: You juiced the vintage I was drinking. Rude. Delicious.',
-    'Bleed Static: Healing. Soft. I prefer you rare and unpaid.',
+    'Bleed Static: Healing mid-date. I prefer you rare and unpaid.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'bleed-static_kit_oil-flask_21', beat: 'kit', lines: [
     'Bleed Static: Oil sheets everything. The lounge hates the sheen. I still latch.',
@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Props are not consent. Swing or donate.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'bleed-static_kit_ran_23', beat: 'kit', lines: [
-    'Bleed Static: You bolted, then opened the bag mid-sip. Soft. Personal.',
+    'Bleed Static: You bolted, then opened the bag mid-sip. Personal. Vintage noticed.',
     'Bleed Static: Sprint, then prop. IV Lounge grades that soft.',
   ], requireFlags: ["ran"], weight: 2 },
 

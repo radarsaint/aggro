@@ -217,6 +217,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sister-static_def_heal_45', beat: 'defeat', lines: [
     'Sister Static: Healed and still went down. Optimistic. Wrong station.',
-    'Sister Static: You drank, then dropped mid-broadcast. Soft guest. Snow keeps rolling.',
+    'Sister Static: You drank, then dropped mid-broadcast. Snow keeps rolling without you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

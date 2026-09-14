@@ -43,7 +43,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Keep crossing — we dare you.',
   ] },
   { id: 'scrap-mob_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Scrap Mob: We are leaking and still surrounding. Soft dues get collected in blood.',
+    'Scrap Mob: We are leaking and still surrounding. Unpaid dues get collected in blood.',
     'Scrap Mob: Beat up and still picketing. That is solidarity talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
-    'Scrap Mob: Healing mid-picket. Soft blood just raised the dues. Knives notice.',
+    'Scrap Mob: Healing mid-picket. Fresh blood just raised the dues. Knives notice.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'scrap-mob_kit_oil-flask_21', beat: 'kit', lines: [
     'Scrap Mob: Oil on the dump. Slippery scab. Still dinner.',
     'Scrap Mob: You greased the line. Local still surrounds. Volume still finds you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scrap-mob_kit_gen_22', beat: 'kit', lines: [
-    'Scrap Mob: Digging mid-picket. Soft. Unscheduled. Local grades that loud.',
+    'Scrap Mob: Digging mid-picket is unscheduled. Local 666 grades that loud.',
     'Scrap Mob: Bottle out mid-picket? Cute counter-offer. We still answer in knives.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scrap-mob_kit_ran_23', beat: 'kit', lines: [
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Fine. Local keeps a chant with your name scratched out.',
   ], weight: 1 },
   { id: 'scrap-mob_vic_heal_38', beat: 'victory', lines: [
-    'Scrap Mob: You drank a potion and still beat us. Soft. Almost preferred scab.',
+    'Scrap Mob: You drank a potion and still beat us. Almost preferred scab energy.',
     'Scrap Mob: Flask, then you broke the picket. Loud win. Quiet dump.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'scrap-mob_vic_kite_39', beat: 'victory', lines: [
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scrap-mob_vic_net_41', beat: 'victory', lines: [
     'Scrap Mob: You bagged us and finished it. Picket dismissed mid-chant.',
-    'Scrap Mob: Net, then win. Soft guest. Hard ending. Line cut.',
+    'Scrap Mob: You bagged the picket, then finished it. Line cut. Dump went quiet.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'laugh-track_kit_ran_23', beat: 'kit', lines: [
     'Laugh Track: You ran from the booth, then rummaged. Cold open, colder exit.',
-    'Laugh Track: Ran, then dug for props mid-take. Soft bit. Still biting.',
+    'Laugh Track: Ran, then dug for props mid-take. Weak bit. Still biting.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'laugh-track_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'laugh-track_def_heal_45', beat: 'defeat', lines: [
     'Laugh Track: Healed and still went down. Optimistic. Wrong cue.',
-    'Laugh Track: You drank, then flopped for the howl. Soft bit. Audience loved it.',
+    'Laugh Track: You drank, then flopped for the howl. Audience loved the flop.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -118,7 +118,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'knuckle_kit_ran_23', beat: 'kit', lines: [
     'Knuckle: Ran. Then bag.',
-    'Knuckle: Flee kit. Soft.',
+    'Knuckle: Ran with toys. Still smash.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──
