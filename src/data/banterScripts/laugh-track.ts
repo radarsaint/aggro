@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Hard hit on the track. Audience gasped. Cute.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'laugh-track_hcrit_10', beat: 'hunter_crit', lines: [
-    'Laugh Track: Soft spot under the laugh. Congrats.',
+    'Laugh Track: You found a crack under the howl. Audience still on your side — for now.',
     'Laugh Track: Almost a punchline. Skip the setup. Bite the bit.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'laugh-track_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Laugh Track: Fled, then hit that hard? Pick a bit.',
-    'Laugh Track: Ran, then connected. Impressed. Still biting.',
+    'Laugh Track: You fled the booth, then stuck the landing on a bite. Howl still rolling. Tape still hungry.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'laugh-track_kit_poison_12', beat: 'kit', lines: [

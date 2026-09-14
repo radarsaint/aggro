@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Hard hit on Blackwater. Something downstream flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_10', beat: 'hunter_crit', lines: [
-    'Silt Knives: Soft spot under the guest list. Congrats.',
+    'Silt Knives: You cut under the guest list. Ripple noted. Knives still patient.',
     'Silt Knives: Almost a real cut. Stop narrating. Aim for the murk.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Silt Knives: Fled, then hit that hard? Pick a current.',
-    'Silt Knives: Ran, then connected. Impressed. Still filing your name.',
+    'Silt Knives: You kicked upstream, fled, then cut the murk honest. Name still getting written in silt.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'silt-knives_kit_poison_12', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
     'Silt Knives: Bag rummage will not scrub your name. We are here.',
-    'Silt Knives: Digging mid-swim? Water is still listening. Knives too.',
+    'Silt Knives: Digging mid-swim is how names get finished early. Murk is listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
     'Silt Knives: You fled the blackwater, then rummaged. Litterbugs with bags — classic.',

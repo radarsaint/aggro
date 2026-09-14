@@ -115,7 +115,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sister-static_kit_gen_22', beat: 'kit', lines: [
     'Sister Static: Bag toys will not kill the signal. I am still on air.',
-    'Sister Static: Digging mid-broadcast? Stay tuned — snow does not pause for props.',
+    'Sister Static: Digging mid-broadcast? Snow does not take a commercial break for bags.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
     'Sister Static: You fled Channel 7, then rummaged. Bad reception and worse spine.',
@@ -195,7 +195,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sister-static_vic_crit_40', beat: 'victory', lines: [
     'Sister Static: You cut through the gloss. Segment\'s over. I will give you that.',
-    'Sister Static: Found the soft spot under broadcast and finished. Meters dead. Well done.',
+    'Sister Static: Found the weak meter under broadcast and finished. Signal dead. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sister-static_vic_net_41', beat: 'victory', lines: [
     'Sister Static: Bagged me and finished the segment. Ugly. Honest.',

@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Hard hit on the crew. Facilities gasped.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'cinder-crew_hcrit_10', beat: 'hunter_crit', lines: [
-    'Cinder Crew: Soft spot under the thread. Congrats.',
+    'Cinder Crew: You found a thin place under the thread. Spark still answers.',
     'Cinder Crew: Almost a real read. Unmute your swing and mean it.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'cinder-crew_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Cinder Crew: Fled, then hit that hard? Pick a mute status.',
-    'Cinder Crew: Ran, then connected. Impressed. Still igniting.',
+    'Cinder Crew: You muted, ran, then pinged us hard. Thread still on fire. Read receipt still yours.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'cinder-crew_kit_poison_12', beat: 'kit', lines: [

@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Hard hit on Interoffice Courier. Legal just [REDACTED] in a CC.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'proxy-bit_hcrit_10', beat: 'hunter_crit', lines: [
-    'Proxy Bit: You found the soft place under the seal. Unsigned and rude.',
+    'Proxy Bit: You cracked the seal. Unsigned and rude. Delivery still venom.',
     'Proxy Bit: That almost felt cleared. Almost. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'proxy-bit_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'proxy-bit_kit_ran_23', beat: 'kit', lines: [
     'Proxy Bit: You absconded, then opened unauthorized attachments. Unsigned and rude.',
-    'Proxy Bit: Sprint, then rummage. Cubicle 4B grades that soft.',
+    'Proxy Bit: Sprint, then rummage. Cubicle 4B stamps that unsigned.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'proxy-bit_mhit_24', beat: 'monster_hit', lines: [

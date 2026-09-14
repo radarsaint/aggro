@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'crow-ledger_kit_ran_23', beat: 'kit', lines: [
     'Crow Ledger: You ran, then rummaged. Delinquent with audit toys.',
-    'Crow Ledger: Bolt then forage. Parking Spire grades that soft.',
+    'Crow Ledger: Bolt then forage. Parking Spire adds interest for the rummage.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'crow-ledger_mhit_24', beat: 'monster_hit', lines: [

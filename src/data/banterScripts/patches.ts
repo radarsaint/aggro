@@ -55,7 +55,7 @@ export const nodes: ScriptNode[] = [
     'Patches: You just dented three centuries of temp work. Scheduling is going to scream.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_10', beat: 'hunter_crit', lines: [
-    'Patches: You found the soft spot under three hundred years of scrap. Congrats, thief.',
+    'Patches: You found a gap under three hundred years of scrap. Thief energy. Ledger noticed.',
     'Patches: That almost felt like a raise. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -142,7 +142,7 @@ export const nodes: ScriptNode[] = [
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'patches_w_heart_30', beat: 'wound', lines: [
     'Patches: That one hit a soft SKU I never put on the shelf.',
-    'Patches: Do not look at me like that while you are winning. I am still billing the soft spot.',
+    'Patches: Do not look at me like that while you are winning. I am still billing the gap you found.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──

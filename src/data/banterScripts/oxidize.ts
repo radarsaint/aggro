@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Hard hit on Clearance. Something in the pile flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_10', beat: 'hunter_crit', lines: [
-    'Oxidize: Soft spot in the rust. Congrats. I still smell your steel.',
+    'Oxidize: You found a thin place in the oxide. I still smell your steel like dessert.',
     'Oxidize: Almost sincere. Keep the speech. Feed me the next swing of iron.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Oxidize: Fled, then hit that hard? Pick a course.',
-    'Oxidize: Ran, then connected. Impressed. Still eating.',
+    'Oxidize: You fled Clearance, then came back swinging steel. Hunger applauds the dinner. Flakes still falling.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'oxidize_kit_poison_12', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
     'Oxidize: Bag rummage will not save the steel. I am hungry.',
-    'Oxidize: Digging mid-meal? Fine. Dinner is still singing and I am still listening.',
+    'Oxidize: Digging mid-meal? Fine. Antennae still tracking your steel song.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
     'Oxidize: You ran from Clearance, then rummaged. Hunger does not respect accessories.',

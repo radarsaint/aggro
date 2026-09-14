@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Hard hit on the Cadre. Drill yard noticed.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Soft spot in formation. Congratulations. Correct it before we correct you.',
+    'Iron Cadre: Gap in formation. Correct it before we correct you. Eyes forward.',
     'Iron Cadre: Almost a real correction. Eyes forward. Hit us like you mean the drill.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Iron Cadre: Fled, then hit that hard? Pick a formation.',
-    'Iron Cadre: Ran, then connected. Impressed. We still advance.',
+    'Iron Cadre: You broke formation, then landed a real hit. Cadre noticed. Advance does not need your apology.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'iron-cadre_kit_poison_12', beat: 'kit', lines: [

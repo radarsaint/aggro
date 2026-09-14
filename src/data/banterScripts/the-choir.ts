@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Slippery. Downbeat holds. We still arrive. We. Sing.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'the-choir_kit_gen_22', beat: 'kit', lines: [
-    'The Choir: Unscheduled props mid-verse. Solo energy. Harmony grades that rude.',
+    'The Choir: Props mid-verse? Solo energy. Harmony eats that kind of entrance.',
     'The Choir: Props like a counter-verse. We answer in bruises and blend.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'the-choir_kit_ran_23', beat: 'kit', lines: [

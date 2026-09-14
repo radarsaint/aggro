@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Hard hit on gallery stock. Merch just gasped.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'pose-soft_hcrit_10', beat: 'hunter_crit', lines: [
-    'Pose Soft: Soft spot under the floorset notes. Congrats.',
+    'Pose Soft: You found a wobble under the floorset notes. Gallery remembers wobbles.',
     'Pose Soft: Almost a real look. Hold the chin and try that again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'pose-soft_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Pose Soft: Fled, then hit that hard? Pick a silhouette.',
-    'Pose Soft: Ran, then connected. Impressed. Still freezing you.',
+    'Pose Soft: You broke pose, fled the window, then landed a hit. Chin still up. Freeze still scheduled.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'pose-soft_kit_poison_12', beat: 'kit', lines: [

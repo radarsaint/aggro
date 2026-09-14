@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'patchwire_kit_ran_23', beat: 'kit', lines: [
     'Patchwire: You fled, then rummaged. Absentee with snack tools.',
-    'Patchwire: Bolt then forage. Tunnel B grades that soft.',
+    'Patchwire: Bolt then forage. Tunnel B votes that motion down.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'patchwire_mhit_24', beat: 'monster_hit', lines: [

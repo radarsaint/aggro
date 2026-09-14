@@ -142,7 +142,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Hurt bad and standing. Finish the coup or kneel forever.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'dumpster-king_w_heart_30', beat: 'wound', lines: [
-    'Dumpster King: That one found the soft place under the crown. Do not ask.',
+    'Dumpster King: That one found a gap under the crown. Do not ask for a receipt.',
     'Dumpster King: Spare Us your pity face. Thrones collect either way.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'dumpster-king_vic_crit_40', beat: 'victory', lines: [
     'Dumpster King: You cut through heraldry. Fight\'s over. We will give you that.',
-    'Dumpster King: You found the soft place under the crown and finished it. A peasant\'s ending for a king\'s day.',
+    'Dumpster King: You found the weak place under the crown and finished it. A peasant ending for a king day.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'dumpster-king_vic_net_41', beat: 'victory', lines: [
     'Dumpster King: You bagged the King and finished the coup. Ugly. Honest.',

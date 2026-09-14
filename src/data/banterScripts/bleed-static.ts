@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Hard hit on a sipper. My pulse skipped wrong for once.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_10', beat: 'hunter_crit', lines: [
-    'Bleed Static: You found the soft place under my latch. Congrats. Vintage remembers.',
+    'Bleed Static: You found the weak latch. Vintage remembers. Sip carefully.',
     'Bleed Static: That almost felt like open enrollment. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'bleed-static_kit_ran_23', beat: 'kit', lines: [
     'Bleed Static: You bolted, then opened the bag mid-sip. Personal. Vintage noticed.',
-    'Bleed Static: Sprint, then prop. IV Lounge grades that soft.',
+    'Bleed Static: Sprint, then prop. IV Lounge prefers you still for the sip.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'bleed-static_mhit_24', beat: 'monster_hit', lines: [

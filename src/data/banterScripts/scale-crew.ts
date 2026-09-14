@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scale-crew_kit_ran_23', beat: 'kit', lines: [
     'Scale Crew: You ran, then rummaged. Tall cowardice with training toys.',
-    'Scale Crew: Bolt then forage. Trap Wing grades that soft. Boss!',
+    'Scale Crew: Bolt then forage. Trap Wing calls that a failed drill. Boss!',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'scale-crew_mhit_24', beat: 'monster_hit', lines: [

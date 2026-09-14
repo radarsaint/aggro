@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Hard hit on Culture Auditor. A mirror just flinched for me.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'glasswing_hcrit_10', beat: 'hunter_crit', lines: [
-    'Glasswing: You found the soft place under the survey. Congrats, liar.',
+    'Glasswing: You poked a hole in the values survey. Liar. Sleep arrow is loading.',
     'Glasswing: That almost passed the survey. Almost. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'glasswing_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'glasswing_kit_ran_23', beat: 'kit', lines: [
     'Glasswing: You fled feedback, then opened the bag. Score: soft.',
-    'Glasswing: Sprint, then rummage. Mirror Arcade grades that soft.',
+    'Glasswing: Sprint, then rummage. Survey fails you for the props too.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'glasswing_mhit_24', beat: 'monster_hit', lines: [

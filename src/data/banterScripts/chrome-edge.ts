@@ -67,7 +67,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: Hard hit on a floor model. Someone in Merch just stood up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'chrome-edge_hcrit_10', beat: 'hunter_crit', lines: [
-    'Chrome Edge: You found a soft place in the steel. Congrats. Floor models hold grudges.',
+    'Chrome Edge: You found a gap in the polish. Floor models hold grudges longer than warranties.',
     'Chrome Edge: That almost felt like you meant it. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'chrome-edge_hcrit_ran_11', beat: 'hunter_crit', lines: [

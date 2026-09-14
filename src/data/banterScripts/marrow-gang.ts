@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: You greased the barracks. Formation still arrives. Eyes forward.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: [
-    'Marrow Gang: Improvisation mid-drill is unscheduled. Write-up incoming.',
+    'Marrow Gang: Improvisation mid-drill earns a write-up. Fall in or become the example.',
     'Marrow Gang: Bottle mid-muster? There is no counter-order. Volley answers.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [

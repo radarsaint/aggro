@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'clickers_kit_ran_23', beat: 'kit', lines: [
     'Clickers: You walked out, then dug for toys. Walkout with tableware.',
-    'Clickers: Flee then forage. Roof Vents grades that soft. *click*',
+    'Clickers: Flee then forage. Roof Vents closes your tab early. *click*',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'clickers_mhit_24', beat: 'monster_hit', lines: [

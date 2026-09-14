@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hard hit. Still up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'knuckle_hcrit_10', beat: 'hunter_crit', lines: [
-    'Knuckle: Soft spot. Found.',
+    'Knuckle: Gap found. Smash continues.',
     'Knuckle: Big hit. Continue.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'knuckle_hcrit_ran_11', beat: 'hunter_crit', lines: [

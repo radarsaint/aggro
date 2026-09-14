@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
     'Amber Silk: Rummaging mid-aisle. That is a write-up before the wrap even starts.',
-    'Amber Silk: Digging mid-wrap? Loss Prevention is grading. Smile for the headset.',
+    'Amber Silk: Digging mid-wrap? Loss Prevention already has a clip. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
     'Amber Silk: You ran, then rummaged. Guest with accessories and no receipt.',

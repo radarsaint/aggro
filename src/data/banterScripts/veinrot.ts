@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'veinrot_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Veinrot: You ran, then hit me that hard? Warm legs. Cold follow-through. Confusing.',
-    'Veinrot: You fled, then came back mean. Impressed. Lonely. Offended. All three freeze the same.',
+    'Veinrot: You fled, then came back mean. Lonely freezer notes all three moods the same way.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
