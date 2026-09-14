@@ -23,7 +23,7 @@ type Props = {
 /**
  * Night rest beat — dating copy only (no quota / stamina / RPG words).
  * Short = grab a drink / need space (+1, once per night, after first-win unlock).
- * Long = call it a night / new night (full).
+ * Long = call it a night / new night (full) — demoted + confirm (floor refreshes).
  */
 export function RestBeat({
   matchesTonight,
@@ -59,18 +59,23 @@ export function RestBeat({
   else if (drinkLocked)
     shortTitle = 'Win your first date tonight — then grab a drink';
 
-  let hint: string;
-  if (atFull) {
-    hint = 'Full night on the books. Call it a night anytime for a fresh start.';
-  } else if (drinkUsed) {
-    hint = 'Already had your drink tonight. Call it a night for a fresh start.';
-  } else if (drinkLocked && firstFightResolvedTonight) {
-    hint = "First date went sideways — drink's off the table tonight. Call it a night for a fresh start.";
-  } else if (drinkLocked) {
-    hint = 'Win your first date tonight — then grab a drink. Call it a night for a full slate.';
-  } else {
-    hint = 'One drink a night for +1 date. Call it a night for a full slate.';
+  // Body hint: dating lock copy for first-win gate only — no "+1 drink" wallpaper.
+  let lockHint: string | null = null;
+  if (!atFull && !drinkUsed && drinkLocked && firstFightResolvedTonight) {
+    lockHint = "First date went sideways — drink's off the table tonight.";
+  } else if (!atFull && !drinkUsed && drinkLocked) {
+    lockHint = 'Win your first date tonight — then grab a drink.';
   }
+
+  const handleLongRest = () => {
+    if (
+      confirm(
+        "Call it a night? Fresh slate tomorrow — the floor refreshes too.",
+      )
+    ) {
+      onLongRest();
+    }
+  };
 
   return (
     <div className={`rest-beat ${nightOver ? 'rest-beat--over' : ''}`}>
@@ -80,18 +85,15 @@ export function RestBeat({
             <strong>Night&apos;s over.</strong> No more dates left tonight — take a beat.
           </>
         ) : (
-          <>
-            <strong>
-              {n === 1 ? '1 date left tonight' : `${n} dates left tonight`}
-            </strong>
-            <span className="rest-beat__muted"> · prep between nights anytime</span>
-          </>
+          <strong>
+            {n === 1 ? '1 date left tonight' : `${n} dates left tonight`}
+          </strong>
         )}
       </div>
       <div className="rest-beat__actions">
         <button
           type="button"
-          className="btn btn-outline"
+          className="btn btn-pink rest-beat__drink"
           disabled={shortDisabled}
           onClick={onShortRest}
           title={shortTitle}
@@ -101,14 +103,14 @@ export function RestBeat({
         </button>
         <button
           type="button"
-          className="btn btn-pink"
-          onClick={onLongRest}
-          title="Call it a night — wake up to a full slate"
+          className="btn btn-ghost rest-beat__night"
+          onClick={handleLongRest}
+          title="Call it a night — full slate + floor refresh"
         >
           Call it a night
         </button>
       </div>
-      <p className="rest-beat__hint">{hint}</p>
+      {lockHint ? <p className="rest-beat__hint">{lockHint}</p> : null}
     </div>
   );
 }
