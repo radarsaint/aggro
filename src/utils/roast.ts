@@ -23,7 +23,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Shinies first. I bill what I love — and you cast a reflection. Hand it over or become the line item.`,
       `${creature.name}: I've got half a sandwich and a rusty edge. Price of admission is glitter — or blood. Your call.`,
       `${creature.name}: Soft secret: I've scavenged worse dates. You're almost interesting. Leave the pretty metal where I can see it.`,
-      `${creature.name}: ${name}. I can hear that nervous little heartbeat from under the shelf — touch without asking the price and I invent a surcharge.`,
+      `${creature.name}: ${name}. Your heart is loud enough to bill from under the shelf — touch without asking the price and I invent a surcharge.`,
     ],
     'dumpster-king': [
       `${creature.name}: Kneel. Tip tribute into the lid. Or leave lighter than you arrived. The smell is the crown. Bow to it.`,
@@ -170,7 +170,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: ${name} has scab energy. Mob rules apply — we surround.`,
     ],
     'marrow-gang': [
-      `${creature.name}: Eyes forward, keep formation, and soft skills are none. Drill begins when you flinch. Bleed on the beat.`,
+      `${creature.name}: Eyes forward and keep formation — soft skills are none. Drill begins when you flinch. Bleed on the beat.`,
       `${creature.name}: Rattlewire went freelance. We kept the count. Attention. Formation unbroken.`,
       `${creature.name}: Roll call, volley fire, perfect posture — zero flesh drama. Drill on the second.`,
       `${creature.name}: Targets in a line. Musters on the second. Hearts that bleed on the beat. Count with us.`,
@@ -178,7 +178,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: ${name}, that's not formation. Correct that — or become the example. Eyes forward.`,
     ],
     grin: [
-      `${creature.name}: Lost & Found. Claim within 24h or become inventory. Smile's free. Acid isn't. You're already reaching.`,
+      `${creature.name}: This is Lost & Found — claim within 24 hours or become inventory. The smile is free; the acid is not. You're already reaching.`,
       `${creature.name}: I'm the claim desk. People drop bags, say "be right back," and never come back. Tonight somebody gets filed.`,
       `${creature.name}: Lost & Found is not a bravery contest. We do claim stubs. The smile is free; dissolving is not. Tag yourself.`,
       `${creature.name}: Claim window closes when I say. First sticky hand gets a smile. Second gets the puddle. Mostly kidding.`,

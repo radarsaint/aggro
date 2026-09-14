@@ -17,7 +17,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Touch twice and I invent a surcharge. Touch three times and I invent you as décor. Pick carefully.',
   ], weight: 1 },
   { id: 'patches_open_2', beat: 'open', lines: [
-    'Patches: I can hear that nervous little heartbeat from under the shelf. You\'re still paying in scrap. Fear costs by the ounce here — pay glitter or bleed.',
+    'Patches: Your heart is loud enough to bill from under the shelf. You\'re still paying in scrap. Fear costs by the ounce here — pay glitter or bleed.',
     'Patches: I\'ve got half a sandwich and a rusty edge. Price of admission is glitter — or blood. Your call.',
   ], weight: 1 },
   { id: 'patches_open_3', beat: 'open', lines: [
