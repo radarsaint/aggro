@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Range over. Better RSVP next time.',
   ] },
   { id: 'cinder-crew_close_smoke_36', beat: 'close', lines: [
-    'Cinder Crew: Cute smoke. We invented haze.',
+    'Cinder Crew: You call that smoke? We invented haze — yours just RSVPs oxygen.',
     'Cinder Crew: Fog\'s gone. Still Seen. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

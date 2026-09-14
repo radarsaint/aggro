@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'The Choir: Range is over. Hands on. Strength drains on contact.',
   ] },
   { id: 'the-choir_close_smoke_36', beat: 'close', lines: [
-    'The Choir: Cute smoke. Loneliness still readable.',
+    'The Choir: Smoke will not mute the hymn. Loneliness still carries through the dark.',
     'The Choir: Fog\'s gone. Three voices. Miss us?',
   ], requireFlags: ["smoke"], weight: 3 },
 

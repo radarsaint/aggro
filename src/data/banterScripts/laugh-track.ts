@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Range over. Better punchline next time.',
   ] },
   { id: 'laugh-track_close_smoke_36', beat: 'close', lines: [
-    'Laugh Track: Cute smoke. Still smell the fall.',
+    'Laugh Track: Smoke is not a punchline. We can still smell the fall from here.',
     'Laugh Track: Fog\'s gone. Still laughing. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

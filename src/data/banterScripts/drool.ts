@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Drool: Range is over. Claws out. Initial here.',
   ] },
   { id: 'drool_close_smoke_36', beat: 'close', lines: [
-    'Drool: Cute smoke. Unread terms still readable.',
+    'Drool: Nice try with the smoke. Unread terms are still sitting right there in the fine print.',
     'Drool: Fog\'s gone. Still adorable. Miss me?',
   ], requireFlags: ["smoke"], weight: 3 },
 

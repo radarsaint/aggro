@@ -21,7 +21,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Conscience on this floor is rare stock. Flipping is mandatory. So is the flinch. Chin up.',
   ], weight: 2 },
   { id: 'glasswing_open_1', beat: 'open', lines: [
-    'Glasswing: Heart sight. Sleep arrows. Opinions you didn\'t request. Mirrors are taking minutes.',
+    'Glasswing: I can see your heart, I pack sleep arrows, and I give opinions you did not request. The mirrors are taking minutes.',
     'Glasswing: Survey score: messy. Blade optional. Honesty looks better scratched.',
   ], weight: 1 },
   { id: 'glasswing_open_2', beat: 'open', lines: [

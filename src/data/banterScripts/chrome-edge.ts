@@ -179,7 +179,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: Range is over. Hope you brought a better plan.',
   ] },
   { id: 'chrome-edge_close_smoke_36', beat: 'close', lines: [
-    'Chrome Edge: Cute smoke. Doesn\'t matter. I don\'t need eyes.',
+    'Chrome Edge: Smoke is cute if you are selling curtains. I do not need eyes to cut you.',
     'Chrome Edge: Fog\'s gone. I\'m still here. Sweat on the chrome. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

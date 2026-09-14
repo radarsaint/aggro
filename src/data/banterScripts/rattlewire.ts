@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Range is over. Perfect posture. Click.',
   ] },
   { id: 'rattlewire_close_smoke_36', beat: 'close', lines: [
-    'Rattlewire: Cute smoke. Pulse between clicks.',
+    'Rattlewire: Smoke does not excuse lateness. I still hear you between the clicks.',
     'Rattlewire: Fog\'s gone. Posture perfect. Miss me? Click.',
   ], requireFlags: ["smoke"], weight: 3 },
 

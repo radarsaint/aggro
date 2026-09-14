@@ -88,7 +88,7 @@ export function kitReactiveOpeners(creature: Creature, kitId: KitId): string[] {
         `${n}: Fire to a boiler sacristy. Group chat is screaming on read. Oxygen says yes.`,
       ],
       smokestick: [
-        `${n}: Smoke cover in a fire nest. Cute exit. Foam is still a rumor. We smell the flee.`,
+        `${n}: Smoke cover in a fire nest is a cute exit. Foam is still a rumor. We smell the flee.`,
       ],
     },
     rattlewire: {
@@ -133,7 +133,7 @@ export function kitReactiveOpeners(creature: Creature, kitId: KitId): string[] {
     },
     'sister-static': {
       smokestick: [
-        `${n}: …fog on a dead channel… cute static… dance anyway… ratings never die…`,
+        `${n}: Fog on a dead channel, cute static if you squint — dance anyway. Ratings never die here.`,
       ],
     },
     patches: {

@@ -176,7 +176,7 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Range over. Better playlist next time.',
   ] },
   { id: 'sister-static_close_smoke_36', beat: 'close', lines: [
-    'Sister Static: Cute smoke. Snow already fills everything.',
+    'Sister Static: Smoke on air is just another commercial. Snow already fills everything else.',
     'Sister Static: Fog\'s gone. Still live. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

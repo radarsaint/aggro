@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Range is over. Teeth. Breathe for us.',
   ] },
   { id: 'neon-howl_close_smoke_36', beat: 'close', lines: [
-    'Neon Howl: Cute smoke. Footsteps still readable.',
+    'Neon Howl: Smoke will not save you. We can still read your footsteps under the neon.',
     'Neon Howl: Fog\'s gone. Three howls. Miss us?',
   ], requireFlags: ["smoke"], weight: 3 },
 

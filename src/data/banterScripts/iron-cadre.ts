@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Range over. Better formation next time.',
   ] },
   { id: 'iron-cadre_close_smoke_36', beat: 'close', lines: [
-    'Iron Cadre: Cute smoke. Don\'t need eyes to advance.',
+    'Iron Cadre: Smoke is not cover. We do not need eyes to keep advancing.',
     'Iron Cadre: Fog\'s gone. Still here. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

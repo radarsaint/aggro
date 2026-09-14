@@ -8,7 +8,7 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'drain-gang_open_x_0', beat: 'open', lines: [
-    'Drain Gang: Not the breakroom rats. Franchise. Bigger bodies. Meaner landlords. Cute enough you pause — that\'s the fee. Soft ankles preferred. Grate rights on the line.',
+    'Drain Gang: We are not the breakroom rats. This is a franchise with bigger bodies and meaner landlords, cute enough that you pause — and that pause is the fee. Soft ankles preferred. Grate rights on the line.',
     'Drain Gang: Every overflow is a storefront. You\'re window shopping wrong. Cute enough you hesitate. Hesitation is the royalty fee.',
   ], weight: 2 },
   { id: 'drain-gang_open_x_1', beat: 'open', lines: [

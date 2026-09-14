@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Range over. Better steel next time.',
   ] },
   { id: 'oxidize_close_smoke_36', beat: 'close', lines: [
-    'Oxidize: Cute smoke. Still smell iron.',
+    'Oxidize: Smoke cannot hide the iron. I can still smell your steel from here.',
     'Oxidize: Fog\'s gone. Still hungry. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 
