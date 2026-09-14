@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: [
     'Marrow Gang: Muster terminated early. Eyes forward anyway.',
-    'Marrow Gang: Silk kills muster. Count filed. Barracks lose the beat.',
+    'Marrow Gang: Muster dies in silk. Count filed. Barracks lose the beat.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

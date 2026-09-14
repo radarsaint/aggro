@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scrap-mob_vic_net_41', beat: 'victory', lines: [
     'Scrap Mob: Chant dies on the line. Dumpster rights restore themselves.',
-    'Scrap Mob: Silk kills the picket. Line cut. Dumpster goes back to trash.',
+    'Scrap Mob: Picket dies in silk. Line cut. Dumpster goes back to trash.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

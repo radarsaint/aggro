@@ -199,7 +199,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'hexhive_vic_net_41', beat: 'victory', lines: [
     'Hexhive: Bites stop cold. Coolant shafts breathe again.',
-    'Hexhive: Silk wins the crawl. Legs stop. Heat loses the argument.',
+    'Hexhive: Crawl loses to silk. Legs stop. Heat loses the argument.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──
