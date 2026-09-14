@@ -1800,6 +1800,72 @@ img { max-width: 100%; display: block; }
   padding: 8px 12px;
   font-size: 0.68rem;
 }
+
+.home-lede--tight {
+  margin-bottom: 8px;
+}
+.home-disclosure {
+  margin: 16px 0 8px;
+}
+.home-disclosure__toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.home-disclosure__toggle:hover {
+  border-color: rgba(255, 0, 127, 0.4);
+  color: #f0d0dc;
+}
+.home-disclosure__body {
+  margin-top: 10px;
+  padding: 4px 2px 8px;
+}
+.home-prefs-link {
+  display: block;
+  width: 100%;
+  margin: 22px 0 8px;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+.home-prefs-link:hover {
+  color: var(--pink);
+}
+.home-prefs-back {
+  display: inline-block;
+  margin: 4px 0 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.home-prefs-back:hover {
+  color: var(--pink);
+}
+.hunter-hero__stats--thin {
+  justify-content: flex-start;
+}
 .loot-card__use-hint {
   margin-top: 4px;
   font-size: 0.62rem;
