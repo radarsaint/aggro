@@ -1,0 +1,831 @@
+import type { Creature, KitId } from '../types';
+import type { MonsterCondition } from './condition';
+
+export type CombatBanterBeat =
+  | 'open'
+  | 'hunter_hit'
+  | 'hunter_miss'
+  | 'hunter_crit'
+  | 'kit'
+  | 'monster_hit'
+  | 'monster_miss'
+  | 'wound'
+  | 'run'
+  | 'chase'
+  | 'close'
+  | 'victory'
+  | 'defeat';
+
+export interface CombatBanterCtx {
+  kitId?: KitId;
+  /** New wound band after a worsen transition */
+  woundBand?: MonsterCondition;
+  /** Exact lines already used this fight */
+  usedLines?: string[];
+  hunterName?: string;
+}
+
+function pick<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function pickFresh(lines: string[], used?: string[]): string | null {
+  if (!lines.length) return null;
+  const pool = used?.length ? lines.filter((l) => !used.includes(l)) : lines;
+  return pick(pool.length ? pool : lines);
+}
+
+function role(creature: Creature): string {
+  return creature.jobTitle || 'Floor Associate';
+}
+
+function floorShort(creature: Creature): string {
+  return creature.floor.split('—')[0].trim();
+}
+
+function voice(creature: Creature, body: string): string {
+  return `${creature.name}: ${body}`;
+}
+
+/** Shared banks — thin seasoning only. Creature sig owns the fight. */
+const SHARED: Record<CombatBanterBeat, string[]> = {
+  open: [
+    `Don't flinch first. That's how they smell fear.`,
+    `We already started. Your pulse just hasn't caught up.`,
+  ],
+  hunter_hit: [
+    `That one had feelings. I resent that.`,
+    `Noted. I'll be uglier about the next one.`,
+  ],
+  hunter_miss: [
+    `Air. Expensive air. Try again with intent.`,
+    `You talk violence better than you land it.`,
+  ],
+  hunter_crit: [
+    `That one hurt. Emotionally. And also actually.`,
+    `Okay. Claws. Keep going — I'm listening.`,
+  ],
+  kit: [
+    `Props. Theater kid with a death wish.`,
+  ],
+  monster_hit: [
+    `Don't look surprised — you matched first.`,
+    `That's for the unread messages.`,
+  ],
+  monster_miss: [
+    `Missed. Don't get cocky — I'm still circling.`,
+    `You got lucky. Luck expires when I get bored.`,
+  ],
+  wound: [
+    `That one showed. Keep dancing.`,
+    `Hurting. Still here. Still hungry.`,
+  ],
+  run: [
+    `You fled. Chase is a love language.`,
+    `Break contact? Violence doesn't do rain checks.`,
+  ],
+  chase: [
+    `You ran twice. We noticed.`,
+    `Second escape. Prey with a fitness app.`,
+  ],
+  close: [
+    `Back in your face. Miss us?`,
+    `Range ends. Soft hands resume.`,
+  ],
+  victory: [
+    `You won. Don't swipe left on my ghost.`,
+    `Clocking out bloody. One star for manners.`,
+  ],
+  defeat: [
+    `Down you go. Verified snack.`,
+    `You died mid-date. On brand for this floor.`,
+  ],
+};
+
+const KIT_LINES: Record<KitId, string[]> = {
+  poison: [
+    `Green sheen on the edge. You cooked dinner for a corpse.`,
+    `Toxin coat. My blood quit years ago — yours still believes in chemistry.`,
+    `You painted the blade like a first-date marinade. It won't take.`,
+  ],
+  'alchemists-fire': [
+    `Flask hits. Floor blooms orange. Facilities already smells the lawsuit.`,
+    `You soft-launched arson mid-date. Sparks are the only honest thing here.`,
+    `Glass breaks, fire crawls your sleeve. Hot. Illegal. Intimate.`,
+  ],
+  caltrops: [
+    `Iron teeth across the tile. Ankles on the menu.`,
+    `You seeded the floor with spite. We walk it anyway.`,
+    `Caltrops scatter like bad confetti. Dance careful.`,
+  ],
+  'acid-vial': [
+    `Vial arcs. Fizz on chrome. Your face is the real spill.`,
+    `Acid kisses the floor. As-is. No returns on personality.`,
+    `Chemistry thrown like a drink in a bar fight. Sticky. Personal.`,
+  ],
+  'holy-water': [
+    `Blessed tap in a flask. Faith smells like chlorine and panic.`,
+    `You brought church into a street fight. The dead hate the brand.`,
+    `Splash of belief. It sizzles — briefly. Then it's just wet.`,
+  ],
+  smokestick: [
+    `Gray bloom. Fog-machine cosplay. We still smell your soap.`,
+    `Smoke between us like a bad text. Closing through the haze.`,
+    `You hid mid-date. The haze doesn't love you back.`,
+  ],
+  'hunting-trap': [
+    `Iron jaws kiss the floor. Snap — tempo stolen.`,
+    `You set a trap on a date. Romance is dead. We aren't.`,
+    `Bear-trap for office prey. Breakroom had worse furniture.`,
+  ],
+  net: [
+    `Mesh kisses shoulders. Commitment issues with holes.`,
+    `You bagged me like a return. Flail is the receipt.`,
+    `Net drops. Three turns of thrashing. Signature in struggle.`,
+  ],
+  'healing-potion': [
+    `Red sip. Juice box for people who plan to live.`,
+    `Healing mid-fight. Optimistic. We prefer you rare.`,
+    `Potion glug. Soft prey topping off. Delicious.`,
+  ],
+  'oil-flask': [
+    `Oil sheets the blade. Every hit a greasy rider.`,
+    `Salad-dressing warfare. Slippery career move.`,
+    `You slicked the floor. Facilities will invoice your ghost.`,
+  ],
+};
+
+interface CreatureCombatVoice {
+  open: string[];
+  /** Signature reactions mixed into non-open beats */
+  sig: string[];
+  /** Optional beat-specific overrides */
+  beats?: Partial<Record<CombatBanterBeat, string[]>>;
+}
+
+/** Per-creature signature openers + reactions. Full voiced lines. */
+function creatureBanks(c: Creature): CreatureCombatVoice {
+  const title = role(c);
+  const fl = floorShort(c);
+  const banks: Record<string, CreatureCombatVoice> = {
+    patches: {
+      open: [
+        voice(c, `Shinies first, thrashing second. I've been a temp since your grandparents lied on résumés.`),
+        voice(c, `${fl}. Don't bore me — I've scavenged worse dates than you.`),
+        voice(c, `${title}. Clock in bloody or leave the pretty scrap where I can see it.`),
+      ],
+      sig: [
+        voice(c, `That cut stays. Shrinkage Floor doesn't do refunds.`),
+        voice(c, `Pain's just overtime. I've worked three centuries of it.`),
+        voice(c, `Scan complete: soft merchandise with a blade fetish.`),
+        voice(c, `I've bitten shinier things than your ego.`),
+        voice(c, `Dumpster etiquette: bleed quiet, tip in scrap.`),
+      ],
+      beats: {
+        victory: [voice(c, `Temp status: terminated. Take the shinies. Leave the attitude.`)],
+        defeat: [voice(c, `Verified snack. Shrinkage solved. Your bag was mid.`)],
+        run: [voice(c, `Flee the alcove? I invented dumpster cardio.`)],
+      },
+    },
+    'dumpster-king': {
+      open: [
+        voice(c, `This dumpster is a throne. Climb in kneeling or clock out as peasant.`),
+        voice(c, `${title}. Tribute or trespass — I don't do soft launches.`),
+        voice(c, `Maztek rear. My bags. My crown. Your badge smells like invasion.`),
+      ],
+      sig: [
+        voice(c, `Waste Streams ate harder scavengers than your whole bloodline.`),
+        voice(c, `Your blood smells like peasant with a LinkedIn.`),
+        voice(c, `Kingdom of trash. You're visiting wrong.`),
+        voice(c, `I rule refuse. You are refuse with opinions.`),
+        voice(c, `Crowds cheer for crowns. I cheer for crumpling.`),
+      ],
+      beats: {
+        run: [voice(c, `Flee the dumpster? Crowns don't chase — we absorb.`)],
+        victory: [voice(c, `Regional VP, down. Empire of bags is yours. Gross.`)],
+        monster_hit: [voice(c, `Royal contact. Kneel slower next time.`)],
+      },
+    },
+    'bleed-static': {
+      open: [
+        voice(c, `${title}. Neck out or enroll properly. Benefits not included — hunger is.`),
+        voice(c, `Internship energy detected. One sip. Maybe two. Your pulse looks unused.`),
+        voice(c, `IV Lounge vent. Bring a vein or leave. Static likes warm accounts.`),
+      ],
+      sig: [
+        voice(c, `Your days off are unused. Your pulse isn't. Stay still.`),
+        voice(c, `I drink what you waste. Efficiency, baby.`),
+        voice(c, `Detach mid-date and I'll file you under unfinished.`),
+        voice(c, `Warm. Salty. Under-utilized. Perfect.`),
+        voice(c, `Enrollment is a love bite with paperwork.`),
+      ],
+      beats: {
+        hunter_crit: [voice(c, `Crit on a benefits vamp? Someone in HR just twitched.`)],
+        defeat: [voice(c, `Drained. Enrollment successful. Welcome to forever.`)],
+        wound: [voice(c, `You nicked the faucet. Rude. Still thirsty.`)],
+      },
+    },
+    'proxy-bit': {
+      open: [
+        voice(c, `Delivery for you. Please do not reply-all. Sign for the bite.`),
+        voice(c, `Clearance expired, attitude didn't. Cubicle 4B. Package is teeth.`),
+        voice(c, `${title}. Tracking says you're home. Open wide.`),
+      ],
+      sig: [
+        voice(c, `Interoffice courier — the message is molars.`),
+        voice(c, `Cc Legal by accident. Bcc violence on purpose.`),
+        voice(c, `Tracking number: your bruise.`),
+        voice(c, `Signature required. Blood is an accepted ink.`),
+        voice(c, `I am a memo that bites back.`),
+      ],
+      beats: {
+        kit: [voice(c, `You opened the bag mid-route. That's a write-up in teeth.`)],
+        hunter_miss: [voice(c, `Missed the courier. Package still arriving.`)],
+      },
+    },
+    glasswing: {
+      open: [
+        voice(c, `Culture audit live. Honesty optional. Thrashing mandatory.`),
+        voice(c, `Heart sight says messy. Mirror Arcade. Let's fail you properly.`),
+        voice(c, `${title}. I see through you — disappointing panes.`),
+      ],
+      sig: [
+        voice(c, `Values survey failed. Corrective action: bleed.`),
+        voice(c, `Conscience or blade — pick one. Audit continues.`),
+        voice(c, `Glass remembers every flinch. So do I.`),
+        voice(c, `Your insides are loud. Ugly loud.`),
+        voice(c, `Transparency is my body. Yours is a closed ticket.`),
+      ],
+      beats: {
+        wound: [voice(c, `Auditor cracked. Still scoring your soul.`)],
+        hunter_hit: [voice(c, `You scratched the pane. The pane scratches back.`)],
+        victory: [voice(c, `Audit closed. You passed with blood. Ugly win.`)],
+      },
+    },
+    patchwire: {
+      open: [
+        voice(c, `Collective notice: you are lunch. Tunnel B. All of us.`),
+        voice(c, `We are many. You are dinner. Volume over valor.`),
+        voice(c, `Breakroom infestation says hi. In bites. In harmony.`),
+      ],
+      sig: [
+        voice(c, `Patches taught scraps. We taught swarm.`),
+        voice(c, `Snack-sized. Appetite isn't.`),
+        voice(c, `One of us lands. Twenty of us celebrate.`),
+        voice(c, `Your ankles are a shared resource.`),
+        voice(c, `We vote with teeth. Motion carries.`),
+      ],
+      beats: {
+        monster_hit: [voice(c, `One of many landed. More where that came from.`)],
+        chase: [voice(c, `You ran from a collective. Bold. Fatal.`)],
+        defeat: [voice(c, `Lunch secured. Minutes approved unanimously.`)],
+      },
+    },
+    clickers: {
+      open: [
+        voice(c, `Night shift overhead. Roof vents. We click first — then we drink.`),
+        voice(c, `After-hours policy: exposed skin preferred. Still food.`),
+        voice(c, `${title}. Tip is not included. Screaming is.`),
+      ],
+      sig: [
+        voice(c, `Click-click. Receipt with no tip.`),
+        voice(c, `Vent Ops owns this altitude of pain.`),
+        voice(c, `Night shift doesn't clock out for manners.`),
+        voice(c, `We nest in neon. You thrash in leftovers.`),
+        voice(c, `Overhead. Always overhead. Look up wrong.`),
+      ],
+      beats: {
+        run: [voice(c, `Running under vents? We invented overhead.`)],
+        monster_hit: [voice(c, `Sip landed. Click of approval.`)],
+      },
+    },
+    'crow-ledger': {
+      open: [
+        voice(c, `Compliance flock. Citation issued. Pecking starts early — Net-30 optional.`),
+        voice(c, `We counted your sins. Parking spire rails. Bring unpaid tickets.`),
+        voice(c, `${title}. Beaks are auditors. You failed before you arrived.`),
+      ],
+      sig: [
+        voice(c, `Ledger unbalanced. Correct with blood.`),
+        voice(c, `Flock math: many eyes, one write-up.`),
+        voice(c, `We bill in pecking. Interest compounds.`),
+        voice(c, `Your parking karma is catastrophic.`),
+        voice(c, `Citation mid-swing. Efficiency.`),
+      ],
+      beats: {
+        victory: [voice(c, `Citation closed — paid in full. Ugly win.`)],
+        chase: [voice(c, `Fleeing a flock? Books still open.`)],
+      },
+    },
+    'scale-crew': {
+      open: [
+        voice(c, `Trap Wing apprentices. Tall enough to trigger things for us?`),
+        voice(c, `Suggested PPE: kneepads and dignity. For the boss. Ironically.`),
+        voice(c, `${title}. We are small. The traps are not. Sign the waiver in bruises.`),
+      ],
+      sig: [
+        voice(c, `Facilities taught us traps. You're the demo.`),
+        voice(c, `Apprentice crew — still meaner than your lead.`),
+        voice(c, `Watch your step. Literally. We greased the metaphor.`),
+        voice(c, `Small hands. Sharp lessons.`),
+        voice(c, `Boss said practice on something tall. Hi.`),
+      ],
+      beats: {
+        kit: [voice(c, `You brought a kit to Trap Wing. Internship reversed.`)],
+        hunter_miss: [voice(c, `Missed the short ones. Classic tall-people error.`)],
+      },
+    },
+    'drain-gang': {
+      open: [
+        voice(c, `Franchisees speaking. Soft ankles preferred. Grate rights on the line.`),
+        voice(c, `Bigger than Patchwire. Meaner than your landlord. Pay the franchise fee.`),
+        voice(c, `${title}. Overflow grate. Your blood's the royalty.`),
+      ],
+      sig: [
+        voice(c, `Franchise model: bite, expand, repeat.`),
+        voice(c, `Ankles. Always ankles. Brand standard.`),
+        voice(c, `We outgrew the breakroom. Ambition tastes like shin.`),
+        voice(c, `Landlord energy with better teeth.`),
+        voice(c, `Grate rights aren't shared. They're taken.`),
+      ],
+      beats: {
+        close: [voice(c, `Closed the grate gap. Welcome to the franchise.`)],
+        defeat: [voice(c, `Fee collected. Territory expanded. You're décor now.`)],
+      },
+    },
+    'amber-silk': {
+      open: [
+        voice(c, `Loss Prevention. Solo. I decorate — you thrash. Shrinkage is intimate.`),
+        voice(c, `Headset on. Coupon energy detected. Clearance. Stay pretty while I wrap.`),
+        voice(c, `${title}. Receipt required. Screaming optional. Silk preferred.`),
+      ],
+      sig: [
+        voice(c, `I wrap pretty. You leave sticky.`),
+        voice(c, `LP doesn't miss. Much. Anymore.`),
+        voice(c, `Everybody shops. Only I get to arrange the display.`),
+        voice(c, `Your thrashing is merchandising. Hold the pose.`),
+        voice(c, `Headset crackles. Tag applied. You're mine for the aisle.`),
+        voice(c, `Solo spider. Pack energy was never my aesthetic.`),
+      ],
+      beats: {
+        hunter_miss: [voice(c, `Missed the silk. Shrinkage continues.`)],
+        defeat: [voice(c, `Shopper down. Inventory updated. Robe's still yours — receipt pending.`)],
+        wound: [voice(c, `You scuffed the display. Rude. Still wrapping.`)],
+        victory: [voice(c, `Lead down. Keep the robe. Don't keep the smug.`)],
+      },
+    },
+    veinrot: {
+      open: [
+        voice(c, `Eternal Associate, Level −2. Still walking. Freezer aisle. Lights off.`),
+        voice(c, `Clock doesn't stop. Pep talks void warranty. Come close — cold storage hugs harder.`),
+        voice(c, `${title}. Warmer than corporate. Colder than kindness.`),
+      ],
+      sig: [
+        voice(c, `Undead Fortitude is just refusing to clock out.`),
+        voice(c, `I outlasted the brand. You'll outlast nothing.`),
+        voice(c, `Rot notices. Rot stays. Rot doesn't do early leave.`),
+        voice(c, `Your heat is rude. I like rude.`),
+        voice(c, `Nametag still on. Dignity optional since century two.`),
+      ],
+      beats: {
+        wound: [voice(c, `Rot notices. Still doesn't leave early.`)],
+        victory: [voice(c, `Associate finally clocked out. Don't steal the nametag.`)],
+        hunter_crit: [voice(c, `That would kill a living person. I'm on shift.`)],
+      },
+    },
+    drool: {
+      open: [
+        voice(c, `Pact & Snacks. Initial here. Soul optional. Snacks mandatory.`),
+        voice(c, `Fine print giggled. Back booth. No holy symbols mid-fight — still binding.`),
+        voice(c, `${title}. Tiny. Absolute menace. Going to sell your afternoon.`),
+      ],
+      sig: [
+        voice(c, `Terms & conditions bite back.`),
+        voice(c, `You didn't read the pact. Classic.`),
+        voice(c, `Snack associate with a soul clause.`),
+        voice(c, `Initial. Initial. Oh — that was a claw.`),
+        voice(c, `Tiny is a weapon. I filed the trademark.`),
+      ],
+      beats: {
+        kit: [voice(c, `Holy water near Drool? Read the booth rules.`)],
+        defeat: [voice(c, `Soul filed. Snacks acquired. See you in fine print.`)],
+      },
+    },
+    rattlewire: {
+      open: [
+        voice(c, `Scheduling. Declined the invite. Still on time. Ossuary annex.`),
+        voice(c, `Kept the calendar. Lost the flesh. Be décor or be punctual.`),
+        voice(c, `${title}. Your femur has an appointment.`),
+      ],
+      sig: [
+        voice(c, `On time forever. You're late to dying.`),
+        voice(c, `Bones keep better hours than you.`),
+        voice(c, `Calendar hold: your spine.`),
+        voice(c, `I don't ghost. I reschedule into violence.`),
+        voice(c, `Flesh was a distraction. Punctuality isn't.`),
+      ],
+      beats: {
+        chase: [voice(c, `Running from Scheduling? Nobody ghosts the annex.`)],
+        victory: [voice(c, `Meeting adjourned. Take the calendar. Leave the ribs.`)],
+      },
+    },
+    'chrome-edge': {
+      open: [
+        voice(c, `Floor model. Warranty void if swung wrong. Touch me — airborne.`),
+        voice(c, `Merch that fights back. Demo rules. Blade carousel.`),
+        voice(c, `${title}. Just looking? Demo surcharge applied.`),
+      ],
+      sig: [
+        voice(c, `Armed SKU. You're the packaging.`),
+        voice(c, `Chrome doesn't dull for soft hands.`),
+        voice(c, `I am the accessory. You are the shelf life.`),
+        voice(c, `Touch without buying. Classic. Fatal.`),
+        voice(c, `Display lighting loves me. You won't.`),
+      ],
+      beats: {
+        hunter_hit: [voice(c, `You scratched the floor model. Loss Prevention weeps.`)],
+        defeat: [voice(c, `SKU claimed. Handle with gloves. Or don't.`)],
+      },
+    },
+    'the-choir': {
+      open: [
+        voice(c, `Morale ensemble. Attendance mandatory. We sing what you bury.`),
+        voice(c, `Forced fun detected. Hymnal basement. Join the chorus.`),
+        voice(c, `${title}. Harmony optional. Volume isn't.`),
+      ],
+      sig: [
+        voice(c, `Sub-basement acoustics love screaming.`),
+        voice(c, `Skip optional events? We made this mandatory.`),
+        voice(c, `We are the song under your smile. Ugly key.`),
+        voice(c, `Strength drains nicer when it's on beat.`),
+        voice(c, `Encore means you thrash again.`),
+      ],
+      beats: {
+        monster_hit: [voice(c, `Note landed. Choir approves the bruise.`)],
+        defeat: [voice(c, `Soloist down. Encore denied.`)],
+        wound: [voice(c, `A voice cracked. The rest swell louder.`)],
+      },
+    },
+    'neon-howl': {
+      open: [
+        voice(c, `Pack Ops. We hunt as one. You die as one. Hit your number.`),
+        voice(c, `Synergy howl incoming. Underpass. Pack rules — solo heroes spoil the meat.`),
+        voice(c, `${title}. Howl is the standup. You're the agenda.`),
+      ],
+      sig: [
+        voice(c, `Works better alone? Pack disagrees — with teeth.`),
+        voice(c, `Underpass synergy: teeth.`),
+        voice(c, `We flank for love. And for lunch.`),
+        voice(c, `Neon on fur. Blood on schedule.`),
+        voice(c, `One howl. Three angles. Zero mercy.`),
+      ],
+      beats: {
+        chase: [voice(c, `Pack chase. Your cardio is a joke.`)],
+        monster_hit: [voice(c, `Pack tactics aren't a suggestion.`)],
+        defeat: [voice(c, `Prey down. Howl of closure.`)],
+      },
+    },
+    hexhive: {
+      open: [
+        voice(c, `IT tickets with legs. Priority P1. Patch notes incoming.`),
+        voice(c, `Tried thrashing harder? Coolant shafts. Swarm.`),
+        voice(c, `${title}. Have you tried dying and restarting?`),
+      ],
+      sig: [
+        voice(c, `Ticket won't close until you do.`),
+        voice(c, `P1 severity: your neck.`),
+        voice(c, `We are the error in your skin.`),
+        voice(c, `SLA breached. Violence escalated.`),
+        voice(c, `Reboot denied. Bleed approved.`),
+      ],
+      beats: {
+        kit: [voice(c, `You deployed a kit. Change request denied.`)],
+        hunter_miss: [voice(c, `Miss logged. Severity unchanged.`)],
+      },
+    },
+    'scrap-mob': {
+      open: [
+        voice(c, `Union Local 666. Scab energy detected. We surround. We bite.`),
+        voice(c, `Patches taught nothing. Volume did. Mutual Aid Dump.`),
+        voice(c, `${title}. Bargaining unit: teeth. No arbitration.`),
+      ],
+      sig: [
+        voice(c, `Scabs get surrounded. Policy.`),
+        voice(c, `Mob rules. Strike fund eats first.`),
+        voice(c, `Collective bargaining tastes like shin.`),
+        voice(c, `We vote to thrash. Motion carries.`),
+        voice(c, `One picket line. Infinite teeth.`),
+      ],
+      beats: {
+        wound: [voice(c, `Union takes a hit. Still voting to thrash.`)],
+        chase: [voice(c, `Running from a picket? Classic scab move.`)],
+      },
+    },
+    'marrow-gang': {
+      open: [
+        voice(c, `Drill team. Roll call. Attention. ${title}.`),
+        voice(c, `Rattlewire went solo. We didn't. Count with us.`),
+        voice(c, `Loading crypt. Formation unbroken. Your stance isn't.`),
+      ],
+      sig: [
+        voice(c, `Cadence in bone. March into bruises.`),
+        voice(c, `Write-up incoming. In femur.`),
+        voice(c, `Eyes forward. Bleed quietly.`),
+        voice(c, `Lateness is a write-up. Dying early is worse.`),
+        voice(c, `We kept the formation. You kept the bad habits.`),
+      ],
+      beats: {
+        close: [voice(c, `Drill closes ranks. You're in the pocket.`)],
+        run: [voice(c, `Breaking formation? Noted. Corrected.`)],
+      },
+    },
+    grin: {
+      open: [
+        voice(c, `Lost & Found asset. Do Not Claim. Touch me — become inventory.`),
+        voice(c, `I look like a puddle. Or a chest. Or your bad decision. Vault Annex.`),
+        voice(c, `${title}. Claim within 24h or dissolve politely.`),
+      ],
+      sig: [
+        voice(c, `Liability waived on contact.`),
+        voice(c, `Pseudopod says hello. Sticky HR.`),
+        voice(c, `I am furniture with opinions.`),
+        voice(c, `You hit a surface. Surfaces hit back.`),
+        voice(c, `Lost-and-found energy. Dating profile energy. Same teeth.`),
+        voice(c, `Don't put me in your bag without gloves.`),
+      ],
+      beats: {
+        hunter_hit: [voice(c, `You hit a puddle. Brave. Sticky.`)],
+        victory: [voice(c, `Asset claimed. Wipe your hands. Or don't.`)],
+        defeat: [voice(c, `Hunter inventoried. Vault thanks you.`)],
+      },
+    },
+    'sister-static': {
+      open: [
+        voice(c, `Dead Channel 7 — live forever. Dance. Ratings eternal.`),
+        voice(c, `Last song on a dead station. Lights out. Bring your spark.`),
+        voice(c, `${title}. Crush for the ratings. Soft launch denied.`),
+      ],
+      sig: [
+        voice(c, `Changed the channel? We're still broadcasting pain.`),
+        voice(c, `Static sisterhood. You're guest talent.`),
+        voice(c, `I am the song after the signal dies.`),
+        voice(c, `Smile for the dead cameras. Then thrash.`),
+        voice(c, `Audience of ghosts. They prefer blood.`),
+        voice(c, `Glamour is a frequency. You're off-key.`),
+      ],
+      beats: {
+        defeat: [voice(c, `Hunter cancelled. Show must groan on.`)],
+        wound: [voice(c, `Feedback. Good. The listeners lean in.`)],
+        victory: [voice(c, `Host down. Steal the mic. Don't steal the hair.`)],
+      },
+    },
+    knuckle: {
+      open: [
+        voice(c, `Escalation Specialist. Ticket open. Smash good. Talk boring.`),
+        voice(c, `You look smashable. Loading bay. Escalate or fold.`),
+        voice(c, `${title}. Fists reopen closed conversations.`),
+      ],
+      sig: [
+        voice(c, `Talk is a closed ticket. Fists reopen it.`),
+        voice(c, `Bay rules: volume, then violence.`),
+        voice(c, `Escalation complete when you stop twitching.`),
+        voice(c, `Words wasted. Axe ready.`),
+        voice(c, `I don't do banter. I do endings.`),
+      ],
+      beats: {
+        hunter_crit: [voice(c, `Crit on Knuckle? Ticket priority just spiked.`)],
+        monster_hit: [voice(c, `Smashed. As promised. Boring talk later.`)],
+        defeat: [voice(c, `Ticket closed. Stay down.`)],
+      },
+    },
+    'pose-soft': {
+      open: [
+        voice(c, `Visual Merch, Petrify Track. Hold still. Wiggles void warranty.`),
+        voice(c, `Almost gallery-ready. Atelier. Corporate wants the shot.`),
+        voice(c, `${title}. Blink and you're décor.`),
+      ],
+      sig: [
+        voice(c, `Soft pose. Hard consequences.`),
+        voice(c, `Stone to Flesh mid-pose? Against brand.`),
+        voice(c, `I arrange beauty. You thrash into it.`),
+        voice(c, `Stillness is intimacy. Moving is rude.`),
+        voice(c, `Mannequin atelier. Your silhouette's mid.`),
+      ],
+      beats: {
+        run: [voice(c, `You moved. Pose ruined. Violence continues.`)],
+        hunter_miss: [voice(c, `Missed. Stay. Almost perfect.`)],
+        victory: [voice(c, `Display finished. Don't unfreeze the lighting.`)],
+      },
+    },
+    oxidize: {
+      open: [
+        voice(c, `Corrosion Lead. Final markdown. Your sword smells delicious.`),
+        voice(c, `No returns on oxide. Clearance Pit. Touch is consent to rust.`),
+        voice(c, `${title}. Come closer. Don't. Metal screams prettier than you.`),
+      ],
+      sig: [
+        voice(c, `As-is. Including your armor.`),
+        voice(c, `Rust is a love language. Yours peels.`),
+        voice(c, `Heavy travelers welcome. Leave lighter.`),
+        voice(c, `Antennae hungry. Steel nervous.`),
+        voice(c, `I eat what you trust. Then I eat again.`),
+      ],
+      beats: {
+        kit: [voice(c, `Acid near Oxidize? Redundant. We invented markdown.`)],
+        hunter_hit: [voice(c, `You cut rust. It grows back meaner.`)],
+        defeat: [voice(c, `Ferrous heart claimed. Leave the wood.`)],
+      },
+    },
+    'iron-cadre': {
+      open: [
+        voice(c, `Middle management. Soft formation. Bad habits. Hold the line.`),
+        voice(c, `We do not yell. We advance. Drill yard. Cadre rules.`),
+        voice(c, `${title}. Status update: you die on schedule.`),
+      ],
+      sig: [
+        voice(c, `Noted in your review: soft.`),
+        voice(c, `Advance in silence. Bleed in stereo.`),
+        voice(c, `Cadre doesn't break for cardio.`),
+        voice(c, `Flanking is a meeting invite. Accept.`),
+        voice(c, `We manage violence. You improvise.`),
+      ],
+      beats: {
+        chase: [voice(c, `Running from middle management? Nobody escapes the review.`)],
+        close: [voice(c, `Cadre closes. Performance conversation begins.`)],
+        monster_hit: [voice(c, `Martial advantage. As planned.`)],
+      },
+    },
+    'laugh-track': {
+      open: [
+        voice(c, `Engagement Team. We laugh when you fall. Then we bite. Then we laugh again.`),
+        voice(c, `Soundtrack detected. Abattoir underpass. Pack. No mute.`),
+        voice(c, `${title}. Don't get the joke? Become it.`),
+      ],
+      sig: [
+        voice(c, `Ha — no, that's the track. Real pain's quieter.`),
+        voice(c, `Engagement up. Your HP down.`),
+        voice(c, `We replay screams. Content never dies.`),
+        voice(c, `Rampage is just a punchline with teeth.`),
+        voice(c, `Laugh. Bite. Laugh. Metrics love us.`),
+      ],
+      beats: {
+        monster_miss: [voice(c, `Missed — laugh track still rolls.`)],
+        defeat: [voice(c, `Fall logged. Audience screams. We keep the clip.`)],
+        chase: [voice(c, `Chase scene! Perfect. Keep running for the audio.`)],
+      },
+    },
+    'silt-knives': {
+      open: [
+        voice(c, `Custodial Ambush. Wet floor. The water remembers you.`),
+        voice(c, `Cold blood. Warm knives. Blackwater Bend. Bleed mandatory.`),
+        voice(c, `${title}. Hold breath. Hold still. Don't.`),
+      ],
+      sig: [
+        voice(c, `Facilities filed you as runoff.`),
+        voice(c, `Litter upstream, die downstream.`),
+        voice(c, `Murk hug. Scale rights.`),
+        voice(c, `Fifteen minutes of breath. Use them poorly.`),
+        voice(c, `We clean what floats. You float wrong.`),
+      ],
+      beats: {
+        run: [voice(c, `Running on wet floor? Citation and chase.`)],
+        close: [voice(c, `Silt closes. Murk hug.`)],
+        defeat: [voice(c, `Work order closed. Body to drain.`)],
+      },
+    },
+    'cinder-crew': {
+      open: [
+        voice(c, `Facilities Fire. Group chat that burns. Mute carefully.`),
+        voice(c, `Hot work pending. Boiler sacristy. Foam is a suggestion.`),
+        voice(c, `${title}. Just a spark? Code red.`),
+      ],
+      sig: [
+        voice(c, `We CC heat on every reply.`),
+        voice(c, `Death burst is our exit interview.`),
+        voice(c, `Oxygen loves us. Pride singes first.`),
+        voice(c, `Mute us carefully. We unread into flame.`),
+        voice(c, `Boiler hymn: burn, then bill.`),
+      ],
+      beats: {
+        kit: [voice(c, `You brought fire to Cinder Crew. Redundant. We are the group chat.`)],
+        victory: [voice(c, `Crew extinguished. Don't forget the incident report.`)],
+        wound: [voice(c, `Cooling? Temporary. We run hot.`)],
+      },
+    },
+    'sting-grid': {
+      open: [
+        voice(c, `Airspace Enforcement. Permit denied. Look up. Then duck.`),
+        voice(c, `We own this altitude. Powerline grid. Pack. Neck tax collected in stings.`),
+        voice(c, `${title}. Just passing through? Denied.`),
+      ],
+      sig: [
+        voice(c, `Grid online. Soft targets soft.`),
+        voice(c, `Altitude policy has teeth.`),
+        voice(c, `Your neck is airspace. Pay or swell.`),
+        voice(c, `Nets preferred — unless they're yours.`),
+        voice(c, `Look up wrong. Stay down right.`),
+      ],
+      beats: {
+        run: [voice(c, `You can't outrun altitude policy.`)],
+        chase: [voice(c, `Air chase. Permit still denied.`)],
+        defeat: [voice(c, `Intruder grounded. Grid hums satisfied.`)],
+      },
+    },
+  };
+
+  return (
+    banks[c.id] || {
+      open: [
+        voice(c, `${title} on ${c.floor}. Clock in bloody or swipe left.`),
+        voice(c, `Floor note: date in progress. ${c.fightTerms}`),
+        voice(c, `Baatorasaka match. Try not to die mid-sentence.`),
+      ],
+      sig: [
+        voice(c, `${title} status: unbothered. You're wallpaper with a weapon.`),
+        voice(c, `This floor remembers. So do I.`),
+        voice(c, `Still on shift. Your move.`),
+        voice(c, `Violence is the only RSVP that lands.`),
+      ],
+    }
+  );
+}
+
+const WOUND_SHARED: Record<string, string[]> = {
+  Winded: [
+    `First scratch. Don't get attached to the feeling.`,
+    `That tickled. Upgrade your intent.`,
+  ],
+  Bruised: [
+    `Color coming in. Keep painting.`,
+    `Mid-date damage. Persistent — like a bad first message.`,
+  ],
+  Bloodied: [
+    `I'm leaking. You're still soft. Fix one of those.`,
+    `Bloodied and still standing. Finish it or become décor.`,
+  ],
+};
+
+/**
+ * Combat-log banter. Returns a voiced line or null.
+ * Prefer calling AFTER the mechanical log line for that beat.
+ * Creature open/sig/beats dominate; SHARED is thin seasoning (~20%).
+ */
+export function combatBanter(
+  creature: Creature,
+  beat: CombatBanterBeat,
+  ctx: CombatBanterCtx = {},
+): string | null {
+  const used = ctx.usedLines;
+  const bank = creatureBanks(creature);
+  const primary: string[] = [];
+  const seasoning: string[] = [];
+
+  const addShared = (sharedLines: string[]) => {
+    for (const b of sharedLines) seasoning.push(voice(creature, b));
+  };
+
+  if (beat === 'open') {
+    primary.push(...bank.open);
+    addShared(SHARED.open);
+  } else if (beat === 'kit') {
+    const kitId = ctx.kitId;
+    if (kitId && KIT_LINES[kitId]) {
+      primary.push(...KIT_LINES[kitId].map((b) => voice(creature, b)));
+    }
+    if (bank.beats?.kit) primary.push(...bank.beats.kit);
+    primary.push(...bank.sig);
+    addShared(SHARED.kit);
+  } else if (beat === 'wound') {
+    if (bank.beats?.wound) primary.push(...bank.beats.wound);
+    primary.push(...bank.sig);
+    const band = ctx.woundBand;
+    if (band && WOUND_SHARED[band]) addShared(WOUND_SHARED[band]);
+    addShared(SHARED.wound);
+  } else {
+    if (bank.beats?.[beat]) primary.push(...bank.beats[beat]!);
+    primary.push(...bank.sig);
+    addShared(SHARED[beat] ?? []);
+  }
+
+  // Prefer creature/kit voice; shared only seasons ~1 in 5 when primary has fresh lines
+  const primaryFresh = (used?.length ? primary.filter((l) => !used.includes(l)) : primary).filter(Boolean);
+  const seasonFresh = (used?.length ? seasoning.filter((l) => !used.includes(l)) : seasoning).filter(Boolean);
+  const useSeason =
+    seasonFresh.length > 0 && (primaryFresh.length === 0 || Math.random() < 0.2);
+  const pool = [...new Set(useSeason ? seasonFresh : primaryFresh.length ? primaryFresh : [...primary, ...seasoning].filter(Boolean))];
+  return pickFresh(pool, used);
+}
+
+/** @deprecated Prefer combatBanter(..., 'wound' | hit beats) */
+export function generateCombatTaunt(creature: Creature, hpRatio: number): string {
+  let band: MonsterCondition = 'Healthy';
+  if (hpRatio <= 0) band = 'Down';
+  else if (hpRatio <= 0.5) band = 'Bloodied';
+  else if (hpRatio <= 2 / 3) band = 'Bruised';
+  else if (hpRatio < 1) band = 'Winded';
+  const line =
+    combatBanter(creature, band === 'Healthy' ? 'monster_miss' : 'wound', {
+      woundBand: band === 'Healthy' || band === 'Down' ? 'Winded' : band,
+    }) || voice(creature, 'Still on shift. Your move.');
+  return line;
+}

@@ -1,0 +1,22 @@
+export function HPBar({
+  hp,
+  maxHp,
+  variant = 'hunter',
+}: {
+  hp: number;
+  maxHp: number;
+  variant?: 'hunter' | 'monster';
+}) {
+  const pct = Math.max(0, Math.min(100, (hp / maxHp) * 100));
+  return (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: 4 }}>
+        <span>{hp} / {maxHp} HP</span>
+        <span style={{ color: 'var(--muted)' }}>{Math.round(pct)}%</span>
+      </div>
+      <div className={`hp-bar ${variant}`}>
+        <span style={{ width: `${pct}%` }} />
+      </div>
+    </div>
+  );
+}

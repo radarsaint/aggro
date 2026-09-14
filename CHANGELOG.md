@@ -1,0 +1,32 @@
+# Changelog
+
+All notable changes to AGGRO are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
+(see [docs/VERSIONING.md](docs/VERSIONING.md)).
+
+Living design notes for Earthfall / Baatorasaka live in [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md).
+
+## [0.1.0] — 2026-09-14
+
+First playable Baatorasaka cut: swipe, banter, fight, loot, and nights that actually gate the loop.
+
+### Added
+
+- **Banter deck** — Low / Mid / High creature scripts shipped (Banter Critic PASS).
+- **Chat kit draft** — Before a fight, reply **1 / 2 / 3** to lock fight items (1 pick on Low, 2 on Moderate, 3 on High).
+- **Combat** — Three buttons: **Attack**, **Item** (spent kits), **Run**. **Use** spends locker heals (potion / bandage) mid-fight.
+- **Sell + Floor Kiosk** — Sell scrap from the locker; buy heals and a clearance patch at the kiosk.
+- **Equip** — Equip weapon / armor / shield from the locker (attack die + AC bonuses).
+- **Nights (Gate 1)** — 3 dates a night. **Grab a drink** once for +1 date. **Call it a night** for a full slate.
+- **Discover heat (Gate 2)** — Soft threat reweight as you clear fights; deck reshuffles hotter on win and on long rest. No CR meters.
+- **Gold on the date (Gate 3)** — Verified hunters can put gold on a hotter clearance before Accept (costs scale by threat; no refund on PIP).
+- **Standards (Gate 4)** — After 3 fights: All dates / Skip the soft ones / Only serious dates.
+- **Climb loot** — Non-flat drops by threat. High-only named gear: **PIP Machete**, **Badge Harness**, **Exit-Only Lid**. **Cubicle Hook** from Moderate up.
+- **Drop framing** — Stamp voice on cold clears; R.O.D. snark when you paid extra. Reward CTA: **Take it**.
+
+### Notes
+
+- Floor 1 is **Baatorasaka** (closing). **R.O.D.** is the Earthfall showrunner voice — light touch, not a full feature dump.
+- Next floor (Skullport) is aware only — not designed in this release.
