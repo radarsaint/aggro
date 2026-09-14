@@ -10,21 +10,21 @@ function voiceKit(creature: Creature, jab: string): string {
   const n = creature.name;
   const id = creature.id;
   const short: Record<string, (j: string) => string> = {
-    knuckle: (j) => `${n}: ${j} Cute. Still smash.`,
+    knuckle: (j) => `${n}: ${j} Cute try. Still smash.`,
     'sister-static': (j) => `${n}: …station break… ${j} …back to the snow…`,
     'dumpster-king': (j) => `${n}: ${j} Tribute noted. Kneel anyway.`,
     patchwire: (j) => `${n}: We smelled ${j.toLowerCase()} Quorum disagrees. Teeth win.`,
-    patches: (j) => `${n}: ${j} Still billing. Shinies first.`,
+    patches: (j) => `${n}: ${j} I'm still billing — shinies first.`,
     'bleed-static': (j) => `${n}: ${j} Stay still. Sip anyway.`,
-    'proxy-bit': (j) => `${n}: ${j} Signed. Bitten. Do not reply-all.`,
+    'proxy-bit': (j) => `${n}: ${j} Signed and bitten — do not reply-all.`,
     glasswing: (j) => `${n}: ${j} Values survey: fail. Fight anyway.`,
     clickers: (j) => `${n}: ${j} Tip still theoretical. We click.`,
     'crow-ledger': (j) => `${n}: ${j} Line item added. Peck rate up.`,
     'scale-crew': (j) => `${n}: ${j} Springs still bigger. Sign the waiver.`,
     'drain-gang': (j) => `${n}: ${j} Franchise fee unpaid. Ankles due.`,
     'amber-silk': (j) => `${n}: ${j} Headset on. Web prettier.`,
-    veinrot: (j) => `${n}: ${j} Still walking. Come close.`,
-    drool: (j) => `${n}: ${j} Initial here. Cute is fine print.`,
+    veinrot: (j) => `${n}: ${j} I'm still walking. Come close.`,
+    drool: (j) => `${n}: ${j} Initial here — cute is the fine print.`,
     rattlewire: (j) => `${n}: ${j} Late AND rude. On the books.`,
     'chrome-edge': (j) => `${n}: ${j} Warranty still void. Demo lethal.`,
     'the-choir': (j) => `${n}: ${j} Join the chorus. Attendance taken.`,
@@ -113,7 +113,7 @@ export function kitReactiveOpeners(creature: Creature, kitId: KitId): string[] {
     },
     knuckle: {
       caltrops: [
-        `${n}: Caltrops. Cute. Smash anyway.`,
+        `${n}: Caltrops. Cute try. Smash anyway.`,
       ],
     },
     'neon-howl': {
@@ -187,13 +187,13 @@ export function hunterChoiceOpeners(creature: Creature, hunter: Hunter): string[
     const otherJob = job.length >= 3 ? job : 'something vague';
     const map: Record<string, Record<typeof kind, string>> = {
       knuckle: {
-        unemployed: `${n}: No job. Good. Smash free.`,
-        student: `${n}: Student. Soft. Smash anyway.`,
-        manager: `${n}: Boss title. Still a door.`,
-        medic: `${n}: Medic. Patch later. Smash now.`,
-        legal: `${n}: Lawyer. Talk later. Axe now.`,
-        artist: `${n}: Artist. Pretty. Smashable.`,
-        other: `${n}: "${otherJob}." Cute. Smash.`,
+        unemployed: `${n}: No job? Good. Smash free.`,
+        student: `${n}: Student — soft. Smash anyway.`,
+        manager: `${n}: Boss title. You're still a door.`,
+        medic: `${n}: Medic — patch later. Smash now.`,
+        legal: `${n}: Lawyer — talk later. Axe now.`,
+        artist: `${n}: Artist. Pretty. Still smashable.`,
+        other: `${n}: "${otherJob}." Cute title. Smash.`,
       },
       'sister-static': {
         unemployed: `${n}: …between jobs… perfect… dead air hires forever…`,
