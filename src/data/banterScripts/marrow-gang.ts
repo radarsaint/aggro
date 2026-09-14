@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Range is over. Formation. Bleed.',
   ] },
   { id: 'marrow-gang_close_smoke_36', beat: 'close', lines: [
-    'Marrow Gang: Cute smoke. Pulse on the beat.',
+    'Marrow Gang: Smoke is not formation. We still hear your pulse on the beat.',
     'Marrow Gang: Fog\'s gone. Formation back. Miss us?',
   ], requireFlags: ["smoke"], weight: 3 },
 

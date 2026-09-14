@@ -21,7 +21,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'dumpster-king_open_1', beat: 'open', lines: [
     'Dumpster King: Climb in kneeling or clock out as peasant. The throne collects differently when tribute is late.',
-    'Dumpster King: Territory. Teeth. A crown that outlived three audits and a flood. Speak only if you brought leftovers fit for a king.',
+    'Dumpster King: This kingdom is territory, teeth, and a crown that outlived three audits and a flood. Speak only if you brought leftovers fit for a king.',
   ], weight: 1 },
   { id: 'dumpster-king_open_2', beat: 'open', lines: [
     'Dumpster King: Subjects who flinch first smell like lunch. Bow. Or bleed. Both please the crown.',

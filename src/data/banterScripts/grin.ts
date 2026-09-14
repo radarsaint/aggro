@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Range over. Better claim stub next time.',
   ] },
   { id: 'grin_close_smoke_36', beat: 'close', lines: [
-    'Grin: Cute smoke. I don\'t need eyes to file you.',
+    'Grin: Smoke will not lose your claim stub. I do not need eyes to file you.',
     'Grin: Fog\'s gone. Desk\'s still sticky. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

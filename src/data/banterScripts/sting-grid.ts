@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Range over. Better clearance next time.',
   ] },
   { id: 'sting-grid_close_smoke_36', beat: 'close', lines: [
-    'Sting Grid: Cute smoke. Still hear your neck.',
+    'Sting Grid: Smoke does not change altitude. We can still hear your neck trespassing.',
     'Sting Grid: Fog\'s gone. Still filing. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

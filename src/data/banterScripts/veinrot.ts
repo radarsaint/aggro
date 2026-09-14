@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Range is over. Cold hands. Come closer.',
   ] },
   { id: 'veinrot_close_smoke_36', beat: 'close', lines: [
-    'Veinrot: Cute smoke. Warmth is a cruel smell down here.',
+    'Veinrot: You hid in smoke. Warmth is a cruel smell down here — I can still find you.',
     'Veinrot: Fog\'s gone. Cold hands. Still here. Are you?',
   ], requireFlags: ["smoke"], weight: 3 },
 

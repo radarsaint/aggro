@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Range is over. Knives. Yell for us.',
   ] },
   { id: 'scrap-mob_close_smoke_36', beat: 'close', lines: [
-    'Scrap Mob: Cute smoke. Scab still readable.',
+    'Scrap Mob: Hide in smoke if you want. We can still smell a scab crossing the picket.',
     'Scrap Mob: Fog\'s gone. Local back. Miss us?',
   ], requireFlags: ["smoke"], weight: 3 },
 

@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Range over. Better name next time.',
   ] },
   { id: 'silt-knives_close_smoke_36', beat: 'close', lines: [
-    'Silt Knives: Cute smoke. Still smell blood in murk.',
+    'Silt Knives: Smoke up top does nothing. We still smell blood in the murk.',
     'Silt Knives: Fog\'s gone. Still waiting. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 

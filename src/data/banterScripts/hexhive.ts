@@ -175,7 +175,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Range is over. Legs. Breathe for the ticket.',
   ] },
   { id: 'hexhive_close_smoke_36', beat: 'close', lines: [
-    'Hexhive: Cute smoke. Heat still readable.',
+    'Hexhive: Smoke will not close this ticket. We can still feel your heat under the patch notes.',
     'Hexhive: Fog\'s gone. Swarm back. Miss us?',
   ], requireFlags: ["smoke"], weight: 3 },
 

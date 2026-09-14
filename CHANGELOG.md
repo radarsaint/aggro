@@ -11,6 +11,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Fixed
+
+- **Banter hard-reset scrub** — Kill remaining Cute smoke / telegram-chop opens across `roast.ts`, `roastReactive.ts`, and creature `banterScripts` (spoken English rewrites after Banter Critic overhaul).
+
 ### Changed
 
 - **Banter voice** — Killed Mad Lib / telegram-chop opens (`Cute pulse.`, `Optimistic pulse.`, `Pulse preferred.`, noun-stack greets) across `roast.ts`, `roastReactive.ts`, Patches/Veinrot banter; rewritten as spoken mean/fair creature English.

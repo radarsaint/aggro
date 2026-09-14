@@ -21,7 +21,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Tiny drill. Zero personal space. Consent is a joke I tell with receipts. Enroll or donate the old-fashioned way.',
   ], weight: 2 },
   { id: 'bleed-static_open_1', beat: 'open', lines: [
-    'Bleed Static: Neck out. Unused PTO looks drinkable tonight. Warm circuits. Exposed ambition. I want the skip — not the résumé.',
+    'Bleed Static: Neck out. Unused PTO looks drinkable tonight. Your circuits are warm and your ambition is showing. I want the skip — not the résumé.',
     'Bleed Static: Whispering distance. Needle ready. One sip is already a love letter.',
   ], weight: 1 },
   { id: 'bleed-static_open_2', beat: 'open', lines: [

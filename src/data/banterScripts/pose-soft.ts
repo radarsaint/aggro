@@ -167,7 +167,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Range over. Better facing next time.',
   ] },
   { id: 'pose-soft_close_smoke_36', beat: 'close', lines: [
-    'Pose Soft: Cute smoke. Don\'t need eyes for a floorset.',
+    'Pose Soft: Smoke will not spoil the floorset. I do not need eyes to hold you still.',
     'Pose Soft: Fog\'s gone. Still posing. Nice try.',
   ], requireFlags: ["smoke"], weight: 3 },
 
