@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'the-choir_kit_net_19', beat: 'kit', lines: [
     'The Choir: Mesh like a broken chord. Commitment with holes. We sing through it.',
-    'The Choir: Ensemble tangled. Panic keeps the beat. Blend continues.',
+    'The Choir: Ensemble in the net. Panic keeps the beat. Blend continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'The Choir: Hard hit, then silence. Encore denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'the-choir_vic_net_41', beat: 'victory', lines: [
-    'The Choir: Chorus cut off mid-verse. Dark thins out.',
-    'The Choir: Hymn ended under silk. Harmony cut. Dark thins out.',
+    'The Choir: Verse dies unfinished. Dark softens without us.',
+    'The Choir: Silk kills the hymn. Harmony cut. Dark softens without us.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Found the soft permit and finished. No deed left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sting-grid_vic_net_41', beat: 'victory', lines: [
-    'Sting Grid: Grid tangled. Deed office blanks out.',
+    'Sting Grid: Grid stuck. Deed office forgets the filing.',
     'Sting Grid: Grid down. Altitude denied forever.',
   ], requireFlags: ["netted"], weight: 3 },
 

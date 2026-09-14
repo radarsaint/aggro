@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [
     'Cinder Crew: You netted the crew and killed the thread. Honest spark-out.',
-    'Cinder Crew: Thread tangled. Mute did not save you.',
+    'Cinder Crew: Thread dead. Mute did not save you.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'cinder-crew_def_42', beat: 'defeat', lines: [

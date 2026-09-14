@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drain-gang_kit_net_19', beat: 'kit', lines: [
     'Drain Gang: Net on franchisees. Fee promise full of holes. Royalty compounds.',
-    'Drain Gang: Franchise tangled. Your panic is the receipt. Territory still ours.',
+    'Drain Gang: Franchise in the net. Your panic is the receipt. Territory still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',

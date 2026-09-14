@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'dumpster-king_kit_net_19', beat: 'kit', lines: [
     'Dumpster King: Net on majesty. A peasant petition full of holes.',
-    'Dumpster King: Crown tangled. Panic is your petition. Denied.',
+    'Dumpster King: Crown in the net. Panic is your petition. Denied.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'dumpster-king_kit_healing-potion_20', beat: 'kit', lines: [
     'Dumpster King: You drank courage from a bottle. Subjects who plan to live amuse Us.',

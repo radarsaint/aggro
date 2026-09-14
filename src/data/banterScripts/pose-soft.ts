@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Found the soft pose and finished. No forever left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'pose-soft_vic_net_41', beat: 'victory', lines: [
-    'Pose Soft: Visual Merch tangled. Window blanks.',
+    'Pose Soft: Visual Merch stuck. Window loses the body.',
     'Pose Soft: Mannequin down. Gallery is embarrassed.',
   ], requireFlags: ["netted"], weight: 3 },
 

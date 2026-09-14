@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Found the soft laugh and finished. No cue left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'laugh-track_vic_net_41', beat: 'victory', lines: [
-    'Laugh Track: Track tangled. Howl cuts mid-cue.',
+    'Laugh Track: Track stuck. Howl cuts mid-cue.',
     'Laugh Track: Track down. Audience boos the winner.',
   ], requireFlags: ["netted"], weight: 3 },
 

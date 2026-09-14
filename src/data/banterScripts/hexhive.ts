@@ -198,8 +198,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Hard hit, then silence. Crawl closed. We hate that.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'hexhive_vic_net_41', beat: 'victory', lines: [
-    'Hexhive: Swarm cut off mid-bite. Shafts empty out.',
-    'Hexhive: Swarm ended under silk. Legs cut short. Shafts empty out.',
+    'Hexhive: Bites stop cold. Coolant shafts breathe again.',
+    'Hexhive: Silk wins the crawl. Legs stop. Heat loses the argument.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

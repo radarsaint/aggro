@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'crow-ledger_kit_net_19', beat: 'kit', lines: [
     'Crow Ledger: Net on auditors. Ledger promise full of holes. Late fee applies.',
-    'Crow Ledger: Flock tangled. Panic lengthens the gossip trail.',
+    'Crow Ledger: Flock in the net. Panic lengthens the gossip trail.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'crow-ledger_kit_healing-potion_20', beat: 'kit', lines: [
     'Crow Ledger: Flask mid-audit. Soft delinquent. Interest still due.',

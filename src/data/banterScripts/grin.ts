@@ -197,7 +197,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Found the soft sticker and finished. No smile left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'grin_vic_net_41', beat: 'victory', lines: [
-    'Grin: Claim desk tangled. Stub stamped closed.',
+    'Grin: Claim desk stuck. Stub stamped closed.',
     'Grin: Puddle down. Claim window laughs once.',
   ], requireFlags: ["netted"], weight: 3 },
 
