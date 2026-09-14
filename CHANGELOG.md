@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 (see [docs/VERSIONING.md](docs/VERSIONING.md)).
 
 Living design notes for Earthfall / Baatorasaka live in [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md).
+Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md).
+
+## [Unreleased]
+
+### Docs
+
+- Thorough README handoff (goals, scope in/out, dual-mode rests, how to run, repo map).
+- New [docs/SCOPE.md](docs/SCOPE.md) — In / Out / Goals / Non-goals / locked decisions for external collaborators and other AIs.
+- Refreshed [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md) to match shipped 0.1.0 Gates 1–4 + climb loot; side bets marked deferred indefinitely (not upcoming).
 
 ## [0.1.0] — 2026-09-14
 
