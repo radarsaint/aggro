@@ -118,7 +118,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'laugh-track_mhit_24', beat: 'monster_hit', lines: [
     'Laugh Track: That\'s for the unread cue cards.',
-    'Laugh Track: Ha. Bite. You asked.',
+    'Laugh Track: Ha — then bite. You asked.',
   ] },
   { id: 'laugh-track_mhit_bld_25', beat: 'monster_hit', lines: [
     'Laugh Track: We\'re leaking. You\'re bleeding. Laugh wins.',
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'laugh-track_def_heal_45', beat: 'defeat', lines: [
     'Laugh Track: Healed and still went down. Optimistic. Wrong cue.',
-    'Laugh Track: Potion, then floor. Soft. Memorable. Bad bit.',
+    'Laugh Track: Potion, then floor — soft, memorable, bad bit.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

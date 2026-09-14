@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'oxidize_def_heal_45', beat: 'defeat', lines: [
     'Oxidize: Healed and still went down. Optimistic. Wrong sale.',
-    'Oxidize: Potion, then floor. Soft. Memorable. Bad look.',
+    'Oxidize: Potion, then floor — soft, memorable, bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'cinder-crew_w_wind_27', beat: 'wound', lines: [
     'Cinder Crew: First scratch. Used to believe in careful mutes.',
-    'Cinder Crew: Scratched. Annoyed. Still Seen.',
+    'Cinder Crew: You scratched the chat. We are annoyed. Still marked Seen.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'cinder-crew_w_bru_28', beat: 'wound', lines: [
     'Cinder Crew: Deeper scratch. Want a story? Keep breathing.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Mute mid-thread? The chat still shows Seen. We chase.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'cinder-crew_run2_32', beat: 'run', lines: [
-    'Cinder Crew: Twice. Personal. Pathetic mute.',
+    'Cinder Crew: Twice is personal. Pathetic mute.',
     'Cinder Crew: Second escape. Not mad. Hotter.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'cinder-crew_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'cinder-crew_def_heal_45', beat: 'defeat', lines: [
     'Cinder Crew: Healed and still went down. Optimistic. Wrong chat.',
-    'Cinder Crew: Potion, then floor. Soft. Memorable. Bad mute.',
+    'Cinder Crew: Potion, then floor — soft, memorable, bad mute.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -18,7 +18,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'neon-howl_open_0', beat: 'open', lines: [
     'Neon Howl: Prey that runs. Prey that bites back. Anything that makes the howl honest. Three hearts braided into one chase.',
-    'Neon Howl: Flinching is a stumble. Stumbles are dinner. We. Braid. You. Run.',
+    'Neon Howl: Flinching is a stumble, and stumbles are dinner. We braid, you run.',
   ], weight: 2 },
   { id: 'neon-howl_open_1', beat: 'open', lines: [
     'Neon Howl: Fire\'s our real fear. High walls too. "I work better alone" is a turn-off. Running is flirting.',
@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Neon Howl: You ran, then hit us that hard? Prey with a finishing move. Confusing. Delicious.',
-    'Neon Howl: Impressed. Offended. Still braiding. Still hungry.',
+    'Neon Howl: Impressed and offended. Still braiding. Still hungry.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'neon-howl_kit_healing-potion_20', beat: 'kit', lines: [
     'Neon Howl: You drank up mid-chase. Planning to live? We prefer you rare and running.',
-    'Neon Howl: Healing mid-howl. Soft. Optimistic. Makes the hunt louder.',
+    'Neon Howl: Healing mid-howl is soft and optimistic. It just makes the hunt louder.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'neon-howl_kit_oil-flask_21', beat: 'kit', lines: [
     'Neon Howl: Oil on wet concrete. Slippery prey. Still dinner.',
     'Neon Howl: You greased the mile. Pack still braids. Feet still find you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'neon-howl_kit_gen_22', beat: 'kit', lines: [
-    'Neon Howl: Digging mid-chase. Soft. Unscheduled. Pack grades that loud.',
+    'Neon Howl: Digging mid-chase is soft and unscheduled. The pack grades that loud.',
     'Neon Howl: Props out. Counter-howl in a bottle. We answer in bites.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'neon-howl_kit_ran_23', beat: 'kit', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'neon-howl_run2_32', beat: 'run', lines: [
     'Neon Howl: Twice. You ran twice. Prey with cardio. Flirting harder.',
-    'Neon Howl: Second escape. We noticed. We. Howl. Louder.',
+    'Neon Howl: Second escape. We noticed. We howl louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'neon-howl_chase_33', beat: 'chase', lines: [
     'Neon Howl: Chase is the point. Running from three hearts braided is the soundtrack.',

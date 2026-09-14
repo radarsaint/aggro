@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Marrow Gang: You ran, then hit us that hard? Deserter with a finishing move.',
-    'Marrow Gang: Impressed. Offended. Still drilling. Eyes forward.',
+    'Marrow Gang: Impressed and offended. Still drilling. Eyes forward.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
-    'Marrow Gang: Healing mid-muster. Soft. Optimistic. Still late.',
+    'Marrow Gang: Healing mid-muster is soft and optimistic. You are still late.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: [
     'Marrow Gang: Oil on the drill floor. Slippery recruit. Still counted.',
     'Marrow Gang: You greased the barracks. Formation still arrives. Eyes forward.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: [
-    'Marrow Gang: Improvisation mid-drill. Soft. Unscheduled. Write-up.',
+    'Marrow Gang: Improvisation mid-drill is soft and unscheduled. That is a write-up.',
     'Marrow Gang: Props out. Counter-order in a bottle. We answer in volleys.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [

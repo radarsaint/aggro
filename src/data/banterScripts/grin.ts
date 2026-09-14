@@ -159,7 +159,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Walk away from the window? Your bag stays filed under mine.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'grin_run2_32', beat: 'run', lines: [
-    'Grin: Twice. Personal. Pathetic filing.',
+    'Grin: Twice is personal. Pathetic filing.',
     'Grin: Second escape. Not mad. Filing under flee.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'grin_chase_33', beat: 'chase', lines: [
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'grin_def_heal_45', beat: 'defeat', lines: [
     'Grin: Healed and still went down. Optimistic. Wrong desk.',
-    'Grin: Potion, then floor. Soft. Memorable. Bad look.',
+    'Grin: Potion, then floor — soft, memorable, bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

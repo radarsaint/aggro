@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'iron-cadre_w_wind_27', beat: 'wound', lines: [
     'Iron Cadre: First scratch. Used to believe in careful ranks.',
-    'Iron Cadre: Scratched. Annoyed. Still on count.',
+    'Iron Cadre: You scratched the line. We are annoyed. Still on count.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'iron-cadre_w_bru_28', beat: 'wound', lines: [
     'Iron Cadre: Deeper scratch. Want a story? Keep drilling.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Break ranks mid-count? We advance anyway. Eyes forward.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'iron-cadre_run2_32', beat: 'run', lines: [
-    'Iron Cadre: Twice. Personal. Pathetic posture.',
+    'Iron Cadre: Twice is personal. Pathetic posture.',
     'Iron Cadre: Second escape. Not mad. Faster.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'iron-cadre_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'iron-cadre_def_heal_45', beat: 'defeat', lines: [
     'Iron Cadre: Healed and still went down. Optimistic. Wrong roster.',
-    'Iron Cadre: Potion, then floor. Soft. Memorable. Bad posture.',
+    'Iron Cadre: Potion, then floor — soft, memorable, bad posture.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

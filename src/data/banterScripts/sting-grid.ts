@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'sting-grid_w_wind_27', beat: 'wound', lines: [
     'Sting Grid: First scratch. Used to believe in careful climbers.',
-    'Sting Grid: Scratched. Annoyed. Still on deed.',
+    'Sting Grid: You scratched us. We are annoyed. Still on the deed.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'sting-grid_w_bru_28', beat: 'wound', lines: [
     'Sting Grid: Deeper scratch. Want a story? Keep climbing.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Drop altitude mid-filing? Permit still denied. We chase necks.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'sting-grid_run2_32', beat: 'run', lines: [
-    'Sting Grid: Twice. Personal. Pathetic climb.',
+    'Sting Grid: Twice is personal. Pathetic climb.',
     'Sting Grid: Second escape. Not mad. Faster buzz.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'sting-grid_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sting-grid_def_heal_45', beat: 'defeat', lines: [
     'Sting Grid: Healed and still went down. Optimistic. Wrong altitude.',
-    'Sting Grid: Potion, then floor. Soft. Memorable. Bad clearance.',
+    'Sting Grid: Potion, then floor — soft, memorable, bad clearance.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

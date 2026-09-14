@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'the-choir_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'The Choir: You ran, then hit us that hard? Bad attendance with a finishing move.',
-    'The Choir: Impressed. Offended. Still taking roll in the dark.',
+    'The Choir: Impressed and offended. Still taking roll in the dark.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
-    'The Choir: Healing mid-verse. Soft. Optimistic. Makes the harmony hungrier.',
+    'The Choir: Healing mid-verse is soft and optimistic. It just makes the harmony hungrier.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'the-choir_kit_oil-flask_21', beat: 'kit', lines: [
     'The Choir: Oil like optional attendance on the suite floor.',

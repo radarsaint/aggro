@@ -142,7 +142,7 @@ export const nodes: ScriptNode[] = [
   // ── WOUNDS ──
   { id: 'chrome-edge_w_wind_27', beat: 'wound', lines: [
     'Chrome Edge: First scratch. I used to think careful hands existed.',
-    'Chrome Edge: Scratched. Annoyed. Still on display.',
+    'Chrome Edge: You scratched the chrome. I am annoyed. Still on display.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'chrome-edge_w_bru_28', beat: 'wound', lines: [
     'Chrome Edge: Deep scratch. Keep going if you want a story.',
@@ -220,6 +220,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: [
     'Chrome Edge: You healed and still went down. Optimistic. Wrong.',
-    'Chrome Edge: Potion, then floor. Soft. Memorable. Bad look on you.',
+    'Chrome Edge: Potion, then floor — soft, memorable, and a bad look on you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

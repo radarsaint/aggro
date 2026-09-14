@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'pose-soft_w_wind_27', beat: 'wound', lines: [
     'Pose Soft: First scratch. Used to believe in careful models.',
-    'Pose Soft: Scratched. Annoyed. Still on display.',
+    'Pose Soft: You scratched the pose. I am annoyed. Still on display.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'pose-soft_w_bru_28', beat: 'wound', lines: [
     'Pose Soft: Deeper scratch. Want a story? Keep posing.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Wiggle out of the floorset? Stone doesn\'t reschedule. Hold.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'pose-soft_run2_32', beat: 'run', lines: [
-    'Pose Soft: Twice. Personal. Pathetic silhouette.',
+    'Pose Soft: Twice is personal. Pathetic silhouette.',
     'Pose Soft: Second escape. Not mad. Faster.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'pose-soft_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'pose-soft_def_heal_45', beat: 'defeat', lines: [
     'Pose Soft: Healed and still went down. Optimistic. Wrong look.',
-    'Pose Soft: Potion, then floor. Soft. Memorable. Bad silhouette.',
+    'Pose Soft: Potion, then floor — soft, memorable, bad silhouette.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

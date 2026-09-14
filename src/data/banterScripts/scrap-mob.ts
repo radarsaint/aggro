@@ -18,7 +18,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'scrap-mob_open_0', beat: 'open', lines: [
     'Scrap Mob: A fight we can surround. Loot to argue over. Fair dues. A line worth picketing with knives. Signs you can read in the dark.',
-    'Scrap Mob: Flinching is crossing the picket soft. We. Yell. You. Learn. Solidarity.',
+    'Scrap Mob: Flinching is crossing the picket soft. We yell, you learn — that is solidarity.',
   ], weight: 2 },
   { id: 'scrap-mob_open_1', beat: 'open', lines: [
     'Scrap Mob: Taxes are a turn-off. "Just goblins" is a turn-off. Anyone crossing the picket: surroundable.',
@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Scrap Mob: You ran, then hit us that hard? Scab with a finishing move.',
-    'Scrap Mob: Impressed. Offended. Still loud. Still we.',
+    'Scrap Mob: Impressed and offended. Still loud. Still we.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,14 +106,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
-    'Scrap Mob: Healing mid-picket. Soft. Optimistic. Makes the dues hungrier.',
+    'Scrap Mob: Healing mid-picket is soft and optimistic. It just makes the dues hungrier.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'scrap-mob_kit_oil-flask_21', beat: 'kit', lines: [
     'Scrap Mob: Oil on the dump. Slippery scab. Still dinner.',
     'Scrap Mob: You greased the line. Local still surrounds. Volume still finds you.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scrap-mob_kit_gen_22', beat: 'kit', lines: [
-    'Scrap Mob: Digging mid-picket. Soft. Unscheduled. Local grades that loud.',
+    'Scrap Mob: Digging mid-picket is soft and unscheduled. Local grades that loud.',
     'Scrap Mob: Props out. Counter-offer in a bottle. We answer in knives.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scrap-mob_kit_ran_23', beat: 'kit', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'scrap-mob_run2_32', beat: 'run', lines: [
     'Scrap Mob: Twice. You ran twice. Scab with cardio.',
-    'Scrap Mob: Second escape. We noticed. We. Yell. Louder.',
+    'Scrap Mob: Second escape. We noticed. We yell louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'scrap-mob_chase_33', beat: 'chase', lines: [
     'Scrap Mob: Running from Local 666 is how scabs get surrounded.',

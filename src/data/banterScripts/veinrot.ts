@@ -22,7 +22,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'veinrot_open_1', beat: 'open', lines: [
     'Veinrot: The freezer smells fear and keeps it on ice. You smell warm. That\'s cruel.',
-    'Veinrot: Slow. Sincere. Cold. I\'ve been waiting longer than your last standup lasted.',
+    'Veinrot: Slow, sincere, and cold. I\'ve been waiting longer than your last standup lasted.',
   ], weight: 1 },
   { id: 'veinrot_open_2', beat: 'open', lines: [
     'Veinrot: Pep talk aisle is upstairs. Down here you get company that shuffles and means it.',
@@ -78,7 +78,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'veinrot_kit_alchemists-fire_13', beat: 'kit', lines: [
     'Veinrot: Fire in Cold Storage. Frost cracked like it remembered warmth.',
-    'Veinrot: Heat for someone the freezer forgot. Temporary. Gone. I remember both.',
+    'Veinrot: Heat for someone the freezer forgot — temporary, gone. I remember both.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'veinrot_kit_caltrops_14', beat: 'kit', lines: [
     'Veinrot: Spikes on ice. I shuffle worse aisles every eternal shift.',
@@ -110,7 +110,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'veinrot_kit_oil-flask_21', beat: 'kit', lines: [
     'Veinrot: Oil on ice. Slippery forever — my specialty.',
-    'Veinrot: You greased the aisle. I still shuffle. Slow. Sincere. Cold.',
+    'Veinrot: You greased the aisle. I still shuffle — slow, sincere, and cold.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'veinrot_kit_gen_22', beat: 'kit', lines: [
     'Veinrot: Rummaging on a freezer date. Bold loneliness.',

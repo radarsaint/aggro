@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'silt-knives_def_heal_45', beat: 'defeat', lines: [
     'Silt Knives: Healed and still went down. Optimistic. Wrong current.',
-    'Silt Knives: Potion, then floor. Soft. Memorable. Bad look.',
+    'Silt Knives: Potion, then floor — soft, memorable, bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];
