@@ -10,11 +10,11 @@ export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'neon-howl_open_x_0', beat: 'open', lines: [
     'Neon Howl: Three bodies. One hunger. Run. We prefer the sound.',
-    'Neon Howl: Hey. Yeah, we talk. Neon on wet concrete like war paint. We do not synergize — we braid. Keep moving.',
+    'Neon Howl: Hey. Yeah, we talk. Neon on wet concrete like war paint. We don\'t synergize — we braid. Keep moving.',
   ], weight: 2 },
   { id: 'neon-howl_open_x_1', beat: 'open', lines: [
-    'Neon Howl: Howl is the chase call. You are the breath between our teeth. We flank for love. And for lunch. Solo heroes spoil the meat.',
-    'Neon Howl: Underpass Pack — Chase Division. Pink Mile. Hit your number or hit the pavement. Pack tactics. A howl you will hear twice.',
+    'Neon Howl: Howl is the chase call. You\'re the breath between our teeth. We flank for love. And for lunch. Solo heroes spoil the meat.',
+    'Neon Howl: Underpass Pack — Chase Division. Pink Mile. Hit your number or hit the pavement. Pack tactics. A howl you\'ll hear twice.',
   ], weight: 2 },
   { id: 'neon-howl_open_0', beat: 'open', lines: [
     'Neon Howl: Prey that runs. Prey that bites back. Anything that makes the howl honest. Three hearts braided into one chase.',
@@ -26,11 +26,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'neon-howl_open_2', beat: 'open', lines: [
     'Neon Howl: Standing still under neon is how prey gets counted. Move. We like the sound of feet.',
-    'Neon Howl: We have heard every lone-wolf speech. Say something new or run.',
+    'Neon Howl: We\'ve heard every lone-wolf speech. Say something new or run.',
   ], weight: 1 },
   { id: 'neon-howl_open_3', beat: 'open', lines: [
-    'Neon Howl: Hunger needs a soundtrack. That is why we braid the chase. You are on it until you aren\'t.',
-    'Neon Howl: Maybe you will bite back. Probably not. Make the howl honest when you lose either way.',
+    'Neon Howl: Hunger needs a soundtrack. That\'s why we braid the chase. You\'re on it until you aren\'t.',
+    'Neon Howl: Maybe you\'ll bite back. Probably not. Make the howl honest when you lose either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -39,12 +39,12 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Ow. Noted. Next bite gets uglier. Still braided. Still fast.',
   ] },
   { id: 'neon-howl_hhit_5', beat: 'hunter_hit', lines: [
-    'Neon Howl: You hit the pack. Hurt logged in three. One howl. Neon does not fade.',
+    'Neon Howl: You hit the pack. Hurt logged in three. One howl. Neon doesn\'t fade.',
     'Neon Howl: Keep running.',
   ] },
   { id: 'neon-howl_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Neon Howl: We are leaking. You are still soft. Fix one. Or keep fleeing — we prefer it.',
-    'Neon Howl: Beat up and still braiding. That is chase hunger talking.',
+    'Neon Howl: We\'re leaking. You\'re still soft. Fix one. Or keep fleeing — we prefer it.',
+    'Neon Howl: Beat up and still braiding. That\'s chase hunger talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_10', beat: 'hunter_crit', lines: [
     'Neon Howl: Okay. You found the soft under the braid. Rude. Fast.',
-    'Neon Howl: That almost felt like prey who meant it. Do not talk. Run or swing.',
+    'Neon Howl: That almost felt like prey who meant it. Don\'t talk. Run or swing.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Neon Howl: You ran, then hit us that hard? Prey with a finishing move. Confusing. Delicious.',
@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You dosed the braid. Hunger freezes slower than toxins. We keep running.',
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'neon-howl_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Neon Howl: Fire mid-chase. That is our real fear. Also: rude.',
+    'Neon Howl: Fire mid-chase. That\'s our real fear. Also: rude.',
     'Neon Howl: You lit the underpass. Pack flinches bright. Then we braid harder.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'neon-howl_kit_caltrops_14', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Church juice. Pack hates the wet more than the prayer.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'neon-howl_kit_smokestick_17', beat: 'kit', lines: [
-    'Neon Howl: Smoke will not hide footsteps. We hunt by sound. Keep breathing.',
+    'Neon Howl: Smoke won\'t hide footsteps. We hunt by sound. Keep breathing.',
     'Neon Howl: Hide mid-chase? Underpass seeking has three noses and no mercy.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'neon-howl_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -124,14 +124,14 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'neon-howl_mhit_24', beat: 'monster_hit', lines: [
     'Neon Howl: Matched. Breath between teeth. Pack lands.',
-    'Neon Howl: That is for standing still under neon.',
+    'Neon Howl: That\'s for standing still under neon.',
   ] },
   { id: 'neon-howl_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Neon Howl: We are leaking. You are worse. Chase calls that even.',
+    'Neon Howl: We\'re leaking. You\'re worse. Chase calls that even.',
     'Neon Howl: Beat up and still biting in three. Braid talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'neon-howl_mmiss_26', beat: 'monster_miss', lines: [
-    'Neon Howl: Missed. Enjoy it. We are still circling.',
+    'Neon Howl: Missed. Enjoy it. We\'re still circling.',
     'Neon Howl: Close one. Pack patience expires when the neon dries.',
   ] },
 
@@ -145,18 +145,18 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Deep scratch. Persistent — like footsteps we already own.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'neon-howl_w_bld_29', beat: 'wound', lines: [
-    'Neon Howl: Okay. We are leaking. You are still soft. Finish it or keep running.',
+    'Neon Howl: Okay. We\'re leaking. You\'re still soft. Finish it or keep running.',
     'Neon Howl: Beat up and standing. Three hearts. One chase. Still hungry.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'neon-howl_w_heart_30', beat: 'wound', lines: [
     'Neon Howl: That landed on something soft we weren\'t advertising under neon.',
-    'Neon Howl: Do not look at us like that while you are winning. It is rude. It is prey energy.',
+    'Neon Howl: Don\'t look at us like that while you\'re winning. It\'s rude. It\'s prey energy.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'neon-howl_run_31', beat: 'run', lines: [
-    'Neon Howl: You ran from the pack? That is the whole romance. Chase clause open.',
-    'Neon Howl: Leaving? Howls do not pause. Feet either.',
+    'Neon Howl: You ran from the pack? That\'s the whole romance. Chase clause open.',
+    'Neon Howl: Leaving? Howls don\'t pause. Feet either.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'neon-howl_run2_32', beat: 'run', lines: [
     'Neon Howl: Twice. You ran twice. Prey with cardio. Flirting harder.',
@@ -167,8 +167,8 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You wanted distance. We wanted the sound. Guess who still arrives.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'neon-howl_chase2_34', beat: 'chase', lines: [
-    'Neon Howl: Second chase. You do not get the mile. We do.',
-    'Neon Howl: Run again and we will think you like the howl. Do not stop.',
+    'Neon Howl: Second chase. You don\'t get the mile. We do.',
+    'Neon Howl: Run again and we\'ll think you like the howl. Don\'t stop.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'neon-howl_close_35', beat: 'close', lines: [
     'Neon Howl: Back. Miss the sound?',

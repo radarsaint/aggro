@@ -10,14 +10,14 @@ export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'hexhive_open_x_0', beat: 'open', lines: [
     'Hexhive: Priority P1 under your skin. Patch notes arrive as bites. Have you tried screaming? Reboot twice if it comforts you.',
-    'Hexhive: Hey. Yeah, we talk. Ticket will not close until you do. SLA breached. Violence escalated. We live in the heat either way.',
+    'Hexhive: Hey. Yeah, we talk. Ticket won\'t close until you do. SLA breached. Violence escalated. We live in the heat either way.',
   ], weight: 2 },
   { id: 'hexhive_open_x_1', beat: 'open', lines: [
     'Hexhive: IT Tickets With Legs. Coolant shafts. Error under your skin. Volume. Crawl speed. A buzz in your teeth.',
     'Hexhive: Reboot denied. Bleed approved. Warm hosts. Damp corners. Firewalls that apologize. Tickets that never close.',
   ], weight: 2 },
   { id: 'hexhive_open_0', beat: 'open', lines: [
-    'Hexhive: We are the swarm in the ticket field. Infestation whispered. Assigned. Come itchy or do not come.',
+    'Hexhive: We are the swarm in the ticket field. Infestation whispered. Assigned. Come itchy or don\'t come.',
     'Hexhive: "Have you tried turning it off." Yes. We turned you on. Priority P1 hearts — we can live inside those.',
   ], weight: 2 },
   { id: 'hexhive_open_1', beat: 'open', lines: [
@@ -26,11 +26,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'hexhive_open_2', beat: 'open', lines: [
     'Hexhive: Closing tickets upstairs is a myth. Down here P1 means teeth. Stop standing in the heat.',
-    'Hexhive: We have heard every "have you tried." Say something new or scream.',
+    'Hexhive: We\'ve heard every "have you tried." Say something new or scream.',
   ], weight: 1 },
   { id: 'hexhive_open_3', beat: 'open', lines: [
-    'Hexhive: Nobody else closes P1s with teeth. That is why we tally them. You are on the queue.',
-    'Hexhive: Maybe you will escalate honest. Probably not. Buzz loud when you lose either way.',
+    'Hexhive: Nobody else closes P1s with teeth. That\'s why we tally them. You\'re on the queue.',
+    'Hexhive: Maybe you\'ll escalate honest. Probably not. Buzz loud when you lose either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -43,8 +43,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Heat continues.',
   ] },
   { id: 'hexhive_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Hexhive: We are leaking. You are still soft. Fix one. Or escalate.',
-    'Hexhive: Beat up and still crawling. That is P1 talking.',
+    'Hexhive: We\'re leaking. You\'re still soft. Fix one. Or escalate.',
+    'Hexhive: Beat up and still crawling. That\'s P1 talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_10', beat: 'hunter_crit', lines: [
     'Hexhive: Okay. You found the soft under the buzz. Rude. Escalated.',
-    'Hexhive: That almost felt like a host who meant it. Do not talk. Swing or reboot.',
+    'Hexhive: That almost felt like a host who meant it. Don\'t talk. Swing or reboot.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Hexhive: You ran, then hit us that hard? Flee ticket with a finishing move.',
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Church juice. Swarm hates the wet more than the prayer.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'hexhive_kit_smokestick_17', beat: 'kit', lines: [
-    'Hexhive: Smoke will not hide heat. We track by itch. Keep breathing.',
+    'Hexhive: Smoke won\'t hide heat. We track by itch. Keep breathing.',
     'Hexhive: Hide mid-ticket? Shaft seeking has a thousand legs and no mercy.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'hexhive_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -124,14 +124,14 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'hexhive_mhit_24', beat: 'monster_hit', lines: [
     'Hexhive: Matched. Patch note landed. Swarm bites.',
-    'Hexhive: That is for standing in the heat like a closed ticket.',
+    'Hexhive: That\'s for standing in the heat like a closed ticket.',
   ] },
   { id: 'hexhive_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Hexhive: We are leaking. You are worse. P1 calls that even.',
+    'Hexhive: We\'re leaking. You\'re worse. P1 calls that even.',
     'Hexhive: Beat up and still biting. Buzz talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'hexhive_mmiss_26', beat: 'monster_miss', lines: [
-    'Hexhive: Missed. Enjoy it. We are still circling.',
+    'Hexhive: Missed. Enjoy it. We\'re still circling.',
     'Hexhive: Close one. Patience expires when the SLA bleeds out.',
   ] },
 
@@ -142,21 +142,21 @@ export const nodes: ScriptNode[] = [
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'hexhive_w_bru_28', beat: 'wound', lines: [
     'Hexhive: Color under the buzz. Keep the heat.',
-    'Hexhive: Deep scratch. Persistent — like a ticket that will not close.',
+    'Hexhive: Deep scratch. Persistent — like a ticket that won\'t close.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'hexhive_w_bld_29', beat: 'wound', lines: [
-    'Hexhive: Okay. We are leaking. You are still soft. Finish it or escalate.',
+    'Hexhive: Okay. We\'re leaking. You\'re still soft. Finish it or escalate.',
     'Hexhive: Beat up and standing. Priority P1. Still crawling.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'hexhive_w_heart_30', beat: 'wound', lines: [
     'Hexhive: That landed on something soft we weren\'t advertising in the queue.',
-    'Hexhive: Do not look at us like that while you are winning. It is rude. It is host energy.',
+    'Hexhive: Don\'t look at us like that while you\'re winning. It\'s rude. It\'s host energy.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'hexhive_run_31', beat: 'run', lines: [
     'Hexhive: You ran from a P1? Ticket follows. Chase clause open.',
-    'Hexhive: Leaving mid-queue? P1s do not pause. Heat neither.',
+    'Hexhive: Leaving mid-queue? P1s don\'t pause. Heat neither.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'hexhive_run2_32', beat: 'run', lines: [
     'Hexhive: Twice. You ran twice. Flee ticket with cardio.',
@@ -167,8 +167,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: You wanted distance. We wanted the heat. Guess who still arrives.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'hexhive_chase2_34', beat: 'chase', lines: [
-    'Hexhive: Second chase. You do not get the shafts. We do.',
-    'Hexhive: Run again and we will think you like the buzz. Do not.',
+    'Hexhive: Second chase. You don\'t get the shafts. We do.',
+    'Hexhive: Run again and we\'ll think you like the buzz. Don\'t.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'hexhive_close_35', beat: 'close', lines: [
     'Hexhive: Back. Miss the itch?',

@@ -17,11 +17,11 @@ export const nodes: ScriptNode[] = [
     'Patches: Touch twice and I invent a surcharge. Touch three times and I invent you as décor. Pick carefully.',
   ], weight: 1 },
   { id: 'patches_open_2', beat: 'open', lines: [
-    'Patches: Your heart is loud enough to bill from under the shelf. You are still paying in scrap. Fear costs by the ounce here — pay glitter or bleed.',
-    'Patches: I have got half a sandwich and a rusty edge. Price of admission is glitter — or blood. Your call.',
+    'Patches: Your heart is loud enough to bill from under the shelf. You\'re still paying in scrap. Fear costs by the ounce here — pay glitter or bleed.',
+    'Patches: I\'ve got half a sandwich and a rusty edge. Price of admission is glitter — or blood. Your call.',
   ], weight: 1 },
   { id: 'patches_open_3', beat: 'open', lines: [
-    'Patches: Quiet confession from Eternal Temp: I have scavenged worse dates. Leave the pretty metal where I can see it.',
+    'Patches: Quiet confession from Eternal Temp: I\'ve scavenged worse dates. Leave the pretty metal where I can see it.',
     'Patches: Three hundred years of unpaid overtime. Be interesting on the invoice — or be the surcharge.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
@@ -35,8 +35,8 @@ export const nodes: ScriptNode[] = [
     'Patches: Ow. That stays on the invoice.',
   ] },
   { id: 'patches_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Patches: I am spilling shinies of my own. Keep going — I am listening.',
-    'Patches: Hurt and still billing. That is three centuries talking.',
+    'Patches: I\'m spilling shinies of my own. Keep going — I\'m listening.',
+    'Patches: Hurt and still billing. That\'s three centuries talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -56,10 +56,10 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_10', beat: 'hunter_crit', lines: [
     'Patches: You found the soft spot under three hundred years of scrap. Congrats, thief.',
-    'Patches: That almost felt like a raise. Do not talk. Swing again.',
+    'Patches: That almost felt like a raise. Don\'t talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Patches: Cardio first, claws second. I am filing both. Impressed. Offended.',
+    'Patches: Cardio first, claws second. I\'m filing both. Impressed. Offended.',
     'Patches: You bolted, then tagged a three-century temp that hard? Commit to one invoice.',
   ], requireFlags: ["ran"], weight: 3 },
 
@@ -74,7 +74,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'patches_kit_caltrops_14', beat: 'kit', lines: [
     'Patches: Iron teeth across the tile. I walk dumpsters for a living.',
-    'Patches: You seeded spite underfoot. I have eaten worse floors.',
+    'Patches: You seeded spite underfoot. I\'ve eaten worse floors.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'patches_kit_acid-vial_15', beat: 'kit', lines: [
     'Patches: Acid on scrap. As-is. No returns on personality.',
@@ -105,7 +105,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Grease the floor if you want — I still bill the cleanup in shinies.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'patches_kit_gen_22', beat: 'kit', lines: [
-    'Patches: Rummaging will not erase the invoice. I am the line item.',
+    'Patches: Rummaging won\'t erase the invoice. I\'m the line item.',
     'Patches: Improvised tools. I price improvisation.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'patches_kit_ran_23', beat: 'kit', lines: [
@@ -115,21 +115,21 @@ export const nodes: ScriptNode[] = [
 
   // ── MONSTER HITS / MISSES ──
   { id: 'patches_mhit_24', beat: 'monster_hit', lines: [
-    'Patches: That is for the unread messages and the unpaid centuries.',
-    'Patches: Do not look surprised — you walked in shining.',
+    'Patches: That\'s for the unread messages and the unpaid centuries.',
+    'Patches: Don\'t look surprised — you walked in shining.',
   ] },
   { id: 'patches_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Patches: I am hurt. You are hurt more. Fair trade. Ledger balanced in red.',
+    'Patches: I\'m hurt. You\'re hurt more. Fair trade. Ledger balanced in red.',
     'Patches: Spilling and still landing. The ledger talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'patches_mmiss_26', beat: 'monster_miss', lines: [
     'Patches: Missed. Enjoy it. Luck expires when scavengers get bored.',
-    'Patches: Close one. Do not write a personality around a near-miss.',
+    'Patches: Close one. Don\'t write a personality around a near-miss.',
   ] },
 
   // ── WOUNDS ──
   { id: 'patches_w_wind_27', beat: 'wound', lines: [
-    'Patches: Tiny nick. Do not get sentimental about it.',
+    'Patches: Tiny nick. Don\'t get sentimental about it.',
     'Patches: Barely a scratch. Upgrade your intent or leave the glitter.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'patches_w_bru_28', beat: 'wound', lines: [
@@ -137,18 +137,18 @@ export const nodes: ScriptNode[] = [
     'Patches: Mid-date damage. Persistent — like a claim I never close.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'patches_w_bld_29', beat: 'wound', lines: [
-    'Patches: Okay. I am spilling. You are still acting precious. Pick a problem.',
+    'Patches: Okay. I\'m spilling. You\'re still acting precious. Pick a problem.',
     'Patches: Bad shape and upright. Close the invoice or decorate the alcove.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'patches_w_heart_30', beat: 'wound', lines: [
     'Patches: That one hit a soft SKU I never put on the shelf.',
-    'Patches: Do not look at me like that while you are winning. I am still billing the soft spot.',
+    'Patches: Don\'t look at me like that while you\'re winning. I\'m still billing the soft spot.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'patches_run_31', beat: 'run', lines: [
     'Patches: You fled the alcove? I invented dumpster cardio.',
-    'Patches: Walking away? Unpaid centuries do not do follow-ups.',
+    'Patches: Walking away? Unpaid centuries don\'t do follow-ups.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'patches_run2_32', beat: 'run', lines: [
     'Patches: Twice. You ran twice. Zero shinies left behind. Pathetic and personal.',
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'patches_chase2_34', beat: 'chase', lines: [
     'Patches: Second chase. Love language confirmed — and invoiced.',
-    'Patches: Bolt again and I will bill you for liking the alcove.',
+    'Patches: Bolt again and I\'ll bill you for liking the alcove.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'patches_close_35', beat: 'close', lines: [
     'Patches: Right back in your face. Miss the shinies?',
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'patches_vic_37', beat: 'victory', lines: [
-    'Patches: You won. Take the shinies. Leave the attitude. I have waited longer than your bloodline.',
+    'Patches: You won. Take the shinies. Leave the attitude. I\'ve waited longer than your bloodline.',
     'Patches: Fine. Temp status: over. Leave my ghost alone.',
   ], weight: 1 },
   { id: 'patches_vic_heal_38', beat: 'victory', lines: [
@@ -181,11 +181,11 @@ export const nodes: ScriptNode[] = [
     'Patches: Potion win. Soft prey with a flask. Receipt filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'patches_vic_kite_39', beat: 'victory', lines: [
-    'Patches: You made me chase you around my own alcove, then finished it. That is not a win. That is rude.',
+    'Patches: You made me chase you around my own alcove, then finished it. That\'s not a win. That\'s rude.',
     'Patches: You made a scavenger jog. Three centuries of dumpster wisdom, undone by cardio. Resent forever.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'patches_vic_crit_40', beat: 'victory', lines: [
-    'Patches: You cut through three centuries of scrap. Fight\'s over. I will give you that.',
+    'Patches: You cut through three centuries of scrap. Fight\'s over. I\'ll give you that.',
     'Patches: You found the soft scrap and finished it. Ugly invoice. Clean ledger.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patches_vic_net_41', beat: 'victory', lines: [
@@ -196,7 +196,7 @@ export const nodes: ScriptNode[] = [
   // ── DEFEAT ──
   { id: 'patches_def_42', beat: 'defeat', lines: [
     'Patches: Snack filed. Shrinkage solved. Your bag was mid.',
-    'Patches: Down you go. I have outlived prettier corpses.',
+    'Patches: Down you go. I\'ve outlived prettier corpses.',
   ] },
   { id: 'patches_def_crit_43', beat: 'defeat', lines: [
     'Patches: Hard hit. No follow-through. Talent without a closing stamp.',
