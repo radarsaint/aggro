@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Fire on the route. Still stamped. Still delivering.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'proxy-bit_kit_caltrops_14', beat: 'kit', lines: [
-    'Proxy Bit: Spikes on the floor. I fly the windowsill path. Think about that.',
+    'Proxy Bit: Cubicle tacks. I fly the windowsill path. Think about that.',
     'Proxy Bit: Caltrops. For a courier who never walks the aisle. Okay.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'proxy-bit_kit_acid-vial_15', beat: 'kit', lines: [
@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: You threw a vial at sealed mail. Unfiled. Sticky. Personal.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'proxy-bit_kit_holy-water_16', beat: 'kit', lines: [
-    'Proxy Bit: Holy water. Cute. I am not undead. I am mail.',
+    'Proxy Bit: Parish splash on postage. I am not undead. I am mail.',
     'Proxy Bit: Church water on Cubicle 4B. Clearance still expired. Wet. Logged.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'proxy-bit_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: You hid. Couriers invent hide-and-seek with teeth.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'proxy-bit_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Proxy Bit: A bear trap. For a flyer. Irony noted. Please sign before you flail.',
+    'Proxy Bit: Route clamp for a flyer. Irony noted. Please sign before you flail.',
     'Proxy Bit: Iron jaws for Cubicle 4B prey. That is adorable. Please initial.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'proxy-bit_kit_net_19', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Grease mid-delivery. Please initial the mess.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'proxy-bit_kit_gen_22', beat: 'kit', lines: [
-    'Proxy Bit: Rummaging will not void the stamp. I am right here.',
+    'Proxy Bit: Pocket-diving will not void the stamp. I am right here.',
     'Proxy Bit: Unauthorized attachments. Please initial the bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'proxy-bit_kit_ran_23', beat: 'kit', lines: [
@@ -174,7 +174,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'proxy-bit_vic_37', beat: 'victory', lines: [
     'Proxy Bit: You won. Sign the win. Leave the unread CC. Legal already archived us.',
-    'Proxy Bit: Fine. Take it. Seal ruined. Please initial the ending.',
+    'Proxy Bit: Seal ruined. Please initial the ending.',
   ], weight: 1 },
   { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: [
     'Proxy Bit: Flask mid-route, then you voided me. Almost cleared. Almost.',
@@ -186,10 +186,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'proxy-bit_vic_crit_40', beat: 'victory', lines: [
     'Proxy Bit: Seal splits. Route void. I will give you that.',
-    'Proxy Bit: You found the soft seal and finished it. Stamp: final. Please initial.',
+    'Proxy Bit: You cracked the seal and finished it. Stamp: final. Please initial.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: [
-    'Proxy Bit: You netted the courier and voided the route. Receipt stamped forever.',
+    'Proxy Bit: You grounded the courier and voided the route. Receipt stamped forever.',
     'Proxy Bit: Route ends in silk. Return to sender: denied.',
   ], requireFlags: ["netted"], weight: 3 },
 
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'proxy-bit_def_heal_45', beat: 'defeat', lines: [
     'Proxy Bit: Flask and dirt. Clearance stamped wrong. Seal laughs.',
-    'Proxy Bit: Topped off, then claimed anyway. Filed. Sign next time.',
+    'Proxy Bit: Flask mid-route, then claimed anyway. Filed. Sign next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

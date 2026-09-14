@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Hard hit. Chant went off-key. Local felt that.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_10', beat: 'hunter_crit', lines: [
-    'Scrap Mob: Okay. You found the soft under the volume. Rude. Collective.',
+    'Scrap Mob: Volume dipped soft. Rude. Collective.',
     'Scrap Mob: That almost felt like a scab who meant it. Do not talk. Swing or cross.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: You caught one sibling. Line still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scrap-mob_kit_net_19', beat: 'kit', lines: [
-    'Scrap Mob: Local 666 paused for your junk. Knives still find the gaps.',
-    'Scrap Mob: Strike line waits on junk. Chant gets louder, not softer.',
+    'Scrap Mob: Local 666 paused while you filed paperwork. Knives still find the gaps.',
+    'Scrap Mob: Strike line waits while you file paperwork. Chant gets louder, not softer.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
@@ -185,16 +185,16 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Fine. Local keeps a chant with your name scratched out.',
   ], weight: 1 },
   { id: 'scrap-mob_vic_heal_38', beat: 'victory', lines: [
-    'Scrap Mob: Flask mid-picket, then you broke the line. Almost preferred scab energy.',
-    'Scrap Mob: Flask, then you broke the picket. Loud win. Quiet dump.',
+    'Scrap Mob: Flask on the picket, then you broke the line. Almost a scab with a flask. Almost.',
+    'Scrap Mob: Flask on the picket, then you broke the line. Loud win. Quiet dump.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'scrap-mob_vic_kite_39', beat: 'victory', lines: [
-    'Scrap Mob: You dragged us around our own dump, then finished it. Cardio as a plan. Rude.',
-    'Scrap Mob: You ran us ragged, finished mid-chant. Jogging broke the line.',
+    'Scrap Mob: You marched us through our own dump, then finished it. Cardio as a plan. Rude.',
+    'Scrap Mob: You turned the picket into a track meet, finished mid-chant. Jogging broke the Local.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'scrap-mob_vic_crit_40', beat: 'victory', lines: [
-    'Scrap Mob: You tore through the Local. Soft under the volume. Fight\'s over.',
-    'Scrap Mob: Hard hit, then silence. Strike denied.',
+    'Scrap Mob: You shattered the Local. Volume dies under the hit. Fight\'s over.',
+    'Scrap Mob: Clean crack. Chant died cold. Strike denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scrap-mob_vic_net_41', beat: 'victory', lines: [
     'Scrap Mob: Chant loses the vote. Dumpster rights restore themselves.',

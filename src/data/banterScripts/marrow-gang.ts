@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: You caught one bone. Formation still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'marrow-gang_kit_net_19', beat: 'kit', lines: [
-    'Marrow Gang: Formation broken by a toy. Cadence keeps the beat anyway.',
+    'Marrow Gang: Formation snagged mid-step. Cadence keeps the beat anyway.',
     'Marrow Gang: Drill Team paused ugly. Panic noted. Count continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
@@ -186,11 +186,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: [
     'Marrow Gang: Flask mid-drill, then you broke muster. Almost punctual. Almost.',
-    'Marrow Gang: Flask, then you ended muster. Late fee waived. Hold lost.',
+    'Marrow Gang: Flask at muster, then you ended drill. Late fee waived. Hold lost.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [
-    'Marrow Gang: You dragged us around our own barracks, then finished it. Jogging is a hate crime against posture.',
-    'Marrow Gang: You ran us ragged and finished off-beat. Muster files that as coward.',
+    'Marrow Gang: You turned muster into a lap, then finished it. Jogging is a hate crime against posture.',
+    'Marrow Gang: You turned muster into cardio and finished off-beat. Files that as coward.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'marrow-gang_vic_crit_40', beat: 'victory', lines: [
     'Marrow Gang: You cut through on the beat. Soft under the count. Fight\'s over.',

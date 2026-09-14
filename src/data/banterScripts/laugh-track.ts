@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Chemistry at the track. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'laugh-track_kit_holy-water_16', beat: 'kit', lines: [
-    'Laugh Track: Holy water. Cute. We are audience, not undead.',
+    'Laugh Track: Baptism bit. We are audience, not undead.',
     'Laugh Track: Blessings do not mute the howl. Just wet the set.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'laugh-track_kit_smokestick_17', beat: 'kit', lines: [
@@ -96,11 +96,11 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Jaws for jaws. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'laugh-track_kit_net_19', beat: 'kit', lines: [
-    'Laugh Track: Cue never lands because of your toy. Studio hates dead air.',
+    'Laugh Track: Cue never lands because of your net. Studio hates dead air.',
     'Laugh Track: Trapped and still laughing. Audience is confused.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'laugh-track_kit_healing-potion_20', beat: 'kit', lines: [
-    'Laugh Track: Mid-fight sip. Planning a longer episode?',
+    'Laugh Track: Set sip. Betting on a longer episode?',
     'Laugh Track: Healing. Optimistic. We prefer guests nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'laugh-track_kit_oil-flask_21', beat: 'kit', lines: [
@@ -173,19 +173,19 @@ export const nodes: ScriptNode[] = [
 
   { id: 'laugh-track_vic_37', beat: 'victory', lines: [
     'Laugh Track: Track dead. Tell them the howl fought.',
-    'Laugh Track: Fine. Take it. Howl ruined. Worst episode of your life.',
+    'Laugh Track: Cue cut cold. Howl ruined. Worst episode of your life.',
   ], weight: 1 },
   { id: 'laugh-track_vic_heal_38', beat: 'victory', lines: [
-    'Laugh Track: Topped off, then killed the cue. Ugly win. Studio notes respect.',
-    'Laugh Track: Topped off, then finished the bit. Preferred guest energy. Gross.',
+    'Laugh Track: Flask on cue, then killed the bit. Cheap encore. Studio files respect.',
+    'Laugh Track: Flask on cue, then finished the bit. Guest with a flask. Studio cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'laugh-track_vic_kite_39', beat: 'victory', lines: [
-    'Laugh Track: Made us chase our own set, then finished. Rude win.',
+    'Laugh Track: Made the set into a jog, then finished. Rude win.',
     'Laugh Track: You turned a cue into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'laugh-track_vic_crit_40', beat: 'victory', lines: [
     'Laugh Track: Howl splits. Cue dead. We will give you that.',
-    'Laugh Track: Found the soft laugh and finished. No cue left. Well done.',
+    'Laugh Track: Killed the laugh track and finished. No cue left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'laugh-track_vic_net_41', beat: 'victory', lines: [
     'Laugh Track: Cue never lands. Studio goes dead air.',

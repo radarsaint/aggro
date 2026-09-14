@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: You greased Tunnel B. Parliament still has quorum.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'patchwire_kit_gen_22', beat: 'kit', lines: [
-    'Patchwire: Rummaging will not adjourn us. We are right here.',
+    'Patchwire: Fishing pockets will not adjourn us. We are right here.',
     'Patchwire: Unauthorized snack tools. We are answering in bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'patchwire_kit_ran_23', beat: 'kit', lines: [
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'patchwire_vic_37', beat: 'victory', lines: [
     'Patchwire: Quorum dissolved. Leave the leftovers. Parliament remembers what you owed.',
-    'Patchwire: Fine. Take it. Quorum dissolved. Whip count: zero. Worst lunch of your life.',
+    'Patchwire: Quorum dissolved. Whip count: zero. Worst lunch of your life.',
   ], weight: 1 },
   { id: 'patchwire_vic_heal_38', beat: 'victory', lines: [
     'Patchwire: Flask mid-fight and you still adjourned us. Soft snack. Almost respectable.',

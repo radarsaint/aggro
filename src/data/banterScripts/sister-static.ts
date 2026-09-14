@@ -90,7 +90,7 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Chemistry at a live broadcast. Hate you a little more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'sister-static_kit_holy-water_16', beat: 'kit', lines: [
-    'Sister Static: Holy water. Cute. I am dead air, not undead.',
+    'Sister Static: Studio blessing. I am dead air, not undead.',
     'Sister Static: Blessings do not mute Channel 7. Just wet the mic.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'sister-static_kit_smokestick_17', beat: 'kit', lines: [
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Greased Channel 7. Ghost producer filed a complaint.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sister-static_kit_gen_22', beat: 'kit', lines: [
-    'Sister Static: Bag toys will not kill the signal. I am still on air.',
+    'Sister Static: Pocket clutter will not kill the signal. I am still on air.',
     'Sister Static: You went for accessories on air. Snow stays live. No commercial for cowards.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
@@ -183,11 +183,11 @@ export const nodes: ScriptNode[] = [
   // ── VICTORY ──
   { id: 'sister-static_vic_37', beat: 'victory', lines: [
     'Sister Static: Segment dead. Tell them Channel 7 fought.',
-    'Sister Static: Fine. Take it. Gloss ruined. Signal still humming.',
+    'Sister Static: Segment dead. Gloss ruined. Signal still humming.',
   ], weight: 1 },
   { id: 'sister-static_vic_heal_38', beat: 'victory', lines: [
-    'Sister Static: Topped off, then killed the segment. Ugly win. Ratings confused.',
-    'Sister Static: Topped off, then signed me off. Preferred listener energy. Gross.',
+    'Sister Static: Flask on air, then killed the segment. Cheap cut. Ratings confused.',
+    'Sister Static: Flask on air, then signed me off. Listener with a flask. Ratings cringe.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'sister-static_vic_kite_39', beat: 'victory', lines: [
     'Sister Static: Made me chase my own booth, then finished. Rude win.',

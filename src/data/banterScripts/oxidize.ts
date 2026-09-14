@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Chemistry at dinner. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'oxidize_kit_holy-water_16', beat: 'kit', lines: [
-    'Oxidize: Holy water. Cute. I am hunger, not undead.',
+    'Oxidize: Temple rinse on oxide. I am hunger, not undead.',
     'Oxidize: Blessings do not save steel. Just wet the flake.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'oxidize_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,14 +93,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'oxidize_kit_hunting-trap_18', beat: 'kit', lines: [
     'Oxidize: Bear trap for a rust monster. Laughing.',
-    'Oxidize: Jaws for something that eats jaws. Adorable.',
+    'Oxidize: Clamp for a mouth that eats iron. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'oxidize_kit_net_19', beat: 'kit', lines: [
-    'Oxidize: Dinner paused for a toy. Feelers call that rude.',
+    'Oxidize: Dinner paused for paperwork. Feelers call that rude.',
     'Oxidize: Feelers tear at the netting. Metal still calls.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'oxidize_kit_healing-potion_20', beat: 'kit', lines: [
-    'Oxidize: Mid-fight sip. Planning to keep your sword?',
+    'Oxidize: Aisle sip. Betting you keep the sword?',
     'Oxidize: Healing. Optimistic. I prefer armor nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'oxidize_kit_oil-flask_21', beat: 'kit', lines: [
@@ -173,11 +173,11 @@ export const nodes: ScriptNode[] = [
 
   { id: 'oxidize_vic_37', beat: 'victory', lines: [
     'Oxidize: Dinner over. Tell them Clearance fought.',
-    'Oxidize: Fine. Take it. Oxide ruined. Worst browse of your life.',
+    'Oxidize: Dinner closed. Oxide ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'oxidize_vic_heal_38', beat: 'victory', lines: [
-    'Oxidize: Topped off, then finished dinner. Ugly win. Oxide notes it.',
-    'Oxidize: Topped off, then finished the meal. Preferred customer energy. Gross.',
+    'Oxidize: Flask between courses, then finished dinner. Cheap meal. Feelers remember.',
+    'Oxidize: Flask between courses, then finished the meal. Customer with a flask. Feelers cringe.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'oxidize_vic_kite_39', beat: 'victory', lines: [
     'Oxidize: Made me chase my own aisle, then finished. Rude win.',
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'oxidize_vic_crit_40', beat: 'victory', lines: [
     'Oxidize: Flake splits. Dinner ends. I will give you that.',
-    'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
+    'Oxidize: Flaked the oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [
     'Oxidize: Feelers go still. Oxide still smells you on the rail.',

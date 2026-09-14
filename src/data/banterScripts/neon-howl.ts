@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Hard hit. Neon flickered. Pack felt that.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_10', beat: 'hunter_crit', lines: [
-    'Neon Howl: Okay. You found the soft under the braid. Rude. Fast.',
+    'Neon Howl: Braid went soft mid-chase. Rude. Fast.',
     'Neon Howl: That almost felt like prey who meant it. Do not talk. Run or swing.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You caught one braid. Two more still circling. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'neon-howl_kit_net_19', beat: 'kit', lines: [
-    'Neon Howl: Braid stalled under neon. Chase does not pause for toys.',
+    'Neon Howl: Braid snagged under neon. Chase does not pause for music cues.',
     'Neon Howl: Pack fighting the mesh. Panic is just another howl.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'neon-howl_kit_healing-potion_20', beat: 'kit', lines: [
@@ -185,16 +185,16 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Fine. Pack keeps a howl with your name scratched out.',
   ], weight: 1 },
   { id: 'neon-howl_vic_heal_38', beat: 'victory', lines: [
-    'Neon Howl: You drank and still cut the braid. Almost preferred prey.',
+    'Neon Howl: You drank and still cut the braid. Almost prey with a flask. Almost.',
     'Neon Howl: You healed, then split the pack. Loud win. Quiet mile.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'neon-howl_vic_kite_39', beat: 'victory', lines: [
-    'Neon Howl: You dragged us around our own mile, then finished it. Cardio as a plan. Rude.',
-    'Neon Howl: You ran us ragged, finished mid-howl. Jogging broke the braid.',
+    'Neon Howl: You turned the mile into a lap, then finished it. Cardio as a plan. Rude.',
+    'Neon Howl: You turned the mile into a treadmill, finished mid-howl. Jogging broke the braid.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'neon-howl_vic_crit_40', beat: 'victory', lines: [
-    'Neon Howl: You tore through the braid. Soft under neon. Fight\'s over.',
-    'Neon Howl: Hard hit, then silence. Chase denied.',
+    'Neon Howl: You sheared the braid apart. Neon dies under the hit. Fight\'s over.',
+    'Neon Howl: Clean crack. Howl died mid-mile. Chase denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'neon-howl_vic_net_41', beat: 'victory', lines: [
     'Neon Howl: Three mouths go quiet. Neon drips on empty pavement.',

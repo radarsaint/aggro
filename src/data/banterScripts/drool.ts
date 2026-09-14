@@ -186,14 +186,14 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'drool_vic_heal_38', beat: 'victory', lines: [
     'Drool: Flask mid-pact, then you closed cute. Soft client path. Snack debt unpaid.',
-    'Drool: Flask, then you closed me. Almost preferred-customer energy.',
+    'Drool: Flask through the smile, then you closed me. Almost a loyal regular. Almost.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'drool_vic_kite_39', beat: 'victory', lines: [
     'Drool: You dragged me around my own booth, then finished it. Jogging voids the cute warranty.',
     'Drool: You ran me ragged, signed nothing, won anyway. Rude. Impressive.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'drool_vic_crit_40', beat: 'victory', lines: [
-    'Drool: You tore through the smile. Fine print could not save cute. Fight\'s over.',
+    'Drool: You broke the smile open. Fine print could not save cute. Fight\'s over.',
     'Drool: Hard hit, then the finish. Mean win. Clean signature. Still adorable of you.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drool_vic_net_41', beat: 'victory', lines: [

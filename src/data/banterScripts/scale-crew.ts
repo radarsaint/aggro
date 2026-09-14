@@ -59,7 +59,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Hard hit on Trap Apprentices. Wait — Boss? No. Just the plate. Boss!',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scale-crew_hcrit_10', beat: 'hunter_crit', lines: [
-    'Scale Crew: You found the soft padding under the waiver. Tall one scores.',
+    'Scale Crew: You punched the padding under the waiver. Tall one scores.',
     'Scale Crew: That almost felt like the boss showed up. Almost. Swing again. Quieter.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scale-crew_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Grease on the springs. Still spring. Boss!',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scale-crew_kit_gen_22', beat: 'kit', lines: [
-    'Scale Crew: Rummaging will not pause the plate. We are right here.',
+    'Scale Crew: Digging will not pause the plate. We are right here.',
     'Scale Crew: Unauthorized training tools. We are answering in bruises. Boss!',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scale-crew_kit_ran_23', beat: 'kit', lines: [
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'scale-crew_vic_37', beat: 'victory', lines: [
     'Scale Crew: You won. Tell the boss we tried. Leave the waiver. Kneepads optional forever.',
-    'Scale Crew: Fine. Take it. Training failed. Boss still not here. Worst drill of your life.',
+    'Scale Crew: Drill stamped failed. Boss still not here. Worst drill of your life.',
   ], weight: 1 },
   { id: 'scale-crew_vic_heal_38', beat: 'victory', lines: [
     'Scale Crew: Flask mid-drill and you still beat us. Soft test subject. Almost mentored.',
@@ -185,10 +185,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'scale-crew_vic_crit_40', beat: 'victory', lines: [
     'Scale Crew: Plate splits. Training fails. We will give you that.',
-    'Scale Crew: You found the soft padding and finished the drill. Training failed. Boss still not here.',
+    'Scale Crew: You punched the waiver padding and finished the drill. Training failed. Boss still not here.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scale-crew_vic_net_41', beat: 'victory', lines: [
-    'Scale Crew: You netted the apprentices and skipped the boss. Honest cheat. Boss!',
+    'Scale Crew: You caught the apprentices and skipped the boss. Honest cheat. Boss!',
     'Scale Crew: Trap snapped shut. Training failed. Boss still not here.',
   ], requireFlags: ["netted"], weight: 3 },
 

@@ -59,7 +59,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Hard hit on the franchise. The grate just rattled. Royalty compounds.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drain-gang_hcrit_10', beat: 'hunter_crit', lines: [
-    'Drain Gang: You found the soft ankle we tax under the brand. Freeloader scores.',
+    'Drain Gang: You clipped the ankle we tax under the brand. Freeloader scores.',
     'Drain Gang: That almost felt like a territory flip. Almost. Royalty still due. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drain-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Grease on the overflow. Territory still ours. Ankles still due.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'drain-gang_kit_gen_22', beat: 'kit', lines: [
-    'Drain Gang: Rummaging will not pause the royalty fee. We are right here.',
+    'Drain Gang: Scavenging will not pause the royalty fee. We are right here.',
     'Drain Gang: Unauthorized franchise tools. We are answering in fees.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drain-gang_kit_ran_23', beat: 'kit', lines: [
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'drain-gang_vic_37', beat: 'victory', lines: [
     'Drain Gang: Territory lost. Leave the ankles. Map still has our name. Royalty forgiven — bitterly.',
-    'Drain Gang: Fine. Take it. Territory lost. Royalty forgiven — bitterly. Worst franchise visit of your life.',
+    'Drain Gang: Territory stamped closed. Royalty forgiven — bitterly. Worst franchise visit of your life.',
   ], weight: 1 },
   { id: 'drain-gang_vic_heal_38', beat: 'victory', lines: [
     'Drain Gang: Flask mid-fee and you still beat us. Soft freeloader. Almost franchised.',
@@ -185,10 +185,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'drain-gang_vic_crit_40', beat: 'victory', lines: [
     'Drain Gang: Grate splits. Fee ends. We will give you that.',
-    'Drain Gang: You found the soft ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
+    'Drain Gang: You clipped the taxed ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drain-gang_vic_net_41', beat: 'victory', lines: [
-    'Drain Gang: You netted the franchise and stole the territory. Fee collected anyway.',
+    'Drain Gang: You lassoed the franchise and stole the territory. Fee collected anyway.',
     'Drain Gang: Franchise closed. Royalty forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 

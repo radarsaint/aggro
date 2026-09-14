@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Chemistry at drill. Hate you a little more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'iron-cadre_kit_holy-water_16', beat: 'kit', lines: [
-    'Iron Cadre: Holy water. Cute. We are discipline, not undead.',
+    'Iron Cadre: Chaplain splash. We are discipline, not undead.',
     'Iron Cadre: Blessings do not break the count. Just wet the line.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'iron-cadre_kit_smokestick_17', beat: 'kit', lines: [
@@ -96,11 +96,11 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Jaws for a shield wall. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'iron-cadre_kit_net_19', beat: 'kit', lines: [
-    'Iron Cadre: Count broken by a toy. Formation hates that.',
+    'Iron Cadre: Count snapped mid-step. Formation hates that.',
     'Iron Cadre: Shields snagged. We advance anyway.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'iron-cadre_kit_healing-potion_20', beat: 'kit', lines: [
-    'Iron Cadre: Mid-fight sip. Planning to hold the line?',
+    'Iron Cadre: Rank sip. Betting on the line holding?',
     'Iron Cadre: Healing. Optimistic. We prefer ranks nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'iron-cadre_kit_oil-flask_21', beat: 'kit', lines: [
@@ -112,7 +112,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Tools mid-drill. Eyes forward. Cadre does not pause for accessories.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
-    'Iron Cadre: You broke formation, then dug for toys. Freelancer energy. We hate that.',
+    'Iron Cadre: You broke formation, then foraged like a scavenger. Freelancer energy. We hate that.',
     'Iron Cadre: Broke drill to forage. Freelancer energy. We still advance.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -173,19 +173,19 @@ export const nodes: ScriptNode[] = [
 
   { id: 'iron-cadre_vic_37', beat: 'victory', lines: [
     'Iron Cadre: Line broken. Tell them the Cadre fought.',
-    'Iron Cadre: Fine. Take it. Quiet ruined. Worst drill of your life.',
+    'Iron Cadre: Line broken. Quiet ruined. Worst drill of your life.',
   ], weight: 1 },
   { id: 'iron-cadre_vic_heal_38', beat: 'victory', lines: [
-    'Iron Cadre: Topped off, then broke the line. Ugly win. Cadre notes it.',
-    'Iron Cadre: Topped off, then finished drill. Preferred recruit energy. Gross.',
+    'Iron Cadre: Flask in ranks, then broke the line. Cheap advance. Cadre files the insult.',
+    'Iron Cadre: Flask in ranks, then finished drill. Recruit with a flask. Cadre cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'iron-cadre_vic_kite_39', beat: 'victory', lines: [
-    'Iron Cadre: Made us chase our own yard, then finished. Rude win.',
+    'Iron Cadre: Made the yard into a jog, then finished. Rude win.',
     'Iron Cadre: You turned drill into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'iron-cadre_vic_crit_40', beat: 'victory', lines: [
     'Iron Cadre: Quiet splits. Drill ends. We will give you that.',
-    'Iron Cadre: Found the soft count and finished. No line left. Well done.',
+    'Iron Cadre: Broke the count clean and finished. No line left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: [
     'Iron Cadre: Shields lower. Drill over. Eyes forward.',

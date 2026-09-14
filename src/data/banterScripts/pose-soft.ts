@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Chemistry at the floorset. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'pose-soft_kit_holy-water_16', beat: 'kit', lines: [
-    'Pose Soft: Holy water. Cute. I am merch, not undead.',
+    'Pose Soft: Altar drip on gloss. I am merch, not undead.',
     'Pose Soft: Blessings do not save a pose. Just wet the gloss.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'pose-soft_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,14 +93,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'pose-soft_kit_hunting-trap_18', beat: 'kit', lines: [
     'Pose Soft: Bear trap for gallery stock. Laughing softly.',
-    'Pose Soft: Jaws for something that freezes you first. Adorable.',
+    'Pose Soft: Clamp for a pose that freezes you first. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'pose-soft_kit_net_19', beat: 'kit', lines: [
     'Pose Soft: Forever ruined. Floorset is weeping.',
     'Pose Soft: Chin line ruined. Floorset notes weeping.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'pose-soft_kit_healing-potion_20', beat: 'kit', lines: [
-    'Pose Soft: Mid-fight sip. Planning to hold forever?',
+    'Pose Soft: Fitting sip. Betting forever holds?',
     'Pose Soft: Healing. Optimistic. I prefer models nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'pose-soft_kit_oil-flask_21', beat: 'kit', lines: [
@@ -112,7 +112,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Tools mid-pose? Chin stays up. The window does not wait.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'pose-soft_kit_ran_23', beat: 'kit', lines: [
-    'Pose Soft: You fled the floorset, then dug for toys. Décor never runs. Noted as coward.',
+    'Pose Soft: You fled the floorset, then dug for décor. Floorset never runs. Noted as coward.',
     'Pose Soft: Broke the pose to forage. Bad floorset. Still coming for the chin.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -173,11 +173,11 @@ export const nodes: ScriptNode[] = [
 
   { id: 'pose-soft_vic_37', beat: 'victory', lines: [
     'Pose Soft: Floorset over. Tell them the mannequin fought.',
-    'Pose Soft: Fine. Take it. Gloss ruined. Worst browse of your life.',
+    'Pose Soft: Chin dropped. Gloss ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'pose-soft_vic_heal_38', beat: 'victory', lines: [
-    'Pose Soft: Topped off, then dropped the chin. Ugly win. Gallery notes it.',
-    'Pose Soft: Topped off, then finished the fitting. Preferred model energy. Gross.',
+    'Pose Soft: Flask on the mark, then dropped the chin. Cheap pose. Gallery remembers.',
+    'Pose Soft: Flask on the mark, then finished the pose. Model with a flask. Gallery cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'pose-soft_vic_kite_39', beat: 'victory', lines: [
     'Pose Soft: Made me chase my atelier, then finished. Rude win.',
@@ -185,7 +185,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'pose-soft_vic_crit_40', beat: 'victory', lines: [
     'Pose Soft: Gloss splits. Forever ends. I will give you that.',
-    'Pose Soft: Found the soft pose and finished. No forever left. Well done.',
+    'Pose Soft: Dropped the pose forever and finished. No forever left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'pose-soft_vic_net_41', beat: 'victory', lines: [
     'Pose Soft: Chin drops. Floorset ends without a body in the light.',

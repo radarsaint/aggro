@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Sting Grid: Chemistry at altitude. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'sting-grid_kit_holy-water_16', beat: 'kit', lines: [
-    'Sting Grid: Holy water. Cute. We are permits, not undead.',
+    'Sting Grid: Clerical splash. We are permits, not undead.',
     'Sting Grid: Blessings do not void a deed. Just wet the buzz.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'sting-grid_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,14 +93,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'sting-grid_kit_hunting-trap_18', beat: 'kit', lines: [
     'Sting Grid: Bear trap for wasps. Soft buzz-laugh.',
-    'Sting Grid: Jaws for something that never lands. Adorable.',
+    'Sting Grid: Clamp for a permit that never lands. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sting-grid_kit_net_19', beat: 'kit', lines: [
     'Sting Grid: You dropped the grid out of the air. Permit just got personal.',
     'Sting Grid: Trapped and still buzzing. Deed office hates this.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sting-grid_kit_healing-potion_20', beat: 'kit', lines: [
-    'Sting Grid: Mid-fight sip. Planning a longer trespass?',
+    'Sting Grid: Altitude sip. Betting on a longer trespass?',
     'Sting Grid: Healing. Optimistic. We prefer necks nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'sting-grid_kit_oil-flask_21', beat: 'kit', lines: [
@@ -173,19 +173,19 @@ export const nodes: ScriptNode[] = [
 
   { id: 'sting-grid_vic_37', beat: 'victory', lines: [
     'Sting Grid: Deed denied. Tell them the grid fought.',
-    'Sting Grid: Fine. Take it. Buzz ruined. Worst climb of your life.',
+    'Sting Grid: Deed shredded. Buzz ruined. Worst climb of your life.',
   ], weight: 1 },
   { id: 'sting-grid_vic_heal_38', beat: 'victory', lines: [
-    'Sting Grid: Topped off, then shredded the deed. Ugly win. Office notes it.',
-    'Sting Grid: Topped off, then finished the filing. Preferred trespass energy. Gross.',
+    'Sting Grid: Flask at altitude, then shredded the deed. Cheap trespass. Office remembers.',
+    'Sting Grid: Flask at altitude, then finished the filing. Trespasser with a flask. Office cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'sting-grid_vic_kite_39', beat: 'victory', lines: [
-    'Sting Grid: Made us chase our own altitude, then finished. Rude win.',
+    'Sting Grid: Made altitude into a chase, then finished. Rude win.',
     'Sting Grid: You turned altitude into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sting-grid_vic_crit_40', beat: 'victory', lines: [
     'Sting Grid: Hum splits. Deed ends. We will give you that.',
-    'Sting Grid: Found the soft permit and finished. No deed left. Well done.',
+    'Sting Grid: Shredded the soft permit and finished. No deed left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sting-grid_vic_net_41', beat: 'victory', lines: [
     'Sting Grid: Altitude denied. Deed office shreds the filing.',

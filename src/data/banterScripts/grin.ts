@@ -89,7 +89,7 @@ export const nodes: ScriptNode[] = [
     'Grin: You threw chemistry at chemistry. Personal and redundant.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'grin_kit_holy-water_16', beat: 'kit', lines: [
-    'Grin: Holy water. Cute. I am inventory, not undead.',
+    'Grin: Font water on a claim. I am inventory, not undead.',
     'Grin: Blessings do not close a claim. They wet the desk.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'grin_kit_smokestick_17', beat: 'kit', lines: [
@@ -98,14 +98,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'grin_kit_hunting-trap_18', beat: 'kit', lines: [
     'Grin: Bear trap for a puddle. I want to laugh.',
-    'Grin: Jaws for something that seeps. Adorable.',
+    'Grin: Clamp for a smile that seeps. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'grin_kit_net_19', beat: 'kit', lines: [
-    'Grin: You tried to inventory a puddle. Desk refuses toys.',
+    'Grin: You tried to inventory a puddle. Desk refuses music cues.',
     'Grin: You pinned the smile. I seep through gaps for a living.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'grin_kit_healing-potion_20', beat: 'kit', lines: [
-    'Grin: Mid-fight sip. Planning a longer claim window?',
+    'Grin: Claim-window sip. Betting on more time?',
     'Grin: Healing. Optimistic. I like claimants nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'grin_kit_oil-flask_21', beat: 'kit', lines: [
@@ -182,11 +182,11 @@ export const nodes: ScriptNode[] = [
   // ── VICTORY ──
   { id: 'grin_vic_37', beat: 'victory', lines: [
     'Grin: Claim closed. Tell them Lost & Found fought.',
-    'Grin: Fine. Take it. Smile ruined. Worst browse of your life.',
+    'Grin: Window closed. Smile ruined. Worst browse of your life.',
   ], weight: 1 },
   { id: 'grin_vic_heal_38', beat: 'victory', lines: [
-    'Grin: Topped off, then closed the window. Ugly win. Annex notes it.',
-    'Grin: Topped off, then closed my window. Preferred claimant energy. Gross.',
+    'Grin: Flask at the desk, then closed the window. Cheap smile. Annex remembers.',
+    'Grin: Flask at the desk, then closed my window. Claimant with a flask. Annex cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'grin_vic_kite_39', beat: 'victory', lines: [
     'Grin: Made me chase my own annex, then finished. Rude win.',
@@ -194,7 +194,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'grin_vic_crit_40', beat: 'victory', lines: [
     'Grin: Smile splits. Claim ends. I will give you that.',
-    'Grin: Found the soft sticker and finished. No smile left. Well done, thief.',
+    'Grin: Peeled the sticker and finished. No smile left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'grin_vic_net_41', beat: 'victory', lines: [
     'Grin: Annex keeps the claim desk. Stub stamped closed.',

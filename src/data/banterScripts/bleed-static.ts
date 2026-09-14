@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Flames bruise the vintage. Still intimate. Still latching.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'bleed-static_kit_caltrops_14', beat: 'kit', lines: [
-    'Bleed Static: Spikes on the floor. I fly, darling — your spite is ground-level.',
+    'Bleed Static: Floor teeth. I fly, darling — your spite is ground-level.',
     'Bleed Static: Caltrops. For a thing that sips from above. Okay.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'bleed-static_kit_acid-vial_15', beat: 'kit', lines: [
@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: You threw a vial at a date. Rude. Vintage still thirsty.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'bleed-static_kit_holy-water_16', beat: 'kit', lines: [
-    'Bleed Static: Holy water. Cute. I am not undead. I am benefits.',
+    'Bleed Static: Faith water on a latch. I am not undead. I am benefits.',
     'Bleed Static: Church water. The wet is worse than the sermon. Pulse still skips.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'bleed-static_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: You hid. Needles find soft prey in the dark.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'bleed-static_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Bleed Static: A bear trap. For a flyer. I want to laugh into your neck.',
+    'Bleed Static: Snap-jaws for a flyer. I want to laugh into your neck.',
     'Bleed Static: Iron jaws for lounge prey. I invent commitment with a latch.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'bleed-static_kit_net_19', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Grease mid-date. Intimacy finds a way anyway.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'bleed-static_kit_gen_22', beat: 'kit', lines: [
-    'Bleed Static: Rummaging will not save the vintage. I am on your neck.',
+    'Bleed Static: Digging will not save the vintage. I am on your neck.',
     'Bleed Static: Props are not consent. Swing or donate.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'bleed-static_kit_ran_23', beat: 'kit', lines: [
@@ -174,11 +174,11 @@ export const nodes: ScriptNode[] = [
 
   { id: 'bleed-static_vic_37', beat: 'victory', lines: [
     'Bleed Static: Latch opens for you. Leave the swatter. I still know the skip.',
-    'Bleed Static: Fine. Take it. Latch ruined. Hum still on. Worst date of your life.',
+    'Bleed Static: Latch ruined. Hum still on. Worst date of your life.',
   ], weight: 1 },
   { id: 'bleed-static_vic_heal_38', beat: 'victory', lines: [
     'Bleed Static: Flask mid-sip, then you detached. Soft vintage. Almost respectable.',
-    'Bleed Static: Flask, then you detached like an adult. I already tasted the receipt.',
+    'Bleed Static: Flask during the hum, then you detached like an adult. I already tasted the receipt.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'bleed-static_vic_kite_39', beat: 'victory', lines: [
     'Bleed Static: You made me chase you mid-sip, then finished it. Vintage files that under betrayal.',
@@ -186,10 +186,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'bleed-static_vic_crit_40', beat: 'victory', lines: [
     'Bleed Static: Latch splits. Vintage ends. I will give you that.',
-    'Bleed Static: You found the soft place and finished it. The latch remembers. Forever starts quiet.',
+    'Bleed Static: You opened the soft latch and finished it. The latch remembers. Forever starts quiet.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'bleed-static_vic_net_41', beat: 'victory', lines: [
-    'Bleed Static: You netted the sipper and detached like an adult. Vintage already tasted you.',
+    'Bleed Static: You pinned the sipper and detached like an adult. Vintage already tasted you.',
     'Bleed Static: Benefits grounded. Vintage already tasted the win and hated it.',
   ], requireFlags: ["netted"], weight: 3 },
 
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'bleed-static_def_heal_45', beat: 'defeat', lines: [
     'Bleed Static: You drank and still went down. Soft vintage. Wrong call.',
-    'Bleed Static: Topped off, then donated anyway. Sip complete. Stay still next time.',
+    'Bleed Static: Flask during the date, then donated anyway. Vintage complete. Stay still next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

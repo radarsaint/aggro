@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Bear jaws on my floor. Irony\'s on sale. I am ringing you up.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'amber-silk_kit_net_19', beat: 'kit', lines: [
-    'Amber Silk: You netted the wrapper. Channel three is dying laughing.',
+    'Amber Silk: You caught the wrapper. Channel three is dying laughing.',
     'Amber Silk: Net over silk — two wraps, one guest. Panic louder; I am tagging it.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'amber-silk_kit_healing-potion_20', beat: 'kit', lines: [
@@ -178,14 +178,14 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'amber-silk_vic_heal_38', beat: 'victory', lines: [
     'Amber Silk: Flask mid-aisle, then you finished LP. I almost respect the browse.',
-    'Amber Silk: Flask, then you finished LP. Receipt already filed under forever.',
+    'Amber Silk: Flask under the charm, then you finished LP. Receipt already filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'amber-silk_vic_kite_39', beat: 'victory', lines: [
     'Amber Silk: You dragged me down my own aisle, then finished it. Loss Prevention does not do laps.',
     'Amber Silk: You turned Loss Prevention into a lap. Silk does not forget a guest who made her chase.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'amber-silk_vic_crit_40', beat: 'victory', lines: [
-    'Amber Silk: You tore through the robe. Claws found the soft under the charm. Fight\'s over.',
+    'Amber Silk: You ripped the robe wide. Claws found the gap under the charm. Fight\'s over.',
     'Amber Silk: Hard hit, then the finish. Headset blanked. That is the win.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'amber-silk_vic_net_41', beat: 'victory', lines: [

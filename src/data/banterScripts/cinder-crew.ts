@@ -84,7 +84,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Chemistry in the thread. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'cinder-crew_kit_holy-water_16', beat: 'kit', lines: [
-    'Cinder Crew: Holy water. Cute. Foam is still a rumor.',
+    'Cinder Crew: Holy rinse mid-thread. Foam is still a rumor.',
     'Cinder Crew: Blessings do not mute us. Just wet the spark.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'cinder-crew_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,14 +93,14 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'cinder-crew_kit_hunting-trap_18', beat: 'kit', lines: [
     'Cinder Crew: Bear trap for magmin. Soft laugh.',
-    'Cinder Crew: Jaws for something that ignites on read. Adorable.',
+    'Cinder Crew: Clamp for a spark that ignites on read. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'cinder-crew_kit_net_19', beat: 'kit', lines: [
-    'Cinder Crew: Chat muted mid-spark. Thread hates toys.',
+    'Cinder Crew: Chat muted mid-spark. Thread hates dead air.',
     'Cinder Crew: Trapped and still sparking. Mute did nothing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'cinder-crew_kit_healing-potion_20', beat: 'kit', lines: [
-    'Cinder Crew: Mid-fight sip. Planning a longer thread?',
+    'Cinder Crew: Chat sip. Betting on a longer thread?',
     'Cinder Crew: Healing. Optimistic. We prefer lurkers nervous.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'cinder-crew_kit_oil-flask_21', beat: 'kit', lines: [
@@ -173,22 +173,22 @@ export const nodes: ScriptNode[] = [
 
   { id: 'cinder-crew_vic_37', beat: 'victory', lines: [
     'Cinder Crew: Thread dead. Tell them the crew fought.',
-    'Cinder Crew: Fine. Take it. Spark ruined. Worst thread of your life.',
+    'Cinder Crew: Thread muted. Spark ruined. Worst thread of your life.',
   ], weight: 1 },
   { id: 'cinder-crew_vic_heal_38', beat: 'victory', lines: [
-    'Cinder Crew: Topped off, then muted the thread. Ugly win. Chat notes it.',
-    'Cinder Crew: Topped off, then finished the thread. Preferred lurker energy. Gross.',
+    'Cinder Crew: Flask in Facilities, then muted the chat. Cheap spark-out. Chat remembers.',
+    'Cinder Crew: Flask in Facilities, then finished the chat. Lurker with a flask. Chat cringes.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'cinder-crew_vic_kite_39', beat: 'victory', lines: [
-    'Cinder Crew: Made us chase our own Facilities, then finished. Rude win.',
+    'Cinder Crew: Made Facilities into a jog, then finished. Rude win.',
     'Cinder Crew: You turned Facilities into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'cinder-crew_vic_crit_40', beat: 'victory', lines: [
     'Cinder Crew: Spark splits. Thread ends. We will give you that.',
-    'Cinder Crew: Found the soft ping and finished. No thread left. Well done.',
+    'Cinder Crew: Muted the ping and finished. No thread left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [
-    'Cinder Crew: You netted the crew and killed the thread. Honest spark-out.',
+    'Cinder Crew: You grounded the crew and killed the thread. Honest spark-out.',
     'Cinder Crew: Thread dead. Mute did not save you.',
   ], requireFlags: ["netted"], weight: 3 },
 

@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You lit the mirrors. Reflections keep scoring anyway.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'glasswing_kit_caltrops_14', beat: 'kit', lines: [
-    'Glasswing: Spikes on the floor. I fly the feedback loop. Think about that.',
+    'Glasswing: Mirror-floor spikes. I fly the feedback loop. Think about that.',
     'Glasswing: Caltrops. For a thing that audits from above. Okay.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'glasswing_kit_acid-vial_15', beat: 'kit', lines: [
@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You threw a vial in Culture. Sticky. Personal. Still scored.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'glasswing_kit_holy-water_16', beat: 'kit', lines: [
-    'Glasswing: Holy water. Cute. Faith does not pass the values survey.',
+    'Glasswing: Sanctified mist. Faith does not pass the values survey.',
     'Glasswing: Church water on glass. I just hate the wet. Score unchanged.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'glasswing_kit_smokestick_17', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: You hid. I still see the lie — and the want behind it.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'glasswing_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Glasswing: A bear trap. For a flyer. Irony is a score of one.',
+    'Glasswing: Survey clamp for a flyer. Irony is a score of one.',
     'Glasswing: Iron jaws for Mirror Arcade prey. That is adorable. Still visible.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'glasswing_kit_net_19', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Glasswing: Grease mid-audit. Career move for a liar.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'glasswing_kit_gen_22', beat: 'kit', lines: [
-    'Glasswing: Rummaging will not pass the survey. I am right here.',
+    'Glasswing: Scavenging will not pass the survey. I am right here.',
     'Glasswing: Unauthorized workplace tools. Soft voice. Hard answer.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'glasswing_kit_ran_23', beat: 'kit', lines: [
@@ -174,7 +174,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'glasswing_vic_37', beat: 'victory', lines: [
     'Glasswing: Survey closed. Leave the lie. Mirrors remember. Chin down.',
-    'Glasswing: Fine. Take it. Glass cracked. Survey closed. Worst browse of your life.',
+    'Glasswing: Survey closed. Glass cracked. Worst browse of your life.',
   ], weight: 1 },
   { id: 'glasswing_vic_heal_38', beat: 'victory', lines: [
     'Glasswing: Flask mid-survey, then you closed me. Soft score. Almost redeemable.',
@@ -186,10 +186,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'glasswing_vic_crit_40', beat: 'victory', lines: [
     'Glasswing: Mirror splits. Score final. I will give you that.',
-    'Glasswing: You found the soft glass and finished it. Final score: you. Chin down.',
+    'Glasswing: You scored the glass and finished it. Final score: you. Chin down.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'glasswing_vic_net_41', beat: 'victory', lines: [
-    'Glasswing: You netted the auditor and forced visibility. Survey fails you anyway.',
+    'Glasswing: You grounded the auditor and forced visibility. Survey fails you anyway.',
     'Glasswing: Auditor grounded. Visibility absolute. Score final.',
   ], requireFlags: ["netted"], weight: 3 },
 
@@ -207,6 +207,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'glasswing_def_heal_45', beat: 'defeat', lines: [
     'Glasswing: Flask and floor. Soft survey. Wrong call on your pulse.',
-    'Glasswing: Topped off, then failed anyway. Score closed. Stay for the mirror next time.',
+    'Glasswing: Flask mid-survey, then failed anyway. Score closed. Stay for the mirror next time.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

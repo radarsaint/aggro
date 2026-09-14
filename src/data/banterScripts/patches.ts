@@ -105,7 +105,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Grease the floor if you want — I still bill the cleanup in shinies.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'patches_kit_gen_22', beat: 'kit', lines: [
-    'Patches: Rummaging will not erase the invoice. I am the line item.',
+    'Patches: Foraging will not erase the invoice. I am the line item.',
     'Patches: Improvised tools. I price improvisation.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'patches_kit_ran_23', beat: 'kit', lines: [
@@ -186,10 +186,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'patches_vic_crit_40', beat: 'victory', lines: [
     'Patches: You cut through three centuries of scrap. Fight\'s over. I will give you that.',
-    'Patches: You found the soft scrap and finished it. Ugly invoice. Clean ledger.',
+    'Patches: You peeled the scrap and finished it. Mean invoice. Clean ledger.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patches_vic_net_41', beat: 'victory', lines: [
-    'Patches: You netted the temp and closed the claim. Sticky win. Filed.',
+    'Patches: You boxed the temp and closed the claim. Sticky win. Filed.',
     'Patches: Sticky win in silk. Filing you under forever anyway.',
   ], requireFlags: ["netted"], weight: 3 },
 

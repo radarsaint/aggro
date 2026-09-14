@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Hard hit. Heat flickered. Swarm felt that.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_10', beat: 'hunter_crit', lines: [
-    'Hexhive: Okay. You found the soft under the buzz. Rude. We escalate in bites.',
+    'Hexhive: Buzz seam showed. Rude. We escalate in bites.',
     'Hexhive: That almost felt like a host who meant it. Stop narrating. Swing or reboot.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -186,16 +186,16 @@ export const nodes: ScriptNode[] = [
     'Hexhive: Fine. Shafts keep a buzz with your name scratched out.',
   ], weight: 1 },
   { id: 'hexhive_vic_heal_38', beat: 'victory', lines: [
-    'Hexhive: You drank, then beat the swarm. Almost a preferred host. Almost.',
+    'Hexhive: You drank, then beat the swarm. Almost a host with a flask. Almost.',
     'Hexhive: You healed up, then shut the swarm down. Loud win. Shafts emptied.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'hexhive_vic_kite_39', beat: 'victory', lines: [
-    'Hexhive: You dragged us around our own shafts, then finished it. Cardio as a plan. Rude.',
-    'Hexhive: You ran us ragged, finished mid-buzz. Jogging broke the crawl.',
+    'Hexhive: You herded us through our own shafts, then finished it. Cardio as a plan. Rude.',
+    'Hexhive: You turned the crawl into a marathon, finished mid-buzz. Jogging broke the hive.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'hexhive_vic_crit_40', beat: 'victory', lines: [
-    'Hexhive: You tore through the swarm. Soft under the buzz. Fight\'s over.',
-    'Hexhive: Hard hit, then silence. Crawl closed. We hate that.',
+    'Hexhive: You cracked the swarm apart. Buzz dies under the hit. Fight\'s over.',
+    'Hexhive: Clean crack. Crawl went mute. We hate that.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'hexhive_vic_net_41', beat: 'victory', lines: [
     'Hexhive: Bites stop cold. Coolant shafts breathe again.',

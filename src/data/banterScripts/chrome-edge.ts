@@ -85,7 +85,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You lit the demo. I am deciding if that is brave or just expensive.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'chrome-edge_kit_caltrops_14', beat: 'kit', lines: [
-    'Chrome Edge: Spikes on the floor. I fly. Think about that.',
+    'Chrome Edge: Carpet nails. I fly. Think about that.',
     'Chrome Edge: Caltrops. For a thing that never walks. Okay.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'chrome-edge_kit_acid-vial_15', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You threw chemistry at my reflection. I hate you a little more now.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'chrome-edge_kit_holy-water_16', beat: 'kit', lines: [
-    'Chrome Edge: Holy water. Cute. I am not undead. I am merchandise.',
+    'Chrome Edge: Church rinse on chrome. I am not undead. I am merchandise.',
     'Chrome Edge: Blessings do not sheath a flying sword. They just make me wet and annoyed.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'chrome-edge_kit_smokestick_17', beat: 'kit', lines: [
@@ -101,11 +101,11 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You hid. I can still hear you breathing. Come back.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'chrome-edge_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Chrome Edge: A bear trap. For a hover. I want to laugh.',
+    'Chrome Edge: Clamp for a hover. I want to laugh.',
     'Chrome Edge: You set jaws for something that does not touch the ground. That is adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'chrome-edge_kit_net_19', beat: 'kit', lines: [
-    'Chrome Edge: Flying sword grounded by a toy. Sheaths are quieter.',
+    'Chrome Edge: Flying sword grounded mid-demo. Sheaths are quieter.',
     'Chrome Edge: Hover dies ugly. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'chrome-edge_kit_healing-potion_20', beat: 'kit', lines: [
@@ -186,11 +186,11 @@ export const nodes: ScriptNode[] = [
   // ── VICTORY (monologue-capable) ──
   { id: 'chrome-edge_vic_37', beat: 'victory', lines: [
     'Chrome Edge: Demo over. Walk out. Tell them the floor model put up a fight.',
-    'Chrome Edge: Fine. Take it. Polish ruined. Lights still on. Worst browse of your life.',
+    'Chrome Edge: Demo voided. Polish ruined. Lights still on. Worst browse of your life.',
   ], weight: 1 },
   { id: 'chrome-edge_vic_heal_38', beat: 'victory', lines: [
     'Chrome Edge: Flask mid-demo, then you finished me. Soft move. I almost respect it.',
-    'Chrome Edge: Flask, then you finished the demo. Preferred customer. Voided warranty. Both fit you.',
+    'Chrome Edge: Flask during the demo, then you finished the polish. Warranty voided. Both fit you.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'chrome-edge_vic_kite_39', beat: 'victory', lines: [
     'Chrome Edge: You made me chase you around my own aisle, then finished it. Floor models do not jog.',

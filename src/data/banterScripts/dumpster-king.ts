@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Bear-trap for royal prey. We step over it. Then We bite.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'dumpster-king_kit_net_19', beat: 'kit', lines: [
-    'Dumpster King: Majesty does not accept toys. We are unamused.',
-    'Dumpster King: Crown stalled in peasant junk. Panic denied. Tribute still due.',
+    'Dumpster King: Majesty does not accept party favors. We are unamused.',
+    'Dumpster King: Crown snagged on peasant clutter. Panic denied. Tribute still due.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'dumpster-king_kit_healing-potion_20', beat: 'kit', lines: [
     'Dumpster King: You drank courage from a bottle. Subjects who plan to live amuse Us.',
@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: You greased the alley. We still collect.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'dumpster-king_kit_gen_22', beat: 'kit', lines: [
-    'Dumpster King: Toys from the bag will not spare you. We are the lid.',
-    'Dumpster King: Peasants and their toys. We answer in bruises.',
+    'Dumpster King: Trinkets from the bag will not spare you. We are the lid.',
+    'Dumpster King: Peasants waving gadgets. We answer in bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'dumpster-king_kit_ran_23', beat: 'kit', lines: [
     'Dumpster King: You left the throne to forage. Cowardice. Tribute still due.',
@@ -173,7 +173,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'dumpster-king_vic_37', beat: 'victory', lines: [
     'Dumpster King: You won. Wear the win. Leave the soap. Our ghost smells better than your perfume.',
-    'Dumpster King: Fine. Take it. The crown remembers. The smell still rules.',
+    'Dumpster King: Crown yields — once. The smell still rules.',
   ], weight: 1 },
   { id: 'dumpster-king_vic_heal_38', beat: 'victory', lines: [
     'Dumpster King: Flask first, crown second. Soft usurper. Almost respectable.',

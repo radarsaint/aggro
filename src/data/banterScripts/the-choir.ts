@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'the-choir_kit_net_19', beat: 'kit', lines: [
     'The Choir: Mesh like a broken chord. We keep the hymn anyway.',
-    'The Choir: Ensemble stalled mid-verse. Panic keeps time. Blend continues.',
+    'The Choir: Ensemble snagged mid-verse. Panic keeps time. Blend continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'the-choir_kit_healing-potion_20', beat: 'kit', lines: [
     'The Choir: You drank up mid-hymn. Planning to live? We prefer you rare and blended.',
@@ -185,16 +185,16 @@ export const nodes: ScriptNode[] = [
     'The Choir: Fine. The hymnal keeps a verse with your name scratched out.',
   ], weight: 1 },
   { id: 'the-choir_vic_heal_38', beat: 'victory', lines: [
-    'The Choir: Flask mid-hymn, then you cut us. Almost a preferred soloist.',
-    'The Choir: Flask, then you cut the harmony. Missed entrance. Louder win.',
+    'The Choir: Flask mid-hymn, then you cut us. Almost a soloist with a flask. Almost.',
+    'The Choir: Flask mid-hymn, then you cut the harmony. Missed entrance. Louder win.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'the-choir_vic_kite_39', beat: 'victory', lines: [
-    'The Choir: You dragged us around our own suite, then finished it. Jogging is a crime against harmony.',
-    'The Choir: You ran us ragged, finished off-key. Cardio broke the blend.',
+    'The Choir: You turned the suite into a lap, then finished it. Jogging is a crime against harmony.',
+    'The Choir: You turned the suite into a sprint, finished off-key. Cardio broke the blend.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'the-choir_vic_crit_40', beat: 'victory', lines: [
-    'The Choir: You tore through the harmony. Soft under the sweet. Fight\'s over.',
-    'The Choir: Hard hit, then silence. Encore denied.',
+    'The Choir: You fractured the harmony. Sweet dies under the hit. Fight\'s over.',
+    'The Choir: Clean crack. Blend died mid-verse. Encore denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'the-choir_vic_net_41', beat: 'victory', lines: [
     'The Choir: Attendance ends cold. Soloists walk home lonely.',

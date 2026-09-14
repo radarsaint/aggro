@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You lit the rails. The gossip trail just ignited.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'crow-ledger_kit_caltrops_14', beat: 'kit', lines: [
-    'Crow Ledger: Spikes on the floor. We perch — your spite is ground-level.',
+    'Crow Ledger: Perch-level spite. We perch — your spite is ground-level.',
     'Crow Ledger: Caltrops. For a thing that lives on the railing. Okay. Late fee applies.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'crow-ledger_kit_acid-vial_15', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You hid. Parking Spire invented hide-and-seek with beaks.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'crow-ledger_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Crow Ledger: A bear trap. For flyers. Irony entered into the ledger.',
+    'Crow Ledger: Ledger clamp for flyers. Irony entered into the books.',
     'Crow Ledger: Iron jaws for Parking Spire prey. Adorable. Wrong altitude.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'crow-ledger_kit_net_19', beat: 'kit', lines: [
@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: Grease on the books. Still balance in blood.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'crow-ledger_kit_gen_22', beat: 'kit', lines: [
-    'Crow Ledger: Rummaging will not balance the books. We are right here.',
+    'Crow Ledger: Rooting around will not balance the books. We are right here.',
     'Crow Ledger: Unauthorized audit tools. We are answering in late fees.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'crow-ledger_kit_ran_23', beat: 'kit', lines: [
@@ -174,7 +174,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'crow-ledger_vic_37', beat: 'victory', lines: [
     'Crow Ledger: Audit closed. Leave the gossip. Trail outlives us. Net-30 settled.',
-    'Crow Ledger: Fine. Take it. Books closed. Gossip trail forever. Worst audit of your life.',
+    'Crow Ledger: Books closed. Gossip trail forever. Worst audit of your life.',
   ], weight: 1 },
   { id: 'crow-ledger_vic_heal_38', beat: 'victory', lines: [
     'Crow Ledger: Flask mid-audit and you still closed the books. Soft delinquent. Almost balanced.',
@@ -189,7 +189,7 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: You found the write-off and finished the audit. Books closed. Gossip trail forever.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'crow-ledger_vic_net_41', beat: 'victory', lines: [
-    'Crow Ledger: You netted the flock and closed the books. Balance settled mean.',
+    'Crow Ledger: You grounded the flock and closed the books. Balance settled mean.',
     'Crow Ledger: Books closed. Net-30 forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 

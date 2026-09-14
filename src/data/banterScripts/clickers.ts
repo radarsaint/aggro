@@ -77,7 +77,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: You lit after-hours. Service continues. Tip still theoretical.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'clickers_kit_caltrops_14', beat: 'kit', lines: [
-    'Clickers: Spikes on the floor. We fly — your spite is ground-level.',
+    'Clickers: Floor grit. We fly — your spite is ground-level.',
     'Clickers: Caltrops. For a thing that never walks. Okay. Tips still theoretical.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'clickers_kit_acid-vial_15', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: You hid. Roof Vents invented hide-and-seek with needles. *click*',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'clickers_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Clickers: A bear trap. For flyers. We want to laugh. *click-click*',
+    'Clickers: Floor clamp for flyers. We want to laugh. *click-click*',
     'Clickers: Iron jaws for Roof Vents prey. Adorable. Wrong altitude.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'clickers_kit_net_19', beat: 'kit', lines: [
@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
     'Clickers: Unauthorized table tools. We are answering in needles.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'clickers_kit_ran_23', beat: 'kit', lines: [
-    'Clickers: You walked out, then dug for toys. Walkout with tableware.',
+    'Clickers: You walked out, then dug for silverware. Walkout with tableware.',
     'Clickers: Flee then forage. Roof Vents closes your tab early. *click*',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -174,7 +174,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'clickers_vic_37', beat: 'victory', lines: [
     'Clickers: Table closed. Leave the scream. Roost remembers non-tippers. *click*',
-    'Clickers: Fine. Take it. Service closed. Tip: forever zero. Worst table of your life.',
+    'Clickers: Service closed. Tip: forever zero. Worst table of your life.',
   ], weight: 1 },
   { id: 'clickers_vic_heal_38', beat: 'victory', lines: [
     'Clickers: Flask mid-shift and you still closed the table. Almost tipped.',
