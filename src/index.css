@@ -3072,13 +3072,20 @@ img { max-width: 100%; display: block; }
 }
 .rest-beat__actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
 }
 .rest-beat__actions .btn {
-  flex: 1 1 140px;
+  width: 100%;
   padding: 10px 12px;
   font-size: 0.72rem;
+}
+.rest-beat__night {
+  /* demoted long rest — quieter than Grab a drink */
+  padding: 8px 12px;
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
 }
 .rest-beat__hint {
   margin: 10px 0 0;
