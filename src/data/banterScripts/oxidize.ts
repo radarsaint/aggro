@@ -109,7 +109,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
     'Oxidize: Bag rummage will not save the steel. I am hungry.',
-    'Oxidize: Hands in the bag while I am tasting steel? Fine. Antennae still tracking dinner.',
+    'Oxidize: You opened the bag in Clearance like dinner could wait. Antennae disagree. Steel still singing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
     'Oxidize: You ran from Clearance, then rummaged. Hunger does not respect accessories.',

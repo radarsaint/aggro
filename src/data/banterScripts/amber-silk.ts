@@ -105,8 +105,8 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Slippery guests get wrapped faster. I file accidents differently.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
-    'Amber Silk: Hands in the bag on the aisle. Write-up before the wrap even starts.',
-    'Amber Silk: Props during a wrap? Loss Prevention already has a clip. Smile for the headset.',
+    'Amber Silk: Aisle foraging before the silk even sticks. Write-up already drafting itself.',
+    'Amber Silk: Accessories mid-silk. Loss Prevention already has a clip. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
     'Amber Silk: You ran, then rummaged. Guest with accessories and no receipt.',
