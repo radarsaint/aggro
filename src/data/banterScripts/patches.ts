@@ -93,8 +93,8 @@ export const nodes: ScriptNode[] = [
     'Patches: You set jaws on office prey. Breakroom had worse furniture.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patches_kit_net_19', beat: 'kit', lines: [
-    'Patches: Mesh on the temp like a return. Panic gets itemized.',
-    'Patches: Mesh on shoulders — commitment issues with holes. Still billing.',
+    'Patches: Temp returned sticky. Panic gets itemized.',
+    'Patches: Net on shoulders — sticky promise full of holes. Still billing.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patches_kit_healing-potion_20', beat: 'kit', lines: [
     'Patches: Mid-fight flask. Prey juicing the ledger like overtime — sticky and loud.',

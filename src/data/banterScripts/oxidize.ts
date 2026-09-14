@@ -188,8 +188,8 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [
-    'Oxidize: Clearance hunger caught. Oxide still smells you.',
-    'Oxidize: Clearance caught. Dinner notes the insult.',
+    'Oxidize: Clearance hunger tangled. Oxide still smells you.',
+    'Oxidize: Clearance tangled. Dinner notes the insult.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'oxidize_def_42', beat: 'defeat', lines: [

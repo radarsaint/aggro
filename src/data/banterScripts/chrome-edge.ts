@@ -201,7 +201,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You found the weak steel and finished it. No polish left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'chrome-edge_vic_net_41', beat: 'victory', lines: [
-    'Chrome Edge: Demo unit caught. Price tag still lied.',
+    'Chrome Edge: Demo unit tangled under silk. Price tag still lied.',
     'Chrome Edge: Sword grounded. Floor model hated that — price tag still lied.',
   ], requireFlags: ["netted"], weight: 3 },
 

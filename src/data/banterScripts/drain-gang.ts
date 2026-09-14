@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Bear-trap for Overflow Grate prey. Romance is dead. We aren\'t.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drain-gang_kit_net_19', beat: 'kit', lines: [
-    'Drain Gang: Mesh on franchisees. Commitment issues with holes. Royalty compounds.',
-    'Drain Gang: Mesh on the franchise. Your panic is the receipt. Territory still ours.',
+    'Drain Gang: Net on franchisees. Fee promise full of holes. Royalty compounds.',
+    'Drain Gang: Franchise tangled. Your panic is the receipt. Territory still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',

@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: You caught one sibling. Line still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scrap-mob_kit_net_19', beat: 'kit', lines: [
-    'Scrap Mob: Mesh on the Local. Commitment with holes. We thrash in unison.',
-    'Scrap Mob: Mesh on the picket. Panic joins the chant. Strike continues.',
+    'Scrap Mob: Local 666 tangled. Commitment with holes. We thrash in unison.',
+    'Scrap Mob: Strike line tangled. Panic joins the chant. Knives keep time.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Hard hit, then silence. Strike denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scrap-mob_vic_net_41', beat: 'victory', lines: [
-    'Scrap Mob: Picket dismissed mid-chant. Dump goes quiet.',
-    'Scrap Mob: You bagged the picket, then finished it. Line cut. Dump went quiet.',
+    'Scrap Mob: Picket cut off mid-chant. Dump empties out.',
+    'Scrap Mob: Strike ended under silk. Line cut. Dump empties out.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

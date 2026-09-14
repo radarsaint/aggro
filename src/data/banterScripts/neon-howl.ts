@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: You caught one braid. Two more still circling. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'neon-howl_kit_net_19', beat: 'kit', lines: [
-    'Neon Howl: Mesh on wolves. Commitment with holes. We thrash stereo.',
-    'Neon Howl: Mesh on the pack. Panic makes better music. Chase continues.',
+    'Neon Howl: Net on wolves. Chase promise full of holes. We thrash stereo.',
+    'Neon Howl: Pack tangled. Panic makes better music. Chase continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'neon-howl_kit_healing-potion_20', beat: 'kit', lines: [
     'Neon Howl: You drank up mid-chase. Planning to live? We prefer you rare and running.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Hard hit, then silence. Chase denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'neon-howl_vic_net_41', beat: 'victory', lines: [
-    'Neon Howl: Pack dismissed mid-howl. Mile goes quiet.',
-    'Neon Howl: You bagged the pack, then finished it. Braid cut. Mile went quiet.',
+    'Neon Howl: Pack cut off mid-howl. Mile empties out.',
+    'Neon Howl: Pack ended under silk. Braid cut. Mile empties out.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Jaws for freezer prey. Cute idea. I thawed out of cute years ago.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'veinrot_kit_net_19', beat: 'kit', lines: [
-    'Veinrot: Mesh on cold shoulders. Commitment with holes — I understand that.',
-    'Veinrot: You bagged me. If this is staying, say so. If not, thrash quieter.',
+    'Veinrot: Net on cold shoulders. Lonely understands holes in a promise.',
+    'Veinrot: Held. If this is staying, say so. If not, thrash quieter.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'veinrot_kit_healing-potion_20', beat: 'kit', lines: [
     'Veinrot: You drank up mid-fight. Planning to live? I prefer you rare and near.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Hard hit, then a quieter freezer. Leave a light on.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'veinrot_vic_net_41', beat: 'victory', lines: [
-    'Veinrot: Cold company cut short. Freezer goes quiet.',
-    'Veinrot: You bagged me, then finished it. Freezer keeps both memories.',
+    'Veinrot: Cold company cut short. Freezer holds its breath.',
+    'Veinrot: Held, then ended. Freezer keeps both memories.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

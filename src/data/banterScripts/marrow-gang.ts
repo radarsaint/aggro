@@ -101,8 +101,8 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: You caught one bone. Formation still holds. Romance cancelled.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'marrow-gang_kit_net_19', beat: 'kit', lines: [
-    'Marrow Gang: Mesh on formation. Commitment with holes. We thrash on the beat.',
-    'Marrow Gang: You bagged Drill Team. Flail logged. Count continues.',
+    'Marrow Gang: Net on formation. Drill promise full of holes. We thrash on the beat.',
+    'Marrow Gang: Drill Team tangled. Panic noted. Count continues.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: [
     'Marrow Gang: Muster terminated early. Eyes forward anyway.',
-    'Marrow Gang: You bagged drill, then finished it. Count filed. Barracks quiet.',
+    'Marrow Gang: Drill ended under silk. Count filed. Barracks empties.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

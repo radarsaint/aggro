@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: Bear-trap for Trap Wing prey. Click. Adorable. We aren\'t. Boss!',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'scale-crew_kit_net_19', beat: 'kit', lines: [
-    'Scale Crew: Mesh on apprentices. Commitment issues with holes.',
-    'Scale Crew: Mesh on the plate. Sign the panic waiver. Boss! — still not here.',
+    'Scale Crew: Net on apprentices. Training promise full of holes. Boss!',
+    'Scale Crew: Trap snapped on the apprentices. Sign the panic waiver. Boss! — still not here.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scale-crew_kit_healing-potion_20', beat: 'kit', lines: [
     'Scale Crew: You healed mid-drill. Sign the waiver again, test subject.',

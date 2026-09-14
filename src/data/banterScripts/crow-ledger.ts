@@ -57,7 +57,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'crow-ledger_hcrit_9', beat: 'hunter_crit', lines: [
     'Crow Ledger: Under the ledger — we felt that. Columns rattled.',
-    'Crow Ledger: Hard hit on Compliance Flock. Gossip spire just went quiet.',
+    'Crow Ledger: Hard hit on Compliance Flock. Gossip spire just blanked.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'crow-ledger_hcrit_10', beat: 'hunter_crit', lines: [
     'Crow Ledger: You found the write-off we hid from the railing. Delinquent scores.',
@@ -97,8 +97,8 @@ export const nodes: ScriptNode[] = [
     'Crow Ledger: Iron jaws for Parking Spire prey. Adorable. Wrong altitude.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'crow-ledger_kit_net_19', beat: 'kit', lines: [
-    'Crow Ledger: Mesh on auditors. Commitment issues with holes. Late fee applies.',
-    'Crow Ledger: Mesh on the flock. Panic lengthens the gossip trail.',
+    'Crow Ledger: Net on auditors. Ledger promise full of holes. Late fee applies.',
+    'Crow Ledger: Flock tangled. Panic lengthens the gossip trail.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'crow-ledger_kit_healing-potion_20', beat: 'kit', lines: [
     'Crow Ledger: Flask mid-audit. Soft delinquent. Interest still due.',

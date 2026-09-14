@@ -56,7 +56,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'dumpster-king_hcrit_9', beat: 'hunter_crit', lines: [
     'Dumpster King: Okay — that one hurt. Under the crown. We felt that.',
-    'Dumpster King: Hard hit on the Sovereign. The alley just went quiet.',
+    'Dumpster King: Hard hit on the Sovereign. The alley just blanked.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'dumpster-king_hcrit_10', beat: 'hunter_crit', lines: [
     'Dumpster King: You found claws under the crown. Congrats, usurper.',
@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Bear-trap for royal prey. We step over it. Then We bite.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'dumpster-king_kit_net_19', beat: 'kit', lines: [
-    'Dumpster King: Mesh on majesty. A peasant\'s petition with holes.',
-    'Dumpster King: Mesh on the crown. Panic is your petition. Denied.',
+    'Dumpster King: Net on majesty. A peasant petition full of holes.',
+    'Dumpster King: Crown tangled. Panic is your petition. Denied.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'dumpster-king_kit_healing-potion_20', beat: 'kit', lines: [
     'Dumpster King: You drank courage from a bottle. Subjects who plan to live amuse Us.',
@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: You found the weak place under the crown and finished it. A peasant ending for a king day.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'dumpster-king_vic_net_41', beat: 'victory', lines: [
-    'Dumpster King: Crown caught. Coup complete. Throne remembers.',
+    'Dumpster King: Coup complete. Throne remembers the silk.',
     'Dumpster King: Sovereign down. We are a little mad. Tribute still due.',
   ], requireFlags: ["netted"], weight: 3 },
 

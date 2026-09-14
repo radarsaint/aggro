@@ -94,7 +94,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'amber-silk_kit_net_19', beat: 'kit', lines: [
     'Amber Silk: You netted the wrapper. Channel three is dying laughing.',
-    'Amber Silk: Mesh over silk — two wraps, one guest. Flail louder; I am tagging it.',
+    'Amber Silk: Net over silk — two wraps, one guest. Panic louder; I am tagging it.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'amber-silk_kit_healing-potion_20', beat: 'kit', lines: [
     'Amber Silk: You drank up mid-aisle. Planning a long browse?',
@@ -186,10 +186,10 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'amber-silk_vic_crit_40', beat: 'victory', lines: [
     'Amber Silk: You tore through the robe. Claws found the soft under the charm. Fight\'s over.',
-    'Amber Silk: Hard hit, then the finish. Headset went quiet. That is the win.',
+    'Amber Silk: Hard hit, then the finish. Headset blanked. That is the win.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'amber-silk_vic_net_41', beat: 'victory', lines: [
-    'Amber Silk: Wrap caught. Headset already filed you.',
+    'Amber Silk: Guest stuck in my silk. Headset already filed you.',
     'Amber Silk: Channel three signing off. Guest closed.',
   ], requireFlags: ["netted"], weight: 3 },
 

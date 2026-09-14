@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'rattlewire_kit_net_19', beat: 'kit', lines: [
     'Rattlewire: Mesh like a soft hold with holes. Commitment: filed.',
-    'Rattlewire: You bagged me. Flail logged. Declined forever. Click.',
+    'Rattlewire: Appointment held. Panic noted. Declined forever. Click.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: [
     'Rattlewire: You drank up mid-slot. Planning to live? I prefer you rare and on the second.',
@@ -198,7 +198,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'rattlewire_vic_net_41', beat: 'victory', lines: [
     'Rattlewire: Appointment terminated early. Click. Forever late.',
-    'Rattlewire: You bagged me, then finished on the second. Click. Filed.',
+    'Rattlewire: Held, then ended on the second. Click. Filed.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

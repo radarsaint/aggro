@@ -96,8 +96,8 @@ export const nodes: ScriptNode[] = [
     'Patchwire: Bear-trap: Quorum walks around it. Then bites.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'patchwire_kit_net_19', beat: 'kit', lines: [
-    'Patchwire: Mesh on parliament. Commitment issues with holes.',
-    'Patchwire: Mesh on parliament. Panic goes in the minutes. Quorum still bites through.',
+    'Patchwire: Net on parliament. Motion full of holes.',
+    'Patchwire: Parliament netted. Panic goes in the minutes. Quorum still bites through.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'patchwire_kit_healing-potion_20', beat: 'kit', lines: [
     'Patchwire: You healed mid-vote. Motion to eat: passed.',
