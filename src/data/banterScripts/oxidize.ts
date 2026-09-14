@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'oxidize_hhit_4', beat: 'hunter_hit', lines: [
-    'Oxidize: Ow. You scuffed my appetite. Rude.',
+    'Oxidize: Ow. You interrupted dinner. The feelers are offended.',
     'Oxidize: Watch the feelers. Dinner\'s talking.',
   ] },
   { id: 'oxidize_hhit_5', beat: 'hunter_hit', lines: [
-    'Oxidize: That counted. Seasoning early.',
-    'Oxidize: Hit Clearance. Bold. Dumb. Noted.',
+    'Oxidize: That bite landed. Seasoning started early — fine by me.',
+    'Oxidize: You swung at Clearance stock. Cute. I am still smelling your steel.',
   ] },
   { id: 'oxidize_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Oxidize: You chipped Clearance stock. I am still hungrier than you.',
@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_10', beat: 'hunter_crit', lines: [
     'Oxidize: Soft spot in the rust. Congrats. I still smell your steel.',
-    'Oxidize: Almost meant it. Quiet. Feed me the next swing.',
+    'Oxidize: Almost sincere. Keep the speech. Feed me the next swing of iron.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Oxidize: Fled, then hit that hard? Pick a course.',

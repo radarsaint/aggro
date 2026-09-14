@@ -37,8 +37,8 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Watch the count. We live here.',
   ] },
   { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [
-    'Iron Cadre: That counted. Rude to the line.',
-    'Iron Cadre: Hit the Cadre. Bold. Dumb. Noted.',
+    'Iron Cadre: That one found a gap. Rude to the count. We adjust.',
+    'Iron Cadre: You marked a shield. The line noticed. Advance continues.',
   ] },
   { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Iron Cadre: You marked a shield. We are still the quietest thing on this floor.',
@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: [
     'Iron Cadre: You found a soft spot in formation. Congratulations. Advance continues.',
-    'Iron Cadre: Almost meant it. Eyes forward. Correct us properly.',
+    'Iron Cadre: Almost a real correction. Eyes forward. Hit us like you mean the drill.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Iron Cadre: Fled, then hit that hard? Pick a formation.',

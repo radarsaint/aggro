@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'pose-soft_hhit_4', beat: 'hunter_hit', lines: [
-    'Pose Soft: Ow. You scuffed the look. Hour of facing, gone.',
+    'Pose Soft: Ow. An hour of facing, gone because you couldn\'t hold still near me.',
     'Pose Soft: Watch the chin. Gallery rules.',
   ] },
   { id: 'pose-soft_hhit_5', beat: 'hunter_hit', lines: [
-    'Pose Soft: That counted. Rude fitting.',
-    'Pose Soft: Hit the merch. Bold. Dumb. Noted.',
+    'Pose Soft: That counted. Rude fitting for someone who can\'t hold a chin line.',
+    'Pose Soft: You scuffed the floorset. Gallery rules still apply. Chin stays up.',
   ] },
   { id: 'pose-soft_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Pose Soft: Chin scuffed. Pose still selling the window harder than you.',

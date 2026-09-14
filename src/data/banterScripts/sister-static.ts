@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'sister-static_hcrit_9', beat: 'hunter_crit', lines: [
-    'Sister Static: Okay — that spiked the meters. Felt it.',
+    'Sister Static: Okay — that spiked the meters. Snow just got louder.',
     'Sister Static: Hard hit on Channel 7. Producer\'s ghost stood up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sister-static_hcrit_10', beat: 'hunter_crit', lines: [

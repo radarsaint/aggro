@@ -43,8 +43,8 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: Hey! Watch the finish. I live here.',
   ] },
   { id: 'chrome-edge_hhit_5', beat: 'hunter_hit', lines: [
-    'Chrome Edge: Okay. That one counted. Rude.',
-    'Chrome Edge: You hit the merchandise. Bold. Dumb. Noted.',
+    'Chrome Edge: Okay. That one counted — and I was having a good polish day.',
+    'Chrome Edge: You put a fingerprint on the demo unit. Floor models remember that.',
   ] },
   { id: 'chrome-edge_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Chrome Edge: You dinged me. I\'m still the best-looking thing in this fight.',

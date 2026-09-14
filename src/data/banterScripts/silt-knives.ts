@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'silt-knives_hhit_4', beat: 'hunter_hit', lines: [
-    'Silt Knives: Ow. You scuffed the murk. Rude.',
+    'Silt Knives: Ow. You kicked silt into the guest list. Rude.',
     'Silt Knives: Watch the knives. Water remembers.',
   ] },
   { id: 'silt-knives_hhit_5', beat: 'hunter_hit', lines: [
-    'Silt Knives: That counted. Rude to the guest list.',
-    'Silt Knives: Hit Blackwater. Bold. Dumb. Noted.',
+    'Silt Knives: That ripple counted. Upstream trash usually apologizes softer.',
+    'Silt Knives: You cut the murk. Guest list updated. Knives still patient.',
   ] },
   { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Silt Knives: You warmed a knife. Bad manners. Silt still owns the guest list.',

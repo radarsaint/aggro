@@ -11,7 +11,7 @@ export const SHARED_NODES: ScriptNode[] = [
   ]},
   { id: 'shared_hhit', beat: 'hunter_hit', weight: 1, lines: [
     'That landed.',
-    'Felt it. Still standing.',
+    'Still standing. Try harder.',
   ]},
   { id: 'shared_hmiss', beat: 'hunter_miss', weight: 1, lines: [
     'Wind. Try again.',

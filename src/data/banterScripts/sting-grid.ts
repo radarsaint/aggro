@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'sting-grid_hhit_4', beat: 'hunter_hit', lines: [
-    'Sting Grid: Ow. You scuffed the deed. Rude.',
+    'Sting Grid: Ow. You scratched the altitude deed. Buzz continues.',
     'Sting Grid: Watch the buzz. Airspace rules.',
   ] },
   { id: 'sting-grid_hhit_5', beat: 'hunter_hit', lines: [
-    'Sting Grid: That counted. Unauthorized contact.',
-    'Sting Grid: Hit the grid. Bold. Dumb. Noted.',
+    'Sting Grid: That contact was unauthorized. Welts are the paperwork.',
+    'Sting Grid: You tagged a wing. Airspace still ours. Duck remains free.',
   ] },
   { id: 'sting-grid_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Sting Grid: You clipped a wing. Altitude still hums our deed louder than you.',

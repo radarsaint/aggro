@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'laugh-track_hhit_4', beat: 'hunter_hit', lines: [
-    'Laugh Track: Ow. You scuffed the howl. Rude.',
+    'Laugh Track: Ow. You stepped on the cue howl. Tape keeps rolling anyway.',
     'Laugh Track: Watch the laugh. Studio rules.',
   ] },
   { id: 'laugh-track_hhit_5', beat: 'hunter_hit', lines: [
-    'Laugh Track: That counted. Bad timing for a joke.',
-    'Laugh Track: Hit the track. Bold. Dumb. Noted.',
+    'Laugh Track: That landed on the wrong beat. Bad timing for a joke — perfect timing for a bite.',
+    'Laugh Track: You hit the talent mid-howl. Audience still laughing. Bite continues.',
   ] },
   { id: 'laugh-track_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Laugh Track: You scuffed the howl. Booth still laughs louder than your bit.',

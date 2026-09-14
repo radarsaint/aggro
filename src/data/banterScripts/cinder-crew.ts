@@ -33,12 +33,12 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'cinder-crew_hhit_4', beat: 'hunter_hit', lines: [
-    'Cinder Crew: Ow. You scuffed the spark. Rude.',
+    'Cinder Crew: Ow. You kicked the boiler mood. Spark still answers.',
     'Cinder Crew: Watch the thread. Chat rules.',
   ] },
   { id: 'cinder-crew_hhit_5', beat: 'hunter_hit', lines: [
-    'Cinder Crew: That counted. Bad ping.',
-    'Cinder Crew: Hit the crew. Bold. Dumb. Noted.',
+    'Cinder Crew: That landed. Bad ping for someone who wanted foam.',
+    'Cinder Crew: You pinged the thread mid-spark. Read receipt still on. Heat stays.',
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Cinder Crew: You dinged the spark. Thread still glows hotter than your mute.',
