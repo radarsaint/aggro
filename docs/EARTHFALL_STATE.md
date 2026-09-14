@@ -1,42 +1,101 @@
-# Earthfall / AGGRO — live state (2026-09-14)
+# Earthfall / AGGRO — living state
 
-## What this is
-Dating-app fight loop (Baatorasaka floor closing). R.O.D. runs all Earthfall levels (showrunner). Next floor Skullport×Xanathar×Pirate Borg = **aware only, do not design**. Dual-mode: campaign companion (table long rest → app night) + standalone roguelite.
+**Updated:** 2026-09-14 (PT) · **Product:** 0.1.0 Baatorasaka  
+**Role of this file:** Short living snapshot of what is **shipped**, **parked**, and **locked** — not a second README.  
+**Handoff entry:** [../README.md](../README.md) · **Full In/Out/Goals:** [SCOPE.md](SCOPE.md) · **History:** [../CHANGELOG.md](../CHANGELOG.md)
 
-## Ethos
-- Existing systems matter more; choices matter more.
-- Stack: progress/scale → loot feeds climb → R.O.D. snark wraps. Snark without loot empty; loot without progress junk.
-- Combat = Attack / Item (fight kits) / Run theater. Banter = soul (Jack/Cave plain English).
-- Fun Guardian: dating copy not RPG chrome; no mid-fight kit picker; no Drive/Cleave jargon; R.O.D. only when stakes exist.
-- Path: `/workspace/aggro` (Vite React TS, localStorage `aggro-game-v1`).
+If this file disagrees with `src/`, **trust code** and fix this file.
 
-## Shipped — content
-- Banter Low/Mid/High PASS (Banter Critic). Scripts in `src/data/banterScripts/`.
+---
 
-## Shipped — economy / loadout
-- Chat kit draft 1/2/3 by threat; Item = kits; Use = locker potion/bandage heals.
-- Profile Sell + Floor Kiosk; Equip weapon/armor/shield → attack die + AC bonuses.
-- Art/tools = sell scrap.
-- **Non-flat loot:** threat-weighted tables (Low ~18% / Mod ~40% / High ~60% EQUIP_CORE); hot stake +10 equip (cap 70%); framing under LootCard (stamp cold / R.O.D. hot DCC-AI).
+## Snapshot
 
-## Shipped — gates
-- **Gate 1:** `matchesTonight` (3); Accept spends; Pass free; Short rest +1 **once/night** (`shortRestsUsedTonight`); Long rest = 3 + reset drink. Dating copy (`RestBeat`).
-- **Gate 2:** soft Discover threat weighting by `fightsCompleted` (0–2 Low-heavy → 6+ High-heavy). Reweights on win (`finishIfNeeded`) + `longRest` + reshuffle/reset. No CR meters.
-- **Gate 3:** Verified per-match payout stake (35/60/90 by threat); ~1.5× gold + Uncommon loot shot; no refund on PIP.
-- **Gate 4:** Standards unlock at 3 fights — open / skipSoft (hide Low) / serious (High only).
+Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS app; save key `aggro-game-v1`.
 
-## Not shipped / parked
-- Gate 5 side bets; R.O.D. loot-box theater; loss-with-teeth beyond stake; character-home IA redesign (You/On you/Locker/Kiosk); Skullport; number-field polish; playtest verify.
+**R.O.D. (Rifts Override Directive)** = Earthfall showrunner voice — framing on **hot** clears only (hunter put gold on the date).  
+**Baatorasaka stamp** = cold clearance mouth. Mouths never blend.
 
-## Known tensions
-- Typed body AC/HP vs equip bonuses (effective stats in combat).
+**Next floor** (Skullport × Xanathar × Pirate Borg) = **aware only — do not design.**
+
+**Dual-mode:** campaign companion (table long rest → app night) **and** standalone roguelite nights. Same `RestBeat` UI.
+
+---
+
+## Ethos (do not dilute)
+
+- Existing systems > new toys; choices that bite.
+- Stack: **progress/scale → loot that feeds climb → R.O.D. wraps drops.**
+- Combat theater = Attack / Item (fight kits) / Run; **Use** = locker heals. Banter = soul (plain English).
+- Fun Guardian: dating copy, not RPG chrome. No mid-fight kit picker. No Drive/Cleave jargon. R.O.D. only when stakes exist.
+- Path on this box: `/workspace/aggro`.
+
+---
+
+## Shipped — 0.1.0 (match code)
+
+### Content
+
+- Banter Low / Mid / High scripts PASS (`src/data/banterScripts/`).
+- Baatorasaka creature deck (`src/data/creatures.ts`); theme tokens black / `#FF007F`.
+
+### Economy / loadout
+
+- Chat kit draft **1 / 2 / 3** by threat; Item = kits; Use = potion / bandage.
+- Profile Sell + Floor Kiosk; Equip weapon / armor / shield → attack die + AC (`src/data/equipment.ts`).
+- Art / tools = sell scrap (unless mapped as equip).
+- **Climb loot:** threat-weighted pools — equip ≈ Low 18% / Mod 40% / High 60%. Hot clearance +10 equip weight (cap 70%). Framing under LootCard: stamp cold / R.O.D. hot.
+- **High-only named:** PIP Machete, Badge Harness, Exit-Only Lid. **Cubicle Hook** from Moderate up.
+
+### Gates 1–4
+
+| Gate | Live behavior |
+|------|----------------|
+| **1** | `matchesTonight` = 3. Accept spends; Pass free. Short rest **Grab a drink** +1 once/night. Long rest **Call it a night** → full + drink reset. |
+| **2** | Soft Discover weights by `fightsCompleted` (0–2 Low-heavy → 6+ High-heavy). Reweight on win + long rest. No CR meters. |
+| **3** | Verified: put gold on date (35/60/90). ~1.5× gold + hotter loot; no PIP refund. |
+| **4** | Standards at 3 fights: All dates / Skip the soft ones / Only serious dates. |
+
+### Reveal
+
+- **THEY LEFT YOU THIS** · framing line · CTA **Take it**. Loss → **PIP**.
+
+---
+
+## Parked (not commitments)
+
+Do **not** treat this list as a roadmap. Especially: **side bets are not upcoming.**
+
+- Side bets / Gate 5 — **deferred indefinitely** (locked: do not propose)
+- Extra R.O.D. loot-box theater beyond shipped hot framing
+- Loss-with-teeth beyond current paid-extra-on-PIP
+- Profile / character-home IA redesign (You / On you / Locker / Kiosk)
+- Skullport (or any Floor 2) content design
+- Number-field / Profile dump polish
+- Formal playtest verify pass
+
+---
+
+## Known tensions (honest)
+
+- Typed body AC/HP vs equip bonuses (combat uses **effective** stats).
 - Profile is a dump (prefs above locker).
-- Infinite gold still possible; sinks = stake + kiosk + rest scarcity.
-- Code handoff: `/workspace/aggro-code.zip` (no heavy public art); full `/workspace/aggro-handoff.tar.gz` on box.
+- Infinite gold still possible; sinks = gold-on-date + kiosk + night scarcity.
+- Handoff archives on box (if present): `/workspace/aggro-code.zip`, `/workspace/aggro-handoff.tar.gz` — not part of the git product surface.
+
+---
 
 ## Do not
-Design Skullport. Add mid-fight verbs. Ship snark theater before more progress/loot teeth unless asked.
+
+- Design Skullport / Pirate Borg / Xanathar floor content.
+- Add mid-fight verbs or kit pickers.
+- Ship snark theater ahead of progress/loot teeth unless asked.
+- Invent systems in docs that are not in code.
+- List side bets as upcoming work.
+
+---
 
 ## PRIORITY LOCK (Brendon 2026-09-14)
-**Non-flat loot tables are the shine.** Snark, exposition, lore, framing around drops.
-**STOP talking about side bets.** Deferred indefinitely. Do not propose Gate 5.
+
+1. **Non-flat loot tables are the shine.** Framing/snark serves drops that already climb.
+2. **STOP talking about side bets.** Deferred indefinitely. Do not propose Gate 5.
+3. Prefer deepening Gates 1–4 + climb loot + banter over new features.
