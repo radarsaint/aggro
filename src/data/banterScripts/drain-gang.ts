@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: That almost felt like a territory flip. Almost. Royalty still due. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drain-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Drain Gang: You fled the fee, then hit the landlords. Impressed. Offended. Royalty doubles.',
+    'Drain Gang: You fled the fee, then hit the landlords. Impressed, offended, and royalty just doubled.',
     'Drain Gang: You fled the grate, then hit that hard. Not crumb-rat energy. Royalty doubled.',
   ], requireFlags: ["ran"], weight: 3 },
 

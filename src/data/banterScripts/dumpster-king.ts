@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'dumpster-king_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Dumpster King: You fled Our alley, then struck like a king. Choose: kneel or commit.',
-    'Dumpster King: You fled, then struck true. Cowardice crowned with teeth. Impressed. Offended.',
+    'Dumpster King: You fled, then struck true. Cowardice crowned with teeth — We are impressed and offended.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'dumpster-king_kit_poison_12', beat: 'kit', lines: [

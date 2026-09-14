@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Hexhive: You ran, then hit us that hard? Flee ticket with a finishing move.',
-    'Hexhive: Impressed. Offended. Still P1. Still crawling.',
+    'Hexhive: That got my attention and my temper. Still priority one. Still crawling.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'hexhive_kit_healing-potion_20', beat: 'kit', lines: [
     'Hexhive: You drank up mid-ticket. Planning to live? We prefer you rare and itchy.',
-    'Hexhive: Healing mid-P1. Soft. Optimistic. Makes the swarm hungrier.',
+    'Hexhive: You topped off mid-ticket like the swarm would wait. We do not wait. We got hungrier.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'hexhive_kit_oil-flask_21', beat: 'kit', lines: [
     'Hexhive: Oil in the shafts. Slippery host. Still assigned.',

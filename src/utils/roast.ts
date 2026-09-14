@@ -103,7 +103,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Receipt required, screaming optional, silk preferred. Hold the pose — I'm tagging you before you blink.`,
       `${creature.name}: Warm welcome, cold wrap — that's the LP special. Coupon energy gets marked down.`,
       `${creature.name}: Catching you in the mirror is half the job. Wrapping you is the other half.`,
-      `${creature.name}: ${name}, you're markdown until proven otherwise. Earn the robe — or thrash pretty. I'm filing either way.`,
+      `${creature.name}: ${name}, Loss Prevention already marked you down. Earn the silk robe or thrash pretty — I'm filing either way.`,
     ],
     veinrot: [
       `${creature.name}: Still walking. Still hungry. Still better company than your last all-hands. Come closer. Or don't. Both hurt.`,
@@ -135,7 +135,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: You're fighting a sword. Brave or stupid. I've decided it's funny. Demo's free. Blood's on you.`,
       `${creature.name}: Warranty's a joke. First swing voids it. Second swing voids you. I'm kidding. Mostly. Draw.`,
       `${creature.name}: I polish myself. I hover. I end arguments. You brought a bag and a face. Let's see who's merchandise when this ends.`,
-      `${creature.name}: ${name}, sticky hands until proven otherwise. Prove me wrong — or don't. Either way I fly.`,
+      `${creature.name}: ${name}, your hands look sticky on the chrome. Prove me wrong or don't — either way I fly.`,
     ],
     'the-choir': [
       `${creature.name}: Join the chorus. Attendance is taken in the dark. Your scream will blend beautifully. Harmony eats strength.`,
@@ -183,7 +183,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Lost & Found is not a bravery contest. We do claim stubs. The smile is free; dissolving is not. Tag yourself.`,
       `${creature.name}: Claim window closes when I say. First sticky hand gets a smile. Second gets the puddle. Mostly kidding.`,
       `${creature.name}: I smile, I puddle, and I file. You brought a bag — adorable. Let's see who is still claimable when this ends.`,
-      `${creature.name}: ${name}, grabby hands until proven careful. Show me different — or become inventory.`,
+      `${creature.name}: ${name}, keep your hands off the claim pile. Careful browsing only — or I file you as inventory.`,
     ],
     'sister-static': [
       `${creature.name}: You're listening to Channel 7 — the station that outlived its building. Tonight's guest: you. Format: crush.`,
@@ -207,7 +207,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Visual Merch is not here for courage. We do chin-up forever. Pose is free; stone is not. Hold still.`,
       `${creature.name}: Pose warranty is theater. First wiggle ends the look. Second ends you. Mostly kidding. Chin up.`,
       `${creature.name}: I whisper, I pose, and I petrify. You brought a bag. Let's see who is décor when the lights dim.`,
-      `${creature.name}: ${name}, you're a wiggler until proven still. Show me different — or freeze.`,
+      `${creature.name}: ${name}, stop fidgeting on my floorset. Hold still for Visual Merch — or freeze for real.`,
     ],
     oxidize: [
       `${creature.name}: That steel. Seasoned. Your sword smells like dinner. Final sale — oxide is forever.`,
@@ -215,7 +215,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Clearance is not a bravery aisle. We do dinner. The demo is free; oxide is forever. Come closer. Don't.`,
       `${creature.name}: Returns are a myth. First touch seasons it. Second touch's on you. Mostly kidding. Smell that?`,
       `${creature.name}: I smell iron, I hunger, and I end attachments. You brought a sword. Let's see who ends up scrap.`,
-      `${creature.name}: ${name}, loud armor until proven careful. Show me different — or rust.`,
+      `${creature.name}: ${name}, that armor is ringing like a dinner bell. Come quiet — or I season you to scrap.`,
     ],
     'iron-cadre': [
       `${creature.name}: We do not raise our voices. We advance.`,
@@ -223,7 +223,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: The Cadre is not interested in bravery. We do quiet. Drill is free; blood is on you. Eyes forward.`,
       `${creature.name}: Discipline is a rumor we correct. First flinch gets kindness. Second gets the shield-edge. Eyes forward.`,
       `${creature.name}: We speak soft, we shield, and we advance. You brought a bag. Let's see who is still on count.`,
-      `${creature.name}: ${name}, broken ranks until proven. Show us different — or fall in.`,
+      `${creature.name}: ${name}, your line looks broken from here. Fall in with the Cadre or we correct you.`,
     ],
     'laugh-track': [
       `${creature.name}: *audience howl* You fell already? Perfect. Bite on three. Two—`,
@@ -231,7 +231,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: The track is not a bravery bit. We do fall, howl, bite. Cue howl.`,
       `${creature.name}: The track is the joke. First fall cues it. Second fall's on you. Mostly kidding.`,
       `${creature.name}: We laugh, we bite, and we laugh again. You brought a bag. Let's see who is the punchline.`,
-      `${creature.name}: ${name}, cold open until proven funny. Show us different — or bleed funny.`,
+      `${creature.name}: ${name}, that entrance got a laugh track for free. Earn a real joke — or bleed for the bit.`,
     ],
     'silt-knives': [
       `${creature.name}: Cold blood, warm knives. Litter upstream and we learned your name in silt.`,
@@ -239,7 +239,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: Blackwater is not a bravery sport. We write names in silt. Murk is free; knives are not. Hold still.`,
       `${creature.name}: The guest list is patient. First ripple gets noted. Second ripple's on you. Mostly kidding.`,
       `${creature.name}: We wait, we cut, and we file names in silt. You brought a bag. Let's see who ends up downstream.`,
-      `${creature.name}: ${name}, upstream litter until proven careful. Show us different — or sink.`,
+      `${creature.name}: ${name}, you smell like trash from upstream. Step light in our murk — or we write you into the silt.`,
     ],
     'cinder-crew': [
       `${creature.name}: Seen, then ignited. Foam is a rumor Facilities tells the nervous. Breathe for us.`,
@@ -247,7 +247,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: This group chat is not a bravery club. We do Seen, then Ignited. Spark is free; foam is a rumor.`,
       `${creature.name}: Read receipts are theater. First breath sparks. Second breath's on you. Mostly kidding. Breathe for us.`,
       `${creature.name}: We spark, we ping, and we ignite on read. You brought a bag. Let's see who gets archived.`,
-      `${creature.name}: ${name}, mute until proven careful. Show us different — or RSVP oxygen.`,
+      `${creature.name}: ${name}, muting the chat will not save your lungs. Speak up careful — or RSVP with oxygen.`,
     ],
     'sting-grid': [
       `${creature.name}: This altitude has our name on the deed. Your neck is trespassing. Wave. We file.`,
@@ -255,7 +255,7 @@ function openerBank(creature: Creature, hunter: Hunter, kitId?: KitId): string[]
       `${creature.name}: The grid is not a bravery zone. We do permits. Buzz is free; altitude is not. Look up. Then duck.`,
       `${creature.name}: Permits are theater. First climb gets a warning. Second climb's on you. Mostly kidding. Duck.`,
       `${creature.name}: We buzz, we sting, and we file. You brought a bag. Let's see who is off-altitude.`,
-      `${creature.name}: ${name}, neck trespass until proven careful. Show us different — or get filed.`,
+      `${creature.name}: ${name}, that neck is in our airspace without a permit. Duck now — or we file the sting.`,
     ],
   };
 

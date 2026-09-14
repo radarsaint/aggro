@@ -59,7 +59,7 @@ export const nodes: ScriptNode[] = [
     'Patches: That almost felt like a raise. Don\'t talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patches_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Patches: Cardio first, claws second. I\'m filing both. Impressed. Offended.',
+    'Patches: Cardio first, claws second. I\'m filing both — impressed, and a little insulted.',
     'Patches: You bolted, then tagged a three-century temp that hard? Commit to one invoice.',
   ], requireFlags: ["ran"], weight: 3 },
 
@@ -208,6 +208,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'patches_def_heal_45', beat: 'defeat', lines: [
     'Patches: You healed and still went down. Hope in a bottle. Wrong bottle.',
-    'Patches: Potion, then floor. Soft. Memorable. Filed.',
+    'Patches: You drank, then dropped like unpaid overtime. I filed the whole mess under forever.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

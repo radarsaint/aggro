@@ -14,7 +14,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'grin_open_x_1', beat: 'open', lines: [
     'Grin: Lost & Found doesn\'t do brave. We do claim stubs and acid. Smile\'s free. Dissolving isn\'t. Tag yourself.',
-    'Grin: I used to hold bags for careful owners. Then came the grabby ones. You look grabby. Show me different — or become inventory.',
+    'Grin: I used to hold bags for careful owners. Then came the grabby ones. You look grabby — careful at the desk, or I file you as inventory.',
   ], weight: 2 },
   { id: 'grin_open_0', beat: 'open', lines: [
     'Grin: Claim window closes when I say. First sticky hand gets a smile. Second gets the puddle. Mostly kidding. Smile.',
@@ -138,7 +138,7 @@ export const nodes: ScriptNode[] = [
   // ── WOUNDS ──
   { id: 'grin_w_wind_27', beat: 'wound', lines: [
     'Grin: First scratch. I used to believe in careful owners.',
-    'Grin: Scratched. Annoyed. Desk still open.',
+    'Grin: You scratched the smile. I am annoyed. Lost & Found is still open.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'grin_w_bru_28', beat: 'wound', lines: [
     'Grin: Deeper scratch. Want a story? Keep filing.',
@@ -159,7 +159,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Walk away from the window? Your bag stays filed under mine.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'grin_run2_32', beat: 'run', lines: [
-    'Grin: Twice. Personal. Pathetic filing.',
+    'Grin: Twice makes it personal. Pathetic filing.',
     'Grin: Second escape. Not mad. Filing under flee.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'grin_chase_33', beat: 'chase', lines: [
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'grin_def_heal_45', beat: 'defeat', lines: [
     'Grin: Healed and still went down. Optimistic. Wrong desk.',
-    'Grin: Potion, then floor. Soft. Memorable. Bad look.',
+    'Grin: You drank, then flopped at the claim desk. Lost & Found remembers embarrassing guests.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

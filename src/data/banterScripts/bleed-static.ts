@@ -65,7 +65,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Bleed Static: You bolted, then hit me that hard? Commit to the date or leave.',
-    'Bleed Static: You ran from the latch then stabbed it. Mixed signals. Impressed. Offended.',
+    'Bleed Static: You ran from the latch then stabbed it. Mixed signals — impressed, offended, still thirsty.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'bleed-static_kit_poison_12', beat: 'kit', lines: [

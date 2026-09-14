@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Scale Crew: That almost felt like the boss showed up. Almost. Swing again. Quieter.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scale-crew_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Scale Crew: Ran from the plate then stabbed us. Mixed training notes. Impressed. Offended.',
+    'Scale Crew: You ran from the plate then stabbed us. Mixed training notes — impressed and mad about it.',
     'Scale Crew: You fled Trap Wing, then hit that hard. Sign the waiver twice. Boss!',
   ], requireFlags: ["ran"], weight: 3 },
 

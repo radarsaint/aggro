@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'silt-knives_open_x_1', beat: 'open', lines: [
     'Silt Knives: Blackwater doesn\'t do brave. We do names in silt. Murk\'s free. Knives aren\'t. Hold still.',
-    'Silt Knives: Waited for careful upstream. Then came the litter. You look like litter. Show us different — or sink.',
+    'Silt Knives: We waited for careful upstream guests. Then came the litter. You look like litter — step light, or sink.',
   ], weight: 2 },
   { id: 'silt-knives_open_0', beat: 'open', lines: [
     'Silt Knives: The guest list is patient. First ripple gets noted. Second ripple\'s on you. Mostly kidding. Hold still.',
@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'silt-knives_hhit_5', beat: 'hunter_hit', lines: [
     'Silt Knives: That counted. Rude to the guest list.',
-    'Silt Knives: Hit Blackwater. Bold. Dumb. Noted.',
+    'Silt Knives: You hit Blackwater on purpose. Brave for a guest. Dumb for a swimmer. Name goes in the silt.',
   ] },
   { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Silt Knives: Dinged. Still the coldest thing in the silt.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'silt-knives_w_wind_27', beat: 'wound', lines: [
     'Silt Knives: First scratch. Used to believe in careful upstream.',
-    'Silt Knives: Scratched. Annoyed. Still waiting.',
+    'Silt Knives: You cut us. We are annoyed. We are still waiting in the murk.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'silt-knives_w_bru_28', beat: 'wound', lines: [
     'Silt Knives: Deeper scratch. Want a story? Keep littering.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Flee upstream? Your name\'s already in the silt. We follow.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'silt-knives_run2_32', beat: 'run', lines: [
-    'Silt Knives: Twice. Personal. Pathetic swim.',
+    'Silt Knives: Doing that twice makes it personal. Pathetic swim.',
     'Silt Knives: Second escape. Not mad. Faster current.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'silt-knives_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'silt-knives_def_heal_45', beat: 'defeat', lines: [
     'Silt Knives: Healed and still went down. Optimistic. Wrong current.',
-    'Silt Knives: Potion, then floor. Soft. Memorable. Bad look.',
+    'Silt Knives: You drank, then went down in our murk. Blackwater keeps that kind of guest on the list.',
   ], requireFlags: ["healed"], weight: 3 },
 ];
