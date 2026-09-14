@@ -11,6 +11,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Added
+
+- **Character home IA** — Profile restructured into sticky tabs: **You** / **On you** / **Locker** / **Kiosk** / **Prefs** (Prefs last, not competing with locker). Bottom nav label **You** (route `/profile` unchanged). Locker still Sell / Equip; heals Use mid-fight.
+
 ### Docs
 
 - Thorough README handoff (goals, scope in/out, dual-mode rests, how to run, repo map).

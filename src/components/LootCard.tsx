@@ -16,6 +16,11 @@ interface Props {
   onUnequip?: (slot: EquipSlot) => void;
   /** Which slot this item currently occupies, if any. */
   equippedSlot?: EquipSlot | null;
+  /**
+   * Inventory hint for combat-usable heals (Use stays mid-fight — not a Profile verb).
+   * e.g. "Use mid-fight"
+   */
+  usableHint?: string | null;
 }
 
 export function LootCard({
@@ -26,6 +31,7 @@ export function LootCard({
   onEquip,
   onUnequip,
   equippedSlot = null,
+  usableHint = null,
 }: Props) {
   const { frame, icon } = resolveLootVisual(item);
   const compact = variant === 'inventory';
@@ -71,6 +77,11 @@ export function LootCard({
           >
             {item.rarity}
           </span>
+          {compact && usableHint && (
+            <div className="loot-card__use-hint" title="Spend from Combat · Use on your turn">
+              {usableHint}
+            </div>
+          )}
         </div>
 
         {compact && (
