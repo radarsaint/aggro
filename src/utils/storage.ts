@@ -48,6 +48,8 @@ export function defaultState(): GameState {
     activeThemeId: DEFAULT_THEME_ID,
     matchesTonight: MATCHES_PER_NIGHT,
     shortRestsUsedTonight: 0,
+    drinkUnlockedTonight: false,
+    firstFightResolvedTonight: false,
   };
 }
 
@@ -65,6 +67,16 @@ export function migrateShortRestsUsedTonight(n: unknown): number {
     return Math.max(0, Math.min(SHORT_RESTS_PER_NIGHT, Math.floor(n)));
   }
   return 0;
+}
+
+/** Old saves without drinkUnlockedTonight → false (must earn via first win). */
+export function migrateDrinkUnlockedTonight(v: unknown): boolean {
+  return v === true;
+}
+
+/** Old saves without firstFightResolvedTonight → false. */
+export function migrateFirstFightResolvedTonight(v: unknown): boolean {
+  return v === true;
 }
 
 /**
@@ -339,6 +351,12 @@ export function loadState(): GameState {
       matchesTonight: migrateMatchesTonight((parsed as GameState).matchesTonight),
       shortRestsUsedTonight: migrateShortRestsUsedTonight(
         (parsed as GameState).shortRestsUsedTonight,
+      ),
+      drinkUnlockedTonight: migrateDrinkUnlockedTonight(
+        (parsed as GameState).drinkUnlockedTonight,
+      ),
+      firstFightResolvedTonight: migrateFirstFightResolvedTonight(
+        (parsed as GameState).firstFightResolvedTonight,
       ),
     };
   } catch {

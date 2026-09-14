@@ -210,6 +210,8 @@ export function Chat() {
             <RestBeat
               matchesTonight={matchesTonight}
               shortRestsUsedTonight={state.shortRestsUsedTonight ?? 0}
+              drinkUnlockedTonight={state.drinkUnlockedTonight ?? false}
+              firstFightResolvedTonight={state.firstFightResolvedTonight ?? false}
               onShortRest={shortRest}
               onLongRest={longRest}
             />

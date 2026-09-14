@@ -304,7 +304,8 @@ export interface GameState {
   /**
    * Accept Fight charges left tonight (0–MATCHES_PER_NIGHT).
    * Spent on Accept Fight / start kit draft — Pass does not spend.
-   * Long rest → full; short rest → +1 (capped at MATCHES_PER_NIGHT and 1/night).
+   * Long rest → full; short rest → +1 when drinkUnlockedTonight
+   * (capped at MATCHES_PER_NIGHT and 1/night).
    */
   matchesTonight: number;
   /**
@@ -312,6 +313,18 @@ export interface GameState {
    * Resets on longRest. Old saves migrate to 0.
    */
   shortRestsUsedTonight: number;
+  /**
+   * Grab-a-drink unlock for this night. TRUE only after the first fight tonight
+   * resolves as a WIN. Stays FALSE if first fight is a LOSS (later wins do not
+   * unlock). Resets on longRest. Old saves migrate to false.
+   */
+  drinkUnlockedTonight: boolean;
+  /**
+   * Whether the first fight of the night has already resolved (win or loss).
+   * Blocks later wins from unlocking the drink if the first fight was a loss.
+   * Resets on longRest. Old saves migrate to false.
+   */
+  firstFightResolvedTonight: boolean;
 }
 
 export const ALL_CREATURE_TYPES: CreatureType[] = [

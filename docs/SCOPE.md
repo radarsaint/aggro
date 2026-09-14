@@ -51,13 +51,13 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 | Match / Chat | Roast banter; kit draft via reply **1 / 2 / 3** |
 | Combat | **Attack**, **Item** (spent kits), **Run**; **Use** locker potion/bandage |
 | Reward / PIP | Win → gold + loot reveal; Lose → PIP issued (not a soft game-over essay) |
-| Nights | 3 dates; Grab a drink (+1 once); Call it a night (full reset) |
+| Nights | 3 dates; Grab a drink (+1 once, after first-win unlock); Call it a night (full reset) |
 
 ### Gates (numbered as in code comments)
 
 | Gate | Name | Code truth |
 |------|------|------------|
-| **1** | Nights / rests | `matchesTonight` (max 3). Accept spends; Pass free. `shortRestsUsedTonight` cap 1. Long rest → 3 + drink reset. Copy: `RestBeat` dating language only. |
+| **1** | Nights / rests | `matchesTonight` (max 3). Accept spends; Pass free. `shortRestsUsedTonight` cap 1. Drink unlock: `drinkUnlockedTonight` only after first fight tonight is a win; first-fight loss → stay locked (`firstFightResolvedTonight`). Long rest → 3 + drink/unlock reset. Copy: `RestBeat` dating language only. |
 | **2** | Soft Discover heat | `threatWeightsForProgress(fightsCompleted)` — 0–2 Low-heavy, 3–5 Mid rises, 6+ High-heavy. Never removes cards. Reweights on win + `longRest`. No player-facing CR/meter. |
 | **3** | Gold on the date | Verified only. Costs 35 / 60 / 90 by Low / Mod / High. ~1.5× gold on win; equip chance shifted (+10, cap 70%); Uncommon shot. Paid on Accept; **no PIP refund**. Framing uses **R.O.D.** lines when hot. |
 | **4** | Standards | Unlocks at `fightsCompleted >= 3` (same threshold as Verified). Prefs: `open` (All dates), `skipSoft` (hide Low), `serious` (High only). Applies even if Threat pref is Any. |

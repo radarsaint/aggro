@@ -51,7 +51,7 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 
 | Gate | Live behavior |
 |------|----------------|
-| **1** | `matchesTonight` = 3. Accept spends; Pass free. Short rest **Grab a drink** +1 once/night. Long rest **Call it a night** → full + drink reset. |
+| **1** | `matchesTonight` = 3. Accept spends; Pass free. **Grab a drink** +1 once/night — unlocked only after first fight tonight is a **win** (`drinkUnlockedTonight`); first-fight **loss** keeps it locked (`firstFightResolvedTonight`). Long rest **Call it a night** → full + drink/unlock reset. |
 | **2** | Soft Discover weights by `fightsCompleted` (0–2 Low-heavy → 6+ High-heavy). Reweight on win + long rest. No CR meters. |
 | **3** | Verified: put gold on date (35/60/90). ~1.5× gold + hotter loot; no PIP refund. |
 | **4** | Standards at 3 fights: All dates / Skip the soft ones / Only serious dates. |
