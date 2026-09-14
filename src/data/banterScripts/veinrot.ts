@@ -14,7 +14,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'veinrot_open_x_1', beat: 'open', lines: [
     'Veinrot: You walked into −2 looking for a fight. I walked in looking for anyone. Pep talks void down here. Silence is the only honest overtime.',
-    'Veinrot: Lights off. Clock never punched out. Brains optional. Pulse preferred. Stay awhile — or leave quieter. Your call.',
+    'Veinrot: Lights are off and the clock never punched out. Brains are optional down here — I\'d rather you brought a heartbeat. Stay awhile — or leave quieter. Your call.',
   ], weight: 2 },
   { id: 'veinrot_open_0', beat: 'open', lines: [
     'Veinrot: Eternal Associate. Badge still on. Warmer than corporate. Colder than kindness.',
@@ -123,7 +123,7 @@ export const nodes: ScriptNode[] = [
 
   // ── MONSTER ──
   { id: 'veinrot_mhit_24', beat: 'monster_hit', lines: [
-    'Veinrot: Pulse preferred. You asked for cold hands. You got them.',
+    'Veinrot: I\'d rather you brought a heartbeat. You asked for cold hands. You got them.',
     'Veinrot: That\'s for every empty all-hands and the silence that followed.',
   ] },
   { id: 'veinrot_mhit_bld_25', beat: 'monster_hit', lines: [
@@ -186,7 +186,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'veinrot_vic_heal_38', beat: 'victory', lines: [
     'Veinrot: You drank a potion and still beat me. Soft path. Almost felt like staying.',
-    'Veinrot: You topped off, then ended me. Optimistic pulse. Freezer notes both.',
+    'Veinrot: You topped off, then ended me. That optimistic little heartbeat of yours — freezer notes both.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'veinrot_vic_kite_39', beat: 'victory', lines: [
     'Veinrot: You dragged me around my own freezer, then finished it. Speed is cruel to the sincere.',
