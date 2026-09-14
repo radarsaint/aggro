@@ -26,11 +26,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'scrap-mob_open_2', beat: 'open', lines: [
     'Scrap Mob: Came for shinies? Tip the pile. Came to fight? Get off the picket line.',
-    'Scrap Mob: We\'ve heard every solo-hero speech. Say something new or cross and find out.',
+    'Scrap Mob: We have heard every solo-hero speech. Say something new or cross and find out.',
   ], weight: 1 },
   { id: 'scrap-mob_open_3', beat: 'open', lines: [
-    'Scrap Mob: Nobody eats alone on this dump. That\'s why we tally the pile. You\'re on the picket.',
-    'Scrap Mob: Maybe you\'ll pay fair dues. Probably not. Yell when you lose either way.',
+    'Scrap Mob: Nobody eats alone on this dump. That is why we tally the pile. You are on the picket.',
+    'Scrap Mob: Maybe you will pay fair dues. Probably not. Yell when you lose either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -43,8 +43,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Keep crossing — we dare you.',
   ] },
   { id: 'scrap-mob_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Scrap Mob: We\'re leaking. You\'re still soft. Fix one. Or pay dues in blood.',
-    'Scrap Mob: Beat up and still picketing. That\'s solidarity talking.',
+    'Scrap Mob: We are leaking. You are still soft. Fix one. Or pay dues in blood.',
+    'Scrap Mob: Beat up and still picketing. That is solidarity talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_10', beat: 'hunter_crit', lines: [
     'Scrap Mob: Okay. You found the soft under the volume. Rude. Collective.',
-    'Scrap Mob: That almost felt like a scab who meant it. Don\'t talk. Swing or cross.',
+    'Scrap Mob: That almost felt like a scab who meant it. Do not talk. Swing or cross.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Scrap Mob: You ran, then hit us that hard? Scab with a finishing move.',
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Church juice. Union hates the wet more than the prayer.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'scrap-mob_kit_smokestick_17', beat: 'kit', lines: [
-    'Scrap Mob: Smoke won\'t hide a scab. We track by volume. Keep breathing.',
+    'Scrap Mob: Smoke will not hide a scab. We track by volume. Keep breathing.',
     'Scrap Mob: Hide mid-picket? Dump seeking has too many knives and no mercy.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'scrap-mob_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -124,14 +124,14 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'scrap-mob_mhit_24', beat: 'monster_hit', lines: [
     'Scrap Mob: Matched. Dues collected. Local lands.',
-    'Scrap Mob: That\'s for crossing the picket soft.',
+    'Scrap Mob: That is for crossing the picket soft.',
   ] },
   { id: 'scrap-mob_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Scrap Mob: We\'re leaking. You\'re worse. Strike calls that even.',
+    'Scrap Mob: We are leaking. You are worse. Strike calls that even.',
     'Scrap Mob: Beat up and still yelling. Volume talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'scrap-mob_mmiss_26', beat: 'monster_miss', lines: [
-    'Scrap Mob: Missed. Enjoy it. We\'re still surrounding.',
+    'Scrap Mob: Missed. Enjoy it. We are still surrounding.',
     'Scrap Mob: Close one. Patience expires when the pile gets bored.',
   ] },
 
@@ -145,18 +145,18 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Deep scratch. Persistent — like dues you already owe.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'scrap-mob_w_bld_29', beat: 'wound', lines: [
-    'Scrap Mob: Okay. We\'re leaking. You\'re still soft. Finish it or pay up.',
+    'Scrap Mob: Okay. We are leaking. You are still soft. Finish it or pay up.',
     'Scrap Mob: Beat up and standing. Volume is theology. Still picketing.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'scrap-mob_w_heart_30', beat: 'wound', lines: [
     'Scrap Mob: That landed on something soft we weren\'t advertising on the signs.',
-    'Scrap Mob: Don\'t look at us like that while you\'re winning. It\'s rude. It\'s scab energy.',
+    'Scrap Mob: Do not look at us like that while you are winning. It is rude. It is scab energy.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'scrap-mob_run_31', beat: 'run', lines: [
     'Scrap Mob: You ran from Local 666? Strike follows. Chase clause open.',
-    'Scrap Mob: Leaving mid-picket? Strikes don\'t pause. Knives neither.',
+    'Scrap Mob: Leaving mid-picket? Strikes do not pause. Knives neither.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'scrap-mob_run2_32', beat: 'run', lines: [
     'Scrap Mob: Twice. You ran twice. Scab with cardio.',
@@ -167,8 +167,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: You wanted distance. We wanted the line. Guess who still arrives.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'scrap-mob_chase2_34', beat: 'chase', lines: [
-    'Scrap Mob: Second chase. You don\'t get the dump. We do.',
-    'Scrap Mob: Run again and we\'ll think you like the chant. Don\'t.',
+    'Scrap Mob: Second chase. You do not get the dump. We do.',
+    'Scrap Mob: Run again and we will think you like the chant. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'scrap-mob_close_35', beat: 'close', lines: [
     'Scrap Mob: Back. Miss the volume?',

@@ -8,16 +8,16 @@ import type { ScriptNode } from './types';
  */
 export const nodes: ScriptNode[] = [
   { id: 'oxidize_open_x_0', beat: 'open', lines: [
-    'Oxidize: Hey. Yeah, I talk. That steel? Seasoned. They parked me in Clearance and told shoppers the metal was safe. Everybody brings metal. Every single one. You\'re already smelling like dinner.',
-    'Oxidize: Before we start — I\'m not décor. I\'m hunger with antennae. People walk by, wipe their swords on me, say "just looking," and leave. I have been hungry a long time. Tonight somebody\'s leaving rusted.',
+    'Oxidize: Hey. Yeah, I talk. That steel? Seasoned. They parked me in Clearance and told shoppers the metal was safe. Everybody brings metal. Every single one. You are already smelling like dinner.',
+    'Oxidize: Before we start — I am not décor. I am hunger with antennae. People walk by, wipe their swords on me, say "just looking," and leave. I have been hungry a long time. Tonight somebody\'s leaving rusted.',
   ], weight: 2 },
   { id: 'oxidize_open_x_1', beat: 'open', lines: [
-    'Oxidize: Clearance doesn\'t do brave. We do dinner. Demo\'s free. Oxide is forever. Come closer. Don\'t.',
+    'Oxidize: Clearance does not do brave. We do dinner. Demo\'s free. Oxide is forever. Come closer. Do not.',
     'Oxidize: Waited for careful steel. Then came the loud armors. You smell loud. Show me different — or rust.',
   ], weight: 2 },
   { id: 'oxidize_open_0', beat: 'open', lines: [
     'Oxidize: Returns are a myth. First touch seasons it. Second touch\'s on you. Mostly kidding. Smell that?',
-    'Oxidize: Listen. I hunger. I flake. I end attachments. You brought a sword. Let\'s see who\'s scrap.',
+    'Oxidize: Listen. I hunger. I flake. I end attachments. You brought a sword. Let us see who\'s scrap.',
   ], weight: 2 },
   { id: 'oxidize_open_1', beat: 'open', lines: [
     'Oxidize: I look quiet in the pit. Then I leave the pit. Spoiler for ferrous hearts: your sword smells like dinner.',
@@ -25,16 +25,16 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'oxidize_open_2', beat: 'open', lines: [
     'Oxidize: Came to browse clearance? Fine. Came to fight? Stop waving dinner at me.',
-    'Oxidize: I\'ve heard every rust joke. Say something new or swing.',
+    'Oxidize: I have heard every rust joke. Say something new or swing.',
   ], weight: 1 },
   { id: 'oxidize_open_3', beat: 'open', lines: [
-    'Oxidize: Quiet truth: I love metal more than people. People flake. Steel sings. You\'re on the menu.',
-    'Oxidize: If you\'re careful with steel, prove it. If not — at least rust interesting.',
+    'Oxidize: Quiet truth: I love metal more than people. People flake. Steel sings. You are on the menu.',
+    'Oxidize: If you are careful with steel, prove it. If not — at least rust interesting.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'oxidize_hhit_4', beat: 'hunter_hit', lines: [
     'Oxidize: Ow. You scuffed my appetite. Rude.',
-    'Oxidize: Watch the feelers. Dinner\'s talking.',
+    'Oxidize: Watch the feelers. Dinner is talking.',
   ] },
   { id: 'oxidize_hhit_5', beat: 'hunter_hit', lines: [
     'Oxidize: That counted. Seasoning early.',
@@ -46,7 +46,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'oxidize_hmiss_7', beat: 'hunter_miss', lines: [
-    'Oxidize: Missed. Air isn\'t on the menu.',
+    'Oxidize: Missed. Air is not on the menu.',
     'Oxidize: Swing at the dinner, not the aisle.',
   ] },
   { id: 'oxidize_hmiss_8', beat: 'hunter_miss', lines: [
@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_10', beat: 'hunter_crit', lines: [
     'Oxidize: Soft spot under the oxide. Congrats.',
-    'Oxidize: Almost meant it. Don\'t chat. Swing.',
+    'Oxidize: Almost meant it. Do not chat. Swing.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'oxidize_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Oxidize: Fled, then hit that hard? Pick a course.',
@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'oxidize_kit_poison_12', beat: 'kit', lines: [
-    'Oxidize: Poison on dinner. I don\'t taste that way.',
+    'Oxidize: Poison on dinner. I do not taste that way.',
     'Oxidize: Toxin at Clearance. Read the sale tag.',
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'oxidize_kit_alchemists-fire_13', beat: 'kit', lines: [
@@ -84,8 +84,8 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Chemistry at dinner. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'oxidize_kit_holy-water_16', beat: 'kit', lines: [
-    'Oxidize: Holy water. Cute. I\'m hunger, not undead.',
-    'Oxidize: Blessings don\'t save steel. Just wet the flake.',
+    'Oxidize: Holy water. Cute. I am hunger, not undead.',
+    'Oxidize: Blessings do not save steel. Just wet the flake.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'oxidize_kit_smokestick_17', beat: 'kit', lines: [
     'Oxidize: Smoke. I smell iron through haze.',
@@ -96,7 +96,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Jaws for something that eats jaws. Adorable.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'oxidize_kit_net_19', beat: 'kit', lines: [
-    'Oxidize: Net on dinner. That\'s not a plate. Rude.',
+    'Oxidize: Net on dinner. That is not a plate. Rude.',
     'Oxidize: Bagged. Feelers still find metal.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'oxidize_kit_healing-potion_20', beat: 'kit', lines: [
@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Greased Clearance. I still flake clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
-    'Oxidize: Bag rummage won\'t save the steel. I\'m hungry.',
-    'Oxidize: Props out. Dinner\'s still singing.',
+    'Oxidize: Bag rummage will not save the steel. I am hungry.',
+    'Oxidize: Props out. Dinner is still singing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
     'Oxidize: Ran, then rummaged. Coward with accessories.',
@@ -117,16 +117,16 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'oxidize_mhit_24', beat: 'monster_hit', lines: [
-    'Oxidize: That\'s for the unread sale tags.',
+    'Oxidize: That is for the unread sale tags.',
     'Oxidize: Taste test. You asked.',
   ] },
   { id: 'oxidize_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Oxidize: I\'m leaking. You\'re bleeding. Hunger wins.',
+    'Oxidize: I am leaking. You are bleeding. Hunger wins.',
     'Oxidize: Scraped. Still the hungriest thing in Clearance.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'oxidize_mmiss_26', beat: 'monster_miss', lines: [
     'Oxidize: Missed. Enjoy the shine while it lasts.',
-    'Oxidize: Close call. Don\'t brand yourself on it.',
+    'Oxidize: Close call. Do not brand yourself on it.',
   ] },
 
   { id: 'oxidize_w_wind_27', beat: 'wound', lines: [
@@ -148,7 +148,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'oxidize_run_31', beat: 'run', lines: [
     'Oxidize: Ran from Clearance. Chase is a final sale.',
-    'Oxidize: Walk off mid-sale? Oxide doesn\'t take returns. Dinner waits.',
+    'Oxidize: Walk off mid-sale? Oxide does not take returns. Dinner waits.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'oxidize_run2_32', beat: 'run', lines: [
     'Oxidize: Twice. Personal. Pathetic appetite.',
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'oxidize_chase2_34', beat: 'chase', lines: [
     'Oxidize: Second chase. Aisle\'s mine.',
-    'Oxidize: Run again and I\'ll think you like dinner. Don\'t.',
+    'Oxidize: Run again and I will think you like dinner. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'oxidize_close_35', beat: 'close', lines: [
     'Oxidize: Back. Miss the smell?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Jogging as strategy. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'oxidize_vic_crit_40', beat: 'victory', lines: [
-    'Oxidize: You cut through the flake. Fight\'s over. I\'ll give you that.',
+    'Oxidize: You cut through the flake. Fight\'s over. I will give you that.',
     'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [
@@ -194,7 +194,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'oxidize_def_42', beat: 'defeat', lines: [
     'Oxidize: Sale over. You lose. Oxide stays forever.',
-    'Oxidize: Down. Clearance wins. Don\'t bleed on the steel.',
+    'Oxidize: Down. Clearance wins. Do not bleed on the steel.',
   ] },
   { id: 'oxidize_def_crit_43', beat: 'defeat', lines: [
     'Oxidize: Hit hard. Still lost. Talent without follow-through.',

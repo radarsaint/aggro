@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'dumpster-king_hcrit_10', beat: 'hunter_crit', lines: [
     'Dumpster King: You found claws under the crown. Congrats, usurper.',
-    'Dumpster King: That almost felt like a coup. Don\'t talk. Swing again.',
+    'Dumpster King: That almost felt like a coup. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'dumpster-king_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Dumpster King: You fled Our alley, then struck like a king. Choose: kneel or commit.',
@@ -117,7 +117,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'dumpster-king_mhit_24', beat: 'monster_hit', lines: [
-    'Dumpster King: That\'s for the unread tribute and the soap you brought.',
+    'Dumpster King: That is for the unread tribute and the soap you brought.',
     'Dumpster King: Tribute taken. You asked for it.',
   ] },
   { id: 'dumpster-king_mhit_bld_25', beat: 'monster_hit', lines: [
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: You made Us run. Thrones do not forgive that. We still lost.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'dumpster-king_vic_crit_40', beat: 'victory', lines: [
-    'Dumpster King: You cut through heraldry. Fight\'s over. We\'ll give you that.',
+    'Dumpster King: You cut through heraldry. Fight\'s over. We will give you that.',
     'Dumpster King: You found the soft place under the crown and finished it. A peasant\'s ending for a king\'s day.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'dumpster-king_vic_net_41', beat: 'victory', lines: [

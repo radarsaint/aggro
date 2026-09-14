@@ -10,7 +10,7 @@ export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'drool_open_x_0', beat: 'open', lines: [
     'Drool: Pocket-sized. Adorable. Initial here. Initial again. Your afterlife smells like barbecue crisps. Win-win!',
-    'Drool: Hey. Yeah, I talk. Cute is the fine print. You didn\'t read the pact. Classic. Smile anyway — ink still sticks.',
+    'Drool: Hey. Yeah, I talk. Cute is the fine print. You did not read the pact. Classic. Smile anyway — ink still sticks.',
   ], weight: 2 },
   { id: 'drool_open_x_1', beat: 'open', lines: [
     'Drool: Terms and conditions bite back. Initial. Initial. Oh — that was a claw. Still adorable though!',
@@ -18,38 +18,38 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'drool_open_0', beat: 'open', lines: [
     'Drool: Tiny. Absolute menace. Going to sell your afternoon like a snack deal. Skip to the signature — I like impulsiveness. Tastes like sugar.',
-    'Drool: Smile. Sign. Don\'t bring lawyers. Closing time is a suggestion. Crisps are forever.',
+    'Drool: Smile. Sign. Do not bring lawyers. Closing time is a suggestion. Crisps are forever.',
   ], weight: 2 },
   { id: 'drool_open_1', beat: 'open', lines: [
     'Drool: Flinching voids the cute warranty. Fetid Cloud\'s in the fine print. You\'d know if you\'d read.',
     'Drool: Will trade your afterlife for crisps and call it fair. Counter-offer: blood for chips. Initial here!',
   ], weight: 1 },
   { id: 'drool_open_2', beat: 'open', lines: [
-    'Drool: Back booth tip: browse the snacks if you want. Fight if you must. Just stop staring like I\'m a free sample.',
-    'Drool: I\'ve heard every "too cute to be dangerous." Say something new or sign.',
+    'Drool: Back booth tip: browse the snacks if you want. Fight if you must. Just stop staring like I am a free sample.',
+    'Drool: I have heard every "too cute to be dangerous." Say something new or sign.',
   ], weight: 1 },
   { id: 'drool_open_3', beat: 'open', lines: [
-    'Drool: Crisps don\'t pay themselves. That\'s why I collect. You\'re on the books whether you smile or not.',
-    'Drool: Maybe you\'ll initial something honest. Probably not. Smile when you lose either way — looks better on the form.',
+    'Drool: Crisps do not pay themselves. That is why I collect. You are on the books whether you smile or not.',
+    'Drool: Maybe you will initial something honest. Probably not. Smile when you lose either way — looks better on the form.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
   { id: 'drool_hhit_4', beat: 'hunter_hit', lines: [
-    'Drool: Ow — cute doesn\'t say ow. Fine. That stung. Feelings aren\'t in the contract.',
-    'Drool: Ow — wait, cute doesn\'t say ow. Fine. That stung. Still adorable!',
+    'Drool: Ow — cute does not say ow. Fine. That stung. Feelings aren\'t in the contract.',
+    'Drool: Ow — wait, cute does not say ow. Fine. That stung. Still adorable!',
   ] },
   { id: 'drool_hhit_5', beat: 'hunter_hit', lines: [
     'Drool: You hit Pact & Snacks. Back booth voids refunds with a smile.',
     'Drool: Okay. That one counted. Next clause gets uglier.',
   ] },
   { id: 'drool_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Drool: I\'m leaking. You\'re still soft. Fix one. Or initial the blood.',
-    'Drool: Beat up and still selling. That\'s brand loyalty, baby.',
+    'Drool: I am leaking. You are still soft. Fix one. Or initial the blood.',
+    'Drool: Beat up and still selling. That is brand loyalty, baby.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
   { id: 'drool_hmiss_7', beat: 'hunter_miss', lines: [
-    'Drool: Missed. Air isn\'t covered under the pact. Expensive.',
+    'Drool: Missed. Air is not covered under the pact. Expensive.',
     'Drool: Missed the cute. Tall-people error. Sign anyway.',
   ] },
   { id: 'drool_hmiss_8', beat: 'hunter_miss', lines: [
@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'drool_hcrit_9', beat: 'hunter_crit', lines: [
-    'Drool: That one hurt. Keep going — I\'m listening. And filing an addendum.',
+    'Drool: That one hurt. Keep going — I am listening. And filing an addendum.',
     'Drool: Hard hit. Infernal Legal just twitched. Filing an addendum.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drool_hcrit_10', beat: 'hunter_crit', lines: [
     'Drool: Okay. You found the clause under the smile. Breach or promotion — same face.',
-    'Drool: That almost felt personal. Don\'t talk. Swing again. Initial later.',
+    'Drool: That almost felt personal. Do not talk. Swing again. Initial later.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drool_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Drool: You ran, then hit me that hard? Unsigned NDAs and a finishing move.',
@@ -81,7 +81,7 @@ export const nodes: ScriptNode[] = [
     'Drool: Back-booth arson. Fine print says I bite harder. Initial here!',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'drool_kit_caltrops_14', beat: 'kit', lines: [
-    'Drool: Spikes? I\'m pocket-sized — I walk around spite for fun.',
+    'Drool: Spikes? I am pocket-sized — I walk around spite for fun.',
     'Drool: You seeded the booth. I initial spite. Win-win!',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'drool_kit_acid-vial_15', beat: 'kit', lines: [
@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Drool: Church juice. Holy symbols are a turn-off. Also: wet. Refund denied.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'drool_kit_smokestick_17', beat: 'kit', lines: [
-    'Drool: Smoke won\'t hide unread terms. I still smell skipped clauses.',
+    'Drool: Smoke will not hide unread terms. I still smell skipped clauses.',
     'Drool: Hide mid-deal? Back booth invented claw-seeking. Still cute!',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'drool_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -101,7 +101,7 @@ export const nodes: ScriptNode[] = [
     'Drool: You caught the dealmaker. Pact still open. Romance optional. Crisps mandatory.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drool_kit_net_19', beat: 'kit', lines: [
-    'Drool: Netted the cute. Commitment with holes — that\'s literally the fine print!',
+    'Drool: Netted the cute. Commitment with holes — that is literally the fine print!',
     'Drool: Bag me, flail, initial the flail. Win-win for someone.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drool_kit_healing-potion_20', beat: 'kit', lines: [
@@ -110,7 +110,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'drool_kit_oil-flask_21', beat: 'kit', lines: [
     'Drool: Oil mid-deal. Slippery like my terms. Fine print still sticks. Literally.',
-    'Drool: Cute doesn\'t slip — contracts do. On you. Initial the puddle.',
+    'Drool: Cute does not slip — contracts do. On you. Initial the puddle.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'drool_kit_gen_22', beat: 'kit', lines: [
     'Drool: Digging mid-booth? Sales demo energy. Respect the hustle.',
@@ -124,39 +124,39 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'drool_mhit_24', beat: 'monster_hit', lines: [
     'Drool: Tag applied. You skipped the terms. Classic.',
-    'Drool: That\'s for the unread messages and the unsigned snack clause.',
+    'Drool: That is for the unread messages and the unsigned snack clause.',
   ] },
   { id: 'drool_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Drool: I\'m leaking. You\'re leaking more. Initial the trade.',
+    'Drool: I am leaking. You are leaking more. Initial the trade.',
     'Drool: Beat up and still selling. Brand loyalty talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'drool_mmiss_26', beat: 'monster_miss', lines: [
-    'Drool: Missed. Enjoy it. I\'m still circling. Adorably.',
+    'Drool: Missed. Enjoy it. I am still circling. Adorably.',
     'Drool: Close one. Smile expires when I get bored of being patient.',
   ] },
 
   // ── WOUNDS ──
   { id: 'drool_w_wind_27', beat: 'wound', lines: [
-    'Drool: First nick. Don\'t get attached — the pact already is.',
+    'Drool: First nick. Do not get attached — the pact already is.',
     'Drool: Tickled cute. Initial harder or swing better.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'drool_w_bru_28', beat: 'wound', lines: [
     'Drool: Color under cute. Keeps the smile authentic.',
-    'Drool: Deep scratch. Persistent — like a clause you can\'t unread.',
+    'Drool: Deep scratch. Persistent — like a clause you cannot unread.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'drool_w_bld_29', beat: 'wound', lines: [
-    'Drool: Okay. I\'m leaking. You\'re still soft. Finish it or sign the blood.',
-    'Drool: Cute cracked. Fine print didn\'t. Still standing. Still smiling.',
+    'Drool: Okay. I am leaking. You are still soft. Finish it or sign the blood.',
+    'Drool: Cute cracked. Fine print did not. Still standing. Still smiling.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'drool_w_heart_30', beat: 'wound', lines: [
     'Drool: That landed on something soft I wasn\'t advertising in the brochure.',
-    'Drool: Don\'t look at me like that while you\'re winning. It\'s rude. Initial it.',
+    'Drool: Do not look at me like that while you are winning. It is rude. Initial it.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'drool_run_31', beat: 'run', lines: [
     'Drool: You ran from the back booth? Breach of contract. Chase clause activates.',
-    'Drool: Leaving mid-deal? Pacts don\'t pause. Crisps neither.',
+    'Drool: Leaving mid-deal? Pacts do not pause. Crisps neither.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'drool_run2_32', beat: 'run', lines: [
     'Drool: Twice. You ran twice. Unsigned NDAs and fast exits.',
@@ -167,8 +167,8 @@ export const nodes: ScriptNode[] = [
     'Drool: You wanted distance. I wanted initials. Guess who still finds you.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'drool_chase2_34', beat: 'chase', lines: [
-    'Drool: Second chase. You don\'t get the booth. I do.',
-    'Drool: Run again and I\'ll think you like the fine print. Don\'t.',
+    'Drool: Second chase. You do not get the booth. I do.',
+    'Drool: Run again and I will think you like the fine print. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'drool_close_35', beat: 'close', lines: [
     'Drool: Back. Miss the snacks?',
@@ -193,7 +193,7 @@ export const nodes: ScriptNode[] = [
     'Drool: You ran me ragged, signed nothing, won anyway. Rude. Impressive.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'drool_vic_crit_40', beat: 'victory', lines: [
-    'Drool: You tore through the smile. Fine print couldn\'t save cute. Fight\'s over.',
+    'Drool: You tore through the smile. Fine print could not save cute. Fight\'s over.',
     'Drool: Hard hit, then the finish. Mean win. Clean signature. Still adorable of you.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drool_vic_net_41', beat: 'victory', lines: [

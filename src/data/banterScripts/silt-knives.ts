@@ -12,12 +12,12 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Before we start — we are not Facilities. We are the guest list. People walk by, kick the murk, say "just looking," and leave. We have been waiting in blackwater a long time. Tonight somebody gets written in.',
   ], weight: 2 },
   { id: 'silt-knives_open_x_1', beat: 'open', lines: [
-    'Silt Knives: Blackwater doesn\'t do brave. We do names in silt. Murk\'s free. Knives aren\'t. Hold still.',
+    'Silt Knives: Blackwater does not do brave. We do names in silt. Murk\'s free. Knives aren\'t. Hold still.',
     'Silt Knives: Waited for careful upstream. Then came the litter. You look like litter. Show us different — or sink.',
   ], weight: 2 },
   { id: 'silt-knives_open_0', beat: 'open', lines: [
     'Silt Knives: The guest list is patient. First ripple gets noted. Second ripple\'s on you. Mostly kidding. Hold still.',
-    'Silt Knives: Listen. We wait. We cut. We file names in silt. You brought a bag. Let\'s see who\'s downstream.',
+    'Silt Knives: Listen. We wait. We cut. We file names in silt. You brought a bag. Let us see who\'s downstream.',
   ], weight: 2 },
   { id: 'silt-knives_open_1', beat: 'open', lines: [
     'Silt Knives: We look quiet under the wet floor sign. Then we leave the murk. Spoiler for loud ones: knives warm first.',
@@ -25,11 +25,11 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'silt-knives_open_2', beat: 'open', lines: [
     'Silt Knives: Came upstream to litter? Leave. Came to fight? Your name\'s already in the silt.',
-    'Silt Knives: We\'ve heard every lizard joke. Say something new or drown quiet.',
+    'Silt Knives: We have heard every lizard joke. Say something new or drown quiet.',
   ], weight: 1 },
   { id: 'silt-knives_open_3', beat: 'open', lines: [
-    'Silt Knives: Quiet truth: we count scales after because silence feels like love. You\'re on the list until the water forgets.',
-    'Silt Knives: If you\'re careful upstream, prove it. If not — at least sink interesting.',
+    'Silt Knives: Quiet truth: we count scales after because silence feels like love. You are on the list until the water forgets.',
+    'Silt Knives: If you are careful upstream, prove it. If not — at least sink interesting.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'silt-knives_hhit_4', beat: 'hunter_hit', lines: [
@@ -46,7 +46,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'silt-knives_hmiss_7', beat: 'hunter_miss', lines: [
-    'Silt Knives: Missed. Air isn\'t on the guest list.',
+    'Silt Knives: Missed. Air is not on the guest list.',
     'Silt Knives: Swing at us, not the murk.',
   ] },
   { id: 'silt-knives_hmiss_8', beat: 'hunter_miss', lines: [
@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_10', beat: 'hunter_crit', lines: [
     'Silt Knives: Soft spot under the guest list. Congrats.',
-    'Silt Knives: Almost meant it. Don\'t chat. Swing.',
+    'Silt Knives: Almost meant it. Do not chat. Swing.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'silt-knives_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Silt Knives: Fled, then hit that hard? Pick a current.',
@@ -84,8 +84,8 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Chemistry at the silt. Hate you more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'silt-knives_kit_holy-water_16', beat: 'kit', lines: [
-    'Silt Knives: Holy water. Cute. We\'re wet already.',
-    'Silt Knives: Blessings don\'t clear the guest list. Just dilute the murk.',
+    'Silt Knives: Holy water. Cute. We are wet already.',
+    'Silt Knives: Blessings do not clear the guest list. Just dilute the murk.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'silt-knives_kit_smokestick_17', beat: 'kit', lines: [
     'Silt Knives: Smoke. We smell blood through haze.',
@@ -108,7 +108,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Greased the water. We still cut clean.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
-    'Silt Knives: Bag rummage won\'t scrub your name. We\'re here.',
+    'Silt Knives: Bag rummage will not scrub your name. We are here.',
     'Silt Knives: Props out. Water\'s still listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
@@ -117,16 +117,16 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'silt-knives_mhit_24', beat: 'monster_hit', lines: [
-    'Silt Knives: That\'s for the unread guest list.',
+    'Silt Knives: That is for the unread guest list.',
     'Silt Knives: Warm knives. You asked.',
   ] },
   { id: 'silt-knives_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Silt Knives: We\'re leaking. You\'re bleeding. Silt wins.',
+    'Silt Knives: We are leaking. You are bleeding. Silt wins.',
     'Silt Knives: Scraped. Still the coldest names in the water.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'silt-knives_mmiss_26', beat: 'monster_miss', lines: [
     'Silt Knives: Missed. Enjoy the ripple while it lasts.',
-    'Silt Knives: Close call. Don\'t brand yourself on it.',
+    'Silt Knives: Close call. Do not brand yourself on it.',
   ] },
 
   { id: 'silt-knives_w_wind_27', beat: 'wound', lines: [
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'silt-knives_chase2_34', beat: 'chase', lines: [
     'Silt Knives: Second chase. Downstream\'s ours.',
-    'Silt Knives: Run again and we\'ll think you like the list. Don\'t.',
+    'Silt Knives: Run again and we will think you like the list. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'silt-knives_close_35', beat: 'close', lines: [
     'Silt Knives: Back. Miss the cold?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Jogging as strategy. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'silt-knives_vic_crit_40', beat: 'victory', lines: [
-    'Silt Knives: You cut through the murk. Fight\'s over. We\'ll give you that.',
+    'Silt Knives: You cut through the murk. Fight\'s over. We will give you that.',
     'Silt Knives: Found the soft silt and finished. No name left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [
@@ -194,7 +194,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'silt-knives_def_42', beat: 'defeat', lines: [
     'Silt Knives: List closed. You lose. Water stays.',
-    'Silt Knives: Down. Blackwater wins. Don\'t bleed on the silt.',
+    'Silt Knives: Down. Blackwater wins. Do not bleed on the silt.',
   ] },
   { id: 'silt-knives_def_crit_43', beat: 'defeat', lines: [
     'Silt Knives: Hit hard. Still lost. Talent without follow-through.',

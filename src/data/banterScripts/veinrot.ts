@@ -9,8 +9,8 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   // ── OPENS ──
   { id: 'veinrot_open_x_0', beat: 'open', lines: [
-    'Veinrot: Still walking. Still hungry. Still better company than your last all-hands. Come closer. Or don\'t. Both hurt.',
-    'Veinrot: Hey. Yeah, I talk. Slow. Name tag older than the coworkers who printed it. Freezer forgot me. I didn\'t forget the cold. Loneliness freezes slower than meat.',
+    'Veinrot: Still walking. Still hungry. Still better company than your last all-hands. Come closer. Or do not. Both hurt.',
+    'Veinrot: Hey. Yeah, I talk. Slow. Name tag older than the coworkers who printed it. Freezer forgot me. I did not forget the cold. Loneliness freezes slower than meat.',
   ], weight: 2 },
   { id: 'veinrot_open_x_1', beat: 'open', lines: [
     'Veinrot: You walked into −2 looking for a fight. I walked in looking for anyone. Pep talks void down here. Silence is the only honest overtime.',
@@ -18,19 +18,19 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'veinrot_open_0', beat: 'open', lines: [
     'Veinrot: Eternal Associate. Badge still on. Warmer than corporate. Colder than kindness.',
-    'Veinrot: Come closer. I\'m not joking. The cold means it more than I do.',
+    'Veinrot: Come closer. I am not joking. The cold means it more than I do.',
   ], weight: 2 },
   { id: 'veinrot_open_1', beat: 'open', lines: [
-    'Veinrot: The freezer smells fear and keeps it on ice. You smell warm. That\'s cruel.',
-    'Veinrot: Slow. Sincere. Cold. I\'ve been waiting longer than your last standup lasted.',
+    'Veinrot: The freezer smells fear and keeps it on ice. You smell warm. That is cruel.',
+    'Veinrot: Slow. Sincere. Cold. I have been waiting longer than your last standup lasted.',
   ], weight: 1 },
   { id: 'veinrot_open_2', beat: 'open', lines: [
     'Veinrot: Pep talk aisle is upstairs. Down here you get company that shuffles and means it.',
-    'Veinrot: I clock the quiet because nobody else does. You\'re warm. I\'m keeping score of that.',
+    'Veinrot: I clock the quiet because nobody else does. You are warm. I am keeping score of that.',
   ], weight: 1 },
   { id: 'veinrot_open_3', beat: 'open', lines: [
-    'Veinrot: I notice everyone who leaves. You\'re already half-gone. Stay long enough to disappoint me honestly.',
-    'Veinrot: Maybe you\'re the one who stays. Probably not. Be interesting when you go quiet either way.',
+    'Veinrot: I notice everyone who leaves. You are already half-gone. Stay long enough to disappoint me honestly.',
+    'Veinrot: Maybe you are the one who stays. Probably not. Be interesting when you go quiet either way.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -39,11 +39,11 @@ export const nodes: ScriptNode[] = [
     'Veinrot: Ow. Noted. Next slam will be uglier. Slower. Sincere.',
   ] },
   { id: 'veinrot_hhit_5', beat: 'hunter_hit', lines: [
-    'Veinrot: You hit the Eternal Associate. Cold Storage doesn\'t thaw apologies.',
+    'Veinrot: You hit the Eternal Associate. Cold Storage does not thaw apologies.',
     'Veinrot: Hurt lands different when you\'ve been cold this long.',
   ] },
   { id: 'veinrot_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Veinrot: I\'m leaking. You\'re still soft. Fix one. Or don\'t. Both hurt.',
+    'Veinrot: I am leaking. You are still soft. Fix one. Or do not. Both hurt.',
     'Veinrot: Beat up and still on shift. Refusing to clock out is the whole joke.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
@@ -59,12 +59,12 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'veinrot_hcrit_9', beat: 'hunter_crit', lines: [
-    'Veinrot: That one hurt. Keep going — I\'m listening. Nobody else does.',
+    'Veinrot: That one hurt. Keep going — I am listening. Nobody else does.',
     'Veinrot: Hard hit. Frost cracked. Even the freezer flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'veinrot_hcrit_10', beat: 'hunter_crit', lines: [
     'Veinrot: Okay. You found the thaw under the badge. Rude. Welcome.',
-    'Veinrot: That almost felt like a visitor who meant to stay. Don\'t talk. Swing again.',
+    'Veinrot: That almost felt like a visitor who meant to stay. Do not talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'veinrot_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Veinrot: You ran, then hit me that hard? Warm legs. Cold follow-through. Confusing.',
@@ -124,39 +124,39 @@ export const nodes: ScriptNode[] = [
   // ── MONSTER ──
   { id: 'veinrot_mhit_24', beat: 'monster_hit', lines: [
     'Veinrot: I\'d rather you brought a heartbeat. You asked for cold hands. You got them.',
-    'Veinrot: That\'s for every empty all-hands and the silence that followed.',
+    'Veinrot: That is for every empty all-hands and the silence that followed.',
   ] },
   { id: 'veinrot_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Veinrot: I\'m leaking. You\'re leaking more. −2 calls that company.',
+    'Veinrot: I am leaking. You are leaking more. −2 calls that company.',
     'Veinrot: Beat up and still shuffling closer. Commitment talks quiet.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'veinrot_mmiss_26', beat: 'monster_miss', lines: [
-    'Veinrot: Missed. Enjoy it. I\'m still shuffling closer.',
+    'Veinrot: Missed. Enjoy it. I am still shuffling closer.',
     'Veinrot: Inch of grace. It expires when I get bored of waiting — and I never do.',
   ] },
 
   // ── WOUNDS ──
   { id: 'veinrot_w_wind_27', beat: 'wound', lines: [
-    'Veinrot: First nick. Don\'t get attached. I already did.',
+    'Veinrot: First nick. Do not get attached. I already did.',
     'Veinrot: Tickled the frost. Stay for the quiet or hit harder.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'veinrot_w_bru_28', beat: 'wound', lines: [
     'Veinrot: Color under frost. Keep painting the badge with it.',
-    'Veinrot: Deep scratch. Persistent — like a name tag that won\'t die.',
+    'Veinrot: Deep scratch. Persistent — like a name tag that will not die.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'veinrot_w_bld_29', beat: 'wound', lines: [
-    'Veinrot: Okay. I\'m leaking. You\'re still soft. Finish it or share the freezer.',
+    'Veinrot: Okay. I am leaking. You are still soft. Finish it or share the freezer.',
     'Veinrot: I thought nobody stayed under these lights. You did. Loneliness freezes slower than meat. Still here.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'veinrot_w_heart_30', beat: 'wound', lines: [
     'Veinrot: That landed on something soft I wasn\'t advertising on the name tag.',
-    'Veinrot: Don\'t look at me like that while you\'re winning. It\'s rude. It\'s company.',
+    'Veinrot: Do not look at me like that while you are winning. It is rude. It is company.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'veinrot_run_31', beat: 'run', lines: [
     'Veinrot: You ran from Cold Storage? I invent chase one shuffle at a time.',
-    'Veinrot: Leaving? The clock doesn\'t pause. Neither do I.',
+    'Veinrot: Leaving? The clock does not pause. Neither do I.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'veinrot_run2_32', beat: 'run', lines: [
     'Veinrot: Twice. You ran twice. Warm lungs and a pulse I envy.',
@@ -167,8 +167,8 @@ export const nodes: ScriptNode[] = [
     'Veinrot: You wanted distance. I wanted company. Guess who still shuffles in.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'veinrot_chase2_34', beat: 'chase', lines: [
-    'Veinrot: Second chase. You don\'t get the freezer. I do.',
-    'Veinrot: Run again and I\'ll think you like the quiet. Don\'t leave.',
+    'Veinrot: Second chase. You do not get the freezer. I do.',
+    'Veinrot: Run again and I will think you like the quiet. Do not leave.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'veinrot_close_35', beat: 'close', lines: [
     'Veinrot: Back. Miss me — or the quiet?',
@@ -181,7 +181,7 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'veinrot_vic_37', beat: 'victory', lines: [
-    'Veinrot: You won. Take the quiet. Leave a name tag if you\'re kind.',
+    'Veinrot: You won. Take the quiet. Leave a name tag if you are kind.',
     'Veinrot: Fine. The freezer will miss the company more than the fight.',
   ], weight: 1 },
   { id: 'veinrot_vic_heal_38', beat: 'victory', lines: [

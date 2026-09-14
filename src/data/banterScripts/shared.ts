@@ -15,7 +15,7 @@ export const SHARED_NODES: ScriptNode[] = [
   ]},
   { id: 'shared_hmiss', beat: 'hunter_miss', weight: 1, lines: [
     'Wind. Try again.',
-    'Miss. Don\'t miss twice.',
+    'Miss. Do not miss twice.',
   ]},
   { id: 'shared_hcrit', beat: 'hunter_crit', weight: 1, lines: [
     'That one counted.',
@@ -30,7 +30,7 @@ export const SHARED_NODES: ScriptNode[] = [
   ]},
   { id: 'shared_mmiss', beat: 'monster_miss', weight: 1, lines: [
     'Missed. Lucky.',
-    'Slip. Won\'t last.',
+    'Slip. Will not last.',
   ]},
   { id: 'shared_wound', beat: 'wound', weight: 1, lines: [
     'Hurting. Still here.',
@@ -42,7 +42,7 @@ export const SHARED_NODES: ScriptNode[] = [
   ]},
   { id: 'shared_chase', beat: 'chase', weight: 1, lines: [
     'Still chasing.',
-    'You can\'t outrun this.',
+    'You cannot outrun this.',
   ]},
   { id: 'shared_close', beat: 'close', weight: 1, lines: [
     'Back in range.',

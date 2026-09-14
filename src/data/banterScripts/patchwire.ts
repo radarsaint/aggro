@@ -12,8 +12,8 @@ export const nodes: ScriptNode[] = [
     'Patchwire: Sweet crumbs taste like apology. We accept. Your fridge is our parliament. Whip count: infinite.',
   ], weight: 2 },
   { id: 'patchwire_open_x_1', beat: 'open', lines: [
-    'Patchwire: Politics of leftovers. Snack-sized is a marketing lie. Volume is how we pray. Bring lunch; we\'ll negotiate with teeth.',
-    'Patchwire: We are many. You are lunch. All of us. Outbreak typed softly in Slack — that\'s our anthem.',
+    'Patchwire: Politics of leftovers. Snack-sized is a marketing lie. Volume is how we pray. Bring lunch; we will negotiate with teeth.',
+    'Patchwire: We are many. You are lunch. All of us. Outbreak typed softly in Slack — that is our anthem.',
   ], weight: 2 },
   { id: 'patchwire_open_0', beat: 'open', lines: [
     'Patchwire: Crumb Collective. Tunnel B. Crumbs are the whip count. Shared fridge. Zero personal space. Deep clean is a threat.',
@@ -29,7 +29,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1 },
   { id: 'patchwire_open_3', beat: 'open', lines: [
     'Patchwire: Quiet confession from the whip: we count crumbs because the fridge never does. Then we collect.',
-    'Patchwire: Prove you\'re not just tall lunch. Or lose loud enough we remember the vote.',
+    'Patchwire: Prove you are not just tall lunch. Or lose loud enough we remember the vote.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'patchwire_hhit_4', beat: 'hunter_hit', lines: [
@@ -38,11 +38,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'patchwire_hhit_5', beat: 'hunter_hit', lines: [
     'Patchwire: You tagged the Crumb Collective. Tunnel B logs bites forever.',
-    'Patchwire: That cut stays on the minutes. Quorum doesn\'t erase bruises.',
+    'Patchwire: That cut stays on the minutes. Quorum does not erase bruises.',
   ] },
   { id: 'patchwire_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Patchwire: We\'re bleeding crumbs. You\'re still standing. Motion to fix that: passed.',
-    'Patchwire: Hurt and still voting. That\'s quorum.',
+    'Patchwire: We are bleeding crumbs. You are still standing. Motion to fix that: passed.',
+    'Patchwire: Hurt and still voting. That is quorum.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'patchwire_hmiss_7', beat: 'hunter_miss', lines: [
@@ -88,7 +88,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: Holy wet. Crumbs still count. Motion to shake: passed.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'patchwire_kit_smokestick_17', beat: 'kit', lines: [
-    'Patchwire: Fog mid-vote. We hear the bag. Lunch isn\'t hidden.',
+    'Patchwire: Fog mid-vote. We hear the bag. Lunch is not hidden.',
     'Patchwire: You hid mid-vote. Tunnel B invented hide-and-seek with teeth.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'patchwire_kit_hunting-trap_18', beat: 'kit', lines: [
@@ -108,8 +108,8 @@ export const nodes: ScriptNode[] = [
     'Patchwire: You greased Tunnel B. Parliament still has quorum.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'patchwire_kit_gen_22', beat: 'kit', lines: [
-    'Patchwire: Rummaging won\'t adjourn us. We\'re right here.',
-    'Patchwire: Unauthorized snack tools. We\'re answering in bruises.',
+    'Patchwire: Rummaging will not adjourn us. We are right here.',
+    'Patchwire: Unauthorized snack tools. We are answering in bruises.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'patchwire_kit_ran_23', beat: 'kit', lines: [
     'Patchwire: You fled, then rummaged. Absentee with snack tools.',
@@ -117,50 +117,50 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'patchwire_mhit_24', beat: 'monster_hit', lines: [
-    'Patchwire: That\'s for the unread messages and the crumbs you left.',
+    'Patchwire: That is for the unread messages and the crumbs you left.',
     'Patchwire: Bite landed. Lunch motion carries.',
   ] },
   { id: 'patchwire_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Patchwire: We\'re hurt. You\'re hurt more. Motion to call it even: denied.',
+    'Patchwire: We are hurt. You are hurt more. Motion to call it even: denied.',
     'Patchwire: Bleeding and still landing. Quorum talks with teeth.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'patchwire_mmiss_26', beat: 'monster_miss', lines: [
     'Patchwire: Missed. Enjoy the inch. Votes close fast.',
-    'Patchwire: Close call. Don\'t campaign on it.',
+    'Patchwire: Close call. Do not campaign on it.',
   ] },
 
   { id: 'patchwire_w_wind_27', beat: 'wound', lines: [
-    'Patchwire: Nicked. Don\'t get attached to that victory.',
+    'Patchwire: Nicked. Do not get attached to that victory.',
     'Patchwire: That barely registered. Upgrade the motion.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'patchwire_w_bru_28', beat: 'wound', lines: [
     'Patchwire: Bruise on the minutes. Keep painting.',
-    'Patchwire: Mid-vote damage. Persistent — like a crumb vote that won\'t die.',
+    'Patchwire: Mid-vote damage. Persistent — like a crumb vote that will not die.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'patchwire_w_bld_29', beat: 'wound', lines: [
-    'Patchwire: Okay. We\'re bleeding. Whip count still holds.',
+    'Patchwire: Okay. We are bleeding. Whip count still holds.',
     'Patchwire: Hurt bad and standing. Finish it or join the leftover pile.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'patchwire_w_heart_30', beat: 'wound', lines: [
     'Patchwire: That one hit a crumb we kept off the agenda.',
-    'Patchwire: Don\'t look at us like that while you\'re winning. Quorum hates pity.',
+    'Patchwire: Do not look at us like that while you are winning. Quorum hates pity.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   { id: 'patchwire_run_31', beat: 'run', lines: [
     'Patchwire: You fled Tunnel B? We invented chase for absentees.',
-    'Patchwire: Walk out mid-vote? Quorum doesn\'t adjourn. We follow.',
+    'Patchwire: Walk out mid-vote? Quorum does not adjourn. We follow.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'patchwire_run2_32', beat: 'run', lines: [
     'Patchwire: Twice. Motion to chase: already passed.',
     'Patchwire: Second escape. We noticed. Motion to chase: passed.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'patchwire_chase_33', beat: 'chase', lines: [
-    'Patchwire: Sprinting from breakroom democracy looks silly. We\'re doing it anyway.',
+    'Patchwire: Sprinting from breakroom democracy looks silly. We are doing it anyway.',
     'Patchwire: You wanted distance. We wanted lunch. The whip count chose lunch.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'patchwire_chase2_34', beat: 'chase', lines: [
     'Patchwire: Second chase. Quorum still votes with teeth.',
-    'Patchwire: Flee again and you\'re a standing agenda item. Motion already passed.',
+    'Patchwire: Flee again and you are a standing agenda item. Motion already passed.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'patchwire_close_35', beat: 'close', lines: [
     'Patchwire: Back in range. Miss the whip count?',
@@ -184,7 +184,7 @@ export const nodes: ScriptNode[] = [
     'Patchwire: You made us sprint for lunch. Motion to resent: unanimous. We hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'patchwire_vic_crit_40', beat: 'victory', lines: [
-    'Patchwire: You cut through quorum. Fight\'s over. We\'ll give you that.',
+    'Patchwire: You cut through quorum. Fight\'s over. We will give you that.',
     'Patchwire: You found the recess crumb and finished the vote. Quorum dissolved. Whip count: zero.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'patchwire_vic_net_41', beat: 'victory', lines: [
