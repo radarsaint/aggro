@@ -34,19 +34,19 @@ export const nodes: ScriptNode[] = [
 
   { id: 'iron-cadre_hhit_4', beat: 'hunter_hit', lines: [
     'Iron Cadre: Felt that. Formation holds.',
-    'Iron Cadre: Watch the count. We live here.',
+    'Iron Cadre: Eyes on the count. This yard is ours — shields already know.',
   ] },
   { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [
     'Iron Cadre: That one found a gap. Rude to the count. We adjust.',
-    'Iron Cadre: You marked a shield. The line noticed. Advance continues.',
+    'Iron Cadre: You scratched a shield. The line saw it. We keep moving without raising our voices.',
   ] },
   { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Iron Cadre: You marked a shield. We are still the quietest thing on this floor.',
-    'Iron Cadre: Leaking. Still soft-spoken. Still coming.',
+    'Iron Cadre: Shield took the hit. Cadre stays the quietest thing walking this floor.',
+    'Iron Cadre: We\'re bleeding and we are still soft-spoken. The advance does not need volume.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'iron-cadre_hmiss_7', beat: 'hunter_miss', lines: [
-    'Iron Cadre: Missed. Air isn\'t on the roster.',
+    'Iron Cadre: Whiff. Air does not make roll call. Hit the Cadre or stand down.',
     'Iron Cadre: Swing at us, not the yard.',
   ] },
   { id: 'iron-cadre_hmiss_8', beat: 'hunter_miss', lines: [
@@ -55,11 +55,11 @@ export const nodes: ScriptNode[] = [
   ] },
 
   { id: 'iron-cadre_hcrit_9', beat: 'hunter_crit', lines: [
-    'Iron Cadre: That one found a gap in the count. Noted. Eyes forward.',
+    'Iron Cadre: That one found a gap in the count. Eyes forward. We close gaps.',
     'Iron Cadre: Hard hit on the Cadre. Drill yard noticed.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: [
-    'Iron Cadre: You found a soft spot in formation. Congratulations. Advance continues.',
+    'Iron Cadre: Soft spot in formation. Congratulations. Correct it before we correct you.',
     'Iron Cadre: Almost a real correction. Eyes forward. Hit us like you mean the drill.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'iron-cadre_kit_gen_22', beat: 'kit', lines: [
     'Iron Cadre: Bag rummage won\'t save the count. We\'re here.',
-    'Iron Cadre: Props out. Eyes forward.',
+    'Iron Cadre: Tools mid-drill. Eyes forward. Cadre does not pause for accessories.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
-    'Iron Cadre: Ran, then rummaged. Coward with accessories.',
+    'Iron Cadre: You broke formation, then dug for toys. Freelancer energy. We hate that.',
     'Iron Cadre: Flee-kit combo. Soft. We still advance.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'iron-cadre_mhit_bld_25', beat: 'monster_hit', lines: [
     'Iron Cadre: We\'re leaking. You\'re bleeding. Quiet wins.',
-    'Iron Cadre: Scraped. Still the cleanest advance in the yard.',
+    'Iron Cadre: Scraped. Cleanest advance in the yard is still Cadre.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'iron-cadre_mmiss_26', beat: 'monster_miss', lines: [
     'Iron Cadre: Missed. Enjoy the gap while it lasts.',

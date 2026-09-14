@@ -42,11 +42,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'laugh-track_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Laugh Track: You scuffed the howl. Booth still laughs louder than your bit.',
-    'Laugh Track: Leaking. Still laughing. Still mad about the stiff bit.',
+    'Laugh Track: We\'re leaking and the howl is still rolling. Stiff bits get bitten.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'laugh-track_hmiss_7', beat: 'hunter_miss', lines: [
-    'Laugh Track: Missed. Air doesn\'t get a cue.',
+    'Laugh Track: Whiff. Air does not get a cue howl. Fall properly next time.',
     'Laugh Track: Swing at us, not the laugh.',
   ] },
   { id: 'laugh-track_hmiss_8', beat: 'hunter_miss', lines: [
@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'laugh-track_kit_net_19', beat: 'kit', lines: [
     'Laugh Track: Net on the track. Cue ruined. Rude.',
-    'Laugh Track: Bagged. Still laughing through mesh.',
+    'Laugh Track: Bagged and laughing through the mesh anyway.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'laugh-track_kit_healing-potion_20', beat: 'kit', lines: [
     'Laugh Track: Mid-fight sip. Planning a longer episode?',
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'laugh-track_kit_gen_22', beat: 'kit', lines: [
     'Laugh Track: Bag rummage won\'t kill the howl. We\'re here.',
-    'Laugh Track: Props out. Cue bite.',
+    'Laugh Track: Props mid-take? Cue bite anyway. The audience paid for teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'laugh-track_kit_ran_23', beat: 'kit', lines: [
-    'Laugh Track: Ran, then rummaged. Coward with accessories.',
+    'Laugh Track: You ran from the booth, then rummaged. Cold open, colder exit.',
     'Laugh Track: Flee-kit combo. Soft. Still biting.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'laugh-track_mhit_bld_25', beat: 'monster_hit', lines: [
     'Laugh Track: We\'re leaking. You\'re bleeding. Laugh wins.',
-    'Laugh Track: Scraped. Still the hungriest howl in the booth.',
+    'Laugh Track: Scraped and loud. Hungriest howl in the booth is still us.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'laugh-track_mmiss_26', beat: 'monster_miss', lines: [
     'Laugh Track: Missed. Enjoy the filler while it lasts.',

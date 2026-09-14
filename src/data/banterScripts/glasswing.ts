@@ -35,7 +35,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'glasswing_hhit_4', beat: 'hunter_hit', lines: [
     'Glasswing: Ow. You scuffed the glass. That stays on the score.',
-    'Glasswing: Noted. I\'ll be uglier about the next review.',
+    'Glasswing: Fine. Next review arrives uglier. Stay awake if you can.',
   ] },
   { id: 'glasswing_hhit_5', beat: 'hunter_hit', lines: [
     'Glasswing: You tagged the Culture Auditor. Mirror Arcade never rescinds a score.',
@@ -123,7 +123,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'glasswing_mhit_bld_25', beat: 'monster_hit', lines: [
     'Glasswing: I\'m hurt. You\'re hurt more. Fair score. Mirrors noted both.',
-    'Glasswing: Cracked. Still scoring. Still mad about your lie.',
+    'Glasswing: Glass cracked. I am still scoring you, and I am still mad about the lie.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'glasswing_mmiss_26', beat: 'monster_miss', lines: [
     'Glasswing: Missed. Enjoy it. The glass is still circling.',

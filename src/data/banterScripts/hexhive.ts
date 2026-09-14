@@ -37,11 +37,11 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'hexhive_hhit_4', beat: 'hunter_hit', lines: [
     'Hexhive: Ow. Legs scattered. We resent that.',
-    'Hexhive: Ow. Noted. Next bite gets uglier. Still swarming. Still hungry.',
+    'Hexhive: Ow. Legs scattered. Next bite comes uglier — we are still hungry.',
   ] },
   { id: 'hexhive_hhit_5', beat: 'hunter_hit', lines: [
-    'Hexhive: You hit the swarm. Hurt logged in the itch. Buzz unbroken.',
-    'Hexhive: Heat continues.',
+    'Hexhive: You hit the swarm. The itch remembers. Buzz never broke.',
+    'Hexhive: Heat does not clock out. Neither do we.',
   ] },
   { id: 'hexhive_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Hexhive: We\'re leaking. You\'re still soft. Squash one. Or keep itching.',
@@ -78,8 +78,8 @@ export const nodes: ScriptNode[] = [
     'Hexhive: You dosed the crawl. Toxins bounce. We keep biting.',
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'hexhive_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Hexhive: Fire mid-crawl. Heat we already live in — plus panic. Noted.',
-    'Hexhive: You lit the shafts. Swarm flinches bright. Then we bite harder.',
+    'Hexhive: Fire mid-crawl. We already live in heat — panic is just seasoning.',
+    'Hexhive: You set the shafts on fire. We already live in heat — now we crawl angry.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'hexhive_kit_caltrops_14', beat: 'kit', lines: [
     'Hexhive: Spikes in the shafts. We crawl around spite for fun.',
@@ -115,7 +115,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'hexhive_kit_gen_22', beat: 'kit', lines: [
     'Hexhive: Unscheduled tools mid-swarm. The legs grade that loud.',
-    'Hexhive: Props out. Counter-patch in a bottle. We answer in bites.',
+    'Hexhive: Digging for a bottle mid-swarm? We answer in bites, not counter-patches.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'hexhive_kit_ran_23', beat: 'kit', lines: [
     'Hexhive: You ran, then rummaged. Flee with accessories. Soft host.',

@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'rattlewire_hhit_4', beat: 'hunter_hit', lines: [
     'Rattlewire: Ow. Off-schedule pain. I resent the delay. Click.',
-    'Rattlewire: Ow. Noted. Next slot gets uglier. On time. Click.',
+    'Rattlewire: Ow. Posture slipped. Next slot arrives uglier and on the second. Click.',
   ] },
   { id: 'rattlewire_hhit_5', beat: 'hunter_hit', lines: [
     'Rattlewire: You hit Scheduling Skeleton. Hurt logged. Posture unbroken.',
@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Rattlewire: Hard hit. The hour hand jumped. Someone upstairs noticed. Click.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'rattlewire_hcrit_10', beat: 'hunter_crit', lines: [
-    'Rattlewire: Okay. You found the hold under the posture. Noted.',
+    'Rattlewire: Okay. You found the hold under the posture. Late fee applies. Click.',
     'Rattlewire: That almost felt like a calendar hold. Don\'t talk. Swing again. Click.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'rattlewire_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'rattlewire_vic_kite_39', beat: 'victory', lines: [
     'Rattlewire: You dragged me around my own annex, then finished it. Jogging is a hate crime against posture.',
-    'Rattlewire: You ran me ragged, finished on someone else\'s second. Noted.',
+    'Rattlewire: You ran me ragged and finished on someone else\'s second. Late forever. Click.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'rattlewire_vic_crit_40', beat: 'victory', lines: [
     'Rattlewire: You cut through on the second. Soft under the calendar. Fight\'s over.',

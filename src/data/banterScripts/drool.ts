@@ -49,7 +49,7 @@ export const nodes: ScriptNode[] = [
 
   // ── MISSES ──
   { id: 'drool_hmiss_7', beat: 'hunter_miss', lines: [
-    'Drool: Missed. Air isn\'t covered under the pact. Expensive.',
+    'Drool: Whiff. Air is not covered under the pact. Expensive mistake.',
     'Drool: Missed the cute. Tall-people error. Sign anyway.',
   ] },
   { id: 'drool_hmiss_8', beat: 'hunter_miss', lines: [
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'drool_kit_gen_22', beat: 'kit', lines: [
     'Drool: Digging mid-booth? Sales demo energy. Respect the hustle.',
-    'Drool: Props out. Counter-offer in a bottle. I answer in bruises and crisps.',
+    'Drool: Bottle mid-pact? Cute. I answer in bruises and crisps either way.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drool_kit_ran_23', beat: 'kit', lines: [
     'Drool: You ran, then rummaged. Cowardice with props. Still cute of you.',

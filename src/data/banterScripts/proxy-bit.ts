@@ -35,7 +35,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'proxy-bit_hhit_4', beat: 'hunter_hit', lines: [
     'Proxy Bit: Ow. Envelope torn. That stays on the stamp.',
-    'Proxy Bit: Noted. I\'ll be uglier about the next delivery.',
+    'Proxy Bit: Fine. Next delivery arrives uglier. Sign for it.',
   ] },
   { id: 'proxy-bit_hhit_5', beat: 'hunter_hit', lines: [
     'Proxy Bit: You tagged the Courier. Cubicle 4B never voids a stamp.',
@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
     'Proxy Bit: Hard hit on Interoffice Courier. Legal just [REDACTED] in a CC.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'proxy-bit_hcrit_10', beat: 'hunter_crit', lines: [
-    'Proxy Bit: You found the soft place under the seal. Congrats, jerk.',
+    'Proxy Bit: You found the soft place under the seal. Unsigned and rude.',
     'Proxy Bit: That almost felt cleared. Almost. Don\'t talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'proxy-bit_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -123,7 +123,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'proxy-bit_mhit_bld_25', beat: 'monster_hit', lines: [
     'Proxy Bit: I\'m hurt. You\'re hurt more. Fair trade. Stamp: mutual damage.',
-    'Proxy Bit: Seal torn. Still delivering. Still mad about your unread CC.',
+    'Proxy Bit: Seal torn. Delivery continues. Unread CC made it personal.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'proxy-bit_mmiss_26', beat: 'monster_miss', lines: [
     'Proxy Bit: Missed. Enjoy it. The route is still circling.',

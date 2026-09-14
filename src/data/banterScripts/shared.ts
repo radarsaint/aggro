@@ -22,7 +22,7 @@ export const SHARED_NODES: ScriptNode[] = [
     'Hard hit. Keep going.',
   ]},
   { id: 'shared_kit', beat: 'kit', weight: 1, lines: [
-    'Bag opened. Noted.',
+    'Bag opened. We see you.',
   ]},
   { id: 'shared_mhit', beat: 'monster_hit', weight: 1, lines: [
     'Got you.',

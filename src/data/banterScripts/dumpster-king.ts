@@ -72,7 +72,7 @@ export const nodes: ScriptNode[] = [
     'Dumpster King: Poison on a waste monarch. Digestion unimpressed. Ambition noted in the smell.',
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'dumpster-king_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Dumpster King: You set fire to Our throne room. Bold. Stupid. Memorable.',
+    'Dumpster King: You set fire to Our throne room. Stupid and memorable. Tribute still due.',
     'Dumpster King: Flames on heraldry. The smell will outlive your lawsuit.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'dumpster-king_kit_caltrops_14', beat: 'kit', lines: [

@@ -41,12 +41,12 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: You pinged the thread mid-spark. Read receipt still on. Heat stays.',
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Cinder Crew: You dinged the spark. Thread still glows hotter than your mute.',
-    'Cinder Crew: Leaking. Still Seen. Still mad about the mute.',
+    'Cinder Crew: Spark took a nick. Thread still glows. Mute did nothing.',
+    'Cinder Crew: We\'re leaking and the read receipt is still on. Mute made it worse.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'cinder-crew_hmiss_7', beat: 'hunter_miss', lines: [
-    'Cinder Crew: Missed. Air isn\'t in the chat.',
+    'Cinder Crew: Whiff. Air is not in this group chat. Spark wants a real body.',
     'Cinder Crew: Swing at us, not the spark.',
   ] },
   { id: 'cinder-crew_hmiss_8', beat: 'hunter_miss', lines: [
@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'cinder-crew_kit_net_19', beat: 'kit', lines: [
     'Cinder Crew: Net on the crew. Thread ruined. Rude.',
-    'Cinder Crew: Bagged. Still sparking through mesh.',
+    'Cinder Crew: Bagged and still sparking through the mesh.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'cinder-crew_kit_healing-potion_20', beat: 'kit', lines: [
     'Cinder Crew: Mid-fight sip. Planning a longer thread?',
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: [
     'Cinder Crew: Bag rummage won\'t kill the thread. We\'re Seen.',
-    'Cinder Crew: Props out. Ignite.',
+    'Cinder Crew: Props mid-thread? Ignite anyway. Foam is still a rumor.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
-    'Cinder Crew: Ran, then rummaged. Coward with accessories.',
+    'Cinder Crew: You fled the boiler, then rummaged. Cowards still RSVP with lungs.',
     'Cinder Crew: Flee-kit combo. Soft. Still coming on read.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'cinder-crew_mhit_bld_25', beat: 'monster_hit', lines: [
     'Cinder Crew: We\'re leaking. You\'re bleeding. Heat wins.',
-    'Cinder Crew: Scraped. Still the hottest ping in the chat.',
+    'Cinder Crew: Scraped. Hottest ping in the chat is still us.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'cinder-crew_mmiss_26', beat: 'monster_miss', lines: [
     'Cinder Crew: Missed. Enjoy the mute while it lasts.',

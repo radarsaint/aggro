@@ -60,7 +60,7 @@ export const nodes: ScriptNode[] = [
     'Bleed Static: Hard hit on a sipper. My pulse skipped wrong for once.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_10', beat: 'hunter_crit', lines: [
-    'Bleed Static: You found the soft place under my latch. Congrats, jerk.',
+    'Bleed Static: You found the soft place under my latch. Congrats. Vintage remembers.',
     'Bleed Static: That almost felt like open enrollment. Don\'t talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_ran_11', beat: 'hunter_crit', lines: [

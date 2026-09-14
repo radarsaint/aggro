@@ -42,11 +42,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Silt Knives: You warmed a knife. Bad manners. Silt still owns the guest list.',
-    'Silt Knives: Leaking. Still waiting. Still mad about the litter.',
+    'Silt Knives: We\'re leaking and still patient. Upstream litter caused the mood.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'silt-knives_hmiss_7', beat: 'hunter_miss', lines: [
-    'Silt Knives: Missed. Air isn\'t on the guest list.',
+    'Silt Knives: Whiff. Air is not on the guest list. Step into the murk or leave.',
     'Silt Knives: Swing at us, not the murk.',
   ] },
   { id: 'silt-knives_hmiss_8', beat: 'hunter_miss', lines: [
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
     'Silt Knives: Bag rummage won\'t scrub your name. We\'re here.',
-    'Silt Knives: Props out. Water\'s still listening.',
+    'Silt Knives: Digging mid-swim? Water is still listening. Knives too.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
-    'Silt Knives: Ran, then rummaged. Coward with accessories.',
+    'Silt Knives: You fled the blackwater, then rummaged. Litterbugs with bags — classic.',
     'Silt Knives: Flee-kit combo. Soft. Still coming upstream.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'silt-knives_mhit_bld_25', beat: 'monster_hit', lines: [
     'Silt Knives: We\'re leaking. You\'re bleeding. Silt wins.',
-    'Silt Knives: Scraped. Still the coldest names in the water.',
+    'Silt Knives: Scraped. Coldest names in the water are still ours.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'silt-knives_mmiss_26', beat: 'monster_miss', lines: [
     'Silt Knives: Missed. Enjoy the ripple while it lasts.',

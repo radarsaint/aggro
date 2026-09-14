@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'marrow-gang_hhit_4', beat: 'hunter_hit', lines: [
     'Marrow Gang: Ow. Break in cadence. We resent that. Eyes forward.',
-    'Marrow Gang: Ow. Noted. Next volley gets uglier. Eyes forward. Still we.',
+    'Marrow Gang: Ow. Formation blinked. Next volley comes uglier. Eyes forward.',
   ] },
   { id: 'marrow-gang_hhit_5', beat: 'hunter_hit', lines: [
     'Marrow Gang: You hit Drill Team. Hurt logged. Formation holds. Posture unbroken.',
@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Hard hit. Cadence jumped. Drill Team felt that.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_10', beat: 'hunter_crit', lines: [
-    'Marrow Gang: Okay. You found the soft under the count. Rude. Noted.',
+    'Marrow Gang: Okay. Soft under the count. Rude. Drill continues without your permission.',
     'Marrow Gang: That almost felt like a recruit who meant it. Don\'t talk. Swing or fall in.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -78,7 +78,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'marrow-gang_kit_alchemists-fire_13', beat: 'kit', lines: [
     'Marrow Gang: Fire mid-drill. Off-cadence. Write-up pending.',
-    'Marrow Gang: You lit the barracks. Formation flinches bright. Then we volley harder.',
+    'Marrow Gang: You lit the barracks. Formation does not flinch for show — volley gets uglier.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'marrow-gang_kit_caltrops_14', beat: 'kit', lines: [
     'Marrow Gang: Spikes on the drill floor. We step on the beat anyway.',
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: [
     'Marrow Gang: Improvisation mid-drill. Soft. Unscheduled. Write-up.',
-    'Marrow Gang: Props out. Counter-order in a bottle. We answer in volleys.',
+    'Marrow Gang: Bottle mid-muster? There is no counter-order. Volley answers.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [
     'Marrow Gang: You ran, then rummaged. Deserter with accessories.',
@@ -190,7 +190,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [
     'Marrow Gang: You dragged us around our own barracks, then finished it. Jogging is a hate crime against posture.',
-    'Marrow Gang: You ran us ragged, finished off-beat. Noted.',
+    'Marrow Gang: You ran us ragged and finished off-beat. Muster files that as coward.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'marrow-gang_vic_crit_40', beat: 'victory', lines: [
     'Marrow Gang: You cut through on the beat. Soft under the count. Fight\'s over.',

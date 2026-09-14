@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'scrap-mob_hhit_4', beat: 'hunter_hit', lines: [
     'Scrap Mob: Ow. That hit a sibling-in-arms. We resent that.',
-    'Scrap Mob: Ow. Noted. Next knife gets uglier. Still loud. Still we.',
+    'Scrap Mob: Ow. Picket staggered. Next knife comes uglier — volume stays theology.',
   ] },
   { id: 'scrap-mob_hhit_5', beat: 'hunter_hit', lines: [
     'Scrap Mob: You hit Local 666. Hurt logged in four. One chant. Volume does.',
@@ -78,7 +78,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'scrap-mob_kit_alchemists-fire_13', beat: 'kit', lines: [
     'Scrap Mob: Fire mid-strike. That voids the picket vibe. Also: rude.',
-    'Scrap Mob: You lit the dump. Local flinches bright. Then we surround harder.',
+    'Scrap Mob: You lit the dump. Local 666 does not flinch cute — we surround with knives.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'scrap-mob_kit_caltrops_14', beat: 'kit', lines: [
     'Scrap Mob: Spikes on the line. We surround around spite for fun.',
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'scrap-mob_kit_gen_22', beat: 'kit', lines: [
     'Scrap Mob: Digging mid-picket. Soft. Unscheduled. Local grades that loud.',
-    'Scrap Mob: Props out. Counter-offer in a bottle. We answer in knives.',
+    'Scrap Mob: Bottle out mid-picket? Cute counter-offer. We still answer in knives.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'scrap-mob_kit_ran_23', beat: 'kit', lines: [
     'Scrap Mob: You ran, then rummaged. Scab with accessories.',

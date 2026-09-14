@@ -93,7 +93,7 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Bear jaws on my floor. Irony\'s on sale. I\'m ringing you up.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'amber-silk_kit_net_19', beat: 'kit', lines: [
-    'Amber Silk: You netted the wrapper. Bold. Channel three is dying laughing.',
+    'Amber Silk: You netted the wrapper. Channel three is dying laughing.',
     'Amber Silk: Mesh over silk — two wraps, one guest. Flail louder; I\'m tagging it.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'amber-silk_kit_healing-potion_20', beat: 'kit', lines: [
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
     'Amber Silk: Rummaging mid-aisle. That\'s a write-up before the wrap even starts.',
-    'Amber Silk: Props out. Loss Prevention grades the performance. Smile for the headset.',
+    'Amber Silk: Digging mid-wrap? Loss Prevention is grading. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
     'Amber Silk: You ran, then rummaged. Guest with accessories and no receipt.',

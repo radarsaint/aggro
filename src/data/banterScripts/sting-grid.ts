@@ -42,11 +42,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'sting-grid_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Sting Grid: You clipped a wing. Altitude still hums our deed louder than you.',
-    'Sting Grid: Leaking. Still buzzing. Still mad about the neck.',
+    'Sting Grid: We are leaking and still buzzing. That neck started this.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'sting-grid_hmiss_7', beat: 'hunter_miss', lines: [
-    'Sting Grid: Missed. Air isn\'t on the deed.',
+    'Sting Grid: Whiff. Air does not own this altitude. Your neck still does not either.',
     'Sting Grid: Swing at us, not the altitude.',
   ] },
   { id: 'sting-grid_hmiss_8', beat: 'hunter_miss', lines: [
@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sting-grid_kit_net_19', beat: 'kit', lines: [
     'Sting Grid: Net on the grid. Permit ruined. Rude.',
-    'Sting Grid: Bagged. Still buzzing through mesh.',
+    'Sting Grid: Bagged and still buzzing through the mesh.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sting-grid_kit_healing-potion_20', beat: 'kit', lines: [
     'Sting Grid: Mid-fight sip. Planning a longer trespass?',
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sting-grid_kit_gen_22', beat: 'kit', lines: [
     'Sting Grid: Bag rummage won\'t clear your permit. We\'re here.',
-    'Sting Grid: Props out. Duck.',
+    'Sting Grid: Digging mid-air? Duck. Welts do not wait for props.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sting-grid_kit_ran_23', beat: 'kit', lines: [
-    'Sting Grid: Ran, then rummaged. Coward with accessories.',
+    'Sting Grid: You fled our airspace, then rummaged. Unauthorized and messy.',
     'Sting Grid: Flee-kit combo. Soft. Still filing.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'sting-grid_mhit_bld_25', beat: 'monster_hit', lines: [
     'Sting Grid: We\'re leaking. You\'re bleeding. Buzz wins.',
-    'Sting Grid: Scraped. Still the sharpest filing in the air.',
+    'Sting Grid: Scraped. Sharpest filing in the air is still ours.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'sting-grid_mmiss_26', beat: 'monster_miss', lines: [
     'Sting Grid: Missed. Enjoy the clearance while it lasts.',

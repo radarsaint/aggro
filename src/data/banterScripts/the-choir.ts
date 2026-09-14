@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'the-choir_hhit_4', beat: 'hunter_hit', lines: [
     'The Choir: Ow. Off-key. We resent the dissonance.',
-    'The Choir: Ow. Noted. Next verse gets uglier. Still sweet. Still we.',
+    'The Choir: Ow. Harmony cracked. Next verse comes uglier — still sweet enough to eat you.',
   ] },
   { id: 'the-choir_hhit_5', beat: 'hunter_hit', lines: [
     'The Choir: You hit the Morale Ensemble. Hurt logged in harmony. Three voices. One bruise.',

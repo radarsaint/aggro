@@ -41,12 +41,12 @@ export const nodes: ScriptNode[] = [
     'Oxidize: You swung at Clearance stock. Cute. I am still smelling your steel.',
   ] },
   { id: 'oxidize_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Oxidize: You chipped Clearance stock. I am still hungrier than you.',
-    'Oxidize: Leaking oxide. Still smelling your steel.',
+    'Oxidize: Clearance stock took a chip. Cute. My appetite did not shrink.',
+    'Oxidize: Oxide running. Still smelling your steel like dessert.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'oxidize_hmiss_7', beat: 'hunter_miss', lines: [
-    'Oxidize: Missed. Air isn\'t on the menu.',
+    'Oxidize: Whiff. Air is not dinner. Bring the steel closer.',
     'Oxidize: Swing at the dinner, not the aisle.',
   ] },
   { id: 'oxidize_hmiss_8', beat: 'hunter_miss', lines: [
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'oxidize_kit_gen_22', beat: 'kit', lines: [
     'Oxidize: Bag rummage won\'t save the steel. I\'m hungry.',
-    'Oxidize: Props out. Dinner\'s still singing.',
+    'Oxidize: Digging mid-meal? Fine. Dinner is still singing and I am still listening.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
-    'Oxidize: Ran, then rummaged. Coward with accessories.',
+    'Oxidize: You ran from Clearance, then rummaged. Hunger does not respect accessories.',
     'Oxidize: Flee-kit combo. Soft. Still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'oxidize_mhit_bld_25', beat: 'monster_hit', lines: [
     'Oxidize: I\'m leaking. You\'re bleeding. Hunger wins.',
-    'Oxidize: Scraped. Still the hungriest thing in Clearance.',
+    'Oxidize: Scraped. Clearance hunger did not clock out.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'oxidize_mmiss_26', beat: 'monster_miss', lines: [
     'Oxidize: Missed. Enjoy the shine while it lasts.',

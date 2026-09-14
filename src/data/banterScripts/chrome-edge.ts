@@ -47,8 +47,8 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You put a fingerprint on the demo unit. Floor models remember that.',
   ] },
   { id: 'chrome-edge_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Chrome Edge: You dinged me. I\'m still the best-looking thing in this fight.',
-    'Chrome Edge: Dented. Still hovering. Still mad about your fingerprints.',
+    'Chrome Edge: You put a nick in the demo unit. Price tag\'s still on. I\'m still prettier than your apology.',
+    'Chrome Edge: Dent in the demo unit. I am still hovering, and I am still mad about your fingerprints.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES (quips) ──
@@ -67,7 +67,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: Hard hit on a floor model. Someone in Merch just stood up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'chrome-edge_hcrit_10', beat: 'hunter_crit', lines: [
-    'Chrome Edge: You hit a weak point in the steel. Congrats, jerk.',
+    'Chrome Edge: You found a soft place in the steel. Congrats. Floor models hold grudges.',
     'Chrome Edge: That almost felt like you meant it. Don\'t talk. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'chrome-edge_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -121,7 +121,7 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: Props. Nice try. Swing.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'chrome-edge_kit_ran_23', beat: 'kit', lines: [
-    'Chrome Edge: You ran, then rummaged. Coward with accessories.',
+    'Chrome Edge: You fled the carousel, then dug for props. Brave shopping. Bad fighting.',
     'Chrome Edge: You ran, then dug in the bag. Soft. I\'m still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 

@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'neon-howl_hhit_4', beat: 'hunter_hit', lines: [
     'Neon Howl: Ow. Pause in the chase. We resent that.',
-    'Neon Howl: Ow. Noted. Next bite gets uglier. Still braided. Still fast.',
+    'Neon Howl: Ow. Braid hiccuped. Next bite comes uglier — pack still fast.',
   ] },
   { id: 'neon-howl_hhit_5', beat: 'hunter_hit', lines: [
     'Neon Howl: You hit the pack. Hurt logged in three. One howl. Neon doesn\'t fade.',
@@ -78,7 +78,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
   { id: 'neon-howl_kit_alchemists-fire_13', beat: 'kit', lines: [
     'Neon Howl: Fire mid-chase. That\'s our real fear. Also: rude.',
-    'Neon Howl: You lit the underpass. Pack flinches bright. Then we braid harder.',
+    'Neon Howl: You lit the underpass. Pack does not soft-flinch — we braid and chase hotter.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'neon-howl_kit_caltrops_14', beat: 'kit', lines: [
     'Neon Howl: Spikes on wet concrete. We flank around spite for fun.',
@@ -114,7 +114,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'neon-howl_kit_gen_22', beat: 'kit', lines: [
     'Neon Howl: Digging mid-chase is unscheduled. The pack grades that loud.',
-    'Neon Howl: Props out. Counter-howl in a bottle. We answer in bites.',
+    'Neon Howl: Bottle mid-chase? Save the counter-howl. We answer with teeth.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'neon-howl_kit_ran_23', beat: 'kit', lines: [
     'Neon Howl: You ran, then rummaged. Prey with accessories. Flirting.',

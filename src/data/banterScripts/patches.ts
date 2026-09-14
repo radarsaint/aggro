@@ -81,7 +81,7 @@ export const nodes: ScriptNode[] = [
     'Patches: Vial arcs, fizz on scrap — your face just got a new SKU: spill.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'patches_kit_holy-water_16', beat: 'kit', lines: [
-    'Patches: You brought church into a dumpster fight. Bold. Sticky.',
+    'Patches: You brought church into a dumpster fight. Sticky faith. Ledger notices.',
     'Patches: Blessed tap on Shrinkage Floor. I bill faith at retail.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'patches_kit_smokestick_17', beat: 'kit', lines: [

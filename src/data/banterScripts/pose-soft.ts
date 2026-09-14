@@ -42,11 +42,11 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'pose-soft_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Pose Soft: Chin scuffed. Pose still selling the window harder than you.',
-    'Pose Soft: Leaking. Still posing. Still mad about the wiggle.',
+    'Pose Soft: I\'m leaking and the chin is still up. Wiggle caused this. Gallery remembers.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'pose-soft_hmiss_7', beat: 'hunter_miss', lines: [
-    'Pose Soft: Missed. Air doesn\'t get a facing.',
+    'Pose Soft: You swung at air. Air does not get a facing. Hold still and try again.',
     'Pose Soft: Swing at me, not the lighting.',
   ] },
   { id: 'pose-soft_hmiss_8', beat: 'hunter_miss', lines: [
@@ -109,10 +109,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'pose-soft_kit_gen_22', beat: 'kit', lines: [
     'Pose Soft: Bag rummage won\'t save the look. I\'m the floorset.',
-    'Pose Soft: Props out. Chin up.',
+    'Pose Soft: Accessories mid-pose? Chin stays up. The window does not wait for props.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'pose-soft_kit_ran_23', beat: 'kit', lines: [
-    'Pose Soft: Ran, then rummaged. Coward with accessories.',
+    'Pose Soft: You fled the floorset, then dug for toys. Décor never runs. Noted as coward.',
     'Pose Soft: Flee-kit combo. Soft. Still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
@@ -122,7 +122,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'pose-soft_mhit_bld_25', beat: 'monster_hit', lines: [
     'Pose Soft: I\'m leaking. You\'re bleeding. Better look wins.',
-    'Pose Soft: Scraped. Still the sharpest pose in the window.',
+    'Pose Soft: Scraped. Sharpest pose in the window is still mine.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'pose-soft_mmiss_26', beat: 'monster_miss', lines: [
     'Pose Soft: Missed. Enjoy the blink while it lasts.',

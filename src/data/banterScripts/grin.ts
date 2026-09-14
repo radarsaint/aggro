@@ -40,16 +40,16 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'grin_hhit_5', beat: 'hunter_hit', lines: [
     'Grin: Okay. That landed. Rude for a claimant.',
-    'Grin: You hit Lost & Found. Bold filing. Noted.',
+    'Grin: You hit the claim desk. Forms just got personal. Smile stays free — acid doesn\'t.',
   ] },
   { id: 'grin_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Grin: You dinged the desk. I\'m still the friendliest puddle here.',
-    'Grin: Leaking. Still smiling. Still mad about your sticky hands.',
+    'Grin: You wrinkled a claim form mid-fight. Alphabetizing is ruined. Friendship optional.',
+    'Grin: I\'m dripping and I\'m still smiling. Sticky hands did this. The stub will remember.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
   { id: 'grin_hmiss_7', beat: 'hunter_miss', lines: [
-    'Grin: Missed. Air doesn\'t get a claim stub.',
+    'Grin: That swing kissed air. Lost & Found does not file air. Try the hunter.',
     'Grin: Swing at the puddle, not the hallway.',
   ] },
   { id: 'grin_hmiss_8', beat: 'hunter_miss', lines: [
@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Grin: Hard hit on the claim desk. Annex just flinched.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'grin_hcrit_10', beat: 'hunter_crit', lines: [
-    'Grin: You found the Do Not Claim sticker. Congrats, grabber.',
+    'Grin: You found the Do Not Claim sticker. Grabby and literate. Bad combination.',
     'Grin: That almost counted as a successful claim. Stop smiling back. File the next hit.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'grin_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -114,10 +114,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'grin_kit_gen_22', beat: 'kit', lines: [
     'Grin: Bag rummage won\'t close your ticket. I\'m the desk.',
-    'Grin: Props out. Smile still free. Acid isn\'t.',
+    'Grin: Digging mid-claim? The smile is still free. The acid is billing you.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
-    'Grin: Ran, then rummaged. Coward with accessories.',
+    'Grin: You ran, then rummaged like the annex was a clearance bin. Claim denied with prejudice.',
     'Grin: Flee-kit combo. Soft. Still unclaimed. Still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 

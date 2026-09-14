@@ -36,7 +36,7 @@ export const nodes: ScriptNode[] = [
   // ── HITS ──
   { id: 'veinrot_hhit_4', beat: 'hunter_hit', lines: [
     'Veinrot: Ow. That woke something up. I resent having feelings left.',
-    'Veinrot: Ow. Noted. Next slam will be uglier. Slower. Sincere.',
+    'Veinrot: Ow. Frost cracked. Next slam comes slower and meaner — freezer style.',
   ] },
   { id: 'veinrot_hhit_5', beat: 'hunter_hit', lines: [
     'Veinrot: You hit the Eternal Associate. Cold Storage doesn\'t thaw apologies.',

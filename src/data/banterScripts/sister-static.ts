@@ -103,7 +103,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sister-static_kit_net_19', beat: 'kit', lines: [
     'Sister Static: Net on the DJ. Call-ins love a trapped host.',
-    'Sister Static: Bagged. Still live. Stop the bit.',
+    'Sister Static: Bagged and still live. Stop the bit.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sister-static_kit_healing-potion_20', beat: 'kit', lines: [
     'Sister Static: Mid-broadcast sip. Planning to stay tuned?',
@@ -115,10 +115,10 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sister-static_kit_gen_22', beat: 'kit', lines: [
     'Sister Static: Bag toys won\'t kill the signal. I\'m still on air.',
-    'Sister Static: Props out. Stay tuned.',
+    'Sister Static: Digging mid-broadcast? Stay tuned — snow does not pause for props.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
-    'Sister Static: Ran, then rummaged. Coward with accessories.',
+    'Sister Static: You fled Channel 7, then rummaged. Bad reception and worse spine.',
     'Sister Static: Flee-kit bit. Soft. Channel 7 keeps coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
