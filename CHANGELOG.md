@@ -11,6 +11,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Changed
+
+- **Dating prefs cleanup** — Reshuffle stays as the only top utility. **How AGGRO works** moves to a quiet help link on the **You** tab footer (beside Dating prefs). **Reset Local Save** lives in a collapsed **Danger** disclosure at the bottom of Dating prefs (after Standards/filters), muted styling + confirm dialog.
+
 ### Added
 
 - **Character home IA** — Profile sticky tabs: **You** / **On you** / **Locker** / **Kiosk**. Prefs demoted to a **Dating prefs** footer link on You (utilities first; Discover filters + Standards collapsed; stub/comingSoon floor theme picker removed). Default land **On you** if anything worn, else **Locker** (closet first). You hero is dating-thin (face, name, bio, Verified + one line, Gold quiet); combat sheet collapsed under **Your numbers**; Flavor before numbers. On you copy dating-ish (**On you tonight** / empty jokes); fight-item arming is one chat line. Bottom nav **You** (route `/profile` unchanged). Locker still Sell / Equip; heals Use mid-fight.

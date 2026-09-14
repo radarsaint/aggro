@@ -95,6 +95,7 @@ export function Profile() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [standardsOpen, setStandardsOpen] = useState(false);
+  const [dangerOpen, setDangerOpen] = useState(false);
   const canRaiseStandards = standardsUnlocked(h.fightsCompleted);
   const standards: StandardsFloor = h.prefs.standards ?? 'open';
   const setStandards = (next: StandardsFloor) => {
@@ -176,6 +177,8 @@ export function Profile() {
             <RestBeat
               matchesTonight={state.matchesTonight ?? 0}
               shortRestsUsedTonight={state.shortRestsUsedTonight ?? 0}
+              drinkUnlockedTonight={state.drinkUnlockedTonight ?? false}
+              firstFightResolvedTonight={state.firstFightResolvedTonight ?? false}
               onShortRest={shortRest}
               onLongRest={longRest}
             />
@@ -235,13 +238,18 @@ export function Profile() {
               )}
             </div>
 
-            <button
-              type="button"
-              className="home-prefs-link"
-              onClick={() => setTab('prefs')}
-            >
-              Dating prefs
-            </button>
+            <div className="home-you-footer">
+              <button
+                type="button"
+                className="home-prefs-link"
+                onClick={() => setTab('prefs')}
+              >
+                Dating prefs
+              </button>
+              <Link to="/how" className="home-help-link">
+                How AGGRO works
+              </Link>
+            </div>
           </section>
         )}
 
@@ -382,25 +390,9 @@ export function Profile() {
             <h3 className="home-section-label">DATING PREFS</h3>
             <p className="home-lede">Utilities. Filters stay buried on purpose.</p>
 
-            <div className="home-utils" style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div className="home-utils">
               <button type="button" className="btn btn-outline btn-block" onClick={reshuffleDeck}>
                 Reshuffle passed creatures
-              </button>
-              <Link
-                to="/how"
-                className="btn btn-outline btn-block"
-                style={{ textAlign: 'center', textDecoration: 'none' }}
-              >
-                How AGGRO Works
-              </Link>
-              <button
-                type="button"
-                className="btn btn-ghost btn-block"
-                onClick={() => {
-                  if (confirm('Reset all AGGRO data on this device?')) resetAll();
-                }}
-              >
-                Reset Local Save
               </button>
             </div>
 
@@ -502,6 +494,33 @@ export function Profile() {
                       ))}
                     </div>
                   </div>
+                </div>
+              )}
+            </div>
+
+            <div className="home-danger" style={{ marginTop: 28 }}>
+              <button
+                type="button"
+                className="home-danger__toggle"
+                aria-expanded={dangerOpen}
+                onClick={() => setDangerOpen((v) => !v)}
+              >
+                {dangerOpen ? 'Hide danger zone' : 'Danger'}
+              </button>
+              {dangerOpen && (
+                <div className="home-danger__body">
+                  <p className="home-danger__lede">
+                    Wipes local progress on this device. Cannot be undone.
+                  </p>
+                  <button
+                    type="button"
+                    className="btn btn-danger-quiet btn-block"
+                    onClick={() => {
+                      if (confirm('Reset all AGGRO data on this device?')) resetAll();
+                    }}
+                  >
+                    Reset Local Save
+                  </button>
                 </div>
               )}
             </div>
