@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'knuckle_kit_net_19', beat: 'kit', lines: [
     'Knuckle: Net. Bad idea.',
-    'Knuckle: Bagged. Tear out.',
+    'Knuckle: Ticket snagged. Tear out.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'knuckle_kit_healing-potion_20', beat: 'kit', lines: [
     'Knuckle: Juice. Still snack.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hard win. Done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'knuckle_vic_net_41', beat: 'victory', lines: [
-    'Knuckle: Net then win.',
-    'Knuckle: Bagged. Ticket closed.',
+    'Knuckle: Mesh first. Ticket closed after.',
+    'Knuckle: Held still. Ticket stamped shut.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

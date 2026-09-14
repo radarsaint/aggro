@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'bleed-static_kit_net_19', beat: 'kit', lines: [
     'Bleed Static: You put a net on a sipper. That is not romance. That is rude.',
-    'Bleed Static: Bagged. Latch interrupted. If this is flirting, stop.',
+    'Bleed Static: Latch jammed shut. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'bleed-static_kit_healing-potion_20', beat: 'kit', lines: [
     'Bleed Static: You juiced the vintage I was drinking. Rude. Delicious.',

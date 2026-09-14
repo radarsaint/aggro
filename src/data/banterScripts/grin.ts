@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'grin_kit_net_19', beat: 'kit', lines: [
     'Grin: Net on a puddle. That is not a claim. Rude.',
-    'Grin: Bagged. I seep through holes for a living.',
+    'Grin: You pinned the smile. I seep through holes for a living.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'grin_kit_healing-potion_20', beat: 'kit', lines: [
     'Grin: Mid-fight sip. Planning a longer claim window?',

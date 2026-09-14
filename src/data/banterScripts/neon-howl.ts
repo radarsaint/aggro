@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Hard hit, then silence. Chase denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'neon-howl_vic_net_41', beat: 'victory', lines: [
-    'Neon Howl: Howl dies unfinished. Underpass loses the echo.',
-    'Neon Howl: Braid dies in silk. Chase over. Underpass loses the echo.',
+    'Neon Howl: Three mouths go quiet. Neon drips on empty pavement.',
+    'Neon Howl: Pack hits mesh and scatters. Pink Mile goes dark without a chase.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

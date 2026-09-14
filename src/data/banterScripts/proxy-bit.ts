@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'proxy-bit_kit_net_19', beat: 'kit', lines: [
     'Proxy Bit: You put a net on a sealed courier. Holes in the chain of custody. Legal liked that.',
-    'Proxy Bit: Bagged. Route interrupted. Return to sender: pending.',
+    'Proxy Bit: Route dies in the trap. Return to sender: pending.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'proxy-bit_kit_healing-potion_20', beat: 'kit', lines: [
     'Proxy Bit: Flask mid-route? Unsigned ink. Stamp still waits.',

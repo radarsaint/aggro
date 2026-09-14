@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'glasswing_kit_net_19', beat: 'kit', lines: [
     'Glasswing: Auditor stuck visible. Panic gets scored. Survey still rude.',
-    'Glasswing: Bagged. Commitment issues with holes. Score: messy.',
+    'Glasswing: Auditor grounded messy. Commitment with holes. Score: messy.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'glasswing_kit_healing-potion_20', beat: 'kit', lines: [
     'Glasswing: Flask mid-survey. Still scored a two. Mirror judged you soft.',

@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'chrome-edge_kit_net_19', beat: 'kit', lines: [
     'Chrome Edge: You put a net on a sword. That is not a sheath. That is rude.',
-    'Chrome Edge: Bagged. Hover interrupted. If this is flirting, stop.',
+    'Chrome Edge: Hover dies ugly. If this is flirting, stop.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'chrome-edge_kit_healing-potion_20', beat: 'kit', lines: [
     'Chrome Edge: You drank up mid-fight. Planning to live? Cute.',
@@ -201,8 +201,8 @@ export const nodes: ScriptNode[] = [
     'Chrome Edge: You found the weak steel and finished it. No polish left. Well done, thief.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'chrome-edge_vic_net_41', beat: 'victory', lines: [
-    'Chrome Edge: Demo unit under silk. Price tag still lied.',
-    'Chrome Edge: Sword grounded. Floor model hated that — price tag still lied.',
+    'Chrome Edge: Floor model grounded face-down. Price tag still lied.',
+    'Chrome Edge: Sword hits the tile and stays there. Sticky hands finally stop.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'pose-soft_kit_net_19', beat: 'kit', lines: [
     'Pose Soft: Net on the pose. Silhouette ruined. Rude.',
-    'Pose Soft: Bagged. Floorset notes weeping.',
+    'Pose Soft: Chin line ruined. Floorset notes weeping.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'pose-soft_kit_healing-potion_20', beat: 'kit', lines: [
     'Pose Soft: Mid-fight sip. Planning to hold forever?',
@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Found the soft pose and finished. No forever left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'pose-soft_vic_net_41', beat: 'victory', lines: [
-    'Pose Soft: Visual Merch stuck. Window loses the body.',
+    'Pose Soft: Chin drops. Floorset ends without a body in the light.',
     'Pose Soft: Mannequin down. Gallery is embarrassed.',
   ], requireFlags: ["netted"], weight: 3 },
 

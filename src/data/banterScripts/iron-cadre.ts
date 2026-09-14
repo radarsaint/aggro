@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'iron-cadre_kit_net_19', beat: 'kit', lines: [
     'Iron Cadre: Net on the Cadre. Formation ruined. Rude.',
-    'Iron Cadre: Bagged. We still advance through mesh.',
+    'Iron Cadre: Shields snagged. We advance anyway.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'iron-cadre_kit_healing-potion_20', beat: 'kit', lines: [
     'Iron Cadre: Mid-fight sip. Planning to hold the line?',

@@ -98,7 +98,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'clickers_kit_net_19', beat: 'kit', lines: [
     'Clickers: You put a net on hospitality. Commitment issues with holes.',
-    'Clickers: Bagged. Service interrupted. *click* Tip still theoretical.',
+    'Clickers: Service pauses ugly. *click* Tip still theoretical.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'clickers_kit_healing-potion_20', beat: 'kit', lines: [
     'Clickers: Flask mid-service. Tip: upgrade or tip harder. *click*',

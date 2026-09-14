@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'The Choir: Hard hit, then silence. Encore denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'the-choir_vic_net_41', beat: 'victory', lines: [
-    'The Choir: Verse dies unfinished. Dark softens without us.',
-    'The Choir: Hymn dies in silk. Harmony cut. Dark softens without us.',
+    'The Choir: Attendance ends cold. Soloists walk home lonely.',
+    'The Choir: Hymn never finds the downbeat. Sub-basement keeps the quiet we hated.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

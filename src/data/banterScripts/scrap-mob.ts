@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Hard hit, then silence. Strike denied.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'scrap-mob_vic_net_41', beat: 'victory', lines: [
-    'Scrap Mob: Chant dies on the line. Dumpster rights restore themselves.',
-    'Scrap Mob: Picket dies in silk. Line cut. Dumpster goes back to trash.',
+    'Scrap Mob: Chant loses the vote. Dumpster rights restore themselves.',
+    'Scrap Mob: Local 666 hits the mesh and loses the vote. Knives drop. Trash owns the floor again.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

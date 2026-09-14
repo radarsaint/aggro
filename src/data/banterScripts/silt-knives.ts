@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'silt-knives_kit_net_19', beat: 'kit', lines: [
     'Silt Knives: Net in blackwater. Guest list ruined. Rude.',
-    'Silt Knives: Bagged. Knives still warm through mesh.',
+    'Silt Knives: Knives still warm under the trap.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'silt-knives_kit_healing-potion_20', beat: 'kit', lines: [
     'Silt Knives: Mid-fight sip. Planning to stay on the list?',
@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Silt Knives: Found the soft silt and finished. No name left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [
-    'Silt Knives: Blackwater stuck. Guest list forgets your name.',
+    'Silt Knives: Guest list drops your name. Upstream litter wins ugly.',
     'Silt Knives: Blackwater down. Upstream litter wins ugly.',
   ], requireFlags: ["netted"], weight: 3 },
 

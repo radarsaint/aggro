@@ -97,7 +97,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'oxidize_kit_net_19', beat: 'kit', lines: [
     'Oxidize: Net on dinner. That is not a plate. Rude.',
-    'Oxidize: Bagged. Feelers still find metal.',
+    'Oxidize: Feelers thrash the netting. Metal still calls.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'oxidize_kit_healing-potion_20', beat: 'kit', lines: [
     'Oxidize: Mid-fight sip. Planning to keep your sword?',
@@ -188,7 +188,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Found the soft oxide and finished. No dinner left. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'oxidize_vic_net_41', beat: 'victory', lines: [
-    'Oxidize: Clearance hunger stuck. Oxide still smells you.',
+    'Oxidize: Feelers go still. Oxide still smells you on the rail.',
     'Oxidize: Clearance done. Dinner notes the insult.',
   ], requireFlags: ["netted"], weight: 3 },
 
