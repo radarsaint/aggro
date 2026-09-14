@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'rattlewire_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Rattlewire: You ran, then hit me that hard? Late runner with a finishing move.',
-    'Rattlewire: Respect for the swing — and offense taken. Your invite is still declined. Click.',
+    'Rattlewire: Impressed. Offended. Your invite is still declined. Click.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: [
     'Rattlewire: You drank up mid-slot. Planning to live? I prefer you rare and on the second.',
-    'Rattlewire: A bandage will not move the appointment. You are still late. Click.',
+    'Rattlewire: Healing reschedules nothing. Soft. Optimistic. Still late.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'rattlewire_kit_oil-flask_21', beat: 'kit', lines: [
     'Rattlewire: Oil like a no-show excuse on bone.',

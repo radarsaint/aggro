@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'iron-cadre_open_x_1', beat: 'open', lines: [
     'Iron Cadre: The Cadre doesn\'t do brave. We do quiet. Drill is free. Blood is on you. Eyes forward.',
-    'Iron Cadre: We waited for clean ranks. Then came the soft ones. You look soft — fall in, or we correct you.',
+    'Iron Cadre: Waited for clean ranks. Then came the soft ones. You look soft. Show us different — or fall in.',
   ], weight: 2 },
   { id: 'iron-cadre_open_0', beat: 'open', lines: [
     'Iron Cadre: Discipline is a rumor we correct. First flinch gets kindness. Second gets the shield-edge. Mostly kidding. Eyes forward.',
@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [
     'Iron Cadre: That counted. Rude to the line.',
-    'Iron Cadre: You struck the Cadre. That took nerve and poor judgment. We logged it.',
+    'Iron Cadre: Hit the Cadre. Bold. Dumb. Noted.',
   ] },
   { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Iron Cadre: Dinged. Still the quietest thing advancing.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'iron-cadre_w_wind_27', beat: 'wound', lines: [
     'Iron Cadre: First scratch. Used to believe in careful ranks.',
-    'Iron Cadre: You marked the shield-line. We are annoyed. The count still holds.',
+    'Iron Cadre: Scratched. Annoyed. Still on count.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'iron-cadre_w_bru_28', beat: 'wound', lines: [
     'Iron Cadre: Deeper scratch. Want a story? Keep drilling.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Iron Cadre: Break ranks mid-count? We advance anyway. Eyes forward.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'iron-cadre_run2_32', beat: 'run', lines: [
-    'Iron Cadre: Twice makes it personal. Fix your posture or we will.',
+    'Iron Cadre: Twice. Personal. Pathetic posture.',
     'Iron Cadre: Second escape. Not mad. Faster.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'iron-cadre_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'iron-cadre_def_heal_45', beat: 'defeat', lines: [
     'Iron Cadre: Healed and still went down. Optimistic. Wrong roster.',
-    'Iron Cadre: You drank, then hit the dirt. That posture would never pass Cadre drill.',
+    'Iron Cadre: Potion, then floor. Soft. Memorable. Bad posture.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

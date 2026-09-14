@@ -65,7 +65,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'glasswing_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Glasswing: You fled feedback, then hit me that hard? Commit to one score.',
-    'Glasswing: You fled the survey, then hit that hard. Mixed scores — I am impressed and offended.',
+    'Glasswing: You fled the survey, then hit that hard. Mixed scores. Impressed. Offended.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'glasswing_kit_poison_12', beat: 'kit', lines: [

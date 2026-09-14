@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'pose-soft_open_x_1', beat: 'open', lines: [
     'Pose Soft: Visual Merch doesn\'t do brave. We do chin-up forever. Pose is free. Stone isn\'t. Hold still.',
-    'Pose Soft: I waited for someone who\'d hold the pose. Then came the wigglers. You look like one — hold still, or freeze for real.',
+    'Pose Soft: I waited for someone who\'d hold the pose. Then came the wigglers. You look like one. Show me different — or freeze.',
   ], weight: 2 },
   { id: 'pose-soft_open_0', beat: 'open', lines: [
     'Pose Soft: Pose warranty is theater. First wiggle ends the look. Second ends you. Mostly kidding. Chin up.',
@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'pose-soft_hhit_5', beat: 'hunter_hit', lines: [
     'Pose Soft: That counted. Rude fitting.',
-    'Pose Soft: You hit the mannequin on purpose. Bold for a guest. Dumb for a silhouette. Noted in Visual Merch.',
+    'Pose Soft: Hit the merch. Bold. Dumb. Noted.',
   ] },
   { id: 'pose-soft_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Pose Soft: Dinged. Still the best-looking thing in this window.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'pose-soft_w_wind_27', beat: 'wound', lines: [
     'Pose Soft: First scratch. Used to believe in careful models.',
-    'Pose Soft: You scuffed the mannequin. I am annoyed. Still on display.',
+    'Pose Soft: Scratched. Annoyed. Still on display.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'pose-soft_w_bru_28', beat: 'wound', lines: [
     'Pose Soft: Deeper scratch. Want a story? Keep posing.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Pose Soft: Wiggle out of the floorset? Stone doesn\'t reschedule. Hold.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'pose-soft_run2_32', beat: 'run', lines: [
-    'Pose Soft: Twice makes it personal. Pathetic silhouette.',
+    'Pose Soft: Twice. Personal. Pathetic silhouette.',
     'Pose Soft: Second escape. Not mad. Faster.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'pose-soft_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'pose-soft_def_heal_45', beat: 'defeat', lines: [
     'Pose Soft: Healed and still went down. Optimistic. Wrong look.',
-    'Pose Soft: You drank, then collapsed on my floorset. Visual Merch does not approve that silhouette.',
+    'Pose Soft: Potion, then floor. Soft. Memorable. Bad silhouette.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

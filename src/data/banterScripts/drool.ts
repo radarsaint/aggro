@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drool_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Drool: You ran, then hit me that hard? Unsigned NDAs and a finishing move.',
-    'Drool: Ow — cute and rude. I still need your initials on page three.',
+    'Drool: Impressed. Offended. Still need your initials on page three.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drool_kit_healing-potion_20', beat: 'kit', lines: [
     'Drool: You drank up mid-fight. Planning to live? I prefer you rare, signed, and snack-adjacent.',
-    'Drool: Healing mid-signature? Adorable. You still owe me crisps and initials on page three.',
+    'Drool: Healing mid-pact. Soft. Optimistic. You still owe me crisps.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'drool_kit_oil-flask_21', beat: 'kit', lines: [
     'Drool: Oil mid-deal. Slippery like my terms. Fine print still sticks. Literally.',

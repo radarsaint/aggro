@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'oxidize_open_x_1', beat: 'open', lines: [
     'Oxidize: Clearance doesn\'t do brave. We do dinner. Demo\'s free. Oxide is forever. Come closer. Don\'t.',
-    'Oxidize: I waited for careful steel. Then came the loud armors. You smell loud — quiet down, or I season you.',
+    'Oxidize: Waited for careful steel. Then came the loud armors. You smell loud. Show me different — or rust.',
   ], weight: 2 },
   { id: 'oxidize_open_0', beat: 'open', lines: [
     'Oxidize: Returns are a myth. First touch seasons it. Second touch\'s on you. Mostly kidding. Smell that?',
@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'oxidize_hhit_5', beat: 'hunter_hit', lines: [
     'Oxidize: That counted. Seasoning early.',
-    'Oxidize: You swung on Clearance stock. Brave dinner choice. Stupid dinner choice. I noticed.',
+    'Oxidize: Hit Clearance. Bold. Dumb. Noted.',
   ] },
   { id: 'oxidize_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Oxidize: Dinged. Still hungrier than you.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'oxidize_w_wind_27', beat: 'wound', lines: [
     'Oxidize: First scratch. Used to believe in careful steel.',
-    'Oxidize: You scratched Clearance. I am annoyed. Still on final sale.',
+    'Oxidize: Scratched. Annoyed. Still on sale.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'oxidize_w_bru_28', beat: 'wound', lines: [
     'Oxidize: Deeper scratch. Want a story? Keep seasoning.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Oxidize: Walk off mid-sale? Oxide doesn\'t take returns. Dinner waits.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'oxidize_run2_32', beat: 'run', lines: [
-    'Oxidize: Twice makes it personal. Pathetic appetite.',
+    'Oxidize: Twice. Personal. Pathetic appetite.',
     'Oxidize: Second escape. Not mad. Faster flake.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'oxidize_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'oxidize_def_heal_45', beat: 'defeat', lines: [
     'Oxidize: Healed and still went down. Optimistic. Wrong sale.',
-    'Oxidize: You drank, then folded on Clearance tile. Final sale does not cover dignity.',
+    'Oxidize: Potion, then floor. Soft. Memorable. Bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

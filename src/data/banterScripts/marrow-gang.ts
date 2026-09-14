@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Marrow Gang: You ran, then hit us that hard? Deserter with a finishing move.',
-    'Marrow Gang: Clean strike. Bad manners. Still drilling. Eyes forward.',
+    'Marrow Gang: Impressed. Offended. Still drilling. Eyes forward.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
     'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
-    'Marrow Gang: A sip mid-muster does not fix lateness. Eyes forward. Bleed on the beat.',
+    'Marrow Gang: Healing mid-muster. Soft. Optimistic. Still late.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: [
     'Marrow Gang: Oil on the drill floor. Slippery recruit. Still counted.',

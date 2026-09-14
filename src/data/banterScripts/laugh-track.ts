@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'laugh-track_hhit_5', beat: 'hunter_hit', lines: [
     'Laugh Track: That counted. Bad timing for a joke.',
-    'Laugh Track: You walked into the laugh track on purpose. Brave, stupid, and now we have tape.',
+    'Laugh Track: Hit the track. Bold. Dumb. Noted.',
   ] },
   { id: 'laugh-track_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Laugh Track: Dinged. Still the loudest thing in the booth.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'laugh-track_w_wind_27', beat: 'wound', lines: [
     'Laugh Track: First scratch. Used to believe in careful guests.',
-    'Laugh Track: You scratched the bit. We are annoyed. Track still rolling.',
+    'Laugh Track: Scratched. Annoyed. Still on air.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'laugh-track_w_bru_28', beat: 'wound', lines: [
     'Laugh Track: Deeper scratch. Want a story? Keep falling.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Laugh Track: Walk out mid-bit? The track still cues the howl.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'laugh-track_run2_32', beat: 'run', lines: [
-    'Laugh Track: Twice makes it personal. Pathetic bit.',
+    'Laugh Track: Twice. Personal. Pathetic bit.',
     'Laugh Track: Second escape. Not mad. Louder.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'laugh-track_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'laugh-track_def_heal_45', beat: 'defeat', lines: [
     'Laugh Track: Healed and still went down. Optimistic. Wrong cue.',
-    'Laugh Track: You drank, then ate floor on cue. The track loved it. Your dignity did not.',
+    'Laugh Track: Potion, then floor. Soft. Memorable. Bad bit.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'cinder-crew_open_x_1', beat: 'open', lines: [
     'Cinder Crew: Group chat doesn\'t do brave. We do Seen. Ignited. Spark\'s free. Foam is a rumor. Breathe for us.',
-    'Cinder Crew: We waited for careful mutes. Then came the lurkers. You look muted — speak up, or RSVP with oxygen.',
+    'Cinder Crew: Waited for careful mutes. Then came the lurkers. You look muted. Show us different — or RSVP oxygen.',
   ], weight: 2 },
   { id: 'cinder-crew_open_0', beat: 'open', lines: [
     'Cinder Crew: Read receipts are theater. First breath sparks. Second breath\'s on you. Mostly kidding. Breathe for us.',
@@ -38,7 +38,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'cinder-crew_hhit_5', beat: 'hunter_hit', lines: [
     'Cinder Crew: That counted. Bad ping.',
-    'Cinder Crew: You hit a group chat that ignites on read. Bold ping. Dumb ping. Seen.',
+    'Cinder Crew: Hit the crew. Bold. Dumb. Noted.',
   ] },
   { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Cinder Crew: Dinged. Still the hottest read in Facilities.',
@@ -131,7 +131,7 @@ export const nodes: ScriptNode[] = [
 
   { id: 'cinder-crew_w_wind_27', beat: 'wound', lines: [
     'Cinder Crew: First scratch. Used to believe in careful mutes.',
-    'Cinder Crew: You dinged the chat. We are annoyed. Read receipt still says Seen.',
+    'Cinder Crew: Scratched. Annoyed. Still Seen.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'cinder-crew_w_bru_28', beat: 'wound', lines: [
     'Cinder Crew: Deeper scratch. Want a story? Keep breathing.',
@@ -151,7 +151,7 @@ export const nodes: ScriptNode[] = [
     'Cinder Crew: Mute mid-thread? The chat still shows Seen. We chase.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'cinder-crew_run2_32', beat: 'run', lines: [
-    'Cinder Crew: Twice makes it personal. Pathetic mute.',
+    'Cinder Crew: Twice. Personal. Pathetic mute.',
     'Cinder Crew: Second escape. Not mad. Hotter.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'cinder-crew_chase_33', beat: 'chase', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'cinder-crew_def_heal_45', beat: 'defeat', lines: [
     'Cinder Crew: Healed and still went down. Optimistic. Wrong chat.',
-    'Cinder Crew: You drank, then face-planted in a chat that ignites on read. Mute will not save that clip.',
+    'Cinder Crew: Potion, then floor. Soft. Memorable. Bad mute.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

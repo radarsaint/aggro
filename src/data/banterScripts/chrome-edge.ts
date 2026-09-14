@@ -44,7 +44,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'chrome-edge_hhit_5', beat: 'hunter_hit', lines: [
     'Chrome Edge: Okay. That one counted. Rude.',
-    'Chrome Edge: You hit the floor model. Touching was already rude — swinging is a write-up.',
+    'Chrome Edge: You hit the merchandise. Bold. Dumb. Noted.',
   ] },
   { id: 'chrome-edge_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Chrome Edge: You dinged me. I\'m still the best-looking thing in this fight.',
@@ -142,7 +142,7 @@ export const nodes: ScriptNode[] = [
   // ── WOUNDS ──
   { id: 'chrome-edge_w_wind_27', beat: 'wound', lines: [
     'Chrome Edge: First scratch. I used to think careful hands existed.',
-    'Chrome Edge: You scratched the floor model. I am annoyed. Still on display.',
+    'Chrome Edge: Scratched. Annoyed. Still on display.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'chrome-edge_w_bru_28', beat: 'wound', lines: [
     'Chrome Edge: Deep scratch. Keep going if you want a story.',
@@ -220,6 +220,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: [
     'Chrome Edge: You healed and still went down. Optimistic. Wrong.',
-    'Chrome Edge: You drank, then kissed linoleum. Floor models are supposed to stay upright — you did not.',
+    'Chrome Edge: Potion, then floor. Soft. Memorable. Bad look on you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

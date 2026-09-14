@@ -139,7 +139,7 @@ export const nodes: ScriptNode[] = [
   // ── WOUNDS ──
   { id: 'sister-static_w_wind_27', beat: 'wound', lines: [
     'Sister Static: First scratch. Used to believe in careful callers.',
-    'Sister Static: You scratched the broadcast. I am annoyed. Channel 7 stays live.',
+    'Sister Static: Scratched. Annoyed. Still on air.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'sister-static_w_bru_28', beat: 'wound', lines: [
     'Sister Static: Color under the snow. Want a story? Keep swinging.',
@@ -160,7 +160,7 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Hang up mid-hour? Snow keeps the dial. Stay on the line.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'sister-static_run2_32', beat: 'run', lines: [
-    'Sister Static: Twice makes it personal. The meters noticed.',
+    'Sister Static: Twice. Personal. Meters noticed.',
     'Sister Static: Second escape. Not mad. Ratings are.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'sister-static_chase_33', beat: 'chase', lines: [
@@ -217,6 +217,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sister-static_def_heal_45', beat: 'defeat', lines: [
     'Sister Static: Healed and still went down. Optimistic. Wrong station.',
-    'Sister Static: You drank, then dropped on air. Channel 7 will replay that look forever.',
+    'Sister Static: Potion, then floor. Soft. Memorable. Bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

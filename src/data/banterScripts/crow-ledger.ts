@@ -65,7 +65,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'crow-ledger_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Crow Ledger: You fled mid-audit, then hit us that hard. Late fee: emotional.',
-    'Crow Ledger: You fled the railing, then pecked back that hard. Mixed filings — impressed, offended, accruing interest.',
+    'Crow Ledger: You fled the railing, then pecked back that hard. Mixed filings. Impressed. Offended.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'crow-ledger_kit_poison_12', beat: 'kit', lines: [
