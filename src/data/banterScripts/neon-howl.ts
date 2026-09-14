@@ -39,17 +39,17 @@ export const nodes: ScriptNode[] = [
     'Neon Howl: Ow. Braid hiccuped. Next bite comes uglier — pack still fast.',
   ] },
   { id: 'neon-howl_hhit_5', beat: 'hunter_hit', lines: [
-    'Neon Howl: You hit the pack. Three bodies felt it. One howl. Neon does not fade.',
+    'Neon Howl: You tagged the braid mid-chase. Neon still wet. Pack still hungry for the sound of you running.',
     'Neon Howl: Keep running.',
   ] },
   { id: 'neon-howl_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Neon Howl: We are leaking. You are still soft. Fix one. Or keep fleeing — we prefer it.',
+    'Neon Howl: We are leaking and still braiding. Keep fleeing — soft prey makes better echo.',
     'Neon Howl: Beat up and still braiding. That is chase hunger talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
   { id: 'neon-howl_hmiss_7', beat: 'hunter_miss', lines: [
-    'Neon Howl: Missed. Expensive air. Feet still louder. Try again.',
+    'Neon Howl: Whiff. Your feet are still louder than that swing. Run or bite.',
     'Neon Howl: Air. Mean it next time — or just run. We like both.',
   ] },
   { id: 'neon-howl_hmiss_8', beat: 'hunter_miss', lines: [

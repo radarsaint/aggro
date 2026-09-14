@@ -39,17 +39,17 @@ export const nodes: ScriptNode[] = [
     'Scrap Mob: Ow. Picket staggered. Next knife comes uglier — volume stays theology.',
   ] },
   { id: 'scrap-mob_hhit_5', beat: 'hunter_hit', lines: [
-    'Scrap Mob: You hit Local 666. Four knives felt it. One chant. Volume still theology.',
+    'Scrap Mob: You crossed the picket and drew blood. Local 666 does not file a complaint — we raise the volume.',
     'Scrap Mob: Keep crossing — we dare you.',
   ] },
   { id: 'scrap-mob_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Scrap Mob: We are leaking. You are still soft. Fix one. Or pay dues in blood.',
+    'Scrap Mob: We are leaking and still surrounding. Soft dues get collected in blood.',
     'Scrap Mob: Beat up and still picketing. That is solidarity talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
   { id: 'scrap-mob_hmiss_7', beat: 'hunter_miss', lines: [
-    'Scrap Mob: Missed. Expensive air. Line still holds. Try again.',
+    'Scrap Mob: Whiff. The line did not move. Cross again or leave lighter.',
     'Scrap Mob: Air. Mean it next time — or just yell. We chant both.',
   ] },
   { id: 'scrap-mob_hmiss_8', beat: 'hunter_miss', lines: [

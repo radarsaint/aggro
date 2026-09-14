@@ -33,7 +33,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'iron-cadre_hhit_4', beat: 'hunter_hit', lines: [
-    'Iron Cadre: Felt that. Formation holds.',
+    'Iron Cadre: That one landed on the line. Shields did not break.',
     'Iron Cadre: Eyes on the count. This yard is ours — shields already know.',
   ] },
   { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [

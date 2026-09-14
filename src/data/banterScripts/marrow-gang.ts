@@ -39,17 +39,17 @@ export const nodes: ScriptNode[] = [
     'Marrow Gang: Ow. Formation blinked. Next volley comes uglier. Eyes forward.',
   ] },
   { id: 'marrow-gang_hhit_5', beat: 'hunter_hit', lines: [
-    'Marrow Gang: You hit Drill Team. Formation holds. Posture unbroken. Eyes forward.',
+    'Marrow Gang: You tagged Drill Team. Cadence did not break. Eyes forward — the count owns the bruise.',
     'Marrow Gang: Count continues.',
   ] },
   { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Marrow Gang: We are leaking. You are still soft. Fix one. Or bleed on the beat.',
+    'Marrow Gang: We are leaking and still on the beat. Soft heroes bleed on our count.',
     'Marrow Gang: Beat up and still drilling. That is the count talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
   { id: 'marrow-gang_hmiss_7', beat: 'hunter_miss', lines: [
-    'Marrow Gang: Missed. Expensive air. Formation holds. Try again.',
+    'Marrow Gang: Whiff. Expensive air. Fall in or waste another swing.',
     'Marrow Gang: Air. Mean it next time — or fall in. We count both.',
   ] },
   { id: 'marrow-gang_hmiss_8', beat: 'hunter_miss', lines: [
@@ -146,7 +146,7 @@ export const nodes: ScriptNode[] = [
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'marrow-gang_w_bld_29', beat: 'wound', lines: [
     'Marrow Gang: Okay. We are leaking. You are still soft. Finish it or bleed on the beat.',
-    'Marrow Gang: Beat up and standing. Formation holds. Still drilling.',
+    'Marrow Gang: Beat up and standing. Still drilling on the second. Soft heroes spoil muster.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'marrow-gang_w_heart_30', beat: 'wound', lines: [
     'Marrow Gang: That landed on something soft we weren\'t advertising at muster.',

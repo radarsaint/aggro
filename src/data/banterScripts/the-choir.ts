@@ -39,11 +39,11 @@ export const nodes: ScriptNode[] = [
     'The Choir: Ow. Harmony cracked. Next verse comes uglier — still sweet enough to eat you.',
   ] },
   { id: 'the-choir_hhit_5', beat: 'hunter_hit', lines: [
-    'The Choir: You hit the Morale Ensemble. Harmony took the bruise. Three voices. Still sweet.',
+    'The Choir: You punched the hymn mid-verse. We stayed on pitch. Soloists get eaten for less.',
     'The Choir: Still singing.',
   ] },
   { id: 'the-choir_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'The Choir: We are leaking. You are still soft. Fix one. Or join the bleed.',
+    'The Choir: We are leaking and still on hymn. Soft attendance joins the bleed.',
     'The Choir: Beat up and still on hymn. That is attendance talking.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
