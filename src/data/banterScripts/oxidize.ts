@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'oxidize_kit_ran_23', beat: 'kit', lines: [
     'Oxidize: You ran from Clearance, then rummaged. Hunger does not respect accessories.',
-    'Oxidize: Flee-kit combo. Soft. Still coming.',
+    'Oxidize: Ran, then rummaged mid-hunger. Soft Clearance. Dinner still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'oxidize_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'oxidize_def_heal_45', beat: 'defeat', lines: [
     'Oxidize: Healed and still went down. Optimistic. Wrong sale.',
-    'Oxidize: Potion, then floor. Soft. Memorable. Bad look.',
+    'Oxidize: You drank, then kissed Clearance tile. Soft dinner. Bad look.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

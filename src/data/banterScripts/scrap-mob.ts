@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'scrap-mob_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Scrap Mob: You ran, then hit us that hard? Scab with a finishing move.',
-    'Scrap Mob: Impressed. Offended. Still loud. Still we.',
+    'Scrap Mob: You bolted, then cut the picket. Local 666 is louder about that than polite.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -106,7 +106,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'scrap-mob_kit_healing-potion_20', beat: 'kit', lines: [
     'Scrap Mob: You drank up mid-strike. Planning to live? We prefer you rare and surroundable.',
-    'Scrap Mob: Healing mid-picket. Dues just got hungrier for soft blood.',
+    'Scrap Mob: Healing mid-picket. Soft blood just raised the dues. Knives notice.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'scrap-mob_kit_oil-flask_21', beat: 'kit', lines: [
     'Scrap Mob: Oil on the dump. Slippery scab. Still dinner.',

@@ -65,7 +65,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'bleed-static_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Bleed Static: You bolted, then hit me that hard? Commit to the date or leave.',
-    'Bleed Static: You ran from the latch then stabbed it. Mixed signals. Impressed. Offended.',
+    'Bleed Static: You ran from the latch then stabbed it. Mixed signals. Vintage still thirsty.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'bleed-static_kit_poison_12', beat: 'kit', lines: [
@@ -82,7 +82,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'bleed-static_kit_acid-vial_15', beat: 'kit', lines: [
     'Bleed Static: Acid mid-sip. Your face is the spill. Sticky. Personal.',
-    'Bleed Static: You threw a vial at a date. Rude. Memorable. Still thirsty.',
+    'Bleed Static: You threw a vial at a date. Rude. Vintage still thirsty.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'bleed-static_kit_holy-water_16', beat: 'kit', lines: [
     'Bleed Static: Holy water. Cute. I am not undead. I am benefits.',

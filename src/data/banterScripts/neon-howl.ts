@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'neon-howl_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Neon Howl: You ran, then hit us that hard? Prey with a finishing move. Confusing. Delicious.',
-    'Neon Howl: Impressed. Offended. Still braiding. Still hungry.',
+    'Neon Howl: You ran, then tagged the braid. Pack is annoyed and still hungry.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──

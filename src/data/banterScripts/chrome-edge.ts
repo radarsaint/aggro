@@ -220,6 +220,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: [
     'Chrome Edge: You healed and still went down. Optimistic. Wrong.',
-    'Chrome Edge: Potion, then floor. Soft. Memorable. Bad look on you.',
+    'Chrome Edge: You drank, then dropped under the lights. Soft shopper. Bad look on you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

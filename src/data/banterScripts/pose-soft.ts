@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'pose-soft_kit_ran_23', beat: 'kit', lines: [
     'Pose Soft: You fled the floorset, then dug for toys. Décor never runs. Noted as coward.',
-    'Pose Soft: Flee-kit combo. Soft. Still coming.',
+    'Pose Soft: Ran, then rummaged mid-pose. Soft floorset. Still coming for the chin.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'pose-soft_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'pose-soft_def_heal_45', beat: 'defeat', lines: [
     'Pose Soft: Healed and still went down. Optimistic. Wrong look.',
-    'Pose Soft: Potion, then floor. Soft. Memorable. Bad silhouette.',
+    'Pose Soft: You drank, then collapsed the floorset. Soft silhouette. Window wins.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

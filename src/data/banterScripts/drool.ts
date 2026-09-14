@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drool_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Drool: You ran, then hit me that hard? Unsigned NDAs and a finishing move.',
-    'Drool: Impressed. Offended. Still need your initials on page three.',
+    'Drool: You ran, then hit me cute. Still need your initials on page three.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──

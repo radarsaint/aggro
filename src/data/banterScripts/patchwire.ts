@@ -64,7 +64,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'patchwire_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Patchwire: You fled the vote, then hit us that hard? Pick a side of the fridge.',
-    'Patchwire: You fled parliament, then landed a whip. Mixed votes. Impressed. Offended.',
+    'Patchwire: You fled parliament, then landed a whip. Mixed votes. Quorum still hungry.',
   ], requireFlags: ["ran"], weight: 3 },
 
   { id: 'patchwire_kit_poison_12', beat: 'kit', lines: [

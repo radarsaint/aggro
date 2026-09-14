@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'rattlewire_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Rattlewire: You ran, then hit me that hard? Late runner with a finishing move.',
-    'Rattlewire: Impressed. Offended. Your invite is still declined. Click.',
+    'Rattlewire: You fled the slot, then landed a hit. Invite still declined. Click.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──

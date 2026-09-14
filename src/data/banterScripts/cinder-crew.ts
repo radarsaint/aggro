@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
     'Cinder Crew: You fled the boiler, then rummaged. Cowards still RSVP with lungs.',
-    'Cinder Crew: Flee-kit combo. Soft. Still coming on read.',
+    'Cinder Crew: Ran, then dug for toys. Soft exit. Still coming on read.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'cinder-crew_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'cinder-crew_def_heal_45', beat: 'defeat', lines: [
     'Cinder Crew: Healed and still went down. Optimistic. Wrong chat.',
-    'Cinder Crew: Potion, then floor. Soft. Memorable. Bad mute.',
+    'Cinder Crew: You drank, then dropped mid-thread. Soft mute. Spark still on.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -119,7 +119,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
     'Sister Static: You fled Channel 7, then rummaged. Bad reception and worse spine.',
-    'Sister Static: Flee-kit bit. Soft. Channel 7 keeps coming.',
+    'Sister Static: Ran with a bag of toys. Channel 7 keeps coming anyway.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──
@@ -217,6 +217,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sister-static_def_heal_45', beat: 'defeat', lines: [
     'Sister Static: Healed and still went down. Optimistic. Wrong station.',
-    'Sister Static: Potion, then floor. Soft. Memorable. Bad look.',
+    'Sister Static: You drank, then dropped mid-broadcast. Soft guest. Snow keeps rolling.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

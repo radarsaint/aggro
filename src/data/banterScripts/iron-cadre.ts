@@ -113,7 +113,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
     'Iron Cadre: You broke formation, then dug for toys. Freelancer energy. We hate that.',
-    'Iron Cadre: Flee-kit combo. Soft. We still advance.',
+    'Iron Cadre: Ran, then dug for toys. Soft drill. We still advance.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'iron-cadre_mhit_24', beat: 'monster_hit', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'iron-cadre_def_heal_45', beat: 'defeat', lines: [
     'Iron Cadre: Healed and still went down. Optimistic. Wrong roster.',
-    'Iron Cadre: Potion, then floor. Soft. Memorable. Bad posture.',
+    'Iron Cadre: You drank, then dropped. Soft recruit. Bad posture for the yard.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

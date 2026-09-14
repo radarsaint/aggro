@@ -68,7 +68,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Marrow Gang: You ran, then hit us that hard? Deserter with a finishing move.',
-    'Marrow Gang: Impressed. Offended. Still drilling. Eyes forward.',
+    'Marrow Gang: You broke formation, then hit drill. Still drilling. Eyes forward.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──

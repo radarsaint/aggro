@@ -69,7 +69,7 @@ export const nodes: ScriptNode[] = [
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'hexhive_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Hexhive: You ran, then hit us that hard? Flee with a finishing move. Cute.',
-    'Hexhive: Impressed. Offended. Still crawling. Still under your collar.',
+    'Hexhive: You ran, then hit the swarm that hard. Cute cardio. We are still under your collar.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──

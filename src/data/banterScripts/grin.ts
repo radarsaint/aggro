@@ -118,7 +118,7 @@ export const nodes: ScriptNode[] = [
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'grin_kit_ran_23', beat: 'kit', lines: [
     'Grin: You ran, then rummaged like the annex was a clearance bin. Claim denied with prejudice.',
-    'Grin: Flee-kit combo. Soft. Still unclaimed. Still coming.',
+    'Grin: Ran, then rummaged like Lost & Found was a yard sale. Still unclaimed. Still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──
@@ -216,6 +216,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'grin_def_heal_45', beat: 'defeat', lines: [
     'Grin: Healed and still went down. Optimistic. Wrong desk.',
-    'Grin: Potion, then floor. Soft. Memorable. Bad look.',
+    'Grin: You drank, then became inventory early. Soft claim. Stub already stamped.',
   ], requireFlags: ["healed"], weight: 3 },
 ];
