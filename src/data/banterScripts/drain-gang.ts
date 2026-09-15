@@ -9,11 +9,11 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   { id: 'drain-gang_open_x_0', beat: 'open', lines: [
     'Drain Gang: We are not the breakroom rats. This is a franchise with bigger bodies and meaner landlords, cute enough that you pause — and that pause is the fee. Soft ankles preferred. Grate rights on the line.',
-    'Drain Gang: Every overflow is a storefront. You\'re window shopping wrong. Cute enough you hesitate. Hesitation is the royalty fee.',
+    'Drain Gang: Every overflow is a storefront. You are window shopping wrong. Cute enough you hesitate. Hesitation is the royalty fee.',
   ], weight: 2 },
   { id: 'drain-gang_open_x_1', beat: 'open', lines: [
     'Drain Gang: Territory maps in grit. Bigger than the crumb rats. Meaner landlords. Pay up or limp. Winner keeps the storefront. Loser pays in pride.',
-    'Drain Gang: Ankle tax. Street cred. Franchise fees. Hygiene we don\'t discuss. Our name\'s on the map. Yours is about to be under it.',
+    'Drain Gang: Ankle tax. Street cred. Franchise fees. Hygiene we do not discuss. Our name\'s on the map. Yours is about to be under it.',
   ], weight: 2 },
   { id: 'drain-gang_open_0', beat: 'open', lines: [
     'Drain Gang: Overflow Grate Franchisees. Not crumb-rat politics. Landlord mean. Street-cute. Franchise hustle with teeth.',
@@ -21,15 +21,15 @@ export const nodes: ScriptNode[] = [
   ], weight: 2 },
   { id: 'drain-gang_open_1', beat: 'open', lines: [
     'Drain Gang: Soft ankles. Picnics. Rivals to outnumber. Grate rights in writing. Pay the fee or limp.',
-    'Drain Gang: Won\'t cover the franchise fee? Ankles will.',
+    'Drain Gang: Will not cover the franchise fee? Ankles will.',
   ], weight: 1 },
   { id: 'drain-gang_open_2', beat: 'open', lines: [
-    'Drain Gang: Don\'t flinch first. Flinches are royalty. Landlord energy. Pack date.',
+    'Drain Gang: Do not flinch first. Flinches are royalty. Landlord energy. Pack date.',
     'Drain Gang: Mystery shopper? Leave. Fighter? Stop sweating on the territory map.',
   ], weight: 1 },
   { id: 'drain-gang_open_3', beat: 'open', lines: [
-    'Drain Gang: Quiet truth: hesitation pays the royalty. We collect ankles when wallets won\'t.',
-    'Drain Gang: Pay the fee or limp. Franchise doesn\'t do charity.',
+    'Drain Gang: Quiet truth: hesitation pays the royalty. We collect ankles when wallets will not.',
+    'Drain Gang: Pay the fee or limp. Franchise does not do charity.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   { id: 'drain-gang_hhit_4', beat: 'hunter_hit', lines: [
@@ -41,8 +41,8 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: That cut stays. Franchise archives cuts. Royalty compounds.',
   ] },
   { id: 'drain-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Drain Gang: We\'re dripping grit. You\'re still soft on the fee. Correct one.',
-    'Drain Gang: Hurt and still collecting. That\'s franchise hustle.',
+    'Drain Gang: We are dripping grit. You are still soft on the fee. Correct one.',
+    'Drain Gang: Hurt and still collecting. That is franchise hustle.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   { id: 'drain-gang_hmiss_7', beat: 'hunter_miss', lines: [
@@ -51,7 +51,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'drain-gang_hmiss_8', beat: 'hunter_miss', lines: [
     'Drain Gang: Missed. Packing the grate is the whole hustle.',
-    'Drain Gang: Swing like Overflow Grate owes you ankles — it doesn\'t.',
+    'Drain Gang: Swing like Overflow Grate owes you ankles — it does not.',
   ] },
 
   { id: 'drain-gang_hcrit_9', beat: 'hunter_crit', lines: [
@@ -59,11 +59,11 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Hard hit on the franchise. The grate just rattled. Royalty compounds.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drain-gang_hcrit_10', beat: 'hunter_crit', lines: [
-    'Drain Gang: You found the soft ankle we tax under the brand. Freeloader scores.',
+    'Drain Gang: You clipped the ankle we tax under the brand. Freeloader scores.',
     'Drain Gang: That almost felt like a territory flip. Almost. Royalty still due. Swing again.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'drain-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Drain Gang: You fled the fee, then hit the landlords. Impressed. Offended. Royalty doubles.',
+    'Drain Gang: You fled the fee, then hit the landlords. Royalty doubles. Pay up.',
     'Drain Gang: You fled the grate, then hit that hard. Not crumb-rat energy. Royalty doubled.',
   ], requireFlags: ["ran"], weight: 3 },
 
@@ -76,7 +76,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: You lit our storefront. Landlords hate that. We hate you more.',
   ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
   { id: 'drain-gang_kit_caltrops_14', beat: 'kit', lines: [
-    'Drain Gang: Iron teeth. Ankles on the menu — that\'s our whole brand.',
+    'Drain Gang: Iron teeth. Ankles on the menu — that is our whole brand.',
     'Drain Gang: You seeded spite on turf we already tax. Cute. Redundant. Not crumb-rat work.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'drain-gang_kit_acid-vial_15', beat: 'kit', lines: [
@@ -96,11 +96,11 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Bear-trap for Overflow Grate prey. Romance is dead. We aren\'t.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'drain-gang_kit_net_19', beat: 'kit', lines: [
-    'Drain Gang: Mesh on franchisees. Commitment issues with holes. Royalty compounds.',
-    'Drain Gang: You bagged us. Flail is the receipt. Territory still ours.',
+    'Drain Gang: Franchise interrupted. Royalty still compounds.',
+    'Drain Gang: Territory interrupted. Your panic is the receipt. Still ours.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'drain-gang_kit_healing-potion_20', beat: 'kit', lines: [
-    'Drain Gang: You topped off mid-fee. Soft freeloader. Fee still applies.',
+    'Drain Gang: Flask mid-fee. Soft freeloader. Fee still applies.',
     'Drain Gang: Healing. We prefer you rare. Ankle tax continues.',
   ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
   { id: 'drain-gang_kit_oil-flask_21', beat: 'kit', lines: [
@@ -108,42 +108,42 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Grease on the overflow. Territory still ours. Ankles still due.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'drain-gang_kit_gen_22', beat: 'kit', lines: [
-    'Drain Gang: Rummaging won\'t pause the royalty fee. We\'re right here.',
-    'Drain Gang: Unauthorized franchise tools. We\'re answering in fees.',
+    'Drain Gang: Scavenging will not pause the royalty fee. We are right here.',
+    'Drain Gang: Unauthorized franchise tools. We are answering in fees.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'drain-gang_kit_ran_23', beat: 'kit', lines: [
-    'Drain Gang: You ran, then rummaged. Freeloader with franchise toys.',
-    'Drain Gang: Bolt then forage. Overflow Grate grades that soft. Not crumb-rat soft — worse.',
+    'Drain Gang: You left the grate to forage. Freeloader energy. Fee doubles.',
+    'Drain Gang: Bolt then forage. Overflow Grate doubles the fee for the rummage.',
   ], requireFlags: ["ran"], weight: 2 },
 
   { id: 'drain-gang_mhit_24', beat: 'monster_hit', lines: [
-    'Drain Gang: That\'s for the unread fees and the hesitation you paid.',
+    'Drain Gang: That is for the unread fees and the hesitation you paid.',
     'Drain Gang: Bite landed. You asked for it. Ankles.',
   ] },
   { id: 'drain-gang_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Drain Gang: We\'re hurt. You\'re hurt more. Royalty collected either way.',
+    'Drain Gang: We are hurt. You are hurt more. Royalty collected either way.',
     'Drain Gang: Dripping grit and still landing. Franchise talks.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'drain-gang_mmiss_26', beat: 'monster_miss', lines: [
     'Drain Gang: Missed. Enjoy the gap. Royalty still accrues.',
-    'Drain Gang: Close call. Don\'t build a storefront on it.',
+    'Drain Gang: Close call. Do not build a storefront on it.',
   ] },
 
   { id: 'drain-gang_w_wind_27', beat: 'wound', lines: [
-    'Drain Gang: Nick on the map. Don\'t frame it.',
+    'Drain Gang: Nick on the map. Do not frame it.',
     'Drain Gang: Barely a fee. Upgrade the intent — or the bite.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'drain-gang_w_bru_28', beat: 'wound', lines: [
     'Drain Gang: Bruise in the grit. Keep painting.',
-    'Drain Gang: Mid-fee damage. Persistent — like a freeloader who won\'t pay.',
+    'Drain Gang: Mid-fee damage. Persistent — like a freeloader who will not pay.',
   ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
   { id: 'drain-gang_w_bld_29', beat: 'wound', lines: [
-    'Drain Gang: Okay. We\'re dripping. Royalty still due.',
+    'Drain Gang: Okay. We are dripping. Royalty still due.',
     'Drain Gang: Hurt bad and standing. Finish it or become a grate ornament. Bigger than crumb-rats.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'drain-gang_w_heart_30', beat: 'wound', lines: [
     'Drain Gang: That one landed on a fee we weren\'t advertising.',
-    'Drain Gang: Don\'t look at us like that while you\'re winning. Landlords hate pity.',
+    'Drain Gang: Do not look at us like that while you are winning. Landlords hate pity.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   { id: 'drain-gang_run_31', beat: 'run', lines: [
@@ -155,7 +155,7 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: Second escape. We noticed. Royalty doubled. Ankles.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'drain-gang_chase_33', beat: 'chase', lines: [
-    'Drain Gang: Jogging after a royalty fee looks silly. Collecting ankles doesn\'t.',
+    'Drain Gang: Jogging after a royalty fee looks silly. Collecting ankles does not.',
     'Drain Gang: You wanted distance. We wanted ankles. Grate still staffed.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'drain-gang_chase2_34', beat: 'chase', lines: [
@@ -172,8 +172,8 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["smoke"], weight: 3 },
 
   { id: 'drain-gang_vic_37', beat: 'victory', lines: [
-    'Drain Gang: You won. Keep the map. Leave the ankles. The map still has our name. Royalty forgiven — bitterly.',
-    'Drain Gang: Fine. Take it. Territory lost. Royalty forgiven — bitterly. Worst franchise visit of your life.',
+    'Drain Gang: Territory lost. Leave the ankles. Map still has our name. Royalty forgiven — bitterly.',
+    'Drain Gang: Territory stamped closed. Royalty forgiven — bitterly. Worst franchise visit of your life.',
   ], weight: 1 },
   { id: 'drain-gang_vic_heal_38', beat: 'victory', lines: [
     'Drain Gang: Flask mid-fee and you still beat us. Soft freeloader. Almost franchised.',
@@ -184,12 +184,12 @@ export const nodes: ScriptNode[] = [
     'Drain Gang: You made landlords chase you around the overflow. We bill for jogging. Still lost.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'drain-gang_vic_crit_40', beat: 'victory', lines: [
-    'Drain Gang: You cut through the grate. Fight\'s over. We\'ll give you that.',
-    'Drain Gang: You found the soft ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
+    'Drain Gang: Grate splits. Fee ends. We will give you that.',
+    'Drain Gang: You clipped the taxed ankle and finished the fee. Territory lost. Royalty forgiven — bitterly.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'drain-gang_vic_net_41', beat: 'victory', lines: [
-    'Drain Gang: You bagged the franchise and stole the territory. Ugly. Honest.',
-    'Drain Gang: Net, then win. Franchise closed. Royalty forgiven — bitterly.',
+    'Drain Gang: You lassoed the franchise and stole the territory. Fee collected anyway.',
+    'Drain Gang: Franchise closed. Royalty forgiven — bitterly.',
   ], requireFlags: ["netted"], weight: 3 },
 
   { id: 'drain-gang_def_42', beat: 'defeat', lines: [
@@ -206,6 +206,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'drain-gang_def_heal_45', beat: 'defeat', lines: [
     'Drain Gang: You healed and still went down. Flask optimism failed the franchise.',
-    'Drain Gang: You topped off, then hit the grate. Soft freeloader. Fee collected anyway.',
+    'Drain Gang: You drank, then hit the grate. Soft freeloader. Fee collected anyway.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

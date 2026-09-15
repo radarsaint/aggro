@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Talk hallway. Smash door. Pick.',
   ], weight: 2 },
   { id: 'knuckle_open_x_1', beat: 'open', lines: [
-    'Knuckle: Words waste time. Axes don\'t.',
+    'Knuckle: Words waste time. Axes do not.',
     'Knuckle: You look smashable. Prove wrong.',
   ], weight: 2 },
   { id: 'knuckle_open_0', beat: 'open', lines: [
@@ -25,7 +25,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hit back. Briefly. Then done.',
   ], weight: 1 },
   { id: 'knuckle_open_2', beat: 'open', lines: [
-    'Knuckle: Don\'t flinch. Smash anyway.',
+    'Knuckle: Do not flinch. Smash anyway.',
     'Knuckle: Loading Bay. Ticket. Closed.',
   ], weight: 1 },
   { id: 'knuckle_open_3', beat: 'open', lines: [
@@ -63,7 +63,7 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hard hit. Still up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'knuckle_hcrit_10', beat: 'hunter_crit', lines: [
-    'Knuckle: Soft spot. Found.',
+    'Knuckle: Gap found. Smash continues.',
     'Knuckle: Big hit. Continue.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'knuckle_hcrit_ran_11', beat: 'hunter_crit', lines: [
@@ -102,7 +102,7 @@ export const nodes: ScriptNode[] = [
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'knuckle_kit_net_19', beat: 'kit', lines: [
     'Knuckle: Net. Bad idea.',
-    'Knuckle: Bagged. Tear out.',
+    'Knuckle: Ticket snagged. Tear out.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'knuckle_kit_healing-potion_20', beat: 'kit', lines: [
     'Knuckle: Juice. Still snack.',
@@ -113,18 +113,18 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Grease. Still smash.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'knuckle_kit_gen_22', beat: 'kit', lines: [
-    'Knuckle: Bag toys. Weak.',
+    'Knuckle: Pocket clutter. Weak.',
     'Knuckle: Props. Then smash.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'knuckle_kit_ran_23', beat: 'kit', lines: [
     'Knuckle: Ran. Then bag.',
-    'Knuckle: Flee kit. Soft.',
+    'Knuckle: Ran packing gadgets. Still smash.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──
   { id: 'knuckle_mhit_24', beat: 'monster_hit', lines: [
     'Knuckle: Landed. Door closed.',
-    'Knuckle: That\'s the smash.',
+    'Knuckle: That is the smash.',
   ] },
   { id: 'knuckle_mhit_bld_25', beat: 'monster_hit', lines: [
     'Knuckle: Hurt. Still hit.',
@@ -197,8 +197,8 @@ export const nodes: ScriptNode[] = [
     'Knuckle: Hard win. Done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'knuckle_vic_net_41', beat: 'victory', lines: [
-    'Knuckle: Net then win.',
-    'Knuckle: Bagged. Ticket closed.',
+    'Knuckle: Mesh first. Ticket closed after.',
+    'Knuckle: Held still. Ticket stamped shut.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──

@@ -9,12 +9,12 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   // ── OPENS (monologue energy) ──
   { id: 'amber-silk_open_0', beat: 'open', lines: [
-    'Amber Silk: Hi, guest! Love the bag. Hate what you came to do with it. Headset\'s live — smile for Loss Prevention. I\'m already filing you.',
+    'Amber Silk: Hi, guest! Love the bag. Hate what you came to do with it. Headset\'s live — smile for Loss Prevention. I am already filing you.',
     'Amber Silk: Listen. I hang the sale signs. You hang in them. Shrinkage is how I say hello. Eight limbs. One headset. Zero patience for coupon energy.',
   ], weight: 2 },
   { id: 'amber-silk_open_1', beat: 'open', lines: [
-    'Amber Silk: Receipt required. Screaming optional. Silk preferred. Everybody shops. Only I get to rearrange the display while you\'re still breathing.',
-    'Amber Silk: Warm welcome. Cold wrap. That\'s the LP special. Hold the pose — I\'m tagging you before you blink.',
+    'Amber Silk: Receipt required. Screaming optional. Silk preferred. Everybody shops. Only I get to rearrange the display while you are still breathing.',
+    'Amber Silk: Warm welcome. Cold wrap. That is the LP special. Hold the pose — I am tagging you before you blink.',
   ], weight: 1 },
   { id: 'amber-silk_open_2', beat: 'open', lines: [
     'Amber Silk: Clearance aisle, baby. Prices never go back up. Neither do guests who ignore the headset.',
@@ -42,10 +42,10 @@ export const nodes: ScriptNode[] = [
   // ── MISSES ──
   { id: 'amber-silk_hmiss_7', beat: 'hunter_miss', lines: [
     'Amber Silk: Missed the silk. Shrinkage continues on schedule.',
-    'Amber Silk: Air through the web. Bring intent — or a coupon I\'ll void.',
+    'Amber Silk: Air through the web. Bring intent — or a coupon I will void.',
   ] },
   { id: 'amber-silk_hmiss_8', beat: 'hunter_miss', lines: [
-    'Amber Silk: You swung at Loss Prevention and hit policy. Policy bites slower. Silk doesn\'t.',
+    'Amber Silk: You swung at Loss Prevention and hit policy. Policy bites slower. Silk does not.',
     'Amber Silk: Miss logged. Display unchanged. Guest still tagged.',
   ] },
 
@@ -85,16 +85,16 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: You baptized my web. I file that under guest error, not miracle.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'amber-silk_kit_smokestick_17', beat: 'kit', lines: [
-    'Amber Silk: Smoke won\'t hide shrinkage. I smell unpaid bags and bad decisions.',
+    'Amber Silk: Smoke will not hide shrinkage. I smell unpaid bags and bad decisions.',
     'Amber Silk: Hide mid-wrap? Silk was invented for shy prey in the dark.',
   ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
   { id: 'amber-silk_kit_hunting-trap_18', beat: 'kit', lines: [
     'Amber Silk: You set a trap for Loss Prevention. I invent commitment with eight limbs.',
-    'Amber Silk: Bear jaws on my floor. Irony\'s on sale. I\'m ringing you up.',
+    'Amber Silk: Bear jaws on my floor. Irony\'s on sale. I am ringing you up.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'amber-silk_kit_net_19', beat: 'kit', lines: [
-    'Amber Silk: You netted the wrapper. Bold. Channel three is dying laughing.',
-    'Amber Silk: Mesh over silk — two wraps, one guest. Flail louder; I\'m tagging it.',
+    'Amber Silk: You caught the wrapper. Channel three is dying laughing.',
+    'Amber Silk: Net over silk — two wraps, one guest. Panic louder; I am tagging it.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'amber-silk_kit_healing-potion_20', beat: 'kit', lines: [
     'Amber Silk: You drank up mid-aisle. Planning a long browse?',
@@ -105,31 +105,31 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: Slippery guests get wrapped faster. I file accidents differently.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'amber-silk_kit_gen_22', beat: 'kit', lines: [
-    'Amber Silk: Rummaging mid-aisle. That\'s a write-up before the wrap even starts.',
-    'Amber Silk: Props out. Loss Prevention grades the performance. Smile for the headset.',
+    'Amber Silk: Aisle foraging before the silk even sticks. Write-up already drafting itself.',
+    'Amber Silk: You pulled tools during a live wrap. Loss Prevention already has a clip. Smile for the headset.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'amber-silk_kit_ran_23', beat: 'kit', lines: [
-    'Amber Silk: You ran, then rummaged. Guest with accessories and no receipt.',
-    'Amber Silk: Sprint, then dig. Clearance grades sticky. Wrap\'s still coming.',
+    'Amber Silk: You left the sale to forage. Guest without a receipt. Wrap still coming.',
+    'Amber Silk: Fast exit, sticky fingers. Clearance grades sticky. Wrap still coming.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER HITS / MISSES ──
   { id: 'amber-silk_mhit_24', beat: 'monster_hit', lines: [
-    'Amber Silk: Tag applied. You matched. Don\'t look surprised.',
-    'Amber Silk: That\'s for the unread coupons and the thrash you promised the silk.',
+    'Amber Silk: Tag applied. You matched. Do not look surprised.',
+    'Amber Silk: That is for the unread coupons and the thrash you promised the silk.',
   ] },
   { id: 'amber-silk_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Amber Silk: I\'m spilling silk. You\'re spilling worse. Pride louder than charm.',
+    'Amber Silk: I am spilling silk. You are spilling worse. Pride louder than charm.',
     'Amber Silk: Beat up and still tagging. Clearance calls that even.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'amber-silk_mmiss_26', beat: 'monster_miss', lines: [
     'Amber Silk: Missed. Enjoy it. Silk is still circling.',
-    'Amber Silk: Close one. Don\'t build a guest personality on a near-miss.',
+    'Amber Silk: Close one. Do not build a guest personality on a near-miss.',
   ] },
 
   // ── WOUNDS ──
   { id: 'amber-silk_w_wind_27', beat: 'wound', lines: [
-    'Amber Silk: Tiny nick on the display. Don\'t get attached to the shine.',
+    'Amber Silk: Tiny nick on the display. Do not get attached to the shine.',
     'Amber Silk: Barely a scratch on the robe. Bring intent or hold the pose for LP.',
   ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
   { id: 'amber-silk_w_bru_28', beat: 'wound', lines: [
@@ -141,26 +141,26 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: I thought I was untouchable under these lights. You did. Finish it or become clearance décor.',
   ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
   { id: 'amber-silk_w_heart_30', beat: 'wound', lines: [
-    'Amber Silk: That landed on a channel I don\'t broadcast.',
-    'Amber Silk: Don\'t look at me like that while you\'re winning. It\'s rude and effective.',
+    'Amber Silk: That landed on a channel I do not broadcast.',
+    'Amber Silk: Do not look at me like that while you are winning. It is rude and effective.',
   ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
   // ── RUN / CHASE / CLOSE ──
   { id: 'amber-silk_run_31', beat: 'run', lines: [
     'Amber Silk: You ran from Loss Prevention? I invented web cardio.',
-    'Amber Silk: Walking away? Shrinkage doesn\'t do follow-ups — I do.',
+    'Amber Silk: Walking away? Shrinkage does not do follow-ups — I do.',
   ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
   { id: 'amber-silk_run2_32', beat: 'run', lines: [
     'Amber Silk: Twice. You ran twice. Prey with no receipt and a cardio habit.',
-    'Amber Silk: Second escape. Headset logged it. I\'m restocking the chase.',
+    'Amber Silk: Second escape. Headset logged it. I am restocking the chase.',
   ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
   { id: 'amber-silk_chase_33', beat: 'chase', lines: [
     'Amber Silk: You wanted distance. I wanted a wrap. Guess who owns the aisle.',
     'Amber Silk: Chasing is ugly. Running from the woman with the headset is uglier.',
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'amber-silk_chase2_34', beat: 'chase', lines: [
-    'Amber Silk: Second chase. You don\'t get the aisle. I do.',
-    'Amber Silk: Bolt again and I\'ll file you as silk-curious. Don\'t.',
+    'Amber Silk: Second chase. You do not get the aisle. I do.',
+    'Amber Silk: Bolt again and I will file you as silk-curious. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'amber-silk_close_35', beat: 'close', lines: [
     'Amber Silk: Back. Miss the silk?',
@@ -177,20 +177,20 @@ export const nodes: ScriptNode[] = [
     'Amber Silk: You won. Inventory remembers every guest who walked out breathing.',
   ], weight: 1 },
   { id: 'amber-silk_vic_heal_38', beat: 'victory', lines: [
-    'Amber Silk: You drank a potion and still beat me. Ugly win. I almost respect the browse.',
-    'Amber Silk: You topped off, then finished LP. Receipt already filed under forever.',
+    'Amber Silk: Flask mid-aisle, then you finished LP. I almost respect the browse.',
+    'Amber Silk: Flask under the charm, then you finished LP. Receipt already filed under forever.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'amber-silk_vic_kite_39', beat: 'victory', lines: [
-    'Amber Silk: You dragged me down my own aisle, then finished it. That\'s not a win. That\'s rude.',
-    'Amber Silk: You turned Loss Prevention into a lap. Silk doesn\'t forget a guest who made her chase.',
+    'Amber Silk: You dragged me down my own aisle, then finished it. Loss Prevention does not do laps.',
+    'Amber Silk: You turned Loss Prevention into a lap. Silk does not forget a guest who made her chase.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'amber-silk_vic_crit_40', beat: 'victory', lines: [
-    'Amber Silk: You tore through the robe. Claws found the soft under the charm. Fight\'s over.',
-    'Amber Silk: Hard hit, then the finish. Headset went quiet. That\'s the win.',
+    'Amber Silk: You ripped the robe wide. Claws found the gap under the charm. Fight\'s over.',
+    'Amber Silk: Hard hit, then the finish. Headset blanked. That is the win.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'amber-silk_vic_net_41', beat: 'victory', lines: [
-    'Amber Silk: You bagged the wrapper and finished it. Ugly. Honest.',
-    'Amber Silk: Net, then win. Channel three signing off. Guest closed.',
+    'Amber Silk: Guest stuck in my silk. Headset already filed you.',
+    'Amber Silk: Channel three signing off. Guest closed.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──
@@ -208,6 +208,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'amber-silk_def_heal_45', beat: 'defeat', lines: [
     'Amber Silk: You healed and still went down. Browse extended. Wrap completed.',
-    'Amber Silk: You topped off, then wore the silk anyway. Guest error. Filed.',
+    'Amber Silk: You drank, then wore the silk anyway. Guest error. Filed.',
   ], requireFlags: ["healed"], weight: 3 },
 ];

@@ -10,8 +10,8 @@ import type { ScriptNode } from './types';
 export const nodes: ScriptNode[] = [
   // ── OPENS (monologue) ──
   { id: 'sister-static_open_x_0', beat: 'open', lines: [
-    'Sister Static: You\'re listening to Channel 7 — the station that outlived its building. Tonight\'s guest: you. Format: crush. Stay on the line. Ratings never die here.',
-    'Sister Static: Hey caller. Don\'t hang up. Snow\'s already in the booth. I\'ve been live since the walls fell down. You\'re the first guest who walked in. Lucky you.',
+    'Sister Static: You are listening to Channel 7 — the station that outlived its building. Tonight\'s guest: you. Format: crush. Stay on the line. Ratings never die here.',
+    'Sister Static: Hey caller. Do not hang up. Snow\'s already in the booth. I have been live since the walls fell down. You are the first guest who walked in. Lucky you.',
   ], weight: 2 },
   { id: 'sister-static_open_x_1', beat: 'open', lines: [
     'Sister Static: Dead Channel 7 — live forever. Snow\'s the applause track. Last song before the signal eats the room. Dance if you want. Screaming rates better.',
@@ -22,16 +22,16 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Came to change the channel? Snow takes that personally. Came to fight — we\'re already live.',
   ], weight: 2 },
   { id: 'sister-static_open_1', beat: 'open', lines: [
-    'Sister Static: Stay tuned. Commercial break is your scream. Bright souls preferred. I\'ve got hours of hold music from before gods had names.',
-    'Sister Static: Antimagic freaks me out. Silence freaks me out. You? You\'re just a dial. Dials I can work with.',
+    'Sister Static: Stay tuned. Commercial break is your scream. Bright souls preferred. I have got hours of hold music from before gods had names.',
+    'Sister Static: Antimagic freaks me out. Silence freaks me out. You? You are just a dial. Dials I can work with.',
   ], weight: 1 },
   { id: 'sister-static_open_2', beat: 'open', lines: [
-    'Sister Static: Don\'t touch the dial. Every hung-up call is still in the snow somewhere. You\'re already mid-segment. Smile for the meters.',
-    'Sister Static: I\'ve heard every "is this a test" joke. Say something new or scream. Either way I\'m live.',
+    'Sister Static: Do not touch the dial. Every hung-up call is still in the snow somewhere. You are already mid-segment. Smile for the meters.',
+    'Sister Static: I have heard every "is this a test" joke. Say something new or scream. Either way I am live.',
   ], weight: 1 },
   { id: 'sister-static_open_3', beat: 'open', lines: [
     'Sister Static: Off-mic truth: if the signal dies, I die with it. One listener. You. Please stay.',
-    'Sister Static: Keep talking if you\'re different. If not — at least rate well when you lose.',
+    'Sister Static: Keep talking if you are different. If not — at least rate well when you lose.',
   ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
   // ── HITS ──
@@ -45,7 +45,7 @@ export const nodes: ScriptNode[] = [
   ] },
   { id: 'sister-static_hhit_bld_6', beat: 'hunter_hit', lines: [
     'Sister Static: Snow\'s getting louder. Can you still hear me?',
-    'Sister Static: Gloss cracking. If we go dark — that\'s forever.',
+    'Sister Static: Gloss cracking. If we go dark — that is forever.',
   ], requireFlags: ["wound:Bloodied"], weight: 3 },
 
   // ── MISSES ──
@@ -60,16 +60,16 @@ export const nodes: ScriptNode[] = [
 
   // ── CRITS ──
   { id: 'sister-static_hcrit_9', beat: 'hunter_crit', lines: [
-    'Sister Static: Okay — that spiked the meters. Felt it.',
+    'Sister Static: Okay — that spiked the meters. Snow just got louder.',
     'Sister Static: Hard hit on Channel 7. Producer\'s ghost stood up.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sister-static_hcrit_10', beat: 'hunter_crit', lines: [
     'Sister Static: You hit under the gloss. Congrats, caller.',
-    'Sister Static: That almost sounded sincere. Don\'t chat. Swing.',
+    'Sister Static: That almost sounded sincere. Mean the next spike.',
   ], weight: 2, setFlags: ["hunter_crit"] },
   { id: 'sister-static_hcrit_ran_11', beat: 'hunter_crit', lines: [
     'Sister Static: Fled the booth, then hit that hard? Pick a segment.',
-    'Sister Static: Ran, then spiked the meters. Comeback bit. Audience loves it. I don\'t.',
+    'Sister Static: Ran, then spiked the meters. Comeback bit. Audience loves it. I do not.',
   ], requireFlags: ["ran"], weight: 3 },
 
   // ── KITS ──
@@ -86,12 +86,12 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Caltrops. I walk snow thicker than this.',
   ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
   { id: 'sister-static_kit_acid-vial_15', beat: 'kit', lines: [
-    'Sister Static: Acid on the host. That\'s personal.',
+    'Sister Static: Acid on the host. That is personal.',
     'Sister Static: Chemistry at a live broadcast. Hate you a little more.',
   ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
   { id: 'sister-static_kit_holy-water_16', beat: 'kit', lines: [
-    'Sister Static: Holy water. Cute. I\'m dead air, not undead.',
-    'Sister Static: Blessings don\'t mute Channel 7. Just wet the mic.',
+    'Sister Static: Studio blessing. I am dead air, not undead.',
+    'Sister Static: Blessings do not mute Channel 7. Just wet the mic.',
   ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
   { id: 'sister-static_kit_smokestick_17', beat: 'kit', lines: [
     'Sister Static: Smoke. Snow already fills the booth.',
@@ -102,8 +102,8 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Jaws for a broadcast ghost. Adorable. Still live.',
   ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
   { id: 'sister-static_kit_net_19', beat: 'kit', lines: [
-    'Sister Static: Net on the DJ. Call-ins love a trapped host.',
-    'Sister Static: Bagged. Still live. Stop the bit.',
+    'Sister Static: Host trapped live. Call-ins are losing their minds.',
+    'Sister Static: Snagged and still live. Stop the bit.',
   ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
   { id: 'sister-static_kit_healing-potion_20', beat: 'kit', lines: [
     'Sister Static: Mid-broadcast sip. Planning to stay tuned?',
@@ -114,26 +114,26 @@ export const nodes: ScriptNode[] = [
     'Sister Static: Greased Channel 7. Ghost producer filed a complaint.',
   ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
   { id: 'sister-static_kit_gen_22', beat: 'kit', lines: [
-    'Sister Static: Bag toys won\'t kill the signal. I\'m still on air.',
-    'Sister Static: Props out. Stay tuned.',
+    'Sister Static: Pocket clutter will not kill the signal. I am still on air.',
+    'Sister Static: You went for accessories on air. Snow stays live. No commercial for cowards.',
   ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
   { id: 'sister-static_kit_ran_23', beat: 'kit', lines: [
-    'Sister Static: Ran, then rummaged. Coward with accessories.',
-    'Sister Static: Flee-kit bit. Soft. Channel 7 keeps coming.',
+    'Sister Static: You left Channel 7 for a pocket raid. Bad reception. Worse spine.',
+    'Sister Static: You brought accessories to a live signal. Snow keeps coming anyway.',
   ], requireFlags: ["ran"], weight: 2 },
 
   // ── MONSTER ──
   { id: 'sister-static_mhit_24', beat: 'monster_hit', lines: [
-    'Sister Static: That\'s for every hung-up call.',
+    'Sister Static: That is for every hung-up call.',
     'Sister Static: Demo cut. You dialed in first.',
   ] },
   { id: 'sister-static_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Sister Static: I\'m hurt. You\'re hurt more. Signal still holds.',
+    'Sister Static: I am hurt. You are hurt more. Signal still holds.',
     'Sister Static: Gloss gone. Still landing. Dead air hurts both of us.',
   ], requireFlags: ["wound:Bloodied"], weight: 2 },
   { id: 'sister-static_mmiss_26', beat: 'monster_miss', lines: [
     'Sister Static: Missed. Enjoy the filler while it lasts.',
-    'Sister Static: Close call. Don\'t build a brand on dead air.',
+    'Sister Static: Close call. Do not build a brand on dead air.',
   ] },
 
   // ── WOUNDS ──
@@ -169,7 +169,7 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sister-static_chase2_34', beat: 'chase', lines: [
     'Sister Static: Second chase. Dial\'s mine.',
-    'Sister Static: Run again and I\'ll think you like the show. Don\'t.',
+    'Sister Static: Run again and I will think you like the show. Do not.',
   ], requireFlags: ["ran2"], weight: 4 },
   { id: 'sister-static_close_35', beat: 'close', lines: [
     'Sister Static: Back. Miss the host?',
@@ -182,30 +182,30 @@ export const nodes: ScriptNode[] = [
 
   // ── VICTORY ──
   { id: 'sister-static_vic_37', beat: 'victory', lines: [
-    'Sister Static: You won. Mark me off-air. Tell them Channel 7 fought.',
-    'Sister Static: Fine. Take it. Gloss ruined. Signal still humming.',
+    'Sister Static: Segment dead. Tell them Channel 7 fought.',
+    'Sister Static: Segment dead. Gloss ruined. Signal still humming.',
   ], weight: 1 },
   { id: 'sister-static_vic_heal_38', beat: 'victory', lines: [
-    'Sister Static: Potioned up and still beat the host. Ugly win. Almost respect.',
-    'Sister Static: Topped off, then signed me off. Preferred listener energy. Gross.',
+    'Sister Static: Flask on air, then killed the segment. Cheap cut. Ratings confused.',
+    'Sister Static: Flask on air, then signed me off. Listener with a flask. Ratings cringe.',
   ], requireFlags: ["healed"], weight: 3 },
   { id: 'sister-static_vic_kite_39', beat: 'victory', lines: [
     'Sister Static: Made me chase my own booth, then finished. Rude win.',
-    'Sister Static: Jogging as strategy. Hate that it worked.',
+    'Sister Static: You turned a segment into a lap. Hate that it worked.',
   ], requireFlags: ["ran"], weight: 3 },
   { id: 'sister-static_vic_crit_40', beat: 'victory', lines: [
-    'Sister Static: You cut through the gloss. Segment\'s over. I\'ll give you that.',
-    'Sister Static: Found the soft spot under broadcast and finished. Meters dead. Well done.',
+    'Sister Static: Gloss splits. Segment over. I will give you that.',
+    'Sister Static: Found the weak meter under broadcast and finished. Signal dead. Well done.',
   ], requireFlags: ["hunter_crit"], weight: 2 },
   { id: 'sister-static_vic_net_41', beat: 'victory', lines: [
-    'Sister Static: Bagged me and finished the segment. Ugly. Honest.',
-    'Sister Static: Net, then win. You bagged a DJ. Mildly mad.',
+    'Sister Static: You netted me and killed the segment. Honest violence. Snow fades.',
+    'Sister Static: Segment dead. You caught a DJ. Ratings still confused.',
   ], requireFlags: ["netted"], weight: 3 },
 
   // ── DEFEAT ──
   { id: 'sister-static_def_42', beat: 'defeat', lines: [
     'Sister Static: Segment over. You lose. I stay live.',
-    'Sister Static: Down. Channel 7 wins. Don\'t bleed on the booth.',
+    'Sister Static: Down. Channel 7 wins. Do not bleed on the booth.',
   ] },
   { id: 'sister-static_def_crit_43', beat: 'defeat', lines: [
     'Sister Static: Hit hard. Still lost. Talent without follow-through.',
@@ -217,6 +217,6 @@ export const nodes: ScriptNode[] = [
   ], requireFlags: ["ran"], weight: 2 },
   { id: 'sister-static_def_heal_45', beat: 'defeat', lines: [
     'Sister Static: Healed and still went down. Optimistic. Wrong station.',
-    'Sister Static: Potion, then floor. Soft. Memorable. Bad look.',
+    'Sister Static: You drank, then dropped mid-broadcast. Snow keeps rolling without you.',
   ], requireFlags: ["healed"], weight: 3 },
 ];
