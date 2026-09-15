@@ -144,7 +144,7 @@ export function Encounters() {
                       </span>
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--muted)', marginTop: 2 }}>
-                      {c.threat} · {c.encounter === 'One' ? 'One enemy' : 'Multiple'} · {c.type}
+                      {c.threat} · {c.encounter === 'One' ? 'Solo date' : 'They brought friends'} · {c.type}
                       {m.combat ? ` · Round ${m.combat.round}` : ` · ${c.floor}`}
                     </div>
                     {m.combat && (

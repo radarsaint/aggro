@@ -18,7 +18,7 @@ function threatChip(threat: string): string {
 }
 
 function encounterChip(encounter: string): string {
-  return encounter === 'One' ? 'ONE ENEMY' : 'MULTIPLE ENEMIES';
+  return encounter === 'One' ? 'Solo date' : 'They brought friends';
 }
 
 export function Match() {
@@ -234,21 +234,6 @@ export function Match() {
               </div>
             </div>
 
-            {/* Item pick note — kit locked at fight start */}
-            <div style={{ marginTop: 12 }}>
-              <span
-                className="pill"
-                style={{
-                  borderColor: 'var(--pink)',
-                  color: 'var(--pink)',
-                  background: 'rgba(255,0,127,0.1)',
-                  fontWeight: 800,
-                  padding: '6px 12px',
-                }}
-              >
-                Item picks at fight
-              </span>
-            </div>
           </div>
 
           <div className="profile-row">

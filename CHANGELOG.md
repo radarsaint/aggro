@@ -19,6 +19,7 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 - **Banter voice** — Killed Mad Lib / telegram-chop opens (`Cute pulse.`, `Optimistic pulse.`, `Pulse preferred.`, noun-stack greets) across `roast.ts`, `roastReactive.ts`, Patches/Veinrot banter; rewritten as spoken mean/fair creature English.
 - **Discover chrome** — HOW / `/how` help chip removed from Discover header (help stays on You → How AGGRO works / `/how` only). Card systems pill **Item picks at fight** cut. Encounter pills softened: **Solo date** / **They brought friends**. Empty-state **Reshuffle Floor** demoted to outline + confirm (never twin-pink with Call it a night).
+- **Match / Chat / Combat / Encounters chrome** — Leftover **Item picks at fight** pills killed on Match and Chat (player-facing systems chrome). Encounter copy everywhere the player sees it: **Solo date** / **They brought friends** (was One enemy / Multiple).
 - **RestBeat** — **Call it a night** demoted (ghost, below Grab a drink) + confirm (“Fresh slate tomorrow — the floor refreshes too”) so long-rest deck reshuffle is not a silent wipe. Body teaching wallpaper killed (“One drink a night…”, “prep between nights anytime”); first-win dating lock copy kept. Caps stay in titles/tooltips.
 - **TODO (later)** — Bury or default Discover Stack/Grid peer toggles (leave one layout).
 
