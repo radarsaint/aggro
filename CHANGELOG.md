@@ -25,6 +25,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Fixed
+
+- **Home porch** — Strip aisle-day meter, two-clock teaching, Verified homework, and “FLOOR 2 LEVER” chrome; dating aisle energy only.
+
 ### Added
 
 - **0.2 systems slice 1** — Floor modularity schema (`activeFloorId`, per-floor `{ enabled, dayBudget, dayElapsed, fightsByDay, goldDepositedThisDay }`), save migration from 0.1.x (`comingSoon` → `tortugaMuerta`).
