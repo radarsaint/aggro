@@ -1,4 +1,4 @@
-import type { InventoryItem, LootBeat, LootCategory, ThreatLevel } from '../types';
+import type { FloorId, InventoryItem, LootBeat, LootCategory, ThreatLevel } from '../types';
 import { HIGH_EFFECT_GEAR, MID_EFFECT_GEAR } from './equipment';
 export { isFightEffectGear, MID_EFFECT_GEAR, HIGH_EFFECT_GEAR } from './equipment';
 export type { LootBeat };
@@ -60,32 +60,66 @@ export const EQUIP_CORE: LootEntry[] = [
   { name: 'Studded Leather Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
   { name: 'Shield', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
   { name: 'Clearance Patch', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
-  { name: 'Cubicle Hook', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade' },
-  { name: 'Soft-Close Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
-  { name: 'Floor-Captain Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
-  { name: 'PIP Machete', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade' },
-  { name: 'Final-Writeup Bow', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'bow' },
-  { name: 'Exit-Only Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
-  { name: 'No-Refund Dome', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
-  { name: 'Badge Harness', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
-  { name: 'After-Hours Plating', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
+  // Baatorasaka Mid/High fight-effect
+  { name: 'Cubicle Hook', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade', themeId: 'baatorasaka' },
+  { name: 'Soft-Close Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield', themeId: 'baatorasaka' },
+  { name: 'Floor-Captain Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'baatorasaka' },
+  { name: 'PIP Machete', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade', themeId: 'baatorasaka' },
+  { name: 'Final-Writeup Bow', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'bow', themeId: 'baatorasaka' },
+  { name: 'Exit-Only Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield', themeId: 'baatorasaka' },
+  { name: 'No-Refund Dome', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield', themeId: 'baatorasaka' },
+  { name: 'Badge Harness', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'baatorasaka' },
+  { name: 'After-Hours Plating', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'baatorasaka' },
+  // Tortuga Muerta Mid/High souvenirs (floorId tortuga-muerta / theme tortugaMuerta)
+  { name: 'Belaying Hook', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade', themeId: 'tortugaMuerta' },
+  { name: 'Scuttle Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield', themeId: 'tortugaMuerta' },
+  { name: 'Tarred Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'tortugaMuerta' },
+  { name: 'Blackwake Cleaver', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade', themeId: 'tortugaMuerta' },
+  { name: 'Deadeye Arbalest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'bow', themeId: 'tortugaMuerta' },
+  { name: 'No-Quarter Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield', themeId: 'tortugaMuerta' },
+  { name: 'Rope-Burn Harness', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'tortugaMuerta' },
+  { name: 'After-Watch Plating', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor', themeId: 'tortugaMuerta' },
 ];
 
 const EQUIP_BY_NAME: Record<string, LootEntry> = Object.fromEntries(
   EQUIP_CORE.map((e) => [e.name, e]),
 );
 
-/** Equip subweights by threat (Loot Economist brief). Keys = item names. */
-export const EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
+/** Shared plain equip weights (no fight-effect names). */
+const PLAIN_EQUIP_LOW: Record<string, number> = {
+  Dagger: 35,
+  'Leather Armor': 30,
+  Shortsword: 15,
+  Shield: 10,
+  'Studded Leather Vest': 5,
+  'Light Crossbow': 5,
+  'Clearance Patch': 0,
+};
+
+const PLAIN_EQUIP_MOD: Record<string, number> = {
+  Shortsword: 11,
+  Shield: 9,
+  'Leather Armor': 8,
+  'Light Crossbow': 8,
+  'Studded Leather Vest': 7,
+  Dagger: 5,
+  'Clearance Patch': 2,
+};
+
+const PLAIN_EQUIP_HIGH_LEFTOVER: Record<string, number> = {
+  'Light Crossbow': 3,
+  'Studded Leather Vest': 2,
+  Shield: 2,
+  Shortsword: 1,
+  'Clearance Patch': 0,
+  Dagger: 0,
+  'Leather Armor': 0,
+};
+
+/** Baatorasaka Mid/High fight-effect bags (Loot Economist). */
+const BAATORASAKA_EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
   Low: {
-    Dagger: 35,
-    'Leather Armor': 30,
-    Shortsword: 15,
-    Shield: 10,
-    'Studded Leather Vest': 5,
-    'Light Crossbow': 5,
-    'Clearance Patch': 0,
-    // Mid/High fight-effect names — Low cannot roll
+    ...PLAIN_EQUIP_LOW,
     'Cubicle Hook': 0,
     'Soft-Close Lid': 0,
     'Floor-Captain Vest': 0,
@@ -101,15 +135,7 @@ export const EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
     'Cubicle Hook': 20,
     'Floor-Captain Vest': 15,
     'Soft-Close Lid': 15,
-    // Plain Mod share (=50)
-    Shortsword: 11,
-    Shield: 9,
-    'Leather Armor': 8,
-    'Light Crossbow': 8,
-    'Studded Leather Vest': 7,
-    Dagger: 5,
-    'Clearance Patch': 2,
-    // High-only climb pieces — literally cannot roll on Mod
+    ...PLAIN_EQUIP_MOD,
     'PIP Machete': 0,
     'Final-Writeup Bow': 0,
     'Exit-Only Lid': 0,
@@ -125,19 +151,66 @@ export const EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
     'After-Hours Plating': 12,
     'Exit-Only Lid': 14,
     'No-Refund Dome': 12,
-    // Leftover 18 — Mid leftovers / plain High-adjacent (not more High names)
+    // Leftover 18 — Mid leftovers / plain High-adjacent
     'Cubicle Hook': 4,
     'Soft-Close Lid': 3,
     'Floor-Captain Vest': 3,
-    'Light Crossbow': 3,
-    'Studded Leather Vest': 2,
-    Shield: 2,
-    Shortsword: 1,
-    'Clearance Patch': 0,
-    Dagger: 0,
-    'Leather Armor': 0,
+    ...PLAIN_EQUIP_HIGH_LEFTOVER,
   },
 };
+
+/**
+ * Tortuga Muerta Mid/High souvenirs — same shape as Floor 1.
+ * Mid trio ≈ half Mod equip (=50). High five ≈ 80%+ (=82); No-Quarter absorbs Exit-Only's 14.
+ */
+const TORTUGA_EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
+  Low: {
+    ...PLAIN_EQUIP_LOW,
+    'Belaying Hook': 0,
+    'Scuttle Lid': 0,
+    'Tarred Vest': 0,
+    'Blackwake Cleaver': 0,
+    'Deadeye Arbalest': 0,
+    'No-Quarter Lid': 0,
+    'Rope-Burn Harness': 0,
+    'After-Watch Plating': 0,
+  },
+  Moderate: {
+    // Fight-effect Mid bag (=50)
+    'Belaying Hook': 20,
+    'Tarred Vest': 15,
+    'Scuttle Lid': 15,
+    ...PLAIN_EQUIP_MOD,
+    'Blackwake Cleaver': 0,
+    'Deadeye Arbalest': 0,
+    'No-Quarter Lid': 0,
+    'Rope-Burn Harness': 0,
+    'After-Watch Plating': 0,
+  },
+  High: {
+    // Fight-effect High bag (=82) — five names; No-Quarter takes Exit-Only's 14
+    'Blackwake Cleaver': 16,
+    'Deadeye Arbalest': 12,
+    'Rope-Burn Harness': 16,
+    'After-Watch Plating': 12,
+    'No-Quarter Lid': 26,
+    // Leftover 18 — Mid leftovers / plain High-adjacent
+    'Belaying Hook': 4,
+    'Scuttle Lid': 3,
+    'Tarred Vest': 3,
+    ...PLAIN_EQUIP_HIGH_LEFTOVER,
+  },
+};
+
+/** Default export keeps Baatorasaka bags for call sites that omit floor. */
+export const EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> =
+  BAATORASAKA_EQUIP_SUBWEIGHTS;
+
+export function equipSubweightsForFloor(
+  floorId: FloorId | null | undefined,
+): Record<ThreatLevel, Record<string, number>> {
+  return floorId === 'tortugaMuerta' ? TORTUGA_EQUIP_SUBWEIGHTS : BAATORASAKA_EQUIP_SUBWEIGHTS;
+}
 
 /** USE_HEAL — combat-usable heals only. */
 export const USE_HEAL: LootEntry[] = [
@@ -272,9 +345,12 @@ function classifyLootBeat(entry: LootEntry): LootBeat {
   return 'scrap';
 }
 
-/** Effect-only subweights for quiet pity (Mod/High). */
-function effectOnlySubweights(threat: ThreatLevel): Record<string, number> {
-  const src = EQUIP_SUBWEIGHTS[threat];
+/** Effect-only subweights for quiet pity (Mod/High), floor-scoped. */
+function effectOnlySubweights(
+  threat: ThreatLevel,
+  floorId?: FloorId | null,
+): Record<string, number> {
+  const src = equipSubweightsForFloor(floorId)[threat];
   const out: Record<string, number> = {};
   for (const [name, w] of Object.entries(src)) {
     if (w <= 0) continue;
@@ -284,22 +360,32 @@ function effectOnlySubweights(threat: ThreatLevel): Record<string, number> {
   return out;
 }
 
-function pickEquipCore(threat: ThreatLevel, forceEffect = false): LootEntry {
+function pickEquipCore(
+  threat: ThreatLevel,
+  forceEffect = false,
+  floorId?: FloorId | null,
+): LootEntry {
+  const bags = equipSubweightsForFloor(floorId);
   if (forceEffect && (threat === 'Moderate' || threat === 'High')) {
-    const forced = effectOnlySubweights(threat);
+    const forced = effectOnlySubweights(threat, floorId);
     if (Object.values(forced).some((w) => w > 0)) {
       const name = pickWeighted(forced);
       return EQUIP_BY_NAME[name] ?? EQUIP_CORE[0];
     }
   }
-  const name = pickWeighted(EQUIP_SUBWEIGHTS[threat]);
+  const name = pickWeighted(bags[threat]);
   return EQUIP_BY_NAME[name] ?? EQUIP_CORE[0];
 }
 
-function pickFromPool(pool: LootPoolId, threat: ThreatLevel, forceEffect = false): LootEntry {
+function pickFromPool(
+  pool: LootPoolId,
+  threat: ThreatLevel,
+  forceEffect = false,
+  floorId?: FloorId | null,
+): LootEntry {
   switch (pool) {
     case 'equip':
-      return pickEquipCore(threat, forceEffect);
+      return pickEquipCore(threat, forceEffect, floorId);
     case 'usable':
       return pickOne(USE_HEAL);
     case 'scrap_art':
@@ -319,6 +405,8 @@ export interface RollBonusOpts {
    * Forces the equip pool + effect-only subweights for that threat.
    */
   forceEffectGear?: boolean;
+  /** Active aisle — Tortuga rolls Tortuga souvenirs; Baatorasaka keeps Cubicle Hook / Soft-Close / etc. */
+  floorId?: FloorId | null;
 }
 
 export interface BonusLootRoll {
@@ -333,6 +421,7 @@ export interface BonusLootRoll {
 export function rollBonusItem(opts: RollBonusOpts): BonusLootRoll {
   const threat = opts.threat ?? 'Low';
   const hot = opts.hot === true;
+  const floorId = opts.floorId ?? null;
   const forceEffect = opts.forceEffectGear === true && (threat === 'Moderate' || threat === 'High');
   let weights = { ...THREAT_WEIGHTS[threat] };
   if (hot) weights = applyHotEquipShift(weights);
@@ -342,7 +431,7 @@ export function rollBonusItem(opts: RollBonusOpts): BonusLootRoll {
   }
 
   const pool = forceEffect ? 'equip' : pickWeighted(weights);
-  const base = pickFromPool(pool, threat, forceEffect);
+  const base = pickFromPool(pool, threat, forceEffect, floorId);
   const rarity: InventoryItem['rarity'] =
     hot && Math.random() < HOT_UNCOMMON_CHANCE ? 'Uncommon' : 'Common';
   const item = mintItem(base, rarity);
@@ -356,6 +445,8 @@ export interface RollRewardOpts {
   hot?: boolean;
   /** Quiet pity — force Mid/High fight-effect equip on this win */
   forceEffectGear?: boolean;
+  /** Active aisle for floor-scoped souvenir names */
+  floorId?: FloorId | null;
 }
 
 export function rollReward(
@@ -370,6 +461,7 @@ export function rollReward(
     threat: opts.threat,
     hot,
     forceEffectGear: opts.forceEffectGear,
+    floorId: opts.floorId,
   });
   return { gold, xp, item, lootBeat };
 }

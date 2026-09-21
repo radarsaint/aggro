@@ -484,10 +484,12 @@ export function GameProvider({ children }: { children: ReactNode }) {
       const dry = s.winsSinceEffectGear ?? 0;
       const forceEffectGear =
         dry >= 5 && (creature.threat === 'Moderate' || creature.threat === 'High');
+      const floorId = (s.activeFloorId ?? s.activeThemeId) as import('../types').FloorId;
       const reward = rollReward(creature.cr, creature.groupSize ?? 1, {
         threat: creature.threat,
         hot: match.payoutStake?.tier === 'hot',
         forceEffectGear,
+        floorId,
       });
       const fightsCompleted = s.hunter.fightsCompleted + 1;
       const verified = fightsCompleted >= 3 ? true : s.hunter.verified;
