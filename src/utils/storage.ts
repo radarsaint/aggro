@@ -1,10 +1,11 @@
-import type { AbilityStat, LootBeat, AttackDie, CombatState, CreatureType, FightLogEntry, FightOutcome, FloorId, FloorState, GameState, Hunter, InventoryItem, Match, StandardsFloor, ThemeId, ThreatLevel } from '../types';
+import type { AbilityStat, LootBeat, AttackDie, CombatState, CreatureType, FightLogEntry, FightOutcome, FloorId, FloorState, GameState, Hunter, InventoryItem, KioskSku, Match, StandardsFloor, ThemeId, ThreatLevel } from '../types';
 import { ALL_CREATURE_TYPES, GOLD_DEPOSIT_PER_FLOOR_NUMBER, LEGACY_CREATURE_TYPES, MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT, STANDARDS_UNLOCK_FIGHTS } from '../types';
 import { CREATURES } from '../data/creatures';
 import { DEFAULT_BAG, isKitId, migrateBag, type HunterBag, type KitId } from '../data/kits';
 import { DEFAULT_THEME_ID, floorNumberFor, isThemeId } from '../themes';
 import { abilityMod } from './dice';
 import { sanitizeEquipRefs } from '../data/equipment';
+import { rollKioskStock } from '../data/rewards';
 
 
 const KEY = 'aggro-game-v1';
@@ -185,6 +186,7 @@ export function defaultState(): GameState {
     drinkUnlockedTonight: false,
     firstFightResolvedTonight: false,
     winsSinceEffectGear: 0,
+    kioskStock: rollKioskStock(),
   };
 }
 
@@ -226,6 +228,36 @@ export function migrateWinsSinceEffectGear(n: unknown): number {
   }
   return 0;
 }
+
+/** Old saves / empty stock → roll tonight's clearance (3 slots). Persist non-empty. */
+export function migrateKioskStock(raw: unknown): KioskSku[] {
+  if (Array.isArray(raw) && raw.length > 0) {
+    const cleaned: KioskSku[] = [];
+    for (const row of raw) {
+      if (!row || typeof row !== 'object') continue;
+      const r = row as Record<string, unknown>;
+      if (typeof r.id !== 'string' || typeof r.price !== 'number') continue;
+      if (typeof r.blurb !== 'string' || !r.item || typeof r.item !== 'object') continue;
+      const item = r.item as Record<string, unknown>;
+      if (typeof item.name !== 'string' || typeof item.kind !== 'string') continue;
+      cleaned.push({
+        id: r.id,
+        price: r.price,
+        blurb: r.blurb,
+        item: {
+          name: item.name as string,
+          rarity: (item.rarity === 'Uncommon' ? 'Uncommon' : 'Common') as InventoryItem['rarity'],
+          kind: item.kind as InventoryItem['kind'],
+          iconKey: typeof item.iconKey === 'string' ? item.iconKey : 'tools',
+          ...(typeof item.themeId === 'string' ? { themeId: item.themeId as ThemeId } : {}),
+        },
+      });
+    }
+    if (cleaned.length > 0) return cleaned;
+  }
+  return rollKioskStock();
+}
+
 
 export function threatWeightsForProgress(fightsCompleted: number): Record<ThreatLevel, number> {
   const n = Number.isFinite(fightsCompleted) ? Math.max(0, Math.floor(fightsCompleted)) : 0;
@@ -523,6 +555,7 @@ export function loadState(): GameState {
       winsSinceEffectGear: migrateWinsSinceEffectGear(
         (parsed as GameState).winsSinceEffectGear,
       ),
+      kioskStock: migrateKioskStock((parsed as GameState).kioskStock),
     };
   } catch {
     return defaultState();

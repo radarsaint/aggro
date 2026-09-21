@@ -31,7 +31,7 @@ import {
   gearOnYouFlavor,
   type EquipSlot,
 } from '../data/equipment';
-import { KIOSK_STOCK, isUsableInCombat } from '../data/rewards';
+import { isUsableInCombat } from '../data/rewards';
 import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 import { getTheme } from '../themes';
@@ -541,37 +541,43 @@ export function Profile() {
             <h3 className="home-section-label">FLOOR KIOSK · OPEN</h3>
             <div className="kiosk-panel">
               <div className="kiosk-panel__header">
-                <span className="kiosk-panel__title">BAATORASAKA CLEARANCE KIOSK</span>
+                <span className="kiosk-panel__title">
+                  {activeTheme.meta.displayName.toUpperCase()} CLEARANCE KIOSK
+                </span>
                 <span className="kiosk-panel__gold gold-shimmer">{h.gold}g on file</span>
               </div>
               <p className="kiosk-panel__note">
-                Spend clearance credit here. Markup is policy. No refunds. Healing stock Uses mid-fight from
-                the locker. Clearance Patch equips for +1 AC — sell scrap when you need gold.
+                Tonight&apos;s clearance — restocks after Call it a night. Markup is policy. No
+                refunds. Healing stock Uses mid-fight from the locker; plain gear equips on you.
               </p>
               <div className="kiosk-stock">
-                {KIOSK_STOCK.map((sku) => {
-                  const canBuy = h.gold >= sku.price;
-                  return (
-                    <div key={sku.id} className="kiosk-sku">
-                      <div className="kiosk-sku__info">
-                        <div className="kiosk-sku__name">{sku.item.name}</div>
-                        <div className="kiosk-sku__meta">
-                          {sku.item.kind} · {sku.price}g
+                {(state.kioskStock ?? []).length === 0 ? (
+                  <p className="kiosk-panel__note">Sold out for tonight. Call it a night to restock.</p>
+                ) : (
+                  (state.kioskStock ?? []).map((sku) => {
+                    const canBuy = h.gold >= sku.price;
+                    return (
+                      <div key={sku.id} className="kiosk-sku">
+                        <div className="kiosk-sku__info">
+                          <div className="kiosk-sku__name">{sku.item.name}</div>
+                          <div className="kiosk-sku__meta">
+                            {sku.item.kind} · {sku.price}g
+                          </div>
+                          <div className="kiosk-sku__blurb">{sku.blurb}</div>
                         </div>
-                        <div className="kiosk-sku__blurb">{sku.blurb}</div>
+                        <button
+                          type="button"
+                          className="btn btn-pink kiosk-sku__buy"
+                          disabled={!canBuy}
+                          onClick={() => buyKioskItem(sku.id)}
+                          aria-label={`Buy ${sku.item.name} for ${sku.price} gold`}
+                        >
+                          {canBuy ? `Buy · ${sku.price}g` : 'Broke'}
+                        </button>
                       </div>
-                      <button
-                        type="button"
-                        className="btn btn-pink kiosk-sku__buy"
-                        disabled={!canBuy}
-                        onClick={() => buyKioskItem(sku.id)}
-                        aria-label={`Buy ${sku.item.name} for ${sku.price} gold`}
-                      >
-                        {canBuy ? `Buy · ${sku.price}g` : 'Broke'}
-                      </button>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                )}
               </div>
 
               <div className="home-disclosure" style={{ marginTop: 20 }}>
