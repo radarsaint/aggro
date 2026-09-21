@@ -117,7 +117,7 @@ export function Chat() {
             <div className="chat-header__meta">
               <span className="pill chat-header__kit">Item picks at fight</span>
               <span className="chat-header__vibe">
-                {creature.threat} · {creature.encounter === 'One' ? 'One' : 'Crew'} · {creature.type}
+                {creature.threat} · {creature.encounter === 'One' ? 'Solo date' : 'They brought friends'}
               </span>
               <span className="chat-header__night" aria-live="polite">
                 {matchesTonight === 1

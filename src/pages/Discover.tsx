@@ -149,7 +149,6 @@ export function Discover() {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 6 }}>
                       <span className="pill">{c.threat}</span>
                       <span className="pill">{c.encounter === 'One' ? 'Solo date' : 'They brought friends'}</span>
-                      <span className="pill">{c.type}</span>
                     </div>
                   </div>
                 </button>
@@ -204,7 +203,6 @@ export function Discover() {
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
                         <span className="pill">{c.threat} threat</span>
                         <span className="pill">{c.encounter === 'One' ? 'Solo date' : 'They brought friends'}</span>
-                        <span className="pill">{c.type}</span>
                         <span className="pill">{c.floor}</span>
                       </div>
                     </div>
