@@ -28,6 +28,8 @@ export function Discover() {
   const matchesTonight = state.matchesTonight ?? 0;
   const aisleLocked = aisleDayExhausted(getActiveFloor(state));
   const canFightTonight = matchesTonight > 0 && !aisleLocked;
+  const floorLockCopy = "Run's over on this floor — fix the day on You";
+  const lockCopy = aisleLocked ? floorLockCopy : "Night's over — take a beat";
 
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-12, 12]);
@@ -65,13 +67,11 @@ export function Discover() {
               {theme.meta.displayName} · {state.hunter.verified ? '✓ Verified hunter' : 'New hunter'} · {available.length} nearby
             </div>
             <div style={{ fontSize: '0.65rem', color: canFightTonight ? 'var(--muted)' : 'var(--pink)', marginTop: 2 }}>
-              {aisleLocked
-                ? "Run's over on this floor — fix the day on You"
-                : canFightTonight
-                  ? matchesTonight === 1
-                    ? '1 date left tonight'
-                    : `${matchesTonight} dates left tonight`
-                  : "Night's over — take a beat"}
+              {canFightTonight
+                ? matchesTonight === 1
+                  ? '1 date left tonight'
+                  : `${matchesTonight} dates left tonight`
+                : lockCopy}
             </div>
             {state.hunter.fightsCompleted >= 6 ? (
               <div style={{ fontSize: '0.6rem', color: 'var(--muted)', marginTop: 2, opacity: 0.85 }}>
@@ -138,7 +138,7 @@ export function Discover() {
                   className={`grid-card ${!canFightTonight ? 'swipe-card--locked' : ''}`}
                   onClick={() => onMatch(id)}
                   disabled={!canFightTonight}
-                  title={!canFightTonight ? "Night's over — rest before another date" : undefined}
+                  title={!canFightTonight ? lockCopy : undefined}
                 >
                   <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} size="sm" sign={c.threat.toUpperCase()} imageSrc={c.portraitSrc} />
                   <div style={{ padding: 10 }}>
@@ -220,8 +220,8 @@ export function Discover() {
                   className={`circle-btn match ${canFightTonight ? 'pulse' : 'dimmed'}`}
                   onClick={() => onMatch(top.id)}
                   disabled={!canFightTonight}
-                  aria-label={canFightTonight ? 'Match' : "Night's over"}
-                  title={!canFightTonight ? "Night's over — rest before another date" : 'Match'}
+                  aria-label={canFightTonight ? 'Match' : lockCopy}
+                  title={!canFightTonight ? lockCopy : 'Match'}
                 >
                   <Heart size={28} fill="currentColor" />
                 </button>
