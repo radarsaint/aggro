@@ -2384,6 +2384,27 @@ img { max-width: 100%; display: block; }
   color: #d4a8bc;
 }
 
+/* Onboarding: first-run landing */
+.onboarding-landing__cta {
+  margin-top: 8px;
+}
+.onboarding-landing__cta-hint {
+  margin: 8px 0 18px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.onboarding-optional {
+  margin: 12px 0 8px;
+}
+.onboarding-optional__lede {
+  margin: 0 0 12px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 /* Onboarding: deferred combat loadout */
 .onboarding-loadout-nudge {
   margin: 12px 0 16px;

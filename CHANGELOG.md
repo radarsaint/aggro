@@ -25,6 +25,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Changed
+
+- **First-run landing** — Onboarding is one screen: name + face, then a dominant **Start swiping** CTA that finishes with defaults. Bio, fight numbers, and who-you're-into prefs are optional disclosures (prefs still live under You → Dating prefs). No second prefs step. Return visits still Discover-first.
+
 ### Fixed
 
 - **Sell confirm** — Locker Sell asks before removing an item; cancel leaves inventory unchanged. Confirm names the item and gold payout (same native confirm pattern as Call it a night).
