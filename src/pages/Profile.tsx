@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   ALL_CREATURE_TYPES,
   type CreatureType,
@@ -92,7 +92,21 @@ export function Profile() {
   const armor = findEquippedItem(h, 'armor');
   const shield = findEquippedItem(h, 'shield');
   const hasWorn = Boolean(weapon || armor || shield);
-  const [tab, setTab] = useState<HomeTab>(hasWorn ? 'onYou' : 'locker');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get('tab');
+  const tabFromQuery: HomeTab | null =
+    tabParam === 'you' ||
+    tabParam === 'onYou' ||
+    tabParam === 'locker' ||
+    tabParam === 'kiosk' ||
+    tabParam === 'prefs'
+      ? tabParam
+      : null;
+  // Sticky-tab deep links: /profile?tab=locker (win exit CTA). Fall back to worn gear.
+  const tab: HomeTab = tabFromQuery ?? (hasWorn ? 'onYou' : 'locker');
+  const setTab = (next: HomeTab) => {
+    setSearchParams(next === 'prefs' ? { tab: 'prefs' } : { tab: next }, { replace: true });
+  };
   const [sheetOpen, setSheetOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [standardsOpen, setStandardsOpen] = useState(false);

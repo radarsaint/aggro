@@ -68,7 +68,18 @@ export function HowItWorks() {
   const theme = getTheme(state.activeThemeId);
 
   return (
-    <div className="app-shell">
+    <div className="app-shell how-page">
+      <div className="header-bar how-page__chrome">
+        <Link to="/profile" className="how-page__back" aria-label="Back to You">
+          ← You
+        </Link>
+        <div className="logo-aggro" style={{ fontSize: '1.2rem' }}>
+          AGGR<span className="heart-o">O</span>
+        </div>
+        <Link to="/discover" className="how-page__floor" aria-label="Back to Discover">
+          Floor
+        </Link>
+      </div>
       <div className="page" style={{ paddingBottom: 32 }}>
         <div style={{ textAlign: 'center', margin: '16px 0 8px' }}>
           <div className="logo-aggro" style={{ fontSize: '2.4rem' }}>

@@ -117,7 +117,15 @@ export function LootCard({
               <button
                 type="button"
                 className="btn btn-outline loot-card__sell"
-                onClick={() => onSell(item.id)}
+                onClick={() => {
+                  if (
+                    confirm(
+                      `Sell ${item.name} for ${price} gold? Cancel leaves it in your locker.`,
+                    )
+                  ) {
+                    onSell(item.id);
+                  }
+                }}
                 aria-label={`Sell ${item.name} for ${price} gold`}
               >
                 Sell · {price}g
