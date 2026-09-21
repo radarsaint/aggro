@@ -49,7 +49,7 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 
 | Surface | Behavior |
 |---------|----------|
-| Onboarding / Profile (You) | Hunter sheet (HP, AC, attack die/stat, DEX/init); sticky home tabs: You / On you / Locker / Kiosk / Prefs |
+| Onboarding / Profile (You) | Hunter sheet (HP, AC, attack die/stat, DEX/init); sticky home tabs: Card / On you / Locker / Kiosk / Prefs |
 | Discover | Swipe left pass / right match; soft heat reorders deck; Standards filter |
 | Match / Chat | Roast banter; kit draft via reply **1 / 2 / 3** |
 | Combat | **Attack**, **Item** (spent kits), **Run**; **Use** locker potion/bandage |

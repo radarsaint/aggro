@@ -25,11 +25,11 @@ import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 import { getTheme } from '../themes';
 
-/** Sticky peer tabs only — Prefs is a You footer link, not equal weight. */
+/** Sticky peer tabs only — Prefs is a Card footer link, not equal weight. Bottom nav stays You. */
 type HomeTab = 'you' | 'onYou' | 'locker' | 'kiosk' | 'prefs';
 
 const HOME_TABS: { id: Exclude<HomeTab, 'prefs'>; label: string; aria: string }[] = [
-  { id: 'you', label: 'You', aria: 'You — face, bio, night' },
+  { id: 'you', label: 'Card', aria: 'Card — face, bio, night' },
   { id: 'onYou', label: 'On you', aria: 'On you — equipped gear' },
   { id: 'locker', label: 'Locker', aria: 'Locker — inventory, sell, equip' },
   { id: 'kiosk', label: 'Kiosk', aria: 'Kiosk — floor buys' },
