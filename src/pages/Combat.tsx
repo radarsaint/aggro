@@ -362,7 +362,7 @@ export function Combat() {
                   AC {combat.monster.ac} · Init {combat.monster.initiative} · Speed {creature.speed}
                 </span>
                 <span className="combat-fighter-meta">
-                  {creature.threat} threat · {creature.encounter === 'One' ? 'One enemy' : 'Multiple'} ·{' '}
+                  {creature.threat} threat · {creature.encounter === 'One' ? 'Solo date' : 'They brought friends'} ·{' '}
                   {creature.type}
                 </span>
                 {creature.combat.special ? (

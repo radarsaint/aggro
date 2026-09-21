@@ -737,12 +737,6 @@ img { max-width: 100%; display: block; }
   margin-top: 3px;
   flex-wrap: wrap;
 }
-.chat-header__kit {
-  font-size: 0.62rem;
-  border-color: rgba(255, 0, 127, 0.45);
-  color: var(--pink);
-  padding: 1px 8px;
-}
 .chat-header__vibe {
   font-size: 0.65rem;
   color: var(--muted);
