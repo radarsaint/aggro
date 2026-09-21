@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Mangrove Widow — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'mangrove-widow_open_0', beat: 'open', lines: ["Mangrove Widow: Placeholder open — salt dryad on Tortuga Muerta."], weight: 2 },
+  { id: 'mangrove-widow_open_1', beat: 'open', lines: ["Mangrove Widow: Salt aisle date. Attack, Item, or Run — that's the menu. (13)"], weight: 1 },
+  { id: 'mangrove-widow_hhit_0', beat: 'hunter_hit', lines: ["Mangrove Widow: That landed. Felt it. (13)"] },
+  { id: 'mangrove-widow_hhit_1', beat: 'hunter_hit', lines: ["Mangrove Widow: Ow. Keep going if you must. (13)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'mangrove-widow_hmiss_0', beat: 'hunter_miss', lines: ["Mangrove Widow: Missed. Sea air lies. (13)"] },
+  { id: 'mangrove-widow_hcrit_0', beat: 'hunter_crit', lines: ["Mangrove Widow: Hard hit. That one counted. (13)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'mangrove-widow_kit_poison', beat: 'kit', lines: ["Mangrove Widow: Something bitter on that edge. (13)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'mangrove-widow_kit_alchemists-fire', beat: 'kit', lines: ["Mangrove Widow: Fire near salt timber — brave. (13)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'mangrove-widow_kit_caltrops', beat: 'kit', lines: ["Mangrove Widow: Deck litter. Rude. (13)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'mangrove-widow_kit_acid-vial', beat: 'kit', lines: ["Mangrove Widow: Acid hiss. Noted. (13)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'mangrove-widow_kit_holy-water', beat: 'kit', lines: ["Mangrove Widow: That bottle burns wrong. (13)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'mangrove-widow_kit_smokestick', beat: 'kit', lines: ["Mangrove Widow: Smoke on the aisle. (13)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'mangrove-widow_kit_hunting-trap', beat: 'kit', lines: ["Mangrove Widow: Spring bite. Clever. (13)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'mangrove-widow_kit_net', beat: 'kit', lines: ["Mangrove Widow: Tangled. Annoying. (13)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'mangrove-widow_kit_healing-potion', beat: 'kit', lines: ["Mangrove Widow: You drink; I notice. (13)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'mangrove-widow_kit_oil-flask', beat: 'kit', lines: ["Mangrove Widow: Oil slick. Slippery date. (13)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'mangrove-widow_mhit_0', beat: 'monster_hit', lines: ["Mangrove Widow: Got you. (13)"] },
+  { id: 'mangrove-widow_mmiss_0', beat: 'monster_miss', lines: ["Mangrove Widow: Slipped. Again. (13)"] },
+  { id: 'mangrove-widow_w_wind', beat: 'wound', lines: ["Mangrove Widow: Just a scratch of salt. (13)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'mangrove-widow_w_bru', beat: 'wound', lines: ["Mangrove Widow: That's going to bruise. (13)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'mangrove-widow_w_bld', beat: 'wound', lines: ["Mangrove Widow: I'm leaking. Still here. (13)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'mangrove-widow_run_0', beat: 'run', lines: ["Mangrove Widow: Running already? (13)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'mangrove-widow_chase_0', beat: 'chase', lines: ["Mangrove Widow: I can still follow. (13)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'mangrove-widow_close_0', beat: 'close', lines: ["Mangrove Widow: Back in reach. (13)"] },
+  { id: 'mangrove-widow_vic_0', beat: 'victory', lines: ["Mangrove Widow: You win. Salt takes the rest. (13)"], weight: 1 },
+  { id: 'mangrove-widow_def_0', beat: 'defeat', lines: ["Mangrove Widow: Down you go. Date's over. (13)"] },
+];

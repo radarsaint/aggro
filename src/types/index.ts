@@ -15,9 +15,10 @@ export type CreatureType =
   | 'Ooze'
   | 'Construct'
   | 'Elemental'
-  | 'Fey';
+  | 'Fey'
+  | 'Dragon';
 
-export type MapTheme = 'retail' | 'alley' | 'sewer' | 'rooftop' | 'warehouse' | 'crypt';
+export type MapTheme = 'retail' | 'alley' | 'sewer' | 'rooftop' | 'warehouse' | 'crypt' | 'rigging' | 'bilge' | 'magazine';
 
 export interface Attack {
   name: string;
@@ -50,7 +51,7 @@ export interface Creature {
   /** Official WotC / SRD monster this AGGRO name reskins */
   baseCreature: string;
   wotcSource: string;
-  cr: '0' | '1/8' | '1/4' | '1/2' | '3/4';
+  cr: '0' | '1/8' | '1/4' | '1/2' | '3/4' | '1';
   type: CreatureType;
   encounter: EncounterSize;
   /** Discrete attacks per monster turn. Swarms stay 1; packs 2–6. Defaults to 1. */
@@ -402,9 +403,10 @@ export const ALL_CREATURE_TYPES: CreatureType[] = [
   'Construct',
   'Elemental',
   'Fey',
+  'Dragon',
 ];
 
-/** Types that existed before Construct / Elemental / Fey were added */
+/** Types that existed before Construct / Elemental / Fey / Dragon were added */
 export const LEGACY_CREATURE_TYPES: CreatureType[] = [
   'Beast',
   'Humanoid',

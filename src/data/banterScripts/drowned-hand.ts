@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Drowned Hand — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'drowned-hand_open_0', beat: 'open', lines: ["Drowned Hand: Placeholder open — late specter on Tortuga Muerta."], weight: 2 },
+  { id: 'drowned-hand_open_1', beat: 'open', lines: ["Drowned Hand: Salt aisle date. Attack, Item, or Run — that's the menu. (8)"], weight: 1 },
+  { id: 'drowned-hand_hhit_0', beat: 'hunter_hit', lines: ["Drowned Hand: That landed. Felt it. (8)"] },
+  { id: 'drowned-hand_hhit_1', beat: 'hunter_hit', lines: ["Drowned Hand: Ow. Keep going if you must. (8)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'drowned-hand_hmiss_0', beat: 'hunter_miss', lines: ["Drowned Hand: Missed. Sea air lies. (8)"] },
+  { id: 'drowned-hand_hcrit_0', beat: 'hunter_crit', lines: ["Drowned Hand: Hard hit. That one counted. (8)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'drowned-hand_kit_poison', beat: 'kit', lines: ["Drowned Hand: Something bitter on that edge. (8)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'drowned-hand_kit_alchemists-fire', beat: 'kit', lines: ["Drowned Hand: Fire near salt timber — brave. (8)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'drowned-hand_kit_caltrops', beat: 'kit', lines: ["Drowned Hand: Deck litter. Rude. (8)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'drowned-hand_kit_acid-vial', beat: 'kit', lines: ["Drowned Hand: Acid hiss. Noted. (8)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'drowned-hand_kit_holy-water', beat: 'kit', lines: ["Drowned Hand: That bottle burns wrong. (8)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'drowned-hand_kit_smokestick', beat: 'kit', lines: ["Drowned Hand: Smoke on the aisle. (8)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'drowned-hand_kit_hunting-trap', beat: 'kit', lines: ["Drowned Hand: Spring bite. Clever. (8)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'drowned-hand_kit_net', beat: 'kit', lines: ["Drowned Hand: Tangled. Annoying. (8)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'drowned-hand_kit_healing-potion', beat: 'kit', lines: ["Drowned Hand: You drink; I notice. (8)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'drowned-hand_kit_oil-flask', beat: 'kit', lines: ["Drowned Hand: Oil slick. Slippery date. (8)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'drowned-hand_mhit_0', beat: 'monster_hit', lines: ["Drowned Hand: Got you. (8)"] },
+  { id: 'drowned-hand_mmiss_0', beat: 'monster_miss', lines: ["Drowned Hand: Slipped. Again. (8)"] },
+  { id: 'drowned-hand_w_wind', beat: 'wound', lines: ["Drowned Hand: Just a scratch of salt. (8)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'drowned-hand_w_bru', beat: 'wound', lines: ["Drowned Hand: That's going to bruise. (8)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'drowned-hand_w_bld', beat: 'wound', lines: ["Drowned Hand: I'm leaking. Still here. (8)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'drowned-hand_run_0', beat: 'run', lines: ["Drowned Hand: Running already? (8)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'drowned-hand_chase_0', beat: 'chase', lines: ["Drowned Hand: I can still follow. (8)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'drowned-hand_close_0', beat: 'close', lines: ["Drowned Hand: Back in reach. (8)"] },
+  { id: 'drowned-hand_vic_0', beat: 'victory', lines: ["Drowned Hand: You win. Salt takes the rest. (8)"], weight: 1 },
+  { id: 'drowned-hand_def_0', beat: 'defeat', lines: ["Drowned Hand: Down you go. Date's over. (8)"] },
+];

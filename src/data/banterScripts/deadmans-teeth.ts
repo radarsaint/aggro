@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Deadman's Teeth — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'deadmans-teeth_open_0', beat: 'open', lines: ["Deadman's Teeth: Placeholder open — bilge swarm on Tortuga Muerta."], weight: 2 },
+  { id: 'deadmans-teeth_open_1', beat: 'open', lines: ["Deadman's Teeth: Salt aisle date. Attack, Item, or Run — that's the menu. (3)"], weight: 1 },
+  { id: 'deadmans-teeth_hhit_0', beat: 'hunter_hit', lines: ["Deadman's Teeth: That landed. Felt it. (3)"] },
+  { id: 'deadmans-teeth_hhit_1', beat: 'hunter_hit', lines: ["Deadman's Teeth: Ow. Keep going if you must. (3)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'deadmans-teeth_hmiss_0', beat: 'hunter_miss', lines: ["Deadman's Teeth: Missed. Sea air lies. (3)"] },
+  { id: 'deadmans-teeth_hcrit_0', beat: 'hunter_crit', lines: ["Deadman's Teeth: Hard hit. That one counted. (3)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'deadmans-teeth_kit_poison', beat: 'kit', lines: ["Deadman's Teeth: Something bitter on that edge. (3)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'deadmans-teeth_kit_alchemists-fire', beat: 'kit', lines: ["Deadman's Teeth: Fire near salt timber — brave. (3)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'deadmans-teeth_kit_caltrops', beat: 'kit', lines: ["Deadman's Teeth: Deck litter. Rude. (3)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'deadmans-teeth_kit_acid-vial', beat: 'kit', lines: ["Deadman's Teeth: Acid hiss. Noted. (3)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'deadmans-teeth_kit_holy-water', beat: 'kit', lines: ["Deadman's Teeth: That bottle burns wrong. (3)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'deadmans-teeth_kit_smokestick', beat: 'kit', lines: ["Deadman's Teeth: Smoke on the aisle. (3)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'deadmans-teeth_kit_hunting-trap', beat: 'kit', lines: ["Deadman's Teeth: Spring bite. Clever. (3)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'deadmans-teeth_kit_net', beat: 'kit', lines: ["Deadman's Teeth: Tangled. Annoying. (3)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'deadmans-teeth_kit_healing-potion', beat: 'kit', lines: ["Deadman's Teeth: You drink; I notice. (3)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'deadmans-teeth_kit_oil-flask', beat: 'kit', lines: ["Deadman's Teeth: Oil slick. Slippery date. (3)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'deadmans-teeth_mhit_0', beat: 'monster_hit', lines: ["Deadman's Teeth: Got you. (3)"] },
+  { id: 'deadmans-teeth_mmiss_0', beat: 'monster_miss', lines: ["Deadman's Teeth: Slipped. Again. (3)"] },
+  { id: 'deadmans-teeth_w_wind', beat: 'wound', lines: ["Deadman's Teeth: Just a scratch of salt. (3)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'deadmans-teeth_w_bru', beat: 'wound', lines: ["Deadman's Teeth: That's going to bruise. (3)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'deadmans-teeth_w_bld', beat: 'wound', lines: ["Deadman's Teeth: I'm leaking. Still here. (3)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'deadmans-teeth_run_0', beat: 'run', lines: ["Deadman's Teeth: Running already? (3)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'deadmans-teeth_chase_0', beat: 'chase', lines: ["Deadman's Teeth: I can still follow. (3)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'deadmans-teeth_close_0', beat: 'close', lines: ["Deadman's Teeth: Back in reach. (3)"] },
+  { id: 'deadmans-teeth_vic_0', beat: 'victory', lines: ["Deadman's Teeth: You win. Salt takes the rest. (3)"], weight: 1 },
+  { id: 'deadmans-teeth_def_0', beat: 'defeat', lines: ["Deadman's Teeth: Down you go. Date's over. (3)"] },
+];

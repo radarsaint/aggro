@@ -28,6 +28,20 @@ import { nodes as laugh_track } from './laugh-track';
 import { nodes as silt_knives } from './silt-knives';
 import { nodes as cinder_crew } from './cinder-crew';
 import { nodes as sting_grid } from './sting-grid';
+import { nodes as cutthroat } from './cutthroat';
+import { nodes as press_ganged_dead } from './press-ganged-dead';
+import { nodes as dead_mans_rig } from './dead-mans-rig';
+import { nodes as deadmans_teeth } from './deadmans-teeth';
+import { nodes as dead_bosun } from './dead-bosun';
+import { nodes as gallows_hound } from './gallows-hound';
+import { nodes as bilge_toad } from './bilge-toad';
+import { nodes as drowned_powderman } from './drowned-powderman';
+import { nodes as drowned_hand } from './drowned-hand';
+import { nodes as powder_drake } from './powder-drake';
+import { nodes as rigging_widow } from './rigging-widow';
+import { nodes as gravewater_octopus } from './gravewater-octopus';
+import { nodes as dead_siren } from './dead-siren';
+import { nodes as mangrove_widow } from './mangrove-widow';
 import type { ScriptNode } from './types';
 
 export type { ScriptNode, CombatBanterBeat } from './types';
@@ -64,6 +78,20 @@ export const BANTER_SCRIPTS: Record<string, ScriptNode[]> = {
   'silt-knives': silt_knives,
   'cinder-crew': cinder_crew,
   'sting-grid': sting_grid,
+  'cutthroat': cutthroat,
+  'press-ganged-dead': press_ganged_dead,
+  'dead-mans-rig': dead_mans_rig,
+  'deadmans-teeth': deadmans_teeth,
+  'dead-bosun': dead_bosun,
+  'gallows-hound': gallows_hound,
+  'bilge-toad': bilge_toad,
+  'drowned-powderman': drowned_powderman,
+  'drowned-hand': drowned_hand,
+  'powder-drake': powder_drake,
+  'rigging-widow': rigging_widow,
+  'gravewater-octopus': gravewater_octopus,
+  'dead-siren': dead_siren,
+  'mangrove-widow': mangrove_widow,
 };
 
 export function scriptsFor(creatureId: string): ScriptNode[] {

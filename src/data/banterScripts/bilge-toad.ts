@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Bilge Toad — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'bilge-toad_open_0', beat: 'open', lines: ["Bilge Toad: Placeholder open — hold toad on Tortuga Muerta."], weight: 2 },
+  { id: 'bilge-toad_open_1', beat: 'open', lines: ["Bilge Toad: Salt aisle date. Attack, Item, or Run — that's the menu. (6)"], weight: 1 },
+  { id: 'bilge-toad_hhit_0', beat: 'hunter_hit', lines: ["Bilge Toad: That landed. Felt it. (6)"] },
+  { id: 'bilge-toad_hhit_1', beat: 'hunter_hit', lines: ["Bilge Toad: Ow. Keep going if you must. (6)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'bilge-toad_hmiss_0', beat: 'hunter_miss', lines: ["Bilge Toad: Missed. Sea air lies. (6)"] },
+  { id: 'bilge-toad_hcrit_0', beat: 'hunter_crit', lines: ["Bilge Toad: Hard hit. That one counted. (6)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'bilge-toad_kit_poison', beat: 'kit', lines: ["Bilge Toad: Something bitter on that edge. (6)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'bilge-toad_kit_alchemists-fire', beat: 'kit', lines: ["Bilge Toad: Fire near salt timber — brave. (6)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'bilge-toad_kit_caltrops', beat: 'kit', lines: ["Bilge Toad: Deck litter. Rude. (6)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'bilge-toad_kit_acid-vial', beat: 'kit', lines: ["Bilge Toad: Acid hiss. Noted. (6)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'bilge-toad_kit_holy-water', beat: 'kit', lines: ["Bilge Toad: That bottle burns wrong. (6)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'bilge-toad_kit_smokestick', beat: 'kit', lines: ["Bilge Toad: Smoke on the aisle. (6)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'bilge-toad_kit_hunting-trap', beat: 'kit', lines: ["Bilge Toad: Spring bite. Clever. (6)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'bilge-toad_kit_net', beat: 'kit', lines: ["Bilge Toad: Tangled. Annoying. (6)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'bilge-toad_kit_healing-potion', beat: 'kit', lines: ["Bilge Toad: You drink; I notice. (6)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'bilge-toad_kit_oil-flask', beat: 'kit', lines: ["Bilge Toad: Oil slick. Slippery date. (6)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'bilge-toad_mhit_0', beat: 'monster_hit', lines: ["Bilge Toad: Got you. (6)"] },
+  { id: 'bilge-toad_mmiss_0', beat: 'monster_miss', lines: ["Bilge Toad: Slipped. Again. (6)"] },
+  { id: 'bilge-toad_w_wind', beat: 'wound', lines: ["Bilge Toad: Just a scratch of salt. (6)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'bilge-toad_w_bru', beat: 'wound', lines: ["Bilge Toad: That's going to bruise. (6)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'bilge-toad_w_bld', beat: 'wound', lines: ["Bilge Toad: I'm leaking. Still here. (6)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'bilge-toad_run_0', beat: 'run', lines: ["Bilge Toad: Running already? (6)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'bilge-toad_chase_0', beat: 'chase', lines: ["Bilge Toad: I can still follow. (6)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'bilge-toad_close_0', beat: 'close', lines: ["Bilge Toad: Back in reach. (6)"] },
+  { id: 'bilge-toad_vic_0', beat: 'victory', lines: ["Bilge Toad: You win. Salt takes the rest. (6)"], weight: 1 },
+  { id: 'bilge-toad_def_0', beat: 'defeat', lines: ["Bilge Toad: Down you go. Date's over. (6)"] },
+];

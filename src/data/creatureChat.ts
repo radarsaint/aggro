@@ -301,5 +301,145 @@ export const CREATURE_CHAT: Record<string, Record<CreatureReply, string>> = {
     "loot": "We're concerned with the nest. AGGRO handles the prize.",
     "gear": "Keep the loose cords away from the wings.",
     "other": "Ask about the nest or the fight. We'll come lower to hear."
+  },
+  "cutthroat": {
+    "decline": "I'll stay in the ratlines. Call when you're ready.",
+    "fight": "Steel's out. Your move.",
+    "weapon": "Nice edge. Mine's quieter.",
+    "greeting": "Lookout's here. Mind your boots.",
+    "work": "I watch. I cut. Sometimes both.",
+    "loot": "Coin stays dry up here.",
+    "gear": "Don't rattle the kit on the ropes.",
+    "other": "Ask about the watch or the fight."
+  },
+  "press-ganged-dead": {
+    "decline": "Contract can wait. I'll keep chewing.",
+    "fight": "Boarding starts when you say.",
+    "weapon": "Sharp. Good. Soft is better for chewing.",
+    "greeting": "Missing teeth. Still hungry. Hello.",
+    "work": "Pressed hand. The ink never dried.",
+    "loot": "I keep the contract. You keep the gold.",
+    "gear": "Don't spill holy water near the hold.",
+    "other": "Ask about the contract or the fight."
+  },
+  "dead-mans-rig": {
+    "decline": "The suit can wait motionless.",
+    "fight": "Empty harness ready to swing.",
+    "weapon": "Metal on metal. I remember that sound.",
+    "greeting": "Sailor gone. Swing isn't. Hello.",
+    "work": "I stand watch in someone else's armor.",
+    "loot": "I don't pocket. I clang.",
+    "gear": "Oil the hinges if you must.",
+    "other": "Ask about the rig or the fight."
+  },
+  "deadmans-teeth": {
+    "decline": "We'll boil quieter for now.",
+    "fight": "The school is ready.",
+    "weapon": "Big tooth. We have more.",
+    "greeting": "Many mouths. One hello.",
+    "work": "We clean the bilge of soft things.",
+    "loot": "We don't keep coin. We keep moving.",
+    "gear": "Nets are rude. Don't.",
+    "other": "Ask about the boil or the fight."
+  },
+  "dead-bosun": {
+    "decline": "Lines stay tight. Bout later.",
+    "fight": "Pin's ready. Call it.",
+    "weapon": "Heavy. Good. Match the pin.",
+    "greeting": "Bosun here. Breath like a flooded locker.",
+    "work": "I still run the lines. Crew's late forever.",
+    "loot": "Pay's in swings, not paper.",
+    "gear": "Keep caltrops off my deck.",
+    "other": "Ask about the lines or the fight."
+  },
+  "gallows-hound": {
+    "decline": "We'll wait by the rope.",
+    "fight": "Both heads are ready.",
+    "weapon": "We smell the steel.",
+    "greeting": "Two heads. One rope-burn. Hello.",
+    "work": "We hunt deserters. You're on the list or not.",
+    "loot": "We don't count coin. We count steps.",
+    "gear": "Trap smell is honest. We respect it.",
+    "other": "Ask about the hunt or the fight."
+  },
+  "bilge-toad": {
+    "decline": "I'll blink from the dark a while.",
+    "fight": "Throat's open. Your call.",
+    "weapon": "Pointy. Keep it out of the water.",
+    "greeting": "The hold blinks. Hello.",
+    "work": "I live where the pump failed.",
+    "loot": "I swallow things. Gold is noisy.",
+    "gear": "Oil makes the tongue slip. Noted.",
+    "other": "Ask about the hold or the fight."
+  },
+  "drowned-powderman": {
+    "decline": "Magazine stays dark. Later.",
+    "fight": "Cough's ready. No matches.",
+    "weapon": "Steel near powder. Careful.",
+    "greeting": "Gunner-cough. Not lizard-smoke. Hello.",
+    "work": "I keep the kegs and the flash.",
+    "loot": "Powder first. Pay after.",
+    "gear": "No open flame kits near me.",
+    "other": "Ask about the magazine or the fight."
+  },
+  "drowned-hand": {
+    "decline": "Watch can wait. Cold keeps.",
+    "fight": "Fingers ready for the collar.",
+    "weapon": "I don't bleed. You might.",
+    "greeting": "Late for watch. Still reporting.",
+    "work": "I show up. The bell doesn't.",
+    "loot": "I take warmth. Gold falls through.",
+    "gear": "Lanterns help. Sunlight doesn't.",
+    "other": "Ask about the watch or the fight."
+  },
+  "powder-drake": {
+    "decline": "Nest stays smoky. Later.",
+    "fight": "Scales leaking. Ready when you are.",
+    "weapon": "Point it away from the barrels.",
+    "greeting": "Lizard-smoke through cracked brass. Not a gunner.",
+    "work": "I nest in the cannon carriage.",
+    "loot": "I keep warm metal. You keep the purse.",
+    "gear": "Smoke stick is almost polite.",
+    "other": "Ask about the nest or the fight."
+  },
+  "rigging-widow": {
+    "decline": "Silk holds. Bout later.",
+    "fight": "Tarred line ready.",
+    "weapon": "Cut carefully. Lines have feelings.",
+    "greeting": "Between the masts. Hello.",
+    "work": "I seize what climbs.",
+    "loot": "Silk over coin.",
+    "gear": "Fire near silk is a bad date.",
+    "other": "Ask about the line or the fight."
+  },
+  "gravewater-octopus": {
+    "decline": "Lunchbox stays closed for now.",
+    "fight": "Arms ready under the hatch.",
+    "weapon": "Hooks are rude. Noted.",
+    "greeting": "Pale wreck-feeder. The ship is lunch.",
+    "work": "I open hatches from the wet side.",
+    "loot": "I keep soft wreck. You keep gold.",
+    "gear": "Oil slicks help me less than you think.",
+    "other": "Ask about the wreck or the fight."
+  },
+  "dead-siren": {
+    "decline": "Chorus rests. Climb later.",
+    "fight": "Song's warm. Come up when ready.",
+    "weapon": "Loud steel. Soft minds prefer song.",
+    "greeting": "Drowned chorus pulling up the ropes. Hello.",
+    "work": "I sing. You climb. Old arrangement.",
+    "loot": "I keep the harmony. AGGRO keeps the pay.",
+    "gear": "Wax is cheating. I still like you.",
+    "other": "Ask about the song or the fight."
+  },
+  "mangrove-widow": {
+    "decline": "Roots wait. Beauty keeps.",
+    "fight": "The mangrove can move when you say.",
+    "weapon": "Axes make bad first dates.",
+    "greeting": "Beautiful until I move. Hello.",
+    "work": "I grow through wrecks and soft yeses.",
+    "loot": "Roots over purses.",
+    "gear": "Acid near roots is unkind.",
+    "other": "Ask about the roots or the fight."
   }
 };

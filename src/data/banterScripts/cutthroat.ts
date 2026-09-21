@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Cutthroat — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'cutthroat_open_0', beat: 'open', lines: ["Cutthroat: Placeholder open — living steel lookout on Tortuga Muerta."], weight: 2 },
+  { id: 'cutthroat_open_1', beat: 'open', lines: ["Cutthroat: Salt aisle date. Attack, Item, or Run — that's the menu."], weight: 1 },
+  { id: 'cutthroat_hhit_0', beat: 'hunter_hit', lines: ["Cutthroat: That landed. Felt it."] },
+  { id: 'cutthroat_hhit_1', beat: 'hunter_hit', lines: ["Cutthroat: Ow. Keep going if you must."], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'cutthroat_hmiss_0', beat: 'hunter_miss', lines: ["Cutthroat: Missed. Sea air lies."] },
+  { id: 'cutthroat_hcrit_0', beat: 'hunter_crit', lines: ["Cutthroat: Hard hit. That one counted."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'cutthroat_kit_poison', beat: 'kit', lines: ["Cutthroat: Something bitter on that edge."], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'cutthroat_kit_alchemists-fire', beat: 'kit', lines: ["Cutthroat: Fire near salt timber — brave."], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'cutthroat_kit_caltrops', beat: 'kit', lines: ["Cutthroat: Deck litter. Rude."], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'cutthroat_kit_acid-vial', beat: 'kit', lines: ["Cutthroat: Acid hiss. Noted."], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'cutthroat_kit_holy-water', beat: 'kit', lines: ["Cutthroat: That bottle burns wrong."], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'cutthroat_kit_smokestick', beat: 'kit', lines: ["Cutthroat: Smoke on the aisle."], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'cutthroat_kit_hunting-trap', beat: 'kit', lines: ["Cutthroat: Spring bite. Clever."], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'cutthroat_kit_net', beat: 'kit', lines: ["Cutthroat: Tangled. Annoying."], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'cutthroat_kit_healing-potion', beat: 'kit', lines: ["Cutthroat: You drink; I notice."], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'cutthroat_kit_oil-flask', beat: 'kit', lines: ["Cutthroat: Oil slick. Slippery date."], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'cutthroat_mhit_0', beat: 'monster_hit', lines: ["Cutthroat: Got you."] },
+  { id: 'cutthroat_mmiss_0', beat: 'monster_miss', lines: ["Cutthroat: Slipped. Again."] },
+  { id: 'cutthroat_w_wind', beat: 'wound', lines: ["Cutthroat: Just a scratch of salt."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'cutthroat_w_bru', beat: 'wound', lines: ["Cutthroat: That's going to bruise."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'cutthroat_w_bld', beat: 'wound', lines: ["Cutthroat: I'm leaking. Still here."], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'cutthroat_run_0', beat: 'run', lines: ["Cutthroat: Running already?"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'cutthroat_chase_0', beat: 'chase', lines: ["Cutthroat: I can still follow."], weight: 2, requireFlags: ["ran"] },
+  { id: 'cutthroat_close_0', beat: 'close', lines: ["Cutthroat: Back in reach."] },
+  { id: 'cutthroat_vic_0', beat: 'victory', lines: ["Cutthroat: You win. Salt takes the rest."], weight: 1 },
+  { id: 'cutthroat_def_0', beat: 'defeat', lines: ["Cutthroat: Down you go. Date's over."] },
+];

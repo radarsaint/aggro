@@ -42,7 +42,7 @@ export function Portrait({
           {emoji}
         </span>
       )}
-      {(mapTheme === 'retail' || mapTheme === 'crypt') && <div className="web" />}
+      {(mapTheme === 'retail' || mapTheme === 'crypt' || mapTheme === 'rigging') && <div className="web" />}
       <div className="grime" />
       <div className="portrait__wound" aria-hidden />
       {sign && <div className="signage">{sign}</div>}

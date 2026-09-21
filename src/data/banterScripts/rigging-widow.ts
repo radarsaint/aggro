@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Rigging Widow — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'rigging-widow_open_0', beat: 'open', lines: ["Rigging Widow: Placeholder open — tarred widow on Tortuga Muerta."], weight: 2 },
+  { id: 'rigging-widow_open_1', beat: 'open', lines: ["Rigging Widow: Salt aisle date. Attack, Item, or Run — that's the menu. (10)"], weight: 1 },
+  { id: 'rigging-widow_hhit_0', beat: 'hunter_hit', lines: ["Rigging Widow: That landed. Felt it. (10)"] },
+  { id: 'rigging-widow_hhit_1', beat: 'hunter_hit', lines: ["Rigging Widow: Ow. Keep going if you must. (10)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'rigging-widow_hmiss_0', beat: 'hunter_miss', lines: ["Rigging Widow: Missed. Sea air lies. (10)"] },
+  { id: 'rigging-widow_hcrit_0', beat: 'hunter_crit', lines: ["Rigging Widow: Hard hit. That one counted. (10)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'rigging-widow_kit_poison', beat: 'kit', lines: ["Rigging Widow: Something bitter on that edge. (10)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'rigging-widow_kit_alchemists-fire', beat: 'kit', lines: ["Rigging Widow: Fire near salt timber — brave. (10)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'rigging-widow_kit_caltrops', beat: 'kit', lines: ["Rigging Widow: Deck litter. Rude. (10)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'rigging-widow_kit_acid-vial', beat: 'kit', lines: ["Rigging Widow: Acid hiss. Noted. (10)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'rigging-widow_kit_holy-water', beat: 'kit', lines: ["Rigging Widow: That bottle burns wrong. (10)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'rigging-widow_kit_smokestick', beat: 'kit', lines: ["Rigging Widow: Smoke on the aisle. (10)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'rigging-widow_kit_hunting-trap', beat: 'kit', lines: ["Rigging Widow: Spring bite. Clever. (10)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'rigging-widow_kit_net', beat: 'kit', lines: ["Rigging Widow: Tangled. Annoying. (10)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'rigging-widow_kit_healing-potion', beat: 'kit', lines: ["Rigging Widow: You drink; I notice. (10)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'rigging-widow_kit_oil-flask', beat: 'kit', lines: ["Rigging Widow: Oil slick. Slippery date. (10)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'rigging-widow_mhit_0', beat: 'monster_hit', lines: ["Rigging Widow: Got you. (10)"] },
+  { id: 'rigging-widow_mmiss_0', beat: 'monster_miss', lines: ["Rigging Widow: Slipped. Again. (10)"] },
+  { id: 'rigging-widow_w_wind', beat: 'wound', lines: ["Rigging Widow: Just a scratch of salt. (10)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'rigging-widow_w_bru', beat: 'wound', lines: ["Rigging Widow: That's going to bruise. (10)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'rigging-widow_w_bld', beat: 'wound', lines: ["Rigging Widow: I'm leaking. Still here. (10)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'rigging-widow_run_0', beat: 'run', lines: ["Rigging Widow: Running already? (10)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'rigging-widow_chase_0', beat: 'chase', lines: ["Rigging Widow: I can still follow. (10)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'rigging-widow_close_0', beat: 'close', lines: ["Rigging Widow: Back in reach. (10)"] },
+  { id: 'rigging-widow_vic_0', beat: 'victory', lines: ["Rigging Widow: You win. Salt takes the rest. (10)"], weight: 1 },
+  { id: 'rigging-widow_def_0', beat: 'defeat', lines: ["Rigging Widow: Down you go. Date's over. (10)"] },
+];
