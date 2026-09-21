@@ -364,6 +364,16 @@ function guessIconKey(item: Pick<InventoryItem, 'name' | 'kind'>): string {
 }
 
 function migrateInventoryItem(item: InventoryItem): InventoryItem {
+  if (!item || typeof item !== 'object') {
+    // Corrupt reward/inventory row — keep load from white-screening
+    return {
+      id: `recovered-${Date.now().toString(36)}`,
+      name: 'Clearance Scrap',
+      rarity: 'Common',
+      kind: 'Mundane Equipment',
+      iconKey: 'tools',
+    };
+  }
   if (item.iconKey) return item;
   return { ...item, iconKey: guessIconKey(item) };
 }
@@ -420,10 +430,12 @@ function migrateCombat(combat: CombatState, threat: ThreatLevel, bag: HunterBag)
   const raw = (combat as Partial<CombatState>).activeKitId;
   const kit: KitId = isKitId(raw) ? raw : bag[threat];
   const partial = combat as Partial<CombatState>;
-  const fightKits: KitId[] =
-    Array.isArray(partial.fightKits) && partial.fightKits.length > 0
-      ? partial.fightKits.filter(isKitId)
-      : [kit];
+  // Filter invalid ids; if the array was present but every id was junk, fall back —
+  // an empty fightKits makes spent>=length (0>=0) and can desync Item UI / getKit.
+  const filteredKits = Array.isArray(partial.fightKits)
+    ? partial.fightKits.filter(isKitId)
+    : [];
+  const fightKits: KitId[] = filteredKits.length > 0 ? filteredKits : [kit];
   const spentKitIds: KitId[] = Array.isArray(partial.spentKitIds)
     ? partial.spentKitIds.filter(isKitId)
     : combat.kitSpent

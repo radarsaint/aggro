@@ -1,5 +1,5 @@
 import type { CombatLogEntry, CombatState, Creature, Hunter, KitId } from '../types';
-import { getKit } from '../data/kits';
+import { getKit, isKitId } from '../data/kits';
 import {
   abilityMod,
   attackBonusFromScore,
@@ -307,7 +307,7 @@ export function startCombat(
   creature: Creature,
   kits: KitId[] | KitId,
 ): CombatState {
-  const fightKits = (Array.isArray(kits) ? kits : [kits]).filter(Boolean) as KitId[];
+  const fightKits = (Array.isArray(kits) ? kits : [kits]).filter(isKitId);
   if (!fightKits.length) throw new Error('startCombat requires at least one kit');
   const activeKitId = fightKits[0];
   const initBonus = hunter.initiativeBonus;
