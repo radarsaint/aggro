@@ -39,11 +39,11 @@ export function YourFaceEditor({ value, onChange }: Props) {
       onChange({ ...value, customAvatar: dataUrl });
       setHint(
         warned
-          ? 'Face saved, but it is still chunky — localStorage may groan. Smaller shot next time.'
-          : 'Custom face locked in. Looking dangerous.',
+          ? 'Image saved. A smaller image will use less browser storage.'
+          : 'Profile image saved.',
       );
     } catch {
-      setHint('That file refused to become a face. Try a normal image.');
+      setHint('Could not load that image. Try a PNG, JPEG, or WebP file.');
     } finally {
       setBusy(false);
       if (inputRef.current) inputRef.current.value = '';
@@ -54,11 +54,11 @@ export function YourFaceEditor({ value, onChange }: Props) {
     const raw = urlDraft.trim();
     if (!raw) return;
     if (!isHttpImageUrl(raw)) {
-      setHint('Need an http(s) image URL. No weird schemes.');
+      setHint('Enter a direct image link beginning with http:// or https://.');
       return;
     }
     onChange({ ...value, customAvatar: raw });
-    setHint('URL face applied. Hope it loads — CORS is a hell clerk.');
+    setHint('Image link saved. Check the preview.');
   };
 
   return (
@@ -76,8 +76,7 @@ export function YourFaceEditor({ value, onChange }: Props) {
           title="Preview"
         />
         <p className="your-face__blurb">
-          Upload a shot or paste an image URL so the floor can recognize you. No emoji mug pack —
-          blank badge until you upload. Clear custom returns to the placeholder silhouette.
+          Upload a portrait or paste a direct image link. Clear custom removes the image and restores the silhouette.
         </p>
       </div>
 

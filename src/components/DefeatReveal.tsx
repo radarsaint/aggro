@@ -10,32 +10,32 @@ export interface DefeatRevealProps {
   matchId?: string;
 }
 
-/** Mandatory action items — Baatorasaka HR satire, fuck-you energy in paperwork form. */
+/** Satirical paperwork about the company; these lines impose no game requirements. */
 export const PIP_ACTION_ITEMS: string[] = [
-  'Die less on company time. Clock-out requires a pulse.',
-  'Enroll in remedial clearance-aisle combat. Attendance mandatory; competence pending review.',
-  'Re-submit Form 27-B: "Why I Bled During a Date." Attach limbs if recoverable.',
-  'Stop being shrinkage. Inventory writes you off as a loss — expensive, embarrassing, final.',
-  'Improve metrics before next swipe. People Ops has already drafted your eulogy as a footnote.',
-  'Bring arms next time. Matching algorithm logged "disappointment" under Soft Skills.',
-  'Cease exiting interviews mid-stab. Complete the hunt or forfeit the clearance.',
-  'Bloodline placed on Performance Improvement Purgatory. Appeal window: none.',
-  'Creature rated you 1★. Respond with competence, not vibes. Stars are not decorative.',
-  'Date · Hunt · Consume — you failed all three. Retry is unpaid and mandatory.',
-  'Unpaid overtime in the afterlife begins immediately. Benefits: experience.',
-  'Show up less dead. Baatorasaka does not sponsor pity dates or corpse reimbursement.',
-  'Schedule a wellness check with Facilities. They will not fix you; they will document the smell.',
-  'Acknowledge receipt of this PIP with a signature or a scream. Both file the same.',
-  'Your match reported "insufficient threat." Rehearse looking dangerous in a mirror HR owns.',
-  'Cease romanticizing your corpse. Romance is for winners; you are a write-off with opinions.',
-  'Conspiracy note (internal): Legal believes you lost on purpose. Prove them wrong or prove them right louder.',
-  'Heartstring clause: someone almost liked you. That someone has been reassigned. Do better next pulse.',
-  'Brutal edge: next defeat auto-routes your remains to Clearance. As-is. No returns. No flowers.',
-  'Attend Mandatory Fun in the Hymnal Suite. Attendance taken in the dark. Soft skills graded in screams.',
-  'Update emergency contact to "whoever still answers." Prior contact marked Declined / Lost Interest.',
-  "Stop CC'ing hope on combat threads. Hope is not a stakeholder; Hope bounced.",
-  'Complete microlearning: "How Not to Be the Soft Skill." Quiz is live steel. Passing score: alive.',
-  'People Ops stamped REJECTED on your face. Wash carefully — ink is permanent, dignity is not.',
+  "Complete the incident form. The box marked OTHER is smaller than the box marked USER ERROR.",
+  "Request a replacement chair for the recovery area. The request form is on the broken chair.",
+  "Ask People Ops why the first-aid cupboard contains three motivational mugs.",
+  "Review the training poster. Its author has never entered a bout.",
+  "Record equipment damage. Facilities would prefer a flattering photograph.",
+  "Locate the recovery room. The sign was removed to improve navigation.",
+  "Check whether the complimentary water still requires a purchase.",
+  "Request combat advice from the supervisor. Expect a link to this form.",
+  "File one copy here. The second copy is for the department that lost the first.",
+  "Complete the wellness survey. The only available answer is SATISFIED.",
+  "Ask for the promised safety demonstration. Scheduling has marked it as theoretical.",
+  "Report the loose floor tile. It has already won Employee of the Month.",
+  "Collect the free bandage shown in the brochure. The brochure is available for collection.",
+  "Read the company recovery policy. Page two refers you back to page one.",
+  "Return this form in the supplied envelope. Procurement is still sourcing the envelope.",
+  "Ask why the emergency bell has a volume limit.",
+  "Inspect the staff suggestion box. Its bottom opens directly into the recycling.",
+  "Confirm the training video has subtitles. The subtitles say WATCH THE VIDEO.",
+  "Request an appointment with the safety officer. The appointment is with an empty desk.",
+  "Check the recovery bench for wet paint. The warning sign arrived yesterday.",
+  "Keep a copy of your complaint. The company has an excellent record of losing them.",
+  "Review the map to Medical. The map is currently displayed inside Medical.",
+  "Ask Accounts why it billed the first-aid cupboard for occupying floor space.",
+  "Read the fire-exit notice. The arrow points at a framed award."
 ];
 
 function hashSeed(seed: string): number {
@@ -114,7 +114,7 @@ export function DefeatReveal({ creatureName, matchId }: DefeatRevealProps) {
         animate={{ scale: 1, opacity: 1, rotate: -10 }}
         transition={{ type: 'spring', stiffness: 380, damping: 15, delay: 0.12 }}
       >
-        REJECTED
+        FILED
       </motion.div>
 
       <motion.p className="defeat-reveal__dept" variants={childVariants}>
@@ -136,17 +136,17 @@ export function DefeatReveal({ creatureName, matchId }: DefeatRevealProps) {
           <strong>DEFEATED</strong>
         </div>
         <div className="defeat-reveal__meta-row">
-          <span>Supervisor</span>
+          <span>Opponent</span>
           <strong className="defeat-reveal__creature-name">{creatureName}</strong>
         </div>
         <div className="defeat-reveal__meta-row">
           <span>Outcome</span>
-          <strong>NEEDS IMPROVEMENT</strong>
+          <strong>FIGHT LOST</strong>
         </div>
       </motion.div>
 
       <motion.div className="defeat-reveal__actions" variants={childVariants}>
-        <h3 className="defeat-reveal__actions-heading">Mandatory action items</h3>
+        <h3 className="defeat-reveal__actions-heading">From the People Ops handbook</h3>
         <ol className="defeat-reveal__action-list">
           {actions.map((item, i) => (
             <li key={i}>
@@ -160,7 +160,7 @@ export function DefeatReveal({ creatureName, matchId }: DefeatRevealProps) {
       </motion.div>
 
       <motion.p className="defeat-reveal__wake" variants={childVariants}>
-        You wake up later. Unpaid training continues. Swipe when metrics — and your pulse — improve.
+        The fight is over. Rest and check your gear before your next match. This paperwork requires no action.
       </motion.p>
 
       <motion.div variants={childVariants}>

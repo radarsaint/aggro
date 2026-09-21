@@ -1553,6 +1553,16 @@ img { max-width: 100%; display: block; }
   color: var(--muted);
   margin-top: 2px;
 }
+.loot-card__description,
+.loot-card__effect {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+.loot-card__effect {
+  color: var(--muted);
+}
 .loot-card__rarity {
   display: inline-block;
   margin-top: 6px;

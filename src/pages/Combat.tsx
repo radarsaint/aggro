@@ -392,6 +392,7 @@ export function Combat() {
               hotClearance={match.payoutStake?.tier === 'hot'}
               threat={creature.threat}
               lootBeat={match.reward.lootBeat}
+              banterFlags={combat.banterFlags}
             />
           </div>
         )}

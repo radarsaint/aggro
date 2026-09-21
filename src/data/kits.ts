@@ -25,7 +25,7 @@ export interface KitDef {
   id: KitId;
   name: string;
   summary: string;
-  /** Creature roast pool — pick one at match/banter time */
+  /** Physical item description; legacy field name retained */
   roastLines: string[];
   combatHint: string;
   effectKind: KitEffectKind;
@@ -35,131 +35,81 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
   poison: {
     id: 'poison',
     name: 'Poison',
-    summary: 'Coat now: −3 to hit + 1 poison/tick ×3 (hits refresh). Safer fights, not burst.',
-    roastLines: [
-      'Poison on a first date — cologne for people who want a quieter second.',
-      'You coated the blade like a love letter with a delayed read receipt.',
-      'Slow death in a vial. Romantic. Cowardly. I respect the paperwork.',
-      'That green sheen says "I brought feelings" and "I refuse to swing fair."',
-    ],
-    combatHint: 'Item: poison now (−3 + 1/tick ×3). Hits refresh.',
+    summary: "Coat your weapon. Poison immediately deals 1 damage on each of the next 3 enemy turns and reduces enemy attack rolls by 3. Each weapon hit refreshes the duration.",
+    roastLines: ["A wax-sealed vial with a skull label pasted over an older, friendlier label."],
+    combatHint: "Apply poison now; weapon hits renew its 3-turn effect.",
     effectKind: 'weapon-coat',
   },
   'alchemists-fire': {
     id: 'alchemists-fire',
     name: "Alchemist's Fire",
-    summary: 'Burn DoT: 1d4 splash + 1d4 fire/turn (×2 / ×3 pack). Run may quench. No −2.',
-    roastLines: [
-      "Alchemist's fire in the tote — 'second date?' written in intentional arson.",
-      'You packed a relationship that refuses to go out. Quench is a prayer.',
-      'Splash romance. The kind that follows you down the hall coughing.',
-      "Cute. You brought a campfire and called it 'chemistry.'",
-    ],
-    combatHint: 'Item: 1d4 splash + burn DoT (packs +1 tick). Not poison.',
+    summary: "Deal 1d4 fire damage now, then 1d4 on each of the next 2 enemy turns, or 3 turns against a crew. Active oil adds another burn turn. An enemy chase after Run can put the fire out.",
+    roastLines: ["A thick amber liquid that keeps glowing after you put it back in the bag."],
+    combatHint: "Burn the target now and on later enemy turns.",
     effectKind: 'splash',
   },
   caltrops: {
     id: 'caltrops',
     name: 'Caltrops',
-    summary: 'Drop-and-kite: Item→Run (no AoO)→Close into 1d8+stumble. Weak if never Run.',
-    roastLines: [
-      'Caltrops before drinks — not flirting, filing a trip hazard with my ankles.',
-      'You littered the floor with sharp little apologies. I step; you smirk.',
-      'Kite kit. Run first, romance never. My soles are filing a complaint.',
-      'Scatter toys for cowards who need the ground to do the fighting.',
-    ],
-    combatHint: 'Item: arm + one AoO-free Run; Close: 1d8+stumble.',
+    summary: "Scatter the spikes. Your next Run avoids the opportunity attack. Enemies crossing them to Close take 1d8 damage, with a 70% chance to delay closing and cancel one later strike. If triggered in melee first, they deal 1d4 and cancel one strike.",
+    roastLines: ["A cloth bag of iron points. The company counts them before issue, never after."],
+    combatHint: "Place spikes; strongest when the enemy must Close.",
     effectKind: 'arm',
   },
   'acid-vial': {
     id: 'acid-vial',
     name: 'Acid Vial',
-    summary: 'One splash: 2d6 acid. Honest burst. No second pour.',
-    roastLines: [
-      'Acid vial for dinner — I asked for butterflies, you brought a spill and a smile.',
-      'One honest pour. No second chances. Finally, a date with integrity and melts.',
-      'That glass says "I practiced the throw in the mirror." Hiss.',
-      'You brought dissolution in a bottle. Soft launch for a hard goodbye.',
-    ],
-    combatHint: 'Item: 2d6 acid once.',
+    summary: "Splash the enemy for 2d6 acid damage. One use.",
+    roastLines: ["The stopper has a glass handle. The last cork is still dissolving inside."],
+    combatHint: "Deal 2d6 acid damage immediately.",
     effectKind: 'splash',
   },
   'holy-water': {
     id: 'holy-water',
     name: 'Holy Water',
-    summary: '4d6 radiant vs Undead; only 1d6 vs others. Big niche, weak off-target.',
-    roastLines: [
-      "Holy water like breath mints — either I'm undead or you're nervous. Splash.",
-      'Blessed splash for a first impression. Priest-core dating. Bless.',
-      'You packed a niche nuke and a prayer. Hope I qualify. Or else: sad drizzle.',
-      'Sanctified anxiety in a flask. Cute. My sins are laughing.',
-    ],
-    combatHint: 'Item: 4d6 vs Undead; 1d6 otherwise.',
+    summary: "Splash an Undead enemy for 4d6 radiant damage. Other creature types take 1d6 radiant damage.",
+    roastLines: ["Blessed water in a travel flask. The blessing survived the clearance sticker."],
+    combatHint: "Strong against Undead: 4d6 radiant. Other targets: 1d6.",
     effectKind: 'splash',
   },
   smokestick: {
     id: 'smokestick',
     name: 'Smokestick',
-    summary: 'Safe disengage: next Run heals with NO AoO/chase. Not a Close-punish tool.',
-    roastLines: [
-      'Smokestick for the Irish exit — fog-machine ghosting. We still smell the flee.',
-      'You brought an exit strategy and called it ambiance. Fog says "bye" first.',
-      'Safe Run in a stick. Commitment issues with theatrical production value.',
-      'Curtain of smoke. Behind it: you, healing, pretending this was mysterious.',
-    ],
-    combatHint: 'Item: smoke cover — next Run ignores AoO (safe heal).',
+    summary: "Create smoke and break contact. Your next Run restores 1d4 HP without an opportunity attack or chase. Enemies spend their immediate response trying to close through the smoke.",
+    roastLines: ["A short tube marked PULL HERE. The rest of the instructions disappear into the smoke."],
+    combatHint: "Use smoke, then Run to recover behind cover.",
     effectKind: 'smoke',
   },
   'hunting-trap': {
     id: 'hunting-trap',
     name: 'Hunting Trap',
-    summary: 'Snap damage + enemy spends their NEXT full turn prying (no attacks). Tempo steal.',
-    roastLines: [
-      "Hunting trap under the booth — romance for 'stay forever, pry yourself out.'",
-      'You booked my next turn as unpaid labor. Snap. Stay. Pry.',
-      'Steel jaws as a meet-cute. I bite back harder than your springs.',
-      'Tempo thief. While I pry, you attack. Bold. Nested. Rude.',
-    ],
-    combatHint: 'Item: damage + next enemy turn = pry only (free Attack window).',
+    summary: "Deal 1d8 damage in round 1, 1d6 in round 2, or 1d4 later. The enemy spends its next turn opening the trap instead of attacking or closing. Use it in round 1 to gain advantage on your next Attack.",
+    roastLines: ["Heavy steel jaws with a handle just large enough to keep your fingers out of them."],
+    combatHint: "Trap the enemy to take away its next turn. Strongest early.",
     effectKind: 'trap',
   },
   net: {
     id: 'net',
     name: 'Net',
-    summary: 'Restrain 3 turns: disadv / your adv / pack −1 striker / no Close. STR DC 13 break.',
-    roastLines: [
-      'A net. On. A. Date. Bondage paperwork with worse branding.',
-      'You brought entanglement and a STR DC. Soft launch for captivity chic.',
-      'Three turns of "stay put." Romantic if I liked you. I do not.',
-      'Mesh with opinions. Break DC 13 or become décor. Classy.',
-    ],
-    combatHint: 'Item: Restrain 3 turns (disadv/adv, −1 pack striker, block Close).',
+    summary: "Restrain for up to 3 enemy turns. You attack with advantage; enemy attacks have disadvantage, crews lose one striker, and the enemy cannot Close. After the first turn, a DC 13 Strength check can free it early.",
+    roastLines: ["A weighted mesh bundle. Folded neatly once, at the factory."],
+    combatHint: "Restrain the opponent and gain advantage while the net holds.",
     effectKind: 'control',
   },
   'healing-potion': {
     id: 'healing-potion',
     name: 'Healing Potion',
-    summary: 'Clutch heal 4d4+4 + step back (they Close 0). No offense.',
-    roastLines: [
-      'Healing potion like a juice-box prenup — soft, correct, still delicious to bite.',
-      'You packed a mulligan in a bottle. I pack teeth. Guess which lasts.',
-      'Clutch heal energy. Soft life. Step back. Still looks drinkable.',
-      'Red flask for when bravery fails. Sip, retreat, pretend it was strategy.',
-    ],
-    combatHint: 'Item: heal 4d4+4 + step back (Close 0).',
+    summary: "Restore 4d4+4 HP, up to your maximum, and step out of reach. The enemy must Close before attacking. This fight item is stronger than the locker Potion of Healing.",
+    roastLines: ["A large red bottle with a cap designed for shaking hands."],
+    combatHint: "Recover 4d4+4 HP and break contact.",
     effectKind: 'heal',
   },
   'oil-flask': {
     id: 'oil-flask',
     name: 'Oil Flask',
-    summary: 'Slick the blade: every Attack hit +1d6 for the rest of the fight (hit riders, not DoT ticks).',
-    roastLines: [
-      'Oil flask at dinner — you lubed the blade and called it chemistry.',
-      'Every hit +1d6 for the whole fight. Persistent. Slick. Unfairly honest.',
-      'You greased the edge like a long-term commitment. Hits keep tipping.',
-      'Slick rider forever. Not a tick — a lifestyle. Wipe me if you dare.',
-    ],
-    combatHint: 'Item: arm oil — each hit +1d6 rest of fight (not poison DoT).',
+    summary: "Oil your weapon and step back. Every successful Attack deals an extra 1d6 damage for the rest of this fight. The enemy must Close. If you later use Alchemist's Fire, its burn lasts one extra turn.",
+    roastLines: ["A squat bottle of weapon oil. The label shows a blade, three arrows, and a very worried target."],
+    combatHint: "Add 1d6 damage to each Attack hit for this fight.",
     effectKind: 'arm',
   },
 };
@@ -186,13 +136,13 @@ export function getKit(id: KitId): KitDef {
   return KIT_DEFS[id];
 }
 
-/** UI preview — first roast in the pool */
+/** UI preview — physical description */
 export function kitRoastPreview(kit: KitDef | KitId): string {
   const def = typeof kit === 'string' ? getKit(kit) : kit;
   return def.roastLines[0];
 }
 
-/** Match/banter — random roast from the kit pool */
+/** Legacy description accessor */
 export function pickKitRoast(id: KitId): string {
   const lines = getKit(id).roastLines;
   return lines[Math.floor(Math.random() * lines.length)];

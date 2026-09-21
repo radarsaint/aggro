@@ -12,8 +12,8 @@ function footerCopy(status: MatchStatus, canFight: boolean): string | null {
     case 'matched':
     case 'chatting':
       return canFight
-        ? 'Send a line — or accept the fight when you’re ready.'
-        : 'Send a line to keep the thread warm.';
+        ? 'Ask about your opponent or the fight. Choose Accept Fight when you’re ready.'
+        : 'Ask about your opponent or the fight.';
     case 'terms':
       return 'Ready to fight? Accept below — or send one more line first.';
     case 'arming':
@@ -23,7 +23,7 @@ function footerCopy(status: MatchStatus, canFight: boolean): string | null {
     case 'won':
       return 'Cleared. Thread archived under wins.';
     case 'lost':
-      return 'PIP Issued. Improve metrics before the next swipe.';
+      return 'Fight lost. Rest and check your gear before the next match.';
     default:
       return null;
   }

@@ -1,211 +1,62 @@
 import type { ScriptNode } from './types';
 
-/**
- * Iron Cadre — drill yard hobgoblin officers. Quiet advance.
- *
- * BAR: Soft-spoken military. Discipline as kindness. We.
- * We do not raise our voices. We advance. NEVER smash/radio/fashion.
- */
+/** Iron Cadre. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  { id: 'iron-cadre_open_x_0', beat: 'open', lines: [
-    'Iron Cadre: We do not raise our voices. We advance. They put us on the Drill Yard and told freelancers to hold the line. Nobody holds. Every single one folds. You\'re already leaning. We can tell.',
-    'Iron Cadre: Before we start — we are not a mob. We are Line Officers. People walk by, break formation, say "just looking," and leave. We have been correcting rumors for a long time. Tonight somebody learns the count.',
-  ], weight: 2 },
-  { id: 'iron-cadre_open_x_1', beat: 'open', lines: [
-    'Iron Cadre: The Cadre doesn\'t do brave. We do quiet. Drill is free. Blood is on you. Eyes forward.',
-    'Iron Cadre: Waited for clean ranks. Then came the soft ones. You look soft. Show us different — or fall in.',
-  ], weight: 2 },
-  { id: 'iron-cadre_open_0', beat: 'open', lines: [
-    'Iron Cadre: Discipline is a rumor we correct. First flinch gets kindness. Second gets the shield-edge. Mostly kidding. Eyes forward.',
-    'Iron Cadre: Listen. We speak soft. We shield. We advance. You brought a bag. Let\'s see who\'s still on count.',
-  ], weight: 2 },
-  { id: 'iron-cadre_open_1', beat: 'open', lines: [
-    'Iron Cadre: We look quiet on the yard. Then we leave the yard. Spoiler for freelancers: shield-edge kindness.',
-    'Iron Cadre: Chaos freaks us out. Loud cheers freak us out. You? You just annoy us. Annoyance we can correct.',
-  ], weight: 1 },
-  { id: 'iron-cadre_open_2', beat: 'open', lines: [
-    'Iron Cadre: Came to watch drills? Leave. Came to fight? Eyes forward. Fall in.',
-    'Iron Cadre: We\'ve heard every "soft officers" joke. Say something new or hold.',
-  ], weight: 1 },
-  { id: 'iron-cadre_open_3', beat: 'open', lines: [
-    'Iron Cadre: Quiet truth: we love a clean count more than a loud cheer. You\'re on the schedule until you\'re corrected.',
-    'Iron Cadre: If you hold formation, prove it. If not — at least fall with posture.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
+  { id: 'iron-cadre_open_x_0', beat: 'open', lines: ["Iron Cadre: We hold this drill yard. Check the footing before you enter. We already have."], weight: 2 },
+  { id: 'iron-cadre_open_x_1', beat: 'open', lines: ["Iron Cadre: Our shields match because we repair them together. Replacements don't arrive anymore."], weight: 2 },
+  { id: 'iron-cadre_open_0', beat: 'open', lines: ["Iron Cadre: The officer talks quietly. It means everyone else has to listen."], weight: 2 },
+  { id: 'iron-cadre_open_1', beat: 'open', lines: ["Iron Cadre: We know the yard by the worn patches. Every drill leaves a mark."], weight: 1 },
+  { id: 'iron-cadre_open_2', beat: 'open', lines: ["Iron Cadre: No speeches before a bout. Check the straps. Help the one beside you."], weight: 1 },
+  { id: 'iron-cadre_open_3', beat: 'open', lines: ["Iron Cadre: We still set out the full mess table. Some habits are worth keeping."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  { id: 'iron-cadre_hhit_4', beat: 'hunter_hit', lines: [
-    'Iron Cadre: Felt that. Formation holds.',
-    'Iron Cadre: Watch the count. We live here.',
-  ] },
-  { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: [
-    'Iron Cadre: That counted. Rude to the line.',
-    'Iron Cadre: Hit the Cadre. Bold. Dumb. Noted.',
-  ] },
-  { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Iron Cadre: Dinged. Still the quietest thing advancing.',
-    'Iron Cadre: Leaking. Still soft-spoken. Still coming.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'iron-cadre_hhit_4', beat: 'hunter_hit', lines: ["Iron Cadre: Through the guard. Correct the angle."] },
+  { id: 'iron-cadre_hhit_5', beat: 'hunter_hit', lines: ["Iron Cadre: Clean hit. Cover that side."] },
+  { id: 'iron-cadre_hhit_bld_6', beat: 'hunter_hit', lines: ["Iron Cadre: We can't hold the front as it was."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  { id: 'iron-cadre_hmiss_7', beat: 'hunter_miss', lines: [
-    'Iron Cadre: Missed. Air isn\'t on the roster.',
-    'Iron Cadre: Swing at us, not the yard.',
-  ] },
-  { id: 'iron-cadre_hmiss_8', beat: 'hunter_miss', lines: [
-    'Iron Cadre: Almost a correction. Almost.',
-    'Iron Cadre: We advance on purpose. Aim for the shields.',
-  ] },
+  { id: 'iron-cadre_hmiss_7', beat: 'hunter_miss', lines: ["Iron Cadre: Shield caught the line."] },
+  { id: 'iron-cadre_hmiss_8', beat: 'hunter_miss', lines: ["Iron Cadre: You missed the opening by an inch."] },
 
-  { id: 'iron-cadre_hcrit_9', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Okay — that got under the quiet. Felt it.',
-    'Iron Cadre: Hard hit on the Cadre. Drill yard noticed.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Soft spot under the count. Congrats.',
-    'Iron Cadre: Almost meant it. Don\'t chat. Swing.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Iron Cadre: Fled, then hit that hard? Pick a formation.',
-    'Iron Cadre: Ran, then connected. Impressed. We still advance.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'iron-cadre_hcrit_9', beat: 'hunter_crit', lines: ["Iron Cadre: Guard broken. Reform now."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'iron-cadre_hcrit_10', beat: 'hunter_crit', lines: ["Iron Cadre: That hit moved the whole line."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'iron-cadre_hcrit_ran_11', beat: 'hunter_crit', lines: ["Iron Cadre: We followed too closely. You punished it."], requireFlags: ["ran"], weight: 3 },
 
-  { id: 'iron-cadre_kit_poison_12', beat: 'kit', lines: [
-    'Iron Cadre: Poison on the line. Coward\'s correction.',
-    'Iron Cadre: Toxin at drill. Read the standing orders.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'iron-cadre_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Iron Cadre: Fire on the yard. Expensive noise.',
-    'Iron Cadre: Lit the Cadre. We correct with cooler heads.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'iron-cadre_kit_caltrops_14', beat: 'kit', lines: [
-    'Iron Cadre: Floor spikes. We advance anyway.',
-    'Iron Cadre: Caltrops for a shield wall. Okay.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'iron-cadre_kit_acid-vial_15', beat: 'kit', lines: [
-    'Iron Cadre: Acid on the shields. Personal.',
-    'Iron Cadre: Chemistry at drill. Hate you a little more.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'iron-cadre_kit_holy-water_16', beat: 'kit', lines: [
-    'Iron Cadre: Holy water. Cute. We\'re discipline, not undead.',
-    'Iron Cadre: Blessings don\'t break the count. Just wet the line.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'iron-cadre_kit_smokestick_17', beat: 'kit', lines: [
-    'Iron Cadre: Smoke. We don\'t need eyes to advance.',
-    'Iron Cadre: Hid mid-drill. Still hear you. Fall in.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'iron-cadre_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Iron Cadre: Bear trap for officers. Soft laugh.',
-    'Iron Cadre: Jaws for a shield wall. Adorable.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'iron-cadre_kit_net_19', beat: 'kit', lines: [
-    'Iron Cadre: Net on the Cadre. Formation ruined. Rude.',
-    'Iron Cadre: Bagged. We still advance through mesh.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'iron-cadre_kit_healing-potion_20', beat: 'kit', lines: [
-    'Iron Cadre: Mid-fight sip. Planning to hold the line?',
-    'Iron Cadre: Healing. Optimistic. We prefer ranks nervous.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'iron-cadre_kit_oil-flask_21', beat: 'kit', lines: [
-    'Iron Cadre: Oil. Slippery yard. Worse plan.',
-    'Iron Cadre: Greased the drill. We still advance clean.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'iron-cadre_kit_gen_22', beat: 'kit', lines: [
-    'Iron Cadre: Bag rummage won\'t save the count. We\'re here.',
-    'Iron Cadre: Props out. Eyes forward.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: [
-    'Iron Cadre: Ran, then rummaged. Coward with accessories.',
-    'Iron Cadre: Flee-kit combo. Soft. We still advance.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'iron-cadre_kit_poison_12', beat: 'kit', lines: ["Iron Cadre: Coated weapon. Hands are going numb."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'iron-cadre_kit_alchemists-fire_13', beat: 'kit', lines: ["Iron Cadre: Straps burning. Get clear."], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'iron-cadre_kit_caltrops_14', beat: 'kit', lines: ["Iron Cadre: Watch your footing. Slow the advance."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'iron-cadre_kit_acid-vial_15', beat: 'kit', lines: ["Iron Cadre: Acid on the fittings!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'iron-cadre_kit_holy-water_16', beat: 'kit', lines: ["Iron Cadre: Water across the sightline."], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'iron-cadre_kit_smokestick_17', beat: 'kit', lines: ["Iron Cadre: Can't see the next shield."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'iron-cadre_kit_hunting-trap_18', beat: 'kit', lines: ["Iron Cadre: Leg caught. Cover the one working the jaws."], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'iron-cadre_kit_net_19', beat: 'kit', lines: ["Iron Cadre: The mesh has the shield arms."], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'iron-cadre_kit_healing-potion_20', beat: 'kit', lines: ["Iron Cadre: You recovered. We need to account for that."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'iron-cadre_kit_oil-flask_21', beat: 'kit', lines: ["Iron Cadre: Oiled edge. Expect a harder blow."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'iron-cadre_kit_gen_22', beat: 'kit', lines: ["Iron Cadre: Unknown tool. Watch the hand."], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'iron-cadre_kit_ran_23', beat: 'kit', lines: ["Iron Cadre: You used the interval well."], requireFlags: ["ran"], weight: 2 },
 
-  { id: 'iron-cadre_mhit_24', beat: 'monster_hit', lines: [
-    'Iron Cadre: That\'s for the broken count.',
-    'Iron Cadre: Shield-edge kindness. You asked.',
-  ] },
-  { id: 'iron-cadre_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Iron Cadre: We\'re leaking. You\'re bleeding. Quiet wins.',
-    'Iron Cadre: Scraped. Still the cleanest advance in the yard.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'iron-cadre_mmiss_26', beat: 'monster_miss', lines: [
-    'Iron Cadre: Missed. Enjoy the gap while it lasts.',
-    'Iron Cadre: Close call. Don\'t brand yourself on it.',
-  ] },
+  { id: 'iron-cadre_mhit_24', beat: 'monster_hit', lines: ["Iron Cadre: Through the opening."] },
+  { id: 'iron-cadre_mhit_bld_25', beat: 'monster_hit', lines: ["Iron Cadre: Enough strength for that one."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'iron-cadre_mmiss_26', beat: 'monster_miss', lines: ["Iron Cadre: Missed. Correct the distance."] },
 
-  { id: 'iron-cadre_w_wind_27', beat: 'wound', lines: [
-    'Iron Cadre: First scratch. Used to believe in careful ranks.',
-    'Iron Cadre: Scratched. Annoyed. Still on count.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'iron-cadre_w_bru_28', beat: 'wound', lines: [
-    'Iron Cadre: Deeper scratch. Want a story? Keep drilling.',
-    'Iron Cadre: Still here. Still quiet. Tag stays.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'iron-cadre_w_bld_29', beat: 'wound', lines: [
-    'Iron Cadre: Okay. Quiet cracked. Advance still works.',
-    'Iron Cadre: Thought the yard made us untouchable. You touched. Hate that.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'iron-cadre_w_heart_30', beat: 'wound', lines: [
-    'Iron Cadre: That one hurt more than a missed count should.',
-    'Iron Cadre: Stop staring. Keep swinging. Silence helps the line.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'iron-cadre_w_wind_27', beat: 'wound', lines: ["Iron Cadre: First damage through the guard."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'iron-cadre_w_bru_28', beat: 'wound', lines: ["Iron Cadre: The line is losing strength."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'iron-cadre_w_bld_29', beat: 'wound', lines: ["Iron Cadre: We can't hold this much longer."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'iron-cadre_w_heart_30', beat: 'wound', lines: ["Iron Cadre: I'd like everyone here to get back to that table."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  { id: 'iron-cadre_run_31', beat: 'run', lines: [
-    'Iron Cadre: Ran from the Cadre. Chase is a correction.',
-    'Iron Cadre: Break ranks mid-count? We advance anyway. Eyes forward.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'iron-cadre_run2_32', beat: 'run', lines: [
-    'Iron Cadre: Twice. Personal. Pathetic posture.',
-    'Iron Cadre: Second escape. Not mad. Faster.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'iron-cadre_chase_33', beat: 'chase', lines: [
-    'Iron Cadre: Running from the Cadre. Embarrassing for the yard.',
-    'Iron Cadre: You wanted distance. We wanted a clean advance. Guess.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'iron-cadre_chase2_34', beat: 'chase', lines: [
-    'Iron Cadre: Second chase. Yard\'s ours.',
-    'Iron Cadre: Run again and we\'ll think you like drill. Don\'t.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'iron-cadre_close_35', beat: 'close', lines: [
-    'Iron Cadre: Back. Miss the quiet?',
-    'Iron Cadre: Range over. Better formation next time.',
-  ] },
-  { id: 'iron-cadre_close_smoke_36', beat: 'close', lines: [
-    'Iron Cadre: Smoke is not cover. We do not need eyes to keep advancing.',
-    'Iron Cadre: Fog\'s gone. Still here. Nice try.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'iron-cadre_run_31', beat: 'run', lines: ["Iron Cadre: You've broken contact."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'iron-cadre_run2_32', beat: 'run', lines: ["Iron Cadre: Another clean withdrawal."], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'iron-cadre_chase_33', beat: 'chase', lines: ["Iron Cadre: Advance and keep the intervals."], requireFlags: ["ran"], weight: 2 },
+  { id: 'iron-cadre_chase2_34', beat: 'chase', lines: ["Iron Cadre: The advance is costing too much."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'iron-cadre_close_35', beat: 'close', lines: ["Iron Cadre: Contact restored."] },
+  { id: 'iron-cadre_close_smoke_36', beat: 'close', lines: ["Iron Cadre: Sightline through the smoke at last."], requireFlags: ["smoke"], weight: 3 },
 
-  { id: 'iron-cadre_vic_37', beat: 'victory', lines: [
-    'Iron Cadre: You won. Mark us damaged. Tell them the Cadre fought.',
-    'Iron Cadre: Fine. Take it. Quiet ruined. Worst drill of your life.',
-  ], weight: 1 },
-  { id: 'iron-cadre_vic_heal_38', beat: 'victory', lines: [
-    'Iron Cadre: Potioned up and still beat the line. Ugly win. Almost respect.',
-    'Iron Cadre: Topped off, then finished drill. Preferred recruit energy. Gross.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'iron-cadre_vic_kite_39', beat: 'victory', lines: [
-    'Iron Cadre: Made us chase our own yard, then finished. Rude win.',
-    'Iron Cadre: Jogging as strategy. Hate that it worked.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'iron-cadre_vic_crit_40', beat: 'victory', lines: [
-    'Iron Cadre: You cut through the quiet. Fight\'s over. We\'ll give you that.',
-    'Iron Cadre: Found the soft count and finished. No line left. Well done.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: [
-    'Iron Cadre: Bagged us and finished. Ugly. Honest.',
-    'Iron Cadre: Net, then win. You bagged the Cadre. Mildly mad.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'iron-cadre_vic_37', beat: 'victory', lines: ["Iron Cadre: You took the yard. Well fought."], weight: 1 },
+  { id: 'iron-cadre_vic_heal_38', beat: 'victory', lines: ["Iron Cadre: Your recovery outlasted our line."], requireFlags: ["healed"], weight: 3 },
+  { id: 'iron-cadre_vic_kite_39', beat: 'victory', lines: ["Iron Cadre: You made us spend our strength advancing."], requireFlags: ["ran"], weight: 3 },
+  { id: 'iron-cadre_vic_crit_40', beat: 'victory', lines: ["Iron Cadre: That blow broke the defense."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'iron-cadre_vic_net_41', beat: 'victory', lines: ["Iron Cadre: The net disrupted our formation. You exploited it."], weight: 3 , requireFlags: ["netted"]},
 
-  { id: 'iron-cadre_def_42', beat: 'defeat', lines: [
-    'Iron Cadre: Drill over. You lose. We stay quiet.',
-    'Iron Cadre: Down. Cadre wins. Don\'t bleed on the yard.',
-  ] },
-  { id: 'iron-cadre_def_crit_43', beat: 'defeat', lines: [
-    'Iron Cadre: Hit hard. Still lost. Talent without follow-through.',
-    'Iron Cadre: Big swing. Bad ending. Count continues.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'iron-cadre_def_ran_44', beat: 'defeat', lines: [
-    'Iron Cadre: You broke ranks and still folded. Same correction.',
-    'Iron Cadre: Flee into a loss. We demo that every muster.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'iron-cadre_def_heal_45', beat: 'defeat', lines: [
-    'Iron Cadre: Healed and still went down. Optimistic. Wrong roster.',
-    'Iron Cadre: Potion, then floor. Soft. Memorable. Bad posture.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'iron-cadre_def_42', beat: 'defeat', lines: ["Iron Cadre: Opponent down. Stand easy."] },
+  { id: 'iron-cadre_def_crit_43', beat: 'defeat', lines: ["Iron Cadre: Your hard strike forced a real correction."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'iron-cadre_def_ran_44', beat: 'defeat', lines: ["Iron Cadre: We caught up. Now hold position and rest."], requireFlags: ["ran"], weight: 2 },
+  { id: 'iron-cadre_def_heal_45', beat: 'defeat', lines: ["Iron Cadre: Your recovery made the difference smaller."], requireFlags: ["healed"], weight: 3 },
 ];

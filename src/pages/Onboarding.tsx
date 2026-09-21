@@ -78,7 +78,7 @@ export function Onboarding() {
           </div>
           <div className="tagline" style={{ marginTop: 8 }}>{getTheme(state.activeThemeId).copy.appTagline}</div>
           <p style={{ color: 'var(--muted)', fontSize: '0.85rem', marginTop: 12 }}>
-            Solo play-by-post between Earthfall sessions. Baatorasaka Dating Ops: no soft launches.
+            Choose a monster, meet it in chat, and fight between Earthfall sessions.
             Just danger. Probably.
           </p>
         </div>

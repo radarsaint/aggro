@@ -18,7 +18,7 @@ const SHEET = [
   { label: 'HP', desc: 'Your hit points. Hit 0 and People Ops issues a PIP.' },
   { label: 'AC', desc: 'Armor Class — how hard you are to land on.' },
   { label: 'Attack die', desc: 'The die you swing with (e.g. d8).' },
-  { label: 'Attack stat', desc: 'Which ability rides your attack roll + damage.' },
+  { label: 'Attack stat', desc: 'The ability used for your attack and damage modifiers.' },
   { label: 'Init bonus', desc: 'Flat bonus on your d20 initiative — who goes first when the fluorescent lights flicker.' },
 ];
 
@@ -26,25 +26,25 @@ const COMBAT_BTNS = [
   {
     title: 'ATTACK',
     icon: '⚔️',
-    desc: 'Your swing. Roll to hit, deal damage, hope HR is looking the other way.',
+    desc: 'Attack with your equipped weapon or the damage die on your profile.',
   },
   {
     title: 'ITEM',
     icon: '🎒',
-    desc: 'Use the item you locked at fight start — once this fight. Enemies roast whatever you brought.',
+    desc: 'Use one of the items you picked for this fight. Each can be used once.',
   },
   {
     title: 'RUN',
     icon: '💨',
-    desc: 'Break off to catch your breath (heal). Bare Run is risky — they may get an attack of opportunity. Smokestick makes the next Run safe (no AoO). Caltrops punish them when they Close.',
+    desc: 'Break off to catch your breath (heal). Bare Run is risky — they may get an attack of opportunity. Smokestick makes the next Run safe (no opportunity attack). Caltrops punish them when they Close.',
   },
 ];
 
 const CONDITIONS = [
-  { label: 'Healthy', tone: '#9ad4b0', hint: 'Fresh. Still smiling for the portrait.' },
-  { label: 'Winded', tone: '#e8c35a', hint: 'Started sweating under the fluorescents.' },
-  { label: 'Bruised', tone: '#e89a5a', hint: 'Looking rough. Keep pressing.' },
-  { label: 'Bloodied', tone: '#ff4d7a', hint: 'Half-dead vibes. Finish the date.' },
+  { label: 'Healthy', tone: '#9ad4b0', hint: 'Unhurt.' },
+  { label: 'Winded', tone: '#e8c35a', hint: 'Lightly hurt.' },
+  { label: 'Bruised', tone: '#e89a5a', hint: 'Clearly hurt.' },
+  { label: 'Bloodied', tone: '#ff4d7a', hint: 'Badly hurt.' },
 ];
 
 function SectionTitle({ children }: { children: ReactNode }) {
@@ -235,7 +235,7 @@ export function HowItWorks() {
         <SectionTitle>5 · READING THE FOE</SectionTitle>
         <div className="card" style={{ padding: 14 }}>
           <p style={{ fontSize: '0.82rem', color: 'var(--muted)', lineHeight: 1.45, marginBottom: 12 }}>
-            No HP numbers on them. Read the wound state on the portrait — the portrait replaced the old tactical map.
+            Read the condition label on the portrait to judge how hurt your opponent is. Exact enemy HP is hidden.
           </p>
           <div style={{ display: 'grid', gap: 8 }}>
             {CONDITIONS.map((c) => (

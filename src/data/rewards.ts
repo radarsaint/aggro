@@ -330,32 +330,23 @@ export function sellPrice(item: Pick<InventoryItem, 'kind' | 'rarity'>): number 
 
 /** Baatorasaka stamp — default cold clearance voice (Banter Critic PASS). */
 export const FRAMING_STAMP: string[] = [
-  'CLEARANCE STUB — Shrinkage Alcove. As-is. No returns in hell. Tag stays on until you don\'t.',
-  'Found under Eternal Clearance signage. Price was a joke. The rust is free.',
-  'Lost & Found release form. Claim window: you already fought for it. Smile not included.',
+  "CLEARED FOR COLLECTION. Someone has crossed out the return address.",
+  "Prize released. The clerk kept the good ribbon.",
+  "Collected from the floor. The original price tag remains optimistic."
 ];
 
-/**
- * R.O.D. — ONLY when hunter put gold on the date (Gate 3 hotter clearance).
- * Voice: Dungeon Crawler Carl AI — REAL spoken English players recognize.
- * Genius, clever, mean, fair; sarcasm + personal digs. Funny when it lands.
- * HARD FAIL: designer jargon (stake, live stake, hot stake, EV, "the table", machinery-as-loot), noun stacks, telegram chops.
- * Say "gold on the date" / "paid extra" / "put money on it" — never "stake."
- */
+/** R.O.D. comments on the recorded win and paid prize tier. Never invent penalties or player motives. */
 export const FRAMING_ROD_HOT: string[] = [
-  'You put gold on that date and somehow finished without dying, which impresses me the same way a raccoon impresses me when it opens a dumpster and lives. Take it. I am mean, but I am not a cheat — even you earned this one.',
-  'Paying extra for a harder night is supposed to hurt people like you, and for once you got gear that is not a practical joke at your expense. Wear it. If you pawn it for snacks I will be disappointed in a professional way, which means I will remember how small you are.',
-  'You paid extra to get chewed up, which tracks, and somehow the floor finally paid you in something you can wear. I have been wrestling these odds like a second job, so forgive the glee. Keep it on you. We all have limits, and yours should include not selling the one thing standing between you and another humiliating PIP.',
-  'You paid up, you bled on cue like a reliable prop, and something that can change the next fight fell out of the wreck. That is the show when it works, which is rarer than your good decisions. Put it on. Fairness is not kindness — I will still queue something hard afterward.',
-  'The rules held, the audience got what they came for, and somehow you walked off with iron that is not junk. Wear it. Soft feelings are allowed off-air. On this floor they get people killed, and I am already tired of writing your eulogies.',
-  'I had your gold and the body on the books, and for once something you could wear did not turn into scrap while I was patching a screaming spreadsheet and babysitting your life choices. Wear it. Sell it and the next fight gets meaner on purpose — not spite, scheduling. Even I have a budget for mercy, and you are spending it.',
+  "You put your own gold up and took the win. Accounts is taking the news badly. Collect your payout.",
+  "You won the bout and the larger purse. I love a contestant who can make the prize department sweat.",
+  "That was your gold on the line. Now this is your reward. Please enjoy the brief sound of the company paying someone."
 ];
 
 /** Extra R.O.D. bite when paid-extra + scrap (same mouth — no "stake" jargon). */
 export const FRAMING_ROD_HOT_SCRAP: string[] = [
-  'You put real gold on this date and drew scrap, and I am laughing because a disappointing payout rates almost as well as a clean kill — and because watching you pay for disappointment is excellent television. Sell it, bleed again, and try not to take it personally. Fair is fair, and your sulking face rates almost as well as the kill.',
-  'You put money on the line and the floor handed you junk. Before you accuse me of cheating, understand I wanted to pay you something useful and got a souvenir sized for your luck instead. Cash it. I am cruel, not dishonest, and tonight we are both embarrassed — you for hoping, me for employing you.',
-  'You paid for blood and got a trinket, which the show loves and my dignity hates. Sell it. The next date already wants teeth, and I am late writing them. We all have limits, including how many times I can apologize with loot to someone who keeps auditioning for pity.',
+  "You won the fight. Prize Fulfilment contributed this. I suggest selling it before they nominate themselves for an award.",
+  "The larger gold payout is yours. The bonus item is also yours, although I understand the lack of enthusiasm.",
+  "Your opponent lost. The souvenir department apparently thinks it won. Sell the trinket whenever you like."
 ];
 
 /** Threat × lootBeat Dating Ops / clearance snark (cold path variants). */
@@ -363,45 +354,47 @@ export const FRAMING_BY_THREAT_BEAT: Record<
   ThreatLevel,
   Record<LootBeat, string[]>
 > = {
-  Low: {
-    scrap: [
-      'Asset Recovery stamped this as scrap. Sell it. The floor already forgot their name.',
+  "Low": {
+    "scrap": [
+      "A little clearance stock for the locker. The kiosk will buy it."
     ],
-    usable: [
-      'HR hydrate / gauze. Not romance. Use it next date or watch the PIP write itself.',
+    "usable": [
+      "Recovery supplies. Use them from your locker during a fight."
     ],
-    upgrade: [
-      'First real steel/leather on file. Equip it or keep cosplaying with typed numbers.',
-    ],
+    "upgrade": [
+      "Equipment released. Check its effect before replacing what you wear."
+    ]
   },
-  Moderate: {
-    scrap: [
-      'Moderate clearance, moderate trash. Neon idol for the kiosk pile — climb wants gear, not décor.',
+  "Moderate": {
+    "scrap": [
+      "Fight won. Bonus stock is ready for sale at the kiosk."
     ],
-    usable: [
-      'Bandage budget. Mid dates chew HP; this is how you stay on the card.',
+    "usable": [
+      "A recovery item for the locker. The seal is still intact."
     ],
-    upgrade: [
-      'Loadout moved. Shortsword / shield / leather territory — the soft lane is closing.',
-    ],
+    "upgrade": [
+      "Equipment collected. The locker shows exactly what it changes."
+    ]
   },
-  High: {
-    scrap: [
-      'You cleared High and Dating Ops handed you a souvenir. That\'s an insult with a sell price.',
+  "High": {
+    "scrap": [
+      "You beat a High-threat opponent. Prize Fulfilment sent a souvenir. The kiosk will take it."
     ],
-    usable: [
-      'Even High bleed. Stamp the heal; swagger later.',
+    "usable": [
+      "You earned this recovery supply. Save it for a turn when you need it."
     ],
-    upgrade: [
-      'Crossbow / studded / shield — this is what Standards \'serious\' was for. Equip. Climb.',
-    ],
-  },
+    "upgrade": [
+      "Equipment from the High-threat pool. Check it against your current gear."
+    ]
+  }
 };
 
 export interface LootFramingOpts {
   threat: ThreatLevel;
   lootBeat: LootBeat;
   hot?: boolean;
+  /** Events actually recorded during this fight. */
+  banterFlags?: readonly string[];
 }
 
 /**
@@ -414,10 +407,17 @@ export function pickLootFraming(opts: LootFramingOpts): string {
   const hot = opts.hot === true;
 
   if (hot) {
-    if (beat === 'scrap' && Math.random() < 0.45) {
-      return pickOne(FRAMING_ROD_HOT_SCRAP);
-    }
-    return pickOne(FRAMING_ROD_HOT);
+    const observations: string[] = [];
+    const flags = opts.banterFlags ?? [];
+    if (flags.includes('netted')) observations.push('You used a net and won. Somebody expected a heroic speech. They got fishing.');
+    if (flags.includes('trapped')) observations.push('A trap. An actual useful object. The motivational-poster department is furious.');
+    if (flags.includes('healed')) observations.push('You took time to heal and still took the win. The audience can survive a short drink break.');
+    if (flags.includes('ran')) observations.push('You used the room and won the fight. Facilities would like credit for installing the floor.');
+    if (flags.includes('hunter_crit')) observations.push('That hard hit is getting a replay. I would have paid for a closer camera. Fortunately, you paid attention.');
+    const reward = beat === 'scrap'
+      ? pickOne(FRAMING_ROD_HOT_SCRAP)
+      : pickOne(FRAMING_ROD_HOT);
+    return observations.length ? pickOne(observations) + ' ' + reward : reward;
   }
 
   const beatLines = FRAMING_BY_THREAT_BEAT[threat]?.[beat] ?? [];
@@ -445,7 +445,7 @@ export const KIOSK_STOCK: KioskSku[] = [
   {
     id: 'kiosk-potion',
     price: 55,
-    blurb: 'HR-approved hydrate. Drink from the locker mid-fight (2d4+2).',
+    blurb: 'A sealed red potion. Use on your combat turn to restore 2d4+2 HP.',
     item: {
       name: 'Potion of Healing',
       rarity: 'Common',
@@ -456,7 +456,7 @@ export const KIOSK_STOCK: KioskSku[] = [
   {
     id: 'kiosk-bandage',
     price: 40,
-    blurb: 'Clearance aisle gauze. Patch up mid-fight (1d4+1).',
+    blurb: 'Clean gauze in a sealed sleeve. Use on your combat turn to restore 1d4+1 HP.',
     item: {
       name: 'Bandage Roll',
       rarity: 'Common',
@@ -467,7 +467,7 @@ export const KIOSK_STOCK: KioskSku[] = [
   {
     id: 'kiosk-clearance-patch',
     price: 70,
-    blurb: 'Clearance aisle patch. Equip for +1 AC — looks stamped, hits like policy.',
+    blurb: 'A stiff protective panel for a damaged uniform. Equip in the armor slot for +1 AC.',
     item: {
       name: 'Clearance Patch',
       rarity: 'Common',

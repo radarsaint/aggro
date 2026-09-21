@@ -31,7 +31,7 @@ import {
   upsertMatch,
 } from './storage';
 import { getKit, KIT_IDS, kitForThreat } from '../data/kits';
-import { generateBanterReply, generateFightAccept, generateOpener } from './roast';
+import { chatStatusAfterMessage, generateBanterReply, generateFightAccept, generateOpener } from './roast';
 import { hunterAttack, hunterItem, hunterRun, hunterUseConsumable, monsterAttack, startCombat } from './combat';
 
 function kitsNeededForThreat(threat: ThreatLevel): number {
@@ -371,20 +371,9 @@ export function GameProvider({ children }: { children: ReactNode }) {
         text: replyText,
         at: Date.now() + 1,
       };
-      const lower = text.toLowerCase();
-      // Advance to terms when the player invites violence, the accept-beat reply cites house rules,
-      // or the thread has warmed up — never because every roast had terms glued on.
-      const termsTriggered =
-        replyText.includes(creature.fightTerms) ||
-        lower.includes('fight') ||
-        lower.includes('accept') ||
-        lower.includes('terms') ||
-        lower.includes("let's go") ||
-        match.messages.length >= 2;
-
       const updated: Match = {
         ...match,
-        status: termsTriggered ? 'terms' : 'chatting',
+        status: chatStatusAfterMessage(text),
         messages: [...match.messages, hunterMsg, monsterMsg],
         unread: 0,
       };

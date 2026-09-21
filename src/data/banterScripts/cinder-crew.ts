@@ -1,211 +1,62 @@
 import type { ScriptNode } from './types';
 
-/**
- * Cinder Crew — magmin facilities fire. Group chat that ignites on read.
- *
- * BAR: Chat-speak heat, RSVP oxygen, mute jokes. Plain English.
- * Seen. Ignited. Foam is a rumor. NEVER smash/radio/SKU clerk.
- */
+/** Cinder Crew. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  { id: 'cinder-crew_open_x_0', beat: 'open', lines: [
-    'Cinder Crew: Seen. Ignited. We are a group chat that lights up on read. They stuck us in the boiler and told people not to breathe near us. Everybody breathes. Every single one. You\'re already typing. We can tell.',
-    'Cinder Crew: Before we start — we\'re not a campfire. We\'re Facilities Fire. People walk by, mute the thread, say "just looking," and leave. We have been unread a long time. Tonight somebody RSVPs oxygen.',
-  ], weight: 2 },
-  { id: 'cinder-crew_open_x_1', beat: 'open', lines: [
-    'Cinder Crew: Group chat doesn\'t do brave. We do Seen. Ignited. Spark\'s free. Foam is a rumor. Breathe for us.',
-    'Cinder Crew: Waited for careful mutes. Then came the lurkers. You look muted. Show us different — or RSVP oxygen.',
-  ], weight: 2 },
-  { id: 'cinder-crew_open_0', beat: 'open', lines: [
-    'Cinder Crew: Read receipts are theater. First breath sparks. Second breath\'s on you. Mostly kidding. Breathe for us.',
-    'Cinder Crew: Listen. We spark. We ping. We ignite on read. You brought a bag. Let\'s see who\'s archived.',
-  ], weight: 2 },
-  { id: 'cinder-crew_open_1', beat: 'open', lines: [
-    'Cinder Crew: We look quiet in the boiler. Then we leave the boiler. Spoiler for muters: death burst is our exit interview.',
-    'Cinder Crew: Foam freaks us out. Silence freaks us out. You? You just annoy us. Annoyance we can ignite.',
-  ], weight: 1 },
-  { id: 'cinder-crew_open_2', beat: 'open', lines: [
-    'Cinder Crew: Came to mute? Leave. Came to fight? Stop sweating on the thread. Seen.',
-    'Cinder Crew: We\'ve heard every "just a spark" joke. Say something new or burn.',
-  ], weight: 1 },
-  { id: 'cinder-crew_open_3', beat: 'open', lines: [
-    'Cinder Crew: Quiet truth: oxygen is our love language. You\'re in the thread until you mute forever.',
-    'Cinder Crew: If you\'re careful with air, prove it. If not — at least burn interesting.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
+  { id: 'cinder-crew_open_x_0', beat: 'open', lines: ["Cinder Crew: We keep the boiler warm. The boiler was disconnected years ago. Nobody had the heart to tell us."], weight: 2 },
+  { id: 'cinder-crew_open_x_1', beat: 'open', lines: ["Cinder Crew: Facilities said stop touching the curtains. We asked for a list of approved things. It burned."], weight: 2 },
+  { id: 'cinder-crew_open_0', beat: 'open', lines: ["Cinder Crew: One of us made tea. There's no tea left, but the kettle looks fantastic."], weight: 2 },
+  { id: 'cinder-crew_open_1', beat: 'open', lines: ["Cinder Crew: We glow when we're pleased. We glow when we're annoyed. You'll have to ask."], weight: 1 },
+  { id: 'cinder-crew_open_2', beat: 'open', lines: ["Cinder Crew: We tried to read the fire procedure. It went about as well as you'd expect."], weight: 1 },
+  { id: 'cinder-crew_open_3', beat: 'open', lines: ["Cinder Crew: We slept around that boiler before they took the pipes away. Still do."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  { id: 'cinder-crew_hhit_4', beat: 'hunter_hit', lines: [
-    'Cinder Crew: Ow. You scuffed the spark. Rude.',
-    'Cinder Crew: Watch the thread. Chat rules.',
-  ] },
-  { id: 'cinder-crew_hhit_5', beat: 'hunter_hit', lines: [
-    'Cinder Crew: That counted. Bad ping.',
-    'Cinder Crew: Hit the crew. Bold. Dumb. Noted.',
-  ] },
-  { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Cinder Crew: Dinged. Still the hottest read in Facilities.',
-    'Cinder Crew: Leaking. Still Seen. Still mad about the mute.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'cinder-crew_hhit_4', beat: 'hunter_hit', lines: ["Cinder Crew: That knocked sparks out!"] },
+  { id: 'cinder-crew_hhit_5', beat: 'hunter_hit', lines: ["Cinder Crew: Ow! You cracked the crust!"] },
+  { id: 'cinder-crew_hhit_bld_6', beat: 'hunter_hit', lines: ["Cinder Crew: We can't hold the heat together."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  { id: 'cinder-crew_hmiss_7', beat: 'hunter_miss', lines: [
-    'Cinder Crew: Missed. Air isn\'t in the chat.',
-    'Cinder Crew: Swing at us, not the spark.',
-  ] },
-  { id: 'cinder-crew_hmiss_8', beat: 'hunter_miss', lines: [
-    'Cinder Crew: Almost a read receipt. Almost.',
-    'Cinder Crew: We ignite on purpose. Aim for the ping.',
-  ] },
+  { id: 'cinder-crew_hmiss_7', beat: 'hunter_miss', lines: ["Cinder Crew: Missed the hot bit."] },
+  { id: 'cinder-crew_hmiss_8', beat: 'hunter_miss', lines: ["Cinder Crew: We moved before the swing reached us."] },
 
-  { id: 'cinder-crew_hcrit_9', beat: 'hunter_crit', lines: [
-    'Cinder Crew: Okay — that got under the spark. Felt it.',
-    'Cinder Crew: Hard hit on the crew. Facilities gasped.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'cinder-crew_hcrit_10', beat: 'hunter_crit', lines: [
-    'Cinder Crew: Soft spot under the thread. Congrats.',
-    'Cinder Crew: Almost meant it. Don\'t chat. Swing.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'cinder-crew_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Cinder Crew: Fled, then hit that hard? Pick a mute status.',
-    'Cinder Crew: Ran, then connected. Impressed. Still igniting.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'cinder-crew_hcrit_9', beat: 'hunter_crit', lines: ["Cinder Crew: That's split the shell!"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'cinder-crew_hcrit_10', beat: 'hunter_crit', lines: ["Cinder Crew: We need to pull ourselves together!"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'cinder-crew_hcrit_ran_11', beat: 'hunter_crit', lines: ["Cinder Crew: You led us off the warm spot and struck."], requireFlags: ["ran"], weight: 3 },
 
-  { id: 'cinder-crew_kit_poison_12', beat: 'kit', lines: [
-    'Cinder Crew: Poison in the chat. Bad vibe.',
-    'Cinder Crew: Toxin at Facilities. Read the thread.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'cinder-crew_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Cinder Crew: Fire on fire. Redundant and rude.',
-    'Cinder Crew: Lit the crew. We were already Seen.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'cinder-crew_kit_caltrops_14', beat: 'kit', lines: [
-    'Cinder Crew: Floor spikes. We float heat anyway.',
-    'Cinder Crew: Caltrops for a group chat. Okay.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'cinder-crew_kit_acid-vial_15', beat: 'kit', lines: [
-    'Cinder Crew: Acid on the spark. Personal.',
-    'Cinder Crew: Chemistry in the thread. Hate you more.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'cinder-crew_kit_holy-water_16', beat: 'kit', lines: [
-    'Cinder Crew: Holy water. Cute. Foam is still a rumor.',
-    'Cinder Crew: Blessings don\'t mute us. Just wet the spark.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'cinder-crew_kit_smokestick_17', beat: 'kit', lines: [
-    'Cinder Crew: Smoke. We are the haze.',
-    'Cinder Crew: Hid mid-thread. Still smell you. Unmute.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'cinder-crew_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Cinder Crew: Bear trap for magmin. Soft laugh.',
-    'Cinder Crew: Jaws for something that ignites on read. Adorable.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'cinder-crew_kit_net_19', beat: 'kit', lines: [
-    'Cinder Crew: Net on the crew. Thread ruined. Rude.',
-    'Cinder Crew: Bagged. Still sparking through mesh.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'cinder-crew_kit_healing-potion_20', beat: 'kit', lines: [
-    'Cinder Crew: Mid-fight sip. Planning a longer thread?',
-    'Cinder Crew: Healing. Optimistic. We prefer lurkers nervous.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'cinder-crew_kit_oil-flask_21', beat: 'kit', lines: [
-    'Cinder Crew: Oil. Accelerant. Your plan\'s worse — and better.',
-    'Cinder Crew: Greased Facilities. We still ignite clean.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: [
-    'Cinder Crew: Bag rummage won\'t kill the thread. We\'re Seen.',
-    'Cinder Crew: Props out. Ignite.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: [
-    'Cinder Crew: Ran, then rummaged. Coward with accessories.',
-    'Cinder Crew: Flee-kit combo. Soft. Still coming on read.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'cinder-crew_kit_poison_12', beat: 'kit', lines: ["Cinder Crew: That coating smells terrible."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'cinder-crew_kit_alchemists-fire_13', beat: 'kit', lines: ["Cinder Crew: Keep it away from the loose paper!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'cinder-crew_kit_caltrops_14', beat: 'kit', lines: ["Cinder Crew: Hot feet, sharp floor. Bad combination."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'cinder-crew_kit_acid-vial_15', beat: 'kit', lines: ["Cinder Crew: That's bubbling for the wrong reason!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'cinder-crew_kit_holy-water_16', beat: 'kit', lines: ["Cinder Crew: Stop splashing that here!"], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'cinder-crew_kit_smokestick_17', beat: 'kit', lines: ["Cinder Crew: Can't see the other sparks."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'cinder-crew_kit_hunting-trap_18', beat: 'kit', lines: ["Cinder Crew: Something cold has snapped around a leg!"], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'cinder-crew_kit_net_19', beat: 'kit', lines: ["Cinder Crew: Stop pulling. The mesh is tightening!"], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'cinder-crew_kit_healing-potion_20', beat: 'kit', lines: ["Cinder Crew: You patched up. We can't replace our cracks that easily."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'cinder-crew_kit_oil-flask_21', beat: 'kit', lines: ["Cinder Crew: Oil on the weapon. Careful where that drips."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'cinder-crew_kit_gen_22', beat: 'kit', lines: ["Cinder Crew: What's the new thing in your hand?"], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'cinder-crew_kit_ran_23', beat: 'kit', lines: ["Cinder Crew: You used it while we crossed the room."], requireFlags: ["ran"], weight: 2 },
 
-  { id: 'cinder-crew_mhit_24', beat: 'monster_hit', lines: [
-    'Cinder Crew: That\'s for the unread receipts.',
-    'Cinder Crew: Seen. Ignited. You asked.',
-  ] },
-  { id: 'cinder-crew_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Cinder Crew: We\'re leaking. You\'re bleeding. Heat wins.',
-    'Cinder Crew: Scraped. Still the hottest ping in the chat.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'cinder-crew_mmiss_26', beat: 'monster_miss', lines: [
-    'Cinder Crew: Missed. Enjoy the mute while it lasts.',
-    'Cinder Crew: Close call. Don\'t brand yourself on it.',
-  ] },
+  { id: 'cinder-crew_mhit_24', beat: 'monster_hit', lines: ["Cinder Crew: Made contact. Felt the heat?"] },
+  { id: 'cinder-crew_mhit_bld_25', beat: 'monster_hit', lines: ["Cinder Crew: Still enough warmth for one more."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'cinder-crew_mmiss_26', beat: 'monster_miss', lines: ["Cinder Crew: We scorched empty floor."] },
 
-  { id: 'cinder-crew_w_wind_27', beat: 'wound', lines: [
-    'Cinder Crew: First scratch. Used to believe in careful mutes.',
-    'Cinder Crew: Scratched. Annoyed. Still Seen.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'cinder-crew_w_bru_28', beat: 'wound', lines: [
-    'Cinder Crew: Deeper scratch. Want a story? Keep breathing.',
-    'Cinder Crew: Still here. Still hot. Receipt stays.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'cinder-crew_w_bld_29', beat: 'wound', lines: [
-    'Cinder Crew: Okay. Spark thin. Ignite still works.',
-    'Cinder Crew: Thought the chat made us untouchable. You touched. Hate that.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'cinder-crew_w_heart_30', beat: 'wound', lines: [
-    'Cinder Crew: That one hurt more than a left-on-read should.',
-    'Cinder Crew: Stop staring at the spark. Keep swinging.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'cinder-crew_w_wind_27', beat: 'wound', lines: ["Cinder Crew: A crack in the crust."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'cinder-crew_w_bru_28', beat: 'wound', lines: ["Cinder Crew: We're losing more than sparks now."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'cinder-crew_w_bld_29', beat: 'wound', lines: ["Cinder Crew: The glow's getting faint."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'cinder-crew_w_heart_30', beat: 'wound', lines: ["Cinder Crew: I'd like to get back beside the old boiler."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  { id: 'cinder-crew_run_31', beat: 'run', lines: [
-    'Cinder Crew: Ran from the chat. Chase is a ping.',
-    'Cinder Crew: Mute mid-thread? The chat still shows Seen. We chase.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'cinder-crew_run2_32', beat: 'run', lines: [
-    'Cinder Crew: Twice. Personal. Pathetic mute.',
-    'Cinder Crew: Second escape. Not mad. Hotter.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'cinder-crew_chase_33', beat: 'chase', lines: [
-    'Cinder Crew: Running from a group chat. Embarrassing for Facilities.',
-    'Cinder Crew: You wanted distance. We wanted a clean read. Guess.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'cinder-crew_chase2_34', beat: 'chase', lines: [
-    'Cinder Crew: Second chase. Thread\'s ours.',
-    'Cinder Crew: Run again and we\'ll think you like the spark. Don\'t.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'cinder-crew_close_35', beat: 'close', lines: [
-    'Cinder Crew: Back. Miss the heat?',
-    'Cinder Crew: Range over. Better RSVP next time.',
-  ] },
-  { id: 'cinder-crew_close_smoke_36', beat: 'close', lines: [
-    'Cinder Crew: You call that smoke? We invented haze — yours just RSVPs oxygen.',
-    'Cinder Crew: Fog\'s gone. Still Seen. Nice try.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'cinder-crew_run_31', beat: 'run', lines: ["Cinder Crew: You've moved off the warm floor."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'cinder-crew_run2_32', beat: 'run', lines: ["Cinder Crew: Away from the heat again."], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'cinder-crew_chase_33', beat: 'chase', lines: ["Cinder Crew: Following past the boiler."], requireFlags: ["ran"], weight: 2 },
+  { id: 'cinder-crew_chase2_34', beat: 'chase', lines: ["Cinder Crew: We're burning ourselves out chasing."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'cinder-crew_close_35', beat: 'close', lines: ["Cinder Crew: Close enough to touch."] },
+  { id: 'cinder-crew_close_smoke_36', beat: 'close', lines: ["Cinder Crew: Found you through our own haze."], requireFlags: ["smoke"], weight: 3 },
 
-  { id: 'cinder-crew_vic_37', beat: 'victory', lines: [
-    'Cinder Crew: You won. Mark us damaged. Tell them the crew fought.',
-    'Cinder Crew: Fine. Take it. Spark ruined. Worst thread of your life.',
-  ], weight: 1 },
-  { id: 'cinder-crew_vic_heal_38', beat: 'victory', lines: [
-    'Cinder Crew: Potioned up and still beat the chat. Ugly win. Almost respect.',
-    'Cinder Crew: Topped off, then finished the thread. Preferred lurker energy. Gross.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'cinder-crew_vic_kite_39', beat: 'victory', lines: [
-    'Cinder Crew: Made us chase our own Facilities, then finished. Rude win.',
-    'Cinder Crew: Jogging as strategy. Hate that it worked.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'cinder-crew_vic_crit_40', beat: 'victory', lines: [
-    'Cinder Crew: You cut through the spark. Fight\'s over. We\'ll give you that.',
-    'Cinder Crew: Found the soft ping and finished. No thread left. Well done.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: [
-    'Cinder Crew: Bagged us and finished. Ugly. Honest.',
-    'Cinder Crew: Net, then win. You bagged the crew. Mildly mad.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'cinder-crew_vic_37', beat: 'victory', lines: ["Cinder Crew: You put us down. The boiler can wait."], weight: 1 },
+  { id: 'cinder-crew_vic_heal_38', beat: 'victory', lines: ["Cinder Crew: Your recovery outlasted our heat."], requireFlags: ["healed"], weight: 3 },
+  { id: 'cinder-crew_vic_kite_39', beat: 'victory', lines: ["Cinder Crew: You made us spend ourselves crossing the room."], requireFlags: ["ran"], weight: 3 },
+  { id: 'cinder-crew_vic_crit_40', beat: 'victory', lines: ["Cinder Crew: That blow split the shell. You won."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'cinder-crew_vic_net_41', beat: 'victory', lines: ["Cinder Crew: The mesh broke up the crew. You took the opening."], weight: 3 , requireFlags: ["netted"]},
 
-  { id: 'cinder-crew_def_42', beat: 'defeat', lines: [
-    'Cinder Crew: Thread closed. You lose. We stay hot.',
-    'Cinder Crew: Down. Crew wins. Don\'t bleed on Facilities.',
-  ] },
-  { id: 'cinder-crew_def_crit_43', beat: 'defeat', lines: [
-    'Cinder Crew: Hit hard. Still lost. Talent without follow-through.',
-    'Cinder Crew: Big swing. Bad ending. Spark continues.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'cinder-crew_def_ran_44', beat: 'defeat', lines: [
-    'Cinder Crew: You fled and still ash. Same read receipt. Ignited.',
-    'Cinder Crew: Flee into a loss. We demo that every ping.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'cinder-crew_def_heal_45', beat: 'defeat', lines: [
-    'Cinder Crew: Healed and still went down. Optimistic. Wrong chat.',
-    'Cinder Crew: Potion, then floor. Soft. Memorable. Bad mute.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'cinder-crew_def_42', beat: 'defeat', lines: ["Cinder Crew: Fight's over. We need the boiler corner."] },
+  { id: 'cinder-crew_def_crit_43', beat: 'defeat', lines: ["Cinder Crew: You put a serious crack in us."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'cinder-crew_def_ran_44', beat: 'defeat', lines: ["Cinder Crew: Caught you. Now let us cool down."], requireFlags: ["ran"], weight: 2 },
+  { id: 'cinder-crew_def_heal_45', beat: 'defeat', lines: ["Cinder Crew: That drink bought you a lot of time."], requireFlags: ["healed"], weight: 3 },
 ];

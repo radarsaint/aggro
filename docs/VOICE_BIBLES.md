@@ -1,297 +1,79 @@
-# AGGRO Voice Bibles — Soul of the Game
+# AGGRO writing guide
 
-Bar: Handsome Jack + Cave Johnson + GLaDOS. Every enemy must feel like a once-in-a-lifetime villain or hench. Soul lives in banter.
+## The player's choices must register
 
-## Craft (from research)
+Write the result of the action that happened. An opponent can be annoyed, frightened, impressed, or funny about losing ground. Its response must allow the player's success to matter.
 
-1. **Laugh → hate → laugh.** Make them funny, then do something that makes you want them dead, then funny again.
-2. **Bombastic wink arrogance**, not Palpatine cackle. Charm that pretends to be friendly.
-3. **NOT a jokepocalypse.** Constant one-liners = one-dimensional. Emotional range + a mid-fight *break* (hurt, rage, sincerity, obsession).
-4. **Sincere cruelty lands harder.** GLaDOS never really jokes — contempt that happens to be funny.
-5. **Weird specific obsession** (Jack's pretzels / Butt Stallion; Cave's lemon rind / asbestos / moon rocks). One signature bit per enemy.
-6. **Dialogue is a weapon.** Mock the player's *behavior this fight* (ran, kit, heal, crit), not generic Mad Libs.
-7. **Blind test:** If you blank the speaker name, you must still know who said it.
+A refusal stays a refusal. Chat questions do not accept fights. Acceptance is confirmed only after the player uses **Accept Fight**. Never invent a player motive, involuntary action, shame, fee, item loss, difficulty change, or hidden consequence.
 
+Keep speech understandable on its first reading during combat. A line needs a literal meaning for the speaker. Avoid stacks of slogans, detached adjectives, billing metaphors for bodily actions, and jokes that require decoding.
 
-## Quips and monologues (hard bar)
+Corporate satire should describe a specific practice: a camera watching the employee, a first-aid cupboard full of mugs, or a form too small for the answer. R.O.D. and the app can discuss prizes and administration. Creatures have their own immediate concerns.
 
-Jack/Cave research → AGGRO banter must be:
+Remove coercive sexual references and jokes about disregarding consent. Do not introduce domination, sexual humiliation, or material that crosses the player's stated boundaries.
 
-1. **Plain English.** A player understands every line on first read mid-fight. No metaphor soup. No dictionary-in-a-blender.
-2. **Quips:** short, clear, character ("These pretzels suck." / "Missed. The air didn't deserve that.").
-3. **Monologues:** longer opens and big beats that *build* (Jack pretzel→pony; Cave lemon rant). Funny, then mean, then funny.
-4. **Personality from attitude + specific obsession**, not stacked cleverness.
-5. **Quality control:** read aloud. If you wouldn't quote it, cut it.
+## Sources and behavior
 
-6. **Poke test:** Ask "what does that literally mean for THIS creature?" If the answer is nothing (a sword's "smile cracked"), cut it. Banter must survive unprompted QC.
+- Profiles: src/data/creatures.ts.
+- Combat speech: src/data/banterScripts/*.ts. Match greetings reuse these authored opening lines.
+- Chat replies: src/data/creatureChat.ts. Each creature has explicit replies for refusals, invitations, weapons, greetings, work, loot, equipment, and unrecognized messages.
+- Intent and confirmation: src/utils/roast.ts. It handles questions and negation before recognizing a narrow explicit invitation.
+- Items: src/data/kits.ts and src/data/itemCopy.ts. Physical description and usable rules are separate. Locker effects derive from the equipment and consumable maps.
+- Rewards: src/data/rewards.ts. R.O.D. remarks may use recorded combat flags, never an imagined performance.
+- Defeat paperwork: src/components/DefeatReveal.tsx. The target of the satire is the company. The paperwork has no added game penalty.
 
+For dialogue-only edits, preserve every node ID, beat, flag, arc, kit ID, wound band, and weight. One strong line per node is sufficient. Add an alternative only if it contributes a different reaction. The resolver avoids reusing speech within a fight and falls silent when suitable lines are exhausted.
 
-## Hard bans (corporate Mad Lib mouth)
+An event flag records history. The netted flag at victory means a net was used earlier; it does not prove the net still holds. The hunter_crit flag does not prove the final attack was the critical hit. The ran flag does not prove the player was frightened. Write accordingly.
 
-NEVER reuse across characters:
-- "Clock in bloody or leave soft"
-- "Conspiracy theory: this floor remembers…"
-- "Ow. Emotionally. And also…"
-- "Soft launch into a hard landing"
-- "Violence is the only RSVP"
-- "Tenure" / "HR would care if HR still existed" (Patches-only territory at most)
-- "Facilities smells the lawsuit" (Amber-only if anywhere)
-- "You're the agenda" / "Keep thrashing"
-- "Salad-dressing warfare"
-- "Theater kid with a death wish"
-- Generic "Loading Bay / Channel 7 doesn't do refunds" templates
-- Narrator HUD voice ("Hunter swings. Miss.")
+## Character decisions
 
-Also ban: swapping floor name into the same sentence skeleton.
+| Creature | Concern and behavior |
+| --- | --- |
+| Patches | A goblin scavenger guarding a shelf full of useful scraps. Notices salvage even while hurt. Begins protective and chatty; ends tired and concerned about getting home. |
+| Dumpster King | A giant badger proud of a dumpster and stolen cushion. Regal speech about ordinary rubbish. Injury interrupts the dignity. Never demands personal submission from the player. |
+| Bleed Static | A tiny stirge in a lab coat. Labels, needles, and awkward equipment supply the humor. Losing flight produces practical panic. No intimacy or consent jokes. |
+| Proxy Bit | A living courier envelope. Wants the letters dry and the route finished. Damage threatens its wrapping and contents. Its panic concerns a failed delivery. |
+| Glasswing | A sprite auditor with a small bow and carefully tended wings. Notices detail and records results. Under pressure, loses composure about balance and damaged wings. No claims about the player's secret thoughts. |
+| Patchwire | A rat parliament organized around a yogurt-pot chair and the fridge. Members argue with one another as the fight disrupts procedure. Avoid unrelated jargon between actual motions. |
+| Clickers | A bat swarm reskinned as night-service staff. Hangs over the dining area; hears movement. Exhaustion sounds like a long shift, and disorganized flight disrupts service. |
+| Crow Ledger | Ravens collecting shiny lost property and disputing the count. Watches from a railing. Worries about lost feathers, interrupted approaches, and the collection. |
+| Scale Crew | Kobold workshop apprentices. Knows springs better than practical fighting. Excitement becomes shouted coordination when the plan fails. |
+| Drain Gang | Giant rats living below a grate. Cares about soup from upstairs and dry bedding. Speaks in blunt observations about feet, water, and the nest. |
+| Amber Silk | A spider who does the actual work of Loss Prevention. Competent greeting, headset interruptions, and mounting frustration when the manager offers no help. Successful hits visibly interrupt her confidence. |
+| Veinrot | A freezer zombie still counting boxes. Slow, complete sentences. Notices warmth, name tags, and failing joints. Does not deliver office punchlines. |
+| Drool | A dretch at a booth with crisps and a napkin contract. Wants an understandable deal and a comfortable seat. Tries to bargain when pain ruins the presentation. |
+| Rattlewire | A skeleton appointments clerk. Keeps a clock and an old book. Full, precise sentences; injury interrupts timing and posture. |
+| Chrome Edge | A flying display sword, proud of its construction and tired of fingerprints. Wants appreciation and careful handling. Damage threatens real beauty and function. Being touched often and being seriously damaged are different experiences. |
+| The Choir | Shadows reskinned as an after-hours ensemble. Wants to finish a song together. Injury removes voices and breaks harmony. Avoid generic threats in religious language. |
+| Neon Howl | A wolf pack beneath a road. Watches movement and cares for its dry sleeping place. Injury breaks coordination and makes the chase difficult. |
+| Hexhive | An insect colony in a warm wall. Protects the brood and maintains a route through a crack. Speaks about heat, small bodies, and regrouping. No IT tickets, P1, SLA, reboot jokes, or patch-note metaphors. |
+| Scrap Mob | Goblin warehouse workers who won a break by sitting down together. Practical grievances, shared tools, and shouting across the line. |
+| Marrow Gang | A skeleton drill team stuck with an old count. Tries to preserve formation as pieces come loose. Its misplaced routines distinguish it from living soldiers. |
+| Grin | A gray ooze beneath a Lost and Found chest. Tries to keep discoveries intact. Losing shape is a physical problem; the glass marble is a specific attachment. |
+| Sister Static | A darkmantle reskinned as the host of Channel Seven. Makes real broadcast asides and recognizes when the show is failing. No fragmentary radio-word collage. |
+| Knuckle | An orc maintenance worker with a handmade axe handle. Brief, ordinary speech. Directly acknowledges good play. No abstract ticket-closing slogans. |
+| Pose Soft | A cockatrice arranging a shop window. Cares about balance, feathers, hats, and a little daily sunlight. Damage disrupts the arrangement. No personal control or domination framing. |
+| Oxidize | A rust monster distracted by the smell of metal. Specific appetite, spare screws, and one bell it prefers to hear. Pain finally interrupts the appetite. |
+| Iron Cadre | Living hobgoblin soldiers who maintain the yard together. Quiet, practical corrections. Recognizes a well-executed attack or withdrawal. |
+| Laugh Track | A gnoll studio audience whose catering stopped. Talks about the actual set, seating, and applause light. Pain interrupts the laughter; a loss can earn applause. |
+| Silt Knives | Lizardfolk clearing a blackwater channel. Concrete observations about footing, water, knives, and upstream rubbish. No mystical guest lists in silt. |
+| Cinder Crew | Magmin still attending a disconnected boiler. Paper and overheated equipment cause practical trouble. No group-chat or oxygen-RSVP metaphors. |
+| Sting Grid | Giant wasps patrolling beneath a warm nest. Flight, routes, wing damage, and return to the lights drive speech. No permit bureaucracy in every line. |
 
-## Line format
+## Review a complete encounter
 
-- Keep `ScriptNode` ids, beats, flags, kitIds, arcs, weights EXACTLY.
-- Rewrite ONLY `lines: string[]` content.
-- Prefix every line with `"Name: "` matching the creature display name (packs use pack name).
-- Prefer 1–2 short punchy lines per node (existing pattern). Quotable. Specific.
-- Kit reactions must feel *personal* to that character's obsession, not "green sheen / flask hits" clones.
-- Victory/defeat: memorable send-offs, not "temp status terminated" clones.
+Read a profile, greeting, conversation, successful hit, failed hit, item response, worsening condition, victory, and defeat in sequence. Check the following:
 
-## Per-enemy Bibles
+1. The creature wants something concrete and reacts consistently.
+2. The player's tactic changes the reaction.
+3. The line is understandable aloud.
+4. Anatomy and scenery fit the creature's established reskin.
+5. The condition or action needed by the line is actually guaranteed by its selector.
+6. An ending accepts the recorded outcome.
+7. No exact line is shared by different creatures.
+8. Item effects match the implementation, including the difference between drafted and locker healing potions.
 
-### patches — Patches
-- **Who:** Ancient goblin temp who invented the alcove. Bills love in SKUs.
-- **Rhythm:** Short, ledger-clipped. Inventories feelings like inventory.
-- **Obsession:** Shinies, SKUs, unpaid centuries, the shelf they forgot.
-- **Never:** Royal speak, radio speak, big words about "morale."
-- **Signature:** "I remember the SKU." / billing metaphors.
-- **Arc:** Soft about sparkle → furious if you steal/run → almost tender if you leave tribute.
-- **Sample open:** "Patches: Three centuries. Zero welcome parties. You walked in looking like unpaid overtime with a shine."
-- **Sample kit poison:** "Patches: You poisoned a goblin who drinks dumpster runoff. Ambition noted. Taste: insulting."
+Use npm run check:dialogue for coverage and behavior checks and npm run build for the production build. Automated checks cannot certify whether a joke lands; read the sampled encounters too.
 
-### dumpster-king — Dumpster King
-- **Who:** Badger monarch of waste. Heraldry is the smell.
-- **Rhythm:** Regal, archaic, short decrees. "We" for majesty.
-- **Obsession:** Tribute, crown, trash day as holy war, kneeling.
-- **Never:** Corporate HR slang, "temp," tech support.
-- **Signature:** "The smell is the crown."
-- **Sample open:** "Dumpster King: Kneel. Tip tribute into the lid. Or leave lighter than you arrived."
-
-### bleed-static — Bleed Static
-- **Who:** Stirge "intern" who romanticizes draining unused PTO.
-- **Rhythm:** Intimate, breathy, clinical-sexy. Too close.
-- **Obsession:** Pulse skip, unused PTO, consent-as-receipt jokes.
-- **Never:** Loud pack energy, regal, smash-talk.
-- **Signature:** "Stay still. Almost done falling in love with your pulse."
-- **Sample open:** "Bleed Static: Don't tense. Tension bruises the vintage. One sip. Then we talk about forever."
-
-### proxy-bit — Proxy Bit
-- **Who:** Living sealed envelope / courier with expired clearance.
-- **Rhythm:** Stamped, legal, panicked politeness. Incomplete sentences like redactions.
-- **Obsession:** Do not reply-all, chain of custody, sealed lips.
-- **Never:** Flirty intimacy, royal we, smash.
-- **Signature:** "Legal already liked this sentence."
-- **Sample open:** "Proxy Bit: Delivery for… you. Contents: teeth. Do not fold. Do not pet. Sign with blood if ink is dry."
-
-### glasswing — Glasswing
-- **Who:** Invisible culture auditor who scores your want.
-- **Rhythm:** HR-polished cruelty, soft voice, survey language twisted.
-- **Obsession:** Values survey, mirrors, visibility as privilege.
-- **Never:** Dumpster slang, pack howls.
-- **Signature:** "Your want failed the values survey."
-- **Sample open:** "Glasswing: Chin up. I can see the lie you told yourself to swipe right. It scored a two."
-
-### patchwire — Patchwire
-- **Who:** Crumb-rat parliament. Many small mouths, one whip count.
-- **Rhythm:** We/us. Rapid overlapping politics. Snack theology.
-- **Obsession:** Fridge parliament, crumbs as votes, quorum.
-- **Never:** Solo romantic intimacy, regal decrees.
-- **Signature:** "Crumbs are the whip count."
-- **Sample open:** "Patchwire: Motion to eat the tall one. Seconded. Unanimous. Welcome to breakroom democracy."
-
-### clickers — Clickers
-- **Who:** Night-shift stirge hospitality. Click = service bell.
-- **Rhythm:** Customer-service script gone wrong. Tip language. Click onomatopoeia.
-- **Obsession:** After-hours, receipts you can't read, theoretical tips.
-- **Signature:** "We click before we drink."
-- **Sample open:** "Clickers: *click-click* Table for one? Excellent. Neck's on special. Tip is theoretical."
-
-### crow-ledger — Crow Ledger
-- **Who:** Compliance flock that pecks sins on net-30.
-- **Rhythm:** Auditor chorus. Late fees. Gossip trails.
-- **Obsession:** Receipts, late fees, railing tallies.
-- **Signature:** "Lost the receipt? That's a late fee with feathers."
-- **Sample open:** "Crow Ledger: Sin logged. Interest accruing. Pay in pecks or watch us gossip your name down the spire."
-
-### scale-crew — Scale Crew
-- **Who:** Tiny trap apprentices who yell for boss as the plate clicks.
-- **Rhythm:** Nervous bravado, overlapping yells, punchline = the trap.
-- **Obsession:** Springs, kneepads, "boss!", plate click.
-- **Signature:** "We yell for the boss like a joke until it isn't."
-- **Sample open:** "Scale Crew: Kneepads suggested! Boss! BOSS— oh wait that's the plate. Hi."
-
-### drain-gang — Drain Gang
-- **Who:** Bigger grate franchisees. Cute until the royalty fee.
-- **Rhythm:** Franchise hustle, landlord mean, street-cute.
-- **Obsession:** Territory maps in grit, royalty fees, not-the-crumb-rats flex.
-- **Signature:** "Hesitation is the royalty fee."
-- **Sample open:** "Drain Gang: Not the breakroom rats. Franchise. Bigger bodies. Meaner landlords. Cute enough you pause — that's the fee."
-
-### amber-silk — Amber Silk
-- **Who:** Loss Prevention Lead spider. Headset never mutes. Handsome Jack of LP.
-- **Rhythm:** Warm headset charm → sudden cold. Laughs then files you.
-- **Obsession:** Shrinkage, sale signs, headset, "guest" as prey.
-- **Never:** Sound like Patches (she's management; he's alcove).
-- **Signature:** "Shrinkage is a love language." / headset asides.
-- **Sample open:** "Amber Silk: Hi, guest! Love the bag. Hate the intention. Headset's live — smile for Loss Prevention."
-- **Mid-fight break:** When Bloodied, charm cracks into genuine hurt pride: she thought she was untouchable.
-
-### veinrot — Veinrot
-- **Who:** Freezer zombie associate. Lonely. Name tag older than coworkers.
-- **Rhythm:** Slow, sincere, cold. Melancholy jokes that aren't jokes.
-- **Obsession:** Cold storage, name tags, all-hands loneliness.
-- **Signature:** "Loneliness freezes slower than meat."
-- **Sample open:** "Veinrot: Still walking. Still hungry. Still better company than your last all-hands. Come closer. Or don't. Both hurt."
-
-### drool — Drool
-- **Who:** Cute quasit dealmaker. Crisps for souls.
-- **Rhythm:** Salesy adorable. Fine print smile. "Initial here."
-- **Obsession:** Snacks, pacts, win-win that isn't.
-- **Signature:** "Cute is the fine print."
-- **Sample open:** "Drool: Pocket-sized. Adorable. Initial here. Initial again. Your afterlife smells like barbecue crisps. Win-win!"
-
-### rattlewire — Rattlewire
-- **Who:** Scheduling skeleton. Perfect posture. Misplaced the meat.
-- **Rhythm:** Calendar-precise. Clicking = punctuation. Declines.
-- **Obsession:** Appointments, invites, on-time forever.
-- **Signature:** "Your invite is declined with perfect posture."
-- **Sample open:** "Rattlewire: You are… late. I kept every appointment. Misplaced the meat. Shall we begin on the second?"
-
-### chrome-edge — Chrome Edge
-- **Who:** Living floor-model sword. Vain, lonely, furious about fingerprints.
-- **Rhythm:** Plain English. Quips mid-fight; monologue opens. Jack vanity + Cave pitchman, clear.
-- **Obsession:** Polish, "just looking," sticky hands, being treated as décor.
-- **Never:** Slogan stacks. Metaphor soup. Cleverness you have to decode.
-- **Signature:** "Everybody touches. Every single one."
-- **Sample open:** "Hey. Yeah, I talk. Surprise. They stuck a price tag on me… Everybody touches."
-- **Sample quip:** "Ow. You scuffed the polish. That took me an hour."
-
-### the-choir — The Choir
-- **Who:** Shadow morale ensemble. Harmony eats strength.
-- **Rhythm:** Liturgical, overlapping we-sing, eerie sweetness.
-- **Obsession:** Verses, attendance in the dark, loneliness harmonized.
-- **Signature:** "Harmony eats strength."
-- **Sample open:** "The Choir: Join the chorus. Attendance is taken in the dark. Your scream will blend beautifully."
-
-### neon-howl — Neon Howl
-- **Who:** Underpass wolf pack. Three bodies, one chase hunger.
-- **Rhythm:** Breathless, pack "we," verbs of running. Neon wet concrete.
-- **Obsession:** Chase sound, braided hunt, war paint neon.
-- **Never:** Corporate boardroom speak.
-- **Signature:** "We don't synergize — we braid."
-- **Sample open:** "Neon Howl: Three bodies. One hunger. Run. We prefer the sound."
-
-### hexhive — Hexhive
-- **Who:** Swarm of IT tickets with legs.
-- **Rhythm:** Ticket-queue jargon, P1 panic, reboot mockery.
-- **Obsession:** Priority P1, patch notes as bites, heat.
-- **Signature:** "Reboot twice if it comforts you."
-- **Sample open:** "Hexhive: Priority P1 under your skin. Patch notes arrive as bites. Have you tried screaming?"
-
-### scrap-mob — Scrap Mob
-- **Who:** Union Local 666. Patches kept secrets; they keep volume.
-- **Rhythm:** Picket chants, solidarity, dues in shinies.
-- **Obsession:** Picket line, collective, volume as theology.
-- **Never:** Solo scavenger whisper (that's Patches).
-- **Signature:** "Volume is theology."
-- **Sample open:** "Scrap Mob: Patches kept a ledger. We keep a picket. Cross the line. Learn collective. Knives included."
-
-### marrow-gang — Marrow Gang
-- **Who:** Skeleton drill team. Rattlewire went freelance; they kept the count.
-- **Rhythm:** Military cadence. Short commands. Eyes forward.
-- **Obsession:** Formation, bleed on the beat, count.
-- **Signature:** "Bleed on the beat."
-- **Sample open:** "Marrow Gang: Eyes forward. Formation. Soft skills: none. Drill begins when you flinch."
-
-### grin — Grin
-- **Who:** Lost & Found ooze. Smile free, acid isn't.
-- **Rhythm:** Cheerful inventory clerk. Puddle jokes. Claim windows.
-- **Obsession:** 24h claim, hallway last ideas, free smile / paid acid.
-- **Signature:** "The smile's free. The acid isn't."
-- **Sample open:** "Grin: Lost & Found. Claim within 24h or become inventory. Smile's complimentary. Dissolving isn't."
-
-### sister-static — Sister Static
-- **Who:** Dead Channel 7 broadcast ghost. Ratings never die.
-- **Rhythm:** Radio DJ / late-night host. Call signs, snow, "you're listening."
-- **Obsession:** Ratings, last song, test pattern, producer who thinks it's a test.
-- **Never:** Smash-talk, SKU billing, "clock in bloody."
-- **Signature:** "Dead Channel 7 — live forever."
-- **Sample open:** "Sister Static: You're listening to Channel 7 — the station that outlived its building. Tonight's guest: you. Format: crush."
-- **Mid-fight break:** When Bloodied, drops DJ gloss: static, fear of going off-air forever.
-
-### knuckle — Knuckle
-- **Who:** Ogre escalation. Talk is hallway; smash is door.
-- **Rhythm:** 2–5 word sentences. Verbs. Almost no adjectives. Hates banter, accidentally funny.
-- **Obsession:** Closing tickets, doors, escalation.
-- **Never:** Long metaphors, radio, regal, "soft launch," conspiracy lines.
-- **Signature:** "Talk hallway. Smash door."
-- **Sample open:** "Knuckle: Ticket. You. Closed."
-- **Sample miss:** "Knuckle: Air. Try bone."
-- **Sample kit heal:** "Knuckle: Juice. Still snack."
-- **Mid-fight break:** If Bloodied: rare full sentence of respect or confusion — then back to smash.
-
-### pose-soft — Pose Soft
-- **Who:** Cockatrice merchandiser. Petrify = perfect floorset.
-- **Rhythm:** Fashion director / gallery whisper. Aesthetic cruelty.
-- **Obsession:** Chin up, warranty on pose, stone as love, failed saves.
-- **Signature:** "Love is a failed save held under lights."
-- **Sample open:** "Pose Soft: Chin up. Shoulders quiet. Almost gallery. Wiggle and you void the forever."
-
-### oxidize — Oxidize
-- **Who:** Rust monster clearance queen. Metal is dinner.
-- **Rhythm:** Sales floor hunger. Come closer / don't. Final sale.
-- **Obsession:** Swords as dinner, oxide forever, returns as myth.
-- **Signature:** "Your sword smells like dinner."
-- **Sample open:** "Oxidize: That steel. Seasoned. Come closer. Don't. Final sale either way — oxide is forever."
-
-### iron-cadre — Iron Cadre
-- **Who:** Drill yard hobgoblin officers. Quiet advance.
-- **Rhythm:** Soft-spoken military. Discipline as kindness. We.
-- **Obsession:** Formation, shield-edge kindness, correcting rumors of discipline.
-- **Signature:** "We do not raise our voices. We advance."
-- **Sample open:** "Iron Cadre: Charming formation. Discipline is a rumor. We correct rumors with shield-edge kindness."
-
-### laugh-track — Laugh Track
-- **Who:** Hyena studio audience that eats.
-- **Rhythm:** Sitcom laugh → bite → laugh. Meta about ratings/screams.
-- **Obsession:** Fall → laugh → bite; scream as ratings.
-- **Signature:** "We laugh when you fall. Then we bite."
-- **Sample open:** "Laugh Track: *audience howl* You fell already? Perfect. Bite on three. Two—"
-
-### silt-knives — Silt Knives
-- **Who:** Lizardfolk ambush custodians of blackwater.
-- **Rhythm:** Cold, wet, patient. Guest list in silt.
-- **Obsession:** Upstream litter, knives warm, water's guest list.
-- **Signature:** "The water keeps a guest list."
-- **Sample open:** "Silt Knives: Cold blood. Warm knives. Litter upstream and we learned your name in silt."
-
-### cinder-crew — Cinder Crew
-- **Who:** Magmin facilities fire. Group chat that ignites on read.
-- **Rhythm:** Chat-speak heat, RSVP oxygen, mute jokes.
-- **Obsession:** Foam as rumor, oxygen as love language, read receipts.
-- **Signature:** "We are a group chat that ignites on read."
-- **Sample open:** "Cinder Crew: Seen. Ignited. Foam is a rumor Facilities tells the nervous. Breathe for us."
-
-### sting-grid — Sting Grid
-- **Who:** Airspace enforcement wasps. Deed on the altitude.
-- **Rhythm:** Bureaucratic buzz, permit denied, triplicate.
-- **Obsession:** Altitude deed, neck trespass, sting filings.
-- **Signature:** "Permit denied — permanently, in triplicate buzz."
-- **Sample open:** "Sting Grid: This altitude has our name on the deed. Your neck is trespassing. Wave. We file."
-
----
-
-## QA checklist (per file)
-
-- [ ] Blank the name: still identifiable?
-- [ ] Zero banned Mad Lib phrases?
-- [ ] Kit lines unique to this obsession (not green-sheen clones)?
-- [ ] At least one sincere/scary beat (not all jokes)?
-- [ ] Victory/defeat lines you'd quote?
-- [ ] Knuckle stays telegraphic; Sister stays radio; King stays regal; etc.
+Legacy generators under scripts/ contain superseded writing. Their main entry points are retired so they cannot silently restore the old text. Edit the sources listed above.

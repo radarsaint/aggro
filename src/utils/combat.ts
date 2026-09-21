@@ -83,7 +83,7 @@ function pushBanter(
   if (!result.text) return;
   next.log.push(log(result.text, 'banter'));
   const recent = [...(next.recentBanter ?? []), result.text];
-  next.recentBanter = recent.slice(-32);
+  next.recentBanter = recent;
 }
 
 const WOUND_ORDER: MonsterCondition[] = ['Healthy', 'Winded', 'Bruised', 'Bloodied', 'Down'];
@@ -185,7 +185,7 @@ function tickPoisonDoT(next: CombatState): void {
   applyMonsterDamage(next, total);
   next.log.push(
     log(
-      `☠️ Poison tick — ${next.monster.name}: ${total} poison. Foe at −3 to hit this turn (${next.poisonTurns} turn(s) left).`,
+      `☠️ Poison tick — ${next.monster.name}: ${total} poison. Enemy attack rolls take −3 this turn (${next.poisonTurns} turn(s) left).`,
       'damage',
     ),
   );
@@ -209,7 +209,7 @@ function tickBurnDoT(next: CombatState, creature: Creature): boolean {
   next.burnTurns -= 1;
   next.log.push(
     log(
-      `🔥 Burn DoT — ${creature.name}: ${total} fire (${detail})${pack ? ' [pack burn]' : ''}. ${next.burnTurns} burn tick(s) left.`,
+      `🔥 Burning — ${creature.name}: ${total} fire (${detail})${pack ? ' [pack burn]' : ''}. ${next.burnTurns} burning turn(s) left.`,
       'damage',
     ),
   );
@@ -440,14 +440,14 @@ export function hunterAttack(state: CombatState, creature: Creature, hunter: Hun
 
     if (next.poisonArmed) {
       next.poisonTurns = 3;
-      next.log.push(log(`☠️ Poisoned blade — toxin refreshed ×3 (1 poison/tick + foe −3 to hit).`, 'narration'));
+      next.log.push(log(`☠️ Poison refreshed for 3 enemy turns: 1 damage per turn and −3 to enemy attack rolls.`, 'narration'));
     }
 
     // Oil = lasting hit riders (rest of fight), distinct from poison turn-ticks
     if (next.oily) {
       const oil = rollDamage('1d6');
       totalDmg += oil.total;
-      detailAll += ` + ${oil.total} oil rider (${oil.detail})`;
+      detailAll += ` + ${oil.total} oil damage (${oil.detail})`;
     }
 
     applyMonsterDamage(next, totalDmg);
@@ -551,12 +551,12 @@ function resolveAoOStrike(next: CombatState, creature: Creature): void {
   const total = natural + bonus;
   const crit = natural === 20;
   const hit = crit || total >= next.hunter.ac;
-  const notes = ['AoO'];
+  const notes = ['opportunity attack'];
   if (restrained) notes.push('restrained disadv');
   if (poisonDebuff) notes.push('poison −3');
   next.log.push(
     log(
-      `[AoO] ${creature.name} uses ${attack.name} (${notes.join(', ')})! ${rollDetail}${formatMod(bonus)} = ${total} vs AC ${next.hunter.ac} — ${hit ? (crit ? 'CRITICAL!' : 'HIT!') : 'MISS.'}`,
+      `[Opportunity attack] ${creature.name} uses ${attack.name} (${notes.join(', ')})! ${rollDetail}${formatMod(bonus)} = ${total} vs AC ${next.hunter.ac} — ${hit ? (crit ? 'CRITICAL!' : 'HIT!') : 'MISS.'}`,
       'roll',
     ),
   );
@@ -658,15 +658,12 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
     next.smokeActive = false;
     next.log.push(
       log(
-        `🪤 ${creature.name} spends the turn prying the trap off — no attacks, no Close. (Your free Attack window.)`,
+        `🪤 ${creature.name} spends the turn prying the trap off — no attacks, no Close. You can act before they attack again.`,
         'system',
       ),
     );
     decayNetTurns(next);
     decayPoisonTurns(next);
-    if (next.hunter.hp > 0) {
-      pushBanter(next, creature, 'monster_miss');
-    }
     next.turn = 'hunter';
     next.round += 1;
     return next;
@@ -689,9 +686,6 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
     // Caltrops don't trigger if they never close
     decayNetTurns(next);
     decayPoisonTurns(next);
-    if (next.hunter.hp > 0) {
-      pushBanter(next, creature, 'monster_miss');
-    }
     next.turn = 'hunter';
     next.round += 1;
     return next;
@@ -779,7 +773,7 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
       next.log.push(log(`Restrain fades as they close (skip charge spent).`, 'narration'));
     }
     decayNetTurns(next);
-    banterBeat = 'close';
+    banterBeat = delayed ? null : 'close';
     maybeWoundBanter(next, creature);
   } else {
     next.justClosed = false;
@@ -855,7 +849,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.poisonArmed = true;
       next.poisonTurns = 3; // coat takes effect now — safer Item turn (−2 on their response)
       next.log.push(
-        log(`Blade coated with toxin — poison active now (−3 to hit, 1 dmg/tick ×3). Hits refresh the timer. Safer fights, not burst.`, 'narration'),
+        log(`Weapon coated. The enemy takes 1 poison damage and a −3 attack penalty on each of its next 3 turns. Your hits refresh the duration.`, 'narration'),
       );
       break;
     }
@@ -868,11 +862,11 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.burnTurns = packBonus ? 3 : 2;
       if (next.oily) {
         next.burnTurns += 1;
-        next.log.push(log(`Oil feeds the flames — +1 burn tick (oil riders still on).`, 'narration'));
+        next.log.push(log(`Oil feeds the flames: one extra burning turn. Oiled attacks still deal bonus damage.`, 'narration'));
       }
       next.log.push(
         log(
-          `🔥 Alchemist's fire ignites: ${detailAll}. Burn DoT ×${next.burnTurns} (1d4 fire/turn). Packs burn longer — not a poison clone.`,
+          `🔥 Alchemist's fire ignites: ${detailAll}. Burns for ${next.burnTurns} enemy turns, dealing 1d4 fire damage each turn.`,
           'damage',
         ),
       );
@@ -882,7 +876,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.caltropsArmed = true;
       next.caltropsDisengage = true; // next Run: no AoO (drop-and-kite). Smoke is the heal-cover tool.
       next.log.push(
-        log(`Caltrops scattered — drop-and-kite ready. Next Run: no AoO; when they Close: 1d8 + stumble. Weak if you never Run.`, 'narration'),
+        log(`Caltrops scattered. Your next Run avoids an opportunity attack. An enemy crossing the spikes to Close takes 1d8 damage and may stumble; a melee trigger deals 1d4 and cancels one strike.`, 'narration'),
       );
       break;
     }
@@ -912,7 +906,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.smokeActive = true;
       next.log.push(
         log(
-          `💨 Smokestick cracks — smoke cover armed. Next Run heals with NO AoO/chase. (They soft-Close through haze this response.)`,
+          `💨 Smoke fills the gap. Your next Run restores HP without an opportunity attack or chase.`,
           'narration',
         ),
       );
@@ -936,7 +930,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       } else {
         next.log.push(
           log(
-            `🪤 Trap snaps: ${total} (${detail} ${expr}). ${creature.name} is trapped — next turn they pry (no attacks). ${early ? '' : 'Weaker late, but still steals a turn.'}`.trim(),
+            `🪤 Trap snaps: ${total} (${detail} ${expr}). ${creature.name} is trapped — next turn they pry (no attacks). ${early ? '' : 'The enemy loses its next turn.'}`.trim(),
             'damage',
           ),
         );
@@ -948,7 +942,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.netNoSaveOnce = true;
       next.log.push(
         log(
-          `🕸️ Net ensnares — RESTRAINED for 3 turns: disadv / your adv / pack −1 striker / can't Close. First turn: no STR save. Later STR DC 13.`,
+          `🕸️ Netted for up to 3 enemy turns. You attack with advantage; enemy attacks have disadvantage, crews lose one striker, and the enemy cannot Close. Escape checks start after the first turn: DC 13 Strength.`,
           'narration',
         ),
       );
@@ -974,7 +968,7 @@ export function hunterItem(state: CombatState, creature: Creature, _hunter: Hunt
       next.closeFromRun = false;
       next.log.push(
         log(
-          `Oil flask — blade slicked + you slip back. Every Attack hit +1d6 oil rider rest of fight (hit riders, not DoT). They must Close.`,
+          `Weapon oiled. Each Attack hit deals an extra 1d6 damage for this fight. You step back; the enemy must Close.`,
           'narration',
         ),
       );
@@ -1028,7 +1022,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     next.hunter.hp = Math.min(next.hunter.maxHp, next.hunter.hp + total);
     next.log.push(
       log(
-        `🏃 Run under smoke cover — safe disengage! +${next.hunter.hp - before} HP (${detail}). NO AoO. They must Close (0 dmg).`,
+        `🏃 Run under smoke cover — safe disengage! +${next.hunter.hp - before} HP (${detail}). No opportunity attack. They must Close (0 dmg).`,
         'system',
       ),
     );
@@ -1060,7 +1054,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     next.hunter.hp = Math.min(next.hunter.maxHp, next.hunter.hp + total);
     next.log.push(
       log(
-        `🏃 Run over caltrops (drop-and-kite) — +${next.hunter.hp - before} HP (${detail}). NO AoO. They Close into the spikes.`,
+        `🏃 Run behind the caltrops — +${next.hunter.hp - before} HP (${detail}). No opportunity attack. They must close the gap.`,
         'system',
       ),
     );
@@ -1076,7 +1070,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
       if (next.hunter.hp <= 0) {
         next.finished = true;
         next.winner = 'monster';
-        next.log.push(log(`${next.hunter.name} falls to the AoO. ${creature.name} wins this match.`, 'defeat'));
+        next.log.push(log(`${next.hunter.name} falls to the opportunity attack. ${creature.name} wins this match.`, 'defeat'));
         pushBanter(next, creature, 'defeat');
         return next;
       }
@@ -1089,7 +1083,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     next.hunter.hp = Math.min(next.hunter.maxHp, next.hunter.hp + total);
     next.log.push(
       log(
-        `🏃 Catch breath +${next.hunter.hp - before} HP (${detail}). At range; they must Close (caltrops punish Close — smoke prevents AoO).`,
+        `🏃 Catch breath +${next.hunter.hp - before} HP (${detail}). Out of reach; they must Close before attacking.`,
         'system',
       ),
     );

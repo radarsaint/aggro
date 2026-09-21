@@ -27,6 +27,8 @@ export interface RewardRevealProps {
   threat?: ThreatLevel;
   /** Drop beat for one-liner under LootCard */
   lootBeat?: LootBeat;
+  /** Actual events from the completed fight, used by R.O.D. commentary. */
+  banterFlags?: readonly string[];
   /** Optional backdrop override (defaults probe public paths) */
   artSrc?: string;
   /** Optional gold-pile art override */
@@ -150,6 +152,7 @@ export function RewardReveal({
   hotClearance,
   threat = 'Low',
   lootBeat = 'scrap',
+  banterFlags,
   artSrc,
   goldArtSrc,
 }: RewardRevealProps) {
@@ -169,9 +172,10 @@ export function RewardReveal({
       pickLootFraming({
         threat,
         lootBeat,
+        banterFlags,
         hot: hotClearance === true,
       }),
-    [threat, lootBeat, hotClearance],
+    [threat, lootBeat, hotClearance, banterFlags],
   );
 
   useMotionValueEvent(goldMv, 'change', (v) => {
