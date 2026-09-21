@@ -130,7 +130,7 @@ aggro/
 │   ├── pages/                ← Discover, Match, Chat, Combat, Profile, HowItWorks, …
 │   ├── components/           ← RestBeat, RewardReveal, LootCard, KitPicker, …
 │   ├── data/                 ← creatures, rewards/loot, equipment, kits, banterScripts/, lootArt
-│   ├── themes/               ← baatorasaka (Floor 1), comingSoon stub, registry
+│   ├── themes/               ← baatorasaka (Floor 1), tortugaMuerta (Floor 2 tokens), registry
 │   ├── utils/                ← storage (localStorage), GameContext, combat, roast
 │   └── types/                ← GameState, Hunter, Match, gates constants
 └── scripts/                  ← tooling helpers
@@ -140,7 +140,7 @@ aggro/
 
 ### Floor themes (Floor 2 stub only)
 
-Baatorasaka is Floor 1. A `comingSoon` theme proves switching works — **do not invent a full second deck** until that floor is designed. Steps to add a real Floor 2 later are outlined under historical notes in older README revisions; until Skullport (or another floor) is greenlit, leave creatures on `themeId: 'baatorasaka'`.
+Baatorasaka is Floor 1. Tortuga Muerta is Floor 2 theme tokens + aisle enable (systems 0.2) — **creature pack still out**; leave Discover creatures on `themeId: 'baatorasaka'` until the Tortuga pack ships. Unlock Tortuga from Home with the Verified lever.
 
 ### Loot art
 

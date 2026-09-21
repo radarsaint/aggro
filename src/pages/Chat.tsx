@@ -6,6 +6,7 @@ import { stakeCostForThreat } from '../data/rewards';
 import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 import type { MatchStatus } from '../types';
+import { aisleDayExhausted, getActiveFloor } from '../utils/storage';
 
 function footerCopy(status: MatchStatus, canFight: boolean): string | null {
   switch (status) {
@@ -35,7 +36,8 @@ export function Chat() {
   const match = matchId ? getMatch(matchId) : undefined;
   const creature = match ? getCreature(match.creatureId) : undefined;
   const matchesTonight = state.matchesTonight ?? 0;
-  const canFightTonight = matchesTonight > 0;
+  const aisleLocked = aisleDayExhausted(getActiveFloor(state));
+  const canFightTonight = matchesTonight > 0 && !aisleLocked;
   const [text, setText] = useState('');
   /** Gate 3 — opt-in hotter clearance stake for this Accept only */
   const [hotterClearance, setHotterClearance] = useState(false);
@@ -210,16 +212,20 @@ export function Chat() {
         {canFight && !canFightTonight && (
           <div className="chat-cta chat-cta--locked">
             <p className="chat-cta__hint">
-              Night&apos;s over — no dates left tonight. Keep bantering, or take a beat and come back fresh.
+              {aisleLocked
+                ? "Run’s over on this aisle — fix the day on You before Accept opens here again."
+                : "Night’s over — no dates left tonight. Keep bantering, or take a beat and come back fresh."}
             </p>
-            <RestBeat
-              matchesTonight={matchesTonight}
-              shortRestsUsedTonight={state.shortRestsUsedTonight ?? 0}
-              drinkUnlockedTonight={state.drinkUnlockedTonight ?? false}
-              firstFightResolvedTonight={state.firstFightResolvedTonight ?? false}
-              onShortRest={shortRest}
-              onLongRest={longRest}
-            />
+            {!aisleLocked && (
+              <RestBeat
+                matchesTonight={matchesTonight}
+                shortRestsUsedTonight={state.shortRestsUsedTonight ?? 0}
+                drinkUnlockedTonight={state.drinkUnlockedTonight ?? false}
+                firstFightResolvedTonight={state.firstFightResolvedTonight ?? false}
+                onShortRest={shortRest}
+                onLongRest={longRest}
+              />
+            )}
           </div>
         )}
 

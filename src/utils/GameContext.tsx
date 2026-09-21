@@ -7,8 +7,8 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { CombatState, GameState, Hunter, KitId, KitDraft, Match, ThemeId, ThreatLevel } from '../types';
-import { MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT } from '../types';
+import type { CombatState, FloorId, GameState, Hunter, KitId, KitDraft, Match, ThemeId, ThreatLevel } from '../types';
+import { MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT, VERIFIED_BUY_IN_COST } from '../types';
 import { applyThemeTokens, DEFAULT_THEME_ID, getTheme } from '../themes';
 import { getCreature } from '../data/creatures';
 import { getConsumableCombatEffect, getKioskSku, isFightEffectGear, mintKioskItem, rollReward, sellPrice, stakeCostForThreat } from '../data/rewards';
@@ -19,12 +19,18 @@ import {
   type EquipSlot,
 } from '../data/equipment';
 import {
+  aisleDayExhausted,
+  defaultFloorState,
+  defaultFloors,
   defaultHunter,
+  depositCapForFloor,
   filterCreatures,
+  getActiveFloor,
   loadState,
   mergeCreatureTypes,
   mergeDeckOrder,
   migrateStandards,
+  recordFightOnActiveFloor,
   saveState,
   shuffleDeckByProgress,
   uid,
@@ -171,9 +177,21 @@ interface GameApi {
   resetAll: () => void;
   reshuffleDeck: () => void;
   setActiveThemeId: (id: ThemeId) => void;
-  /** Long rest / new night — full matches, reset short-rest use, reweight Discover deck. */
+  /** Switch aisle — never refills night, never ticks another floor's day. */
+  setActiveFloorId: (id: FloorId) => void;
+  /** Landing lever — enable Tortuga Muerta (Verified only). */
+  pullTortugaLever: () => void;
+  /** Manual dayElapsed adjust on active floor (table companion). */
+  setActiveFloorDayElapsed: (dayElapsed: number) => void;
+  /** Export gold out of AGGRO (uncapped). */
+  exportGold: (amount: number) => void;
+  /** One-time Verified buy-in (150g) unlocks deposit. */
+  buyVerifiedBuyIn: () => void;
+  /** Deposit gold into AGGRO (cap 100×floorNumber per active floor day). */
+  depositGold: (amount: number) => void;
+  /** Long rest / new night — full matches, +1 dayElapsed on active floor only, reset short-rest use. */
   longRest: () => void;
-  /** Short rest — +1 match tonight (cap full + 1/night). No-op if drink already used. */
+  /** Short rest — +1 match tonight (cap full + 1/night). No day tick. */
   shortRest: () => void;
 }
 
@@ -217,9 +235,9 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   // Apply active floor theme CSS variables on :root
   useEffect(() => {
-    const theme = getTheme(state.activeThemeId);
+    const theme = getTheme(state.activeFloorId ?? state.activeThemeId);
     applyThemeTokens(theme.tokens);
-  }, [state.activeThemeId]);
+  }, [state.activeFloorId, state.activeThemeId]);
 
   const available = useMemo(() => filterCreatures(state), [state]);
   const unreadTotal = useMemo(
@@ -399,6 +417,10 @@ export function GameProvider({ children }: { children: ReactNode }) {
       if ((s.matchesTonight ?? 0) <= 0) {
         return s;
       }
+      // Floor calendar exhausted on this aisle only
+      if (aisleDayExhausted(getActiveFloor(s))) {
+        return s;
+      }
       const creature = getCreature(match.creatureId)!;
       const needed = kitsNeededForThreat(creature.threat);
       const offer = rollKitOffer([]);
@@ -479,10 +501,15 @@ export function GameProvider({ children }: { children: ReactNode }) {
       // Gate 2 teeth: reweight Discover mid-run so climb heats up after each win
       // Gate 1 drink: unlock only on first fight win of the night
       const firstFight = !(s.firstFightResolvedTonight ?? false);
+      const withFight = recordFightOnActiveFloor(upsertMatch(s, updated), {
+        presentationId: creature.id,
+        threat: creature.threat,
+        outcome: 'win',
+      });
       return {
-        ...upsertMatch(s, updated),
+        ...withFight,
         hunter: {
-          ...s.hunter,
+          ...withFight.hunter,
           fightsCompleted,
           verified,
         },
@@ -494,9 +521,17 @@ export function GameProvider({ children }: { children: ReactNode }) {
       };
     }
     // Loss: mark first fight resolved so later wins cannot unlock the drink
+    const creature = getCreature(match.creatureId);
     const firstFight = !(s.firstFightResolvedTonight ?? false);
     const updated: Match = { ...match, status: 'lost' };
-    const base = upsertMatch(s, updated);
+    let base = upsertMatch(s, updated);
+    if (creature) {
+      base = recordFightOnActiveFloor(base, {
+        presentationId: creature.id,
+        threat: creature.threat,
+        outcome: 'loss',
+      });
+    }
     if (!firstFight) return base;
     return {
       ...base,
@@ -671,20 +706,117 @@ export function GameProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
+  const setActiveFloorId = useCallback((id: FloorId) => {
+    setState((s) => {
+      const floor = s.floors?.[id] ?? defaultFloorState(id);
+      if (!floor.enabled) return s;
+      // Switch aisle: never refill night, never tick other floor's day
+      return {
+        ...s,
+        activeFloorId: id,
+        activeThemeId: id,
+      };
+    });
+  }, []);
+
   const setActiveThemeId = useCallback((id: ThemeId) => {
-    setState((s) => ({ ...s, activeThemeId: id }));
+    setActiveFloorId(id);
+  }, [setActiveFloorId]);
+
+  const pullTortugaLever = useCallback(() => {
+    setState((s) => {
+      if (!s.hunter.verified) return s;
+      const floors = { ...s.floors };
+      const tortuga = { ...(floors.tortugaMuerta ?? defaultFloorState('tortugaMuerta')) };
+      if (tortuga.enabled) return s;
+      tortuga.enabled = true;
+      floors.tortugaMuerta = tortuga;
+      return { ...s, floors };
+    });
+  }, []);
+
+  const setActiveFloorDayElapsed = useCallback((dayElapsed: number) => {
+    setState((s) => {
+      const id = (s.activeFloorId ?? s.activeThemeId) as FloorId;
+      const floors = { ...s.floors };
+      const floor = { ...(floors[id] ?? defaultFloorState(id)) };
+      const next = Math.floor(Number(dayElapsed));
+      if (!Number.isFinite(next)) return s;
+      floor.dayElapsed = Math.max(0, Math.min(floor.dayBudget, next));
+      floors[id] = floor;
+      return { ...s, floors };
+    });
+  }, []);
+
+  const exportGold = useCallback((amount: number) => {
+    setState((s) => {
+      const n = Math.floor(Number(amount));
+      if (!Number.isFinite(n) || n <= 0) return s;
+      const take = Math.min(s.hunter.gold, n);
+      if (take <= 0) return s;
+      return {
+        ...s,
+        hunter: { ...s.hunter, gold: s.hunter.gold - take },
+      };
+    });
+  }, []);
+
+  const buyVerifiedBuyIn = useCallback(() => {
+    setState((s) => {
+      if (!s.hunter.verified) return s;
+      if (s.verifiedBuyInPurchased) return s;
+      if (s.hunter.gold < VERIFIED_BUY_IN_COST) return s;
+      return {
+        ...s,
+        verifiedBuyInPurchased: true,
+        hunter: { ...s.hunter, gold: s.hunter.gold - VERIFIED_BUY_IN_COST },
+      };
+    });
+  }, []);
+
+  const depositGold = useCallback((amount: number) => {
+    setState((s) => {
+      if (!s.hunter.verified || !s.verifiedBuyInPurchased) return s;
+      const n = Math.floor(Number(amount));
+      if (!Number.isFinite(n) || n <= 0) return s;
+      const id = (s.activeFloorId ?? s.activeThemeId) as FloorId;
+      const floors = { ...s.floors };
+      const floor = { ...(floors[id] ?? defaultFloorState(id)) };
+      const cap = depositCapForFloor(id);
+      const used = floor.goldDepositedThisDay ?? 0;
+      const room = Math.max(0, cap - used);
+      const add = Math.min(n, room);
+      if (add <= 0) return s;
+      floor.goldDepositedThisDay = used + add;
+      floors[id] = floor;
+      return {
+        ...s,
+        floors,
+        hunter: { ...s.hunter, gold: s.hunter.gold + add },
+      };
+    });
   }, []);
 
   const longRest = useCallback(() => {
-    setState((s) => ({
-      ...s,
-      matchesTonight: MATCHES_PER_NIGHT,
-      shortRestsUsedTonight: 0,
-      drinkUnlockedTonight: false,
-      firstFightResolvedTonight: false,
-      // Gate 2 teeth: progress-weighted reshuffle on new night
-      deckOrder: shuffleDeckByProgress(s.hunter.fightsCompleted ?? 0),
-    }));
+    setState((s) => {
+      const id = (s.activeFloorId ?? s.activeThemeId) as FloorId;
+      const floors = { ...s.floors };
+      const floor = { ...(floors[id] ?? defaultFloorState(id)) };
+      // +1 dayElapsed on active floor only; reset that aisle's deposit allowance
+      floor.dayElapsed = Math.min(floor.dayBudget, floor.dayElapsed + 1);
+      floor.goldDepositedThisDay = 0;
+      floors[id] = floor;
+      return {
+        ...s,
+        floors,
+        matchesTonight: MATCHES_PER_NIGHT,
+        shortRestsUsedTonight: 0,
+        drinkUnlockedTonight: false,
+        firstFightResolvedTonight: false,
+        // Gate 2 teeth: progress-weighted reshuffle on new night
+        deckOrder: shuffleDeckByProgress(s.hunter.fightsCompleted ?? 0),
+      };
+    });
   }, []);
 
   const shortRest = useCallback(() => {
@@ -710,6 +842,9 @@ export function GameProvider({ children }: { children: ReactNode }) {
       passedIds: [],
       deckOrder: shuffleDeckByProgress(0),
       activeThemeId: DEFAULT_THEME_ID,
+      activeFloorId: DEFAULT_THEME_ID,
+      floors: defaultFloors(),
+      verifiedBuyInPurchased: false,
       matchesTonight: MATCHES_PER_NIGHT,
       shortRestsUsedTonight: 0,
       drinkUnlockedTonight: false,
@@ -752,6 +887,12 @@ export function GameProvider({ children }: { children: ReactNode }) {
     resetAll,
     reshuffleDeck,
     setActiveThemeId,
+    setActiveFloorId,
+    pullTortugaLever,
+    setActiveFloorDayElapsed,
+    exportGold,
+    buyVerifiedBuyIn,
+    depositGold,
     longRest,
     shortRest,
   };

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Flame, MessageCircle, Swords, User, type LucideIcon } from 'lucide-react';
+import { Flame, Home, MessageCircle, Swords, User, type LucideIcon } from 'lucide-react';
 import { useGame } from '../utils/GameContext';
 import { getTheme } from '../themes';
 
@@ -12,6 +12,12 @@ type Tab = {
 };
 
 const TABS: Tab[] = [
+  {
+    to: '/home',
+    label: 'Home',
+    Icon: Home,
+    aria: 'Home — landing, aisles, Floor 2 lever',
+  },
   {
     to: '/discover',
     label: 'Discover',
@@ -41,7 +47,7 @@ const TABS: Tab[] = [
 
 export function BottomNav() {
   const { unreadTotal, state } = useGame();
-  const floor = getTheme(state.activeThemeId).meta.displayName;
+  const floor = getTheme(state.activeFloorId ?? state.activeThemeId).meta.displayName;
   const status =
     unreadTotal > 0
       ? `${unreadTotal} unread · ${floor}`

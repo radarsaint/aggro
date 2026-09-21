@@ -8,6 +8,7 @@ import { Portrait } from '../components/Portrait';
 import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 import { getTheme } from '../themes';
+import { aisleDayExhausted, getActiveFloor } from '../utils/storage';
 
 export function Discover() {
   const {
@@ -19,13 +20,14 @@ export function Discover() {
     longRest,
     shortRest,
   } = useGame();
-  const theme = getTheme(state.activeThemeId);
+  const theme = getTheme(state.activeFloorId ?? state.activeThemeId);
   const nav = useNavigate();
   const [mode, setMode] = useState<'stack' | 'grid'>('stack');
   const topId = available[0];
   const top = topId ? getCreature(topId) : undefined;
   const matchesTonight = state.matchesTonight ?? 0;
-  const canFightTonight = matchesTonight > 0;
+  const aisleLocked = aisleDayExhausted(getActiveFloor(state));
+  const canFightTonight = matchesTonight > 0 && !aisleLocked;
 
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-12, 12]);
@@ -63,11 +65,13 @@ export function Discover() {
               {theme.meta.displayName} · {state.hunter.verified ? '✓ Verified hunter' : 'New hunter'} · {available.length} nearby
             </div>
             <div style={{ fontSize: '0.65rem', color: canFightTonight ? 'var(--muted)' : 'var(--pink)', marginTop: 2 }}>
-              {canFightTonight
-                ? matchesTonight === 1
-                  ? '1 date left tonight'
-                  : `${matchesTonight} dates left tonight`
-                : "Night's over — take a beat"}
+              {aisleLocked
+                ? "Run's over on this aisle — fix the day on You"
+                : canFightTonight
+                  ? matchesTonight === 1
+                    ? '1 date left tonight'
+                    : `${matchesTonight} dates left tonight`
+                  : "Night's over — take a beat"}
             </div>
             {state.hunter.fightsCompleted >= 6 ? (
               <div style={{ fontSize: '0.6rem', color: 'var(--muted)', marginTop: 2, opacity: 0.85 }}>

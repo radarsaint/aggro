@@ -64,8 +64,8 @@ function SectionTitle({ children }: { children: ReactNode }) {
 }
 
 export function HowItWorks() {
-  const { state, setActiveThemeId } = useGame();
-  const theme = getTheme(state.activeThemeId);
+  const { state, setActiveFloorId } = useGame();
+  const theme = getTheme(state.activeFloorId ?? state.activeThemeId);
 
   return (
     <div className="app-shell how-page">
@@ -288,15 +288,15 @@ export function HowItWorks() {
           hell — not permanent.
         </p>
         <div className="chip-row" style={{ marginBottom: 8, justifyContent: 'center' }}>
-          {THEME_LIST.filter((t) => t.meta.selectable !== false).map((t) => {
-            const on = state.activeThemeId === t.meta.id;
+          {THEME_LIST.filter((t) => state.floors[t.meta.id]?.enabled).map((t) => {
+            const on = (state.activeFloorId ?? state.activeThemeId) === t.meta.id;
             return (
               <button
                 key={t.meta.id}
                 type="button"
                 className={`chip ${on ? 'on' : ''}`}
                 title={t.meta.blurb}
-                onClick={() => setActiveThemeId(t.meta.id)}
+                onClick={() => setActiveFloorId(t.meta.id)}
               >
                 {t.meta.displayName}
               </button>
@@ -304,7 +304,7 @@ export function HowItWorks() {
           })}
         </div>
         <p style={{ color: 'var(--muted)', fontSize: '0.7rem', marginTop: -2, marginBottom: 8, textAlign: 'center' }}>
-          Next floor is aware only — not open yet.
+          Tortuga Muerta opens from Home with the Verified lever — not from homework here.
         </p>
 
         <SectionTitle>9 · VERIFIED</SectionTitle>

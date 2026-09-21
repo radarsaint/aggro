@@ -43,7 +43,7 @@ Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, 
 - Vite + React + TypeScript SPA
 - Visual identity: black + hot pink `#FF007F` (Baatorasaka theme)
 - Solo save: `localStorage` key `aggro-game-v1`
-- Floor 1 theme pack: Baatorasaka; stub theme `comingSoon` for switch testing only
+- Floor 1 theme pack: Baatorasaka; Floor 2 theme id `tortugaMuerta` (tokens + aisle enable; creature pack not yet)
 
 ### Loop surfaces
 
@@ -105,7 +105,7 @@ Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, 
 | MMO / spreadsheet chrome | Out |
 | Player-facing **quota**, **CR**, **stamina** words | Out — rest UI is dating copy |
 | **Skullport × Xanathar × Pirate Borg** | **Aware only** — do not design deck, theme, or loot for it |
-| Full second floor content | Out until greenlit (stub `comingSoon` is not a license to invent) |
+| Full Tortuga creature / loot / venue pack | Out of systems slice 1 — theme tokens + lever only until pack ships |
 | Additional R.O.D. systems beyond the revised hot framing | Parked |
 | Loss-with-teeth systems beyond current stake-on-PIP | Parked |
 

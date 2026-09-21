@@ -7,6 +7,7 @@ export const baatorasakaTheme: Theme = {
     displayName: 'Baatorasaka',
     blurb: 'Retail hell megastructure. Date · Hunt · Consume under fluorescent damnation.',
     selectable: true,
+    floorNumber: 1,
   },
   tokens: {
     '--pink': '#FF007F',

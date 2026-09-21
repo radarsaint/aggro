@@ -33,7 +33,7 @@ export function Onboarding() {
   const [initiativeBonus, setInitiativeBonus] = useState(state.hunter.initiativeBonus ?? 1);
 
   if (state.hunter.created) {
-    nav('/discover', { replace: true });
+    nav('/home', { replace: true });
   }
 
   const finish = () => {
@@ -61,7 +61,7 @@ export function Onboarding() {
       created: true,
     };
     completeOnboarding(hunter);
-    nav('/discover');
+    nav('/home');
   };
 
   return (
@@ -181,11 +181,11 @@ export function Onboarding() {
                 style={{ flex: 1 }}
                 onClick={finish}
               >
-                Start swiping
+                Enter the floor
               </button>
             </div>
             <p className="onboarding-landing__cta-hint">
-              Required before Discover. Floor filters live under You → Dating prefs.
+              Required before the floor. You land on Home — Discover is tonight’s aisle.
             </p>
 
             <div className="warning-box">

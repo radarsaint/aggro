@@ -25,9 +25,23 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Added
+
+- **0.2 systems slice 1** — Floor modularity schema (`activeFloorId`, per-floor `{ enabled, dayBudget, dayElapsed, fightsByDay, goldDepositedThisDay }`), save migration from 0.1.x (`comingSoon` → `tortugaMuerta`).
+- **Landing / Home** — Returning players (`hunter.created`) land on `/home` (not Discover dump). Shows aisle energy + CTA into Discover. Floor 2 lever: visible to all; pullable only when Verified. Locked copy / ready copy per plan. One pull enables Tortuga Muerta (no day burn, no gold).
+- **You utilities** — Active-floor day clock (`dayElapsed / dayBudget`), manual adjust, fight log by day, aisle switcher (no night refill / no other-floor day tick).
+- **Gold bridge (You)** — Export gold (uncapped, confirm). Verified one-time **150g** buy-in (buried under Kiosk → Aisle extras) unlocks deposit. Deposit cap **100 × floor number** per active floor day; resets on Call it a night for that aisle only.
+- **Tortuga Muerta theme tokens** — Salt/teal accents stub (no creature pack yet).
+
 ### Changed
 
-- **First-run landing** — Onboarding is two small pages: **Sign up** (name + face; light optional About you) then required **Character stats** (HP, AC, attack die/stat, init — defaults pre-filled so you adjust, not invent). One primary **Start swiping** CTA after stats. Floor Preferences / dating filters stay under You → Dating prefs (not on first run). Return visits still Discover-first.
+- **Long rest** — Call it a night still refills `matchesTonight` and now also `+1 dayElapsed` on the **active** floor only (resets that aisle’s deposit allowance). Short rest still no day tick.
+- **Accept lock** — When `dayElapsed >= dayBudget` on the active aisle, Accept is locked on that aisle only (dating copy on Chat / Discover / You).
+- **Onboarding exit** — After Character stats, enter Home (not Discover-first).
+
+### Changed
+
+- **First-run landing** — Onboarding is two small pages: **Sign up** (name + face; light optional About you) then required **Character stats** (HP, AC, attack die/stat, init — defaults pre-filled so you adjust, not invent). One primary CTA after stats. Floor Preferences / dating filters stay under You → Dating prefs (not on first run). Return visits land on **Home** (0.2 systems).
 
 ### Fixed
 
