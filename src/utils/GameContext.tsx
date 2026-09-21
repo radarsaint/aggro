@@ -11,7 +11,7 @@ import type { CombatState, FloorId, GameState, Hunter, KitId, KitDraft, Match, T
 import { MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT, VERIFIED_BUY_IN_COST } from '../types';
 import { applyThemeTokens, DEFAULT_THEME_ID, getTheme } from '../themes';
 import { getCreature } from '../data/creatures';
-import { getConsumableCombatEffect, getKioskSku, isFightEffectGear, mintKioskItem, rollReward, sellPrice, stakeCostForThreat } from '../data/rewards';
+import { getConsumableCombatEffect, getKioskSku, isFightEffectGear, mintKioskItem, rollKioskStock, rollReward, sellPrice, stakeCostForThreat } from '../data/rewards';
 import {
   clearEquipIfItem,
   equipSlotForName,
@@ -684,12 +684,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const buyKioskItem = useCallback((skuId: string) => {
     setState((s) => {
-      const sku = getKioskSku(skuId);
+      const sku = getKioskSku(skuId, s.kioskStock);
       if (!sku) return s;
       if (s.hunter.gold < sku.price) return s;
       const minted = mintKioskItem(sku);
       return {
         ...s,
+        kioskStock: (s.kioskStock ?? []).filter((row) => row.id !== skuId),
         winsSinceEffectGear: isFightEffectGear(minted.name) ? 0 : s.winsSinceEffectGear,
         hunter: {
           ...s.hunter,
@@ -712,11 +713,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
     setState((s) => {
       const floor = s.floors?.[id] ?? defaultFloorState(id);
       if (!floor.enabled) return s;
-      // Switch aisle: never refill night, never tick other floor's day
+      const switched = id !== (s.activeFloorId ?? s.activeThemeId);
+      // Switch aisle: never refill night, never tick other floor's day — re-roll kiosk stock
       return {
         ...s,
         activeFloorId: id,
         activeThemeId: id,
+        kioskStock: switched ? rollKioskStock() : (s.kioskStock ?? rollKioskStock()),
       };
     });
   }, []);
@@ -817,6 +820,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
         firstFightResolvedTonight: false,
         // Gate 2 teeth: progress-weighted reshuffle on new night
         deckOrder: shuffleDeckByProgress(s.hunter.fightsCompleted ?? 0),
+        kioskStock: rollKioskStock(),
       };
     });
   }, []);
@@ -852,6 +856,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       drinkUnlockedTonight: false,
       firstFightResolvedTonight: false,
       winsSinceEffectGear: 0,
+      kioskStock: rollKioskStock(),
     };
     setState(fresh);
   }, []);

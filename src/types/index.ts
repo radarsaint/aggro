@@ -154,6 +154,18 @@ export interface InventoryItem {
   themeId?: ThemeId;
 }
 
+
+/** Floor kiosk SKU — Profile clearance for one night (3 slots). */
+export interface KioskSku {
+  id: string;
+  /** Gold cost at the floor kiosk (markup over sell). */
+  price: number;
+  /** Blurb under Buy — short corporate hell voice. */
+  blurb: string;
+  /** Template written into locker on purchase (new id minted). */
+  item: Omit<InventoryItem, 'id'>;
+}
+
 export interface ChatMessage {
   id: string;
   sender: 'hunter' | 'monster' | 'system';
@@ -395,6 +407,11 @@ export interface GameState {
    * No on-screen meter. Old saves migrate to 0.
    */
   winsSinceEffectGear: number;
+  /**
+   * Tonight's floor kiosk stock (≈3 SKUs). Rolls on longRest / floor switch /
+   * migrate-if-empty. Sold slots removed until restock. Persists same night.
+   */
+  kioskStock: KioskSku[];
 }
 
 export const ALL_CREATURE_TYPES: CreatureType[] = [

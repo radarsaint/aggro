@@ -1,4 +1,5 @@
-import type { FloorId, InventoryItem, LootBeat, LootCategory, ThreatLevel } from '../types';
+import type { FloorId, InventoryItem, KioskSku, LootBeat, LootCategory, ThreatLevel } from '../types';
+export type { KioskSku };
 import { HIGH_EFFECT_GEAR, MID_EFFECT_GEAR } from './equipment';
 export { isFightEffectGear, MID_EFFECT_GEAR, HIGH_EFFECT_GEAR } from './equipment';
 export type { LootBeat };
@@ -602,24 +603,47 @@ export function pickLootFraming(opts: LootFramingOpts): string {
   return pickOne(pool);
 }
 
-export interface KioskSku {
-  id: string;
-  /** Gold cost at the floor kiosk (markup over sell). */
+/** Soft mix tag — heal consumable vs plain equip. */
+type KioskKind = 'heal' | 'equip';
+
+interface KioskCatalogEntry {
+  kind: KioskKind;
   price: number;
-  /** Blurb under Buy — short corporate hell voice. */
   blurb: string;
-  /** Template written into locker on purchase (new id minted). */
   item: Omit<InventoryItem, 'id'>;
 }
 
+/** Plain outfit names only — Mid/High fight-effect gear stays fight drops. */
+const KIOSK_PLAIN_EQUIP_NAMES = [
+  'Dagger',
+  'Shortsword',
+  'Light Crossbow',
+  'Leather Armor',
+  'Studded Leather Vest',
+  'Shield',
+  'Clearance Patch',
+] as const;
+
+const KIOSK_EQUIP_BLURB: Record<(typeof KIOSK_PLAIN_EQUIP_NAMES)[number], string> = {
+  Dagger: 'A short blade from the clearance bin. Equip in the weapon slot.',
+  Shortsword: 'Standard sidearm, slightly scuffed. Equip in the weapon slot.',
+  'Light Crossbow': 'Compact ranged stock. Equip in the weapon slot.',
+  'Leather Armor': 'Light body protection. Equip in the armor slot for +1 AC.',
+  'Studded Leather Vest': 'Sturdier clearance armor. Equip in the armor slot for +2 AC.',
+  Shield: 'A battered lid that still blocks. Equip in the shield slot for +2 AC.',
+  'Clearance Patch': 'A stiff protective panel for a damaged uniform. Equip in the armor slot for +1 AC.',
+};
+
+/** Buy price ≈ 2× Mundane Equipment sell base (35 → 70). */
+const KIOSK_EQUIP_BUY = (SELL_BASE['Mundane Equipment'] ?? 35) * 2;
+
 /**
- * Floor kiosk — Profile only (no /shop route).
- * Clearance Patch equips as light armor (+1 AC). Healing consumables Use in combat.
- * Ash-Salt removed — junk scrap only, not a buyable prize.
+ * Full kiosk catalog — heals + plain EQUIP_CORE outfit only.
+ * Mid/High souvenir / fight-effect names are intentionally excluded.
  */
-export const KIOSK_STOCK: KioskSku[] = [
+export const KIOSK_CATALOG: KioskCatalogEntry[] = [
   {
-    id: 'kiosk-potion',
+    kind: 'heal',
     price: 55,
     blurb: 'A sealed red potion. Use on your combat turn to restore 2d4+2 HP.',
     item: {
@@ -630,7 +654,7 @@ export const KIOSK_STOCK: KioskSku[] = [
     },
   },
   {
-    id: 'kiosk-bandage',
+    kind: 'heal',
     price: 40,
     blurb: 'Clean gauze in a sealed sleeve. Use on your combat turn to restore 1d4+1 HP.',
     item: {
@@ -640,20 +664,86 @@ export const KIOSK_STOCK: KioskSku[] = [
       iconKey: 'tools',
     },
   },
-  {
-    id: 'kiosk-clearance-patch',
-    price: 70,
-    blurb: 'A stiff protective panel for a damaged uniform. Equip in the armor slot for +1 AC.',
-    item: {
-      name: 'Clearance Patch',
-      rarity: 'Common',
-      kind: 'Mundane Equipment',
-      iconKey: 'armor',
-    },
-  },
+  ...KIOSK_PLAIN_EQUIP_NAMES.map((name) => {
+    const base = EQUIP_BY_NAME[name];
+    return {
+      kind: 'equip' as const,
+      price: KIOSK_EQUIP_BUY,
+      blurb: KIOSK_EQUIP_BLURB[name],
+      item: {
+        name: base.name,
+        rarity: base.rarity,
+        kind: base.kind,
+        iconKey: base.iconKey,
+      },
+    };
+  }),
 ];
 
-export function getKioskSku(skuId: string): KioskSku | undefined {
+/** @deprecated Static forever-stock — use rollKioskStock / state.kioskStock. */
+export const KIOSK_STOCK: KioskSku[] = KIOSK_CATALOG.slice(0, 3).map((entry, i) =>
+  catalogEntryToSku(entry, i),
+);
+
+function skuIdForName(name: string): string {
+  return `kiosk-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+}
+
+function catalogEntryToSku(entry: KioskCatalogEntry, slot: number): KioskSku {
+  return {
+    id: `${skuIdForName(entry.item.name)}-${slot}`,
+    price: entry.price,
+    blurb: entry.blurb,
+    item: { ...entry.item },
+  };
+}
+
+/**
+ * Roll ~3 unique SKUs for tonight's clearance.
+ * Soft mix preference: lean toward at least one heal and one equip when the pool allows.
+ */
+export function rollKioskStock(count = 3): KioskSku[] {
+  const pool = [...KIOSK_CATALOG];
+  const picked: KioskCatalogEntry[] = [];
+  const n = Math.min(count, pool.length);
+
+  for (let i = 0; i < n; i++) {
+    const hasHeal = picked.some((p) => p.kind === 'heal');
+    const hasEquip = picked.some((p) => p.kind === 'equip');
+    const weights = pool.map((entry) => {
+      let w = 1;
+      // Soft preference for mix — boost underrepresented kind
+      if (!hasHeal && entry.kind === 'heal') w += 2;
+      if (!hasEquip && entry.kind === 'equip') w += 1;
+      // After we have one heal, still allow more but don't force
+      if (hasHeal && !hasEquip && entry.kind === 'equip') w += 2;
+      if (hasEquip && !hasHeal && entry.kind === 'heal') w += 2;
+      return w;
+    });
+    const total = weights.reduce((s, w) => s + w, 0);
+    let roll = Math.random() * total;
+    let idx = 0;
+    for (let j = 0; j < weights.length; j++) {
+      roll -= weights[j];
+      if (roll <= 0) {
+        idx = j;
+        break;
+      }
+      idx = j;
+    }
+    picked.push(pool[idx]);
+    pool.splice(idx, 1);
+  }
+
+  return picked.map((entry, i) => catalogEntryToSku(entry, i));
+}
+
+/** Lookup a SKU in the given night stock (preferred) or legacy static list. */
+export function getKioskSku(
+  skuId: string,
+  stock?: readonly KioskSku[] | null,
+): KioskSku | undefined {
+  if (stock && stock.length) return stock.find((s) => s.id === skuId);
   return KIOSK_STOCK.find((s) => s.id === skuId);
 }
 
