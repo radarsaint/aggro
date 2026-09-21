@@ -36,7 +36,7 @@ Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the c
 
 ## Scope IN
 
-Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, it is not IN.
+Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, it is not IN.
 
 ### Platform
 
@@ -98,6 +98,8 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 | Item | Status |
 |------|--------|
 | **Side bets / “Gate 5”** | Deferred **indefinitely**. Do not propose. Do not list as upcoming. |
+| **Expansion effect families** (stronger-while-hurt, kit+outfit combo, bonus gold on win) | Parked for later Floor 1 expansion. Do not design Floor 2 loot catalogs. |
+| **Climb-gated kiosk aisle / night restock** | Parked. Kiosk remains fixed SKUs in 0.1.1. |
 | Mid-fight kit pickers | Out — kits are drafted in chat before Accept |
 | Drive / Cleave (or other mid-fight jargon verbs) | Out — combat stays Attack / Item / Run (+ Use heals) |
 | MMO / spreadsheet chrome | Out |

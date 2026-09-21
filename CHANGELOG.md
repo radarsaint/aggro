@@ -25,6 +25,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Docs
+
+- Living docs polish after 0.1.1 merge: SCOPE IN stamp 0.1.1; parked expansion effect families + climb-gated kiosk; EARTHFALL_STATE parked list synced.
+
 ### Fixed
 
 - **Banter hard-reset scrub** — Kill remaining Cute smoke / telegram-chop opens across `roast.ts`, `roastReactive.ts`, and creature `banterScripts` (spoken English rewrites after Banter Critic overhaul).
