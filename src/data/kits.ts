@@ -133,7 +133,11 @@ export function isKitId(v: unknown): v is KitId {
 }
 
 export function getKit(id: KitId): KitDef {
-  return KIT_DEFS[id];
+  const def = KIT_DEFS[id];
+  if (def) return def;
+  // Corrupt save / bad id — never return undefined (fight UI would white-screen on .name).
+  console.error('[aggro] getKit: unknown kit id', id);
+  return KIT_DEFS.net;
 }
 
 /** UI preview — physical description */

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getCreature } from '../data/creatures';
-import { getKit } from '../data/kits';
+import { getKit, isKitId } from '../data/kits';
 import { HPBar } from '../components/HPBar';
 import { HunterFace } from '../components/HunterFace';
 import { Portrait } from '../components/Portrait';
@@ -78,8 +78,10 @@ export function Combat() {
     combat.spentKitIds ?? (combat.kitSpent && combat.activeKitId ? [combat.activeKitId] : []);
   const nextKitId =
     fightKits.find((id) => !spentKitIds.includes(id)) ?? combat.activeKitId ?? fightKits[0];
-  const kit = getKit(nextKitId);
-  const allKitsSpent = spentKitIds.length >= fightKits.length || combat.kitSpent;
+  // Guard: corrupt fightKits / activeKitId must not white-screen on kit.name during Item render
+  const kit = isKitId(nextKitId) ? getKit(nextKitId) : null;
+  const allKitsSpent =
+    !kit || spentKitIds.length >= fightKits.length || combat.kitSpent;
   const chargesLeft = Math.max(0, fightKits.length - spentKitIds.length);
   const wound = monsterCondition(combat.monster.hp, combat.monster.maxHp);
   const woundTone = monsterConditionTone(wound);
@@ -133,12 +135,14 @@ export function Combat() {
         <div className="combat-kit-line">
           Items:{' '}
           {fightKits.map((id, i) => {
-            const def = getKit(id);
+            const def = isKitId(id) ? getKit(id) : null;
             const spent = spentKitIds.includes(id);
             return (
               <span key={`${id}-${i}`}>
                 {i > 0 ? ' · ' : ''}
-                <strong className={spent ? 'combat-kit-spent' : undefined}>{def.name}</strong>
+                <strong className={spent ? 'combat-kit-spent' : undefined}>
+                  {def?.name ?? 'Unknown item'}
+                </strong>
                 {spent ? ' (spent)' : ''}
               </span>
             );
@@ -271,7 +275,7 @@ export function Combat() {
               title={
                 allKitsSpent
                   ? 'All item charges spent this fight'
-                  : `${kit.name} — ${kit.combatHint}`
+                  : `${kit!.name} — ${kit!.combatHint}`
               }
               onClick={() => doHunterItem(match.id)}
             >
@@ -279,10 +283,10 @@ export function Combat() {
                 {allKitsSpent
                   ? 'Item · spent'
                   : fightKits.length > 1
-                    ? `Item · ${kit.name} (${chargesLeft} left)`
-                    : `Item · ${kit.name}`}
+                    ? `Item · ${kit!.name} (${chargesLeft} left)`
+                    : `Item · ${kit!.name}`}
               </span>
-              {!allKitsSpent && <span className="combat-btn__sub">{kit.combatHint}</span>}
+              {!allKitsSpent && kit && <span className="combat-btn__sub">{kit.combatHint}</span>}
             </button>
             <button
               type="button"
@@ -304,7 +308,8 @@ export function Combat() {
                 <div className="combat-locker-use__label">Use · locker</div>
                 <div className="combat-locker-use__row">
                   {usableLocker.map((item) => {
-                    const effect = getConsumableCombatEffect(item.name)!;
+                    const effect = getConsumableCombatEffect(item.name);
+                    if (!effect) return null;
                     return (
                       <button
                         key={item.id}
