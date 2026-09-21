@@ -1,0 +1,94 @@
+name: AGGRO temporary live tunnel
+
+on:
+  push:
+    branches:
+      - ops/aggro-live-tunnel
+    paths:
+      - .github/workflows/aggro-live-tunnel.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tunnel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check out exact branch head
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build AGGRO
+        run: npm run build
+
+      - name: Start production preview
+        shell: bash
+        run: |
+          nohup npm run preview -- --host 0.0.0.0 --port 4173 > /tmp/aggro-vite.log 2>&1 &
+          echo $! > /tmp/aggro-vite.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/aggro-vite.log
+          exit 1
+
+      - name: Install cloudflared
+        shell: bash
+        run: |
+          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o /usr/local/bin/cloudflared
+          chmod +x /usr/local/bin/cloudflared
+          cloudflared --version
+
+      - name: Open tunnel and keep it alive
+        shell: bash
+        run: |
+          nohup cloudflared tunnel --no-autoupdate --url http://127.0.0.1:4173 --http-host-header localhost:4173 > /tmp/cloudflared.log 2>&1 &
+          CF_PID=$!
+          echo "$CF_PID" > /tmp/cloudflared.pid
+
+          URL=""
+          for i in {1..60}; do
+            URL="$(grep -Eo 'https://[a-z0-9-]+\.trycloudflare\.com' /tmp/cloudflared.log | head -n1 || true)"
+            if [ -n "$URL" ]; then
+              break
+            fi
+            sleep 1
+          done
+
+          if [ -z "$URL" ]; then
+            cat /tmp/cloudflared.log
+            exit 1
+          fi
+
+          echo "AGGRO LIVE: $URL"
+          echo "::notice title=AGGRO LIVE::$URL"
+          {
+            echo "## AGGRO live tunnel"
+            echo
+            echo "$URL"
+            echo
+            echo "Source commit: `${GITHUB_SHA}`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          while kill -0 "$CF_PID" 2>/dev/null && kill -0 "$(cat /tmp/aggro-vite.pid)" 2>/dev/null; do
+            sleep 60
+          done
+
+          echo "Tunnel or preview server exited."
+          cat /tmp/cloudflared.log
+          cat /tmp/aggro-vite.log
+          exit 1
