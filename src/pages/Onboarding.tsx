@@ -185,7 +185,7 @@ export function Onboarding() {
               </button>
             </div>
             <p className="onboarding-landing__cta-hint">
-              Required before the floor. You land on Home — Discover is tonight’s aisle.
+              Required before the floor. You land on Home — Discover is tonight’s floor.
             </p>
 
             <div className="warning-box">

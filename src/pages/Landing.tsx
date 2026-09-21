@@ -7,7 +7,7 @@ import { aisleDayExhausted, getActiveFloor } from '../utils/storage';
 import { MATCHES_PER_NIGHT } from '../types';
 
 /**
- * Return / first-run landing — aisle energy + salt-aisle lever.
+ * Return / first-run landing — floor energy + Tortuga lever.
  * Dating porch: no day meter, no two-clock teaching, no Verified homework, no FLOOR 2 LEVER chrome.
  */
 export function Landing() {
@@ -53,7 +53,7 @@ export function Landing() {
           <p className="landing-hero__eyebrow">TONIGHT</p>
           <h1 className="landing-hero__name">{h.displayName || 'Hunter'}</h1>
           <p className="landing-hero__bio">
-            Pick an aisle and get back out there.
+            Pick a floor and get back out there.
           </p>
           <div className="landing-hero__stats">
             <div className="landing-stat">
@@ -67,7 +67,7 @@ export function Landing() {
           </div>
           {dayLocked && (
             <p className="landing-hero__warn">
-              This aisle&apos;s run is over for now.
+              This floor&apos;s run is over for now.
             </p>
           )}
           <Link
@@ -79,8 +79,8 @@ export function Landing() {
           </Link>
         </section>
 
-        <h3 className="home-section-label">TONIGHT&apos;S AISLE</h3>
-        <div className="landing-aisles" role="group" aria-label="Aisles">
+        <h3 className="home-section-label">TONIGHT&apos;S FLOOR</h3>
+        <div className="landing-aisles" role="group" aria-label="Floors">
           <button
             type="button"
             className={`landing-aisle${activeId === 'baatorasaka' ? ' landing-aisle--on' : ''}`}
@@ -96,21 +96,21 @@ export function Landing() {
               onClick={() => setActiveFloorId('tortugaMuerta')}
             >
               <span className="landing-aisle__name">Tortuga Muerta</span>
-              <span className="landing-aisle__meta">Salt aisle</span>
+              <span className="landing-aisle__meta">Skullport wreck</span>
             </button>
           )}
         </div>
 
-        <h3 className="home-section-label">SALT AISLE</h3>
+        <h3 className="home-section-label">TORTUGA MUERTA</h3>
         <div
           className={`landing-lever${canPull ? '' : ' landing-lever--locked'}${tortugaEnabled ? ' landing-lever--pulled' : ''}`}
         >
           <p className="landing-lever__copy">
             {tortugaEnabled
-              ? 'Tortuga Muerta — salt aisle open. Switch aisles above anytime.'
+              ? 'Tortuga Muerta — open. Switch floors above anytime.'
               : h.verified
-                ? 'Tortuga Muerta — pull to open the salt aisle'
-                : "Tortuga Muerta — aisle locked. Dating Ops hasn’t cleared you for the salt aisle yet."}
+                ? 'Tortuga Muerta — pull to open this floor'
+                : "Tortuga Muerta — locked. Dating Ops hasn’t cleared you for this floor yet."}
           </p>
           <button
             type="button"
@@ -122,10 +122,10 @@ export function Landing() {
                 ? 'Tortuga Muerta already open'
                 : h.verified
                   ? 'Pull to open Tortuga Muerta'
-                  : 'Tortuga Muerta aisle locked'
+                  : 'Tortuga Muerta locked'
             }
           >
-            {tortugaEnabled ? 'Salt aisle open' : h.verified ? 'Pull to open' : 'Aisle locked'}
+            {tortugaEnabled ? 'Tortuga Muerta open' : h.verified ? 'Pull to open' : 'Floor locked'}
           </button>
         </div>
       </div>

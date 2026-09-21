@@ -80,7 +80,7 @@ export function RestBeat({
   const handleLongRest = () => {
     if (
       confirm(
-        "Call it a night? Fresh slate tomorrow — the floor refreshes, and this aisle burns one day.",
+        "Call it a night? Fresh slate tomorrow — the floor refreshes, and this floor burns one day.",
       )
     ) {
       onLongRest?.();
