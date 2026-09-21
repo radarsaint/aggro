@@ -27,7 +27,7 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ### Changed
 
-- **First-run landing** — Onboarding is one screen: name + face, then a dominant **Start swiping** CTA that finishes with defaults. Bio, fight numbers, and who-you're-into prefs are optional disclosures (prefs still live under You → Dating prefs). No second prefs step. Return visits still Discover-first.
+- **First-run landing** — Onboarding is two small pages: **Sign up** (name + face; light optional About you) then required **Character stats** (HP, AC, attack die/stat, init — defaults pre-filled so you adjust, not invent). One primary **Start swiping** CTA after stats. Floor Preferences / dating filters stay under You → Dating prefs (not on first run). Return visits still Discover-first.
 
 ### Fixed
 
