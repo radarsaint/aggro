@@ -1,4 +1,6 @@
 import type { InventoryItem, LootBeat, LootCategory, ThreatLevel } from '../types';
+import { HIGH_EFFECT_GEAR, MID_EFFECT_GEAR } from './equipment';
+export { isFightEffectGear, MID_EFFECT_GEAR, HIGH_EFFECT_GEAR } from './equipment';
 export type { LootBeat };
 
 /** Official 5e XP by challenge rating (SRD / DMG). */
@@ -58,10 +60,15 @@ export const EQUIP_CORE: LootEntry[] = [
   { name: 'Studded Leather Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
   { name: 'Shield', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
   { name: 'Clearance Patch', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
-  { name: 'PIP Machete', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade' },
   { name: 'Cubicle Hook', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade' },
-  { name: 'Badge Harness', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
+  { name: 'Soft-Close Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
+  { name: 'Floor-Captain Vest', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
+  { name: 'PIP Machete', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'blade' },
+  { name: 'Final-Writeup Bow', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'bow' },
   { name: 'Exit-Only Lid', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
+  { name: 'No-Refund Dome', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'shield' },
+  { name: 'Badge Harness', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
+  { name: 'After-Hours Plating', rarity: 'Common', kind: 'Mundane Equipment', iconKey: 'armor' },
 ];
 
 const EQUIP_BY_NAME: Record<string, LootEntry> = Object.fromEntries(
@@ -78,35 +85,55 @@ export const EQUIP_SUBWEIGHTS: Record<ThreatLevel, Record<string, number>> = {
     'Studded Leather Vest': 5,
     'Light Crossbow': 5,
     'Clearance Patch': 0,
+    // Mid/High fight-effect names — Low cannot roll
     'Cubicle Hook': 0,
+    'Soft-Close Lid': 0,
+    'Floor-Captain Vest': 0,
     'PIP Machete': 0,
-    'Badge Harness': 0,
+    'Final-Writeup Bow': 0,
     'Exit-Only Lid': 0,
+    'No-Refund Dome': 0,
+    'Badge Harness': 0,
+    'After-Hours Plating': 0,
   },
   Moderate: {
-    Shortsword: 22,
-    Shield: 18,
-    'Leather Armor': 15,
-    'Light Crossbow': 15,
-    'Studded Leather Vest': 15,
-    'Cubicle Hook': 12,
-    Dagger: 10,
-    'Clearance Patch': 5,
+    // Fight-effect Mid bag (=50)
+    'Cubicle Hook': 20,
+    'Floor-Captain Vest': 15,
+    'Soft-Close Lid': 15,
+    // Plain Mod share (=50)
+    Shortsword: 11,
+    Shield: 9,
+    'Leather Armor': 8,
+    'Light Crossbow': 8,
+    'Studded Leather Vest': 7,
+    Dagger: 5,
+    'Clearance Patch': 2,
     // High-only climb pieces — literally cannot roll on Mod
     'PIP Machete': 0,
-    'Badge Harness': 0,
+    'Final-Writeup Bow': 0,
     'Exit-Only Lid': 0,
+    'No-Refund Dome': 0,
+    'Badge Harness': 0,
+    'After-Hours Plating': 0,
   },
   High: {
-    'PIP Machete': 22,
-    'Badge Harness': 22,
-    'Exit-Only Lid': 18,
-    'Light Crossbow': 10,
-    'Studded Leather Vest': 10,
-    'Cubicle Hook': 8,
-    Shield: 5,
-    Shortsword: 3,
-    'Clearance Patch': 2,
+    // Fight-effect High bag (=82)
+    'PIP Machete': 16,
+    'Final-Writeup Bow': 12,
+    'Badge Harness': 16,
+    'After-Hours Plating': 12,
+    'Exit-Only Lid': 14,
+    'No-Refund Dome': 12,
+    // Leftover 18 — Mid leftovers / plain High-adjacent (not more High names)
+    'Cubicle Hook': 4,
+    'Soft-Close Lid': 3,
+    'Floor-Captain Vest': 3,
+    'Light Crossbow': 3,
+    'Studded Leather Vest': 2,
+    Shield: 2,
+    Shortsword: 1,
+    'Clearance Patch': 0,
     Dagger: 0,
     'Leather Armor': 0,
   },
@@ -245,15 +272,34 @@ function classifyLootBeat(entry: LootEntry): LootBeat {
   return 'scrap';
 }
 
-function pickEquipCore(threat: ThreatLevel): LootEntry {
+/** Effect-only subweights for quiet pity (Mod/High). */
+function effectOnlySubweights(threat: ThreatLevel): Record<string, number> {
+  const src = EQUIP_SUBWEIGHTS[threat];
+  const out: Record<string, number> = {};
+  for (const [name, w] of Object.entries(src)) {
+    if (w <= 0) continue;
+    if (threat === 'Moderate' && MID_EFFECT_GEAR.has(name)) out[name] = w;
+    if (threat === 'High' && HIGH_EFFECT_GEAR.has(name)) out[name] = w;
+  }
+  return out;
+}
+
+function pickEquipCore(threat: ThreatLevel, forceEffect = false): LootEntry {
+  if (forceEffect && (threat === 'Moderate' || threat === 'High')) {
+    const forced = effectOnlySubweights(threat);
+    if (Object.values(forced).some((w) => w > 0)) {
+      const name = pickWeighted(forced);
+      return EQUIP_BY_NAME[name] ?? EQUIP_CORE[0];
+    }
+  }
   const name = pickWeighted(EQUIP_SUBWEIGHTS[threat]);
   return EQUIP_BY_NAME[name] ?? EQUIP_CORE[0];
 }
 
-function pickFromPool(pool: LootPoolId, threat: ThreatLevel): LootEntry {
+function pickFromPool(pool: LootPoolId, threat: ThreatLevel, forceEffect = false): LootEntry {
   switch (pool) {
     case 'equip':
-      return pickEquipCore(threat);
+      return pickEquipCore(threat, forceEffect);
     case 'usable':
       return pickOne(USE_HEAL);
     case 'scrap_art':
@@ -268,6 +314,11 @@ function pickFromPool(pool: LootPoolId, threat: ThreatLevel): LootEntry {
 export interface RollBonusOpts {
   threat: ThreatLevel;
   hot?: boolean;
+  /**
+   * Quiet pity — after enough dry wins, next Mod/High equip roll must be a fight-effect piece.
+   * Forces the equip pool + effect-only subweights for that threat.
+   */
+  forceEffectGear?: boolean;
 }
 
 export interface BonusLootRoll {
@@ -282,11 +333,16 @@ export interface BonusLootRoll {
 export function rollBonusItem(opts: RollBonusOpts): BonusLootRoll {
   const threat = opts.threat ?? 'Low';
   const hot = opts.hot === true;
+  const forceEffect = opts.forceEffectGear === true && (threat === 'Moderate' || threat === 'High');
   let weights = { ...THREAT_WEIGHTS[threat] };
   if (hot) weights = applyHotEquipShift(weights);
+  if (forceEffect) {
+    // Pity path: must land fight-effect equip for this threat.
+    weights = { ...weights, equip: Math.max(weights.equip, 1), usable: 0, scrap_art: 0, scrap_tools: 0, junk_cons: 0 };
+  }
 
-  const pool = pickWeighted(weights);
-  const base = pickFromPool(pool, threat);
+  const pool = forceEffect ? 'equip' : pickWeighted(weights);
+  const base = pickFromPool(pool, threat, forceEffect);
   const rarity: InventoryItem['rarity'] =
     hot && Math.random() < HOT_UNCOMMON_CHANCE ? 'Uncommon' : 'Common';
   const item = mintItem(base, rarity);
@@ -298,6 +354,8 @@ export interface RollRewardOpts {
   threat: ThreatLevel;
   /** Gate 3 — hotter clearance stake active for this match */
   hot?: boolean;
+  /** Quiet pity — force Mid/High fight-effect equip on this win */
+  forceEffectGear?: boolean;
 }
 
 export function rollReward(
@@ -308,7 +366,11 @@ export function rollReward(
   const xp = xpForCreatures(cr, groupSize);
   const hot = opts.hot === true;
   const gold = hot ? Math.round((100 + xp) * 1.5) : 100 + xp;
-  const { item, lootBeat } = rollBonusItem({ threat: opts.threat, hot });
+  const { item, lootBeat } = rollBonusItem({
+    threat: opts.threat,
+    hot,
+    forceEffectGear: opts.forceEffectGear,
+  });
   return { gold, xp, item, lootBeat };
 }
 
@@ -320,7 +382,29 @@ const SELL_BASE: Record<LootCategory, number> = {
 };
 
 /** Corporate scrap valuation. Uncommon gets a thin rarity bump. */
-export function sellPrice(item: Pick<InventoryItem, 'kind' | 'rarity'>): number {
+export interface SellPriceOpts {
+  /** Other locker rows — High chase duplicate pays more when same High name already owned. */
+  inventory?: readonly Pick<InventoryItem, 'id' | 'name'>[];
+  /** Item being sold (needed to ignore itself in duplicate check). */
+  sellingId?: string;
+}
+
+/**
+ * Corporate scrap valuation.
+ * Mid named fight-effect: 65. High chase: 110. High duplicate (same High name already owned): 175.
+ * Uncommon scrap still gets a thin rarity bump on non-named rows.
+ */
+export function sellPrice(
+  item: Pick<InventoryItem, 'id' | 'name' | 'kind' | 'rarity'>,
+  opts?: SellPriceOpts,
+): number {
+  if (MID_EFFECT_GEAR.has(item.name)) return 65;
+  if (HIGH_EFFECT_GEAR.has(item.name)) {
+    const inv = opts?.inventory ?? [];
+    const sellingId = opts?.sellingId ?? item.id;
+    const dup = inv.some((i) => i.name === item.name && i.id !== sellingId);
+    return dup ? 175 : 110;
+  }
   const base = SELL_BASE[item.kind] ?? 25;
   const rarityBump = item.rarity === 'Uncommon' ? 10 : 0;
   return base + rarityBump;

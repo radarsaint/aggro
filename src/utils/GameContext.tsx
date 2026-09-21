@@ -11,7 +11,7 @@ import type { CombatState, GameState, Hunter, KitId, KitDraft, Match, ThemeId, T
 import { MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT } from '../types';
 import { applyThemeTokens, DEFAULT_THEME_ID, getTheme } from '../themes';
 import { getCreature } from '../data/creatures';
-import { getConsumableCombatEffect, getKioskSku, mintKioskItem, rollReward, sellPrice, stakeCostForThreat } from '../data/rewards';
+import { getConsumableCombatEffect, getKioskSku, isFightEffectGear, mintKioskItem, rollReward, sellPrice, stakeCostForThreat } from '../data/rewards';
 import {
   clearEquipIfItem,
   equipSlotForName,
@@ -459,9 +459,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }
     if (match.combat.winner === 'hunter') {
       const creature = getCreature(match.creatureId)!;
+      const dry = s.winsSinceEffectGear ?? 0;
+      const forceEffectGear =
+        dry >= 5 && (creature.threat === 'Moderate' || creature.threat === 'High');
       const reward = rollReward(creature.cr, creature.groupSize ?? 1, {
         threat: creature.threat,
         hot: match.payoutStake?.tier === 'hot',
+        forceEffectGear,
       });
       const fightsCompleted = s.hunter.fightsCompleted + 1;
       const verified = fightsCompleted >= 3 ? true : s.hunter.verified;
@@ -470,6 +474,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
         status: 'won',
         reward: { ...reward, claimed: false },
       };
+      // Quiet pity: any Mid/High fight-effect drop resets; else increment (Low too).
+      const winsSinceEffectGear = isFightEffectGear(reward.item.name) ? 0 : dry + 1;
       // Gate 2 teeth: reweight Discover mid-run so climb heats up after each win
       // Gate 1 drink: unlock only on first fight win of the night
       const firstFight = !(s.firstFightResolvedTonight ?? false);
@@ -481,6 +487,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
           verified,
         },
         deckOrder: shuffleDeckByProgress(fightsCompleted),
+        winsSinceEffectGear,
         ...(firstFight
           ? { drinkUnlockedTonight: true, firstFightResolvedTonight: true }
           : {}),
@@ -601,7 +608,10 @@ export function GameProvider({ children }: { children: ReactNode }) {
       const idx = s.hunter.inventory.findIndex((i) => i.id === itemId);
       if (idx < 0) return s;
       const item = s.hunter.inventory[idx];
-      const payout = sellPrice(item);
+      const payout = sellPrice(item, {
+        inventory: s.hunter.inventory,
+        sellingId: item.id,
+      });
       const inventory = [
         ...s.hunter.inventory.slice(0, idx),
         ...s.hunter.inventory.slice(idx + 1),
@@ -643,6 +653,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       const minted = mintKioskItem(sku);
       return {
         ...s,
+        winsSinceEffectGear: isFightEffectGear(minted.name) ? 0 : s.winsSinceEffectGear,
         hunter: {
           ...s.hunter,
           gold: s.hunter.gold - sku.price,
@@ -703,6 +714,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       shortRestsUsedTonight: 0,
       drinkUnlockedTonight: false,
       firstFightResolvedTonight: false,
+      winsSinceEffectGear: 0,
     };
     setState(fresh);
   }, []);

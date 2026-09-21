@@ -1,5 +1,5 @@
 import type { InventoryItem } from '../types';
-import { ARMOR_AC_BONUS, SHIELD_AC_BONUS, WEAPON_ATTACK_DIE, isEquippable } from './equipment';
+import { ARMOR_AC_BONUS, SHIELD_AC_BONUS, WEAPON_ATTACK_DIE, gearEffectOneLiner, isEquippable } from './equipment';
 import { getConsumableCombatEffect, isUsableInCombat } from './rewards';
 
 /** Physical descriptions stay separate from the rules shown underneath them. */
@@ -15,6 +15,11 @@ export const ITEM_DESCRIPTIONS: Record<string, string> = {
   'Cubicle Hook': 'A long steel hook pried from an office partition and fitted with a wrapped grip.',
   'Badge Harness': 'Reinforced straps and metal plates built around a conspicuously empty badge holder.',
   'Exit-Only Lid': 'A heavy service hatch with two handles bolted inside. EXIT ONLY is still legible on the front.',
+  'Soft-Close Lid': 'A cabinet door lid with dampers still attached. The warning sticker says DO NOT SLAM.',
+  'Floor-Captain Vest': 'A supervisor vest with extra panels sewn over the ribs. The whistle loop is empty.',
+  'Final-Writeup Bow': 'A compact bow tagged FINAL WRITEUP — ARCHIVE COPY. The string still sings.',
+  'No-Refund Dome': 'A convex service dome with NO REFUND stamped inside the rim.',
+  'After-Hours Plating': 'Night-shift plating bolted over a torn jacket. The timecard sleeve is welded shut.',
   'Potion of Healing': 'A red recovery drink from the locker kiosk. The measuring marks are scratched into the glass.',
   'Bandage Roll': 'Clean gauze in a sealed sleeve. The adhesive smells faintly of oranges.',
   "Thieves' Tools": 'A slim roll of picks and tension bars, each scratched with somebody’s initials.',
@@ -54,6 +59,8 @@ export function describeItem(item: Pick<InventoryItem, 'name' | 'kind'>): { desc
     if (WEAPON_ATTACK_DIE[item.name]) effect = 'Equip as your weapon to use a ' + WEAPON_ATTACK_DIE[item.name] + ' damage die. Your attack ability modifier still applies.';
     else if (ARMOR_AC_BONUS[item.name]) effect = 'Equip in the armor slot for +' + ARMOR_AC_BONUS[item.name] + ' AC. Replaces your current armor.';
     else if (SHIELD_AC_BONUS[item.name]) effect = 'Equip in the shield slot for +' + SHIELD_AC_BONUS[item.name] + ' AC. Replaces your current shield.';
+    const fight = gearEffectOneLiner(item.name);
+    if (fight) effect = effect + ' ' + fight;
   } else if (isUsableInCombat(item)) {
     const healing = getConsumableCombatEffect(item.name)!;
     effect = 'Use on your combat turn to restore ' + healing.healExpr + ' HP, up to your maximum. Consumes the item and your turn.';

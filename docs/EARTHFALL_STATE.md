@@ -3,7 +3,7 @@
 Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the current writing standard. Profiles, chat, combat, item descriptions, and reward commentary are revised. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
 
 
-**Updated:** 2026-09-14 (PT) · **Product:** 0.1.0 Baatorasaka  
+**Updated:** 2026-09-21 (PT) · **Product:** 0.1.1 Baatorasaka  
 **Role of this file:** Short living snapshot of what is **shipped**, **parked**, and **locked** — not a second README.  
 **Handoff entry:** [../README.md](../README.md) · **Full In/Out/Goals:** [SCOPE.md](SCOPE.md) · **History:** [../CHANGELOG.md](../CHANGELOG.md)
 
@@ -34,7 +34,7 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 
 ---
 
-## Shipped — 0.1.0 (match code)
+## Shipped — 0.1.1 (match code)
 
 ### Content
 
@@ -47,7 +47,8 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 - Profile Sell + Floor Kiosk; Equip weapon / armor / shield → attack die + AC (`src/data/equipment.ts`).
 - Art / tools = sell scrap (unless mapped as equip).
 - **Climb loot:** threat-weighted pools — equip ≈ Low 18% / Mod 40% / High 60%. Hot clearance +10 equip weight (cap 70%). Framing under LootCard: stamp cold / R.O.D. hot.
-- **High-only named:** PIP Machete, Badge Harness, Exit-Only Lid. **Cubicle Hook** from Moderate up.
+- **Mid fight-effect:** Cubicle Hook, Soft-Close Lid, Floor-Captain Vest. **High fight-effect:** PIP Machete, Final-Writeup Bow, Exit-Only Lid, No-Refund Dome, Badge Harness, After-Hours Plating.
+- **Quiet pity:** `winsSinceEffectGear` (5 dry → forced Mod/High effect drop). Named sell 65 / 110 / 175.
 - **Character home IA:** Profile sticky tabs — Card / On you / Locker / Kiosk / Prefs (Prefs last). Bottom nav label **You** (`/profile` route unchanged).
 
 ### Gates 1–4

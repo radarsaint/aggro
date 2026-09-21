@@ -1,6 +1,6 @@
 # AGGRO
 
-**Version:** 0.1.0 — see [CHANGELOG.md](CHANGELOG.md).  
+**Version:** 0.1.1 — see [CHANGELOG.md](CHANGELOG.md).  
 **Semver policy:** [docs/VERSIONING.md](docs/VERSIONING.md).  
 **Scope / goals (handoff):** [docs/SCOPE.md](docs/SCOPE.md).  
 **Living design state:** [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md).  
@@ -44,7 +44,7 @@ Read the full non-goals and locked decisions in [docs/SCOPE.md](docs/SCOPE.md). 
 
 ---
 
-## Scope IN (shipped in 0.1.0)
+## Scope IN (shipped in 0.1.1)
 
 Full checklist: [docs/SCOPE.md](docs/SCOPE.md#scope-in). Highlights that match code:
 
@@ -117,7 +117,7 @@ Open the URL Vite prints (typically `http://localhost:5173`).
 aggro/
 ├── README.md                 ← you are here
 ├── CHANGELOG.md
-├── package.json              ← version 0.1.0
+├── package.json              ← version 0.1.1
 ├── docs/
 │   ├── SCOPE.md              ← In / Out / Goals / Non-goals (handoff)
 │   ├── EARTHFALL_STATE.md    ← living shipped/parked state (not a second README)
@@ -150,7 +150,7 @@ Drop PNGs in `public/loot/frames/` and `public/loot/icons/`, then set `artSrc` o
 
 ## Versioning
 
-- Package version stays **0.1.0** until a player-facing feature bump (see [docs/VERSIONING.md](docs/VERSIONING.md)).
+- Package version stays **0.1.1** until a player-facing feature bump (see [docs/VERSIONING.md](docs/VERSIONING.md)).
 - Document releases in [CHANGELOG.md](CHANGELOG.md).
 - Docs-only work goes under **Unreleased** when noted — **do not bump** `package.json` for docs.
 

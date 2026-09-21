@@ -7,7 +7,7 @@ Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the c
 **Rule:** Match `src/`. Do not invent gameplay, floors, or gates that are not shipped or explicitly greenlit below.  
 **Companion docs:** [README.md](../README.md) · [EARTHFALL_STATE.md](EARTHFALL_STATE.md) · [CHANGELOG.md](../CHANGELOG.md) · [VERSIONING.md](VERSIONING.md)
 
-**Product version documented here:** 0.1.0 (Baatorasaka playable cut).
+**Product version documented here:** 0.1.1 (Baatorasaka playable cut).
 
 ---
 
@@ -77,8 +77,11 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 ### Loot climb
 
 - Threat category weights ≈ equip **18% / 40% / 60%** (Low / Mod / High) — `THREAT_WEIGHTS` in `src/data/rewards.ts`
-- **High-only named climb gear:** PIP Machete (1d10), Badge Harness (+3 AC armor), Exit-Only Lid (+3 AC shield)
-- **Cubicle Hook** (1d8 weapon): weight from **Moderate** up (0 on Low)
+- **Mid fight-effect names** (Low cannot roll): Cubicle Hook (1d8; first Attack hit +2), Soft-Close Lid (+2 shield; once/date Run skips parting hit), Floor-Captain Vest (+2 armor; 1 spite every hit taken)
+- **High fight-effect names** (Low+Mod cannot roll): PIP Machete (1d10; first hit +1d4), Final-Writeup Bow (1d10; first hit +3), Exit-Only Lid (+3; once/date Run: no parting hit + 1), No-Refund Dome (+3; once/date Run: 1d4 as you flee), Badge Harness (+3; 2 spite every hit), After-Hours Plating (+3; first hit taken 1d4 spite)
+- **Drop bags:** Mod effect 50 (Hook 20 / Vest 15 / Soft-Close 15) + plain 50. High effect 82 (PIP 16 / Bow 12 / Badge 16 / After-Hours 12 / Exit-Only 14 / No-Refund 12) + 18 Mid leftovers / plain High-adjacent
+- **Quiet pity:** `winsSinceEffectGear` — after 5 dry wins, next Mod/High win must drop effect gear for that threat; effect drop or kiosk effect buy resets. No meter. Low increments but cannot drop Mid/High effect names
+- **Sell:** Mid named 65; High chase 110; High duplicate 175; scrap/heal/low as before
 - Reveal UI: **THEY LEFT YOU THIS** + framing line + CTA **Take it**
 
 ### Content shipped

@@ -50,6 +50,7 @@ export function defaultState(): GameState {
     shortRestsUsedTonight: 0,
     drinkUnlockedTonight: false,
     firstFightResolvedTonight: false,
+    winsSinceEffectGear: 0,
   };
 }
 
@@ -84,6 +85,14 @@ export function migrateFirstFightResolvedTonight(v: unknown): boolean {
  * fightsCompleted bands bias Discover order toward higher threat; never removes cards.
  * 0–2 Low-heavy · 3–5 Mid rises · 6+ High rises. No player-facing meter/CR/unlock UI.
  */
+/** Old saves without winsSinceEffectGear → 0 (no quiet pity debt). */
+export function migrateWinsSinceEffectGear(n: unknown): number {
+  if (typeof n === 'number' && Number.isFinite(n)) {
+    return Math.max(0, Math.floor(n));
+  }
+  return 0;
+}
+
 export function threatWeightsForProgress(fightsCompleted: number): Record<ThreatLevel, number> {
   const n = Number.isFinite(fightsCompleted) ? Math.max(0, Math.floor(fightsCompleted)) : 0;
   if (n >= 6) return { Low: 1, Moderate: 1.75, High: 3.25 };
@@ -297,6 +306,13 @@ function migrateCombat(combat: CombatState, threat: ThreatLevel, bag: HunterBag)
       : [],
     banterArc: (combat as Partial<CombatState>).banterArc,
     banterNode: (combat as Partial<CombatState>).banterNode,
+    gearFirstAttack: partial.gearFirstAttack ?? null,
+    gearRunEscape: partial.gearRunEscape ?? null,
+    gearOnHitSpite: partial.gearOnHitSpite ?? null,
+    gearAttackAttempted: partial.gearAttackAttempted ?? false,
+    gearAttackHitDone: partial.gearAttackHitDone ?? false,
+    gearRunSpent: partial.gearRunSpent ?? false,
+    gearSpiteFirstUsed: partial.gearSpiteFirstUsed ?? false,
   };
 }
 
@@ -357,6 +373,9 @@ export function loadState(): GameState {
       ),
       firstFightResolvedTonight: migrateFirstFightResolvedTonight(
         (parsed as GameState).firstFightResolvedTonight,
+      ),
+      winsSinceEffectGear: migrateWinsSinceEffectGear(
+        (parsed as GameState).winsSinceEffectGear,
       ),
     };
   } catch {
