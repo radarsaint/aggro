@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Gravewater Octopus — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'gravewater-octopus_open_0', beat: 'open', lines: ["Gravewater Octopus: Placeholder open — wreck feeder on Tortuga Muerta."], weight: 2 },
+  { id: 'gravewater-octopus_open_1', beat: 'open', lines: ["Gravewater Octopus: Salt aisle date. Attack, Item, or Run — that's the menu. (11)"], weight: 1 },
+  { id: 'gravewater-octopus_hhit_0', beat: 'hunter_hit', lines: ["Gravewater Octopus: That landed. Felt it. (11)"] },
+  { id: 'gravewater-octopus_hhit_1', beat: 'hunter_hit', lines: ["Gravewater Octopus: Ow. Keep going if you must. (11)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'gravewater-octopus_hmiss_0', beat: 'hunter_miss', lines: ["Gravewater Octopus: Missed. Sea air lies. (11)"] },
+  { id: 'gravewater-octopus_hcrit_0', beat: 'hunter_crit', lines: ["Gravewater Octopus: Hard hit. That one counted. (11)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'gravewater-octopus_kit_poison', beat: 'kit', lines: ["Gravewater Octopus: Something bitter on that edge. (11)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'gravewater-octopus_kit_alchemists-fire', beat: 'kit', lines: ["Gravewater Octopus: Fire near salt timber — brave. (11)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'gravewater-octopus_kit_caltrops', beat: 'kit', lines: ["Gravewater Octopus: Deck litter. Rude. (11)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'gravewater-octopus_kit_acid-vial', beat: 'kit', lines: ["Gravewater Octopus: Acid hiss. Noted. (11)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'gravewater-octopus_kit_holy-water', beat: 'kit', lines: ["Gravewater Octopus: That bottle burns wrong. (11)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'gravewater-octopus_kit_smokestick', beat: 'kit', lines: ["Gravewater Octopus: Smoke on the aisle. (11)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'gravewater-octopus_kit_hunting-trap', beat: 'kit', lines: ["Gravewater Octopus: Spring bite. Clever. (11)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'gravewater-octopus_kit_net', beat: 'kit', lines: ["Gravewater Octopus: Tangled. Annoying. (11)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'gravewater-octopus_kit_healing-potion', beat: 'kit', lines: ["Gravewater Octopus: You drink; I notice. (11)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'gravewater-octopus_kit_oil-flask', beat: 'kit', lines: ["Gravewater Octopus: Oil slick. Slippery date. (11)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'gravewater-octopus_mhit_0', beat: 'monster_hit', lines: ["Gravewater Octopus: Got you. (11)"] },
+  { id: 'gravewater-octopus_mmiss_0', beat: 'monster_miss', lines: ["Gravewater Octopus: Slipped. Again. (11)"] },
+  { id: 'gravewater-octopus_w_wind', beat: 'wound', lines: ["Gravewater Octopus: Just a scratch of salt. (11)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'gravewater-octopus_w_bru', beat: 'wound', lines: ["Gravewater Octopus: That's going to bruise. (11)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'gravewater-octopus_w_bld', beat: 'wound', lines: ["Gravewater Octopus: I'm leaking. Still here. (11)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'gravewater-octopus_run_0', beat: 'run', lines: ["Gravewater Octopus: Running already? (11)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'gravewater-octopus_chase_0', beat: 'chase', lines: ["Gravewater Octopus: I can still follow. (11)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'gravewater-octopus_close_0', beat: 'close', lines: ["Gravewater Octopus: Back in reach. (11)"] },
+  { id: 'gravewater-octopus_vic_0', beat: 'victory', lines: ["Gravewater Octopus: You win. Salt takes the rest. (11)"], weight: 1 },
+  { id: 'gravewater-octopus_def_0', beat: 'defeat', lines: ["Gravewater Octopus: Down you go. Date's over. (11)"] },
+];

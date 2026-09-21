@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Dead Man's Rig — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'dead-mans-rig_open_0', beat: 'open', lines: ["Dead Man's Rig: Placeholder open — empty armor on Tortuga Muerta."], weight: 2 },
+  { id: 'dead-mans-rig_open_1', beat: 'open', lines: ["Dead Man's Rig: Salt aisle date. Attack, Item, or Run — that's the menu. (2)"], weight: 1 },
+  { id: 'dead-mans-rig_hhit_0', beat: 'hunter_hit', lines: ["Dead Man's Rig: That landed. Felt it. (2)"] },
+  { id: 'dead-mans-rig_hhit_1', beat: 'hunter_hit', lines: ["Dead Man's Rig: Ow. Keep going if you must. (2)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'dead-mans-rig_hmiss_0', beat: 'hunter_miss', lines: ["Dead Man's Rig: Missed. Sea air lies. (2)"] },
+  { id: 'dead-mans-rig_hcrit_0', beat: 'hunter_crit', lines: ["Dead Man's Rig: Hard hit. That one counted. (2)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'dead-mans-rig_kit_poison', beat: 'kit', lines: ["Dead Man's Rig: Something bitter on that edge. (2)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'dead-mans-rig_kit_alchemists-fire', beat: 'kit', lines: ["Dead Man's Rig: Fire near salt timber — brave. (2)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'dead-mans-rig_kit_caltrops', beat: 'kit', lines: ["Dead Man's Rig: Deck litter. Rude. (2)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'dead-mans-rig_kit_acid-vial', beat: 'kit', lines: ["Dead Man's Rig: Acid hiss. Noted. (2)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'dead-mans-rig_kit_holy-water', beat: 'kit', lines: ["Dead Man's Rig: That bottle burns wrong. (2)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'dead-mans-rig_kit_smokestick', beat: 'kit', lines: ["Dead Man's Rig: Smoke on the aisle. (2)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'dead-mans-rig_kit_hunting-trap', beat: 'kit', lines: ["Dead Man's Rig: Spring bite. Clever. (2)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'dead-mans-rig_kit_net', beat: 'kit', lines: ["Dead Man's Rig: Tangled. Annoying. (2)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'dead-mans-rig_kit_healing-potion', beat: 'kit', lines: ["Dead Man's Rig: You drink; I notice. (2)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'dead-mans-rig_kit_oil-flask', beat: 'kit', lines: ["Dead Man's Rig: Oil slick. Slippery date. (2)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'dead-mans-rig_mhit_0', beat: 'monster_hit', lines: ["Dead Man's Rig: Got you. (2)"] },
+  { id: 'dead-mans-rig_mmiss_0', beat: 'monster_miss', lines: ["Dead Man's Rig: Slipped. Again. (2)"] },
+  { id: 'dead-mans-rig_w_wind', beat: 'wound', lines: ["Dead Man's Rig: Just a scratch of salt. (2)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'dead-mans-rig_w_bru', beat: 'wound', lines: ["Dead Man's Rig: That's going to bruise. (2)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'dead-mans-rig_w_bld', beat: 'wound', lines: ["Dead Man's Rig: I'm leaking. Still here. (2)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'dead-mans-rig_run_0', beat: 'run', lines: ["Dead Man's Rig: Running already? (2)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'dead-mans-rig_chase_0', beat: 'chase', lines: ["Dead Man's Rig: I can still follow. (2)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'dead-mans-rig_close_0', beat: 'close', lines: ["Dead Man's Rig: Back in reach. (2)"] },
+  { id: 'dead-mans-rig_vic_0', beat: 'victory', lines: ["Dead Man's Rig: You win. Salt takes the rest. (2)"], weight: 1 },
+  { id: 'dead-mans-rig_def_0', beat: 'defeat', lines: ["Dead Man's Rig: Down you go. Date's over. (2)"] },
+];

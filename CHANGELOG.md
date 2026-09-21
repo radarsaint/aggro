@@ -32,6 +32,7 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 - **You utilities** — Active-floor day clock (`dayElapsed / dayBudget`), manual adjust, fight log by day, aisle switcher (no night refill / no other-floor day tick).
 - **Gold bridge (You)** — Export gold (uncapped, confirm). Verified one-time **150g** buy-in (buried under Kiosk → Aisle extras) unlocks deposit. Deposit cap **100 × floor number** per active floor day; resets on Call it a night for that aisle only.
 - **Tortuga Muerta theme tokens** — Salt/teal accents stub (no creature pack yet).
+- **Tortuga Muerta creature pack (slice 2)** — 14 thin-cut dates wired to `themeId`/`floorId` `tortugaMuerta` so Discover fills when the salt aisle is active. SRD 5.1 chassis ids retained (`baseCreature` / `wotcSource`); presentation names + Low/Mod/High from roster. Venue stamps **In the Rigging / Bilge / Magazine** on card + fight chrome only (no Accept tax, no new buttons). Enemy-reads: Rigging Widow Web→tarred line; Dead Siren Song→drowned chorus; Powder Drake lizard-smoke vs Drowned Powderman gunner-cough. Placeholder banter/chat only.
 
 ### Changed
 

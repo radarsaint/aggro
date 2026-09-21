@@ -283,7 +283,7 @@ export function mergeDeckOrder(
 
 /**
  * If the hunter had every legacy type selected (the old "all" default),
- * include newly added types (Construct / Elemental / Fey) automatically.
+ * include newly added types (Construct / Elemental / Fey / Dragon) automatically.
  */
 export function mergeCreatureTypes(existing: CreatureType[] | undefined): CreatureType[] {
   if (!existing?.length) return [...ALL_CREATURE_TYPES];

@@ -1,10 +1,11 @@
 import type { Creature } from '../types';
+import { TORTUGA_CREATURES } from './creaturesTortuga';
 
 /**
  * AGGRO flavor reskins mapped to SRD 5.1 monsters only (CR 0–1/2).
  * Combat stats match average HP / listed attacks from the SRD.
  * Note: 5e has no CR 3/4 tier; deck caps at CR 1/2.
- * Target: ~5 options per Threat × Encounter bucket (~30 total).
+ * Floor 1 Baatorasaka inline; Floor 2 Tortuga Muerta via creaturesTortuga.ts.
  */
 export const CREATURES: Creature[] = [
   // ─────────────────────────────────────────────
@@ -1340,6 +1341,7 @@ export const CREATURES: Creature[] = [
     mapSigns: ['AIRSPACE CLAIMED', 'STING ZONE', 'NO NETS', 'GRID LIVE', 'LOOK UP', 'PERMIT DENIED'],
     nestLabel: 'STING GRID NEST',
   },
+  ...TORTUGA_CREATURES,
 ];
 
 export function getCreatureById(id: string): Creature | undefined {

@@ -1,0 +1,31 @@
+import type { ScriptNode } from './types';
+
+/** Powder Drake — Tortuga placeholder banter (GPT polish later). */
+export const nodes: ScriptNode[] = [
+  { id: 'powder-drake_open_0', beat: 'open', lines: ["Powder Drake: Placeholder open — lizard smoke on Tortuga Muerta."], weight: 2 },
+  { id: 'powder-drake_open_1', beat: 'open', lines: ["Powder Drake: Salt aisle date. Attack, Item, or Run — that's the menu. (9)"], weight: 1 },
+  { id: 'powder-drake_hhit_0', beat: 'hunter_hit', lines: ["Powder Drake: That landed. Felt it. (9)"] },
+  { id: 'powder-drake_hhit_1', beat: 'hunter_hit', lines: ["Powder Drake: Ow. Keep going if you must. (9)"], weight: 3, requireFlags: ["wound:Bloodied"] },
+  { id: 'powder-drake_hmiss_0', beat: 'hunter_miss', lines: ["Powder Drake: Missed. Sea air lies. (9)"] },
+  { id: 'powder-drake_hcrit_0', beat: 'hunter_crit', lines: ["Powder Drake: Hard hit. That one counted. (9)"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'powder-drake_kit_poison', beat: 'kit', lines: ["Powder Drake: Something bitter on that edge. (9)"], weight: 2, kitId: 'poison', setFlags: ["kit:poison"] },
+  { id: 'powder-drake_kit_alchemists-fire', beat: 'kit', lines: ["Powder Drake: Fire near salt timber — brave. (9)"], weight: 2, kitId: 'alchemists-fire', setFlags: ["kit:alchemists-fire"] },
+  { id: 'powder-drake_kit_caltrops', beat: 'kit', lines: ["Powder Drake: Deck litter. Rude. (9)"], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
+  { id: 'powder-drake_kit_acid-vial', beat: 'kit', lines: ["Powder Drake: Acid hiss. Noted. (9)"], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
+  { id: 'powder-drake_kit_holy-water', beat: 'kit', lines: ["Powder Drake: That bottle burns wrong. (9)"], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
+  { id: 'powder-drake_kit_smokestick', beat: 'kit', lines: ["Powder Drake: Smoke on the aisle. (9)"], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'powder-drake_kit_hunting-trap', beat: 'kit', lines: ["Powder Drake: Spring bite. Clever. (9)"], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
+  { id: 'powder-drake_kit_net', beat: 'kit', lines: ["Powder Drake: Tangled. Annoying. (9)"], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
+  { id: 'powder-drake_kit_healing-potion', beat: 'kit', lines: ["Powder Drake: You drink; I notice. (9)"], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },
+  { id: 'powder-drake_kit_oil-flask', beat: 'kit', lines: ["Powder Drake: Oil slick. Slippery date. (9)"], weight: 2, kitId: 'oil-flask', setFlags: ["kit:oil-flask"] },
+  { id: 'powder-drake_mhit_0', beat: 'monster_hit', lines: ["Powder Drake: Got you. (9)"] },
+  { id: 'powder-drake_mmiss_0', beat: 'monster_miss', lines: ["Powder Drake: Slipped. Again. (9)"] },
+  { id: 'powder-drake_w_wind', beat: 'wound', lines: ["Powder Drake: Just a scratch of salt. (9)"], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'powder-drake_w_bru', beat: 'wound', lines: ["Powder Drake: That's going to bruise. (9)"], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'powder-drake_w_bld', beat: 'wound', lines: ["Powder Drake: I'm leaking. Still here. (9)"], weight: 2, woundBand: 'Bloodied', setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'powder-drake_run_0', beat: 'run', lines: ["Powder Drake: Running already? (9)"], weight: 2, forbidFlags: ["ran"], setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'powder-drake_chase_0', beat: 'chase', lines: ["Powder Drake: I can still follow. (9)"], weight: 2, requireFlags: ["ran"] },
+  { id: 'powder-drake_close_0', beat: 'close', lines: ["Powder Drake: Back in reach. (9)"] },
+  { id: 'powder-drake_vic_0', beat: 'victory', lines: ["Powder Drake: You win. Salt takes the rest. (9)"], weight: 1 },
+  { id: 'powder-drake_def_0', beat: 'defeat', lines: ["Powder Drake: Down you go. Date's over. (9)"] },
+];
