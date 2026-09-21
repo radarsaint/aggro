@@ -25,6 +25,11 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Added
+
+- **Tortuga Muerta Mid/High souvenirs** — Floor-scoped fight-effect climb gear (same three families as Floor 1). Mid: Belaying Hook / Scuttle Lid / Tarred Vest. High: Blackwake Cleaver / Deadeye Arbalest / No-Quarter Lid / Rope-Burn Harness / After-Watch Plating. Drop weights mirror F1 (~half Mod equip = Mid trio; ~80%+ High equip = High five). Baatorasaka keeps Cubicle Hook / Soft-Close / etc. Sell bands unchanged (65 / 110 / 175). Zero new player verbs.
+
+
 ### Fixed
 
 - **Tortuga Discover tags** — Strip SRD chassis labels (SPY/GHOUL/BUGBEAR/…) from swipe cards; venue + bite stamps only (no redundant name reprint).

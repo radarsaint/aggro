@@ -10,6 +10,10 @@ export const WEAPON_ATTACK_DIE: Record<string, AttackDie> = {
   'Cubicle Hook': '1d8',
   'PIP Machete': '1d10',
   'Final-Writeup Bow': '1d10',
+  // Tortuga Muerta Mid/High souvenirs (same die ceilings as Floor 1)
+  'Belaying Hook': '1d8',
+  'Blackwake Cleaver': '1d10',
+  'Deadeye Arbalest': '1d10',
 };
 
 /** Armor bonus AC stacked on hunter.ac (body). */
@@ -20,6 +24,9 @@ export const ARMOR_AC_BONUS: Record<string, number> = {
   'Floor-Captain Vest': 2,
   'Badge Harness': 3,
   'After-Hours Plating': 3,
+  'Tarred Vest': 2,
+  'Rope-Burn Harness': 3,
+  'After-Watch Plating': 3,
 };
 
 /** Shield bonus AC. */
@@ -28,6 +35,8 @@ export const SHIELD_AC_BONUS: Record<string, number> = {
   'Soft-Close Lid': 2,
   'Exit-Only Lid': 3,
   'No-Refund Dome': 3,
+  'Scuttle Lid': 2,
+  'No-Quarter Lid': 3,
 };
 
 export function equipSlotForName(name: string): EquipSlot | null {
@@ -155,6 +164,9 @@ function shortArmorLabel(name: string): string {
   if (name === 'Badge Harness') return 'harness';
   if (name === 'Floor-Captain Vest') return 'captain vest';
   if (name === 'After-Hours Plating') return 'plating';
+  if (name === 'Tarred Vest') return 'tarred';
+  if (name === 'Rope-Burn Harness') return 'rope-burn';
+  if (name === 'After-Watch Plating') return 'after-watch';
   return name.toLowerCase();
 }
 
@@ -182,19 +194,31 @@ export function clearEquipIfItem<T extends Hunter>(hunter: T, itemId: string): T
 
 /** Mid fight-effect climb gear (Low cannot roll these names). */
 export const MID_EFFECT_GEAR: ReadonlySet<string> = new Set([
+  // Baatorasaka
   'Cubicle Hook',
   'Soft-Close Lid',
   'Floor-Captain Vest',
+  // Tortuga Muerta
+  'Belaying Hook',
+  'Scuttle Lid',
+  'Tarred Vest',
 ]);
 
 /** High fight-effect climb gear (Low+Moderate cannot roll these names). */
 export const HIGH_EFFECT_GEAR: ReadonlySet<string> = new Set([
+  // Baatorasaka
   'PIP Machete',
   'Final-Writeup Bow',
   'Exit-Only Lid',
   'No-Refund Dome',
   'Badge Harness',
   'After-Hours Plating',
+  // Tortuga Muerta (Powder Hatch dropped — no Exit-Only twin)
+  'Blackwake Cleaver',
+  'Deadeye Arbalest',
+  'No-Quarter Lid',
+  'Rope-Burn Harness',
+  'After-Watch Plating',
 ]);
 
 export function isFightEffectGear(name: string): boolean {
@@ -210,6 +234,10 @@ export interface GearEffectSnapshot {
   firstAttack: GearFirstAttack | null;
   runEscape: GearRunEscape | null;
   onHitSpite: GearOnHitSpite | null;
+  /** Equipped display names for combat log lines (floor-scoped souvenirs). */
+  weaponName: string | null;
+  armorName: string | null;
+  shieldName: string | null;
 }
 
 export function snapshotGearEffects(
@@ -219,18 +247,25 @@ export function snapshotGearEffects(
   const armor = findEquippedItem(hunter as Hunter, 'armor');
   const shield = findEquippedItem(hunter as Hunter, 'shield');
   let firstAttack: GearFirstAttack | null = null;
-  if (weapon?.name === 'Cubicle Hook') firstAttack = 'hook';
-  else if (weapon?.name === 'PIP Machete') firstAttack = 'pip';
-  else if (weapon?.name === 'Final-Writeup Bow') firstAttack = 'bow';
+  if (weapon?.name === 'Cubicle Hook' || weapon?.name === 'Belaying Hook') firstAttack = 'hook';
+  else if (weapon?.name === 'PIP Machete' || weapon?.name === 'Blackwake Cleaver') firstAttack = 'pip';
+  else if (weapon?.name === 'Final-Writeup Bow' || weapon?.name === 'Deadeye Arbalest') firstAttack = 'bow';
   let runEscape: GearRunEscape | null = null;
-  if (shield?.name === 'Soft-Close Lid') runEscape = 'softClose';
+  if (shield?.name === 'Soft-Close Lid' || shield?.name === 'Scuttle Lid') runEscape = 'softClose';
   else if (shield?.name === 'Exit-Only Lid') runEscape = 'exitOnly';
-  else if (shield?.name === 'No-Refund Dome') runEscape = 'noRefund';
+  else if (shield?.name === 'No-Refund Dome' || shield?.name === 'No-Quarter Lid') runEscape = 'noRefund';
   let onHitSpite: GearOnHitSpite | null = null;
-  if (armor?.name === 'Floor-Captain Vest') onHitSpite = 'vest';
-  else if (armor?.name === 'Badge Harness') onHitSpite = 'badge';
-  else if (armor?.name === 'After-Hours Plating') onHitSpite = 'afterHours';
-  return { firstAttack, runEscape, onHitSpite };
+  if (armor?.name === 'Floor-Captain Vest' || armor?.name === 'Tarred Vest') onHitSpite = 'vest';
+  else if (armor?.name === 'Badge Harness' || armor?.name === 'Rope-Burn Harness') onHitSpite = 'badge';
+  else if (armor?.name === 'After-Hours Plating' || armor?.name === 'After-Watch Plating') onHitSpite = 'afterHours';
+  return {
+    firstAttack,
+    runEscape,
+    onHitSpite,
+    weaponName: weapon?.name ?? null,
+    armorName: armor?.name ?? null,
+    shieldName: shield?.name ?? null,
+  };
 }
 
 /** Plain one-liner for On you / reveal (rules only). */
@@ -254,8 +289,48 @@ export function gearEffectOneLiner(name: string): string | null {
       return 'When a creature hits you, they take 2 damage back (every hit).';
     case 'After-Hours Plating':
       return 'First hit taken this date: they take 1d4 back; later hits no spite from this piece.';
+    case 'Belaying Hook':
+      return 'Once per date: if your first Attack hits, +2 damage.';
+    case 'Scuttle Lid':
+      return 'Once per date when you Run: leave without a free parting hit.';
+    case 'Tarred Vest':
+      return 'When a creature hits you, they take 1 damage back (every hit).';
+    case 'Blackwake Cleaver':
+      return 'First Attack hit this date: +1d4 damage.';
+    case 'Deadeye Arbalest':
+      return 'First Attack hit this date: +3 damage.';
+    case 'No-Quarter Lid':
+      return 'Once per date when you Run: deal 1d4 as you flee (flee still resolves).';
+    case 'Rope-Burn Harness':
+      return 'When a creature hits you, they take 2 damage back (every hit).';
+    case 'After-Watch Plating':
+      return 'First hit taken this date: they take 1d4 back; later hits no spite from this piece.';
     default:
       return null;
+  }
+}
+
+/** Short On-you flavor (hangover voice). Falls back to rules one-liner when absent. */
+export function gearOnYouFlavor(name: string): string | null {
+  switch (name) {
+    case 'Belaying Hook':
+      return 'Hook leads. First swing hits harder.';
+    case 'Scuttle Lid':
+      return 'Scuttle ready. One clean exit.';
+    case 'Tarred Vest':
+      return 'Tar bites when they land it.';
+    case 'Blackwake Cleaver':
+      return 'Cleaver for the first boarding cut.';
+    case 'Deadeye Arbalest':
+      return 'First bolt from the dark. They never see the bolt.';
+    case 'No-Quarter Lid':
+      return 'No quarter when you leave.';
+    case 'Rope-Burn Harness':
+      return 'Rope-burn answers every hit.';
+    case 'After-Watch Plating':
+      return 'After-Watch temper. One answer.';
+    default:
+      return gearEffectOneLiner(name);
   }
 }
 

@@ -138,23 +138,39 @@ function applyMonsterDamage(next: CombatState, dmg: number): void {
   next.monster.hp = Math.max(0, next.monster.hp - dmg);
 }
 
+
+/** Equipped fight-effect display name for combat log lines (floor-scoped souvenirs share effect keys). */
+function gearLogName(
+  next: CombatState,
+  kind: 'weapon' | 'armor' | 'shield',
+  fallback: string,
+): string {
+  if (kind === 'weapon') return next.gearWeaponName ?? fallback;
+  if (kind === 'armor') return next.gearArmorName ?? fallback;
+  return next.gearShieldName ?? fallback;
+}
+
+
 /** Apply equipped on-hit-taken spite to the monster after a successful hit on the hunter. */
 function applyOnHitSpite(next: CombatState, _creature: Creature): void {
   const spite = next.gearOnHitSpite;
   if (!spite) return;
   if (spite === 'vest') {
     applyMonsterDamage(next, 1);
-    next.log.push(log(`Floor-Captain Vest — they take 1 damage back.`, 'damage'));
+    const name = gearLogName(next, 'armor', 'Floor-Captain Vest');
+    next.log.push(log(`${name} — they take 1 damage back.`, 'damage'));
   } else if (spite === 'badge') {
     applyMonsterDamage(next, 2);
-    next.log.push(log(`Badge Harness — they take 2 damage back.`, 'damage'));
+    const name = gearLogName(next, 'armor', 'Badge Harness');
+    next.log.push(log(`${name} — they take 2 damage back.`, 'damage'));
   } else if (spite === 'afterHours') {
     if (next.gearSpiteFirstUsed) return;
     next.gearSpiteFirstUsed = true;
     const { total, detail } = rollDamage('1d4');
     applyMonsterDamage(next, total);
+    const name = gearLogName(next, 'armor', 'After-Hours Plating');
     next.log.push(
-      log(`After-Hours Plating — first hit spite ${total} damage (${detail}).`, 'damage'),
+      log(`${name} — first hit spite ${total} damage (${detail}).`, 'damage'),
     );
   }
   // Spite cannot finish the fight mid-strike from AoO paths that already check hunter death;
@@ -422,6 +438,9 @@ export function startCombat(
     gearFirstAttack: gear.firstAttack,
     gearRunEscape: gear.runEscape,
     gearOnHitSpite: gear.onHitSpite,
+    gearWeaponName: gear.weaponName,
+    gearArmorName: gear.armorName,
+    gearShieldName: gear.shieldName,
     gearAttackAttempted: false,
     gearAttackHitDone: false,
     gearRunSpent: false,
@@ -491,17 +510,20 @@ export function hunterAttack(state: CombatState, creature: Creature, hunter: Hun
     next.gearAttackHitDone = true;
     if (next.gearFirstAttack === 'hook' && isFirstAttack) {
       totalDmg += 2;
-      detailAll += ' + 2 Cubicle Hook';
-      next.log.push(log('Cubicle Hook — first Attack hit: +2 damage.', 'narration'));
+      const name = gearLogName(next, 'weapon', 'Cubicle Hook');
+      detailAll += ` + 2 ${name}`;
+      next.log.push(log(`${name} — first Attack hit: +2 damage.`, 'narration'));
     } else if (next.gearFirstAttack === 'pip' && isFirstHit) {
       const pip = rollDamage('1d4');
       totalDmg += pip.total;
-      detailAll += ` + ${pip.total} PIP Machete (${pip.detail})`;
-      next.log.push(log(`PIP Machete — first hit: +${pip.total} (${pip.detail}).`, 'narration'));
+      const name = gearLogName(next, 'weapon', 'PIP Machete');
+      detailAll += ` + ${pip.total} ${name} (${pip.detail})`;
+      next.log.push(log(`${name} — first hit: +${pip.total} (${pip.detail}).`, 'narration'));
     } else if (next.gearFirstAttack === 'bow' && isFirstHit) {
       totalDmg += 3;
-      detailAll += ' + 3 Final-Writeup Bow';
-      next.log.push(log('Final-Writeup Bow — first hit: +3 damage.', 'narration'));
+      const name = gearLogName(next, 'weapon', 'Final-Writeup Bow');
+      detailAll += ` + 3 ${name}`;
+      next.log.push(log(`${name} — first hit: +3 damage.`, 'narration'));
     }
 
     applyMonsterDamage(next, totalDmg);
@@ -1123,13 +1145,15 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
       if (escape === 'softClose' || escape === 'exitOnly') {
         next.gearRunSpent = true;
         if (escape === 'softClose') {
+          const name = gearLogName(next, 'shield', 'Soft-Close Lid');
           next.log.push(
-            log(`🏃 Soft-Close Lid — you leave with no free parting hit.`, 'system'),
+            log(`🏃 ${name} — you leave with no free parting hit.`, 'system'),
           );
         } else {
           applyMonsterDamage(next, 1);
+          const name = gearLogName(next, 'shield', 'Exit-Only Lid');
           next.log.push(
-            log(`🏃 Exit-Only Lid — no parting hit; they take 1 as you go.`, 'system'),
+            log(`🏃 ${name} — no parting hit; they take 1 as you go.`, 'system'),
           );
           if (finishIfMonsterDown(next, creature)) return next;
         }
@@ -1150,9 +1174,10 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
           next.gearRunSpent = true;
           const flee = rollDamage('1d4');
           applyMonsterDamage(next, flee.total);
+          const name = gearLogName(next, 'shield', 'No-Refund Dome');
           next.log.push(
             log(
-              `🏃 No-Refund Dome — you deal ${flee.total} as you flee (${flee.detail}). Flee still resolves.`,
+              `🏃 ${name} — you deal ${flee.total} as you flee (${flee.detail}). Flee still resolves.`,
               'system',
             ),
           );

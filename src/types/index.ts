@@ -150,6 +150,8 @@ export interface InventoryItem {
   kind: LootCategory;
   /** Shared art key (potion, blade, idol, …) — maps via lootArt registry. */
   iconKey: string;
+  /** Floor pack this souvenir belongs to (shared plain gear omits). */
+  themeId?: ThemeId;
 }
 
 export interface ChatMessage {
@@ -252,6 +254,10 @@ export interface CombatState {
   gearFirstAttack?: 'hook' | 'pip' | 'bow' | null;
   gearRunEscape?: 'softClose' | 'exitOnly' | 'noRefund' | null;
   gearOnHitSpite?: 'vest' | 'badge' | 'afterHours' | null;
+  /** Display names for equipped fight-effect pieces (floor souvenirs). */
+  gearWeaponName?: string | null;
+  gearArmorName?: string | null;
+  gearShieldName?: string | null;
   /** First Attack action this date already resolved (Cubicle Hook window). */
   gearAttackAttempted?: boolean;
   /** First successful Attack hit this date already consumed (PIP / Bow). */
