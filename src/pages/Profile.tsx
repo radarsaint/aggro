@@ -2,12 +2,22 @@ import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   ALL_CREATURE_TYPES,
+  GOLD_DEPOSIT_PER_FLOOR_NUMBER,
+  VERIFIED_BUY_IN_COST,
   type CreatureType,
   type EncounterSize,
+  type FloorId,
   type StandardsFloor,
   type ThreatLevel,
 } from '../types';
-import { standardsUnlocked } from '../utils/storage';
+import {
+  aisleDayExhausted,
+  currentDayIndex,
+  depositCapForFloor,
+  getActiveFloor,
+  standardsUnlocked,
+} from '../utils/storage';
+import { getCreature } from '../data/creatures';
 import { CombatStatsFields } from '../components/CombatStatsFields';
 import { HunterFace } from '../components/HunterFace';
 import { LootCard } from '../components/LootCard';
@@ -85,8 +95,19 @@ export function Profile() {
     unequipSlot,
     longRest,
     shortRest,
+    setActiveFloorDayElapsed,
+    exportGold,
+    buyVerifiedBuyIn,
+    depositGold,
+    setActiveFloorId,
   } = useGame();
-  const activeTheme = getTheme(state.activeThemeId);
+  const activeTheme = getTheme(state.activeFloorId ?? state.activeThemeId);
+  const activeFloor = getActiveFloor(state);
+  const activeFloorId = (state.activeFloorId ?? state.activeThemeId) as FloorId;
+  const dayExhausted = aisleDayExhausted(activeFloor);
+  const depositCap = depositCapForFloor(activeFloorId);
+  const depositUsed = activeFloor.goldDepositedThisDay ?? 0;
+  const depositRoom = Math.max(0, depositCap - depositUsed);
   const h = state.hunter;
   const weapon = findEquippedItem(h, 'weapon');
   const armor = findEquippedItem(h, 'armor');
@@ -111,6 +132,9 @@ export function Profile() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [standardsOpen, setStandardsOpen] = useState(false);
   const [dangerOpen, setDangerOpen] = useState(false);
+  const [exportAmount, setExportAmount] = useState('');
+  const [depositAmount, setDepositAmount] = useState('');
+  const [buyInOpen, setBuyInOpen] = useState(false);
   const canRaiseStandards = standardsUnlocked(h.fightsCompleted);
   const standards: StandardsFloor = h.prefs.standards ?? 'open';
   const setStandards = (next: StandardsFloor) => {
@@ -179,6 +203,75 @@ export function Profile() {
                   <div className="hunter-hero__stat-label">GOLD</div>
                 </div>
               </div>
+              <div className="gold-bridge" aria-label="Gold bridge">
+                <div className="gold-bridge__row">
+                  <input
+                    className="gold-bridge__input"
+                    type="number"
+                    min={1}
+                    inputMode="numeric"
+                    placeholder="Export g"
+                    value={exportAmount}
+                    onChange={(e) => setExportAmount(e.target.value)}
+                    aria-label="Gold amount to export"
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline gold-bridge__btn"
+                    onClick={() => {
+                      const n = Math.floor(Number(exportAmount));
+                      if (!Number.isFinite(n) || n <= 0) return;
+                      if (
+                        confirm(
+                          `Export ${n}g out of AGGRO for the table? It leaves your account.`,
+                        )
+                      ) {
+                        exportGold(n);
+                        setExportAmount('');
+                      }
+                    }}
+                  >
+                    Export gold
+                  </button>
+                </div>
+                {state.verifiedBuyInPurchased ? (
+                  <div className="gold-bridge__row">
+                    <input
+                      className="gold-bridge__input"
+                      type="number"
+                      min={1}
+                      max={depositRoom || undefined}
+                      inputMode="numeric"
+                      placeholder={`Deposit (≤${depositRoom}g today)`}
+                      value={depositAmount}
+                      onChange={(e) => setDepositAmount(e.target.value)}
+                      aria-label="Gold amount to deposit"
+                    />
+                    <button
+                      type="button"
+                      className="btn btn-outline gold-bridge__btn"
+                      disabled={depositRoom <= 0}
+                      onClick={() => {
+                        const n = Math.floor(Number(depositAmount));
+                        if (!Number.isFinite(n) || n <= 0) return;
+                        depositGold(n);
+                        setDepositAmount('');
+                      }}
+                    >
+                      Deposit
+                    </button>
+                  </div>
+                ) : (
+                  <p className="gold-bridge__hint">
+                    Deposit locked — buy the Verified aisle buy-in under Kiosk extras (buried).
+                  </p>
+                )}
+                <p className="gold-bridge__fine">
+                  Deposit cap {GOLD_DEPOSIT_PER_FLOOR_NUMBER}× aisle (
+                  {depositCap}g / day on {activeTheme.meta.displayName}). Resets when you call it a
+                  night on this aisle — not midnight. Switch aisle ≠ refresh.
+                </p>
+              </div>
               {h.verified ? (
                 <p className="hunter-hero__note hunter-hero__note--verified">
                   ✓ Verified — Dating Ops knows your face.
@@ -197,6 +290,92 @@ export function Profile() {
               onShortRest={shortRest}
               onLongRest={longRest}
             />
+
+            <h3 className="home-section-label">AISLE DAY · {activeTheme.meta.displayName}</h3>
+            <div className="aisle-day card" aria-label="Floor day clock">
+              <div className="aisle-day__row">
+                <div>
+                  <div className="aisle-day__value">
+                    {activeFloor.dayElapsed} / {activeFloor.dayBudget}
+                  </div>
+                  <div className="aisle-day__label">days elapsed / budget</div>
+                </div>
+                <div className="aisle-day__adjust">
+                  <label className="aisle-day__adjust-label" htmlFor="day-elapsed-input">
+                    Fix day (table)
+                  </label>
+                  <input
+                    id="day-elapsed-input"
+                    className="aisle-day__input"
+                    type="number"
+                    min={0}
+                    max={activeFloor.dayBudget}
+                    value={activeFloor.dayElapsed}
+                    onChange={(e) => setActiveFloorDayElapsed(Number(e.target.value))}
+                  />
+                </div>
+              </div>
+              {dayExhausted ? (
+                <p className="aisle-day__warn">
+                  Run&apos;s over on this aisle — Accept stays locked here until you fix the day.
+                </p>
+              ) : (
+                <p className="aisle-day__hint">
+                  Call it a night burns +1 day on this aisle only. Grab a drink does not. Switch aisle
+                  never ticks the other clock.
+                </p>
+              )}
+              <div className="aisle-day__switch" role="group" aria-label="Switch aisle">
+                {(Object.keys(state.floors) as FloorId[])
+                  .filter((id) => state.floors[id]?.enabled)
+                  .map((id) => (
+                    <button
+                      key={id}
+                      type="button"
+                      className={`chip ${activeFloorId === id ? 'on' : ''}`}
+                      onClick={() => setActiveFloorId(id)}
+                    >
+                      {getTheme(id).meta.displayName}
+                    </button>
+                  ))}
+              </div>
+            </div>
+
+            <h3 className="home-section-label">FIGHT LOG · THIS AISLE</h3>
+            <div className="fight-log" aria-label="Fight log by day">
+              {Array.from({ length: activeFloor.dayBudget }, (_, i) => i + 1).map((day) => {
+                const entries = activeFloor.fightsByDay[day] ?? [];
+                const isCurrent = !dayExhausted && day === currentDayIndex(activeFloor);
+                return (
+                  <div
+                    key={day}
+                    className={`fight-log__day${isCurrent ? ' fight-log__day--current' : ''}`}
+                  >
+                    <div className="fight-log__day-head">
+                      Day {day}
+                      {isCurrent ? ' · tonight' : ''}
+                      {entries.length === 0 ? ' · quiet' : ` · ${entries.length}`}
+                    </div>
+                    {entries.length > 0 && (
+                      <ul className="fight-log__list">
+                        {entries.map((e, idx) => {
+                          const c = getCreature(e.presentationId);
+                          const name = c?.name ?? e.presentationId;
+                          return (
+                            <li key={`${day}-${idx}-${e.presentationId}`}>
+                              <span className="fight-log__name">{name}</span>
+                              <span className="fight-log__meta">
+                                {e.threat} · {e.outcome}
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
 
             <h3 className="home-section-label">YOUR FACE</h3>
             <YourFaceEditor
@@ -393,6 +572,49 @@ export function Profile() {
                     </div>
                   );
                 })}
+              </div>
+
+              <div className="home-disclosure" style={{ marginTop: 20 }}>
+                <button
+                  type="button"
+                  className="home-disclosure__toggle"
+                  aria-expanded={buyInOpen}
+                  onClick={() => setBuyInOpen((v) => !v)}
+                >
+                  {buyInOpen ? 'Hide aisle extras' : 'Aisle extras (Verified)'}
+                </button>
+                {buyInOpen && (
+                  <div className="home-disclosure__body">
+                    <p className="home-lede home-lede--tight">
+                      One-time Dating Ops buy-in unlocks depositing table gold into AGGRO. You-tab
+                      utility only — never on Accept.
+                    </p>
+                    {state.verifiedBuyInPurchased ? (
+                      <p className="gold-bridge__hint">Buy-in stamped — deposit lives next to gold on Card.</p>
+                    ) : !h.verified ? (
+                      <p className="gold-bridge__hint">Need Verified before Dating Ops sells you the buy-in.</p>
+                    ) : (
+                      <button
+                        type="button"
+                        className="btn btn-outline btn-block"
+                        disabled={h.gold < VERIFIED_BUY_IN_COST}
+                        onClick={() => {
+                          if (
+                            confirm(
+                              `Spend ${VERIFIED_BUY_IN_COST}g on the Verified aisle buy-in? Unlocks deposit.`,
+                            )
+                          ) {
+                            buyVerifiedBuyIn();
+                          }
+                        }}
+                      >
+                        {h.gold >= VERIFIED_BUY_IN_COST
+                          ? `Buy-in · ${VERIFIED_BUY_IN_COST}g`
+                          : `Need ${VERIFIED_BUY_IN_COST}g`}
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </section>

@@ -300,6 +300,38 @@ export interface Match {
   passed?: boolean;
 }
 
+
+/** Floor pack id — same string space as ThemeId. */
+export type FloorId = ThemeId;
+
+export type FightOutcome = 'win' | 'loss' | 'run';
+
+/** One resolved date on a floor calendar day. */
+export interface FightLogEntry {
+  /** Creature / presentation id for later pack chrome. */
+  presentationId: string;
+  threat: ThreatLevel;
+  outcome: FightOutcome;
+}
+
+/** Per-floor calendar + enable flag (shared night / Verified stay global). */
+export interface FloorState {
+  enabled: boolean;
+  dayBudget: number;
+  /** Days burned on this aisle (0 at start). Lock Accept when >= dayBudget. */
+  dayElapsed: number;
+  /** Fight log keyed by dayIndex 1..dayBudget. */
+  fightsByDay: Record<number, FightLogEntry[]>;
+  /** Gold deposited into AGGRO this floor-day (resets on active-floor long-rest tick). */
+  goldDepositedThisDay: number;
+}
+
+/** Verified one-time shop upgrade cost to unlock deposit. */
+export const VERIFIED_BUY_IN_COST = 150;
+
+/** Deposit cap = this × floor number per active floor day. */
+export const GOLD_DEPOSIT_PER_FLOOR_NUMBER = 100;
+
 /** Max Accept Fight charges per night (Q_base). Long rest resets to this. */
 export const MATCHES_PER_NIGHT = 3;
 
@@ -311,8 +343,20 @@ export interface GameState {
   matches: Match[];
   passedIds: string[];
   deckOrder: string[];
-  /** Active floor theme — Discover deck filters by this */
+  /**
+   * Active floor / theme pack — Discover deck filters by this.
+   * Alias of activeFloorId (same value); kept for older call sites.
+   */
   activeThemeId: ThemeId;
+  /** Active aisle id (baatorasaka | tortugaMuerta). Synced with activeThemeId. */
+  activeFloorId: FloorId;
+  /** Per-floor enable + day clock + fight log. */
+  floors: Record<FloorId, FloorState>;
+  /**
+   * Verified one-time buy-in purchased (150g). Unlocks deposit into AGGRO.
+   * Old saves migrate to false.
+   */
+  verifiedBuyInPurchased: boolean;
   /**
    * Accept Fight charges left tonight (0–MATCHES_PER_NIGHT).
    * Spent on Accept Fight / start kit draft — Pass does not spend.

@@ -1,5 +1,5 @@
 /** Registered floor theme ids. Extend when adding a new floor. */
-export type ThemeId = 'baatorasaka' | 'comingSoon';
+export type ThemeId = 'baatorasaka' | 'tortugaMuerta';
 
 /** CSS custom properties applied to document.documentElement */
 export interface ThemeTokens {
@@ -37,6 +37,8 @@ export interface ThemeMeta {
   blurb: string;
   /** If false, switcher shows it but disabled (stub floors). */
   selectable?: boolean;
+  /** 1-based floor number for deposit caps / aisle chrome. */
+  floorNumber?: number;
 }
 
 export interface Theme {

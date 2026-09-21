@@ -1,12 +1,143 @@
-import type { AbilityStat, LootBeat, AttackDie, CombatState, CreatureType, GameState, Hunter, InventoryItem, Match, StandardsFloor, ThemeId, ThreatLevel } from '../types';
-import { ALL_CREATURE_TYPES, LEGACY_CREATURE_TYPES, MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT, STANDARDS_UNLOCK_FIGHTS } from '../types';
+import type { AbilityStat, LootBeat, AttackDie, CombatState, CreatureType, FightLogEntry, FightOutcome, FloorId, FloorState, GameState, Hunter, InventoryItem, Match, StandardsFloor, ThemeId, ThreatLevel } from '../types';
+import { ALL_CREATURE_TYPES, GOLD_DEPOSIT_PER_FLOOR_NUMBER, LEGACY_CREATURE_TYPES, MATCHES_PER_NIGHT, SHORT_RESTS_PER_NIGHT, STANDARDS_UNLOCK_FIGHTS } from '../types';
 import { CREATURES } from '../data/creatures';
 import { DEFAULT_BAG, isKitId, migrateBag, type HunterBag, type KitId } from '../data/kits';
-import { DEFAULT_THEME_ID, getTheme, isThemeId } from '../themes';
+import { DEFAULT_THEME_ID, floorNumberFor, isThemeId } from '../themes';
 import { abilityMod } from './dice';
 import { sanitizeEquipRefs } from '../data/equipment';
 
+
 const KEY = 'aggro-game-v1';
+
+export const FLOOR_IDS: FloorId[] = ['baatorasaka', 'tortugaMuerta'];
+
+export function defaultFloorState(id: FloorId): FloorState {
+  if (id === 'tortugaMuerta') {
+    return {
+      enabled: false,
+      dayBudget: 6,
+      dayElapsed: 0,
+      fightsByDay: {},
+      goldDepositedThisDay: 0,
+    };
+  }
+  return {
+    enabled: true,
+    dayBudget: 7,
+    dayElapsed: 0,
+    fightsByDay: {},
+    goldDepositedThisDay: 0,
+  };
+}
+
+export function defaultFloors(): Record<FloorId, FloorState> {
+  return {
+    baatorasaka: defaultFloorState('baatorasaka'),
+    tortugaMuerta: defaultFloorState('tortugaMuerta'),
+  };
+}
+
+/** Deposit cap for active aisle this floor-day (F1=100, F2=200). */
+export function depositCapForFloor(id: FloorId): number {
+  return GOLD_DEPOSIT_PER_FLOOR_NUMBER * floorNumberFor(id);
+}
+
+/** Current day index for fight log (1..budget) while aisle is open. */
+export function currentDayIndex(floor: FloorState): number {
+  if (floor.dayElapsed >= floor.dayBudget) return floor.dayBudget;
+  return Math.min(floor.dayBudget, Math.max(1, floor.dayElapsed + 1));
+}
+
+/** Accept locked on this aisle only when the floor calendar is exhausted. */
+export function aisleDayExhausted(floor: FloorState | undefined | null): boolean {
+  if (!floor) return false;
+  return floor.dayElapsed >= floor.dayBudget;
+}
+
+export function getActiveFloor(state: Pick<GameState, 'floors' | 'activeFloorId' | 'activeThemeId'>): FloorState {
+  const id = (state.activeFloorId ?? state.activeThemeId ?? 'baatorasaka') as FloorId;
+  return state.floors?.[id] ?? defaultFloorState(id);
+}
+
+function migrateFightEntry(raw: unknown): FightLogEntry | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const e = raw as Partial<FightLogEntry>;
+  const outcome: FightOutcome | null =
+    e.outcome === 'win' || e.outcome === 'loss' || e.outcome === 'run' ? e.outcome : null;
+  if (!outcome) return null;
+  const threat: ThreatLevel =
+    e.threat === 'Low' || e.threat === 'Moderate' || e.threat === 'High' ? e.threat : 'Low';
+  const presentationId = typeof e.presentationId === 'string' && e.presentationId ? e.presentationId : 'unknown';
+  return { presentationId, threat, outcome };
+}
+
+function migrateFightsByDay(raw: unknown): Record<number, FightLogEntry[]> {
+  if (!raw || typeof raw !== 'object') return {};
+  const out: Record<number, FightLogEntry[]> = {};
+  for (const [k, v] of Object.entries(raw as Record<string, unknown>)) {
+    const day = Number(k);
+    if (!Number.isFinite(day) || day < 1) continue;
+    if (!Array.isArray(v)) continue;
+    const entries = v.map(migrateFightEntry).filter((x): x is FightLogEntry => x != null);
+    if (entries.length) out[Math.floor(day)] = entries;
+  }
+  return out;
+}
+
+export function migrateFloorState(id: FloorId, raw: unknown): FloorState {
+  const base = defaultFloorState(id);
+  if (!raw || typeof raw !== 'object') return base;
+  const f = raw as Partial<FloorState>;
+  const dayBudget =
+    typeof f.dayBudget === 'number' && Number.isFinite(f.dayBudget) && f.dayBudget > 0
+      ? Math.floor(f.dayBudget)
+      : base.dayBudget;
+  let dayElapsed =
+    typeof f.dayElapsed === 'number' && Number.isFinite(f.dayElapsed)
+      ? Math.floor(f.dayElapsed)
+      : 0;
+  if (dayElapsed < 0) dayElapsed = 0;
+  if (dayElapsed > dayBudget) dayElapsed = dayBudget;
+  const goldDepositedThisDay =
+    typeof f.goldDepositedThisDay === 'number' && Number.isFinite(f.goldDepositedThisDay)
+      ? Math.max(0, Math.floor(f.goldDepositedThisDay))
+      : 0;
+  return {
+    enabled: id === 'baatorasaka' ? true : f.enabled === true,
+    dayBudget,
+    dayElapsed,
+    fightsByDay: migrateFightsByDay(f.fightsByDay),
+    goldDepositedThisDay,
+  };
+}
+
+export function migrateFloors(raw: unknown): Record<FloorId, FloorState> {
+  const src = raw && typeof raw === 'object' ? (raw as Record<string, unknown>) : {};
+  return {
+    baatorasaka: migrateFloorState('baatorasaka', src.baatorasaka),
+    tortugaMuerta: migrateFloorState('tortugaMuerta', src.tortugaMuerta ?? src.comingSoon),
+  };
+}
+
+export function migrateVerifiedBuyInPurchased(v: unknown): boolean {
+  return v === true;
+}
+
+/** Append a fight to the active floor's current day log. */
+export function recordFightOnActiveFloor(
+  state: GameState,
+  entry: FightLogEntry,
+): GameState {
+  const floors = { ...state.floors };
+  const id = (state.activeFloorId ?? state.activeThemeId) as FloorId;
+  const floor = { ...(floors[id] ?? defaultFloorState(id)) };
+  const day = currentDayIndex(floor);
+  const list = [...(floor.fightsByDay[day] ?? []), entry];
+  floor.fightsByDay = { ...floor.fightsByDay, [day]: list };
+  floors[id] = floor;
+  return { ...state, floors };
+}
+
 
 export function defaultHunter(): Hunter {
   return {
@@ -46,6 +177,9 @@ export function defaultState(): GameState {
     passedIds: [],
     deckOrder: shuffleDeckByProgress(0),
     activeThemeId: DEFAULT_THEME_ID,
+    activeFloorId: DEFAULT_THEME_ID,
+    floors: defaultFloors(),
+    verifiedBuyInPurchased: false,
     matchesTonight: MATCHES_PER_NIGHT,
     shortRestsUsedTonight: 0,
     drinkUnlockedTonight: false,
@@ -244,9 +378,9 @@ export function migrateHunter(h: Hunter): Hunter {
 }
 
 function migrateThemeId(id: unknown): ThemeId {
+  // Legacy stub id from 0.1.x placeholder floor
+  if (id === 'comingSoon') return 'tortugaMuerta';
   if (!isThemeId(id)) return DEFAULT_THEME_ID;
-  const theme = getTheme(id);
-  if (theme.meta.selectable === false) return DEFAULT_THEME_ID;
   return id;
 }
 
@@ -354,6 +488,13 @@ export function loadState(): GameState {
       }
       return next;
     });
+    const floors = migrateFloors((parsed as GameState).floors);
+    const activeFloorId = migrateThemeId(
+      (parsed as GameState).activeFloorId ?? (parsed as GameState).activeThemeId,
+    );
+    // Only land on an enabled aisle (Tortuga locked until lever).
+    const safeFloorId: ThemeId =
+      floors[activeFloorId]?.enabled ? activeFloorId : DEFAULT_THEME_ID;
     return {
       ...defaultState(),
       ...parsed,
@@ -363,7 +504,12 @@ export function loadState(): GameState {
       passedIds: (parsed.passedIds ?? []).filter((id) =>
         CREATURES.some((c) => c.id === id),
       ),
-      activeThemeId: migrateThemeId((parsed as GameState).activeThemeId),
+      activeThemeId: safeFloorId,
+      activeFloorId: safeFloorId,
+      floors,
+      verifiedBuyInPurchased: migrateVerifiedBuyInPurchased(
+        (parsed as GameState).verifiedBuyInPurchased,
+      ),
       matchesTonight: migrateMatchesTonight((parsed as GameState).matchesTonight),
       shortRestsUsedTonight: migrateShortRestsUsedTonight(
         (parsed as GameState).shortRestsUsedTonight,
@@ -394,7 +540,8 @@ export function resetState(): GameState {
 }
 
 export function filterCreatures(state: GameState): string[] {
-  const { hunter, passedIds, matches, deckOrder, activeThemeId } = state;
+  const { hunter, passedIds, matches, deckOrder } = state;
+  const activeThemeId = state.activeFloorId ?? state.activeThemeId;
   const matchedIds = new Set(matches.map((m) => m.creatureId));
   const prefs = hunter.prefs;
   const floorId = activeThemeId ?? DEFAULT_THEME_ID;
