@@ -1,11 +1,11 @@
 import type { Theme } from './types';
 
-/** Floor 2 — Tortuga Muerta salt aisle (teal / salt accents; placeholders OK). */
+/** Floor 2 — Tortuga Muerta (teal / salt accents; placeholders OK). */
 export const tortugaMuertaTheme: Theme = {
   meta: {
     id: 'tortugaMuerta',
     displayName: 'Tortuga Muerta',
-    blurb: 'Salt aisle. Skullport tides. Dating Ops cleared you for the drowned dates.',
+    blurb: 'Skullport tides. Dating Ops cleared you for the drowned dates.',
     selectable: true,
     floorNumber: 2,
   },
@@ -29,6 +29,6 @@ export const tortugaMuertaTheme: Theme = {
     appTagline: 'DATE · DROWN · CONSUME',
     rewardTagline: 'DATE · DROWN · CONSUME',
     pipHeaderLabel: 'SALT MARK',
-    pipDeptLine: 'TORTUGA MUERTA · DATING OPS · SALT AISLE',
+    pipDeptLine: 'TORTUGA MUERTA · DATING OPS · SKULLPORT',
   },
 };

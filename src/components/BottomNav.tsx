@@ -16,7 +16,7 @@ const TABS: Tab[] = [
     to: '/home',
     label: 'Home',
     Icon: Home,
-    aria: 'Home — landing, aisles, Floor 2 lever',
+    aria: 'Home — landing, floors, Tortuga lever',
   },
   {
     to: '/discover',

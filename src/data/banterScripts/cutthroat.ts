@@ -2,8 +2,8 @@ import type { ScriptNode } from './types';
 
 /** Cutthroat — Tortuga placeholder banter (GPT polish later). */
 export const nodes: ScriptNode[] = [
-  { id: 'cutthroat_open_0', beat: 'open', lines: ["Cutthroat: Placeholder open — living steel lookout on Tortuga Muerta."], weight: 2 },
-  { id: 'cutthroat_open_1', beat: 'open', lines: ["Cutthroat: Salt aisle date. Attack, Item, or Run — that's the menu."], weight: 1 },
+  { id: 'cutthroat_open_0', beat: 'open', lines: ["Cutthroat: Living steel lookout on Tortuga Muerta."], weight: 2 },
+  { id: 'cutthroat_open_1', beat: 'open', lines: ["Cutthroat: Tortuga Muerta date. Attack, Item, or Run — that's the menu."], weight: 1 },
   { id: 'cutthroat_hhit_0', beat: 'hunter_hit', lines: ["Cutthroat: That landed. Felt it."] },
   { id: 'cutthroat_hhit_1', beat: 'hunter_hit', lines: ["Cutthroat: Ow. Keep going if you must."], weight: 3, requireFlags: ["wound:Bloodied"] },
   { id: 'cutthroat_hmiss_0', beat: 'hunter_miss', lines: ["Cutthroat: Missed. Sea air lies."] },
@@ -13,7 +13,7 @@ export const nodes: ScriptNode[] = [
   { id: 'cutthroat_kit_caltrops', beat: 'kit', lines: ["Cutthroat: Deck litter. Rude."], weight: 2, kitId: 'caltrops', setFlags: ["kit:caltrops"] },
   { id: 'cutthroat_kit_acid-vial', beat: 'kit', lines: ["Cutthroat: Acid hiss. Noted."], weight: 2, kitId: 'acid-vial', setFlags: ["kit:acid-vial"] },
   { id: 'cutthroat_kit_holy-water', beat: 'kit', lines: ["Cutthroat: That bottle burns wrong."], weight: 2, kitId: 'holy-water', setFlags: ["kit:holy-water"] },
-  { id: 'cutthroat_kit_smokestick', beat: 'kit', lines: ["Cutthroat: Smoke on the aisle."], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
+  { id: 'cutthroat_kit_smokestick', beat: 'kit', lines: ["Cutthroat: Smoke on the deck."], weight: 2, kitId: 'smokestick', setFlags: ["kit:smokestick"] },
   { id: 'cutthroat_kit_hunting-trap', beat: 'kit', lines: ["Cutthroat: Spring bite. Clever."], weight: 2, kitId: 'hunting-trap', setFlags: ["kit:hunting-trap"] },
   { id: 'cutthroat_kit_net', beat: 'kit', lines: ["Cutthroat: Tangled. Annoying."], weight: 2, kitId: 'net', setFlags: ["kit:net"] },
   { id: 'cutthroat_kit_healing-potion', beat: 'kit', lines: ["Cutthroat: You drink; I notice."], weight: 2, kitId: 'healing-potion', setFlags: ["healed","kit:healing-potion"] },

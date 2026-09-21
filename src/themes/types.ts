@@ -37,7 +37,7 @@ export interface ThemeMeta {
   blurb: string;
   /** If false, switcher shows it but disabled (stub floors). */
   selectable?: boolean;
-  /** 1-based floor number for deposit caps / aisle chrome. */
+  /** 1-based floor number for deposit caps / floor chrome. */
   floorNumber?: number;
 }
 

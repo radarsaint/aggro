@@ -66,7 +66,7 @@ export function Discover() {
             </div>
             <div style={{ fontSize: '0.65rem', color: canFightTonight ? 'var(--muted)' : 'var(--pink)', marginTop: 2 }}>
               {aisleLocked
-                ? "Run's over on this aisle — fix the day on You"
+                ? "Run's over on this floor — fix the day on You"
                 : canFightTonight
                   ? matchesTonight === 1
                     ? '1 date left tonight'

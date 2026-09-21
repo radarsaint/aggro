@@ -213,7 +213,7 @@ export function Chat() {
           <div className="chat-cta chat-cta--locked">
             <p className="chat-cta__hint">
               {aisleLocked
-                ? "Run’s over on this aisle — fix the day on You before Accept opens here again."
+                ? "Run’s over on this floor — fix the day on You before Accept opens here again."
                 : "Night’s over — no dates left tonight. Keep bantering, or take a beat and come back fresh."}
             </p>
             {!aisleLocked && (

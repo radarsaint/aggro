@@ -263,13 +263,13 @@ export function Profile() {
                   </div>
                 ) : (
                   <p className="gold-bridge__hint">
-                    Deposit locked — buy the Verified aisle buy-in under Kiosk extras (buried).
+                    Deposit locked — buy the Verified buy-in under Kiosk extras (buried).
                   </p>
                 )}
                 <p className="gold-bridge__fine">
-                  Deposit cap {GOLD_DEPOSIT_PER_FLOOR_NUMBER}× aisle (
+                  Deposit cap {GOLD_DEPOSIT_PER_FLOOR_NUMBER}× floor (
                   {depositCap}g / day on {activeTheme.meta.displayName}). Resets when you call it a
-                  night on this aisle — not midnight. Switch aisle ≠ refresh.
+                  night on this floor — not midnight. Switch floor ≠ refresh.
                 </p>
               </div>
               {h.verified ? (
@@ -291,7 +291,7 @@ export function Profile() {
               onLongRest={longRest}
             />
 
-            <h3 className="home-section-label">AISLE DAY · {activeTheme.meta.displayName}</h3>
+            <h3 className="home-section-label">FLOOR DAY · {activeTheme.meta.displayName}</h3>
             <div className="aisle-day card" aria-label="Floor day clock">
               <div className="aisle-day__row">
                 <div>
@@ -317,15 +317,15 @@ export function Profile() {
               </div>
               {dayExhausted ? (
                 <p className="aisle-day__warn">
-                  Run&apos;s over on this aisle — Accept stays locked here until you fix the day.
+                  Run&apos;s over on this floor — Accept stays locked here until you fix the day.
                 </p>
               ) : (
                 <p className="aisle-day__hint">
-                  Call it a night burns +1 day on this aisle only. Grab a drink does not. Switch aisle
+                  Call it a night burns +1 day on this floor only. Grab a drink does not. Switch floor
                   never ticks the other clock.
                 </p>
               )}
-              <div className="aisle-day__switch" role="group" aria-label="Switch aisle">
+              <div className="aisle-day__switch" role="group" aria-label="Switch floor">
                 {(Object.keys(state.floors) as FloorId[])
                   .filter((id) => state.floors[id]?.enabled)
                   .map((id) => (
@@ -341,7 +341,7 @@ export function Profile() {
               </div>
             </div>
 
-            <h3 className="home-section-label">FIGHT LOG · THIS AISLE</h3>
+            <h3 className="home-section-label">FIGHT LOG · THIS FLOOR</h3>
             <div className="fight-log" aria-label="Fight log by day">
               {Array.from({ length: activeFloor.dayBudget }, (_, i) => i + 1).map((day) => {
                 const entries = activeFloor.fightsByDay[day] ?? [];
@@ -581,7 +581,7 @@ export function Profile() {
                   aria-expanded={buyInOpen}
                   onClick={() => setBuyInOpen((v) => !v)}
                 >
-                  {buyInOpen ? 'Hide aisle extras' : 'Aisle extras (Verified)'}
+                  {buyInOpen ? 'Hide Verified extras' : 'Verified extras'}
                 </button>
                 {buyInOpen && (
                   <div className="home-disclosure__body">
@@ -601,7 +601,7 @@ export function Profile() {
                         onClick={() => {
                           if (
                             confirm(
-                              `Spend ${VERIFIED_BUY_IN_COST}g on the Verified aisle buy-in? Unlocks deposit.`,
+                              `Spend ${VERIFIED_BUY_IN_COST}g on the Verified buy-in? Unlocks deposit.`,
                             )
                           ) {
                             buyVerifiedBuyIn();
