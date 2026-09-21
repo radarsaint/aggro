@@ -7,8 +7,8 @@ import { aisleDayExhausted, getActiveFloor } from '../utils/storage';
 import { MATCHES_PER_NIGHT } from '../types';
 
 /**
- * Return / first-run landing — aisle energy + Floor 2 lever.
- * Not Discover. CTA into Discover for tonight.
+ * Return / first-run landing — aisle energy + salt-aisle lever.
+ * Dating porch: no day meter, no two-clock teaching, no Verified homework, no FLOOR 2 LEVER chrome.
  */
 export function Landing() {
   const {
@@ -25,7 +25,6 @@ export function Landing() {
   const canPull = h.verified && !tortugaEnabled;
   const matchesTonight = state.matchesTonight ?? MATCHES_PER_NIGHT;
   const dayLocked = aisleDayExhausted(floor);
-  const dayLabel = `${floor.dayElapsed} / ${floor.dayBudget}`;
 
   const handleLever = () => {
     if (!h.verified) return;
@@ -43,42 +42,32 @@ export function Landing() {
               AGGR<span className="heart-o">O</span>
             </div>
             <div style={{ fontSize: '0.65rem', color: 'var(--muted)' }}>
-              {theme.meta.displayName} · home
+              {theme.meta.displayName}
             </div>
           </div>
         </div>
       </div>
 
       <div className="page landing-page">
-        <section className="landing-hero card card-pink" aria-label="Aisle energy">
-          <p className="landing-hero__eyebrow">WELCOME BACK</p>
+        <section className="landing-hero card card-pink" aria-label="Tonight">
+          <p className="landing-hero__eyebrow">TONIGHT</p>
           <h1 className="landing-hero__name">{h.displayName || 'Hunter'}</h1>
           <p className="landing-hero__bio">
-            {h.verified
-              ? 'Dating Ops knows your face. Pick an aisle and get back out there.'
-              : 'Still soft clearance — swipe a few clears and they stamp you.'}
+            Pick an aisle and get back out there.
           </p>
           <div className="landing-hero__stats">
             <div className="landing-stat">
               <div className="landing-stat__value">{matchesTonight}</div>
-              <div className="landing-stat__label">DATES TONIGHT</div>
-            </div>
-            <div className="landing-stat">
-              <div className="landing-stat__value">{dayLabel}</div>
-              <div className="landing-stat__label">AISLE DAYS</div>
+              <div className="landing-stat__label">DATES LEFT</div>
             </div>
             <div className="landing-stat landing-stat--gold">
               <div className="landing-stat__value gold-shimmer">{h.gold}</div>
               <div className="landing-stat__label">GOLD</div>
             </div>
           </div>
-          {dayLocked ? (
+          {dayLocked && (
             <p className="landing-hero__warn">
-              This aisle&apos;s run is over — fix the day on You before Accept opens again.
-            </p>
-          ) : (
-            <p className="landing-hero__hint">
-              Night clock lives on Discover / Chat. Day clock lives on You.
+              This aisle&apos;s run is over for now.
             </p>
           )}
           <Link
@@ -86,19 +75,19 @@ export function Landing() {
             className="btn btn-pink btn-block landing-hero__cta"
             aria-label="Open Discover for tonight"
           >
-            <Flame size={18} /> Tonight&apos;s floor — Discover
+            <Flame size={18} /> Open Discover
           </Link>
         </section>
 
-        <h3 className="home-section-label">AISLES</h3>
-        <div className="landing-aisles" role="group" aria-label="Floor aisles">
+        <h3 className="home-section-label">TONIGHT&apos;S AISLE</h3>
+        <div className="landing-aisles" role="group" aria-label="Aisles">
           <button
             type="button"
             className={`landing-aisle${activeId === 'baatorasaka' ? ' landing-aisle--on' : ''}`}
             onClick={() => setActiveFloorId('baatorasaka')}
           >
             <span className="landing-aisle__name">Baatorasaka</span>
-            <span className="landing-aisle__meta">Floor 1 · retail hell</span>
+            <span className="landing-aisle__meta">Retail hell</span>
           </button>
           {tortugaEnabled && (
             <button
@@ -107,12 +96,12 @@ export function Landing() {
               onClick={() => setActiveFloorId('tortugaMuerta')}
             >
               <span className="landing-aisle__name">Tortuga Muerta</span>
-              <span className="landing-aisle__meta">Floor 2 · salt aisle</span>
+              <span className="landing-aisle__meta">Salt aisle</span>
             </button>
           )}
         </div>
 
-        <h3 className="home-section-label">FLOOR 2 LEVER</h3>
+        <h3 className="home-section-label">SALT AISLE</h3>
         <div
           className={`landing-lever${canPull ? '' : ' landing-lever--locked'}${tortugaEnabled ? ' landing-lever--pulled' : ''}`}
         >
@@ -132,17 +121,13 @@ export function Landing() {
               tortugaEnabled
                 ? 'Tortuga Muerta already open'
                 : h.verified
-                  ? 'Pull lever to open Tortuga Muerta'
-                  : 'Tortuga Muerta locked until Verified'
+                  ? 'Pull to open Tortuga Muerta'
+                  : 'Tortuga Muerta aisle locked'
             }
           >
-            {tortugaEnabled ? 'Salt aisle open' : h.verified ? 'Pull lever' : 'Locked — need Verified'}
+            {tortugaEnabled ? 'Salt aisle open' : h.verified ? 'Pull to open' : 'Aisle locked'}
           </button>
         </div>
-
-        <p className="landing-footnote">
-          Utilities (day clock, gold bridge) stay on <Link to="/profile?tab=you">You</Link> — never peer to Accept.
-        </p>
       </div>
     </div>
   );
