@@ -73,16 +73,18 @@ Do **not** treat this list as a roadmap. Especially: **side bets are not upcomin
 - Side bets / Gate 5 — **deferred indefinitely** (locked: do not propose)
 - Extra R.O.D. loot-box theater beyond shipped hot framing
 - Loss-with-teeth beyond current paid-extra-on-PIP
-- Skullport (or any Floor 2) content design
+- Floor 1 effect families **not** used yet (saved for expansion): stronger-while-hurt, kit+outfit combo, bonus gold on win — do not invent Floor 2 loot catalogs here
+- Skullport (or any Floor 2) content design — **aware only**
 - Number-field polish on hunter sheet
 - Formal playtest verify pass
+- Clearance aisle climb-gated stock / night restock — **parked** (kiosk is still a fixed SKU list in 0.1.1)
 
 ---
 
 ## Known tensions (honest)
 
 - Typed body AC/HP vs equip bonuses (combat uses **effective** stats).
-- Infinite gold still possible; sinks = gold-on-date + kiosk + night scarcity.
+- Infinite gold still possible; sinks = gold-on-date + kiosk + night scarcity. Fight-effect gear + named sell bands (65/110/175) are live in 0.1.1.
 - Handoff archives on box (if present): `/workspace/aggro-code.zip`, `/workspace/aggro-handoff.tar.gz` — not part of the git product surface.
 
 ---
