@@ -1,212 +1,62 @@
 import type { ScriptNode } from './types';
 
-/**
- * Proxy Bit — living sealed envelope / courier with expired clearance.
- *
- * Obsession: do not reply-all, chain of custody, sealed lips, Legal.
- * Rhythm: stamped, legal, panicked politeness. Incomplete sentences like redactions.
- * Poke: construct — poison redundant; flyer — caltrops ground-level; "leaking" = seal/ink. No ops jargon. No smell. Soft seal not steel.
- */
+/** Proxy Bit. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  { id: 'proxy-bit_open_x_0', beat: 'open', lines: [
-    'Proxy Bit: Delivery for… you. Contents: teeth. Do not fold. Do not pet. Sign with blood if ink is dry. Legal already liked this sentence.',
-    'Proxy Bit: Sealed envelope. Nervous system. Petting voids the chain of custody. Somewhere upstairs, someone is smiling about us.',
-  ], weight: 2 },
-  { id: 'proxy-bit_open_x_1', beat: 'open', lines: [
-    'Proxy Bit: Handshake optional. I bite cute. Sign before you flinch. Clearance: expired. Bite still on payroll.',
-    'Proxy Bit: Do not reply-all. Do not CC hope. Do not— Tracking number: your throat. ETA: now.',
-  ], weight: 2 },
-  { id: 'proxy-bit_open_0', beat: 'open', lines: [
-    'Proxy Bit: Interoffice Courier. Cubicle 4B. Clearance expired. Still delivering. Telepathy. A bite the size of a period.',
-    'Proxy Bit: Secrets on windowsills only. Everything else gets returned to sender — chewed. Opening mandatory.',
-  ], weight: 2 },
-  { id: 'proxy-bit_open_1', beat: 'open', lines: [
-    'Proxy Bit: Polite panic. Legal already forwarded this fight somewhere you will never clear. Please initial.',
-    'Proxy Bit: Package for you. Sealed lips. Chain of custody ends in your mouth.',
-  ], weight: 1 },
-  { id: 'proxy-bit_open_2', beat: 'open', lines: [
-    'Proxy Bit: Initial before you swing. Unsigned amendments get… [REDACTED]. Violence arrives stamped.',
-    'Proxy Bit: If you came to pet, leave. If you came to fight, sign first. Clearance expired. Bite has not.',
-  ], weight: 1 },
-  { id: 'proxy-bit_open_3', beat: 'open', lines: [
-    'Proxy Bit: Quiet confession from 4B: I deliver because the route still lists me. Expired clearance. Live bite. Please initial.',
-    'Proxy Bit: Soft seal. Hard teeth. I bite because the package said so. Sign when you lose — or before.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
+  { id: 'proxy-bit_open_x_0', beat: 'open', lines: ["Proxy Bit: Delivery for this cubicle. I am the envelope. Please don't lick anything."], weight: 2 },
+  { id: 'proxy-bit_open_x_1', beat: 'open', lines: ["Proxy Bit: They trained me to guard confidential mail, then gave me teeth. No one explained the order."], weight: 2 },
+  { id: 'proxy-bit_open_0', beat: 'open', lines: ["Proxy Bit: I carry sealed instructions. I haven't opened them. I've chewed the corner a little."], weight: 2 },
+  { id: 'proxy-bit_open_1', beat: 'open', lines: ["Proxy Bit: My clearance expired before my route did. I've been making the same delivery ever since."], weight: 1 },
+  { id: 'proxy-bit_open_2', beat: 'open', lines: ["Proxy Bit: The address is smudged. If you know this floor, you're already more useful than dispatch."], weight: 1 },
+  { id: 'proxy-bit_open_3', beat: 'open', lines: ["Proxy Bit: There's a letter in here that's never been collected. I keep it dry."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  { id: 'proxy-bit_hhit_4', beat: 'hunter_hit', lines: [
-    'Proxy Bit: Ow. Envelope torn. That stays on the stamp.',
-    'Proxy Bit: Fine. Next delivery arrives uglier. Sign for it.',
-  ] },
-  { id: 'proxy-bit_hhit_5', beat: 'hunter_hit', lines: [
-    'Proxy Bit: You tagged the Courier. Cubicle 4B never voids a stamp.',
-    'Proxy Bit: Seal compromised. Chain of custody: messy. [REDACTED]',
-  ] },
-  { id: 'proxy-bit_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Proxy Bit: Seal torn. Ink on the route. Still delivering.',
-    'Proxy Bit: Hurt and still on route. That is loyalty on the payroll.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'proxy-bit_hhit_4', beat: 'hunter_hit', lines: ["Proxy Bit: You creased the envelope!"] },
+  { id: 'proxy-bit_hhit_5', beat: 'hunter_hit', lines: ["Proxy Bit: That's through the outer wrapping."] },
+  { id: 'proxy-bit_hhit_bld_6', beat: 'hunter_hit', lines: ["Proxy Bit: My stitching's coming apart."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  { id: 'proxy-bit_hmiss_7', beat: 'hunter_miss', lines: [
-    'Proxy Bit: Missed. The air did not deserve that stamp.',
-    'Proxy Bit: You talk clearance better than you hold it.',
-  ] },
-  { id: 'proxy-bit_hmiss_8', beat: 'hunter_miss', lines: [
-    'Proxy Bit: Missed. I fly the windowsill path — that was always the joke.',
-    'Proxy Bit: Swing like you mean Cubicle 4B, not the lighting.',
-  ] },
+  { id: 'proxy-bit_hmiss_7', beat: 'hunter_miss', lines: ["Proxy Bit: Delivery moved."] },
+  { id: 'proxy-bit_hmiss_8', beat: 'hunter_miss', lines: ["Proxy Bit: Missed the little parcel."] },
 
-  { id: 'proxy-bit_hcrit_9', beat: 'hunter_crit', lines: [
-    'Proxy Bit: Okay — that got under the seal. I felt that.',
-    'Proxy Bit: Hard hit on Interoffice Courier. Legal just [REDACTED] in a CC.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'proxy-bit_hcrit_10', beat: 'hunter_crit', lines: [
-    'Proxy Bit: You cracked the seal. Unsigned and rude. Delivery still venom.',
-    'Proxy Bit: That almost felt cleared. Almost. Do not talk. Swing again.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'proxy-bit_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Proxy Bit: You absconded, then hit me that hard? Commit to one signature.',
-    'Proxy Bit: You fled mid-delivery, then signed in blood. Mixed paperwork. Legal liked it.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'proxy-bit_hcrit_9', beat: 'hunter_crit', lines: ["Proxy Bit: I heard the seal break."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'proxy-bit_hcrit_10', beat: 'hunter_crit', lines: ["Proxy Bit: Something important just tore."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'proxy-bit_hcrit_ran_11', beat: 'hunter_crit', lines: ["Proxy Bit: You lured the courier out. Then hit the parcel."], requireFlags: ["ran"], weight: 3 },
 
-  { id: 'proxy-bit_kit_poison_12', beat: 'kit', lines: [
-    'Proxy Bit: Poison on a sealed bite. Legal will hate this sentence.',
-    'Proxy Bit: My payload already includes venom. Your toxin: redundant. Noted.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'proxy-bit_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Proxy Bit: Fire near sealed mail. That voids every policy upstairs.',
-    'Proxy Bit: Fire on the route. Still stamped. Still delivering.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'proxy-bit_kit_caltrops_14', beat: 'kit', lines: [
-    'Proxy Bit: Cubicle tacks. I fly the windowsill path. Think about that.',
-    'Proxy Bit: Caltrops. For a courier who never walks the aisle. Okay.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'proxy-bit_kit_acid-vial_15', beat: 'kit', lines: [
-    'Proxy Bit: Acid on paperwork. Chain of custody compromised. Face: spill.',
-    'Proxy Bit: You threw a vial at sealed mail. Unfiled. Sticky. Personal.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'proxy-bit_kit_holy-water_16', beat: 'kit', lines: [
-    'Proxy Bit: Parish splash on postage. I am not undead. I am mail.',
-    'Proxy Bit: Church water on Cubicle 4B. Clearance still expired. Wet. Logged.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'proxy-bit_kit_smokestick_17', beat: 'kit', lines: [
-    'Proxy Bit: Smoke. Clever — if I needed eyes. Tracking still live.',
-    'Proxy Bit: You hid. Couriers invent hide-and-seek with teeth.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'proxy-bit_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Proxy Bit: Route clamp for a flyer. Irony noted. Please sign before you flail.',
-    'Proxy Bit: Iron jaws for Cubicle 4B prey. That is adorable. Please initial.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'proxy-bit_kit_net_19', beat: 'kit', lines: [
-    'Proxy Bit: Unauthorized restraint on a sealed courier. Legal screamed.',
-    'Proxy Bit: Route dies in the trap. Return to sender: pending.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'proxy-bit_kit_healing-potion_20', beat: 'kit', lines: [
-    'Proxy Bit: Flask mid-route? Unsigned ink. Stamp still waits.',
-    'Proxy Bit: Healing. I prefer you rare. Please initial the juice.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'proxy-bit_kit_oil-flask_21', beat: 'kit', lines: [
-    'Proxy Bit: Oil sheets the route. Stamps hate the sheen. Chain of custody still holds.',
-    'Proxy Bit: Grease mid-delivery. Please initial the mess.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'proxy-bit_kit_gen_22', beat: 'kit', lines: [
-    'Proxy Bit: Pocket-diving will not void the stamp. I am right here.',
-    'Proxy Bit: Unauthorized attachments. Please initial the bruises.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'proxy-bit_kit_ran_23', beat: 'kit', lines: [
-    'Proxy Bit: You absconded, then opened unauthorized attachments. Unsigned and rude.',
-    'Proxy Bit: Sprint, then rummage. Cubicle 4B stamps that unsigned.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'proxy-bit_kit_poison_12', beat: 'kit', lines: ["Proxy Bit: That should never be packed with correspondence."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'proxy-bit_kit_alchemists-fire_13', beat: 'kit', lines: ["Proxy Bit: The letters! Keep it off the letters!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'proxy-bit_kit_caltrops_14', beat: 'kit', lines: ["Proxy Bit: Those will pierce the wrapping if I land."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'proxy-bit_kit_acid-vial_15', beat: 'kit', lines: ["Proxy Bit: It's eating through the seal!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'proxy-bit_kit_holy-water_16', beat: 'kit', lines: ["Proxy Bit: Now the address is running."], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'proxy-bit_kit_smokestick_17', beat: 'kit', lines: ["Proxy Bit: I can't read the cubicle numbers."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'proxy-bit_kit_hunting-trap_18', beat: 'kit', lines: ["Proxy Bit: My delivery foot is caught!"], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'proxy-bit_kit_net_19', beat: 'kit', lines: ["Proxy Bit: The parcel is tangled."], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'proxy-bit_kit_healing-potion_20', beat: 'kit', lines: ["Proxy Bit: You've repaired yourself. I wish I came with a repair kit."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'proxy-bit_kit_oil-flask_21', beat: 'kit', lines: ["Proxy Bit: Oil and paper should not be packed together."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'proxy-bit_kit_gen_22', beat: 'kit', lines: ["Proxy Bit: That wasn't listed on the dispatch form."], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'proxy-bit_kit_ran_23', beat: 'kit', lines: ["Proxy Bit: You opened your package while I was catching up."], requireFlags: ["ran"], weight: 2 },
 
-  { id: 'proxy-bit_mhit_24', beat: 'monster_hit', lines: [
-    'Proxy Bit: That is for the unread messages on Cubicle 4B.',
-    'Proxy Bit: Stamp landed. You asked for it.',
-  ] },
-  { id: 'proxy-bit_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Proxy Bit: I am hurt. You are hurt more. Fair trade. Stamp: mutual damage.',
-    'Proxy Bit: Seal torn. Delivery continues. Unread CC made it personal.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'proxy-bit_mmiss_26', beat: 'monster_miss', lines: [
-    'Proxy Bit: Missed. Enjoy it. The route is still circling.',
-    'Proxy Bit: Close one. Do not write a personality around a near-miss.',
-  ] },
+  { id: 'proxy-bit_mhit_24', beat: 'monster_hit', lines: ["Proxy Bit: Signature by bite."] },
+  { id: 'proxy-bit_mhit_bld_25', beat: 'monster_hit', lines: ["Proxy Bit: The corner still has teeth."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'proxy-bit_mmiss_26', beat: 'monster_miss', lines: ["Proxy Bit: I bit past you. Address error."] },
 
-  { id: 'proxy-bit_w_wind_27', beat: 'wound', lines: [
-    'Proxy Bit: Tiny nick on the seal. Do not get attached.',
-    'Proxy Bit: Barely a scratch. Upgrade your intent or sign properly.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'proxy-bit_w_bru_28', beat: 'wound', lines: [
-    'Proxy Bit: Color under the seal. Keep working the route if you dare.',
-    'Proxy Bit: Mid-delivery damage. Persistent — like an unread CC that will not die.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'proxy-bit_w_bld_29', beat: 'wound', lines: [
-    'Proxy Bit: Okay. Seal failing. Ink on the route. Still delivering.',
-    'Proxy Bit: Hurt bad and upright. Finish the delivery or leave Cubicle 4B alone.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'proxy-bit_w_heart_30', beat: 'wound', lines: [
-    'Proxy Bit: That one hit under the expired clearance. Please do not initial the pity.',
-    'Proxy Bit: Do not look at me like that while you are winning. Please initial the pity.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'proxy-bit_w_wind_27', beat: 'wound', lines: ["Proxy Bit: Outer wrapping damaged."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'proxy-bit_w_bru_28', beat: 'wound', lines: ["Proxy Bit: I can feel air through the seam."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'proxy-bit_w_bld_29', beat: 'wound', lines: ["Proxy Bit: Contents are about to fall out."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'proxy-bit_w_heart_30', beat: 'wound', lines: ["Proxy Bit: I promised to keep that letter dry. Now look at the envelope."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  { id: 'proxy-bit_run_31', beat: 'run', lines: [
-    'Proxy Bit: You fled Cubicle 4B? I invent chase for absconders.',
-    'Proxy Bit: Abscond mid-stamp? Tracking stays live. Please initial.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'proxy-bit_run2_32', beat: 'run', lines: [
-    'Proxy Bit: Twice. Absconder. Tracking live.',
-    'Proxy Bit: Second escape. Tracking updated. Dignity: [REDACTED].',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'proxy-bit_chase_33', beat: 'chase', lines: [
-    'Proxy Bit: Running from a sealed envelope. Ugly paperwork. Mine to stamp.',
-    'Proxy Bit: You wanted distance. I wanted a signature. Guess who collects.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'proxy-bit_chase2_34', beat: 'chase', lines: [
-    'Proxy Bit: Second chase. Please initial the cardio.',
-    'Proxy Bit: Bolt again and I will bill you for liking the route.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'proxy-bit_close_35', beat: 'close', lines: [
-    'Proxy Bit: Back. Miss the bite?',
-    'Proxy Bit: Range ends. Soft seal resumes. Sign here.',
-  ] },
-  { id: 'proxy-bit_close_smoke_36', beat: 'close', lines: [
-    'Proxy Bit: Smoke will not void a stamp. Still sealed. Still here.',
-    'Proxy Bit: Haze lifts. Tracking finds soft prey anyway. Nice try.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'proxy-bit_run_31', beat: 'run', lines: ["Proxy Bit: You're beyond my delivery reach."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'proxy-bit_run2_32', beat: 'run', lines: ["Proxy Bit: Another change of address?"], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'proxy-bit_chase_33', beat: 'chase', lines: ["Proxy Bit: Courier attempting delivery."], requireFlags: ["ran"], weight: 2 },
+  { id: 'proxy-bit_chase2_34', beat: 'chase', lines: ["Proxy Bit: This route used to be shorter."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'proxy-bit_close_35', beat: 'close', lines: ["Proxy Bit: Recipient located."] },
+  { id: 'proxy-bit_close_smoke_36', beat: 'close', lines: ["Proxy Bit: I lost the address in that smoke."], requireFlags: ["smoke"], weight: 3 },
 
-  { id: 'proxy-bit_vic_37', beat: 'victory', lines: [
-    'Proxy Bit: You won. Sign the win. Leave the unread CC. Legal already archived us.',
-    'Proxy Bit: Seal ruined. Please initial the ending.',
-  ], weight: 1 },
-  { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: [
-    'Proxy Bit: Flask mid-route, then you voided me. Almost cleared. Almost.',
-    'Proxy Bit: You juiced up, then voided the route. Receipt stamped forever anyway.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'proxy-bit_vic_kite_39', beat: 'victory', lines: [
-    'Proxy Bit: You made a courier chase you around Cubicle 4B, then finished it. Rude. Effective.',
-    'Proxy Bit: You made me jog. That voids the delivery. I hate that it worked.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'proxy-bit_vic_crit_40', beat: 'victory', lines: [
-    'Proxy Bit: Seal splits. Route void. I will give you that.',
-    'Proxy Bit: You cracked the seal and finished it. Stamp: final. Please initial.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: [
-    'Proxy Bit: You grounded the courier and voided the route. Receipt stamped forever.',
-    'Proxy Bit: Route ends in silk. Return to sender: denied.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'proxy-bit_vic_37', beat: 'victory', lines: ["Proxy Bit: Delivery failed. You stopped the courier."], weight: 1 },
+  { id: 'proxy-bit_vic_heal_38', beat: 'victory', lines: ["Proxy Bit: You repaired the damage faster than I could deliver it."], requireFlags: ["healed"], weight: 3 },
+  { id: 'proxy-bit_vic_kite_39', beat: 'victory', lines: ["Proxy Bit: You wore out the delivery service."], requireFlags: ["ran"], weight: 3 },
+  { id: 'proxy-bit_vic_crit_40', beat: 'victory', lines: ["Proxy Bit: That hit opened the envelope. Nothing left to defend."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'proxy-bit_vic_net_41', beat: 'victory', lines: ["Proxy Bit: Your net interrupted the delivery. I never caught up."], weight: 3 , requireFlags: ["netted"]},
 
-  { id: 'proxy-bit_def_42', beat: 'defeat', lines: [
-    'Proxy Bit: Package claimed. Cubicle 4B closed. Your signature was mid.',
-    'Proxy Bit: Down you go. Delivery complete. On brand for Cubicle 4B.',
-  ] },
-  { id: 'proxy-bit_def_crit_43', beat: 'defeat', lines: [
-    'Proxy Bit: You hit hard and still died. Ambition without a signature.',
-    'Proxy Bit: Big swing. Soft finish. Cubicle 4B stamps that often.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'proxy-bit_def_ran_44', beat: 'defeat', lines: [
-    'Proxy Bit: You absconded and still got claimed. Legs without a signature.',
-    'Proxy Bit: You fled into a stamp. Cubicle 4B expected that.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'proxy-bit_def_heal_45', beat: 'defeat', lines: [
-    'Proxy Bit: Flask and dirt. Clearance stamped wrong. Seal laughs.',
-    'Proxy Bit: Flask mid-route, then claimed anyway. Filed. Sign next time.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'proxy-bit_def_42', beat: 'defeat', lines: ["Proxy Bit: Delivery completed. Please recover before signing."] },
+  { id: 'proxy-bit_def_crit_43', beat: 'defeat', lines: ["Proxy Bit: Your return mail nearly tore me in half."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'proxy-bit_def_ran_44', beat: 'defeat', lines: ["Proxy Bit: I caught up with the address eventually."], requireFlags: ["ran"], weight: 2 },
+  { id: 'proxy-bit_def_heal_45', beat: 'defeat', lines: ["Proxy Bit: That bottle delayed the delivery considerably."], requireFlags: ["healed"], weight: 3 },
 ];

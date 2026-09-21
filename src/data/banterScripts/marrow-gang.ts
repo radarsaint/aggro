@@ -1,221 +1,63 @@
 import type { ScriptNode } from './types';
 
-/**
- * Marrow Gang — skeleton drill team.
- *
- * BAR: Plain English. Monologue opens. Short quips.
- * Military cadence. Short commands. Obsession: formation, bleed on the beat, count.
- */
+/** Marrow Gang. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  // ── OPENS ──
-  { id: 'marrow-gang_open_x_0', beat: 'open', lines: [
-    'Marrow Gang: Eyes forward. Formation. Soft skills: none. Drill begins when you flinch. Bleed on the beat.',
-    'Marrow Gang: Hey. Yeah, we talk. Rattlewire went freelance. We kept the count. Attention.',
-  ], weight: 2 },
-  { id: 'marrow-gang_open_x_1', beat: 'open', lines: [
-    'Marrow Gang: Formation unbroken. Your stance is not. Lateness is a write-up. Dying early is worse. Count with us.',
-    'Marrow Gang: Loading Crypt Drill Team. Barracks. Roll call. Volley fire. Perfect posture. Zero flesh drama. Drill on the second.',
-  ], weight: 2 },
-  { id: 'marrow-gang_open_0', beat: 'open', lines: [
-    'Marrow Gang: Targets in a line. Officers who do not flinch. Musters on the second. Hearts that bleed on the beat.',
-    'Marrow Gang: Formation is the only soft skill left. Eyes. Forward. Bleed. On. The. Beat.',
-  ], weight: 2 },
-  { id: 'marrow-gang_open_1', beat: 'open', lines: [
-    'Marrow Gang: Flinching is a missed count. Hammers are a hate crime against posture. Stand fast.',
-    'Marrow Gang: Bludgeoning\'s a turn-off. Improvisation too. "Work from home" — write-up. Welcome to muster.',
-  ], weight: 1 },
-  { id: 'marrow-gang_open_2', beat: 'open', lines: [
-    'Marrow Gang: Came to browse? Leave. Came to fight? Stop standing crooked. Fall in.',
-    'Marrow Gang: We have heard every lone-recruit speech. Say something new or fall in.',
-  ], weight: 1 },
-  { id: 'marrow-gang_open_3', beat: 'open', lines: [
-    'Marrow Gang: Rattlewire left. Someone had to keep the count. That is us. You are in formation until you aren\'t.',
-    'Marrow Gang: Maybe you will hold the line. Probably not. Bleed on the beat when you lose either way.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── HITS ──
-  { id: 'marrow-gang_hhit_4', beat: 'hunter_hit', lines: [
-    'Marrow Gang: Ow. Break in cadence. We resent that. Eyes forward.',
-    'Marrow Gang: Ow. Formation blinked. Next volley comes uglier. Eyes forward.',
-  ] },
-  { id: 'marrow-gang_hhit_5', beat: 'hunter_hit', lines: [
-    'Marrow Gang: You tagged Drill Team. Cadence did not break. Eyes forward — the count owns the bruise.',
-    'Marrow Gang: Count continues.',
-  ] },
-  { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Marrow Gang: We are leaking and still on the beat. Lone heroes bleed on our count.',
-    'Marrow Gang: Beat up and still drilling. That is the count talking.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'marrow-gang_open_x_0', beat: 'open', lines: ["Marrow Gang: Count your steps. We can't stop counting ours. The drill sergeant left years ago."], weight: 2 },
+  { id: 'marrow-gang_open_x_1', beat: 'open', lines: ["Marrow Gang: We keep the formation because nobody remembers how we look standing any other way."], weight: 2 },
+  { id: 'marrow-gang_open_0', beat: 'open', lines: ["Marrow Gang: Check your boots before you march. Someone put the wrong feet in ours."], weight: 2 },
+  { id: 'marrow-gang_open_1', beat: 'open', lines: ["Marrow Gang: The inspection is at six. It has been at six for a very long time."], weight: 1 },
+  { id: 'marrow-gang_open_2', beat: 'open', lines: ["Marrow Gang: The rattle gives us away. We tried padding the joints. The padding fell out."], weight: 1 },
+  { id: 'marrow-gang_open_3', beat: 'open', lines: ["Marrow Gang: We still keep a space for the drummer. Nobody can agree on a new count."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── MISSES ──
-  { id: 'marrow-gang_hmiss_7', beat: 'hunter_miss', lines: [
-    'Marrow Gang: Whiff. Expensive air. Fall in or waste another swing.',
-    'Marrow Gang: Air. Mean it next time — or fall in. We count both.',
-  ] },
-  { id: 'marrow-gang_hmiss_8', beat: 'hunter_miss', lines: [
-    'Marrow Gang: Swing at us, not the barracks clock.',
-    'Marrow Gang: That would\'ve been on the beat if it hit.',
-  ] },
+  { id: 'marrow-gang_hhit_4', beat: 'hunter_hit', lines: ["Marrow Gang: Front rank took that!"] },
+  { id: 'marrow-gang_hhit_5', beat: 'hunter_hit', lines: ["Marrow Gang: Find the loose bone later!"] },
+  { id: 'marrow-gang_hhit_bld_6', beat: 'hunter_hit', lines: ["Marrow Gang: We can't fill that gap now."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  // ── CRITS ──
-  { id: 'marrow-gang_hcrit_9', beat: 'hunter_crit', lines: [
-    'Marrow Gang: That one hurt. Keep going — we\'re listening. Eyes forward.',
-    'Marrow Gang: Hard hit. Cadence jumped. Drill Team felt that.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'marrow-gang_hcrit_10', beat: 'hunter_crit', lines: [
-    'Marrow Gang: Okay. Soft under the count. Rude. Drill continues without your permission.',
-    'Marrow Gang: That almost felt like a recruit who meant it. Do not talk. Swing or fall in.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Marrow Gang: You ran, then hit us that hard? Deserter with a finishing move.',
-    'Marrow Gang: You broke formation, then hit drill. Still drilling. Eyes forward.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'marrow-gang_hmiss_7', beat: 'hunter_miss', lines: ["Marrow Gang: Between the ribs."] },
+  { id: 'marrow-gang_hmiss_8', beat: 'hunter_miss', lines: ["Marrow Gang: Formation moved on the count."] },
 
-  // ── KITS ──
-  { id: 'marrow-gang_kit_poison_12', beat: 'kit', lines: [
-    'Marrow Gang: Poison on bones that misplaced the meat. Chemistry missed muster.',
-    'Marrow Gang: You dosed Drill Team. Toxins bounce. Count continues.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'marrow-gang_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Marrow Gang: Fire mid-drill. Off-cadence. Write-up pending.',
-    'Marrow Gang: You lit the barracks. Formation does not flinch for show — volley gets uglier.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'marrow-gang_kit_caltrops_14', beat: 'kit', lines: [
-    'Marrow Gang: Spikes on the drill floor. We step on the beat anyway.',
-    'Marrow Gang: Ankles as late fees. Formation still arrives. Count unbroken.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'marrow-gang_kit_acid-vial_15', beat: 'kit', lines: [
-    'Marrow Gang: Acid mid-muster. Looks like a failed inspection.',
-    'Marrow Gang: Chemistry on bone. We drill around the spill.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'marrow-gang_kit_holy-water_16', beat: 'kit', lines: [
-    'Marrow Gang: Blessed water on undead drill. Faith smells like tardiness.',
-    'Marrow Gang: Church juice. Wet is a write-up. Prayer is worse.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'marrow-gang_kit_smokestick_17', beat: 'kit', lines: [
-    'Marrow Gang: Smoke will not hide a pulse on the beat. We hear you.',
-    'Marrow Gang: Hide mid-drill? Barracks seeking finds deserters.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'marrow-gang_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Marrow Gang: Trap for Drill Team. Irony noted. Time noted.',
-    'Marrow Gang: You caught one bone. Formation still holds. Romance cancelled.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'marrow-gang_kit_net_19', beat: 'kit', lines: [
-    'Marrow Gang: Formation snagged mid-step. Cadence keeps the beat anyway.',
-    'Marrow Gang: Drill Team paused ugly. Panic noted. Count continues.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: [
-    'Marrow Gang: You drank up mid-drill. Planning to live? We prefer you rare and on the beat.',
-    'Marrow Gang: Healing mid-muster. Still late to roll call. Count noticed.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: [
-    'Marrow Gang: Oil on the drill floor. Slippery recruit. Still counted.',
-    'Marrow Gang: You greased the barracks. Formation still arrives. Eyes forward.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: [
-    'Marrow Gang: Improvisation mid-drill earns a write-up. Fall in or become the example.',
-    'Marrow Gang: Bottle mid-muster? There is no counter-order. Volley answers.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: [
-    'Marrow Gang: You left muster to forage. Deserter energy. Count continues.',
-    'Marrow Gang: Fast feet, busy fingers. Barracks bill that. Count louder.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'marrow-gang_hcrit_9', beat: 'hunter_crit', lines: ["Marrow Gang: The whole front rank's broken!"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'marrow-gang_hcrit_10', beat: 'hunter_crit', lines: ["Marrow Gang: Stop marching and collect the arm!"], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'marrow-gang_hcrit_ran_11', beat: 'hunter_crit', lines: ["Marrow Gang: You caught the formation turning."], requireFlags: ["ran"], weight: 3 },
 
-  // ── MONSTER ──
-  { id: 'marrow-gang_mhit_24', beat: 'monster_hit', lines: [
-    'Marrow Gang: Matched. On the beat. Formation lands.',
-    'Marrow Gang: That is for standing crooked at muster.',
-  ] },
-  { id: 'marrow-gang_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Marrow Gang: We are leaking. You are worse. Drill calls that even.',
-    'Marrow Gang: Beat up and still volleying. Count talks.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'marrow-gang_mmiss_26', beat: 'monster_miss', lines: [
-    'Marrow Gang: Missed. Enjoy it. We are still drilling.',
-    'Marrow Gang: Close one. Patience expires when Drill Team gets bored of polite posture.',
-  ] },
+  { id: 'marrow-gang_kit_poison_12', beat: 'kit', lines: ["Marrow Gang: Keep the coated edge away."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'marrow-gang_kit_alchemists-fire_13', beat: 'kit', lines: ["Marrow Gang: The old straps are burning!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'marrow-gang_kit_caltrops_14', beat: 'kit', lines: ["Marrow Gang: Mind the gaps between your toes!"], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'marrow-gang_kit_acid-vial_15', beat: 'kit', lines: ["Marrow Gang: It's eating through the buckles!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'marrow-gang_kit_holy-water_16', beat: 'kit', lines: ["Marrow Gang: That burns through the bone!"], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'marrow-gang_kit_smokestick_17', beat: 'kit', lines: ["Marrow Gang: We can't see the next rank."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'marrow-gang_kit_hunting-trap_18', beat: 'kit', lines: ["Marrow Gang: One ankle caught. Halt!"], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'marrow-gang_kit_net_19', beat: 'kit', lines: ["Marrow Gang: Stop marching into the mesh!"], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'marrow-gang_kit_healing-potion_20', beat: 'kit', lines: ["Marrow Gang: The damage is repaired. Start the work again."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'marrow-gang_kit_oil-flask_21', beat: 'kit', lines: ["Marrow Gang: Watch the oil on that blade."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'marrow-gang_kit_gen_22', beat: 'kit', lines: ["Marrow Gang: New equipment. Eyes on the hand."], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'marrow-gang_kit_ran_23', beat: 'kit', lines: ["Marrow Gang: You used the time while we reformed."], requireFlags: ["ran"], weight: 2 },
 
-  // ── WOUNDS ──
-  { id: 'marrow-gang_w_wind_27', beat: 'wound', lines: [
-    'Marrow Gang: First nick. Count already attached.',
-    'Marrow Gang: Tickled bone. Upgrade intent. Eyes forward.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'marrow-gang_w_bru_28', beat: 'wound', lines: [
-    'Marrow Gang: Color under posture. Keep the formation.',
-    'Marrow Gang: Deep scratch. Persistent — like a hold that never ends.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'marrow-gang_w_bld_29', beat: 'wound', lines: [
-    'Marrow Gang: Okay. We are leaking. You are still soft. Finish it or bleed on the beat.',
-    'Marrow Gang: Beat up and standing. Still drilling on the second. Lone heroes spoil muster.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'marrow-gang_w_heart_30', beat: 'wound', lines: [
-    'Marrow Gang: That landed on something soft we weren\'t advertising at muster.',
-    'Marrow Gang: Do not look at us like that while you are winning. It is rude. Off-cadence.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'marrow-gang_mhit_24', beat: 'monster_hit', lines: ["Marrow Gang: Strike on the count."] },
+  { id: 'marrow-gang_mhit_bld_25', beat: 'monster_hit', lines: ["Marrow Gang: One arm can still carry the drill."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'marrow-gang_mmiss_26', beat: 'monster_miss', lines: ["Marrow Gang: Off the count. Entirely my fault."] },
 
-  // ── RUN / CHASE / CLOSE ──
-  { id: 'marrow-gang_run_31', beat: 'run', lines: [
-    'Marrow Gang: You ran from Drill Team? Desertion. Chase clause activates.',
-    'Marrow Gang: Leaving mid-muster? Drills do not pause.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'marrow-gang_run2_32', beat: 'run', lines: [
-    'Marrow Gang: Twice. You ran twice. Deserter with legs.',
-    'Marrow Gang: Second escape. We noticed. Eyes. Forward. Louder.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'marrow-gang_chase_33', beat: 'chase', lines: [
-    'Marrow Gang: Running from Drill Team is a write-up you will bleed for.',
-    'Marrow Gang: You wanted distance. We wanted the beat. Guess who still arrives.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'marrow-gang_chase2_34', beat: 'chase', lines: [
-    'Marrow Gang: Second chase. You do not get the barracks. We do.',
-    'Marrow Gang: Run again and we will think you like the count. Do not. Eyes forward.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'marrow-gang_close_35', beat: 'close', lines: [
-    'Marrow Gang: Back. Miss the beat?',
-    'Marrow Gang: Range is over. Formation. Bleed.',
-  ] },
-  { id: 'marrow-gang_close_smoke_36', beat: 'close', lines: [
-    'Marrow Gang: Smoke is not formation. We still hear your pulse on the beat.',
-    'Marrow Gang: Fog\'s gone. Formation back. Miss us?',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'marrow-gang_w_wind_27', beat: 'wound', lines: ["Marrow Gang: One joint loose."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'marrow-gang_w_bru_28', beat: 'wound', lines: ["Marrow Gang: The front rank can't stand straight."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'marrow-gang_w_bld_29', beat: 'wound', lines: ["Marrow Gang: There is no formation left to hold."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'marrow-gang_w_heart_30', beat: 'wound', lines: ["Marrow Gang: I wish the drummer were here. I don't know the count anymore."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  // ── VICTORY ──
-  { id: 'marrow-gang_vic_37', beat: 'victory', lines: [
-    'Marrow Gang: Muster ends. Leave the posture standing.',
-    'Marrow Gang: Fine. Count holds your name under Deserter Forever.',
-  ], weight: 1 },
-  { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: [
-    'Marrow Gang: Flask mid-drill, then you broke muster. Almost punctual. Almost.',
-    'Marrow Gang: Flask at muster, then you ended drill. Late fee waived. Hold lost.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: [
-    'Marrow Gang: You turned muster into a lap, then finished it. Jogging is a hate crime against posture.',
-    'Marrow Gang: You turned muster into cardio and finished off-beat. Files that as coward.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'marrow-gang_vic_crit_40', beat: 'victory', lines: [
-    'Marrow Gang: You cut through on the beat. Soft under the count. Fight\'s over.',
-    'Marrow Gang: Hard hit, then early end. Precise. Formation broken.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: [
-    'Marrow Gang: Muster terminated early. Eyes forward anyway.',
-    'Marrow Gang: Drill team never makes roll call. Cadence files itself under Absent.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'marrow-gang_run_31', beat: 'run', lines: ["Marrow Gang: Beyond the front rank."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'marrow-gang_run2_32', beat: 'run', lines: ["Marrow Gang: You keep making us turn."], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'marrow-gang_chase_33', beat: 'chase', lines: ["Marrow Gang: Advance together."], requireFlags: ["ran"], weight: 2 },
+  { id: 'marrow-gang_chase2_34', beat: 'chase', lines: ["Marrow Gang: We can't maintain this march."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'marrow-gang_close_35', beat: 'close', lines: ["Marrow Gang: Ranks close enough."] },
+  { id: 'marrow-gang_close_smoke_36', beat: 'close', lines: ["Marrow Gang: Eyes through the smoke. Found you."], requireFlags: ["smoke"], weight: 3 },
 
-  // ── DEFEAT ──
-  { id: 'marrow-gang_def_42', beat: 'defeat', lines: [
-    'Marrow Gang: Muster concluded. Décor pending. On the beat. Eyes forward.',
-    'Marrow Gang: Down. On brand. Stand straight one last time.',
-  ] },
-  { id: 'marrow-gang_def_crit_43', beat: 'defeat', lines: [
-    'Marrow Gang: Hard hit. Still décor. No follow-up count.',
-    'Marrow Gang: Big hit on the beat. Death on the next. Drill closes it.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'marrow-gang_def_ran_44', beat: 'defeat', lines: [
-    'Marrow Gang: You ran and still died. Desertion with consequences.',
-    'Marrow Gang: Flee into décor. Barracks write that joke often.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'marrow-gang_def_heal_45', beat: 'defeat', lines: [
-    'Marrow Gang: You healed and still went down. Optimistic recruit. Wrong.',
-    'Marrow Gang: You drank, then became décor. Filed. Eyes forward.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'marrow-gang_vic_37', beat: 'victory', lines: ["Marrow Gang: Formation broken. You won the field."], weight: 1 },
+  { id: 'marrow-gang_vic_heal_38', beat: 'victory', lines: ["Marrow Gang: Your recovery outlasted our formation."], requireFlags: ["healed"], weight: 3 },
+  { id: 'marrow-gang_vic_kite_39', beat: 'victory', lines: ["Marrow Gang: You marched us until the joints gave out."], requireFlags: ["ran"], weight: 3 },
+  { id: 'marrow-gang_vic_crit_40', beat: 'victory', lines: ["Marrow Gang: That strike broke the rank for good."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'marrow-gang_vic_net_41', beat: 'victory', lines: ["Marrow Gang: The net disrupted the drill. You used the opening."], weight: 3 , requireFlags: ["netted"]},
+
+  { id: 'marrow-gang_def_42', beat: 'defeat', lines: ["Marrow Gang: Opponent down. Halt the drill."] },
+  { id: 'marrow-gang_def_crit_43', beat: 'defeat', lines: ["Marrow Gang: That hard hit left us picking up pieces."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'marrow-gang_def_ran_44', beat: 'defeat', lines: ["Marrow Gang: Caught up. Formation may rest."], requireFlags: ["ran"], weight: 2 },
+  { id: 'marrow-gang_def_heal_45', beat: 'defeat', lines: ["Marrow Gang: You recovered enough to make us work for it."], requireFlags: ["healed"], weight: 3 },
 ];

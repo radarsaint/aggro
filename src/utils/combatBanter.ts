@@ -49,7 +49,7 @@ function pickWeighted<T extends { weight?: number }>(arr: T[]): T {
 function pickFresh(lines: string[], used?: string[]): string | null {
   if (!lines.length) return null;
   const pool = used?.length ? lines.filter((l) => !used.includes(l)) : lines;
-  return pick(pool.length ? pool : lines);
+  return pool.length ? pick(pool) : null;
 }
 
 function hasAll(flags: string[], need?: string[]): boolean {
@@ -135,8 +135,14 @@ export function resolveCombatBanter(
     return { text: null, setFlags: [] };
   }
 
-  const maxSpec = Math.max(...pool.map(specificity));
-  const tier = pool.filter((n) => specificity(n) === maxSpec);
+  // Consider freshness across eligible nodes before choosing one. A one-line
+  // node must not repeat while another suitable response remains unused.
+  const fresh = pool.filter(n => n.lines.some(line =>
+    !ctx.usedLines?.includes(fromShared ? voiceShared(creature, line) : line),
+  ));
+  if (!fresh.length) return { text: null, setFlags: [] };
+  const maxSpec = Math.max(...fresh.map(specificity));
+  const tier = fresh.filter((n) => specificity(n) === maxSpec);
   const node = pickWeighted(tier);
   const rawLines = fromShared
     ? node.lines.map((l) => voiceShared(creature, l))

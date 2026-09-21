@@ -1,211 +1,62 @@
 import type { ScriptNode } from './types';
 
-/**
- * Silt Knives — lizardfolk ambush custodians of blackwater.
- *
- * BAR: Cold, wet, patient. Guest list in silt. Plain English.
- * Obsession: upstream litter, knives warm, water's guest list.
- */
+/** Silt Knives. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  { id: 'silt-knives_open_x_0', beat: 'open', lines: [
-    'Silt Knives: Cold blood. Warm knives. The water keeps a guest list. They told litterbugs not to dump upstream. Everybody dumps. Every single one. Your name is already in the silt. We can tell.',
-    'Silt Knives: Before we start — we are not Facilities. We are the guest list. People walk by, kick the murk, say "just looking," and leave. We have been waiting in blackwater a long time. Tonight somebody gets written in.',
-  ], weight: 2 },
-  { id: 'silt-knives_open_x_1', beat: 'open', lines: [
-    'Silt Knives: Blackwater keeps names. Ripple once and we start spelling. Hold still.',
-    'Silt Knives: Upstream litter arrives loud. Downstream knives arrive quiet. You smell like the first.',
-  ], weight: 2 },
-  { id: 'silt-knives_open_0', beat: 'open', lines: [
-    'Silt Knives: Downstream already wrote your name in silt. Upstream litter always arrives loud. Hold still — cold water keeps better records than you do.',
-    'Silt Knives: We wait under the wet-floor sign until the guest list fills. Your ripple just checked in. Knives warm for the ones who splash.',
-  ], weight: 2 },
-  { id: 'silt-knives_open_1', beat: 'open', lines: [
-    'Silt Knives: Wet floor signs lie. Under them the guest list is already wet with your name.',
-    'Silt Knives: Loud boots teach us early. Soft steps still get cut. The murk is fair that way.',
-  ], weight: 1 },
-  { id: 'silt-knives_open_2', beat: 'open', lines: [
-    'Silt Knives: Kick the silt and we RSVP you. Swim clean or drown quiet — those are the options.',
-    'Silt Knives: Lizard jokes die upstream. Down here we file with knives.',
-  ], weight: 1 },
-  { id: 'silt-knives_open_3', beat: 'open', lines: [
-    'Silt Knives: Quiet truth: we count scales after because silence feels like love. You are on the list until the water forgets.',
-    'Silt Knives: If you are careful upstream, prove it. If not — at least sink interesting.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
+  { id: 'silt-knives_open_x_0', beat: 'open', lines: ["Silt Knives: We clear the blackwater channel. Everything thrown in upstream eventually reaches our hands."], weight: 2 },
+  { id: 'silt-knives_open_x_1', beat: 'open', lines: ["Silt Knives: The water is shallow by that wall. Deep beside it. Watch where you put your weight."], weight: 2 },
+  { id: 'silt-knives_open_0', beat: 'open', lines: ["Silt Knives: We can wait underwater. Above it, everyone seems in a hurry."], weight: 2 },
+  { id: 'silt-knives_open_1', beat: 'open', lines: ["Silt Knives: We sharpen knives while the sediment settles. Gives us something useful to do."], weight: 1 },
+  { id: 'silt-knives_open_2', beat: 'open', lines: ["Silt Knives: Someone upstream keeps dumping broken mugs. We know every pattern now."], weight: 1 },
+  { id: 'silt-knives_open_3', beat: 'open', lines: ["Silt Knives: We found a whole cup once. We keep it on the dry shelf."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  { id: 'silt-knives_hhit_4', beat: 'hunter_hit', lines: [
-    'Silt Knives: Ow. You kicked silt into the guest list. Rude.',
-    'Silt Knives: Watch the knives. Water remembers.',
-  ] },
-  { id: 'silt-knives_hhit_5', beat: 'hunter_hit', lines: [
-    'Silt Knives: That ripple counted. Upstream trash usually apologizes softer.',
-    'Silt Knives: You cut the murk. Guest list updated. Knives still patient.',
-  ] },
-  { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Silt Knives: You warmed a knife. Bad manners. Silt still owns the guest list.',
-    'Silt Knives: We are leaking and still patient. Upstream litter caused the mood.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'silt-knives_hhit_4', beat: 'hunter_hit', lines: ["Silt Knives: Through the scales."] },
+  { id: 'silt-knives_hhit_5', beat: 'hunter_hit', lines: ["Silt Knives: That opened the guard."] },
+  { id: 'silt-knives_hhit_bld_6', beat: 'hunter_hit', lines: ["Silt Knives: I can't put weight on this side."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  { id: 'silt-knives_hmiss_7', beat: 'hunter_miss', lines: [
-    'Silt Knives: Whiff. Air is not on the guest list. Step into the murk or leave.',
-    'Silt Knives: Swing at us, not the murk.',
-  ] },
-  { id: 'silt-knives_hmiss_8', beat: 'hunter_miss', lines: [
-    'Silt Knives: Almost a cut. Almost.',
-    'Silt Knives: We wait on purpose. Aim for the warm knives.',
-  ] },
+  { id: 'silt-knives_hmiss_7', beat: 'hunter_miss', lines: ["Silt Knives: Your swing passed above the water."] },
+  { id: 'silt-knives_hmiss_8', beat: 'hunter_miss', lines: ["Silt Knives: The footing shifted in our favor."] },
 
-  { id: 'silt-knives_hcrit_9', beat: 'hunter_crit', lines: [
-    'Silt Knives: That cut found cold blood. Downstream just took notes.',
-    'Silt Knives: Hard hit on Blackwater. Something downstream flinched.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'silt-knives_hcrit_10', beat: 'hunter_crit', lines: [
-    'Silt Knives: You cut under the guest list. Ripple noted. Knives still patient.',
-    'Silt Knives: Almost a real cut. Stop narrating. Aim for the murk.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'silt-knives_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Silt Knives: Fled, then hit that hard? Pick a current.',
-    'Silt Knives: You kicked upstream, fled, then cut the murk honest. Name still getting written in silt.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'silt-knives_hcrit_9', beat: 'hunter_crit', lines: ["Silt Knives: That drove straight through."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'silt-knives_hcrit_10', beat: 'hunter_crit', lines: ["Silt Knives: I need a moment to get my breath."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'silt-knives_hcrit_ran_11', beat: 'hunter_crit', lines: ["Silt Knives: You drew us out of the water for that."], requireFlags: ["ran"], weight: 3 },
 
-  { id: 'silt-knives_kit_poison_12', beat: 'kit', lines: [
-    'Silt Knives: Poison in blackwater. We invented that taste.',
-    'Silt Knives: Toxin at the silt. Read the guest list.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'silt-knives_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Silt Knives: Fire on wet knives. Expensive hiss.',
-    'Silt Knives: Lit the murk. Hate the smell.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'silt-knives_kit_caltrops_14', beat: 'kit', lines: [
-    'Silt Knives: Floor spikes. We swim silt thicker.',
-    'Silt Knives: Caltrops for water. Okay.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'silt-knives_kit_acid-vial_15', beat: 'kit', lines: [
-    'Silt Knives: Acid in the water. Personal.',
-    'Silt Knives: Chemistry at the silt. Hate you more.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'silt-knives_kit_holy-water_16', beat: 'kit', lines: [
-    'Silt Knives: Holy rinse in blackwater. We are wet already.',
-    'Silt Knives: Blessings do not clear the guest list. Just dilute the murk.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'silt-knives_kit_smokestick_17', beat: 'kit', lines: [
-    'Silt Knives: Smoke. We smell blood through haze.',
-    'Silt Knives: Hid mid-ambush. Still hear you. Come downstream.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'silt-knives_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Silt Knives: Bear trap for silt. Soft laugh.',
-    'Silt Knives: Clamp for a guest that waits underwater. Adorable.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'silt-knives_kit_net_19', beat: 'kit', lines: [
-    'Silt Knives: Blackwater ruined mid-course. Guest list gets mean.',
-    'Silt Knives: Knives still warm under the trap.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'silt-knives_kit_healing-potion_20', beat: 'kit', lines: [
-    'Silt Knives: Blackwater sip. Betting you stay listed?',
-    'Silt Knives: Healing. Optimistic. We prefer guests nervous.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'silt-knives_kit_oil-flask_21', beat: 'kit', lines: [
-    'Silt Knives: Oil. Slick murk. Worse plan.',
-    'Silt Knives: Greased the water. We still cut clean.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: [
-    'Silt Knives: Guest list does not take intermissions. Your name is already wet.',
-    'Silt Knives: Souvenir hunt in blackwater finishes names early. Murk is listening.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: [
-    'Silt Knives: You left the murk to forage. Upstream litter energy — classic.',
-    'Silt Knives: Broke the swim to forage. Litterbug energy. Still coming upstream.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'silt-knives_kit_poison_12', beat: 'kit', lines: ["Silt Knives: Something on the edge is making my hands weak."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'silt-knives_kit_alchemists-fire_13', beat: 'kit', lines: ["Silt Knives: Fire on the dry bank!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'silt-knives_kit_caltrops_14', beat: 'kit', lines: ["Silt Knives: Sharp pieces in the walking path."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'silt-knives_kit_acid-vial_15', beat: 'kit', lines: ["Silt Knives: That water is burning!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'silt-knives_kit_holy-water_16', beat: 'kit', lines: ["Silt Knives: Splash in the eyes."], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'silt-knives_kit_smokestick_17', beat: 'kit', lines: ["Silt Knives: Can't see the bank through this."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'silt-knives_kit_hunting-trap_18', beat: 'kit', lines: ["Silt Knives: The jaws have caught my foot."], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'silt-knives_kit_net_19', beat: 'kit', lines: ["Silt Knives: The net's pulled tight around the arms."], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'silt-knives_kit_healing-potion_20', beat: 'kit', lines: ["Silt Knives: You repaired the wound. That changes the work."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'silt-knives_kit_oil-flask_21', beat: 'kit', lines: ["Silt Knives: We can see the oil on your blade."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'silt-knives_kit_gen_22', beat: 'kit', lines: ["Silt Knives: What have you taken out?"], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'silt-knives_kit_ran_23', beat: 'kit', lines: ["Silt Knives: You used the distance before we crossed it."], requireFlags: ["ran"], weight: 2 },
 
-  { id: 'silt-knives_mhit_24', beat: 'monster_hit', lines: [
-    'Silt Knives: That is for the unread guest list.',
-    'Silt Knives: Warm knives. You asked.',
-  ] },
-  { id: 'silt-knives_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Silt Knives: We are leaking. You are bleeding. Silt wins.',
-    'Silt Knives: Scraped. Coldest names in the water are still ours.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'silt-knives_mmiss_26', beat: 'monster_miss', lines: [
-    'Silt Knives: Missed. Enjoy the ripple while it lasts.',
-    'Silt Knives: Close call. Do not brand yourself on it.',
-  ] },
+  { id: 'silt-knives_mhit_24', beat: 'monster_hit', lines: ["Silt Knives: A clean opening."] },
+  { id: 'silt-knives_mhit_bld_25', beat: 'monster_hit', lines: ["Silt Knives: Still enough reach for that."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'silt-knives_mmiss_26', beat: 'monster_miss', lines: ["Silt Knives: Too far. Misread the depth."] },
 
-  { id: 'silt-knives_w_wind_27', beat: 'wound', lines: [
-    'Silt Knives: First scratch. Used to believe in careful upstream.',
-    'Silt Knives: Scratched. Annoyed. Still waiting.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'silt-knives_w_bru_28', beat: 'wound', lines: [
-    'Silt Knives: Deeper scratch. Want a story? Keep littering.',
-    'Silt Knives: Still here. Still cold. Name stays.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'silt-knives_w_bld_29', beat: 'wound', lines: [
-    'Silt Knives: Okay. Murk thin. Knives still warm.',
-    'Silt Knives: Thought the silt made us untouchable. You touched. Hate that.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'silt-knives_w_heart_30', beat: 'wound', lines: [
-    'Silt Knives: That one hurt more than a crossed-out name should.',
-    'Silt Knives: Stop staring at the water. Keep swinging.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'silt-knives_w_wind_27', beat: 'wound', lines: ["Silt Knives: One scale missing."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'silt-knives_w_bru_28', beat: 'wound', lines: ["Silt Knives: Blood in the water now."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'silt-knives_w_bld_29', beat: 'wound', lines: ["Silt Knives: I can't get back onto the bank."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'silt-knives_w_heart_30', beat: 'wound', lines: ["Silt Knives: We left the good cup on the dry shelf. I'd like another drink from it."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  { id: 'silt-knives_run_31', beat: 'run', lines: [
-    'Silt Knives: Ran from silt. Chase is a current.',
-    'Silt Knives: Flee upstream? Your name\'s already in the silt. We follow.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'silt-knives_run2_32', beat: 'run', lines: [
-    'Silt Knives: Twice. Personal. Pathetic swim.',
-    'Silt Knives: Second escape. Not mad. Faster current.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'silt-knives_chase_33', beat: 'chase', lines: [
-    'Silt Knives: Running from silt. Embarrassing for the water.',
-    'Silt Knives: You wanted distance. We wanted a clean cut. Guess.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'silt-knives_chase2_34', beat: 'chase', lines: [
-    'Silt Knives: Second chase. Downstream\'s ours.',
-    'Silt Knives: Run again and we will think you like the list. Do not.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'silt-knives_close_35', beat: 'close', lines: [
-    'Silt Knives: Back. Miss the cold?',
-    'Silt Knives: Range over. Better name next time.',
-  ] },
-  { id: 'silt-knives_close_smoke_36', beat: 'close', lines: [
-    'Silt Knives: Smoke up top does nothing. We still smell blood in the murk.',
-    'Silt Knives: Fog\'s gone. Still waiting. Nice try.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'silt-knives_run_31', beat: 'run', lines: ["Silt Knives: You've moved up the bank."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'silt-knives_run2_32', beat: 'run', lines: ["Silt Knives: Farther from the water again."], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'silt-knives_chase_33', beat: 'chase', lines: ["Silt Knives: Coming across the mud."], requireFlags: ["ran"], weight: 2 },
+  { id: 'silt-knives_chase2_34', beat: 'chase', lines: ["Silt Knives: The mud is taking what strength we have."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'silt-knives_close_35', beat: 'close', lines: ["Silt Knives: Within knife reach."] },
+  { id: 'silt-knives_close_smoke_36', beat: 'close', lines: ["Silt Knives: There. Past the smoke."], requireFlags: ["smoke"], weight: 3 },
 
-  { id: 'silt-knives_vic_37', beat: 'victory', lines: [
-    'Silt Knives: Guest list closed. Tell them Blackwater fought.',
-    'Silt Knives: Guest list wiped. Murk ruined. Worst swim of your life.',
-  ], weight: 1 },
-  { id: 'silt-knives_vic_heal_38', beat: 'victory', lines: [
-    'Silt Knives: Flask underwater, then cleared blackwater. Cheap guest. List remembers.',
-    'Silt Knives: Flask underwater, then finished the list. Guest with a flask. List cringes.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'silt-knives_vic_kite_39', beat: 'victory', lines: [
-    'Silt Knives: Made blackwater into a chase, then finished. Rude win.',
-    'Silt Knives: You turned blackwater into a lap. Hate that it worked.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'silt-knives_vic_crit_40', beat: 'victory', lines: [
-    'Silt Knives: Murk splits. List ends. We will give you that.',
-    'Silt Knives: Cleared the silt name and finished. No name left. Well done.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'silt-knives_vic_net_41', beat: 'victory', lines: [
-    'Silt Knives: Guest list drops your name. Upstream litter wins ugly.',
-    'Silt Knives: Blackwater down. Upstream litter wins ugly.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'silt-knives_vic_37', beat: 'victory', lines: ["Silt Knives: You've won the channel. We need the bank to rest."], weight: 1 },
+  { id: 'silt-knives_vic_heal_38', beat: 'victory', lines: ["Silt Knives: You recovered while our strength ran out."], requireFlags: ["healed"], weight: 3 },
+  { id: 'silt-knives_vic_kite_39', beat: 'victory', lines: ["Silt Knives: You made us cross the ground too many times."], requireFlags: ["ran"], weight: 3 },
+  { id: 'silt-knives_vic_crit_40', beat: 'victory', lines: ["Silt Knives: That blow settled the fight."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'silt-knives_vic_net_41', beat: 'victory', lines: ["Silt Knives: The net interrupted our reach. Your follow-through worked."], weight: 3 , requireFlags: ["netted"]},
 
-  { id: 'silt-knives_def_42', beat: 'defeat', lines: [
-    'Silt Knives: List closed. You lose. Water stays.',
-    'Silt Knives: Down. Blackwater wins. Do not bleed on the silt.',
-  ] },
-  { id: 'silt-knives_def_crit_43', beat: 'defeat', lines: [
-    'Silt Knives: Hit hard. Still lost. Talent without follow-through.',
-    'Silt Knives: Big swing. Bad ending. Guest list continues.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'silt-knives_def_ran_44', beat: 'defeat', lines: [
-    'Silt Knives: You fled and still sank. Same guest-list ending.',
-    'Silt Knives: Flee into a loss. We demo that every tide.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'silt-knives_def_heal_45', beat: 'defeat', lines: [
-    'Silt Knives: Healed and still went down. Optimistic. Wrong current.',
-    'Silt Knives: You drank, then went down in the murk. Guest list closes on litter.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'silt-knives_def_42', beat: 'defeat', lines: ["Silt Knives: The fight is over. Stay clear of the deep water while you recover."] },
+  { id: 'silt-knives_def_crit_43', beat: 'defeat', lines: ["Silt Knives: We felt that hard strike of yours."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'silt-knives_def_ran_44', beat: 'defeat', lines: ["Silt Knives: Caught you on the bank. No more crossing."], requireFlags: ["ran"], weight: 2 },
+  { id: 'silt-knives_def_heal_45', beat: 'defeat', lines: ["Silt Knives: Your drink kept the fight going."], requireFlags: ["healed"], weight: 3 },
 ];

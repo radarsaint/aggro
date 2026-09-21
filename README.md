@@ -71,7 +71,7 @@ Do **not** design or propose these as upcoming work unless Brendon asks:
 - Mid-fight kit pickers; Drive / Cleave jargon
 - MMO / spreadsheet chrome; player-facing **quota / CR / stamina** words (rest UI stays dating copy)
 - **Skullport × Xanathar × Pirate Borg** — next-floor **aware only**; do not design content
-- **R.O.D. voice polish** beyond what already ships on hot clears — parked
+- Additional R.O.D. systems beyond the event-aware commentary on paid prize tiers — parked
 
 See [docs/SCOPE.md](docs/SCOPE.md#scope-out--deferred).
 
@@ -163,3 +163,11 @@ Drop PNGs in `public/loot/frames/` and `public/loot/icons/`, then set `artSrc` o
 3. **Do not invent gameplay** (new gates, side bets, mid-fight verbs, Skullport content, player-facing CR/stamina).
 4. Banter rewrites: follow [docs/VOICE_BIBLES.md](docs/VOICE_BIBLES.md); change lines, not script graph ids, unless asked.
 5. Player-facing rest/economy language stays **dating copy** (dates, drink, call it a night, gold on the date) — not quota/stamina/stake jargon.
+
+## Player-facing writing pass
+
+All 30 profiles, combat scripts, and chat voices were revised. The 1,436 existing creature dialogue nodes retain their IDs and selectors; each now has one authored response. Match greetings reuse those scripts. Refusals and questions stay separate from fight confirmation, and repeated combat lines are suppressed.
+
+All 41 locker item names have descriptions and explicit use text. Equipment effects derive from the existing stat maps, and sell-only items are labeled. The 10 drafted kits have physical descriptions and readable rules. R.O.D. comments on recorded actions without inventing penalties. Defeat paperwork satirizes the company and adds no requirements.
+
+Run npm run check:dialogue and npm run build. See [the writing guide](docs/VOICE_BIBLES.md) and [the review notes](docs/WRITING_REVIEW.md). The roster, combat stats, kit effects, loot odds, prices, and rest rules are unchanged by this pass.

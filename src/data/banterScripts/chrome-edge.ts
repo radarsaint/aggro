@@ -1,225 +1,63 @@
 import type { ScriptNode } from './types';
 
-/**
- * Chrome Edge — living floor-model sword.
- *
- * BAR (from Jack / Cave research):
- * - Plain English. First read mid-fight. No metaphor soup.
- * - Quips: short, clear, character ("These pretzels suck.").
- * - Monologues: longer opens / big beats that build like Cave's lemon rant
- *   or Jack's pretzel→pony call. Funny, then mean, then funny.
- * - Obsession: polish, fingerprints, "just looking," being treated as décor.
- */
+/** Chrome Edge. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  // ── OPENS (monologue energy — pick one line, each is a little speech) ──
-  { id: 'chrome-edge_open_x_0', beat: 'open', lines: [
-    'Chrome Edge: Hey. Yeah, I talk. Surprise. They stuck a price tag on me, parked me under these lights, and told shoppers not to touch. Everybody touches. Every single one. You are already reaching. I can tell.',
-    'Chrome Edge: Before we start — I am not a prop. I am the floor model. People walk by, wipe their fingers on me, say "just looking," and leave. I have been "just looking" for a long time. Tonight somebody\'s leaving with a cut.',
-  ], weight: 2 },
-  { id: 'chrome-edge_open_x_1', beat: 'open', lines: [
-    'Chrome Edge: You are fighting a sword. Brave or stupid. I have decided it is funny. Demo\'s free. Blood\'s on you.',
-    'Chrome Edge: I used to wait for someone careful. Someone who\'d draw me like they meant it. Then I met a hundred sticky hands. You look like sticky hands. Prove me wrong. Or do not. Either way I fly.',
-  ], weight: 2 },
-  { id: 'chrome-edge_open_0', beat: 'open', lines: [
-    'Chrome Edge: I used to wait for careful hands. Then I met a hundred sticky ones. You look familiar. Draw and surprise me.',
-    'Chrome Edge: I polish myself under these lights until shoppers forget I am sharp. Touch the chrome and find out which of us walks out tagged as merchandise.',
-  ], weight: 2 },
-  { id: 'chrome-edge_open_1', beat: 'open', lines: [
-    'Chrome Edge: I look quiet on the rack. Then I leave the rack. Spoiler for the sticky hands: I swing myself.',
-    'Chrome Edge: Antimagic freaks me out. Sheaths freak me out. You? You just annoy me. Annoyance I can work with.',
-  ], weight: 1 },
-  { id: 'chrome-edge_open_2', beat: 'open', lines: [
-    'Chrome Edge: Quick tip from the carousel: if you came to browse, browse the candles. If you came to fight, stop sweating on the chrome.',
-    'Chrome Edge: I have heard every sheath joke. Every "nice sword" from people who never meant it. Say something new or swing.',
-  ], weight: 1 },
-  { id: 'chrome-edge_open_3', beat: 'open', lines: [
-    'Chrome Edge: Soft thing, and I hate saying it: I count the hands. Every hand that treated me like furniture. You are on the list until you aren\'t.',
-    'Chrome Edge: If you are different, show me. If you are not, at least be interesting when you lose.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── HITS (quips) ──
-  { id: 'chrome-edge_hhit_4', beat: 'hunter_hit', lines: [
-    'Chrome Edge: Ow. You scuffed the polish. That took me an hour.',
-    'Chrome Edge: Hey! Watch the finish. I live here.',
-  ] },
-  { id: 'chrome-edge_hhit_5', beat: 'hunter_hit', lines: [
-    'Chrome Edge: Okay. That one counted — and I was having a good polish day.',
-    'Chrome Edge: You put a fingerprint on the demo unit. Floor models remember that.',
-  ] },
-  { id: 'chrome-edge_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Chrome Edge: You put a nick in the demo unit. Price tag\'s still on. I am still prettier than your apology.',
-    'Chrome Edge: Dent in the demo unit. I am still hovering, and I am still mad about your fingerprints.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'chrome-edge_open_x_0', beat: 'open', lines: ["Chrome Edge: They put a DO NOT TOUCH sign beside me. Everyone reads it with one hand already reaching."], weight: 2 },
+  { id: 'chrome-edge_open_x_1', beat: 'open', lines: ["Chrome Edge: I'm the floor model. Every customer tests the balance, wipes a thumb on the blade, and buys the boxed one."], weight: 2 },
+  { id: 'chrome-edge_open_0', beat: 'open', lines: ["Chrome Edge: That lighting cost more than the display stand. I know because I have to listen to the manager."], weight: 2 },
+  { id: 'chrome-edge_open_1', beat: 'open', lines: ["Chrome Edge: I get polished every morning. By noon I can count the fingerprints."], weight: 1 },
+  { id: 'chrome-edge_open_2', beat: 'open', lines: ["Chrome Edge: I can fly, I can cut, and apparently I can stand here while people compare prices."], weight: 1 },
+  { id: 'chrome-edge_open_3', beat: 'open', lines: ["Chrome Edge: Once, someone picked me up and said I was well made. Didn't buy me. Still think about it."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── MISSES (quips) ──
-  { id: 'chrome-edge_hmiss_7', beat: 'hunter_miss', lines: [
-    'Chrome Edge: Missed. The air did not deserve that.',
-    'Chrome Edge: Swing at me, not the lighting.',
-  ] },
-  { id: 'chrome-edge_hmiss_8', beat: 'hunter_miss', lines: [
-    'Chrome Edge: That would\'ve been cool if it hit.',
-    'Chrome Edge: Hovering. It is kind of the whole joke.',
-  ] },
+  { id: 'chrome-edge_hhit_4', beat: 'hunter_hit', lines: ["Chrome Edge: That mark isn't polishing out."] },
+  { id: 'chrome-edge_hhit_5', beat: 'hunter_hit', lines: ["Chrome Edge: Watch the finish! It's part of me!"] },
+  { id: 'chrome-edge_hhit_bld_6', beat: 'hunter_hit', lines: ["Chrome Edge: I can't keep the point level."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  // ── CRITS ──
-  { id: 'chrome-edge_hcrit_9', beat: 'hunter_crit', lines: [
-    'Chrome Edge: Ow. You scuffed the demo unit. Price tag still on — temper optional.',
-    'Chrome Edge: Hard hit on a floor model. Someone in Merch just stood up.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'chrome-edge_hcrit_10', beat: 'hunter_crit', lines: [
-    'Chrome Edge: You found a gap in the polish. Floor models hold grudges longer than warranties.',
-    'Chrome Edge: That almost felt like you meant it. Do not talk. Swing again.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'chrome-edge_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Chrome Edge: You ran, then hit me that hard? Pick a personality.',
-    'Chrome Edge: You ran, then hit me that hard. I am impressed. I am also going to cut you.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'chrome-edge_hmiss_7', beat: 'hunter_miss', lines: ["Chrome Edge: You missed the expensive part. All of me."] },
+  { id: 'chrome-edge_hmiss_8', beat: 'hunter_miss', lines: ["Chrome Edge: That's why they let me demonstrate."] },
 
-  // ── KITS (clear, character-specific) ──
-  { id: 'chrome-edge_kit_poison_12', beat: 'kit', lines: [
-    'Chrome Edge: Poison. On a sword. I do not have blood, genius.',
-    'Chrome Edge: You brought toxin to a construct. Read the tag.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'chrome-edge_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Chrome Edge: Fire. On chrome. Do you know what polish costs?',
-    'Chrome Edge: You lit the demo. I am deciding if that is brave or just expensive.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'chrome-edge_kit_caltrops_14', beat: 'kit', lines: [
-    'Chrome Edge: Carpet nails. I fly. Think about that.',
-    'Chrome Edge: Caltrops. For a thing that never walks. Okay.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'chrome-edge_kit_acid-vial_15', beat: 'kit', lines: [
-    'Chrome Edge: Acid. On my finish. That is personal.',
-    'Chrome Edge: You threw chemistry at my reflection. I hate you a little more now.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'chrome-edge_kit_holy-water_16', beat: 'kit', lines: [
-    'Chrome Edge: Church rinse on chrome. I am not undead. I am merchandise.',
-    'Chrome Edge: Blessings do not sheath a flying sword. They just make me wet and annoyed.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'chrome-edge_kit_smokestick_17', beat: 'kit', lines: [
-    'Chrome Edge: Smoke. Clever — if I needed eyes. I do not.',
-    'Chrome Edge: You hid. I can still hear you breathing. Come back.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'chrome-edge_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Chrome Edge: Clamp for a hover. I want to laugh.',
-    'Chrome Edge: You set jaws for something that does not touch the ground. That is adorable.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'chrome-edge_kit_net_19', beat: 'kit', lines: [
-    'Chrome Edge: Flying sword grounded mid-demo. Sheaths are quieter.',
-    'Chrome Edge: Hover dies ugly. If this is flirting, stop.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'chrome-edge_kit_healing-potion_20', beat: 'kit', lines: [
-    'Chrome Edge: You drank up mid-fight. Planning to live? Cute.',
-    'Chrome Edge: Healing. Optimistic. I prefer my shoppers nervous.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'chrome-edge_kit_oil-flask_21', beat: 'kit', lines: [
-    'Chrome Edge: Oil. Floor\'s slippery. Your plan\'s worse.',
-    'Chrome Edge: You greased the aisle. I still cut clean.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'chrome-edge_kit_gen_22', beat: 'kit', lines: [
-    'Chrome Edge: Digging in the bag will not help. I am right here.',
-    'Chrome Edge: Props. Nice try. Swing.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'chrome-edge_kit_ran_23', beat: 'kit', lines: [
-    'Chrome Edge: You fled the carousel, then dug for props. Brave shopping. Bad fighting.',
-    'Chrome Edge: You ran, then dug in the bag. Floor models still come for fingerprints.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'chrome-edge_hcrit_9', beat: 'hunter_crit', lines: ["Chrome Edge: You bent me. I can feel the curve."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'chrome-edge_hcrit_10', beat: 'hunter_crit', lines: ["Chrome Edge: That went through the good steel."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'chrome-edge_hcrit_ran_11', beat: 'hunter_crit', lines: ["Chrome Edge: You drew me off the stand and caught the angle."], requireFlags: ["ran"], weight: 3 },
 
-  // ── MONSTER HITS / MISSES ──
-  { id: 'chrome-edge_mhit_24', beat: 'monster_hit', lines: [
-    'Chrome Edge: That is for the fingerprints.',
-    'Chrome Edge: Demo cut. You asked for it.',
-  ] },
-  { id: 'chrome-edge_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Chrome Edge: I am dented. You are bleeding. I am still the better-looking one.',
-    'Chrome Edge: Scratched to hell. Still the sharpest thing in this aisle.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'chrome-edge_mmiss_26', beat: 'monster_miss', lines: [
-    'Chrome Edge: Missed. Enjoy it. It ends.',
-    'Chrome Edge: Lucky inch. Do not build a personality on it.',
-  ] },
+  { id: 'chrome-edge_kit_poison_12', beat: 'kit', lines: ["Chrome Edge: Keep that green stuff off the grip."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'chrome-edge_kit_alchemists-fire_13', beat: 'kit', lines: ["Chrome Edge: My price tag is burning!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'chrome-edge_kit_caltrops_14', beat: 'kit', lines: ["Chrome Edge: I'm glad I don't have feet. Still don't want to land there."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'chrome-edge_kit_acid-vial_15', beat: 'kit', lines: ["Chrome Edge: That's eating the finish!"], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'chrome-edge_kit_holy-water_16', beat: 'kit', lines: ["Chrome Edge: Water spots. Wonderful."], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'chrome-edge_kit_smokestick_17', beat: 'kit', lines: ["Chrome Edge: I can't see my own display."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'chrome-edge_kit_hunting-trap_18', beat: 'kit', lines: ["Chrome Edge: You've caught the blade in the jaws!"], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'chrome-edge_kit_net_19', beat: 'kit', lines: ["Chrome Edge: Don't pull. You're twisting the guard!"], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'chrome-edge_kit_healing-potion_20', beat: 'kit', lines: ["Chrome Edge: Oh, come on. I worked on those cuts."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'chrome-edge_kit_oil-flask_21', beat: 'kit', lines: ["Chrome Edge: That's weapon oil. At least you came prepared."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'chrome-edge_kit_gen_22', beat: 'kit', lines: ["Chrome Edge: Are we demonstrating something else now?"], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'chrome-edge_kit_ran_23', beat: 'kit', lines: ["Chrome Edge: You got space to use it while I came after you."], requireFlags: ["ran"], weight: 2 },
 
-  // ── WOUNDS ──
-  { id: 'chrome-edge_w_wind_27', beat: 'wound', lines: [
-    'Chrome Edge: First scratch. I used to think careful hands existed.',
-    'Chrome Edge: Scratched. Annoyed. Still on display.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'chrome-edge_w_bru_28', beat: 'wound', lines: [
-    'Chrome Edge: Deep scratch. Keep going if you want a story.',
-    'Chrome Edge: Still here. Still sharp. Tag\'s still on.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'chrome-edge_w_bld_29', beat: 'wound', lines: [
-    'Chrome Edge: Okay. I am beat up. Polish ruined. Edge still works.',
-    'Chrome Edge: I thought nobody could touch me under these lights. You did. I hate that.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'chrome-edge_w_heart_30', beat: 'wound', lines: [
-    'Chrome Edge: That one hurt more than it should. Do not ask why.',
-    'Chrome Edge: Stop staring. Keep swinging. Weird silence helps nobody.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'chrome-edge_mhit_24', beat: 'monster_hit', lines: ["Chrome Edge: A clean cut. That's what I'm made for."] },
+  { id: 'chrome-edge_mhit_bld_25', beat: 'monster_hit', lines: ["Chrome Edge: The edge still works. The rest is struggling."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'chrome-edge_mmiss_26', beat: 'monster_miss', lines: ["Chrome Edge: I cut absolutely nothing. Don't look at the stand."] },
 
-  // ── RUN / CHASE / CLOSE ──
-  { id: 'chrome-edge_run_31', beat: 'run', lines: [
-    'Chrome Edge: You ran from a sword. I fly. Do the math.',
-    'Chrome Edge: Breaking contact? Fine. I will come to you.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'chrome-edge_run2_32', beat: 'run', lines: [
-    'Chrome Edge: Twice. You ran twice. Pathetic and personal.',
-    'Chrome Edge: Second escape. I am not mad. I am faster.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'chrome-edge_chase_33', beat: 'chase', lines: [
-    'Chrome Edge: Chase is undignified. So is running from a floor model.',
-    'Chrome Edge: You wanted distance. I wanted a clean cut. Guess who wins.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'chrome-edge_chase2_34', beat: 'chase', lines: [
-    'Chrome Edge: Second chase. You do not get the aisle. I do.',
-    'Chrome Edge: Run again and I will think you like me. Do not.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'chrome-edge_close_35', beat: 'close', lines: [
-    'Chrome Edge: Back. Miss me?',
-    'Chrome Edge: Range is over. Hope you brought a better plan.',
-  ] },
-  { id: 'chrome-edge_close_smoke_36', beat: 'close', lines: [
-    'Chrome Edge: Smoke is cute if you are selling curtains. I do not need eyes to cut you.',
-    'Chrome Edge: Fog\'s gone. I am still here. Sweat on the chrome. Nice try.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'chrome-edge_w_wind_27', beat: 'wound', lines: ["Chrome Edge: First scratch. I can see it from here."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'chrome-edge_w_bru_28', beat: 'wound', lines: ["Chrome Edge: That's a dent. A real dent."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'chrome-edge_w_bld_29', beat: 'wound', lines: ["Chrome Edge: People always touched me. Nobody ever damaged me like this."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'chrome-edge_w_heart_30', beat: 'wound', lines: ["Chrome Edge: I wanted someone to say I was well made again. This isn't how I pictured it."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  // ── VICTORY (monologue-capable) ──
-  { id: 'chrome-edge_vic_37', beat: 'victory', lines: [
-    'Chrome Edge: Demo over. Walk out. Tell them the floor model put up a fight.',
-    'Chrome Edge: Demo voided. Polish ruined. Lights still on. Worst browse of your life.',
-  ], weight: 1 },
-  { id: 'chrome-edge_vic_heal_38', beat: 'victory', lines: [
-    'Chrome Edge: Flask mid-demo, then you finished me. Soft move. I almost respect it.',
-    'Chrome Edge: Flask during the demo, then you finished the polish. Warranty voided. Both fit you.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'chrome-edge_vic_kite_39', beat: 'victory', lines: [
-    'Chrome Edge: You made me chase you around my own aisle, then finished it. Floor models do not jog.',
-    'Chrome Edge: You made me chase you, then won. Jogging as a plan. I hate that it worked.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'chrome-edge_vic_crit_40', beat: 'victory', lines: [
-    'Chrome Edge: Chrome splits. Demo ends. I will give you that.',
-    'Chrome Edge: You found the weak steel and finished it. No polish left. Well done, thief.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'chrome-edge_vic_net_41', beat: 'victory', lines: [
-    'Chrome Edge: Floor model grounded face-down. Price tag still lied.',
-    'Chrome Edge: Sword hits the tile and stays there. Sticky hands finally stop.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'chrome-edge_run_31', beat: 'run', lines: ["Chrome Edge: You've stepped beyond the display."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'chrome-edge_run2_32', beat: 'run', lines: ["Chrome Edge: Off around the aisle again?"], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'chrome-edge_chase_33', beat: 'chase', lines: ["Chrome Edge: I have to leave the lighting to follow you."], requireFlags: ["ran"], weight: 2 },
+  { id: 'chrome-edge_chase2_34', beat: 'chase', lines: ["Chrome Edge: I'm a sword. Why does chasing feel exhausting?"], requireFlags: ["ran2"], weight: 4 },
+  { id: 'chrome-edge_close_35', beat: 'close', lines: ["Chrome Edge: Back in cutting range."] },
+  { id: 'chrome-edge_close_smoke_36', beat: 'close', lines: ["Chrome Edge: There you are. Couldn't see through the haze."], requireFlags: ["smoke"], weight: 3 },
 
-  // ── DEFEAT ──
-  { id: 'chrome-edge_def_42', beat: 'defeat', lines: [
-    'Chrome Edge: Demo over. You lose. I stay pretty. Tag stays on.',
-    'Chrome Edge: Down. Floor model wins. Try not to bleed on the merchandise.',
-  ] },
-  { id: 'chrome-edge_def_crit_43', beat: 'defeat', lines: [
-    'Chrome Edge: You hit hard and still died. Talent. No follow-through.',
-    'Chrome Edge: Hard swing. Floor models are supposed to stay pretty under the lights. I am annoyed.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'chrome-edge_def_ran_44', beat: 'defeat', lines: [
-    'Chrome Edge: You ran and still died. Fast feet. Same result.',
-    'Chrome Edge: Flee into a loss. We demo that joke every shift.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: [
-    'Chrome Edge: You healed and still went down. Optimistic. Wrong.',
-    'Chrome Edge: You drank, then dropped under the lights. Bad look on a sticky-handed shopper.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'chrome-edge_vic_37', beat: 'victory', lines: ["Chrome Edge: Demo over. You beat the floor model."], weight: 1 },
+  { id: 'chrome-edge_vic_heal_38', beat: 'victory', lines: ["Chrome Edge: Your potion undid the cuts faster than I could finish them."], requireFlags: ["healed"], weight: 3 },
+  { id: 'chrome-edge_vic_kite_39', beat: 'victory', lines: ["Chrome Edge: You wore out a flying sword. I'm furious that it worked."], requireFlags: ["ran"], weight: 3 },
+  { id: 'chrome-edge_vic_crit_40', beat: 'victory', lines: ["Chrome Edge: That blow ruined the edge. You earned the win."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'chrome-edge_vic_net_41', beat: 'victory', lines: ["Chrome Edge: The net ruined the demonstration. Effective, damn it."], weight: 3 , requireFlags: ["netted"]},
+
+  { id: 'chrome-edge_def_42', beat: 'defeat', lines: ["Chrome Edge: Demo finished. Please stay down until you've recovered."] },
+  { id: 'chrome-edge_def_crit_43', beat: 'defeat', lines: ["Chrome Edge: You put a bend in me. I'll remember that."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'chrome-edge_def_ran_44', beat: 'defeat', lines: ["Chrome Edge: I caught up. Now I want my stand back."], requireFlags: ["ran"], weight: 2 },
+  { id: 'chrome-edge_def_heal_45', beat: 'defeat', lines: ["Chrome Edge: You made me work for that after the potion."], requireFlags: ["healed"], weight: 3 },
 ];

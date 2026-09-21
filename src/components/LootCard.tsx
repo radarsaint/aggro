@@ -2,6 +2,7 @@ import type { InventoryItem } from '../types';
 import { resolveLootVisual } from '../data/lootArt';
 import { isEquippable, type EquipSlot } from '../data/equipment';
 import { sellPrice } from '../data/rewards';
+import { describeItem } from '../data/itemCopy';
 
 interface Props {
   item: InventoryItem;
@@ -36,6 +37,7 @@ export function LootCard({
   const { frame, icon } = resolveLootVisual(item);
   const compact = variant === 'inventory';
   const price = sellPrice(item);
+  const copy = describeItem(item);
   const canEquip = compact && isEquippable(item);
   const isEquipped = equippedSlot != null;
 
@@ -70,6 +72,8 @@ export function LootCard({
             )}
           </div>
           <div className="loot-card__kind">{item.kind}</div>
+          <p className="loot-card__description">{copy.description}</p>
+          <p className="loot-card__effect">{copy.effect}</p>
           <span
             className={`loot-card__rarity loot-card__rarity--${item.rarity.toLowerCase()}${
               variant === 'reward' ? ' loot-card__rarity--demoted' : ''

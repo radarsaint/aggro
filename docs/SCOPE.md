@@ -1,5 +1,8 @@
 # AGGRO — Scope, goals, and non-goals
 
+Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the current writing standard. Profiles, chat, combat, item descriptions, and reward commentary are revised. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
+
+
 **Audience:** Brendon, external collaborators, and other AI tools working on this repo independently.  
 **Rule:** Match `src/`. Do not invent gameplay, floors, or gates that are not shipped or explicitly greenlit below.  
 **Companion docs:** [README.md](../README.md) · [EARTHFALL_STATE.md](EARTHFALL_STATE.md) · [CHANGELOG.md](../CHANGELOG.md) · [VERSIONING.md](VERSIONING.md)
@@ -98,7 +101,7 @@ Systems that **exist in code** as of 0.1.0. If you cannot find it under `src/`, 
 | Player-facing **quota**, **CR**, **stamina** words | Out — rest UI is dating copy |
 | **Skullport × Xanathar × Pirate Borg** | **Aware only** — do not design deck, theme, or loot for it |
 | Full second floor content | Out until greenlit (stub `comingSoon` is not a license to invent) |
-| R.O.D. voice polish / loot-box theater beyond shipped hot framing | Parked |
+| Additional R.O.D. systems beyond the revised hot framing | Parked |
 | Loss-with-teeth systems beyond current stake-on-PIP | Parked |
 
 ---

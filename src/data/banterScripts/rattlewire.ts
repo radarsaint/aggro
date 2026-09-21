@@ -1,221 +1,63 @@
 import type { ScriptNode } from './types';
 
-/**
- * Rattlewire — scheduling skeleton.
- *
- * BAR: Plain English. Monologue opens. Short quips.
- * Calendar-precise. Clicking = punctuation. Obsession: appointments, invites, on-time forever.
- */
+/** Rattlewire. Voice and behavior: docs/VOICE_BIBLES.md. */
 export const nodes: ScriptNode[] = [
-  // ── OPENS ──
-  { id: 'rattlewire_open_x_0', beat: 'open', lines: [
-    'Rattlewire: You are… late. I kept every appointment. Misplaced the meat. Shall we begin on the second? Click.',
-    'Rattlewire: Hey. Yeah, I talk. Clicking is punctuation, not a mood. Your invite is declined with perfect posture. Forever.',
-  ], weight: 2 },
-  { id: 'rattlewire_open_x_1', beat: 'open', lines: [
-    'Rattlewire: I do not ghost. I reschedule into violence. Flesh was a distraction. Punctuality is not. Your femur has an appointment.',
-    'Rattlewire: Scheduling Skeleton. Ossuary annex calendar. On time forever. No late cancels. No-shows become furniture.',
-  ], weight: 2 },
-  { id: 'rattlewire_open_0', beat: 'open', lines: [
-    'Rattlewire: Be décor or be punctual. Those are the options on the agenda. Stand straight.',
-    'Rattlewire: Meetings end when they should. So will you. On the second. Click.',
-  ], weight: 2 },
-  { id: 'rattlewire_open_1', beat: 'open', lines: [
-    'Rattlewire: Flinching is a schedule conflict. Hammers are a fashion crime. Show up. On time.',
-    'Rattlewire: Quiet halls. Order. Calendar holds that outlive flesh. Yours starts now.',
-  ], weight: 1 },
-  { id: 'rattlewire_open_2', beat: 'open', lines: [
-    'Rattlewire: Came to cancel? Leave a note. Came to fight? Stop sweating on the calendar.',
-    'Rattlewire: I have heard every "who were you." Say something new or swing. On the second.',
-  ], weight: 1 },
-  { id: 'rattlewire_open_3', beat: 'open', lines: [
-    'Rattlewire: I keep the calendar because someone has to outlive the meat. You are on hold until you aren\'t.',
-    'Rattlewire: Maybe you will show up honest. Probably not. Be punctual when you lose either way. Click.',
-  ], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── HITS ──
-  { id: 'rattlewire_hhit_4', beat: 'hunter_hit', lines: [
-    'Rattlewire: Ow. Off-schedule pain. I resent the delay. Click.',
-    'Rattlewire: Ow. Posture slipped. Next slot arrives uglier and on the second. Click.',
-  ] },
-  { id: 'rattlewire_hhit_5', beat: 'hunter_hit', lines: [
-    'Rattlewire: You hit Scheduling Skeleton. The calendar still stands straight. Click.',
-    'Rattlewire: Appointment continues. Click.',
-  ] },
-  { id: 'rattlewire_hhit_bld_6', beat: 'hunter_hit', lines: [
-    'Rattlewire: I am leaking. You are still soft. Fix one before the next slot.',
-    'Rattlewire: Beat up and still punctual. That is the calendar talking.',
-  ], requireFlags: ["wound:Bloodied"], weight: 3 },
+  { id: 'rattlewire_open_x_0', beat: 'open', lines: ["Rattlewire: Your appointment is on the board. Mine has been on it for sixty years."], weight: 2 },
+  { id: 'rattlewire_open_x_1', beat: 'open', lines: ["Rattlewire: I kept the calendar after I lost the flesh. Priorities survive."], weight: 2 },
+  { id: 'rattlewire_open_0', beat: 'open', lines: ["Rattlewire: One moment. I need to straighten this cuff. There's no wrist to stop it sliding."], weight: 2 },
+  { id: 'rattlewire_open_1', beat: 'open', lines: ["Rattlewire: I schedule my own breaks. Then I forget to take them."], weight: 1 },
+  { id: 'rattlewire_open_2', beat: 'open', lines: ["Rattlewire: The clock runs fast. I correct it every morning. We have a routine."], weight: 1 },
+  { id: 'rattlewire_open_3', beat: 'open', lines: ["Rattlewire: I remember every name on the old appointment book. The paper is almost gone."], weight: 1, setFlags: ["opened_heart"], nextArc: 'heartstring' },
 
-  // ── MISSES ──
-  { id: 'rattlewire_hmiss_7', beat: 'hunter_miss', lines: [
-    'Rattlewire: Missed. Reschedule your intent. Click. Decline.',
-    'Rattlewire: Air. Reschedule your intent. Punctuality does not care. Click.',
-  ] },
-  { id: 'rattlewire_hmiss_8', beat: 'hunter_miss', lines: [
-    'Rattlewire: Swing at me, not the hourglass.',
-    'Rattlewire: That would\'ve been on the second if it hit.',
-  ] },
+  { id: 'rattlewire_hhit_4', beat: 'hunter_hit', lines: ["Rattlewire: That knocked my cuff clean off."] },
+  { id: 'rattlewire_hhit_5', beat: 'hunter_hit', lines: ["Rattlewire: I heard a small bone go somewhere."] },
+  { id: 'rattlewire_hhit_bld_6', beat: 'hunter_hit', lines: ["Rattlewire: My arm isn't following the schedule."], requireFlags: ["wound:Bloodied"], weight: 3 },
 
-  // ── CRITS ──
-  { id: 'rattlewire_hcrit_9', beat: 'hunter_crit', lines: [
-    'Rattlewire: That one hurt. Keep going — I am listening. Between clicks.',
-    'Rattlewire: Hard hit. The hour hand jumped. Someone upstairs noticed. Click.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'rattlewire_hcrit_10', beat: 'hunter_crit', lines: [
-    'Rattlewire: Okay. You found the hold under the posture. Late fee applies. Click.',
-    'Rattlewire: That almost felt like a calendar hold. Do not talk. Swing again. Click.',
-  ], weight: 2, setFlags: ["hunter_crit"] },
-  { id: 'rattlewire_hcrit_ran_11', beat: 'hunter_crit', lines: [
-    'Rattlewire: You ran, then hit me that hard? Late runner with a finishing move.',
-    'Rattlewire: You fled the slot, then landed a hit. Invite still declined. Click.',
-  ], requireFlags: ["ran"], weight: 3 },
+  { id: 'rattlewire_hmiss_7', beat: 'hunter_miss', lines: ["Rattlewire: Your timing was just off."] },
+  { id: 'rattlewire_hmiss_8', beat: 'hunter_miss', lines: ["Rattlewire: Between the ribs. Plenty of space."] },
 
-  // ── KITS ──
-  { id: 'rattlewire_kit_poison_12', beat: 'kit', lines: [
-    'Rattlewire: Poison on a calendar that outlived flesh. Chemistry missed its slot.',
-    'Rattlewire: My blood misplaced itself years ago. Your vial is an unscheduled invite. Declined. Click.',
-  ], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
-  { id: 'rattlewire_kit_alchemists-fire_13', beat: 'kit', lines: [
-    'Rattlewire: Fire mid-appointment. Off-calendar. Billing the minute.',
-    'Rattlewire: Ossuary arson. I kept the posture. You kept the match. Click.',
-  ], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
-  { id: 'rattlewire_kit_caltrops_14', beat: 'kit', lines: [
-    'Rattlewire: Spikes on the agenda. I step on the second anyway. Posture perfect.',
-    'Rattlewire: Spite underfoot is still on time. Your ankles are the late fee.',
-  ], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
-  { id: 'rattlewire_kit_acid-vial_15', beat: 'kit', lines: [
-    'Rattlewire: Acid like a late cancel. Logged on bone.',
-    'Rattlewire: Chemistry declined with perfect posture. Click.',
-  ], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
-  { id: 'rattlewire_kit_holy-water_16', beat: 'kit', lines: [
-    'Rattlewire: Blessed water on undead scheduling. Faith smells like tardiness.',
-    'Rattlewire: Turning the undead is a calendar conflict. Wet is just rude. Click.',
-  ], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
-  { id: 'rattlewire_kit_smokestick_17', beat: 'kit', lines: [
-    'Rattlewire: Smoke cannot hide a pulse between clicks. I hear you.',
-    'Rattlewire: Hide mid-appointment? Ossuary punctuation finds no-shows.',
-  ], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
-  { id: 'rattlewire_kit_hunting-trap_18', beat: 'kit', lines: [
-    'Rattlewire: Trap for punctual bones. Irony noted. Time noted.',
-    'Rattlewire: Jaws for an invite that never left. Romance cancelled. The hold remains.',
-  ], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
-  { id: 'rattlewire_kit_net_19', beat: 'kit', lines: [
-    'Rattlewire: Mesh like a soft hold. Commitment: filed. Click.',
-    'Rattlewire: Appointment held. Panic noted. Declined forever. Click.',
-  ], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
-  { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: [
-    'Rattlewire: You drank up mid-slot. Planning to live? I prefer you rare and on the second.',
-    'Rattlewire: A bandage will not move the appointment. You are still late. Click.',
-  ], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
-  { id: 'rattlewire_kit_oil-flask_21', beat: 'kit', lines: [
-    'Rattlewire: Oil like a no-show excuse on bone.',
-    'Rattlewire: Annex slick. I still arrive on the second. Posture perfect. Click.',
-  ], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
-  { id: 'rattlewire_kit_gen_22', beat: 'kit', lines: [
-    'Rattlewire: Unscheduled props mid-slot. Rude. Off the invite.',
-    'Rattlewire: Props like a late invite. I answer in bruises. On time.',
-  ], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
-  { id: 'rattlewire_kit_ran_23', beat: 'kit', lines: [
-    'Rattlewire: You skipped the slot, then shopped your pockets. Late. Declined. Click.',
-    'Rattlewire: Dash and forage. Ossuary declines. On the second. Click.',
-  ], requireFlags: ["ran"], weight: 2 },
+  { id: 'rattlewire_hcrit_9', beat: 'hunter_crit', lines: ["Rattlewire: Something has come unhinged."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'rattlewire_hcrit_10', beat: 'hunter_crit', lines: ["Rattlewire: That was a substantial interruption."], weight: 2, setFlags: ["hunter_crit"] },
+  { id: 'rattlewire_hcrit_ran_11', beat: 'hunter_crit', lines: ["Rattlewire: You made me follow, then met me on the turn."], requireFlags: ["ran"], weight: 3 },
 
-  // ── MONSTER ──
-  { id: 'rattlewire_mhit_24', beat: 'monster_hit', lines: [
-    'Rattlewire: On the second. You matched. Appointment continues.',
-    'Rattlewire: That is for the unread invites and the no-shows.',
-  ] },
-  { id: 'rattlewire_mhit_bld_25', beat: 'monster_hit', lines: [
-    'Rattlewire: I am leaking. You are leaking more. Fair on the second. Click.',
-    'Rattlewire: Beat up and still punctual. Posture talks.',
-  ], requireFlags: ["wound:Bloodied"], weight: 2 },
-  { id: 'rattlewire_mmiss_26', beat: 'monster_miss', lines: [
-    'Rattlewire: Missed. Enjoy it. I am still circling on schedule.',
-    'Rattlewire: Inch of grace. It expires when Scheduling gets bored of waiting. Click.',
-  ] },
+  { id: 'rattlewire_kit_poison_12', beat: 'kit', lines: ["Rattlewire: I should keep that away from the appointment book."], kitId: 'poison', weight: 2, setFlags: ["kit:poison"] },
+  { id: 'rattlewire_kit_alchemists-fire_13', beat: 'kit', lines: ["Rattlewire: The calendar's paper!"], kitId: 'alchemists-fire', weight: 2, setFlags: ["kit:alchemists-fire"] },
+  { id: 'rattlewire_kit_caltrops_14', beat: 'kit', lines: ["Rattlewire: Those fit neatly between my toes. Unfortunately."], kitId: 'caltrops', weight: 2, setFlags: ["kit:caltrops"] },
+  { id: 'rattlewire_kit_acid-vial_15', beat: 'kit', lines: ["Rattlewire: My cuff is dissolving."], kitId: 'acid-vial', weight: 2, setFlags: ["kit:acid-vial"] },
+  { id: 'rattlewire_kit_holy-water_16', beat: 'kit', lines: ["Rattlewire: That's going straight through the bones!"], kitId: 'holy-water', weight: 2, setFlags: ["kit:holy-water"] },
+  { id: 'rattlewire_kit_smokestick_17', beat: 'kit', lines: ["Rattlewire: I can't see the clock."], kitId: 'smokestick', weight: 2, setFlags: ["kit:smokestick"] },
+  { id: 'rattlewire_kit_hunting-trap_18', beat: 'kit', lines: ["Rattlewire: My ankle is caught in the mechanism."], kitId: 'hunting-trap', weight: 2, setFlags: ["kit:hunting-trap"] },
+  { id: 'rattlewire_kit_net_19', beat: 'kit', lines: ["Rattlewire: The mesh has all my joints."], kitId: 'net', weight: 2, setFlags: ["kit:net"] },
+  { id: 'rattlewire_kit_healing-potion_20', beat: 'kit', lines: ["Rattlewire: You repaired the damage. I'll need more time."], kitId: 'healing-potion', weight: 2, setFlags: ["healed","kit:healing-potion"] },
+  { id: 'rattlewire_kit_oil-flask_21', beat: 'kit', lines: ["Rattlewire: You've oiled the weapon. I usually oil the clock."], kitId: 'oil-flask', weight: 2, setFlags: ["kit:oil-flask"] },
+  { id: 'rattlewire_kit_gen_22', beat: 'kit', lines: ["Rattlewire: That wasn't in the appointment notes."], forbidFlags: ["kit:poison","kit:alchemists-fire","kit:caltrops","kit:acid-vial","kit:holy-water","kit:smokestick","kit:hunting-trap","kit:net","kit:healing-potion","kit:oil-flask"], weight: 1 },
+  { id: 'rattlewire_kit_ran_23', beat: 'kit', lines: ["Rattlewire: You used the interval better than I did."], requireFlags: ["ran"], weight: 2 },
 
-  // ── WOUNDS ──
-  { id: 'rattlewire_w_wind_27', beat: 'wound', lines: [
-    'Rattlewire: First nick. Calendar already attached.',
-    'Rattlewire: Tickled bone. Upgrade intent. On the second.',
-  ], woundBand: 'Winded', setFlags: ["wound:Winded"] },
-  { id: 'rattlewire_w_bru_28', beat: 'wound', lines: [
-    'Rattlewire: Color under posture. Keep the hold.',
-    'Rattlewire: Deep scratch. Persistent — like a hold that never ends.',
-  ], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
-  { id: 'rattlewire_w_bld_29', beat: 'wound', lines: [
-    'Rattlewire: Okay. I am leaking. You are still soft. Finish it or become décor.',
-    'Rattlewire: Beat up and standing. On time forever. Click.',
-  ], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
-  { id: 'rattlewire_w_heart_30', beat: 'wound', lines: [
-    'Rattlewire: That landed on something soft I wasn\'t advertising on the invite.',
-    'Rattlewire: Do not look at me like that while you are winning. It is rude. Off-calendar.',
-  ], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
+  { id: 'rattlewire_mhit_24', beat: 'monster_hit', lines: ["Rattlewire: Right on time."] },
+  { id: 'rattlewire_mhit_bld_25', beat: 'monster_hit', lines: ["Rattlewire: Still one functioning arm."], requireFlags: ["wound:Bloodied"], weight: 2 },
+  { id: 'rattlewire_mmiss_26', beat: 'monster_miss', lines: ["Rattlewire: I was a second early."] },
 
-  // ── RUN / CHASE / CLOSE ──
-  { id: 'rattlewire_run_31', beat: 'run', lines: [
-    'Rattlewire: You ran from the ossuary? Late cancel. Chase clause activates. Click.',
-    'Rattlewire: Leaving mid-slot? Appointments do not pause.',
-  ], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
-  { id: 'rattlewire_run2_32', beat: 'run', lines: [
-    'Rattlewire: Twice. You ran twice. Late cancel with legs.',
-    'Rattlewire: Second escape. Declined twice. Click.',
-  ], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
-  { id: 'rattlewire_chase_33', beat: 'chase', lines: [
-    'Rattlewire: Running from perfect posture is a schedule conflict you will lose.',
-    'Rattlewire: You wanted distance. I wanted the second. Guess who arrives on time.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'rattlewire_chase2_34', beat: 'chase', lines: [
-    'Rattlewire: Second chase. You do not get the annex. I do.',
-    'Rattlewire: Run again and I will think you like the calendar. Do not. Click.',
-  ], requireFlags: ["ran2"], weight: 4 },
-  { id: 'rattlewire_close_35', beat: 'close', lines: [
-    'Rattlewire: Back. Miss the second?',
-    'Rattlewire: Range is over. Perfect posture. Click.',
-  ] },
-  { id: 'rattlewire_close_smoke_36', beat: 'close', lines: [
-    'Rattlewire: Smoke does not excuse lateness. I still hear you between the clicks.',
-    'Rattlewire: Fog\'s gone. Posture perfect. Miss me? Click.',
-  ], requireFlags: ["smoke"], weight: 3 },
+  { id: 'rattlewire_w_wind_27', beat: 'wound', lines: ["Rattlewire: A loose joint."], woundBand: 'Winded', setFlags: ["wound:Winded"] },
+  { id: 'rattlewire_w_bru_28', beat: 'wound', lines: ["Rattlewire: The frame won't keep straight."], woundBand: 'Bruised', setFlags: ["wound:Bruised"] },
+  { id: 'rattlewire_w_bld_29', beat: 'wound', lines: ["Rattlewire: I'm going to miss my next appointment."], woundBand: 'Bloodied', weight: 2, setFlags: ["wound:Bloodied","bloodied_seen"] },
+  { id: 'rattlewire_w_heart_30', beat: 'wound', lines: ["Rattlewire: I'd like to put the old book somewhere dry first."], requireFlags: ["opened_heart"], woundBand: 'Bruised', weight: 3, arc: 'heartstring' },
 
-  // ── VICTORY ──
-  { id: 'rattlewire_vic_37', beat: 'victory', lines: [
-    'Rattlewire: Appointment ends. Leave the posture standing. Click.',
-    'Rattlewire: Fine. Calendar holds your name under Declined Forever. Click.',
-  ], weight: 1 },
-  { id: 'rattlewire_vic_heal_38', beat: 'victory', lines: [
-    'Rattlewire: You drank and still beat me. Almost punctual. Almost.',
-    'Rattlewire: You healed, then cancelled me. Late fee waived. Hold lost. Click.',
-  ], requireFlags: ["healed"], weight: 3 },
-  { id: 'rattlewire_vic_kite_39', beat: 'victory', lines: [
-    'Rattlewire: You dragged me around my own annex, then finished it. Jogging is a hate crime against posture.',
-    'Rattlewire: You ran me ragged and finished on someone else\'s second. Late forever. Click.',
-  ], requireFlags: ["ran"], weight: 3 },
-  { id: 'rattlewire_vic_crit_40', beat: 'victory', lines: [
-    'Rattlewire: You cut through on the second. Soft under the calendar. Fight\'s over.',
-    'Rattlewire: Hard hit, then early end. Precise. Declined forever. Click.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'rattlewire_vic_net_41', beat: 'victory', lines: [
-    'Rattlewire: Appointment terminated early. Click. Forever late.',
-    'Rattlewire: Held, then ended on the second. Click. Filed.',
-  ], requireFlags: ["netted"], weight: 3 },
+  { id: 'rattlewire_run_31', beat: 'run', lines: ["Rattlewire: You've stepped outside the allotted reach."], forbidFlags: ["ran"], weight: 2, setFlags: ["ran"], nextArc: 'chase' },
+  { id: 'rattlewire_run2_32', beat: 'run', lines: ["Rattlewire: You moved again. I need to amend the seating plan."], requireFlags: ["ran"], weight: 3, setFlags: ["ran2"] },
+  { id: 'rattlewire_chase_33', beat: 'chase', lines: ["Rattlewire: Following. The clock can wait."], requireFlags: ["ran"], weight: 2 },
+  { id: 'rattlewire_chase2_34', beat: 'chase', lines: ["Rattlewire: This meeting is running long."], requireFlags: ["ran2"], weight: 4 },
+  { id: 'rattlewire_close_35', beat: 'close', lines: ["Rattlewire: Back where I can reach."] },
+  { id: 'rattlewire_close_smoke_36', beat: 'close', lines: ["Rattlewire: The smoke has cleared enough to resume the appointment."], requireFlags: ["smoke"], weight: 3 },
 
-  // ── DEFEAT ──
-  { id: 'rattlewire_def_42', beat: 'defeat', lines: [
-    'Rattlewire: Appointment concluded. Décor pending. On time. Perfect posture. Click.',
-    'Rattlewire: Down. On brand. Stand straight one last time.',
-  ] },
-  { id: 'rattlewire_def_crit_43', beat: 'defeat', lines: [
-    'Rattlewire: Hard hit. Still late. No follow-up slot. Click.',
-    'Rattlewire: Big hit on the second. Death on the third. Calendar closes it. Click.',
-  ], requireFlags: ["hunter_crit"], weight: 2 },
-  { id: 'rattlewire_def_ran_44', beat: 'defeat', lines: [
-    'Rattlewire: You ran and still died. Late cancel with consequences.',
-    'Rattlewire: Flee into décor. Calendar writes that joke often. Click.',
-  ], requireFlags: ["ran"], weight: 2 },
-  { id: 'rattlewire_def_heal_45', beat: 'defeat', lines: [
-    'Rattlewire: You healed and still went down. Optimistic invitee. Wrong.',
-    'Rattlewire: You healed, then became furniture. Filed. Click.',
-  ], requireFlags: ["healed"], weight: 3 },
+  { id: 'rattlewire_vic_37', beat: 'victory', lines: ["Rattlewire: Your victory is recorded. I'll clear the afternoon."], weight: 1 },
+  { id: 'rattlewire_vic_heal_38', beat: 'victory', lines: ["Rattlewire: Your recovery changed the timetable."], requireFlags: ["healed"], weight: 3 },
+  { id: 'rattlewire_vic_kite_39', beat: 'victory', lines: ["Rattlewire: You used movement to wear me down. Very precise."], requireFlags: ["ran"], weight: 3 },
+  { id: 'rattlewire_vic_crit_40', beat: 'victory', lines: ["Rattlewire: That hit broke the schedule completely."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'rattlewire_vic_net_41', beat: 'victory', lines: ["Rattlewire: The net interrupted my timing. You took advantage."], weight: 3 , requireFlags: ["netted"]},
+
+  { id: 'rattlewire_def_42', beat: 'defeat', lines: ["Rattlewire: Appointment concluded. Please take time to recover."] },
+  { id: 'rattlewire_def_crit_43', beat: 'defeat', lines: ["Rattlewire: That hit will require some repairs on my end."], requireFlags: ["hunter_crit"], weight: 2 },
+  { id: 'rattlewire_def_ran_44', beat: 'defeat', lines: ["Rattlewire: Caught up at last. I need to reset the clock."], requireFlags: ["ran"], weight: 2 },
+  { id: 'rattlewire_def_heal_45', beat: 'defeat', lines: ["Rattlewire: The drink kept the appointment going longer."], requireFlags: ["healed"], weight: 3 },
 ];

@@ -1,5 +1,8 @@
 # Earthfall / AGGRO — living state
 
+Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the current writing standard. Profiles, chat, combat, item descriptions, and reward commentary are revised. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
+
+
 **Updated:** 2026-09-14 (PT) · **Product:** 0.1.0 Baatorasaka  
 **Role of this file:** Short living snapshot of what is **shipped**, **parked**, and **locked** — not a second README.  
 **Handoff entry:** [../README.md](../README.md) · **Full In/Out/Goals:** [SCOPE.md](SCOPE.md) · **History:** [../CHANGELOG.md](../CHANGELOG.md)

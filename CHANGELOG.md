@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-09-20 — Player-facing writing and chat response fixes
+
+- Rewrote all 30 profiles and 1,436 creature combat dialogue nodes; kept node selectors and combat data intact.
+- Added explicit per-creature chat replies and reused authored combat introductions at match time.
+- Recognize refusal and questions before fight invitations; removed automatic progression based on message count.
+- Avoid repeated combat dialogue while fresh eligible responses remain; allow silence after exhaustion.
+- Added descriptions and readable effect text for all 41 locker items and all 10 fight kits.
+- Let R.O.D. reference recorded combat events; removed invented punishments, self-justification, and automatic contempt for wins.
+- Removed coercive text and replaced defeat insults with concrete company satire.
+- Updated help text, avatar feedback, and combat item narration to describe current behavior.
+- Replaced the voice guide, refreshed the Chrome Edge transcript, and retired legacy writing generators.
+- Added focused dialogue, intent, item-copy, and reward-commentary regression checks.
+
+
 All notable changes to AGGRO are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
