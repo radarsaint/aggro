@@ -27,6 +27,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ### Fixed
 
+- **Tortuga Discover tags** — Strip SRD chassis labels (SPY/GHOUL/BUGBEAR/…) from swipe cards; Tortuga names + venue stamps only.
+
+### Fixed
+
 - **Home porch** — Strip aisle-day meter, two-clock teaching, Verified homework, and “FLOOR 2 LEVER” chrome; dating aisle energy only.
 
 ### Added
