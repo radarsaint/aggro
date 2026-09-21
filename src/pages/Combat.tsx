@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getCreature } from '../data/creatures';
 import { getKit } from '../data/kits';
 import { HPBar } from '../components/HPBar';
 import { HunterFace } from '../components/HunterFace';
 import { Portrait } from '../components/Portrait';
-import { abilityMod, attackBonusFromScore, formatMod, hunterDamageExpr } from '../utils/dice';
+import { abilityMod, hunterDamageExpr } from '../utils/dice';
 import { RewardReveal } from '../components/RewardReveal';
 import { DefeatReveal } from '../components/DefeatReveal';
 import { monsterCondition, monsterConditionTone } from '../utils/condition';
 import { getConsumableCombatEffect, isUsableInCombat } from '../data/rewards';
-import { effectiveAttackDie, formatAcBreakdown } from '../data/equipment';
+import { effectiveAttackDie } from '../data/equipment';
 import { useGame } from '../utils/GameContext';
 
 type StatusChip = { id: string; label: string; tone: string };
@@ -32,8 +32,6 @@ export function Combat() {
   const creature = match ? getCreature(match.creatureId) : undefined;
   const logRef = useRef<HTMLDivElement>(null);
   const nav = useNavigate();
-  const [sheetOpen, setSheetOpen] = useState(false);
-
   useEffect(() => {
     if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
   }, [match?.combat?.log.length]);
@@ -87,12 +85,9 @@ export function Combat() {
   const woundTone = monsterConditionTone(wound);
   const showReward = match.status === 'won' && match.reward;
   const h = state.hunter;
-  const hitBonus = attackBonusFromScore(h.attackStatScore);
   const dmgMod = abilityMod(h.attackStatScore);
   const attackDie = effectiveAttackDie(h);
   const dmgExpr = hunterDamageExpr(attackDie, dmgMod, false);
-  const initBonus = h.initiativeBonus;
-  const acCaption = formatAcBreakdown(h);
   const usableLocker = h.inventory.filter(isUsableInCombat);
 
   const statusChips: StatusChip[] = [];
@@ -295,10 +290,10 @@ export function Combat() {
               onClick={() => doHunterRun(match.id)}
               title={
                 combat.smokeCover
-                  ? 'Smoke cover: Run heals with NO AoO'
+                  ? 'Smoke cover: Run heals clean — they have to Close'
                   : combat.justClosed
                     ? 'Run again after they closed = pissed full chase (no smoke)'
-                    : 'Break contact, heal 1d4 — AoO without smoke cover'
+                    : 'Break contact, heal 1d4 — they get a free swing unless you have smoke'
               }
             >
               <span className="combat-btn__label">Run</span>
@@ -332,46 +327,6 @@ export function Combat() {
         {!combat.finished && combat.turn === 'monster' && (
           <p className="combat-waiting">{creature.name} is acting…</p>
         )}
-
-        <div className="combat-sheet">
-          <button
-            type="button"
-            className={`combat-sheet__toggle${sheetOpen ? ' is-open' : ''}`}
-            aria-expanded={sheetOpen}
-            onClick={() => setSheetOpen((v) => !v)}
-          >
-            {sheetOpen ? 'Hide sheet' : 'Sheet'}
-            <span className="combat-sheet__hint" aria-hidden>
-              AC · Init · Speed
-            </span>
-          </button>
-          {sheetOpen && (
-            <div className="combat-sheet__body" role="region" aria-label="Combat sheet">
-              <div className="combat-sheet__row">
-                <span className="combat-sheet__who">{combat.hunter.name}</span>
-                <span className="combat-fighter-meta">
-                  AC {combat.hunter.ac}
-                  {acCaption.includes('=') ? ` (${acCaption})` : ''} · Init {combat.hunter.initiative}{' '}
-                  (bonus {formatMod(initBonus)}) · {h.attackStat} {attackDie} {formatMod(hitBonus)} hit ·{' '}
-                  {dmgExpr}
-                </span>
-              </div>
-              <div className="combat-sheet__row">
-                <span className="combat-sheet__who">{combat.monster.name}</span>
-                <span className="combat-fighter-meta">
-                  AC {combat.monster.ac} · Init {combat.monster.initiative} · Speed {creature.speed}
-                </span>
-                <span className="combat-fighter-meta">
-                  {creature.threat} threat · {creature.encounter === 'One' ? 'One enemy' : 'Multiple'} ·{' '}
-                  {creature.type}
-                </span>
-                {creature.combat.special ? (
-                  <div className="combat-special">{creature.combat.special}</div>
-                ) : null}
-              </div>
-            </div>
-          )}
-        </div>
 
         {combat.finished && combat.winner === 'monster' && (
           <div style={{ marginTop: 18 }}>

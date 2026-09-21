@@ -160,9 +160,6 @@ export function Match() {
               <span className="pill" style={{ fontWeight: 700 }}>
                 {encounterChip(creature.encounter)}
               </span>
-              <span className="pill" style={{ fontWeight: 700 }}>
-                {creature.type.toUpperCase()}
-              </span>
             </div>
 
             {/* Dating-card lead: floor */}
