@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   animate,
   motion,
@@ -332,6 +333,13 @@ export function RewardReveal({
             >
               INTO THE LOCKER
             </motion.div>
+            <Link
+              to="/profile?tab=locker"
+              className="btn btn-pink btn-block reward-reveal__locker-cta"
+              aria-label="Open your locker"
+            >
+              Open locker
+            </Link>
           </div>
         )}
       </motion.div>

@@ -14,8 +14,8 @@ type Props = {
    * Distinguishes "not yet fought" vs "lost first" lock copy.
    */
   firstFightResolvedTonight?: boolean;
-  onShortRest: () => void;
-  onLongRest: () => void;
+  onShortRest?: () => void;
+  onLongRest?: () => void;
   /** Compact strip for header / locked Discover */
   variant?: 'panel' | 'inline';
 };
@@ -52,18 +52,28 @@ export function RestBeat({
   }
 
   let shortTitle = 'Grab a drink — one more date tonight';
-  if (atFull) shortTitle = 'Already a full night';
-  else if (drinkUsed) shortTitle = 'Already had your drink tonight';
-  else if (drinkLocked && firstFightResolvedTonight)
+  let drinkLabel = 'Grab a drink';
+  if (atFull) {
+    shortTitle = 'Already a full night';
+    drinkLabel = 'Already a full night';
+  } else if (drinkUsed) {
+    shortTitle = 'Already had your drink tonight';
+    drinkLabel = 'Already had your drink tonight';
+  } else if (drinkLocked && firstFightResolvedTonight) {
     shortTitle = "First date went sideways — drink's off the table tonight";
-  else if (drinkLocked)
+    drinkLabel = "Drink's off — first date went sideways";
+  } else if (drinkLocked) {
     shortTitle = 'Win your first date tonight — then grab a drink';
+    drinkLabel = 'Win first date — then grab a drink';
+  }
 
-  // Body hint: dating lock copy for first-win gate only — no "+1 drink" wallpaper.
+  // Body hint: dating lock / used copy on the panel — readable without hovering.
   let lockHint: string | null = null;
-  if (!atFull && !drinkUsed && drinkLocked && firstFightResolvedTonight) {
+  if (!atFull && drinkUsed) {
+    lockHint = 'Already had your drink tonight.';
+  } else if (!atFull && drinkLocked && firstFightResolvedTonight) {
     lockHint = "First date went sideways — drink's off the table tonight.";
-  } else if (!atFull && !drinkUsed && drinkLocked) {
+  } else if (!atFull && drinkLocked) {
     lockHint = 'Win your first date tonight — then grab a drink.';
   }
 
@@ -73,7 +83,7 @@ export function RestBeat({
         "Call it a night? Fresh slate tomorrow — the floor refreshes too.",
       )
     ) {
-      onLongRest();
+      onLongRest?.();
     }
   };
 
@@ -93,13 +103,14 @@ export function RestBeat({
       <div className="rest-beat__actions">
         <button
           type="button"
-          className="btn btn-pink rest-beat__drink"
+          className={`btn btn-pink rest-beat__drink${shortDisabled ? ' rest-beat__drink--locked' : ''}`}
           disabled={shortDisabled}
-          onClick={onShortRest}
+          onClick={() => onShortRest?.()}
           title={shortTitle}
+          aria-label={shortTitle}
           aria-disabled={shortDisabled}
         >
-          Grab a drink
+          {drinkLabel}
         </button>
         <button
           type="button"

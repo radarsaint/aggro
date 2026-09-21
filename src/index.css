@@ -3130,3 +3130,51 @@ img { max-width: 100%; display: block; }
 .chat-cta--locked .chat-cta__hint {
   color: var(--pink);
 }
+
+/* ── How page chrome (outside Layout; keep Baatorasaka black/#FF007F) ── */
+.how-page__chrome {
+  border-bottom: 1px solid rgba(255, 0, 127, 0.35);
+  background: #000;
+}
+.how-page__back,
+.how-page__floor {
+  color: var(--pink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  min-width: 48px;
+}
+.how-page__back:hover,
+.how-page__floor:hover {
+  text-decoration: underline;
+}
+.how-page__floor {
+  text-align: right;
+}
+
+/* Win exit — locker CTA under stamp */
+.reward-reveal__locker-cta {
+  margin-top: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Drink lock / used label readable on the control */
+.rest-beat__drink--locked {
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+/* Night count stays visible in Match / Chat arming */
+.chat-header__night {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-transform: none;
+}

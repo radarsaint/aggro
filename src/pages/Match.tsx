@@ -2,6 +2,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Heart, MapPin, Crown, X, Hash, MessageCircle, Swords, Sparkles } from 'lucide-react';
 import { getCreature } from '../data/creatures';
 import { Portrait } from '../components/Portrait';
+import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 
 function threatChip(threat: string): string {
@@ -23,10 +24,11 @@ function encounterChip(encounter: string): string {
 
 export function Match() {
   const { matchId } = useParams();
-  const { getMatch, markRead } = useGame();
+  const { getMatch, markRead, state } = useGame();
   const nav = useNavigate();
   const match = matchId ? getMatch(matchId) : undefined;
   const creature = match ? getCreature(match.creatureId) : undefined;
+  const matchesTonight = state.matchesTonight ?? 0;
 
   if (!match || !creature) {
     return (
@@ -92,6 +94,9 @@ export function Match() {
           <Sparkles size={12} style={{ display: 'inline', verticalAlign: -1, marginRight: 6 }} />
           It&apos;s a match
           <Sparkles size={12} style={{ display: 'inline', verticalAlign: -1, marginLeft: 6 }} />
+        </div>
+        <div style={{ textAlign: 'center', marginBottom: 12 }}>
+          <RestBeat matchesTonight={matchesTonight} variant="inline" />
         </div>
 
         <div className="profile-hero">

@@ -25,6 +25,13 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Fixed
+
+- **Sell confirm** — Locker Sell asks before removing an item; cancel leaves inventory unchanged. Confirm names the item and gold payout (same native confirm pattern as Call it a night).
+- **Win exit CTA** — After RewardReveal “Take it”, “INTO THE LOCKER” stamp gains an **Open locker** button that lands on Profile Locker (`/profile?tab=locker`). Sticky-tab query hook added for deep links.
+- **Night Match feedback** — Dates-left count stays visible on Match and through Chat Accept / arming. Grab-a-drink locked / used / full-night reasons show on the button label and RestBeat hint (not only the title tooltip).
+- **How page chrome** — `/how` keeps Baatorasaka black/#FF007F + dating copy; compact header adds **← You** (Profile) and Floor (Discover) so orientation is not a dead-end.
+
 ### Docs
 
 - Living docs polish after 0.1.1 merge: SCOPE IN stamp 0.1.1; parked expansion effect families + climb-gated kiosk; EARTHFALL_STATE parked list synced.

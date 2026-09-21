@@ -117,6 +117,11 @@ export function Chat() {
               <span className="chat-header__vibe">
                 {creature.threat} · {creature.encounter === 'One' ? 'One' : 'Crew'} · {creature.type}
               </span>
+              <span className="chat-header__night" aria-live="polite">
+                {matchesTonight === 1
+                  ? '1 date left tonight'
+                  : `${matchesTonight} dates left tonight`}
+              </span>
             </div>
           </div>
         </div>
@@ -220,7 +225,14 @@ export function Chat() {
 
         {isArming && (
           <div className="chat-cta">
-            <p className="chat-cta__hint">{armingHint}</p>
+            <p className="chat-cta__hint">
+              {armingHint}{' '}
+              <span style={{ color: 'var(--muted)' }}>
+                ({matchesTonight === 1
+                  ? '1 date left tonight'
+                  : `${matchesTonight} dates left tonight`})
+              </span>
+            </p>
           </div>
         )}
 
