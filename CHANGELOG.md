@@ -27,7 +27,7 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ### Fixed
 
-- **Tortuga Discover tags** — Strip SRD chassis labels (SPY/GHOUL/BUGBEAR/…) from swipe cards; Tortuga names + venue stamps only.
+- **Tortuga Discover tags** — Strip SRD chassis labels (SPY/GHOUL/BUGBEAR/…) from swipe cards; venue + bite stamps only (no redundant name reprint).
 
 ### Fixed
 
