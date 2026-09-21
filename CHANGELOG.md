@@ -25,6 +25,10 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Changed
+
+- **First-run landing** — Onboarding is two small pages: **Sign up** (name + face; light optional About you) then required **Character stats** (HP, AC, attack die/stat, init — defaults pre-filled so you adjust, not invent). One primary **Start swiping** CTA after stats. Floor Preferences / dating filters stay under You → Dating prefs (not on first run). Return visits still Discover-first.
+
 ### Fixed
 
 - **Sell confirm** — Locker Sell asks before removing an item; cancel leaves inventory unchanged. Confirm names the item and gold payout (same native confirm pattern as Call it a night).

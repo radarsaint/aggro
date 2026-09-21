@@ -2384,38 +2384,63 @@ img { max-width: 100%; display: block; }
   color: #d4a8bc;
 }
 
-/* Onboarding: deferred combat loadout */
-.onboarding-loadout-nudge {
-  margin: 12px 0 16px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px dashed rgba(255, 0, 127, 0.35);
-  background: rgba(255, 0, 127, 0.06);
+/* Onboarding: two-page first-run (sign up → character stats) */
+.onboarding-steps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 16px;
 }
-.onboarding-loadout-nudge__copy {
-  margin: 0 0 8px;
+.onboarding-steps__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #333;
+  border: 1px solid #444;
+}
+.onboarding-steps__dot.on {
+  background: var(--pink);
+  border-color: var(--pink);
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.45);
+}
+.onboarding-steps__dot.done {
+  background: rgba(255, 0, 127, 0.45);
+  border-color: rgba(255, 0, 127, 0.6);
+}
+.onboarding-landing__cta {
+  margin-top: 8px;
+}
+.onboarding-landing__cta-hint {
+  margin: 8px 0 18px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.onboarding-optional {
+  margin: 12px 0 8px;
+}
+.onboarding-stats-card {
+  margin: 4px 0 16px;
+  padding: 14px 14px 6px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 0, 127, 0.28);
+  background: rgba(255, 0, 127, 0.05);
+}
+.onboarding-stats-card__lede {
+  margin: 0 0 12px;
   font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.4;
 }
-.onboarding-loadout-nudge__toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--pink);
-  font: inherit;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.onboarding-stats-actions {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 4px;
 }
-.onboarding-loadout-nudge__toggle:hover {
-  color: #ff4da6;
-}
-.onboarding-loadout-nudge__fields {
-  margin-top: 12px;
+.onboarding-stats-actions .btn-outline {
+  flex: 0 0 auto;
 }
 
 /* ── Combat theater chrome (Baatorasaka pink/black) ── */

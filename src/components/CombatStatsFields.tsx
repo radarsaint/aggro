@@ -140,7 +140,7 @@ export function CombatStatsFields({ values, onChange, hunter }: Props) {
   return (
     <>
       <div className="field">
-        <label>Max HP</label>
+        <label>Max HP (hit points)</label>
         <IntField
           value={values.maxHp}
           min={1}
@@ -150,7 +150,7 @@ export function CombatStatsFields({ values, onChange, hunter }: Props) {
         />
       </div>
       <div className="field">
-        <label>Armor Class{showAcBreakdown ? ' (body)' : ''}</label>
+        <label>Armor Class / AC{showAcBreakdown ? ' (body)' : ''}</label>
         <IntField
           value={values.ac}
           min={1}
@@ -217,7 +217,7 @@ export function CombatStatsFields({ values, onChange, hunter }: Props) {
         />
       </div>
       <div className="field">
-        <label>Init bonus (−5–+10)</label>
+        <label>Initiative bonus (−5–+10)</label>
         <IntField
           value={values.initiativeBonus}
           min={-5}
