@@ -124,7 +124,7 @@ export function HowItWorks() {
             ))}
           </div>
           <p style={{ marginTop: 12, fontSize: '0.78rem', color: 'var(--muted)', textAlign: 'center', lineHeight: 1.4 }}>
-            You → On you / Locker → Swipe → Match/banter → Arm → Fight → Reward or PIP.
+            Card → On you / Locker → Swipe → Match/banter → Arm → Fight → Reward or PIP.
           </p>
         </div>
 

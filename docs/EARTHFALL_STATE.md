@@ -45,7 +45,7 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 - Art / tools = sell scrap (unless mapped as equip).
 - **Climb loot:** threat-weighted pools — equip ≈ Low 18% / Mod 40% / High 60%. Hot clearance +10 equip weight (cap 70%). Framing under LootCard: stamp cold / R.O.D. hot.
 - **High-only named:** PIP Machete, Badge Harness, Exit-Only Lid. **Cubicle Hook** from Moderate up.
-- **Character home IA:** Profile sticky tabs — You / On you / Locker / Kiosk / Prefs (Prefs last). Bottom nav label **You** (`/profile` route unchanged).
+- **Character home IA:** Profile sticky tabs — Card / On you / Locker / Kiosk / Prefs (Prefs last). Bottom nav label **You** (`/profile` route unchanged).
 
 ### Gates 1–4
 
