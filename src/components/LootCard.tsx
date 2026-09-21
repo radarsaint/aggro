@@ -6,6 +6,8 @@ import { describeItem } from '../data/itemCopy';
 
 interface Props {
   item: InventoryItem;
+  /** Full locker — High chase duplicate sell preview. */
+  inventory?: readonly InventoryItem[];
   /** Compact row for inventory lists; full card for combat reward. */
   variant?: 'reward' | 'inventory';
   showBonusHeader?: boolean;
@@ -26,6 +28,7 @@ interface Props {
 
 export function LootCard({
   item,
+  inventory,
   variant = 'reward',
   showBonusHeader = variant === 'reward',
   onSell,
@@ -36,7 +39,7 @@ export function LootCard({
 }: Props) {
   const { frame, icon } = resolveLootVisual(item);
   const compact = variant === 'inventory';
-  const price = sellPrice(item);
+  const price = sellPrice(item, { inventory, sellingId: item.id });
   const copy = describeItem(item);
   const canEquip = compact && isEquippable(item);
   const isEquipped = equippedSlot != null;

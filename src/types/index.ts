@@ -247,6 +247,18 @@ export interface CombatState {
   banterArc?: string;
   /** Last resolved script node id */
   banterNode?: string;
+  /** Snapshot of equipped Floor-1 fight-effect gear for this date. */
+  gearFirstAttack?: 'hook' | 'pip' | 'bow' | null;
+  gearRunEscape?: 'softClose' | 'exitOnly' | 'noRefund' | null;
+  gearOnHitSpite?: 'vest' | 'badge' | 'afterHours' | null;
+  /** First Attack action this date already resolved (Cubicle Hook window). */
+  gearAttackAttempted?: boolean;
+  /** First successful Attack hit this date already consumed (PIP / Bow). */
+  gearAttackHitDone?: boolean;
+  /** Once-per-date Run escape gear already spent. */
+  gearRunSpent?: boolean;
+  /** After-Hours Plating first-hit spite already fired. */
+  gearSpiteFirstUsed?: boolean;
 }
 
 export interface KitDraft {
@@ -325,6 +337,13 @@ export interface GameState {
    * Resets on longRest. Old saves migrate to false.
    */
   firstFightResolvedTonight: boolean;
+  /**
+   * Quiet pity — wins since last Mid/High fight-effect gear drop or kiosk buy.
+   * Low wins increment but cannot drop Mid/High effect gear.
+   * After 5, next Mod/High win must drop an effect piece for that threat.
+   * No on-screen meter. Old saves migrate to 0.
+   */
+  winsSinceEffectGear: number;
 }
 
 export const ALL_CREATURE_TYPES: CreatureType[] = [

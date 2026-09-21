@@ -11,7 +11,7 @@ import {
 } from './dice';
 import { resolveCombatBanter, type CombatBanterBeat } from './roast';
 import { monsterCondition, type MonsterCondition } from './condition';
-import { effectiveAc, effectiveAttackDie } from '../data/equipment';
+import { effectiveAc, effectiveAttackDie, snapshotGearEffects } from '../data/equipment';
 
 function uid(): string {
   return Math.random().toString(36).slice(2, 10);
@@ -137,6 +137,30 @@ function doubleDice(expr: string): string {
 function applyMonsterDamage(next: CombatState, dmg: number): void {
   next.monster.hp = Math.max(0, next.monster.hp - dmg);
 }
+
+/** Apply equipped on-hit-taken spite to the monster after a successful hit on the hunter. */
+function applyOnHitSpite(next: CombatState, _creature: Creature): void {
+  const spite = next.gearOnHitSpite;
+  if (!spite) return;
+  if (spite === 'vest') {
+    applyMonsterDamage(next, 1);
+    next.log.push(log(`Floor-Captain Vest — they take 1 damage back.`, 'damage'));
+  } else if (spite === 'badge') {
+    applyMonsterDamage(next, 2);
+    next.log.push(log(`Badge Harness — they take 2 damage back.`, 'damage'));
+  } else if (spite === 'afterHours') {
+    if (next.gearSpiteFirstUsed) return;
+    next.gearSpiteFirstUsed = true;
+    const { total, detail } = rollDamage('1d4');
+    applyMonsterDamage(next, total);
+    next.log.push(
+      log(`After-Hours Plating — first hit spite ${total} damage (${detail}).`, 'damage'),
+    );
+  }
+  // Spite cannot finish the fight mid-strike from AoO paths that already check hunter death;
+  // caller may finishIfMonsterDown if needed.
+}
+
 
 function isPack(creature: Creature): boolean {
   return (creature.groupSize ?? 1) > 1 || creature.encounter === 'Multiple';
@@ -343,6 +367,8 @@ export function startCombat(
     recentBanter.push(openResult.text);
   }
 
+    const gear = snapshotGearEffects(hunter);
+
   return {
     round: 1,
     turn: hunterFirst ? 'hunter' : 'monster',
@@ -393,6 +419,13 @@ export function startCombat(
     banterFlags,
     banterArc,
     banterNode,
+    gearFirstAttack: gear.firstAttack,
+    gearRunEscape: gear.runEscape,
+    gearOnHitSpite: gear.onHitSpite,
+    gearAttackAttempted: false,
+    gearAttackHitDone: false,
+    gearRunSpent: false,
+    gearSpiteFirstUsed: false,
   };
 }
 
@@ -432,6 +465,9 @@ export function hunterAttack(state: CombatState, creature: Creature, hunter: Hun
     ),
   );
 
+  const isFirstAttack = !next.gearAttackAttempted;
+  next.gearAttackAttempted = true;
+
   if (hit) {
     const expr = hunterDamageExpr(effectiveAttackDie(hunter), mod, crit);
     const { total: dmg, detail } = rollDamage(expr);
@@ -448,6 +484,24 @@ export function hunterAttack(state: CombatState, creature: Creature, hunter: Hun
       const oil = rollDamage('1d6');
       totalDmg += oil.total;
       detailAll += ` + ${oil.total} oil damage (${oil.detail})`;
+    }
+
+    // Floor-1 fight-effect weapons (once per date)
+    const isFirstHit = !next.gearAttackHitDone;
+    next.gearAttackHitDone = true;
+    if (next.gearFirstAttack === 'hook' && isFirstAttack) {
+      totalDmg += 2;
+      detailAll += ' + 2 Cubicle Hook';
+      next.log.push(log('Cubicle Hook — first Attack hit: +2 damage.', 'narration'));
+    } else if (next.gearFirstAttack === 'pip' && isFirstHit) {
+      const pip = rollDamage('1d4');
+      totalDmg += pip.total;
+      detailAll += ` + ${pip.total} PIP Machete (${pip.detail})`;
+      next.log.push(log(`PIP Machete — first hit: +${pip.total} (${pip.detail}).`, 'narration'));
+    } else if (next.gearFirstAttack === 'bow' && isFirstHit) {
+      totalDmg += 3;
+      detailAll += ' + 3 Final-Writeup Bow';
+      next.log.push(log('Final-Writeup Bow — first hit: +3 damage.', 'narration'));
     }
 
     applyMonsterDamage(next, totalDmg);
@@ -532,6 +586,7 @@ function resolveMonsterStrike(
 
   next.hunter.hp = Math.max(0, next.hunter.hp - totalDmg);
   next.log.push(log(`${detailAll}.`, 'damage'));
+  applyOnHitSpite(next, creature);
   if (attack.onHit && !attack.onHit.includes('DC 11 Con')) {
     next.log.push(log(attack.onHit, 'narration'));
   }
@@ -575,6 +630,7 @@ function resolveAoOStrike(next: CombatState, creature: Creature): void {
   }
   next.hunter.hp = Math.max(0, next.hunter.hp - totalDmg);
   next.log.push(log(`${detailAll}.`, 'damage'));
+  applyOnHitSpite(next, creature);
 }
 
 function resolveFullVolley(
@@ -1060,19 +1116,48 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     );
   } else {
     // Bare Run from melee (or already at range): risk AoO if still in melee
+    // Soft-Close / Exit-Only: once per date, skip parting hit. No-Refund: AoO still happens, then 1d4 as you flee.
     const inMelee = !next.atRange;
     if (inMelee) {
-      next.log.push(
-        log(`🏃 Run — breaking contact without smoke! Opportunity strike incoming…`, 'system'),
-      );
-      // AoO: single strike, no Pack Tactics (bare Run tax — smoke avoids this)
-      resolveAoOStrike(next, creature);
-      if (next.hunter.hp <= 0) {
-        next.finished = true;
-        next.winner = 'monster';
-        next.log.push(log(`${next.hunter.name} falls to the opportunity attack. ${creature.name} wins this match.`, 'defeat'));
-        pushBanter(next, creature, 'defeat');
-        return next;
+      const escape = !next.gearRunSpent ? next.gearRunEscape ?? null : null;
+      if (escape === 'softClose' || escape === 'exitOnly') {
+        next.gearRunSpent = true;
+        if (escape === 'softClose') {
+          next.log.push(
+            log(`🏃 Soft-Close Lid — you leave with no free parting hit.`, 'system'),
+          );
+        } else {
+          applyMonsterDamage(next, 1);
+          next.log.push(
+            log(`🏃 Exit-Only Lid — no parting hit; they take 1 as you go.`, 'system'),
+          );
+          if (finishIfMonsterDown(next, creature)) return next;
+        }
+      } else {
+        next.log.push(
+          log(`🏃 Run — breaking contact without smoke! Opportunity strike incoming…`, 'system'),
+        );
+        // AoO: single strike, no Pack Tactics (bare Run tax — smoke avoids this)
+        resolveAoOStrike(next, creature);
+        if (next.hunter.hp <= 0) {
+          next.finished = true;
+          next.winner = 'monster';
+          next.log.push(log(`${next.hunter.name} falls to the opportunity attack. ${creature.name} wins this match.`, 'defeat'));
+          pushBanter(next, creature, 'defeat');
+          return next;
+        }
+        if (escape === 'noRefund') {
+          next.gearRunSpent = true;
+          const flee = rollDamage('1d4');
+          applyMonsterDamage(next, flee.total);
+          next.log.push(
+            log(
+              `🏃 No-Refund Dome — you deal ${flee.total} as you flee (${flee.detail}). Flee still resolves.`,
+              'system',
+            ),
+          );
+          if (finishIfMonsterDown(next, creature)) return next;
+        }
       }
     }
     next.chasePunish = false;

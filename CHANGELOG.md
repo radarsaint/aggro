@@ -49,6 +49,23 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 - New [docs/SCOPE.md](docs/SCOPE.md) — In / Out / Goals / Non-goals / locked decisions for external collaborators and other AIs.
 - Refreshed [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md) to match shipped 0.1.0 Gates 1–4 + climb loot; side bets marked deferred indefinitely (not upcoming).
 
+## [0.1.1] — 2026-09-21
+
+### Added
+
+- **Floor 1 fight-effect gear** — Mid: Cubicle Hook (+2 on first Attack hit), Soft-Close Lid (once/date Run: no parting hit), Floor-Captain Vest (1 spite every hit). High: PIP Machete (+1d4 first hit), Final-Writeup Bow (+3 first hit), Exit-Only Lid (once/date Run: no parting hit + 1), No-Refund Dome (once/date Run: 1d4 as you flee), Badge Harness (2 spite every hit), After-Hours Plating (first hit taken: 1d4 spite).
+- **Quiet pity** — `winsSinceEffectGear` in save; after 5 dry wins, next Mod/High win must drop a fight-effect piece for that threat. Effect drop or kiosk buy of effect gear resets. No on-screen meter. Low wins still increment but cannot drop Mid/High effect names.
+- **Named sell bands** — Mid named 65g; High chase 110g; High duplicate (same High name already owned) 175g.
+
+### Changed
+
+- Mod equip bag: Hook 20 / Vest 15 / Soft-Close 15 (=50) + plain 50. High equip bag: PIP 16 / Bow 12 / Badge 16 / After-Hours 12 / Exit-Only 14 / No-Refund 12 (=82) + 18 Mid leftovers / plain High-adjacent.
+- On you + LootCard effect one-liners for fight-effect gear. Combat wires first-attack, Run escape, and on-hit spite (no new combat buttons).
+
+### Docs
+
+- SCOPE + EARTHFALL_STATE updated for Floor 1 effect gear, drop weights, quiet pity, sell bands.
+
 ## [0.1.0] — 2026-09-14
 
 First playable Baatorasaka cut: swipe, banter, fight, loot, and nights that actually gate the loop.

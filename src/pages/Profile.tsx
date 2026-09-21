@@ -18,6 +18,7 @@ import {
   WEAPON_ATTACK_DIE,
   equippedSlotOf,
   findEquippedItem,
+  gearEffectOneLiner,
   type EquipSlot,
 } from '../data/equipment';
 import { KIOSK_STOCK, isUsableInCombat } from '../data/rewards';
@@ -262,7 +263,7 @@ export function Profile() {
                 slot="weapon"
                 label="Weapon"
                 itemName={weapon?.name ?? null}
-                detail={weapon ? `Attack die ${WEAPON_ATTACK_DIE[weapon.name] ?? '?'}` : null}
+                detail={weapon ? `Attack die ${WEAPON_ATTACK_DIE[weapon.name] ?? '?'}${gearEffectOneLiner(weapon.name) ? ` · ${gearEffectOneLiner(weapon.name)}` : ''}` : null}
                 emptyJoke="Fists and bad decisions"
                 onUnequip={unequipSlot}
               />
@@ -270,7 +271,7 @@ export function Profile() {
                 slot="armor"
                 label="Armor"
                 itemName={armor?.name ?? null}
-                detail={armor ? `+${ARMOR_AC_BONUS[armor.name] ?? 0} AC` : null}
+                detail={armor ? `+${ARMOR_AC_BONUS[armor.name] ?? 0} AC${gearEffectOneLiner(armor.name) ? ` · ${gearEffectOneLiner(armor.name)}` : ''}` : null}
                 emptyJoke="Nothing on you"
                 onUnequip={unequipSlot}
               />
@@ -278,7 +279,7 @@ export function Profile() {
                 slot="shield"
                 label="Shield"
                 itemName={shield?.name ?? null}
-                detail={shield ? `+${SHIELD_AC_BONUS[shield.name] ?? 0} AC` : null}
+                detail={shield ? `+${SHIELD_AC_BONUS[shield.name] ?? 0} AC${gearEffectOneLiner(shield.name) ? ` · ${gearEffectOneLiner(shield.name)}` : ''}` : null}
                 emptyJoke="Hands free · ego exposed"
                 onUnequip={unequipSlot}
               />
@@ -327,6 +328,7 @@ export function Profile() {
                     <LootCard
                       key={i.id}
                       item={i}
+                      inventory={h.inventory}
                       variant="inventory"
                       onSell={sellInventoryItem}
                       onEquip={equipItem}
