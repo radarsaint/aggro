@@ -9,6 +9,8 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   /** When set, full-bleed cover image with grime/sign overlays; else emoji+gradient */
   imageSrc?: string;
+  /** Use a smaller source in compact cards when available. */
+  imageThumbSrc?: string;
   /** Wound state — drives portrait CSS filters/overlays and optional label */
   condition?: MonsterCondition;
   /** Show condition badge on/near portrait (default true when condition set) */
@@ -22,6 +24,7 @@ export function Portrait({
   sign,
   size = 'md',
   imageSrc,
+  imageThumbSrc,
   condition,
   showConditionLabel,
 }: Props) {
@@ -36,7 +39,12 @@ export function Portrait({
       style={{ background: imageSrc ? undefined : gradient, minHeight: minH }}
     >
       {imageSrc ? (
-        <img src={imageSrc} alt="" className="portrait__img" />
+        <img
+          src={size === 'sm' ? imageThumbSrc ?? imageSrc : imageSrc}
+          alt=""
+          className="portrait__img"
+          decoding="async"
+        />
       ) : (
         <span className="emoji" style={{ fontSize: size === 'sm' ? '2.8rem' : size === 'lg' ? '6.5rem' : '5rem' }}>
           {emoji}

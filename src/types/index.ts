@@ -72,8 +72,10 @@ export interface Creature {
   verified: boolean;
   emoji: string;
   gradient: string;
-  /** Optional portrait PNG under /public/portraits/ — omit for emoji fallback */
+  /** Optional full portrait under /public/portraits/ — omit for emoji fallback */
   portraitSrc?: string;
+  /** Smaller version for discovery grid cards and list/combat avatars. */
+  portraitThumbSrc?: string;
   speed: string;
   combat: CreatureCombat;
   fightTerms: string;

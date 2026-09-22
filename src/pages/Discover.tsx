@@ -140,7 +140,7 @@ export function Discover() {
                   disabled={!canFightTonight}
                   title={!canFightTonight ? lockCopy : undefined}
                 >
-                  <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} size="sm" sign={c.threat.toUpperCase()} imageSrc={c.portraitSrc} />
+                  <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} size="sm" sign={c.threat.toUpperCase()} imageSrc={c.portraitSrc} imageThumbSrc={c.portraitThumbSrc} />
                   <div style={{ padding: 10 }}>
                     <div style={{ fontWeight: 800, display: 'flex', alignItems: 'center', gap: 4 }}>
                       {c.name.toUpperCase()}
@@ -168,7 +168,7 @@ export function Discover() {
                       className="swipe-card"
                       style={{ transform: `scale(${0.94 + i * 0.02}) translateY(${(arr.length - 1 - i) * 8}px)`, zIndex: i }}
                     >
-                      <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} sign="CLEARANCE" imageSrc={c.portraitSrc} />
+                      <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} sign="CLEARANCE" imageSrc={c.portraitSrc} imageThumbSrc={c.portraitThumbSrc} />
                     </div>
                   );
                 }
@@ -187,7 +187,7 @@ export function Discover() {
                     <motion.div style={{ position: 'absolute', top: 20, right: 20, opacity: matchOpacity, zIndex: 5, border: '3px solid var(--green)', color: 'var(--green)', padding: '4px 10px', fontWeight: 900, transform: 'rotate(12deg)' }}>
                       AGGRO
                     </motion.div>
-                    <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} size="lg" sign="50% OFF" imageSrc={c.portraitSrc} />
+                    <Portrait emoji={c.emoji} gradient={c.gradient} mapTheme={c.mapTheme} size="lg" sign="50% OFF" imageSrc={c.portraitSrc} imageThumbSrc={c.portraitThumbSrc} />
                     <div className="meta">
                       <div style={{ fontSize: '1.4rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: 6 }}>
                         {c.name}

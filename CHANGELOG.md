@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 — 2026-09-22 — Tortuga monster portraits
+
+- Added the supplied finished artwork for all 14 Tortuga monsters across Discover, Match, chat, encounter lists, and combat.
+- Exported 1024px WebP portraits and 384px thumbnails with the full square compositions preserved. Compact cards and avatars load the smaller files.
+- Documented the source-to-monster mapping and added a reproducible asset export script.
+
 ## 0.1.3 — 2026-09-22 — Tortuga writing pass
 
 - Rewrote all 14 Tortuga profiles, 112 chat replies, and 364 battle nodes with 420 distinct lines grounded in each monster’s character.

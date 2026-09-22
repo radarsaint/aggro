@@ -11,6 +11,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   // ─────────────────────────────────────────────
   {
     id: 'cutthroat',
+    portraitSrc: '/portraits/cutthroat.webp',
+    portraitThumbSrc: '/portraits/cutthroat-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Cutthroat',
     baseCreature: 'Spy',
@@ -51,6 +53,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'press-ganged-dead',
+    portraitSrc: '/portraits/press-ganged-dead.webp',
+    portraitThumbSrc: '/portraits/press-ganged-dead-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Press-Ganged Dead',
     baseCreature: 'Ghoul',
@@ -105,6 +109,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'dead-mans-rig',
+    portraitSrc: '/portraits/dead-mans-rig.webp',
+    portraitThumbSrc: '/portraits/dead-mans-rig-384.webp',
     themeId: 'tortugaMuerta',
     name: "Dead Man's Rig",
     baseCreature: 'Animated Armor',
@@ -144,6 +150,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'deadmans-teeth',
+    portraitSrc: '/portraits/deadmans-teeth.webp',
+    portraitThumbSrc: '/portraits/deadmans-teeth-384.webp',
     themeId: 'tortugaMuerta',
     name: "Deadman's Teeth",
     baseCreature: 'Swarm of Quippers',
@@ -194,6 +202,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   // ─────────────────────────────────────────────
   {
     id: 'dead-bosun',
+    portraitSrc: '/portraits/dead-bosun.webp',
+    portraitThumbSrc: '/portraits/dead-bosun-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Dead Bosun',
     baseCreature: 'Bugbear',
@@ -234,6 +244,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'gallows-hound',
+    portraitSrc: '/portraits/gallows-hound.webp',
+    portraitThumbSrc: '/portraits/gallows-hound-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Gallows Hound',
     baseCreature: 'Death Dog',
@@ -281,6 +293,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'bilge-toad',
+    portraitSrc: '/portraits/bilge-toad.webp',
+    portraitThumbSrc: '/portraits/bilge-toad-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Bilge Toad',
     baseCreature: 'Giant Toad',
@@ -328,6 +342,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'drowned-powderman',
+    portraitSrc: '/portraits/drowned-powderman.webp',
+    portraitThumbSrc: '/portraits/drowned-powderman-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Drowned Powderman',
     baseCreature: 'Duergar',
@@ -375,6 +391,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'drowned-hand',
+    portraitSrc: '/portraits/drowned-hand.webp',
+    portraitThumbSrc: '/portraits/drowned-hand-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Drowned Hand',
     baseCreature: 'Specter',
@@ -422,6 +440,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'powder-drake',
+    portraitSrc: '/portraits/powder-drake.webp',
+    portraitThumbSrc: '/portraits/powder-drake-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Powder Drake',
     baseCreature: 'Brass Dragon Wyrmling',
@@ -465,6 +485,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   // ─────────────────────────────────────────────
   {
     id: 'rigging-widow',
+    portraitSrc: '/portraits/rigging-widow.webp',
+    portraitThumbSrc: '/portraits/rigging-widow-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Rigging Widow',
     baseCreature: 'Giant Spider',
@@ -520,6 +542,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'gravewater-octopus',
+    portraitSrc: '/portraits/gravewater-octopus.webp',
+    portraitThumbSrc: '/portraits/gravewater-octopus-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Gravewater Octopus',
     baseCreature: 'Giant Octopus',
@@ -567,6 +591,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'dead-siren',
+    portraitSrc: '/portraits/dead-siren.webp',
+    portraitThumbSrc: '/portraits/dead-siren-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Dead Siren',
     baseCreature: 'Harpy',
@@ -607,6 +633,8 @@ export const TORTUGA_CREATURES: Creature[] = [
   },
   {
     id: 'mangrove-widow',
+    portraitSrc: '/portraits/mangrove-widow.webp',
+    portraitThumbSrc: '/portraits/mangrove-widow-384.webp',
     themeId: 'tortugaMuerta',
     name: 'Mangrove Widow',
     baseCreature: 'Dryad',

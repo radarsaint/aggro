@@ -102,7 +102,7 @@ export function Encounters() {
                     }}
                   >
                     {c.portraitSrc ? (
-                      <img src={c.portraitSrc} alt="" className="chat-avatar__img" />
+                      <img src={c.portraitThumbSrc ?? c.portraitSrc} alt="" className="chat-avatar__img" />
                     ) : (
                       c.emoji
                     )}
