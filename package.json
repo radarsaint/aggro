@@ -1,14 +1,15 @@
 {
   "name": "aggro",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "check:dialogue": "node scripts/check-dialogue.mjs"
+    "check:dialogue": "node scripts/check-dialogue.mjs",
+    "check:art": "node scripts/check-item-art.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.2.0",

@@ -2,6 +2,9 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Swords } from 'lucide-react';
 import { getCreature } from '../data/creatures';
+import { getKit } from '../data/kits';
+import { resolveKitArt } from '../data/lootArt';
+import { ItemArt } from '../components/ItemArt';
 import { stakeCostForThreat } from '../data/rewards';
 import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
@@ -75,8 +78,8 @@ export function Chat() {
   const draft = match.kitDraft;
   const armingHint =
     draft && draft.needed > 1
-      ? `Pick item ${draft.round}/${draft.needed} — type 1, 2, or 3.`
-      : 'Type 1, 2, or 3 to lock your fight item.';
+      ? `Pick item ${draft.round}/${draft.needed} below, or type 1, 2, or 3.`
+      : 'Choose your fight item below, or type 1, 2, or 3.';
 
   const stakeCost = stakeCostForThreat(creature.threat);
   const canStake =
@@ -239,6 +242,26 @@ export function Chat() {
                   : `${matchesTonight} dates left tonight`})
               </span>
             </p>
+            <div className="chat-kit-offer" aria-label="Available fight items">
+              {draft?.offer.map((id, index) => {
+                const kit = getKit(id);
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    className="chat-kit-option"
+                    onClick={() => sendMessage(match.id, String(index + 1))}
+                    aria-label={`Choose ${kit.name}`}
+                  >
+                    <ItemArt art={resolveKitArt(id, kit.name)} size="kit" />
+                    <span className="chat-kit-option__copy">
+                      <strong>{index + 1}. {kit.name}</strong>
+                      <span>{kit.combatHint}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
 

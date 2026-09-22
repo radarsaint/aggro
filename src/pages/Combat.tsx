@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getCreature } from '../data/creatures';
 import { getKit, isKitId } from '../data/kits';
+import { resolveKitArt, resolveLootVisual } from '../data/lootArt';
+import { ItemArt } from '../components/ItemArt';
 import { HPBar } from '../components/HPBar';
 import { HunterFace } from '../components/HunterFace';
 import { Portrait } from '../components/Portrait';
@@ -279,6 +281,7 @@ export function Combat() {
               }
               onClick={() => doHunterItem(match.id)}
             >
+              {kit && <ItemArt art={resolveKitArt(kit.id, kit.name)} size="small" />}
               <span className="combat-btn__label">
                 {allKitsSpent
                   ? 'Item · spent'
@@ -318,6 +321,7 @@ export function Combat() {
                         title={`Spend ${item.name} — ${effect.label}. Ends your turn.`}
                         onClick={() => doHunterHeal(match.id, item.id)}
                       >
+                        <ItemArt art={resolveLootVisual(item).icon} size="small" />
                         <span className="combat-locker-use__name">{item.name}</span>
                         <span className="combat-locker-use__hint">{effect.label}</span>
                       </button>
