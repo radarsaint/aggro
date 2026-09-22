@@ -124,7 +124,7 @@ aggro/
 │   ├── VERSIONING.md         ← 0.x bump rules
 │   ├── VOICE_BIBLES.md       ← banter craft + per-enemy bibles
 │   └── chrome-edge-lines.md
-├── public/                   ← static assets (favicon, portraits, loot frames/icons, posters)
+├── public/                   ← static assets (favicon, portraits, item illustrations, posters)
 ├── src/
 │   ├── main.tsx, App.tsx     ← router shell
 │   ├── pages/                ← Discover, Match, Chat, Combat, Profile, HowItWorks, …
@@ -144,13 +144,13 @@ Baatorasaka is Floor 1. Tortuga Muerta is Floor 2 theme tokens + aisle enable (s
 
 ### Loot art
 
-Drop PNGs in `public/loot/frames/` and `public/loot/icons/`, then set `artSrc` on the matching entry in `src/data/lootArt.ts`.
+Item illustrations live in `public/loot/items/` as transparent 512px WebP images with 192px thumbnails. `src/data/lootArt.ts` maps every loot name and kit ID to its artwork; `ItemArt` selects the appropriate source for inventory, kiosk, kit, and reward views. See [docs/ITEM_ART.md](docs/ITEM_ART.md) for sizing and export instructions.
 
 ---
 
 ## Versioning
 
-- Package version stays **0.1.1** until a player-facing feature bump (see [docs/VERSIONING.md](docs/VERSIONING.md)).
+- Current package version is **0.1.2**; use patch bumps for art wiring and fixes (see [docs/VERSIONING.md](docs/VERSIONING.md)).
 - Document releases in [CHANGELOG.md](CHANGELOG.md).
 - Docs-only work goes under **Unreleased** when noted — **do not bump** `package.json` for docs.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-09-22 — Item and equipment artwork
+
+- Replaced shared placeholder icons and emoji with 60 distinct illustrations covering all 54 loot items and all 10 fight kits, including the new Tortuga equipment.
+- Added transparent 512px artwork and 192px thumbnails with consistent padding and preserved proportions.
+- Added correctly sized art to rewards, inventory, equipped slots, kiosk, kit selection, chat kit offers, and combat item controls.
+- Replaced stretched bitmap card frames with responsive category styling and adjusted item actions for narrow screens.
+
 ## 2026-09-20 — Player-facing writing and chat response fixes
 
 - Rewrote all 30 profiles and 1,436 creature combat dialogue nodes; kept node selectors and combat data intact.

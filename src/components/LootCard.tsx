@@ -3,6 +3,7 @@ import { resolveLootVisual } from '../data/lootArt';
 import { isEquippable, type EquipSlot } from '../data/equipment';
 import { sellPrice } from '../data/rewards';
 import { describeItem } from '../data/itemCopy';
+import { ItemArt } from './ItemArt';
 
 interface Props {
   item: InventoryItem;
@@ -46,26 +47,14 @@ export function LootCard({
 
   return (
     <div
-      className={`loot-card ${frame.cssClass} ${compact ? 'loot-card--inventory' : 'loot-card--reward'}${
-        frame.artSrc ? ' loot-card--framed' : ''
-      }${isEquipped ? ' loot-card--equipped' : ''}`}
+      className={`loot-card ${frame.cssClass} ${compact ? 'loot-card--inventory' : 'loot-card--reward'}${isEquipped ? ' loot-card--equipped' : ''}`}
     >
-      {frame.artSrc && (
-        <img src={frame.artSrc} alt="" className="loot-card__frame-img" aria-hidden />
-      )}
-
       {showBonusHeader && (
         <div className="loot-card__bonus-label">+ BONUS REWARD +</div>
       )}
 
       <div className="loot-card__body">
-        <div className="loot-card__icon-slot" aria-hidden>
-          {icon.artSrc ? (
-            <img src={icon.artSrc} alt="" className="loot-card__icon-img" />
-          ) : (
-            <span className="loot-card__icon-emoji">{icon.emoji}</span>
-          )}
-        </div>
+        <ItemArt art={icon} size={compact ? 'inventory' : 'reward'} />
 
         <div className="loot-card__text">
           <div className="loot-card__name">

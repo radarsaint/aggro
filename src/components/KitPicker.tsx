@@ -1,4 +1,6 @@
 import { KIT_DEFS, KIT_IDS, kitRoastPreview, type KitId } from '../data/kits';
+import { resolveKitArt } from '../data/lootArt';
+import { ItemArt } from './ItemArt';
 
 export interface KitPickerProps {
   value: KitId;
@@ -31,6 +33,7 @@ export function KitPicker({ value, onChange, threatLabel, excludeIds }: KitPicke
               className={`kit-card${selected ? ' kit-card--selected' : ''}`}
               onClick={() => onChange(id)}
             >
+              <ItemArt art={resolveKitArt(id, def.name)} size="kit" />
               <div className="kit-card__name">{def.name}</div>
               {/* Compact teaser: one short line. Full stack only when selected. */}
               {!selected && <div className="kit-card__teaser">{kitRoastPreview(def)}</div>}

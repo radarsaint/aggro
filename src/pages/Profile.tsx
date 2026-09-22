@@ -32,6 +32,8 @@ import {
   type EquipSlot,
 } from '../data/equipment';
 import { isUsableInCombat } from '../data/rewards';
+import { resolveLootVisual } from '../data/lootArt';
+import { ItemArt } from '../components/ItemArt';
 import { RestBeat } from '../components/RestBeat';
 import { useGame } from '../utils/GameContext';
 import { getTheme } from '../themes';
@@ -64,6 +66,9 @@ function EquippedSlotRow({
   const on = Boolean(itemName);
   return (
     <div className={`on-you-slot${on ? ' on-you-slot--on' : ''}`}>
+      {itemName && (
+        <ItemArt art={resolveLootVisual({ name: itemName, kind: 'Mundane Equipment', iconKey: '' }).icon} />
+      )}
       <div className="on-you-slot__meta">
         <div className="on-you-slot__label">{label}</div>
         <div className="on-you-slot__name">{itemName ?? emptyJoke}</div>
@@ -558,6 +563,7 @@ export function Profile() {
                     const canBuy = h.gold >= sku.price;
                     return (
                       <div key={sku.id} className="kiosk-sku">
+                        <ItemArt art={resolveLootVisual(sku.item).icon} />
                         <div className="kiosk-sku__info">
                           <div className="kiosk-sku__name">{sku.item.name}</div>
                           <div className="kiosk-sku__meta">

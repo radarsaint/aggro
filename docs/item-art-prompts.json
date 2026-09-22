@@ -1,0 +1,306 @@
+{
+  "generator": "Built-in image_gen",
+  "basePrompt": "Use case: stylized-concept. Asset type: production inventory illustration for AGGRO, a darkly comic dungeon game set in a ruined corporate warehouse. Create ONE polished, hand-painted game item with convincing 3D form, crisp silhouette, tactile metal/leather/glass surfaces, restrained wear, and beautifully controlled highlights. This is high-quality collectible equipment art, grounded and practical. Studio-like warm key light from upper left, a subtle magenta edge light, no excessive glow. Real transparent background with alpha, no backdrop, no floor, no card frame, no text or watermark, no people, no hands. Square composition. Entire object visible, centered, occupying about 80\u201386% of the square, safe padding on every side. Fine detail at full size but unmistakable silhouette at 64 pixels. The object must match the description exactly and have clean construction. Subject: ",
+  "assets": [
+    {
+      "name": "Dagger",
+      "slug": "dagger",
+      "subject": "A short, broad steel warehouse knife, dark wood grip tightly wrapped in tan cord, plain bolster, diagonal grip lower left to point upper right. No gems or magical spikes."
+    },
+    {
+      "name": "Shortsword",
+      "slug": "shortsword",
+      "subject": "A practical straight steel shortsword with a simple crossguard and oxblood leather grip, beside its scuffed dark display sheath. Both entirely visible and close together diagonally, blade dominant, no ornament or gems."
+    },
+    {
+      "name": "Light Crossbow",
+      "slug": "light-crossbow",
+      "subject": "A complete compact, functional medieval light crossbow, walnut stock, steel bow limbs, taut bowstring, winding stirrup, one bolt on the rail and a small worn instruction decal on the stock. Three-quarter view; symmetric bow construction."
+    },
+    {
+      "name": "Leather Armor",
+      "slug": "leather-armor",
+      "subject": "An EMPTY sleeveless cuirass made from thick warm brown stitched leather panels, buckled side straps and a small worn rectangular company badge. No wearer or mannequin, front three-quarter view, no shoulder spikes."
+    },
+    {
+      "name": "Studded Leather Vest",
+      "slug": "studded-leather-vest",
+      "subject": "An EMPTY charcoal-brown leather work vest reinforced by orderly brass studs, broad collar, sturdy buckles and a little pen pocket. No body or mannequin. Distinct from a smooth leather cuirass. Front three-quarter view."
+    },
+    {
+      "name": "Shield",
+      "slug": "shield",
+      "subject": "A complete, sturdy round shield, dented steel rim, dark wood center painted in worn plum and pale cream company colors, central steel boss. Large readable circular silhouette, front three-quarter view."
+    },
+    {
+      "name": "Clearance Patch",
+      "slug": "clearance-patch",
+      "subject": "A compact rectangular protective armor patch, a thick gray steel plate stitched into a maroon canvas border, clearly visible cream stitches and a crooked orange clearance sticker with simple barcode stripes, no lettering. Slight three-quarter view. No torso."
+    },
+    {
+      "name": "PIP Machete",
+      "slug": "pip-machete",
+      "subject": "A substantial broad steel chopping machete, straight sturdy blade with clipped tip, red industrial rubber grip, steel rivets, small rectangular inventory decal. Work tool converted to a weapon; entire blade visible diagonally."
+    },
+    {
+      "name": "Cubicle Hook",
+      "slug": "cubicle-hook",
+      "subject": "A long dark steel hook removed from an office partition, one smoothly curved hooked end and the other end wrapped in thick tan fabric to form a grip. One complete usable hook, heavy and practical, diagonal composition."
+    },
+    {
+      "name": "Badge Harness",
+      "slug": "badge-harness",
+      "subject": "An EMPTY compact protective harness of broad oxblood straps and layered dark steel chest plates, brass buckles, conspicuously empty clear badge holder centered on the chest. Full harness including shoulder loops visible, no person or mannequin."
+    },
+    {
+      "name": "Exit-Only Lid",
+      "slug": "exit-only-lid",
+      "subject": "A rectangular industrial service hatch repurposed as a shield, heavy battered gray metal lid, rounded corners, reinforced rim, two bolted handles visible on its turned side, faded green exit arrow sign centered on the front. No lettering. Full object three-quarter view."
+    },
+    {
+      "name": "Potion of Healing",
+      "slug": "potion-of-healing",
+      "subject": "A small sturdy cylindrical apothecary bottle of ruby-red healing liquid, simple cork with red wax, clear glass with etched measuring marks, a plain cream medical cross label. Practical locker medicine, small and economical. No spikes or gems."
+    },
+    {
+      "name": "Bandage Roll",
+      "slug": "bandage-roll",
+      "subject": "A thick clean roll of ivory gauze with a short soft strip unfurled, partially held in a torn cream paper medical sleeve with a small red cross. Soft woven textile detail, round roll dominates."
+    },
+    {
+      "name": "Thieves' Tools",
+      "slug": "thieves-tools",
+      "subject": "For the fantasy inventory item named Thieves' Tools, show its CLOSED dark brown leather carrying roll: a slim cylindrical wrapped tool pouch, small brass buckles, neat stitched edges and five short steel tool handles peeking from one end. Tool tips are completely concealed inside the roll. This is a closed adventurer equipment pouch; no lock, no operating tools, no demonstration, no hands. Compact diagonal arrangement, entire pouch visible."
+    },
+    {
+      "name": "Crowbar",
+      "slug": "crowbar",
+      "subject": "A complete heavy red-painted steel pry bar, curved forked claw on one end, flattened chisel tip on the other, worn paint exposing steel where used. Diagonal composition, recognizable simple silhouette."
+    },
+    {
+      "name": "Rope (50 feet, hempen)",
+      "slug": "hempen-rope",
+      "subject": "A substantial neat coil of golden-brown hemp rope bundled around a weathered cardboard sleeve, visible twisted fibers, one short free end tucked into the coil. Three-quarter view."
+    },
+    {
+      "name": "Torch Bundle (6)",
+      "slug": "torch-bundle",
+      "subject": "Exactly six unlit wooden torches, dark resin-soaked linen heads, lashed tightly together with packing twine. All six heads visible, compact fan shape, no flames."
+    },
+    {
+      "name": "Grappling Hook",
+      "slug": "grappling-hook",
+      "subject": "A sturdy three-pronged forged steel grappling hook with three curved hooks joined at a central shaft, a rope eye and short loop of tan rope, small torn shipping tag caught on one prong. Whole hook visible, balanced construction."
+    },
+    {
+      "name": "Chain (10 feet)",
+      "slug": "chain",
+      "subject": "A heavy coil of dark oiled steel chain with large visibly connected oval links spilling slightly from an open ochre canvas carrying bag. Single compact grouped item, clear iron link construction."
+    },
+    {
+      "name": "Jeweled Eye Patch",
+      "slug": "jeweled-eye-patch",
+      "subject": "One black leather eyepatch with a neat border of ruby and amber gemstones, black strap curled behind it. Luxurious but physical pirate treasure, no face or wearer."
+    },
+    {
+      "name": "Silver Ewer",
+      "slug": "silver-ewer",
+      "subject": "A graceful old silver pouring jug, curved handle, slender neck, broad belly and precise pointed pouring lip, subtle engraved floral hotel crest without letters, warm tarnish in the engraving. One whole jug."
+    },
+    {
+      "name": "Carved Bone Idol",
+      "slug": "carved-bone-idol",
+      "subject": "A small warm ivory-colored bone carving of a crouching boar, hand-carved incisions and polished rounded areas from handling, mounted on a low rectangular carved base. Clearly a tiny collectible carved object, no flesh or horror."
+    },
+    {
+      "name": "Chrome-Inlaid Goblet",
+      "slug": "chrome-goblet",
+      "subject": "A heavy dark bronze goblet inlaid with bright chrome leaves around its stem and cup, large sturdy foot, a few tasteful age marks. Polished silver highlights against bronze, entire object upright."
+    },
+    {
+      "name": "Velvet Mask with Rivets",
+      "slug": "velvet-mask",
+      "subject": "An empty deep burgundy velvet masquerade half-mask with two eye openings, edged in tiny polished steel rivets and short trailing dark ribbons. No face or wearer, elegant symmetrical construction, no spikes."
+    },
+    {
+      "name": "Obsidian Prayer Beads",
+      "slug": "obsidian-beads",
+      "subject": "A loop of glossy black obsidian prayer beads on a strong burgundy cord, each round bead catching a controlled cool highlight, one larger central bead and a short tassel. Arranged as a compact oval, not a pile."
+    },
+    {
+      "name": "Gold-Threaded Handkerchief",
+      "slug": "gold-handkerchief",
+      "subject": "A neatly folded ivory linen handkerchief with a beautiful embroidered gold-thread border, one corner softly folded back to show its fine weave. Simple, elegant and tangible, no jewelry or additional objects."
+    },
+    {
+      "name": "Brass Neon Sign Fragment",
+      "slug": "brass-sign-fragment",
+      "subject": "One curved brass fragment of a broken shop sign, a length of unlit rose-colored glass neon tubing held in small ceramic mounts along the brass shape. The fragment is an abstract incomplete curl, not a readable letter. Exposed screw mounts and old patina."
+    },
+    {
+      "name": "Painted Skull Teacup",
+      "slug": "skull-teacup",
+      "subject": "A charming white porcelain teacup with a loop handle, a hand-painted smiling black skull on the outside and carefully gilded teeth and lip. Three-quarter view shows empty cup interior, no saucer, full object."
+    },
+    {
+      "name": "Silver Circuit Brooch",
+      "slug": "silver-circuit-brooch",
+      "subject": "A small oval silver brooch with intricate fine silver circuit traces beneath a clear convex glass cover, dark midnight-blue enamel backing and a delicate scalloped silver rim. Mechanically crafted jewelry, no glowing hologram."
+    },
+    {
+      "name": "Ivory Dice Set (carved)",
+      "slug": "ivory-dice",
+      "subject": "A matching set of five small ivory-colored carved six-sided dice in an open walnut box lined with dark red velvet. Clean black recessed pips, rounded worn corners, hinged lid partly open, entire small box visible."
+    },
+    {
+      "name": "Enamel Portrait Locket",
+      "slug": "enamel-locket",
+      "subject": "A closed hinged oval silver portrait locket with richly colored rose-and-leaf enamel on the outer cover, fine silver edging and a short neatly looped chain. The portrait is concealed inside; show only the beautiful closed exterior. No people."
+    },
+    {
+      "name": "Antitoxin",
+      "slug": "antitoxin",
+      "subject": "A slender sealed medical glass vial of emerald-green antitoxin, pale rubber stopper, brass seal, cream label bearing a simple leaf emblem without words. Clean clinical bottle, distinct upright narrow silhouette."
+    },
+    {
+      "name": "Rations (1 day)",
+      "slug": "rations",
+      "subject": "A compact stack of three sealed foil ration packets, olive and cream wrappers, one packet showing a simple wheat pictogram, bound with a red paper band. Full grouped item, no loose food."
+    },
+    {
+      "name": "Flask of Oil",
+      "slug": "oil-flask",
+      "subject": "A squat battered brass maintenance oil flask with a long narrow pouring spout, screw cap and a dark cloth grip band. Dark amber oil visible through one small sight glass. Functional workshop object, full spout visible."
+    },
+    {
+      "name": "Holy Water (flask)",
+      "slug": "holy-water",
+      "subject": "A small flat clear glass travel flask of pale blue holy water, simple silver stopper, weathered parchment blessing tied to its neck with cream string, a small sunburst seal without writing. Modest practical blessed flask."
+    },
+    {
+      "name": "Smokestick",
+      "slug": "smokestick",
+      "subject": "A short stout gray smoke canister with a large visible pull ring, worn plum band, slightly dented casing and a tiny plume of pale smoke at its vent. Entire canister and ring visible, smoke stays close, no blast."
+    },
+    {
+      "name": "Neon Stout Flask",
+      "slug": "neon-stout",
+      "subject": "A squat glass beer flask with a bold hot-pink protective sleeve, very dark brown stout visible through a window, brass swing-top stopper. A simple cream crown symbol on the sleeve, no words. Full object."
+    },
+    {
+      "name": "Ash-Salt Vial",
+      "slug": "ash-salt",
+      "subject": "A small cylindrical corked glass vial containing visibly granular gray-white ash salt crystals clinging inside, weathered brown twine around the neck, matte black wax seal. Restrained natural colors, no magical glow."
+    },
+    {
+      "name": "Glowstick Torch Oil",
+      "slug": "glowstick-oil",
+      "subject": "A translucent rectangular green bottle of lamp oil with a soft luminous yellow-green liquid, simple black screw cap and a narrow pouring lip, worn utility label with a flame pictogram. Controlled glow only in the liquid."
+    },
+    {
+      "name": "Scrap-Metal Caltrops",
+      "slug": "caltrops",
+      "subject": "Four unmistakable iron caltrops, each made from four sharp welded spikes, emerging from a small open dark canvas bag with greasy brown packing paper. Compact bundle; three spikes form the base and one points up on each caltrop. Full objects visible."
+    },
+    {
+      "name": "Spicy Ration Pack",
+      "slug": "spicy-rations",
+      "subject": "A sealed bright red-orange foil meal pouch with crimped edges and a bold simple hot-pepper pictogram, smaller dark red heat symbols, a folded corner catching the light. No words. Tactile foil, entire packet."
+    },
+    {
+      "name": "Poison",
+      "slug": "poison",
+      "subject": "A small squat dark green glass poison bottle, deep violet liquid visible through it, black wax sealed stopper and a cream skull-and-crossbones label layered over an older faded label. Practical dangerous alchemy supply, no bones around it."
+    },
+    {
+      "name": "Alchemist's Fire",
+      "slug": "alchemists-fire",
+      "subject": "A thick round amber glass flask containing radiant molten orange alchemical liquid, dense bright swirl inside, tightly clamped copper stopper and protective dark leather band. Controlled internal glow, not an explosion; full bottle."
+    },
+    {
+      "name": "Acid Vial",
+      "slug": "acid-vial",
+      "subject": "A clear stout laboratory vial containing sharp yellow-green acid, a glass stopper with a sturdy T-shaped handle and protective copper neck wire. A small dissolving dark cork fragment visible inside. Keep the glass shape clean and functional."
+    },
+    {
+      "name": "Hunting Trap",
+      "slug": "hunting-trap",
+      "subject": "A complete open steel hunting trap with two arched toothed jaws, clearly constructed spring mechanism, flat pressure plate, handle and a short anchor chain. Empty and dry, no victim or blood. Three-quarter overhead view, full mechanism within frame."
+    },
+    {
+      "name": "Net",
+      "slug": "net",
+      "subject": "A loosely folded weighted throwing net made from sturdy tan knotted cord with clearly open mesh, small dark lead weights attached along its hem and a coiled retrieval cord. Some mesh spread just enough to be unmistakable. Single compact grouped object."
+    },
+    {
+      "name": "Healing Potion",
+      "slug": "field-healing-potion",
+      "subject": "A large red-glass field healing bottle filled with ruby medicine, wide flat base, heavy ribbed cap easy to grip, protective cream rubber shoulder collar with a red medical cross. Clearly bigger and sturdier than a small corked apothecary bottle. Full object."
+    },
+    {
+      "name": "Soft-Close Lid",
+      "slug": "soft-close-lid",
+      "subject": "A compact battered steel cabinet door repurposed as a shield, two clearly visible small hydraulic dampers attached along the back edge, bolted handgrip, faded yellow warning sticker without lettering. Entire door in three-quarter view; precise industrial construction."
+    },
+    {
+      "name": "Floor-Captain Vest",
+      "slug": "floor-captain-vest",
+      "subject": "An EMPTY ochre and oxblood warehouse supervisor vest, extra overlapping protective leather and steel panels sewn over the ribs, sturdy buckles and a conspicuously empty whistle loop. Workwear, no wearer or mannequin, front three-quarter view."
+    },
+    {
+      "name": "Final-Writeup Bow",
+      "slug": "final-writeup-bow",
+      "subject": "A complete compact industrial recurve bow, graphite-gray spring steel limbs with warm wood insets, wrapped maroon grip, taut bowstring, small red archive tag tied near the grip without readable writing. One bow only, diagonal composition with both limb tips fully visible."
+    },
+    {
+      "name": "No-Refund Dome",
+      "slug": "no-refund-dome",
+      "subject": "A heavy convex circular steel service dome used as a shield, rolled thick rim, off-center rectangular inspection plate, steel mounting bolts and subtle red inventory stamping without legible words. Three-quarter view emphasizes the convex dome, no spikes."
+    },
+    {
+      "name": "After-Hours Plating",
+      "slug": "after-hours-plating",
+      "subject": "An EMPTY torn black night-shift work jacket reinforced by layered dark steel armor plates over the chest, riveted shoulders, a small closed metal timecard sleeve bolted on the chest. Whole wearable jacket, no wearer or mannequin. Subtle plum accents."
+    },
+    {
+      "name": "Belaying Hook",
+      "slug": "belaying-hook",
+      "subject": "A pirate boarding hook, heavy salt-stained steel shaft curving into one broad sharp hook, tarred hemp line tightly wrapped around the long shank as a grip, brass end cap. Complete sturdy tool in diagonal composition, distinguish from a grappling hook, one hook only."
+    },
+    {
+      "name": "Scuttle Lid",
+      "slug": "scuttle-lid",
+      "subject": "A weathered octagonal ship hatch lid used as a shield, gray-green wood planks bound by salt-worn iron, one conspicuously clean brass latch still attached, a bolted handle seen at the turned edge. Entire hatch, three-quarter view."
+    },
+    {
+      "name": "Tarred Vest",
+      "slug": "tarred-vest",
+      "subject": "An EMPTY sleeveless pirate work vest made of tar-darkened leather, heavy cream stitching, broad worn brown buckles, slightly glossy patches of old tar around the seams. No wearer or mannequin, complete garment, rugged maritime workwear."
+    },
+    {
+      "name": "Blackwake Cleaver",
+      "slug": "blackwake-cleaver",
+      "subject": "A large single pirate boarding cleaver with a broad rectangular blackened steel blade and a subtly curved cutting edge, short sturdy wood grip wrapped in tarred cord, salt crust along the spine. No blood, no gore, no hand. Entire cleaver diagonal."
+    },
+    {
+      "name": "Deadeye Arbalest",
+      "slug": "deadeye-arbalest",
+      "subject": "A complete heavy pirate arbalest crossbow with a very dark walnut stock, powerful symmetrical black steel bow, taut thick bowstring, brass winding mechanism and one bolt seated on the rail. Salt-weathered, precise practical construction, entire weapon three-quarter view."
+    },
+    {
+      "name": "No-Quarter Lid",
+      "slug": "no-quarter-lid",
+      "subject": "A large heavy rectangular ship service hatch repurposed as a shield, battered black steel over dark navy-painted wood, strong riveted iron rim, two recessed brass bolt heads, faint skull-and-crossed-oars insignia. No words, full hatch three-quarter view."
+    },
+    {
+      "name": "Rope-Burn Harness",
+      "slug": "rope-burn-harness",
+      "subject": "An EMPTY pirate protective harness of thick tightly woven hemp rigging straps threaded through dull brass rings and small weathered steel chest plates, broad shoulder loops and sturdy waist strap. Frayed fibers at contact points, no wearer or mannequin, whole harness visible."
+    },
+    {
+      "name": "After-Watch Plating",
+      "slug": "after-watch-plating",
+      "subject": "An EMPTY navy canvas sailor jacket fitted with overlapping blue-black iron chest plates and rust-brown edge rivets, reinforced shoulders, simple leather closures. Strong complete wearable silhouette, damp salt patina, no body or mannequin."
+    }
+  ]
+}
