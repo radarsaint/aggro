@@ -272,65 +272,45 @@ export function snapshotGearEffects(
 export function gearEffectOneLiner(name: string): string | null {
   switch (name) {
     case 'Cubicle Hook':
-      return 'Once per date: if your first Attack hits, +2 damage.';
+      return 'If your first Attack of the fight hits, it deals 2 extra damage. A miss uses up this bonus.';
     case 'Soft-Close Lid':
-      return 'Once per date when you Run: leave without a free parting hit.';
+      return 'Once per fight, Run from close range without taking a parting attack. Does not prevent a chase.';
     case 'Floor-Captain Vest':
-      return 'When a creature hits you, they take 1 damage back (every hit).';
+      return 'Whenever an enemy attack hits you, the attacker takes 1 damage.';
     case 'PIP Machete':
-      return 'First Attack hit this date: +1d4 damage.';
+      return 'Your first successful Attack in each fight deals an extra 1d4 damage.';
     case 'Final-Writeup Bow':
-      return 'First Attack hit this date: +3 damage.';
+      return 'Your first successful Attack in each fight deals 3 extra damage.';
     case 'Exit-Only Lid':
-      return 'Once per date when you Run: no parting hit, and they take 1 damage.';
+      return 'Once per fight, Run from close range avoids the enemy’s parting attack and deals 1 damage. Does not prevent a chase.';
     case 'No-Refund Dome':
-      return 'Once per date when you Run: deal 1d4 as you flee (flee still resolves).';
+      return 'Once per fight, deal 1d4 damage when you Run from close range and survive a parting attack. Does not activate while smoke or caltrops cover your retreat.';
     case 'Badge Harness':
-      return 'When a creature hits you, they take 2 damage back (every hit).';
+      return 'Whenever an enemy attack hits you, the attacker takes 2 damage.';
     case 'After-Hours Plating':
-      return 'First hit taken this date: they take 1d4 back; later hits no spite from this piece.';
+      return 'The first enemy attack that hits you in each fight deals 1d4 damage back to the attacker.';
     case 'Belaying Hook':
-      return 'Once per date: if your first Attack hits, +2 damage.';
+      return 'If your first Attack of the fight hits, it deals 2 extra damage. A miss uses up this bonus.';
     case 'Scuttle Lid':
-      return 'Once per date when you Run: leave without a free parting hit.';
+      return 'Once per fight, Run from close range without taking a parting attack. Does not prevent a chase.';
     case 'Tarred Vest':
-      return 'When a creature hits you, they take 1 damage back (every hit).';
+      return 'Whenever an enemy attack hits you, the attacker takes 1 damage.';
     case 'Blackwake Cleaver':
-      return 'First Attack hit this date: +1d4 damage.';
+      return 'Your first successful Attack in each fight deals an extra 1d4 damage.';
     case 'Deadeye Arbalest':
-      return 'First Attack hit this date: +3 damage.';
+      return 'Your first successful Attack in each fight deals 3 extra damage.';
     case 'No-Quarter Lid':
-      return 'Once per date when you Run: deal 1d4 as you flee (flee still resolves).';
+      return 'Once per fight, deal 1d4 damage when you Run from close range and survive a parting attack. Does not activate while smoke or caltrops cover your retreat.';
     case 'Rope-Burn Harness':
-      return 'When a creature hits you, they take 2 damage back (every hit).';
+      return 'Whenever an enemy attack hits you, the attacker takes 2 damage.';
     case 'After-Watch Plating':
-      return 'First hit taken this date: they take 1d4 back; later hits no spite from this piece.';
+      return 'The first enemy attack that hits you in each fight deals 1d4 damage back to the attacker.';
     default:
       return null;
   }
 }
 
-/** Short On-you flavor (hangover voice). Falls back to rules one-liner when absent. */
+/** Equipped slots show the actual effect on both floors. */
 export function gearOnYouFlavor(name: string): string | null {
-  switch (name) {
-    case 'Belaying Hook':
-      return 'Hook leads. First swing hits harder.';
-    case 'Scuttle Lid':
-      return 'Scuttle ready. One clean exit.';
-    case 'Tarred Vest':
-      return 'Tar bites when they land it.';
-    case 'Blackwake Cleaver':
-      return 'Cleaver for the first boarding cut.';
-    case 'Deadeye Arbalest':
-      return 'First bolt from the dark. They never see the bolt.';
-    case 'No-Quarter Lid':
-      return 'No quarter when you leave.';
-    case 'Rope-Burn Harness':
-      return 'Rope-burn answers every hit.';
-    case 'After-Watch Plating':
-      return 'After-Watch temper. One answer.';
-    default:
-      return gearEffectOneLiner(name);
-  }
+  return gearEffectOneLiner(name);
 }
-

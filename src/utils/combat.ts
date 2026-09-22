@@ -170,7 +170,7 @@ function applyOnHitSpite(next: CombatState, _creature: Creature): void {
     applyMonsterDamage(next, total);
     const name = gearLogName(next, 'armor', 'After-Hours Plating');
     next.log.push(
-      log(`${name} — first hit spite ${total} damage (${detail}).`, 'damage'),
+      log(`${name} deals ${total} damage back after the first hit you take (${detail}).`, 'damage'),
     );
   }
   // Spite cannot finish the fight mid-strike from AoO paths that already check hunter death;
@@ -512,18 +512,18 @@ export function hunterAttack(state: CombatState, creature: Creature, hunter: Hun
       totalDmg += 2;
       const name = gearLogName(next, 'weapon', 'Cubicle Hook');
       detailAll += ` + 2 ${name}`;
-      next.log.push(log(`${name} — first Attack hit: +2 damage.`, 'narration'));
+      next.log.push(log(`${name} adds 2 damage because your first Attack hit.`, 'narration'));
     } else if (next.gearFirstAttack === 'pip' && isFirstHit) {
       const pip = rollDamage('1d4');
       totalDmg += pip.total;
       const name = gearLogName(next, 'weapon', 'PIP Machete');
       detailAll += ` + ${pip.total} ${name} (${pip.detail})`;
-      next.log.push(log(`${name} — first hit: +${pip.total} (${pip.detail}).`, 'narration'));
+      next.log.push(log(`${name} adds ${pip.total} damage to your first successful Attack (${pip.detail}).`, 'narration'));
     } else if (next.gearFirstAttack === 'bow' && isFirstHit) {
       totalDmg += 3;
       const name = gearLogName(next, 'weapon', 'Final-Writeup Bow');
       detailAll += ` + 3 ${name}`;
-      next.log.push(log(`${name} — first hit: +3 damage.`, 'narration'));
+      next.log.push(log(`${name} adds 3 damage to your first successful Attack.`, 'narration'));
     }
 
     applyMonsterDamage(next, totalDmg);
@@ -610,7 +610,7 @@ function resolveMonsterStrike(
   next.log.push(log(`${detailAll}.`, 'damage'));
   applyOnHitSpite(next, creature);
   if (attack.onHit && !attack.onHit.includes('DC 11 Con')) {
-    next.log.push(log(attack.onHit, 'narration'));
+    next.log.push(log(attack.hitNarration ?? attack.onHit, 'narration'));
   }
   return true;
 }
@@ -661,7 +661,7 @@ function resolveFullVolley(
   groupSize: number,
   restrained: boolean,
   extraReasons: string[],
-): { anyHit: boolean } {
+): { anyHit: boolean | null } {
   let strikes = groupSize;
   const reasons = [...extraReasons];
 
@@ -699,7 +699,7 @@ function resolveFullVolley(
 
   if (strikes === 0) {
     next.log.push(log(`${creature.name} can't land a strike this turn.`, 'narration'));
-    return { anyHit: false };
+    return { anyHit: null }; // No attack occurred, so there is no hit or miss to voice.
   }
 
   let anyHit = false;
@@ -777,10 +777,10 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
     next.justClosed = false;
     next.atRange = false;
     next.smokeActive = false;
-    next.banner = "CHASE — THEY'RE PISSED";
+    next.banner = 'THEY GIVE CHASE';
     next.log.push(
       log(
-        `💢 CHASE — ${creature.name} is pissed you ran again. Full ×${groupSize} chase strike(s)!`,
+        `${creature.name} gives chase as you retreat again.`,
         'system',
       ),
     );
@@ -813,7 +813,6 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
       if (stumble) {
         delayed = true;
         next.skipStrikes += 1;
-        next.log.push(log(`Caltrops stumble — they'll also skip 1 strike when they finally swing.`, 'narration'));
       }
     }
 
@@ -837,7 +836,7 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
         next.justClosed = true;
         next.closeFromRun = false;
         next.log.push(
-          log(`${creature.name} is in your face again. Next Run in a row = pissed chase.`, 'system'),
+          log(`${creature.name} has caught up. Running again immediately lets them chase and attack.`, 'system'),
         );
       } else {
         next.justClosed = false;
@@ -848,7 +847,6 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
 
     if (next.skipStrikes > 0) {
       next.skipStrikes -= 1;
-      next.log.push(log(`Restrain fades as they close (skip charge spent).`, 'narration'));
     }
     decayNetTurns(next);
     banterBeat = delayed ? null : 'close';
@@ -874,7 +872,7 @@ export function monsterAttack(state: CombatState, creature: Creature): CombatSta
 
     const { anyHit } = resolveFullVolley(next, creature, groupSize, restrained, []);
     volleyHit = anyHit;
-    banterBeat = anyHit ? 'monster_hit' : 'monster_miss';
+    banterBeat = anyHit === null ? null : anyHit ? 'monster_hit' : 'monster_miss';
     decayNetTurns(next);
   }
 
@@ -1116,7 +1114,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     next.hunter.hp = Math.min(next.hunter.maxHp, next.hunter.hp + total);
     next.log.push(
       log(
-        `🏃 Run AGAIN — +${next.hunter.hp - before} HP (${detail}). No smoke cover — ${creature.name} is pissed; full chase incoming!`,
+        `You Run again and recover ${next.hunter.hp - before} HP (${detail}). Without smoke cover, ${creature.name} can follow and attack on the next turn.`,
         'system',
       ),
     );
@@ -1147,13 +1145,13 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
         if (escape === 'softClose') {
           const name = gearLogName(next, 'shield', 'Soft-Close Lid');
           next.log.push(
-            log(`🏃 ${name} — you leave with no free parting hit.`, 'system'),
+            log(`${name} prevents the enemy's parting attack as you move out of reach.`, 'system'),
           );
         } else {
           applyMonsterDamage(next, 1);
           const name = gearLogName(next, 'shield', 'Exit-Only Lid');
           next.log.push(
-            log(`🏃 ${name} — no parting hit; they take 1 as you go.`, 'system'),
+            log(`${name} prevents the enemy's parting attack and deals 1 damage as you move away.`, 'system'),
           );
           if (finishIfMonsterDown(next, creature)) return next;
         }
@@ -1177,7 +1175,7 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
           const name = gearLogName(next, 'shield', 'No-Refund Dome');
           next.log.push(
             log(
-              `🏃 ${name} — you deal ${flee.total} as you flee (${flee.detail}). Flee still resolves.`,
+              `${name} deals ${flee.total} damage as you move away after the parting attack (${flee.detail}).`,
               'system',
             ),
           );
@@ -1204,9 +1202,9 @@ export function hunterRun(state: CombatState, creature: Creature, _hunter: Hunte
     const q = rollD20();
     if (q >= 11) {
       next.burnTurns = 0;
-      next.log.push(log(`💦 You splash through runoff — burn quenched! (d20=${q})`, 'system'));
+      next.log.push(log(`The flames on ${creature.name} go out as you retreat (d20=${q}).`, 'system'));
     } else {
-      next.log.push(log(`🔥 Still burning as you run (quench d20=${q} fail).`, 'narration'));
+      next.log.push(log(`${creature.name} is still burning as you retreat (quench d20=${q} fail).`, 'narration'));
     }
   }
 

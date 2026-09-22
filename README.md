@@ -150,7 +150,7 @@ Item illustrations live in `public/loot/items/` as transparent 512px WebP images
 
 ## Versioning
 
-- Current package version is **0.1.2**; use patch bumps for art wiring and fixes (see [docs/VERSIONING.md](docs/VERSIONING.md)).
+- Current package version is **0.1.3**; use patch bumps for art wiring and fixes (see [docs/VERSIONING.md](docs/VERSIONING.md)).
 - Document releases in [CHANGELOG.md](CHANGELOG.md).
 - Docs-only work goes under **Unreleased** when noted — **do not bump** `package.json` for docs.
 

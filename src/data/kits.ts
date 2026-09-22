@@ -37,23 +37,23 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Poison',
     summary: "Coat your weapon. Poison immediately deals 1 damage on each of the next 3 enemy turns and reduces enemy attack rolls by 3. Each weapon hit refreshes the duration.",
     roastLines: ["A wax-sealed vial with a skull label pasted over an older, friendlier label."],
-    combatHint: "Smear the blade. They keep tasting it.",
+    combatHint: "Coat your weapon to poison and weaken the enemy.",
     effectKind: 'weapon-coat',
   },
   'alchemists-fire': {
     id: 'alchemists-fire',
     name: "Alchemist's Fire",
-    summary: "Deal 1d4 fire damage now, then 1d4 on each of the next 2 enemy turns, or 3 turns against a crew. Active oil adds another burn turn. An enemy chase after Run can put the fire out.",
+    summary: "Deal 1d4 fire damage now, then 1d4 on each of the next 2 enemy turns, or 3 turns against a crew. Active oil adds another burn turn. Running gives the enemy a 50% chance to put the fire out.",
     roastLines: ["A thick amber liquid that keeps glowing after you put it back in the bag."],
-    combatHint: "Throw fire that sticks and keeps burning.",
+    combatHint: "The liquid burns on contact and keeps burning.",
     effectKind: 'splash',
   },
   caltrops: {
     id: 'caltrops',
     name: 'Caltrops',
-    summary: "Scatter the spikes. Your next Run avoids the opportunity attack. Enemies crossing them to Close take 1d8 damage, with a 70% chance to delay closing and cancel one later strike. If triggered in melee first, they deal 1d4 and cancel one strike.",
+    summary: "Scatter the spikes. Your next Run avoids the opportunity attack. Enemies crossing them to Close take 1d8 damage, with a 70% chance to delay closing. If triggered in melee first, they deal 1d4 and cancel one strike.",
     roastLines: ["A cloth bag of iron points. The company counts them before issue, never after."],
-    combatHint: "Scatter iron teeth. Following you gets expensive.",
+    combatHint: "Scatter spikes to cover your next retreat.",
     effectKind: 'arm',
   },
   'acid-vial': {
@@ -61,7 +61,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Acid Vial',
     summary: "Splash the enemy for 2d6 acid damage. One use.",
     roastLines: ["The stopper has a glass handle. The last cork is still dissolving inside."],
-    combatHint: "One splash. It eats what it hits.",
+    combatHint: "Splash the enemy for immediate acid damage.",
     effectKind: 'splash',
   },
   'holy-water': {
@@ -69,7 +69,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Holy Water',
     summary: "Splash an Undead enemy for 4d6 radiant damage. Other creature types take 1d6 radiant damage.",
     roastLines: ["Blessed water in a travel flask. The blessing survived the clearance sticker."],
-    combatHint: "This one burns the drowned hard.",
+    combatHint: "Deals extra damage to undead enemies.",
     effectKind: 'splash',
   },
   smokestick: {
@@ -85,7 +85,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Hunting Trap',
     summary: "Deal 1d8 damage in round 1, 1d6 in round 2, or 1d4 later. The enemy spends its next turn opening the trap instead of attacking or closing. Use it in round 1 to gain advantage on your next Attack.",
     roastLines: ["Heavy steel jaws with a handle just large enough to keep your fingers out of them."],
-    combatHint: "Set the snap. They stop to pry.",
+    combatHint: "The enemy spends its next turn opening the trap.",
     effectKind: 'trap',
   },
   net: {
@@ -93,7 +93,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Net',
     summary: "Restrain for up to 3 enemy turns. You attack with advantage; enemy attacks have disadvantage, crews lose one striker, and the enemy cannot Close. After the first turn, a DC 13 Strength check can free it early.",
     roastLines: ["A weighted mesh bundle. Folded neatly once, at the factory."],
-    combatHint: "Throw the mesh. Tangled dates fight worse.",
+    combatHint: "Restrain the enemy and make your attacks easier to land.",
     effectKind: 'control',
   },
   'healing-potion': {
@@ -101,7 +101,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Healing Potion',
     summary: "Restore 4d4+4 HP, up to your maximum, and step out of reach. The enemy must Close before attacking. This fight item is stronger than the locker Potion of Healing.",
     roastLines: ["A large red bottle with a cap designed for shaking hands."],
-    combatHint: "Drink deep. Feel whole. Step back.",
+    combatHint: "Drink to recover health and move out of reach.",
     effectKind: 'heal',
   },
   'oil-flask': {
@@ -109,7 +109,7 @@ export const KIT_DEFS: Record<KitId, KitDef> = {
     name: 'Oil Flask',
     summary: "Oil your weapon and step back. Every successful Attack deals an extra 1d6 damage for the rest of this fight. The enemy must Close. If you later use Alchemist's Fire, its burn lasts one extra turn.",
     roastLines: ["A squat bottle of weapon oil. The label shows a blade, three arrows, and a very worried target."],
-    combatHint: "Oil the edge — every hit hits meaner tonight.",
+    combatHint: "Coat your weapon for extra damage throughout this fight.",
     effectKind: 'arm',
   },
 };

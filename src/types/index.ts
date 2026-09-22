@@ -31,6 +31,8 @@ export interface Attack {
   bonusDamage?: string;
   bonusDamageType?: string;
   onHit?: string;
+  /** Authored display text; onHit retains the source rules used by combat. */
+  hitNarration?: string;
 }
 
 export interface CreatureCombat {
