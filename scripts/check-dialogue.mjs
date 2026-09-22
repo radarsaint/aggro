@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { loadSource } from './ts-module-loader.mjs';
 
 const { CREATURES } = loadSource('src/data/creatures.ts');
+const { TORTUGA_CREATURES } = loadSource('src/data/creaturesTortuga.ts');
 const { BANTER_SCRIPTS } = loadSource('src/data/banterScripts/index.ts');
 const { CREATURE_CHAT } = loadSource('src/data/creatureChat.ts');
 const { classifyChatIntent, chatStatusAfterMessage, generateBanterReply, generateFightAccept, generateOpener } = loadSource('src/utils/roast.ts');
@@ -76,6 +77,15 @@ for (let i = 0; i < 2; i++) {
 assert.equal(resolveCombatBanter(patches, 'hunter_hit', { usedLines, flags: [] }).text, null);
 assert.ok(resolveCombatBanter(patches, 'hunter_hit', { usedLines, flags: ['wound:Bloodied'] }).text);
 
+// A once-only authored reaction stays silent once its selector excludes it.
+// A generic fallback must not bypass the character's flags.
+const lookout = TORTUGA_CREATURES.find(c => c.id === 'cutthroat');
+const firstRun = resolveCombatBanter(lookout, 'run', { usedLines: [], flags: [] });
+assert.ok(firstRun.text);
+assert.ok(firstRun.setFlags.includes('ran'));
+assert.equal(resolveCombatBanter(lookout, 'run', { usedLines: [firstRun.text], flags: firstRun.setFlags }).text, null);
+assert.ok(resolveCombatBanter({ ...lookout, id: 'unwritten-creature' }, 'run').text);
+
 // A turn spent restrained or closing without reaching the player is not a missed attack.
 const hunter = {
   displayName: 'Reviewer', maxHp: 40, ac: 14, initiativeBonus: 2,
@@ -92,6 +102,36 @@ for (const condition of [
   assert.equal(after.hunter.hp, before.hunter.hp);
   assert.equal(after.log.slice(before.log.length).filter(entry => entry.kind === 'banter').length, 0);
   if (condition.atRange) assert.equal(after.atRange, true);
+}
+
+// Tortuga's source attack notes include tabletop effects the game does not apply.
+// Exercise each attack so the log must use its authored narration, not those notes.
+let authoredAttackCount = 0;
+const originalRandom = Math.random;
+try {
+  Math.random = () => 0.5; // A noncritical hit against AC 0; stable damage rolls.
+  for (const c of TORTUGA_CREATURES) {
+    const beforeCaltrops = { ...startCombat(hunter, c, 'caltrops'), turn: 'monster', caltropsArmed: true };
+    const afterCaltrops = monsterAttack(beforeCaltrops, c);
+    const missLines = BANTER_SCRIPTS[c.id].filter(n => n.beat === 'monster_miss').flatMap(n => n.lines);
+    assert.equal(afterCaltrops.hunter.hp, beforeCaltrops.hunter.hp);
+    assert.ok(afterCaltrops.log.slice(beforeCaltrops.log.length).every(entry => !missLines.includes(entry.text)),
+      c.id + ' must not describe a cancelled strike as a miss');
+    for (const attack of c.combat.attacks.filter(a => a.onHit && !a.onHit.includes('DC 11 Con'))) {
+      assert.ok(attack.hitNarration, c.id + '/' + attack.name + ' needs display narration');
+      const opponent = { ...c, combat: { ...c.combat, attacks: [attack] } };
+      const before = { ...startCombat({ ...hunter, ac: 0 }, opponent, 'net'), turn: 'monster' };
+      const after = monsterAttack(before, opponent);
+      const entries = after.log.slice(before.log.length);
+      assert.ok(entries.some(entry => entry.text === attack.hitNarration), c.id + '/' + attack.name);
+      assert.ok(entries.every(entry => entry.text !== attack.onHit), c.id + ' must not announce unused source rules');
+      assert.equal(after.hunter.maxHp, before.hunter.maxHp);
+      assert.equal(after.turn, 'hunter', c.id + ' leaves the player free to act');
+      authoredAttackCount++;
+    }
+  }
+} finally {
+  Math.random = originalRandom;
 }
 
 const pools = ['EQUIP_CORE', 'USE_HEAL', 'SCRAP_TOOLS', 'SCRAP_ART', 'JUNK_CONS'];
@@ -115,3 +155,4 @@ assert.doesNotMatch(rewards.pickLootFraming({ ...base, hot: false, banterFlags: 
 
 console.log('PASS: chat intent, explicit acceptance, authored openings, dialogue coverage/freshness, combat event timing, item rules, and event-aware rewards.');
 console.log(CREATURES.length + ' creatures; ' + nodeCount + ' dialogue nodes; ' + items.length + ' described items; ' + Object.keys(KIT_DEFS).length + ' fight kits.');
+console.log(authoredAttackCount + ' Tortuga attack narrations exercised without announcing unimplemented effects.');

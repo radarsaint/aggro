@@ -588,7 +588,7 @@ export function pickLootFraming(opts: LootFramingOpts): string {
     const flags = opts.banterFlags ?? [];
     if (flags.includes('netted')) observations.push('You used a net and won. Somebody expected a heroic speech. They got fishing.');
     if (flags.includes('trapped')) observations.push('A trap. An actual useful object. The motivational-poster department is furious.');
-    if (flags.includes('healed')) observations.push('You took time to heal and still took the win. The audience can survive a short drink break.');
+    if (flags.includes('healed')) observations.push('You took time to heal and still took the win. The audience can survive a short pause.');
     if (flags.includes('ran')) observations.push('You used the room and won the fight. Facilities would like credit for installing the floor.');
     if (flags.includes('hunter_crit')) observations.push('That hard hit is getting a replay. I would have paid for a closer camera. Fortunately, you paid attention.');
     const reward = beat === 'scrap'

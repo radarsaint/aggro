@@ -14,7 +14,7 @@ Remove coercive sexual references and jokes about disregarding consent. Do not i
 
 ## Sources and behavior
 
-- Profiles: src/data/creatures.ts.
+- Profiles: src/data/creatures.ts and src/data/creaturesTortuga.ts.
 - Combat speech: src/data/banterScripts/*.ts. Match greetings reuse these authored opening lines.
 - Chat replies: src/data/creatureChat.ts. Each creature has explicit replies for refusals, invitations, weapons, greetings, work, loot, equipment, and unrecognized messages.
 - Intent and confirmation: src/utils/roast.ts. It handles questions and negation before recognizing a narrow explicit invitation.
@@ -60,6 +60,31 @@ An event flag records history. The netted flag at victory means a net was used e
 | Silt Knives | Lizardfolk clearing a blackwater channel. Concrete observations about footing, water, knives, and upstream rubbish. No mystical guest lists in silt. |
 | Cinder Crew | Magmin still attending a disconnected boiler. Paper and overheated equipment cause practical trouble. No group-chat or oxygen-RSVP metaphors. |
 | Sting Grid | Giant wasps patrolling beneath a warm nest. Flight, routes, wing damage, and return to the lights drive speech. No permit bureaucracy in every line. |
+
+## Tortuga Muerta character decisions
+
+| Creature | Concern and behavior |
+| --- | --- |
+| Cutthroat | A careful lookout whose easy confidence depends on staying unnoticed. |
+| Press-Ganged Dead | A hungry ghoul still trying to get the promised meal out of a miserable sea voyage. |
+| Dead Man's Rig | A dutiful empty suit of armor learning to account for its own missing wearer. |
+| Deadman's Teeth | An eager school of biting fish, forever getting in each other's way at feeding time. |
+| Dead Bosun | A ship's exhausted disciplinarian, more attached to the ropes than he admits. |
+| Gallows Hound | Two rival heads sharing one tracking dog, one nose for work and another for supper. |
+| Bilge Toad | A comfortably settled toad who treats a flooded hold as a private sitting room. |
+| Drowned Powderman | A wary gunner trying to keep damp powder usable and everyone else's fire away from it. |
+| Drowned Hand | A cold, lonely sailor's ghost still waiting for the watch bell and a human reply. |
+| Powder Drake | A talkative young brass dragon who considers a cannon carriage an excellent home and everyone a potential listener. |
+| Rigging Widow | A patient spider who built the web everyone keeps treating as ship's rigging. |
+| Gravewater Octopus | A curious wreck scavenger with eight busy arms and a practical interest in every latch. |
+| Dead Siren | A proud singer carrying a drowned chorus in one battered throat, sensitive to every silence. |
+| Mangrove Widow | A dryad patiently making a home in the wreck, with a gardener's eye for damage and unwanted visitors. |
+
+Use the creature’s actual body and equipment. Hit/miss nodes can follow any attack in its list, so a gunner with both a pick and a javelin needs speech that fits either. A weapon question does not prove the player carries a blade. Keep oil reactions usable with bows and crossbows too.
+
+The Tortuga `onHit` fields retain source rules, some of which are not implemented by this game. `hitNarration` is display copy for those attacks. Do not announce paralysis, grappling, charm, altered maximum HP, or a new damage bonus unless combat actually applies it.
+
+See [TORTUGA_WRITING_REVIEW.md](TORTUGA_WRITING_REVIEW.md) for the full copy and [TORTUGA_ENCOUNTER_REVIEW.md](TORTUGA_ENCOUNTER_REVIEW.md) for sampled sequences.
 
 ## Review a complete encounter
 

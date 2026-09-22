@@ -106,7 +106,7 @@ function eligible(
 
 /**
  * Reactive banter resolver.
- * 1. Filter creature nodes (+ thin shared fallback) for beat + conditions
+ * 1. Filter authored nodes for beat + conditions; use shared lines only for absent beats
  * 2. Prefer higher-specificity (more requireFlags / kit / wound / arc)
  * 3. Weighted random node, then random fresh line
  */
@@ -127,7 +127,7 @@ export function resolveCombatBanter(
   }
 
   let fromShared = false;
-  if (!pool.length) {
+  if (!pool.length && !creatureNodes.some(n => n.beat === beat)) {
     pool = SHARED_NODES.filter((n) => eligible(n, beat, ctx, flags));
     fromShared = true;
   }

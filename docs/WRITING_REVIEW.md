@@ -1,5 +1,13 @@
 # Writing and response review
 
+## Tortuga Muerta — 2026-09-22
+
+Version 0.1.3 extends the pass to all 14 new monsters: 14 profiles, 112 chat replies, and 364 battle nodes containing 420 lines. It also revises all 13 newer gear descriptions, clarifies 17 named effects and nine kit hints, and corrects displayed attack notes that claimed effects the game does not apply. Dialogue no longer calls a cancelled strike a miss or bypasses an authored selector with a generic fallback.
+
+The complete copy, character decisions, preservation checks, and validation are in [TORTUGA_WRITING_REVIEW.md](TORTUGA_WRITING_REVIEW.md). [TORTUGA_ENCOUNTER_REVIEW.md](TORTUGA_ENCOUNTER_REVIEW.md) records 28 completed combat sequences, covering both endings for every new monster.
+
+## Baatorasaka — previous pass
+
 Completed 2026-09-21 against PR #14, parent commit 54442be84065c821d60b93eb696ec42a21a5f200.
 
 ## Applied changes

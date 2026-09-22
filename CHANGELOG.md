@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.3 — 2026-09-22 — Tortuga writing pass
+
+- Rewrote all 14 Tortuga profiles, 112 chat replies, and 364 battle nodes with 420 distinct lines grounded in each monster’s character.
+- Revised all 13 newer equipment descriptions and clarified 17 named effects, including first-attempt bonuses, first-successful-hit bonuses, and the limits of retreat shields. Equipped slots now show the same rules.
+- Reviewed all 10 fight kits, clarified nine combat hints, and corrected the fire and caltrops rules summaries.
+- Replaced nine displayed attack notes with narration that does not claim unimplemented effects; preserved combat data and all dialogue node metadata.
+- Stopped miss dialogue after cancelled attacks and generic fallback speech when an authored selector excludes a reaction.
+- Added the complete script review and 28 sampled encounters, with regression checks for attack narration and dialogue timing.
+
 ## 0.1.2 — 2026-09-22 — Item and equipment artwork
 
 - Replaced shared placeholder icons and emoji with 60 distinct illustrations covering all 54 loot items and all 10 fight kits, including the new Tortuga equipment.
