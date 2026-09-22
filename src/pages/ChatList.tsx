@@ -101,7 +101,7 @@ export function ChatList() {
                 style={{ background: c.portraitSrc ? undefined : c.gradient }}
               >
                 {c.portraitSrc ? (
-                  <img src={c.portraitSrc} alt="" className="chat-avatar__img" />
+                  <img src={c.portraitThumbSrc ?? c.portraitSrc} alt="" className="chat-avatar__img" />
                 ) : (
                   c.emoji
                 )}

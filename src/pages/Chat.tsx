@@ -107,7 +107,7 @@ export function Chat() {
             style={{ background: creature.portraitSrc ? undefined : creature.gradient }}
           >
             {creature.portraitSrc ? (
-              <img src={creature.portraitSrc} alt="" className="chat-avatar__img" />
+              <img src={creature.portraitThumbSrc ?? creature.portraitSrc} alt="" className="chat-avatar__img" />
             ) : (
               creature.emoji
             )}

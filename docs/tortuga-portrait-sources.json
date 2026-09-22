@@ -1,0 +1,89 @@
+{
+  "sourceFolder": "/Earthfall/Aggro/Floor2/monster-portraits",
+  "portraits": [
+    {
+      "id": "cutthroat",
+      "source": "aggro_floor2_cutthroat.png",
+      "portrait": "/portraits/cutthroat.webp",
+      "thumbnail": "/portraits/cutthroat-384.webp"
+    },
+    {
+      "id": "press-ganged-dead",
+      "source": "aggro_floor2_press_ganged_dead.png",
+      "portrait": "/portraits/press-ganged-dead.webp",
+      "thumbnail": "/portraits/press-ganged-dead-384.webp"
+    },
+    {
+      "id": "dead-mans-rig",
+      "source": "aggro_floor2_dead_mans_rig.png",
+      "portrait": "/portraits/dead-mans-rig.webp",
+      "thumbnail": "/portraits/dead-mans-rig-384.webp"
+    },
+    {
+      "id": "deadmans-teeth",
+      "source": "aggro_floor2_deadmans_teeth.png",
+      "portrait": "/portraits/deadmans-teeth.webp",
+      "thumbnail": "/portraits/deadmans-teeth-384.webp"
+    },
+    {
+      "id": "dead-bosun",
+      "source": "aggro_floor2_dead_bosun.png",
+      "portrait": "/portraits/dead-bosun.webp",
+      "thumbnail": "/portraits/dead-bosun-384.webp"
+    },
+    {
+      "id": "gallows-hound",
+      "source": "aggro_floor2_gallows_hound.png",
+      "portrait": "/portraits/gallows-hound.webp",
+      "thumbnail": "/portraits/gallows-hound-384.webp"
+    },
+    {
+      "id": "bilge-toad",
+      "source": "aggro_floor2_bilge_toad.png",
+      "portrait": "/portraits/bilge-toad.webp",
+      "thumbnail": "/portraits/bilge-toad-384.webp"
+    },
+    {
+      "id": "drowned-powderman",
+      "source": "aggro_floor2_drowned_powderman.png",
+      "portrait": "/portraits/drowned-powderman.webp",
+      "thumbnail": "/portraits/drowned-powderman-384.webp"
+    },
+    {
+      "id": "drowned-hand",
+      "source": "aggro_floor2_drowned_hand.png",
+      "portrait": "/portraits/drowned-hand.webp",
+      "thumbnail": "/portraits/drowned-hand-384.webp"
+    },
+    {
+      "id": "powder-drake",
+      "source": "aggro_floor2_powder_drake.png",
+      "portrait": "/portraits/powder-drake.webp",
+      "thumbnail": "/portraits/powder-drake-384.webp"
+    },
+    {
+      "id": "rigging-widow",
+      "source": "aggro_floor2_rigging_widow.png",
+      "portrait": "/portraits/rigging-widow.webp",
+      "thumbnail": "/portraits/rigging-widow-384.webp"
+    },
+    {
+      "id": "gravewater-octopus",
+      "source": "aggro_floor2_gravewater_octopus.png",
+      "portrait": "/portraits/gravewater-octopus.webp",
+      "thumbnail": "/portraits/gravewater-octopus-384.webp"
+    },
+    {
+      "id": "dead-siren",
+      "source": "aggro_floor2_dead_siren.png",
+      "portrait": "/portraits/dead-siren.webp",
+      "thumbnail": "/portraits/dead-siren-384.webp"
+    },
+    {
+      "id": "mangrove-widow",
+      "source": "aggro_floor2_mangrove_widow.png",
+      "portrait": "/portraits/mangrove-widow.webp",
+      "thumbnail": "/portraits/mangrove-widow-384.webp"
+    }
+  ]
+}

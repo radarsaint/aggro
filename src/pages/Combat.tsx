@@ -221,7 +221,7 @@ export function Combat() {
             <div className="combat-monster-row">
               <div className="combat-monster-thumb">
                 {creature.portraitSrc ? (
-                  <img src={creature.portraitSrc} alt="" />
+                  <img src={creature.portraitThumbSrc ?? creature.portraitSrc} alt="" />
                 ) : (
                   <Portrait
                     emoji={creature.emoji}
