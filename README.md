@@ -1,10 +1,13 @@
 # AGGRO
 
-**Version:** 0.1.1 — see [CHANGELOG.md](CHANGELOG.md).  
+**Version:** 0.1.4 — see [CHANGELOG.md](CHANGELOG.md).\
 **Semver policy:** [docs/VERSIONING.md](docs/VERSIONING.md).  
 **Scope / goals (handoff):** [docs/SCOPE.md](docs/SCOPE.md).  
 **Living design state:** [docs/EARTHFALL_STATE.md](docs/EARTHFALL_STATE.md).  
-**Banter craft:** [docs/VOICE_BIBLES.md](docs/VOICE_BIBLES.md).
+**Banter craft:** [docs/VOICE_BIBLES.md](docs/VOICE_BIBLES.md).\
+**Progress / merge record:** [docs/PROGRESS.md](docs/PROGRESS.md).
+
+**Status checked 2026-09-23:** item artwork, the complete Floor 2 writing pass, and all 14 Floor 2 monster portraits are merged into `main`. A new player-facing preview link and live browser playtesting remain unfinished. The next approved design goal is an optional Pirate Borg–inspired UI skin made available by throwing the Floor 2 lever; it is not implemented yet. See the progress record for scope, merge commits, and validation limits.
 
 This README is the entry point for **humans and other AI collaborators**. Prefer code + these docs over memory. Do not invent systems that are not in `src/` or listed in Scope IN.
 
@@ -18,7 +21,7 @@ AGGRO is a **satirical Tinder-for-monsters** dating-app fight game: swipe WotC-i
 |------|--------|
 | Stack | **Vite + React + TypeScript** |
 | Look | Black + hot pink (`#FF007F`); Baatorasaka theme tokens in `src/themes/baatorasaka.ts` |
-| Setting | **Baatorasaka** — corporate hell megastructure, **Floor 1** (closing). Tagline: DATE · HUNT · CONSUME |
+| Setting | **Baatorasaka** (Floor 1) and **Tortuga Muerta** (Floor 2). Tagline: DATE · HUNT · CONSUME |
 | Save | Solo, browser **localStorage** key `aggro-game-v1` (`src/utils/storage.ts`) — no backend |
 | Loop | Discover → Match/Chat banter → kit draft → Fight (Attack / Item / Run) → reward or PIP → nights |
 
@@ -70,7 +73,7 @@ Do **not** design or propose these as upcoming work unless Brendon asks:
 - **Side bets** — deferred **indefinitely**. Do not list as upcoming. Do not propose “Gate 5.”
 - Mid-fight kit pickers; Drive / Cleave jargon
 - MMO / spreadsheet chrome; player-facing **quota / CR / stamina** words (rest UI stays dating copy)
-- **Skullport × Xanathar × Pirate Borg** — next-floor **aware only**; do not design content
+- Further **Skullport × Xanathar × Pirate Borg** gameplay, story, or loot content beyond the implemented Tortuga pack requires a new request. The optional UI skin is an approved design goal.
 - Additional R.O.D. systems beyond the event-aware commentary on paid prize tiers — parked
 
 See [docs/SCOPE.md](docs/SCOPE.md#scope-out--deferred).
@@ -117,10 +120,11 @@ Open the URL Vite prints (typically `http://localhost:5173`).
 aggro/
 ├── README.md                 ← you are here
 ├── CHANGELOG.md
-├── package.json              ← version 0.1.1
+├── package.json              ← version 0.1.4
 ├── docs/
 │   ├── SCOPE.md              ← In / Out / Goals / Non-goals (handoff)
 │   ├── EARTHFALL_STATE.md    ← living shipped/parked state (not a second README)
+│   ├── PROGRESS.md           ← completed work, merge evidence, remaining verification
 │   ├── VERSIONING.md         ← 0.x bump rules
 │   ├── VOICE_BIBLES.md       ← banter craft + per-enemy bibles
 │   └── chrome-edge-lines.md
@@ -138,9 +142,9 @@ aggro/
 
 **Truth order for collaborators:** code in `src/` → `docs/EARTHFALL_STATE.md` → `CHANGELOG.md` → this README. If docs disagree with code, **fix the docs** (or change code intentionally and changelog it).
 
-### Floor themes (Floor 2 stub only)
+### Floor themes and monster content
 
-Baatorasaka is Floor 1. Tortuga Muerta is Floor 2 theme tokens + aisle enable (systems 0.2) — **creature pack still out**; leave Discover creatures on `themeId: 'baatorasaka'` until the Tortuga pack ships. Unlock Tortuga from Home with the Verified lever.
+Baatorasaka is Floor 1 with 30 monsters. Tortuga Muerta is Floor 2 with 14 monsters in `src/data/creaturesTortuga.ts`, using `themeId: 'tortugaMuerta'`. Its profiles, chat, battle scripts, and finished portraits are implemented. Unlock Tortuga from Home with the existing Verified lever. The portraits appear across discovery, matches, chat, encounter lists, and combat; see [docs/TORTUGA_PORTRAITS.md](docs/TORTUGA_PORTRAITS.md).
 
 ### Loot art
 
@@ -166,8 +170,8 @@ Item illustrations live in `public/loot/items/` as transparent 512px WebP images
 
 ## Player-facing writing pass
 
-All 30 profiles, combat scripts, and chat voices were revised. The 1,436 existing creature dialogue nodes retain their IDs and selectors; each now has one authored response. Match greetings reuse those scripts. Refusals and questions stay separate from fight confirmation, and repeated combat lines are suppressed.
+The Baatorasaka pass revised all 30 profiles, chat voices, and 1,436 combat dialogue nodes. The Floor 2 pass is also complete: [PR #33](https://github.com/radarsaint/aggro/pull/33), merged 2026-09-22, rewrote all 14 Tortuga profiles, 112 chat replies, and 364 battle nodes containing 420 lines. Node IDs and selectors were preserved. Match greetings reuse authored scripts; refusals and questions stay separate from fight confirmation, and repeated combat lines are suppressed.
 
-All 41 locker item names have descriptions and explicit use text. Equipment effects derive from the existing stat maps, and sell-only items are labeled. The 10 drafted kits have physical descriptions and readable rules. R.O.D. comments on recorded actions without inventing penalties. Defeat paperwork satirizes the company and adds no requirements.
+All 54 loot items have descriptions. The newer pass revised 13 equipment descriptions, clarified 17 named effects, and reviewed all 10 fight kits. Nine kit hints and two rules summaries were corrected. Nine attack narrations now avoid claiming unimplemented conditions; cancelled strikes stay silent, and excluded authored reactions no longer produce generic fallback speech.
 
-Run npm run check:dialogue and npm run build. See [the writing guide](docs/VOICE_BIBLES.md) and [the review notes](docs/WRITING_REVIEW.md). The roster, combat stats, kit effects, loot odds, prices, and rest rules are unchanged by this pass.
+`npm run check:dialogue`, `npm run check:art`, and `npm run build` passed for the merged work. These results cover source, asset, and sampled encounter checks; live browser playtesting is still unfinished. See [the writing guide](docs/VOICE_BIBLES.md), [the complete Floor 2 script review](docs/TORTUGA_WRITING_REVIEW.md), [28 sampled encounters](docs/TORTUGA_ENCOUNTER_REVIEW.md), and [the progress record](docs/PROGRESS.md).

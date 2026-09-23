@@ -1,9 +1,9 @@
 # Earthfall / AGGRO — living state
 
-Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the current writing standard. Profiles, chat, combat, item descriptions, and reward commentary are revised. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
+Progress update (2026-09-23): the Floor 2 writing sweep and monster portraits are complete and merged, along with the item artwork replacement. See [PROGRESS.md](PROGRESS.md) for exact coverage, merge commits, validation, and the unfinished preview/playtest work. Use [VOICE_BIBLES.md](VOICE_BIBLES.md) and [WRITING_REVIEW.md](WRITING_REVIEW.md) for the writing standard. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
 
 
-**Updated:** 2026-09-21 (PT) · **Product:** 0.1.1 Baatorasaka  
+**Updated:** 2026-09-23 (UTC) · **Product:** 0.1.4 — Baatorasaka and Tortuga Muerta\
 **Role of this file:** Short living snapshot of what is **shipped**, **parked**, and **locked** — not a second README.  
 **Handoff entry:** [../README.md](../README.md) · **Full In/Out/Goals:** [SCOPE.md](SCOPE.md) · **History:** [../CHANGELOG.md](../CHANGELOG.md)
 
@@ -13,12 +13,12 @@ If this file disagrees with `src/`, **trust code** and fix this file.
 
 ## Snapshot
 
-Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS app; save key `aggro-game-v1`.
+Dating-app fight loop on **Baatorasaka** (Floor 1, 30 monsters) and **Tortuga Muerta** (Floor 2, 14 monsters). Solo Vite/React/TS app; save key `aggro-game-v1`.
 
 **R.O.D. (Rifts Override Directive)** = Earthfall showrunner voice — framing on **hot** clears only (hunter put gold on the date).  
 **Baatorasaka stamp** = cold clearance mouth. Mouths never blend.
 
-**Next floor** (Skullport × Xanathar × Pirate Borg) = **aware only — do not design.**
+**Floor 2 content:** the Tortuga roster, venues, gear, dialogue, and portraits are implemented. Further gameplay, story, or loot content requires a new request. The optional UI skin is an approved design goal.
 
 **Dual-mode:** campaign companion (table long rest → app night) **and** standalone roguelite nights. Same `RestBeat` UI.
 
@@ -34,12 +34,15 @@ Dating-app fight loop on **Baatorasaka** (Floor 1, closing). Solo Vite/React/TS 
 
 ---
 
-## Shipped — 0.1.1 (match code)
+## Implemented content and existing systems
 
 ### Content
 
 - Banter Low / Mid / High scripts PASS (`src/data/banterScripts/`).
 - Baatorasaka creature deck (`src/data/creatures.ts`); theme tokens black / `#FF007F`.
+- Tortuga creature deck (`src/data/creaturesTortuga.ts`): 14 complete profiles, 112 chat replies, 364 battle nodes with 420 lines, and 14 full portraits plus 14 thumbnails. Writing merged in PR #33; portraits merged in PR #34.
+- Item artwork: 60 illustrations covering all 54 loot items and 10 fight kits, merged in PR #32. New gear text is included in the completed writing pass.
+- Merge evidence, dates, and validation limits: [PROGRESS.md](PROGRESS.md).
 
 ### Economy / loadout
 
@@ -74,12 +77,20 @@ Do **not** treat this list as a roadmap. Especially: **side bets are not upcomin
 - Extra R.O.D. loot-box theater beyond shipped hot framing
 - Loss-with-teeth beyond current paid-extra-on-PIP
 - Floor 1 effect families **not** used yet (saved for expansion): stronger-while-hurt, kit+outfit combo, bonus gold on win — do not invent Floor 2 loot catalogs here
-- Skullport (or any Floor 2) content design — **aware only**
+- Further Floor 2 gameplay, story, or loot content beyond the implemented Tortuga pack — requires a new request
 - Number-field polish on hunter sheet
-- Formal playtest verify pass
 - Clearance aisle climb-gated stock / night restock — **parked** (kiosk is still a fixed SKU list in 0.1.1)
 
 ---
+
+## Next approved design goal
+
+After the player throws the Floor 2 lever and enables Tortuga Muerta, offer an optional Pirate Borg–inspired UI skin. The player can retain the existing appearance. This covers the app UI, beyond the existing accent colors, and uses the same game state and mechanics. **Planned; not implemented.** See [PROGRESS.md](PROGRESS.md#next-design-goal--optional-floor-2-ui-skin).
+
+## Remaining verification
+
+- **New player-facing preview link: unfinished.** No new tunnel was established. The current workspace preview is internal only.
+- **Live browser playtest: unfinished.** The merged changes passed source, asset, component-render, and sampled encounter checks. A browser review must still cover portrait/item sizing, chat, combat, and both fight outcomes. No live-browser or deployed-build verification is claimed.
 
 ## Known tensions (honest)
 
@@ -91,7 +102,7 @@ Do **not** treat this list as a roadmap. Especially: **side bets are not upcomin
 
 ## Do not
 
-- Design Skullport / Pirate Borg / Xanathar floor content.
+- Add further Skullport / Pirate Borg / Xanathar gameplay, story, or loot content beyond the implemented Tortuga pack without a new request.
 - Add mid-fight verbs or kit pickers.
 - Ship snark theater ahead of progress/loot teeth unless asked.
 - Invent systems in docs that are not in code.

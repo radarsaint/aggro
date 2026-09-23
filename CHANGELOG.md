@@ -47,6 +47,13 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 
 ## [Unreleased]
 
+### Docs — 2026-09-23
+
+- Added `docs/PROGRESS.md` with completion scope and merge commits for the item art, Floor 2 writing sweep, and monster portraits.
+- Corrected README, scope, and living-state notes that still called Floor 2 a stub or an unshipped creature pack; aligned the current package version with 0.1.4.
+- Marked the new player-facing preview link and live browser playtest as unfinished, distinct from the completed source and asset checks. No runtime changes or version bump.
+- Recorded the next requested design goal: an optional Pirate Borg–inspired app UI skin made available when the player throws the Floor 2 lever. This is planned work, not a shipped feature.
+
 ### Fixed
 
 - **Discover type chrome** — Strip SRD creature-type pills (Beast / Fey / Construct / Undead) from Discover grid + stack, Match, Chat, and Fights list. Baatorasaka card tags rewritten venue + bite only (same pass Tortuga already got); chassis ids stay under the hood.
@@ -71,8 +78,8 @@ Full scope / goals / non-goals for collaborators: [docs/SCOPE.md](docs/SCOPE.md)
 - **Landing / Home** — Returning players (`hunter.created`) land on `/home` (not Discover dump). Shows aisle energy + CTA into Discover. Floor 2 lever: visible to all; pullable only when Verified. Locked copy / ready copy per plan. One pull enables Tortuga Muerta (no day burn, no gold).
 - **You utilities** — Active-floor day clock (`dayElapsed / dayBudget`), manual adjust, fight log by day, aisle switcher (no night refill / no other-floor day tick).
 - **Gold bridge (You)** — Export gold (uncapped, confirm). Verified one-time **150g** buy-in (buried under Kiosk → Aisle extras) unlocks deposit. Deposit cap **100 × floor number** per active floor day; resets on Call it a night for that aisle only.
-- **Tortuga Muerta theme tokens** — Salt/teal accents stub (no creature pack yet).
-- **Tortuga Muerta creature pack (slice 2)** — 14 thin-cut dates wired to `themeId`/`floorId` `tortugaMuerta` so Discover fills when the salt aisle is active. SRD 5.1 chassis ids retained (`baseCreature` / `wotcSource`); presentation names + Low/Mod/High from roster. Venue stamps **In the Rigging / Bilge / Magazine** on card + fight chrome only (no Accept tax, no new buttons). Enemy-reads: Rigging Widow Web→tarred line; Dead Siren Song→drowned chorus; Powder Drake lizard-smoke vs Drowned Powderman gunner-cough. Placeholder banter/chat only.
+- **Tortuga Muerta theme tokens (initial systems slice)** — Salt/teal accents introduced before the creature pack; the roster, writing, and portraits are now implemented.
+- **Tortuga Muerta creature pack (slice 2)** — 14 thin-cut dates wired to `themeId`/`floorId` `tortugaMuerta` so Discover fills when the salt aisle is active. SRD 5.1 chassis ids retained (`baseCreature` / `wotcSource`); presentation names + Low/Mod/High from roster. Venue stamps **In the Rigging / Bilge / Magazine** on card + fight chrome only (no Accept tax, no new buttons). Enemy-reads: Rigging Widow Web→tarred line; Dead Siren Song→drowned chorus; Powder Drake lizard-smoke vs Drowned Powderman gunner-cough. Initial placeholder banter/chat was replaced by the completed 0.1.3 writing pass.
 
 ### Changed
 

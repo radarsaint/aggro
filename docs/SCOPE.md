@@ -1,13 +1,13 @@
 # AGGRO — Scope, goals, and non-goals
 
-Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the current writing standard. Profiles, chat, combat, item descriptions, and reward commentary are revised. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
+Progress update (2026-09-23): the Floor 2 writing sweep and monster portraits are complete and merged, along with the item artwork replacement. See [PROGRESS.md](PROGRESS.md) for exact coverage, merge commits, validation, and the unfinished preview/playtest work. Use [VOICE_BIBLES.md](VOICE_BIBLES.md) and [WRITING_REVIEW.md](WRITING_REVIEW.md) for the writing standard. Refusal never confirms a bout; only Accept Fight starts arming. R.O.D. may mention recorded actions on paid-tier wins and never changes difficulty through dialogue. Historical banter PASS notes below refer to earlier reviews.
 
 
 **Audience:** Brendon, external collaborators, and other AI tools working on this repo independently.  
 **Rule:** Match `src/`. Do not invent gameplay, floors, or gates that are not shipped or explicitly greenlit below.  
 **Companion docs:** [README.md](../README.md) · [EARTHFALL_STATE.md](EARTHFALL_STATE.md) · [CHANGELOG.md](../CHANGELOG.md) · [VERSIONING.md](VERSIONING.md)
 
-**Product version documented here:** 0.1.1 (Baatorasaka playable cut).
+**Current package version:** 0.1.4. The completed content and art work is recorded in [PROGRESS.md](PROGRESS.md).
 
 ---
 
@@ -36,14 +36,14 @@ Writing update (2026-09-20): use VOICE_BIBLES.md and WRITING_REVIEW.md for the c
 
 ## Scope IN
 
-Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, it is not IN.
+Systems and content that **exist in code**. If you cannot find it under `src/`, it is not IN.
 
 ### Platform
 
 - Vite + React + TypeScript SPA
 - Visual identity: black + hot pink `#FF007F` (Baatorasaka theme)
 - Solo save: `localStorage` key `aggro-game-v1`
-- Floor 1 theme pack: Baatorasaka; Floor 2 theme id `tortugaMuerta` (tokens + aisle enable; creature pack not yet)
+- Floor 1 theme pack: Baatorasaka, 30 monsters. Floor 2: Tortuga Muerta (`tortugaMuerta`), 14 monsters with profiles, chat, battle scripts, finished portraits, venues, and floor-specific gear.
 
 ### Loop surfaces
 
@@ -86,10 +86,18 @@ Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, 
 
 ### Content shipped
 
-- Baatorasaka creature deck + Low / Mid / High banter scripts (Banter Critic PASS tracked historically in changelog)
+- Baatorasaka creature deck + Low / Mid / High banter scripts (earlier review history in changelog)
+- Tortuga writing sweep: 14 profiles, 112 chat replies, and 420 lines in 364 battle nodes; new gear descriptions and effect text revised (PR #33, merged)
+- All 14 Tortuga monster portraits in full and compact sizes (PR #34, merged)
+- 60 item illustrations covering 54 loot items and 10 fight kits (PR #32, merged)
+- See [PROGRESS.md](PROGRESS.md) for completed checks and outstanding live browser verification.
 - How It Works page (`/how`)
 
 ---
+
+## Approved design goal — optional Floor 2 UI skin
+
+Requested 2026-09-23: after the player throws the Floor 2 lever and enables Tortuga Muerta, make a Pirate Borg–inspired UI skin available as an optional appearance. The player can retain the existing look. The goal covers the app UI beyond the current floor accent colors; both appearances use the same game state and mechanics. **Planned, not shipped.** See [PROGRESS.md](PROGRESS.md#next-design-goal--optional-floor-2-ui-skin).
 
 ## Scope OUT / deferred
 
@@ -104,8 +112,7 @@ Systems that **exist in code** as of 0.1.1. If you cannot find it under `src/`, 
 | Drive / Cleave (or other mid-fight jargon verbs) | Out — combat stays Attack / Item / Run (+ Use heals) |
 | MMO / spreadsheet chrome | Out |
 | Player-facing **quota**, **CR**, **stamina** words | Out — rest UI is dating copy |
-| **Skullport × Xanathar × Pirate Borg** | **Aware only** — do not design deck, theme, or loot for it |
-| Full Tortuga creature / loot / venue pack | Out of systems slice 1 — theme tokens + lever only until pack ships |
+| Further **Skullport × Xanathar × Pirate Borg** gameplay, story, or loot content | Beyond the implemented Tortuga pack; requires a new request. The optional UI skin above is an approved design goal. |
 | Additional R.O.D. systems beyond the revised hot framing | Parked |
 | Loss-with-teeth systems beyond current stake-on-PIP | Parked |
 
@@ -127,7 +134,7 @@ As of 2026-09-14 (see also [EARTHFALL_STATE.md](EARTHFALL_STATE.md)):
 
 1. **Non-flat loot tables are the shine.** Prefer snark/framing around drops that already climb.
 2. **STOP talking about side bets.** Deferred indefinitely.
-3. **Skullport:** aware only — do not design.
+3. **Skullport:** further gameplay, story, or loot content beyond the subsequently authorized and implemented Tortuga pack requires a new request. The optional UI skin is an approved design goal.
 4. **Do not ship snark theater before more progress/loot teeth** unless asked.
 5. Docs and features must **match code**; invented gameplay in docs is a bug.
 
