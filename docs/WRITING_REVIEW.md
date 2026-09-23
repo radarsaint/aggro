@@ -2,6 +2,8 @@
 
 ## Tortuga Muerta — 2026-09-22
 
+**Complete and merged:** [PR #33](https://github.com/radarsaint/aggro/pull/33), commit [`333c352`](https://github.com/radarsaint/aggro/commit/333c35226e0c82371e71c84f4fda32eda5e6463c). Confirmed present on `main` during the 2026-09-23 progress check. Live browser playtesting remains unfinished; see [PROGRESS.md](PROGRESS.md).
+
 Version 0.1.3 extends the pass to all 14 new monsters: 14 profiles, 112 chat replies, and 364 battle nodes containing 420 lines. It also revises all 13 newer gear descriptions, clarifies 17 named effects and nine kit hints, and corrects displayed attack notes that claimed effects the game does not apply. Dialogue no longer calls a cancelled strike a miss or bypasses an authored selector with a generic fallback.
 
 The complete copy, character decisions, preservation checks, and validation are in [TORTUGA_WRITING_REVIEW.md](TORTUGA_WRITING_REVIEW.md). [TORTUGA_ENCOUNTER_REVIEW.md](TORTUGA_ENCOUNTER_REVIEW.md) records 28 completed combat sequences, covering both endings for every new monster.
